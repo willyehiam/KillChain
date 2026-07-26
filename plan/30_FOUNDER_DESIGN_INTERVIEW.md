@@ -350,22 +350,85 @@ A shipping lane may contain thousands of vessels in the economic model while the
 map renders a smaller weighted sample that communicates density, vessel classes,
 cargo capacity, direction, disruption, and risk.
 
-### Language model role
+### No runtime language model doctrine
 
-A language model may provide an optional natural language command surface,
-briefings, staff dialogue, explanations, and plan drafting.
+KillWeb has no required language model, cloud inference, or per decision model
+call during gameplay.
 
-It must not own authoritative simulation state.
+Player intent is expressed through structured controls, contextual actions,
+templates, standing orders, objective builders, and deterministic staff planning.
 
-A command such as triple missile production is translated into a structured plan
-containing targets, factories, inputs, labor, tooling, costs, time, dependencies,
-and expected consequences. The deterministic simulation engine validates and
-executes that plan only after player confirmation.
+A command such as triple missile production is represented as structured intent.
+The planning engine expands it into valid programs using factories, inputs,
+labor, tooling, costs, time, dependencies, doctrine, and expected consequences.
+The deterministic simulation engine validates and executes the selected plan.
 
-Every command must also be available through ordinary interface controls.
-Saved games and deterministic replays store validated structured commands, never
-unverifiable language model prose.
+Briefings, explanations, staff recommendations, and artificial intelligence
+behavior are generated from simulation state through templates, rules, utility
+models, planners, and authored data.
+
+The authoritative game, every artificial intelligence country, every saved game,
+and every deterministic replay must function without network access or a model
+API.
+
+A future optional local or external language interface may be considered only as
+a replaceable accessibility layer. It cannot be required for gameplay,
+simulation, artificial intelligence, content generation, balance, or fidelity.
 
 ## Round 05: Population, politics, ideology, culture, religion, legitimacy, unrest, and information
+
+Status: approved.
+
+### Approved decisions
+
+1. Populations are simulated as cohorts, not individual people.
+2. Cohorts are geographically distributed and may differ by age, income,
+   education, employment, language, religion, identity, urbanization, media
+   environment, and political alignment.
+3. Identity is multidimensional and does not impose a fixed political destiny.
+4. Public opinion emerges from material conditions, performance, identity,
+   memory, security, leadership, media, networks, events, and losses.
+5. Regimes may derive legitimacy from elections, performance, religion,
+   nationalism, tradition, revolution, victory, services, foreign support,
+   coercion, or combinations of these.
+6. Constitutions and institutions determine authority, succession, territorial
+   organization, and meaningful constraints without requiring procedural
+   paperwork from the player.
+7. Political actors build coalitions across parties, voters, military commands,
+   security institutions, companies, labor, regions, religion, media, and
+   foreign partners.
+8. Elections produce plausible contests from the actor database and the alternate
+   history created by the simulation.
+9. Policies affect groups and regions differently, allowing political reactions
+   to emerge from consequences.
+10. The map may display support, trust, grievance, identity concentration,
+    economic stress, protest, institutional loyalty, separatism, media influence,
+    and foreign penetration.
+11. Unrest may develop through organization, demonstrations, strikes, civil
+    disobedience, riots, underground activity, insurgency, separatism, or
+    revolution without following one inevitable ladder.
+12. Negotiation, reform, relief, policing, surveillance, censorship, arrests,
+    force, amnesty, and incorporation create different immediate and lasting
+    effects.
+13. Coups require a plausible institutional coalition, coercive access,
+    communications, leadership, and an expectation of acceptance.
+14. Separatism requires identity, grievance, organization, leadership, geography,
+    resources, security, opportunity, support, and a credible governing project.
+15. Culture spreads through language, education, entertainment, migration,
+    prestige, products, platforms, universities, tourism, and diasporas.
+16. Religion includes belief, institutions, education, charity, law, identity,
+    organization, foreign networks, geography, and internal competition.
+17. Information environments are networks of channels with reach, credibility,
+    audience, ownership, moderation, and vulnerability.
+18. Information operations use structured packages containing an objective,
+    audience, narrative, messenger, channels, duration, resources, attribution
+    posture, risk tolerance, and desired behavior.
+19. Information effects are calculated by the deterministic engine from beliefs,
+    conditions, credibility, resonance, repetition, competition, evidence,
+    access, relationships, and attribution.
+20. Platforms are political terrain, and exposed manipulation may damage
+    credibility, alliances, access, trust, diplomacy, and future effectiveness.
+
+## Round 06: Diplomacy, alliances, international institutions, coercion, covert action, proxies, and escalation
 
 Status: in discussion.
