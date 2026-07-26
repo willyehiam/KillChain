@@ -1,4 +1,52 @@
-# vinext-starter
+# KillWeb
+
+KillWeb is a web based modern grand strategy game about governing a real country,
+altering recognizable history, and moving fluidly from national policy to theater
+command and individual intelligence and mission workflows.
+
+The project was originally called KillChain. That name described the first playable
+prototype well, but it no longer describes the intended scope. KillWeb is designed
+as a persistent global simulation with at least the gameplay depth of Hearts of
+Iron IV, the legibility and abstraction discipline of Civilization, and optional
+mission depth inspired by modern decision advantage platforms.
+
+## Project lineage
+
+The `OGKillChain` branch preserves the first playable Justice Mission prototype.
+It is a valuable proof of the map first interface, deterministic simulation,
+fog of war, target custody, package composition, authorization, execution, and
+combat assessment loop.
+
+Development on `main` now belongs to KillWeb. The old prototype is evidence and
+lineage, not a constraint that the larger game must inherit unchanged.
+
+## Current stage
+
+KillWeb is in the brainstorming stage.
+
+No later stage should begin until the brainstorming gate in
+`plan/04_STAGE_GATES.md` is deliberately approved. Simulation engine documents
+currently capture hypotheses, contracts, and open questions. They are not an
+instruction to begin implementation.
+
+## Repository knowledge map
+
+1. `plan/` is the canonical product, game design, research, and project handoff
+   corpus.
+2. `Agents/` contains the ten canonical studio roles and their ownership
+   contracts.
+3. `SimulationEngine/` contains the provisional architecture for the future
+   deterministic world simulation.
+4. `docs/scenarios/` contains scenario sourcebooks inherited from the original
+   prototype.
+5. `app/`, `lib/`, and `tests/` contain the preserved first playable web
+   implementation.
+
+Start with `plan/00_PROJECT_HANDOFF.md`.
+
+## Current web scaffold
+
+The existing prototype uses the following Sites scaffold.
 
 A clean full-stack starter running on
 [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
