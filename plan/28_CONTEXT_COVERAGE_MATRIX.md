@@ -67,9 +67,17 @@ This index maps the project conversation to canonical repository documents.
 
 ## Research
 
-1. Future research program: `14_RESEARCH_PROGRAM.md`
+1. Research program: `14_RESEARCH_PROGRAM.md`
 2. Safety and fidelity: `17_RESEARCH_SAFETY_AND_FIDELITY.md`
 3. Sources: `25_SOURCE_LEDGER.md`
+4. Active corpus:
+   `../Agents/05_World_Research_and_Data_Director/research_data/`
+
+## Brainstorming completion
+
+1. Required stage deliverable: `29_BRAINSTORMING_DELIVERABLE.md`
+2. Stage rules: `04_STAGE_GATES.md`
+3. Unresolved product questions: `23_OPEN_QUESTIONS.md`
 
 ## Quality
 

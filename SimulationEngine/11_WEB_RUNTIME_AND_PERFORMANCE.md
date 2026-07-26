@@ -48,8 +48,21 @@ The map renderer should handle:
 10. Clustering.
 11. Globe view.
 
-WebGL or WebGPU can accelerate custom overlays. Technology selection remains a
-later decision.
+WebGPU is the primary high fidelity renderer. WebGPU compatibility mode and a
+reduced WebGL2 path preserve access on unsupported browsers and older hardware.
+
+The renderer must begin with a capability probe and select a declared tier. It
+must also recover from device loss without corrupting simulation state.
+
+Renderer tiers may change visual density, but they may not:
+
+1. Change simulation outcomes.
+2. Reveal different intelligence.
+3. Change interaction timing.
+4. Remove required controls.
+5. Make save files incompatible.
+
+The authoritative simulation never depends on GPU floating point output.
 
 ## Simulation versus animation
 

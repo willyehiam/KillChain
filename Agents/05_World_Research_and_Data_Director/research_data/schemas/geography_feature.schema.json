@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/geography_feature.schema.json",
+  "title": "Operational Geography Feature",
+  "type": "object",
+  "required": [
+    "feature_id",
+    "name",
+    "feature_type",
+    "geometry",
+    "source_ids"
+  ],
+  "properties": {
+    "feature_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "feature_type": {
+      "type": "string",
+      "enum": [
+        "river",
+        "lake",
+        "coast",
+        "strait",
+        "canal",
+        "mountain",
+        "pass",
+        "plateau",
+        "desert",
+        "forest",
+        "wetland",
+        "island",
+        "bathymetry_region",
+        "administrative_boundary",
+        "other"
+      ]
+    },
+    "country_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{3}$"
+      },
+      "uniqueItems": true
+    },
+    "geometry": {
+      "$ref": "common.schema.json#/$defs/geometryRecord"
+    },
+    "gameplay_properties": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "string",
+          "number",
+          "boolean"
+        ]
+      }
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

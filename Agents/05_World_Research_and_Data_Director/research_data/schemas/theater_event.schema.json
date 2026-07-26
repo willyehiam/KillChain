@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/theater_event.schema.json",
+  "title": "Theater Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "theater_id",
+    "event_type",
+    "occurred_from",
+    "participant_ids",
+    "source_ids",
+    "confidence"
+  ],
+  "properties": {
+    "event_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "theater_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "political_decision",
+        "diplomatic_action",
+        "mobilization",
+        "deployment",
+        "exercise",
+        "engagement",
+        "strike",
+        "interception",
+        "blockade",
+        "sanction",
+        "negotiation",
+        "ceasefire",
+        "humanitarian",
+        "information",
+        "economic",
+        "other"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "occurred_from": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "occurred_to": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "participant_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "location": {
+      "$ref": "common.schema.json#/$defs/geometryRecord"
+    },
+    "force_measures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "measure"
+        ],
+        "properties": {
+          "subject_id": {
+            "$ref": "common.schema.json#/$defs/stableId"
+          },
+          "quantity": {
+            "type": "number",
+            "minimum": 0
+          },
+          "quantity_min": {
+            "type": "number",
+            "minimum": 0
+          },
+          "quantity_max": {
+            "type": "number",
+            "minimum": 0
+          },
+          "measure": {
+            "$ref": "common.schema.json#/$defs/forceMeasure"
+          },
+          "unique_identity_supported": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "claim_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "confidence": {
+      "$ref": "common.schema.json#/$defs/confidence"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

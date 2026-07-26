@@ -173,3 +173,47 @@ effects, and consequence.
 
 Remain in brainstorming. Do not advance into research, design, engineering, or
 development until the relevant gate is approved.
+
+## 2026 07 26: Parallel research corpus
+
+### Decision
+
+While brainstorming remains open, authorize the World Research and Data Director
+to build corpus infrastructure and begin bounded public source collection for
+the top 80 country ambition, strategic infrastructure, major theaters, secondary
+crises, and political event chains.
+
+### Constraint
+
+This is a parallel workstream, not a declaration that the full research stage has
+begun. Research may inform brainstorming but may not silently lock game design.
+
+## 2026 07 26: Brainstorming answer status
+
+### Decision
+
+The architecture thesis derived from Difficulty and AI and Hearts of Iron IV is
+an important brainstorming input. It is not the final answer to the brainstorming
+stage.
+
+## 2026 07 26: Publishing cadence
+
+### Decision
+
+Publish coherent, validated checkpoints to GitHub `main` frequently rather than
+holding a large body of local work for one final push.
+
+## 2026 07 26: WebGPU first, accessible fallback
+
+### Decision
+
+Use WebGPU as the premium rendering and optional nonauthoritative compute path,
+but do not make WebGPU the only way to play.
+
+The future client should support:
+
+1. WebGPU core for the highest visual density and effects.
+2. WebGPU compatibility mode when available on older graphics stacks.
+3. A reduced WebGL2 renderer for supported browsers or devices without WebGPU.
+
+The authoritative deterministic simulation must remain renderer independent.

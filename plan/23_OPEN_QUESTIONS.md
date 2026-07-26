@@ -81,8 +81,8 @@
 
 ## Interface
 
-1. Which map technology best supports globe, vector, satellite, and custom
-   overlays?
+1. Which map and rendering stack best implements the approved WebGPU core,
+   compatibility, and WebGL2 fallback tiers?
 2. What is the final visual language?
 3. Which map modes are essential?
 4. How does the UI scale from beginner to expert?

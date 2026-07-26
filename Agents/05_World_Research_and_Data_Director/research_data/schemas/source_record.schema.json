@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/source_record.schema.json",
+  "title": "Source Record",
+  "type": "object",
+  "required": [
+    "source_id",
+    "title",
+    "publisher",
+    "accessed_at",
+    "source_tier",
+    "source_type"
+  ],
+  "properties": {
+    "source_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "publisher": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "published_at": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "observed_from": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "observed_to": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "accessed_at": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "archive_reference": {
+      "type": "string"
+    },
+    "source_tier": {
+      "type": "string",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "official_release",
+        "law_or_treaty",
+        "statistical_dataset",
+        "company_filing",
+        "news_report",
+        "research_report",
+        "academic_paper",
+        "map",
+        "imagery",
+        "video",
+        "social_post",
+        "database",
+        "other"
+      ]
+    },
+    "language": {
+      "type": "string"
+    },
+    "license_note": {
+      "type": "string"
+    },
+    "relevant_locator": {
+      "type": "string",
+      "description": "Page, table, figure, section, timestamp, or dataset row."
+    },
+    "derived_from_source_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "reliability_notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

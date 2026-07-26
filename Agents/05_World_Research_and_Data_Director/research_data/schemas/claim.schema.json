@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/claim.schema.json",
+  "title": "Atomic Research Claim",
+  "type": "object",
+  "required": [
+    "claim_id",
+    "subject_id",
+    "predicate",
+    "value",
+    "evidence_state",
+    "confidence",
+    "source_ids"
+  ],
+  "properties": {
+    "claim_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "subject_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "predicate": {
+      "type": "string",
+      "minLength": 1
+    },
+    "value": {},
+    "unit": {
+      "type": "string"
+    },
+    "observed_at": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "valid_from": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "valid_to": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "as_of": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "evidence_state": {
+      "$ref": "common.schema.json#/$defs/evidenceState"
+    },
+    "confidence": {
+      "$ref": "common.schema.json#/$defs/confidence"
+    },
+    "confidence_reason": {
+      "type": "string"
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "geometry": {
+      "$ref": "common.schema.json#/$defs/geometryRecord"
+    },
+    "contradiction_set_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "supersedes_claim_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "simulation_use": {
+      "type": "string"
+    },
+    "representation_tier": {
+      "$ref": "common.schema.json#/$defs/representationTier"
+    },
+    "reviewed_at": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "review_after": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

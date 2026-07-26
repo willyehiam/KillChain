@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/political_event.schema.json",
+  "title": "Political Event Chain Node",
+  "type": "object",
+  "required": [
+    "event_id",
+    "chain_id",
+    "event_type",
+    "occurred_from",
+    "actor_ids",
+    "source_ids",
+    "confidence"
+  ],
+  "properties": {
+    "event_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "chain_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "election",
+        "protest",
+        "repression",
+        "reform",
+        "trial",
+        "leadership_change",
+        "coalition_change",
+        "constitutional",
+        "economic_policy",
+        "security_policy",
+        "negotiation",
+        "foreign_influence",
+        "fragmentation",
+        "settlement",
+        "other"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "occurred_from": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "occurred_to": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "country_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{3}$"
+      },
+      "uniqueItems": true
+    },
+    "actor_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "trigger_event_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "historical_outcome": {
+      "type": "string"
+    },
+    "scenario_branch_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "effect_domains": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "legitimacy",
+          "institutions",
+          "coalition",
+          "economy",
+          "security",
+          "foreign_alignment",
+          "territorial_control",
+          "information",
+          "other"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "claim_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "confidence": {
+      "$ref": "common.schema.json#/$defs/confidence"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

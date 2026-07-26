@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/infrastructure_asset.schema.json",
+  "title": "Infrastructure Asset or Network",
+  "type": "object",
+  "required": [
+    "infrastructure_id",
+    "name",
+    "infrastructure_type",
+    "representation_tier",
+    "as_of",
+    "source_ids"
+  ],
+  "properties": {
+    "infrastructure_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "infrastructure_type": {
+      "type": "string",
+      "enum": [
+        "electric_generation",
+        "electric_storage",
+        "electric_transmission",
+        "fuel_production",
+        "refinery",
+        "fuel_storage",
+        "pipeline",
+        "port",
+        "canal_or_strait",
+        "airport",
+        "rail",
+        "road",
+        "bridge_or_tunnel",
+        "river_transport",
+        "undersea_cable",
+        "cable_landing_region",
+        "communications",
+        "water",
+        "dam",
+        "space",
+        "food",
+        "other"
+      ]
+    },
+    "country_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{3}$"
+      },
+      "uniqueItems": true
+    },
+    "operator_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "capacity": {
+      "type": "number",
+      "minimum": 0
+    },
+    "capacity_unit": {
+      "type": "string"
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "dependents": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "location": {
+      "$ref": "common.schema.json#/$defs/geometryRecord"
+    },
+    "representation_tier": {
+      "$ref": "common.schema.json#/$defs/representationTier"
+    },
+    "as_of": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "confidence": {
+      "$ref": "common.schema.json#/$defs/confidence"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/common.schema.json",
+  "title": "KillWeb Research Common Definitions",
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "minLength": 3,
+      "pattern": "^[a-z0-9][a-z0-9_:-]*$"
+    },
+    "isoDateOrTimestamp": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}([Tt][0-9:.+-]+[Zz]?)?$"
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "confirmed",
+        "high",
+        "medium",
+        "low",
+        "disputed",
+        "unknown"
+      ]
+    },
+    "evidenceState": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "official_claim",
+        "independently_reported",
+        "inferred",
+        "estimated",
+        "disputed",
+        "designed",
+        "synthetic",
+        "unknown"
+      ]
+    },
+    "locationStatus": {
+      "type": "string",
+      "enum": [
+        "fixed_exact",
+        "fixed_approximate",
+        "reported_point",
+        "reported_area",
+        "route",
+        "administrative_area",
+        "synthetic_region",
+        "withheld",
+        "unknown"
+      ]
+    },
+    "representationTier": {
+      "type": "string",
+      "enum": [
+        "individual",
+        "formation",
+        "regional_network",
+        "national_capability",
+        "synthetic_node",
+        "event_only",
+        "background_only"
+      ]
+    },
+    "forceMeasure": {
+      "type": "string",
+      "enum": [
+        "unique_platform",
+        "detected_platform",
+        "peak_presence",
+        "sortie",
+        "formation",
+        "unit",
+        "personnel",
+        "launcher",
+        "munition",
+        "event",
+        "capacity"
+      ]
+    },
+    "geoJsonGeometry": {
+      "type": "object",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Point",
+            "MultiPoint",
+            "LineString",
+            "MultiLineString",
+            "Polygon",
+            "MultiPolygon"
+          ]
+        },
+        "coordinates": {}
+      },
+      "additionalProperties": false
+    },
+    "geometryRecord": {
+      "type": "object",
+      "required": [
+        "location_status",
+        "crs"
+      ],
+      "properties": {
+        "geometry": {
+          "$ref": "#/$defs/geoJsonGeometry"
+        },
+        "location_status": {
+          "$ref": "#/$defs/locationStatus"
+        },
+        "crs": {
+          "type": "string",
+          "const": "EPSG:4326"
+        },
+        "precision_m": {
+          "type": "number",
+          "minimum": 0
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stableId"
+          },
+          "uniqueItems": true
+        },
+        "observed_at": {
+          "$ref": "#/$defs/isoDateOrTimestamp"
+        },
+        "valid_to": {
+          "$ref": "#/$defs/isoDateOrTimestamp"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -20,10 +20,39 @@ what it simulates, what it abstracts, and what quality means.
 9. Approved research questions.
 10. Explicitly prioritized open questions.
 
+### Completion standard
+
+The brainstorming stage is not complete because an architecture thesis exists.
+It is complete only when the team can describe an entire representative campaign
+from opening bookmark through peacetime preparation, crisis, conflict, settlement,
+and continued play without hiding the fun behind words such as "simulate" or
+"abstract."
+
+The canonical completion checklist lives in
+`29_BRAINSTORMING_DELIVERABLE.md`.
+
+### Authorized parallel research workstream
+
+The founder has explicitly authorized the World Research and Data Director to
+build the research corpus while brainstorming continues.
+
+This exception permits:
+
+1. Research methodology and source policy.
+2. Schemas and data dictionaries.
+3. Country, theater, infrastructure, and event research queues.
+4. Bounded collection of public, date stamped, sourced facts.
+5. Geospatial normalization with explicit precision and uncertainty.
+6. Contradiction tracking and source review.
+
+This exception does not mean the project has entered or completed the full
+research stage. It does not authorize simulation implementation or let collected
+data silently decide unresolved game design.
+
 ### Prohibited work
 
 1. Building the new simulation engine.
-2. Collecting a full world dataset.
+2. Claiming a complete or authoritative world dataset before the research gate.
 3. Launching a large coding swarm.
 4. Locking a visual system.
 5. Choosing a final technical stack.

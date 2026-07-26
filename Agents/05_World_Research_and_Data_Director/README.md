@@ -31,6 +31,26 @@ modern world.
 4. Define regional and synthetic infrastructure models.
 5. Separate sourced history from scenario invention.
 
+## Active parallel workstream
+
+The founder has authorized research corpus work during brainstorming.
+
+Current work belongs in `research_data/` and includes:
+
+1. Corpus methodology.
+2. Source and claim schemas.
+3. The top 80 country cohort queue.
+4. Country and military research templates.
+5. Global infrastructure taxonomy.
+6. Fully modeled theater dossiers.
+7. Secondary crisis dossiers.
+8. Political event chain dossiers.
+9. Public geospatial precision and uncertainty rules.
+10. Contradiction and maintenance workflows.
+
+This workstream does not authorize engine implementation and does not make
+provisional research assumptions into game design decisions.
+
 ## Required outputs
 
 1. Research program.

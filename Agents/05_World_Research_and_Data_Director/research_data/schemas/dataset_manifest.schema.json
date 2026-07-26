@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/dataset_manifest.schema.json",
+  "title": "Research Dataset Manifest",
+  "type": "object",
+  "required": [
+    "dataset_id",
+    "title",
+    "version",
+    "status",
+    "coverage",
+    "source_ids",
+    "last_reviewed"
+  ],
+  "properties": {
+    "dataset_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "collecting",
+        "needs_review",
+        "verified",
+        "disputed",
+        "deprecated"
+      ]
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "description"
+      ],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "valid_from": {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        },
+        "valid_to": {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        },
+        "country_codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "known_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_contradiction_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "owner": {
+      "type": "string"
+    },
+    "last_reviewed": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "review_after": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

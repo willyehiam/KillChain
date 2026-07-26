@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/fixed_installation.schema.json",
+  "title": "Fixed Installation",
+  "type": "object",
+  "required": [
+    "facility_id",
+    "name",
+    "facility_type",
+    "country_codes",
+    "location",
+    "source_ids",
+    "as_of"
+  ],
+  "properties": {
+    "facility_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "native_name": {
+      "type": "string"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "facility_type": {
+      "type": "string",
+      "enum": [
+        "military_base",
+        "airfield",
+        "naval_base",
+        "port",
+        "headquarters",
+        "training_area",
+        "radar_or_sensor",
+        "space_launch",
+        "satellite_ground",
+        "shipyard",
+        "industrial",
+        "energy",
+        "transport",
+        "communications",
+        "government",
+        "other"
+      ]
+    },
+    "country_codes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{3}$"
+      },
+      "uniqueItems": true
+    },
+    "operator_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "functions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "limited",
+        "under_construction",
+        "inactive",
+        "closed",
+        "damaged",
+        "destroyed",
+        "unknown"
+      ]
+    },
+    "location": {
+      "$ref": "common.schema.json#/$defs/geometryRecord"
+    },
+    "representation_tier": {
+      "$ref": "common.schema.json#/$defs/representationTier"
+    },
+    "as_of": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      },
+      "uniqueItems": true
+    },
+    "confidence": {
+      "$ref": "common.schema.json#/$defs/confidence"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

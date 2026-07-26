@@ -1,6 +1,7 @@
 # Research Program
 
-This document defines the future research stage. It does not activate it.
+This document defines the full future research stage and the public source corpus
+workstream that is authorized to run during brainstorming.
 
 ## Research objective
 
@@ -27,11 +28,30 @@ The long term research ambition includes:
 14. Government institutions.
 15. Political factions.
 16. Active wars and unresolved disputes.
+17. Military and civilian shipyards.
+18. Aircraft, vehicle, electronics, semiconductor, and dual use manufacturing.
+19. Space launch and satellite ground infrastructure.
+20. Military headquarters and public command facilities.
+21. Rivers, terrain, bathymetry, and other operational geography.
+
+## Initial country cohort
+
+The target is approximately the top 80 countries by GDP, with the final ranking
+metric, reference year, and treatment of tied or disputed entries still open.
+
+The corpus must not silently mix nominal GDP, purchasing power parity GDP, and
+different source years. `TOP_80_COUNTRIES.md` in the research corpus owns the
+cohort decision and version history.
 
 ## Playable world model
 
 Research must support player decisions. It should not optimize for collecting the
 largest possible number of coordinates.
+
+Exact coordinates are useful only when they refer to a public, fixed object and
+the source supports that precision. Mobile force reports must include an
+observation time and must never be presented as a current live location after
+their observation interval.
 
 ## Fidelity tiers
 
@@ -74,6 +94,43 @@ exact real locations.
 18. Alliances.
 19. Infrastructure.
 20. Conflicts and claims.
+
+## Priority theater corpus
+
+### Fully modeled theaters
+
+1. Ukraine.
+2. Gaza and the Levant.
+3. Sudan.
+4. Myanmar.
+5. Eastern Congo.
+6. The Sahel.
+7. Venezuela and the Caribbean.
+8. Iran and the Gulf.
+9. China, Taiwan, and the South China Sea.
+
+### Active secondary crises
+
+1. Somalia.
+2. South Sudan.
+3. India and Pakistan.
+4. Afghanistan and Pakistan.
+5. Armenia and Azerbaijan.
+6. Ethiopia and Eritrea.
+7. Colombia.
+8. Ecuador.
+9. Haiti.
+
+### Political event chains
+
+1. Nepal's Gen Z revolution.
+2. Indonesia's protests.
+3. Bolivia's political realignment.
+4. Brazil's Bolsonaro trial.
+5. Argentina's austerity crisis.
+6. Peru's legitimacy crisis.
+7. Syria's political transition.
+8. Lebanon's attempt to disarm Hezbollah.
 
 ## Claim schema
 
@@ -134,3 +191,8 @@ Future research agents may specialize in:
 
 The stage succeeds when the world is coherent and playable, not when every real
 object has been cataloged.
+
+## Active corpus location
+
+All current research artifacts belong under
+`Agents/05_World_Research_and_Data_Director/research_data/`.

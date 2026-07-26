@@ -29,6 +29,11 @@ No later stage should begin until the brainstorming gate in
 currently capture hypotheses, contracts, and open questions. They are not an
 instruction to begin implementation.
 
+A parallel public source research corpus is authorized under
+`Agents/05_World_Research_and_Data_Director/research_data/`. That workstream
+builds evidence and data infrastructure while product brainstorming remains
+open. It does not activate engine development.
+
 ## Repository knowledge map
 
 1. `plan/` is the canonical product, game design, research, and project handoff

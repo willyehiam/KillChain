@@ -20,8 +20,9 @@ theater command and Maven inspired intelligence and mission execution.
 5. The preserved prototype lives on the `OGKillChain` branch.
 6. The active `main` branch now begins the KillWeb planning lineage.
 7. KillWeb must aim at no less than HOI4 scale of gameplay depth.
-8. KillWeb remains in brainstorming. No research collection, engine build,
-   redesign, or agent coding swarm is currently authorized by this corpus.
+8. KillWeb remains in brainstorming. A parallel public source research corpus
+   workstream is authorized, but engine implementation, visual redesign, and a
+   production coding swarm remain gated.
 
 ## Founder intent
 
@@ -71,6 +72,10 @@ player is never forced to micromanage them.
 8. Preserve `OGKillChain`.
 9. Treat `main` as KillWeb.
 10. Record every new durable decision in `22_DECISION_LOG.md`.
+11. Treat architecture essays as brainstorming inputs, not as proof that the
+    brainstorming stage is complete.
+12. Store research work under
+    `Agents/05_World_Research_and_Data_Director/research_data/`.
 
 ## Canonical north star questions
 

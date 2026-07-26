@@ -327,3 +327,41 @@ KillWeb better describes:
 6. Preserve enough context that another AI can continue without repeating the
    original mistakes.
 7. Remain in brainstorming.
+
+## 20: Research workstream exception
+
+The founder authorized the research agent to begin building a world data corpus
+while the project remains in brainstorming.
+
+The requested research scope includes:
+
+1. Approximately the top 80 countries by GDP.
+2. Military institutions, structures, inventories, installations, and public
+   basing information.
+3. Major military and civilian infrastructure.
+4. Energy production, transmission, pipelines, cables, and bottlenecks.
+5. Shipyards and dual use industrial capacity.
+6. Space launch and satellite infrastructure.
+7. Military headquarters and public command sites.
+8. Rivers, terrain, and topography.
+9. Detailed theater timelines, forces, movements, and political decisions.
+10. Political event chains that can alter the starting world.
+
+The founder cited the Justice Mission 2025 reconstruction as the standard for
+distinguishing exercise areas, participating organizations, detected forces,
+sorties, peak presence, unique platforms, and reported movement.
+
+## 21: Brainstorming is still open
+
+The founder asked whether the architecture study was the answer to the
+brainstorming stage.
+
+The answer is no. It is the current architecture thesis. Brainstorming remains
+open until the project has a coherent playable campaign model across national,
+theater, and mission decisions, including peacetime and nonmilitary play.
+
+## 22: Frequent publishing
+
+The founder instructed the team to push into the repository as often as possible.
+Coherent validated planning and research checkpoints should therefore be
+published independently to GitHub `main`.
