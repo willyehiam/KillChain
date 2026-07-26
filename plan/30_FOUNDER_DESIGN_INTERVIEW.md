@@ -261,4 +261,111 @@ alternate history produced by the campaign.
 
 ## Round 04: Economy, industry, trade, infrastructure, and mobilization
 
+Status: approved.
+
+### Approved decisions
+
+1. The economy is a living network connecting production, consumption, trade,
+   finance, energy, labor, transportation, technology, government capacity, and
+   strategic reserves.
+2. Economic detail has three player facing levels: national, sector and province,
+   and strategic entity.
+3. Economic indicators explain national conditions without becoming separate
+   chores that demand constant optimization.
+4. Ordinary goods use a limited set of strategic categories. Individual military
+   platforms and critical technologies remain distinct.
+5. Important supply chains connect physical mines, farms, refineries, factories,
+   power networks, ports, railways, roads, pipelines, sea routes, cables, and data
+   centers.
+6. Industrial conversion requires tooling, designs, labor, suppliers, materials,
+   time, and quality control.
+7. The national budget uses broad priorities by default. Detailed spending is
+   optional.
+8. Procurement is normally expressed as a capability or readiness outcome.
+   Individual contracts become decisions only when they create a major strategic
+   or political choice.
+9. Strategic companies have capacity, technology, leadership, ownership, capital,
+   labor, suppliers, foreign exposure, government relationships, and interests.
+10. Modern firms in semiconductors, artificial intelligence, cloud computing,
+    social media, communications, space, drones, payments, medicine, energy, and
+    logistics may be instruments of national power.
+11. Trade is physical and political. It depends on production, prices, agreements,
+    shipping, insurance, payments, ports, chokepoints, sanctions, and security.
+12. Sanctions and export controls propagate through financial, technological,
+    industrial, maritime, political, and illicit networks.
+13. Energy generation, fuel, transmission, storage, refining, distribution, and
+    competing demand are foundational to the economy and military.
+14. Strategic stockpiles provide resilience while consuming money, storage,
+    maintenance, and administrative capacity.
+15. Economic posture ranges from normal activity through preparedness, targeted
+    mobilization, emergency mobilization, and total mobilization. Individual
+    sectors may mobilize separately.
+16. Civilian prosperity and military power compete for resources without one
+    universally correct balance.
+17. Major infrastructure projects exist on the map. Routine local development
+    remains aggregated.
+18. Damage and recovery affect specific capabilities through repair capacity,
+    labor, parts, financing, access, and security.
+19. Smaller countries remain strategically interesting through specialization,
+    geography, resources, finance, technology, alliances, intelligence, and
+    chokepoints.
+20. The entire economy or any economic portfolio may be delegated through
+    strategic intent.
+
+### Scope and abstraction doctrine
+
+KillWeb does not attempt a literal one to one simulation of every person, firm,
+shipment, vessel, transaction, or local facility.
+
+Detail is included when it creates at least one of the following:
+
+1. A meaningful player decision.
+2. A strategic dependency.
+3. A geographic vulnerability.
+4. A distinct actor with agency.
+5. A source of uncertainty.
+6. A consequence that can propagate across systems.
+7. A recognizable fantasy the player may wish to control.
+
+Everything else is aggregated while preserving quantities, constraints,
+relationships, and causal effects.
+
+### Simulation resolution doctrine
+
+The world uses three connected resolutions:
+
+1. Macro resolution always runs for every country, province, sector, market,
+   trade corridor, and major institution.
+2. Operational resolution expands active theaters, strategic projects, crises,
+   and important networks.
+3. Detailed resolution expands selected formations, facilities, missions,
+   tracks, actors, and assets.
+
+Changing resolution must conserve resources, population, cargo, production,
+damage, location, and commitments. Detail may be created or collapsed, but the
+underlying state cannot multiply or disappear.
+
+Visible representative objects are not required to equal simulated object count.
+A shipping lane may contain thousands of vessels in the economic model while the
+map renders a smaller weighted sample that communicates density, vessel classes,
+cargo capacity, direction, disruption, and risk.
+
+### Language model role
+
+A language model may provide an optional natural language command surface,
+briefings, staff dialogue, explanations, and plan drafting.
+
+It must not own authoritative simulation state.
+
+A command such as triple missile production is translated into a structured plan
+containing targets, factories, inputs, labor, tooling, costs, time, dependencies,
+and expected consequences. The deterministic simulation engine validates and
+executes that plan only after player confirmation.
+
+Every command must also be available through ordinary interface controls.
+Saved games and deterministic replays store validated structured commands, never
+unverifiable language model prose.
+
+## Round 05: Population, politics, ideology, culture, religion, legitimacy, unrest, and information
+
 Status: in discussion.
