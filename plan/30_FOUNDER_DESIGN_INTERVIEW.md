@@ -161,4 +161,104 @@ continues to connect both portfolios regardless of who currently controls them.
 
 ## Round 03: National gameplay loop
 
+Status: approved.
+
+### Core loop
+
+1. Notice a pressure or opportunity.
+2. Decide what outcome matters.
+3. Choose a plan.
+4. Commit authority and resources.
+5. Advance time and observe execution.
+6. Intervene, delegate, expand, or adapt.
+
+The same loop applies to economic development, political reform, diplomacy,
+information activity, intelligence, military operations, and detailed kill
+chains.
+
+### Approved decisions
+
+1. The player governs primarily through objectives that describe desired
+   outcomes.
+2. Objectives are contextual and flexible, not a rigid historical focus tree.
+3. National priorities use a soft institutional limit. Excessive commitments
+   create competition, delay, conflicting orders, weak oversight, and poor
+   coordination.
+4. Strategic activity uses four connected levels: objective, program, project or
+   operation, and task.
+5. Institutions develop competing plans with visible costs, requirements,
+   dependencies, risks, uncertainty, consequences, and opportunity costs.
+6. KillWeb does not use a universal mana resource. Capacity emerges from money,
+   credit, support, administration, industry, labor, expertise, energy,
+   materials, logistics, intelligence, diplomacy, readiness, equipment, and
+   stockpiles.
+7. Resources are represented as understandable stocks, flows, and bottlenecks.
+8. The world map remains the primary interface for objectives, projects, units,
+   politics, trade, infrastructure, industry, and intelligence.
+9. Zoom changes the available decision scale. Strategic objects resolve into
+   formations, facilities, networks, and tasks when greater detail is useful.
+10. Policies have implementation time, institutional response, and consequences,
+    but routine administration and individual contract management are abstracted
+    by default.
+11. Economic control reflects the actual structure of the country. Market states
+    rely more on incentives, procurement, regulation, credit, and emergency
+    authority. Command states provide more direct control while introducing
+    their own information and efficiency problems.
+12. Important companies, facilities, networks, and institutions may exist as
+    individual strategic entities. Ordinary activity remains aggregated by
+    sector, province, and market.
+13. Peacetime is fully playable through development, science, culture, religion,
+    infrastructure, political reform, regional integration, energy, and other
+    national ambitions.
+14. Standing instructions let the player automate recurring responses and define
+    conditions for review.
+15. National objectives connect naturally to theater plans, operations, mission
+    packages, sensor tasking, targeting, engagement, and assessment.
+16. The interface controls interruption volume and groups related crisis
+    decisions.
+17. Every important outcome provides a causal explanation.
+18. Complexity is progressively revealed during play. Expert players may expose
+    every control immediately.
+
+### Abstraction and fantasy rule
+
+Administrative friction should shape outcomes without turning KillWeb into a
+paperwork simulator.
+
+The player acts at the level where a choice creates strategy or fantasy.
+Routine allocations, individual procurement contracts, local forms, and mundane
+implementation are handled by staff unless the player deliberately opens a more
+detailed management view.
+
+A player may choose to manage a granular portfolio, but the game must never
+require bureaucratic work merely to prove that the simulation is detailed.
+Delegation should compress implementation into clear intent, projected effects,
+important tradeoffs, and exceptional decisions.
+
+### Modern strategic entity clarification
+
+The strategic entity model includes traditional Hearts of Iron IV era assets
+such as shipyards, steel plants, aircraft factories, arsenals, ports, rail
+junctions, and energy facilities.
+
+It also includes modern sources of national power where relevant:
+
+1. Semiconductor designers and fabrication plants.
+2. Artificial intelligence laboratories and compute providers.
+3. Cloud platforms and data centers.
+4. Social media and mass communication platforms.
+5. Telecommunications and satellite operators.
+6. Battery, drone, robotics, and advanced manufacturing companies.
+7. Critical software, cyber security, and payment infrastructure.
+8. Pharmaceutical and biotechnology capacity.
+9. Rare material processors and advanced machine tool producers.
+10. Commercial firms whose production can be converted during mobilization.
+
+Examples may include Meta, TikTok, OpenAI, Anthropic, Kimi, DeepSeek, and their
+future equivalents. Their influence depends on ownership, jurisdiction,
+leadership, technical capacity, users, data, government relationships, and the
+alternate history produced by the campaign.
+
+## Round 04: Economy, industry, trade, infrastructure, and mobilization
+
 Status: in discussion.
