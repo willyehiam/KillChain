@@ -217,3 +217,43 @@ The future client should support:
 3. A reduced WebGL2 renderer for supported browsers or devices without WebGPU.
 
 The authoritative deterministic simulation must remain renderer independent.
+
+## 2026 07 26: Independent challenge settings
+
+### Decision
+
+Expose five independent settings rather than collapsing every preference into one
+difficulty selector:
+
+1. Opponent competence.
+2. National challenge.
+3. Command assistance.
+4. Historical behavior.
+5. Pause policy.
+
+Assistance must use ordinary game systems and resources. It should not secretly
+manufacture national progress.
+
+## 2026 07 26: Player identity and continuity
+
+### Decision
+
+The player controls the enduring strategic will of a country rather than one
+individual leader.
+
+Elections, coups, revolutions, civil wars, occupation, annexation, resistance,
+and governments in exile may radically transform play without automatically
+ending the campaign. The player may intentionally reform institutions and the
+state, while autonomous institutions and private actors continue to possess
+their own behavior.
+
+## 2026 07 26: Global province geography
+
+### Decision
+
+Every playable country requires a worldwide province level strategic geography
+layer comparable in function to Hearts of Iron IV.
+
+Provinces must support territorial control, occupation, breakaway regions,
+fronts, infrastructure, population, economy, logistics, and changing borders.
+The exact number, shape, hierarchy, and generation method remain open.

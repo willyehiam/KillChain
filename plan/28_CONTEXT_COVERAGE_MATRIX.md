@@ -78,6 +78,7 @@ This index maps the project conversation to canonical repository documents.
 1. Required stage deliverable: `29_BRAINSTORMING_DELIVERABLE.md`
 2. Stage rules: `04_STAGE_GATES.md`
 3. Unresolved product questions: `23_OPEN_QUESTIONS.md`
+4. Founder design interview: `30_FOUNDER_DESIGN_INTERVIEW.md`
 
 ## Quality
 
