@@ -562,4 +562,71 @@ The simulation must implement this without a language model through:
 
 ## Round 08: Armed forces, force structure, readiness, procurement, personnel, training, basing, logistics, mobilization, and command
 
+Status: approved.
+
+### Central rule
+
+Every military effect must come from a real capability, with a traceable delivery chain, operating from a valid location under actual constraints. KillWeb permits no hand of God strikes.
+
+### Approved decisions
+
+1. Armed forces exist at national command, theater command, and mission command levels.
+2. National command controls defense policy, budgets, force design, procurement, manpower, mobilization, and strategic posture.
+3. Theater command controls bases, formations, logistics, readiness, campaign plans, and force allocation.
+4. Mission command controls platforms, sensors, weapons, support assets, routes, timing, authorization, engagement, and assessment.
+5. Each country begins with the best publicly defensible 2026 order of battle.
+6. Military data distinguishes confirmed, estimated, disputed, inferred, and unknown information.
+7. Secret capabilities use uncertainty distributions rather than invented precision.
+8. Military units are persistent entities with histories, locations, commanders, equipment, personnel, readiness, losses, and orders.
+9. Zoom determines the control level, moving from strategic commands through operational formations to constituent units and mission assets.
+10. Named ships, submarines, carriers, strategic bombers, satellites, major air defense systems, and exceptionally important platforms remain individually persistent.
+11. Large quantities of ordinary vehicles, weapons, drones, and support equipment remain equipment pools inside formations.
+12. Aircraft primarily exist through squadrons, inventories, crews, maintenance cycles, and sorties. Individual aircraft become visible when operationally important.
+13. Ground forces use battalions as the normal detailed unit. Brigades and divisions are the default operational formations. Companies appear only when the scenario benefits from that detail.
+14. Readiness includes personnel, training, equipment, maintenance, fuel, munitions, logistics, communications, command cohesion, morale, intelligence, and medical support.
+15. The interface may summarize readiness, but every underlying cause remains inspectable.
+16. Personnel use cohorts containing role, experience, training, morale, health, retention, and replacement difficulty.
+17. Important commanders are political actors with competence, doctrine, loyalty, relationships, reputation, and institutional authority.
+18. Commanders interpret player intent. Their adaptation depends on quality, workload, political constraints, loyalty, information, and command conditions.
+19. The player issues intent by default but may assume direct control of a theater, formation, or mission.
+20. Doctrine influences planning, coordination, risk, resource consumption, intelligence use, and response to uncertainty.
+21. Exercises consume fuel, ammunition, maintenance, time, and readiness while producing experience and revealing deficiencies.
+22. Bases provide runway capacity, port access, storage, repair, command, communications, defenses, housing, fuel, ammunition, and sortie generation.
+23. Basing rights are political agreements. Forces cannot operate magically from allied territory.
+24. Range depends on platform performance, payload, route, basing, refueling, replenishment, relevant weather, and threat exposure.
+25. Support assets are mandatory whenever a mission requires them.
+26. Every mission package identifies its desired effect, target, delivering platform, capability, launch location, route, support assets, fuel, expenditure, timing, exposure, collateral risk, authorization, abort conditions, and assessment plan.
+27. A mission cannot execute when required assets do not exist, cannot reach the mission, are committed elsewhere, lack access, lack ammunition, or lack readiness.
+28. Logistics connects sources, depots, bases, transport capacity, routes, consumption, losses, repair, and distribution.
+29. Supplies move through ports, roads, railways, airlift, pipelines, shipping, and local distribution rather than teleporting.
+30. Supplies use strategically meaningful categories, including fuel, precision weapons, conventional ammunition, interceptors, spare parts, medical capacity, engineering supplies, and general sustainment.
+31. Mobilization converts civilian resources into military capacity over time and affects labor, production, transport, political support, training, equipment, and economic output.
+32. Reserve forces have distinct activation, training, equipment, readiness, and political characteristics.
+33. Procurement begins with capability intent rather than individual contract administration.
+34. Procurement proceeds through requirements, selection or development, contracting, production, acceptance, training, basing, integration, and deployment.
+35. Routine procurement administration remains delegated, while strategically important programs may be opened for direct control.
+36. Production does not equal usable capability. Equipment still requires crews, training, maintenance, munitions, doctrine, communications, and integration.
+37. Combat depends on weapons, sensors, environment, positioning, readiness, doctrine, command, surprise, support, countermeasures, and uncertainty.
+38. Damage is stateful. A target may be mobile, mission killed, disabled, abandoned, captured, repairable, destroyed, misidentified, or represented by a decoy.
+39. The simulation knows the true physical outcome. Players receive only an assessment derived from evidence.
+40. A high confidence assessment does not automatically mean destruction.
+41. Destroyed or immobilized units stop moving. Continued observed movement must be explained through stale tracks, deception, misassociation, or surviving assets.
+42. Assessment changes as imagery, signals, human reporting, communications, or subsequent activity arrives.
+43. Deception includes decoys, emission control, camouflage, civilian resemblance, false communications, dispersal, and manipulated signatures.
+44. Artificial intelligence countries use the same forces, intelligence, logistics, authorization, and planning rules as the player.
+45. Artificial intelligence adapts through changed objectives, allocation, doctrine application, threat estimates, and expected costs.
+46. Delegated commanders use deterministic planners, utility models, hierarchical task networks, doctrine, state machines, and authored rules without a language model.
+47. Strategic weapons require explicit authority, delivery capability, survivability, warning, doctrine, and political decision making.
+48. Military defeat does not necessarily end war. Governments may mobilize, negotiate, retreat, fragment, escalate, continue through allies, or conduct resistance.
+49. The opening experience teaches objectives, theater assignment, plan approval, and observation before revealing detailed logistics, force design, procurement, sensor fusion, and mission construction.
+50. Ships, submarines, satellites, major space systems, strategic facilities, and major weapon systems are individually persistent.
+51. Aircraft are primarily organized by squadron.
+52. Ground battalions are the detailed operational unit.
+53. Ordinary equipment remains pooled inside formations.
+54. Personnel remain cohorts except for important leaders and commanders.
+55. Active theaters receive detailed simulation while quiet regions remain aggregated but continue evolving.
+56. Every engagement produces an internal causal record for explanation and deterministic replay.
+
+## Round 09: Warfare, detection, maneuver, engagement, damage, assessment, escalation, and war termination
+
 Status: next discussion.
