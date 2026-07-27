@@ -720,4 +720,119 @@ KillWeb simulates military effects rather than health bars. A force may be defea
 
 ## Round 10: Intelligence, collection, sensor fusion, command networks, target custody, decision support, authorization, and uncertainty
 
+Status: approved.
+
+### Central rule
+
+The simulation contains truth. Intelligence contains evidence. Commanders make decisions from beliefs. The player is powerful but never automatically omniscient.
+
+### Approved decisions
+
+1. Every faction maintains its own intelligence picture.
+2. Intelligence derives from observations, reports, models, assumptions, allied sharing, and previous assessments.
+3. Intelligence never directly modifies physical truth.
+4. Physical entities, observed objects, tracks, identity hypotheses, and nominated targets are separate records.
+5. One physical entity may generate several tracks.
+6. Several tracks may be incorrectly fused into one identity.
+7. A decoy may produce a convincing track without representing the hypothesized target.
+8. A target is a hypothesis that applying an effect to an entity, location, network, or behavior will advance an objective.
+9. Confidence separately represents existence, location, identity, classification, activity, intent, affiliation, civilian presence, source reliability, and freshness.
+10. The interface never compresses all confidence dimensions into one unexplained percentage.
+11. Every observation creates an immutable evidence record.
+12. Evidence records preserve source, collection time, processing time, coverage, modality, measurement, uncertainty, reliability, lineage, classification, restrictions, and possible deception.
+13. Interpretations never replace the underlying evidence.
+14. Every conclusion can identify its supporting evidence.
+15. Conflicting evidence remains visible.
+16. The system records what evidence would strengthen or weaken a hypothesis.
+17. Reports may be accurate, mistaken, outdated, biased, fabricated, intercepted, planted, or misunderstood.
+18. Historical source performance informs reliability without making a source infallible.
+19. Intelligence failure emerges from gaps, assumptions, deception, incentives, poor sharing, overload, or error.
+20. Causal records explain why a faction believed something that proved false.
+21. National command establishes intelligence priorities.
+22. Theater commands translate priorities into collection plans.
+23. Collection managers translate plans into tasking, patrols, queries, access requests, and analyst work.
+24. Collection objectives are expressed as strategic questions rather than repetitive sensor administration.
+25. Staff handle routine scheduling while advanced detail remains available.
+26. Collection platforms have real coverage, availability, revisit, access, range, environmental limits, maintenance, vulnerability, and competing demands.
+27. Satellite tasking respects orbit, field of regard, duration, downlink, processing delay, and revisit.
+28. Aircraft and maritime collection require bases, routes, fuel, crews, protection, communications, and survivability.
+29. Human intelligence requires access, recruitment, placement, communications, validation, security, and time.
+30. Cyber intelligence requires access, persistence, target knowledge, collection capability, and security.
+31. Commercial imagery, civilian sensors, public reporting, shipping, finance, and social media supplement government collection.
+32. Open sources provide coverage while retaining delay, manipulation, duplication, bias, and uncertain provenance.
+33. Sensors produce data rather than immediate intelligence.
+34. Data passes through ingestion, transmission, storage, processing, exploitation, fusion, analysis, dissemination, and decision.
+35. Every stage has capacity, delay, security, and failure risk.
+36. Excess collection may overwhelm bandwidth, processing, storage, analysts, or command attention.
+37. Players manage throughput through priority policies rather than server administration.
+38. Low priority data may be delayed, sampled, compressed, discarded, or stored.
+39. Important observations may be trapped behind damaged communications or unavailable downlinks.
+40. Adversaries may attack links, processing, timing, analysts, and source credibility.
+41. Corrupted data does not automatically identify itself as corrupted.
+42. Processing depends on compute, electricity, networks, software, personnel, models, storage, and security.
+43. Detection and analytic models are explicit simulation assets.
+44. Models retain purpose, supported sensors, training provenance, validation, calibration, limitations, constraints, processing cost, error behavior, vulnerability, and accreditation.
+45. Models output probabilities and classifications rather than unquestionable answers.
+46. Model quality may degrade outside validated conditions.
+47. Adversaries may exploit model weaknesses.
+48. Operators may compare models with different strengths.
+49. Faster processing may trade precision, calibration, or scrutiny for speed.
+50. Deliberate analysis consumes time and may allow a mobile target to escape.
+51. Accreditation grades define approved applications.
+52. Accreditation does not imply perfect accuracy.
+53. Using a model outside approved conditions increases uncertainty and institutional risk.
+54. Artificial intelligence models inside the world are deterministic simulation objects. KillWeb does not call a language model.
+55. Fusion associates observations and tracks through geography, time, movement, signature, behavior, identity, and source compatibility.
+56. Fusion may merge, split, confirm, downgrade, or reject associations.
+57. Track custody means maintaining sufficiently current information for the intended decision.
+58. Custody requirements depend on mobility, weapon flight time, seeker capability, engagement rules, collateral conditions, and desired effect.
+59. A track may support warning while remaining insufficient for engagement.
+60. Different weapons require different levels of external custody.
+61. Losing custody can invalidate a mission package.
+62. Stale coordinates cannot silently become a current target location.
+63. Handoffs introduce latency, compatibility, uncertainty, and failure risk.
+64. Commanders may prioritize one target while accepting blindness elsewhere.
+65. Adversaries may force collection tradeoffs through simultaneous threats, decoys, emissions, and ambiguity.
+66. Intelligence recommends and explains but does not authorize kinetic action.
+67. Kinetic engagement requires valid human authority within the simulated command structure.
+68. Authorization depends on identity, effect, legal status, engagement rules, civilian risk, confidence, weapon, escalation, and authority.
+69. Standing authorities may permit limited actions under predefined conditions.
+70. Standing authority never creates intelligence, weapons, communications, or reach.
+71. Protected sites, civilians, friendly forces, restricted areas, boundaries, and coalition caveats affect decisions.
+72. Reckless or unlawful actions may be available while command resistance, refusal, exposure, law, politics, civilian harm, retaliation, and alliances react.
+73. The interface distinguishes feasibility, legal authority, political authorization, military value, and strategic wisdom.
+74. A mission may be technically possible while failing every other test.
+75. Authorization may expire when location, confidence, collateral conditions, or time windows change.
+76. Command is a physical and institutional network.
+77. Command nodes include headquarters, operations centers, communications, satellites, relays, ships, data centers, intelligence organizations, and allied interfaces.
+78. Links possess bandwidth, latency, reliability, classification, range, compatibility, security, and vulnerability.
+79. Command degradation causes delay, incomplete orders, lost synchronization, reduced sharing, duplicate engagement, or local initiative.
+80. Destroying a headquarters does not automatically paralyze every subordinate force.
+81. Mission command doctrine may permit disconnected forces to continue under intent.
+82. Centralized forces may coordinate efficiently when connected and degrade severely after disruption.
+83. Coalitions may share tracks while withholding sources, confidence, or sensitive capabilities.
+84. Different systems may assign distinct identities and confidence to the same physical object.
+85. Handoffs require dissemination rather than universal knowledge.
+86. Warning intelligence searches for changes from expected behavior.
+87. Players and staff may define normal baselines for regions, units, networks, markets, communications, and facilities.
+88. Anomaly detection identifies deviations without automatically explaining their cause.
+89. Mobilization, dispersal, logistics, communications, finance, propaganda, cyber reconnaissance, and civilian preparation contribute to warning.
+90. Adversaries may generate misleading warning indicators.
+91. Post action assessment restarts collection and inference.
+92. Assessment separately evaluates physical damage, functional damage, desired effect, collateral consequences, adaptation, and strategic outcome.
+93. Repeated assessment does not guarantee certainty when it repeats the same source or assumption.
+94. Independent sources increase confidence only when genuinely independent.
+95. The intelligence loop is establish a question, prioritize collection, gather evidence, revise hypotheses, maintain custody, decide, act, assess, and restart.
+96. The map remains the primary intelligence interface.
+97. Selecting a track opens a clear evidence drawer without replacing the map.
+98. Track views distinguish observation, inference, unknowns, freshness, provenance, disagreement, scheduled collection, available decisions, and invalidation conditions.
+99. Advanced players may inspect evidence graphs, model comparisons, collection schedules, command paths, and authorization chains.
+100. New players receive concise recommendations such as maintain custody, collect another source, request authority, compose a package, hold fire, or reassess.
+101. Recommendations state their reasons.
+102. Interface density communicates information rather than imitating classified software.
+103. Every percentage labels exactly what it measures.
+104. No action conceals the delivering asset, capability, support, origin, route, expected effect, uncertainty, or risk.
+
+## Round 11: World geography, provinces, cities, terrain, infrastructure, strategic networks, borders, and simulation scope
+
 Status: next discussion.
