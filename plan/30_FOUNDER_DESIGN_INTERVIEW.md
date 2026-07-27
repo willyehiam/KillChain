@@ -371,9 +371,10 @@ The authoritative game, every artificial intelligence country, every saved game,
 and every deterministic replay must function without network access or a model
 API.
 
-A future optional local or external language interface may be considered only as
-a replaceable accessibility layer. It cannot be required for gameplay,
-simulation, artificial intelligence, content generation, balance, or fidelity.
+KillWeb is designed, implemented, tested, balanced, and shipped under the
+assumption that no language model is available. No mechanic may be deferred to a
+language model, and no language model integration belongs in the baseline
+architecture.
 
 ## Round 05: Population, politics, ideology, culture, religion, legitimacy, unrest, and information
 
