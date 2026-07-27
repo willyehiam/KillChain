@@ -498,4 +498,68 @@ Status: approved.
 
 ## Round 07: Science, technology, education, talent, industrial knowledge, artificial intelligence capability, espionage, and diffusion
 
-Status: in discussion.
+Status: approved.
+
+### Approved decisions
+
+1. Technology uses a capability graph rather than one universal technology tree.
+2. Every country begins with a sourced 2026 profile of scientific, educational, industrial, and operational capability.
+3. A capability may pass through scientific understanding, experimental demonstration, functional prototype, production readiness, and operational maturity.
+4. Discovery, production, integration, and useful deployment are separate achievements.
+5. The player sets research priorities through strategic missions and capability objectives.
+6. Research budgets use broad portfolios by default. Individual grants and contracts remain abstracted unless they create a strategic decision.
+7. Basic research, applied research, engineering, production learning, and operational learning create different kinds of progress.
+8. Education creates long term capacity through schools, universities, vocational systems, military education, and research institutions.
+9. Talent may migrate, defect, retire, be recruited, become politically constrained, or concentrate around institutions and industrial clusters.
+10. Important universities, laboratories, firms, test sites, compute centers, and design bureaus may exist as named strategic entities.
+11. Companies and institutions pursue their own research agendas within incentives, ownership, regulation, finance, talent, and national strategy.
+12. Technology depends on industrial knowledge, suppliers, tooling, standards, quality control, maintenance, software, and trained operators.
+13. Artificial intelligence is an in world capability whose effects are calculated by the deterministic engine. The game itself does not require a language model.
+14. National artificial intelligence capacity depends on chips, compute, electricity, cooling, data, researchers, software, capital, cloud infrastructure, and security.
+15. Military technology becomes effective only after doctrine, training, logistics, communications, maintenance, command integration, and field experience.
+16. Development contains uncertainty, delay, failure, redesign, cost growth, security compromise, and political pressure.
+17. Testing reveals information about performance and may expose programs to rivals.
+18. Secrecy protects surprise while reducing collaboration, scrutiny, production efficiency, and diffusion.
+19. Technology diffuses through trade, education, migration, alliances, licensing, standards, investment, observation, open research, espionage, capture, and reverse engineering.
+20. Espionage provides fragments, access, samples, estimates, or accelerated understanding rather than an instant complete unlock.
+21. Technology espionage uses strategic operations with objectives, access, targets, resources, risk, attribution posture, and abort conditions.
+22. Counterintelligence protects people, facilities, networks, suppliers, data, programs, and deception plans.
+23. Export controls act on real technological and industrial dependencies rather than a generic penalty.
+24. Technology alliances may pool research, share standards, divide production, exchange talent, create dependencies, and generate political disputes.
+25. Future technology must grow from plausible scientific and industrial foundations rather than fantasy unlocks.
+26. Rivals possess uncertain estimates of each other’s capability, readiness, scale, reliability, and intent.
+27. Technologies, institutions, workforces, and production systems can become obsolete or degrade without investment.
+28. Science, education, technology, and innovation portfolios may be delegated through strategic intent.
+
+## Layered management and simulation doctrine
+
+Status: approved as the implementation direction for future engineering work.
+
+KillWeb presents three connected management layers to the player:
+
+1. National command covers political authority, economy, society, diplomacy, science, industry, mobilization, and grand strategy.
+2. Theater and network command covers regions, fronts, alliances, trade corridors, logistics, information environments, sensor networks, and operational plans.
+3. Mission and entity command covers actors, formations, facilities, platforms, tracks, tasking, packages, engagements, and assessment.
+
+Political actors, commanders, companies, and institutions are not a separate fourth world. They attach to objects and decisions at all three layers.
+
+The player may remain at one layer, delegate another, or move immediately between them. A national objective may become a theater plan and then a mission package. Results must propagate back upward through readiness, losses, public opinion, alliances, budgets, production, and strategic position.
+
+The simulation must implement this without a language model through:
+
+1. One canonical world state with stable entity identifiers and conserved ledgers.
+2. Bounded systems that communicate through typed commands and events.
+3. Multiple update cadences appropriate to movement, sensing, logistics, markets, politics, research, and demographics.
+4. A resolution manager that expands active contexts and collapses inactive contexts without changing totals, commitments, location, damage, or causal history.
+5. Hierarchical artificial intelligence in which national planners select objectives, portfolio planners allocate resources, operational planners create tasks, and deterministic executors carry them out.
+6. Utility scoring, doctrine, planning graphs, state machines, behavior trees, constraints, and seeded uncertainty.
+7. The same planning machinery for delegated player portfolios and artificial intelligence countries.
+8. Structured command schemas, authored templates, and causal explanation records.
+9. An authoritative WebAssembly simulation with parallel worker execution.
+10. WebGPU for rendering and selected derived spatial computation, with WebGL rendering fallback.
+11. Deterministic replay, offline operation, versioned data, and aggressive invariant testing.
+12. Explicit performance budgets for entities, active theaters, update work, saved state, and visual objects.
+
+## Round 08: Armed forces, force structure, readiness, procurement, personnel, training, basing, logistics, mobilization, and command
+
+Status: next discussion.
