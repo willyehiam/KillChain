@@ -629,4 +629,95 @@ Every military effect must come from a real capability, with a traceable deliver
 
 ## Round 09: Warfare, detection, maneuver, engagement, damage, assessment, escalation, and war termination
 
+Status: approved.
+
+### Central rule
+
+KillWeb simulates military effects rather than health bars. A force may be defeated because it can no longer detect, communicate, move, supply, defend, coordinate, or accomplish its mission. Destruction is only one way to produce that result.
+
+### Approved decisions
+
+1. Warfare runs continuously on the global clock.
+2. Combat remains on the world map rather than entering a separate battle screen.
+3. Every faction has an objective physical truth and its own incomplete, potentially incorrect understanding.
+4. Orders travel through command networks with delay determined by communications, hierarchy, doctrine, disruption, workload, and geography.
+5. Formations operate through mission intent, doctrine, posture, constraints, and standing orders between player interventions.
+6. Military plans are connected task graphs rather than single attack commands.
+7. Plans may include collection, deployment, deception, suppression, logistics, fires, maneuver, protection, exploitation, withdrawal, and assessment.
+8. Plans contain dependencies, timing windows, contingencies, abort conditions, and reserves.
+9. Forces use meaningful postures, including concealed, dispersed, defensive, screening, patrolling, preparing, attacking, withdrawing, reconstituting, and surrendering.
+10. The player may pause and intervene while prior commitments and physical movement remain real.
+11. The targeting cycle uses find, fix, track, target, engage, and assess.
+12. Sensors create observations rather than revealing units directly.
+13. Observations may become detections, tracks, identity hypotheses, target nominations, or false alarms.
+14. Tracks retain location estimates, uncertainty, movement, identity, classification, provenance, age, quality, deception risk, and predicted position.
+15. Track quality decays when observation is lost.
+16. Stale tracks continue through prediction but remain visually distinct from current observations.
+17. Sensors differ by modality, range, resolution, revisit time, field of view, environmental limits, processing, vulnerability, and signature.
+18. Radar, infrared, optical, acoustic, signals, cyber, human, commercial, and allied sources contribute different evidence.
+19. Fusion combines evidence without erasing disagreement or uncertainty.
+20. Players allocate processing, bandwidth, analyst attention, satellite time, and collection platforms.
+21. Active emissions improve sensing or communications while potentially exposing the force.
+22. Intelligence sharing depends on classification, trust, compatibility, agreements, communications, and political authority.
+23. A target cannot be engaged using information that the firing force cannot receive in time.
+24. Decoys and civilian resemblance create genuine uncertainty rather than simple accuracy penalties.
+25. Units move through actual geographic routes appropriate to their domain.
+26. Terrain, transport networks, ports, airfields, waterways, altitude, sea conditions, and threat exposure affect movement.
+27. Control requires more than the passage of a unit.
+28. Territorial control depends on presence, observation, access, administration, logistics, local cooperation, and enemy contestation.
+29. Front lines derive from control, reach, terrain, forces, and plans rather than serving as the fundamental simulation object.
+30. Ground formations may disperse, concentrate, entrench, screen, infiltrate, bypass, assault, exploit, or withdraw.
+31. Air forces operate through sorties, packages, patrol areas, readiness cycles, airfield capacity, and command networks.
+32. Naval forces operate through task groups, patrol areas, sea lanes, emissions, replenishment, acoustic conditions, air coverage, and objectives.
+33. Submarine warfare preserves deep uncertainty, including incomplete friendly knowledge.
+34. Civilian aviation, shipping, communications, and population movement continue during conflict.
+35. Engagement requires a target solution, authority, capability, reach, communications, and acceptable rules of engagement.
+36. Strategically important munitions are individually simulated.
+37. Small arms, cannon fire, and extremely numerous short range munitions resolve through aggregated exchanges.
+38. Visible trajectories reflect authoritative launch state, timing, geometry, performance, defenses, countermeasures, readiness, and uncertainty.
+39. Weapons possess guidance, range, speed, payload, accuracy, seeker, target compatibility, launch constraints, reliability, and countermeasure susceptibility.
+40. Defenses operate in layers through detection, tracking, identification, engagement opportunities, inventory, reload, command, and leakage.
+41. Saturation emerges from simultaneous threats exceeding sensor, command, launcher, magazine, and engagement capacity.
+42. Electronic warfare affects sensing, communications, navigation, identification, and weapon performance while creating signatures.
+43. Cyber operations require prior access, preparation, target knowledge, compatibility, timing, and persistence.
+44. Cyber effects may be temporary, partial, detected, contained, deceptive, or destructive.
+45. Information operations affect audiences, legitimacy, cohesion, behavior, recruitment, attribution, and political freedom rather than directly subtracting combat strength.
+46. Space systems provide communications, navigation, warning, sensing, weather, and intelligence. Their loss affects dependent capabilities.
+47. Combined operations gain effectiveness through actual coordination rather than arbitrary bonuses.
+48. Damage applies to components and capabilities.
+49. Ships may lose radar, propulsion, weapons, power, communications, flight operations, or damage control without immediately sinking.
+50. Airbases may lose runway capacity, fuel, command systems, shelters, or sortie generation.
+51. Formations may lose communications, mobility, ammunition, leadership, cohesion, or medical support.
+52. Damage states include degraded, suppressed, disrupted, isolated, immobilized, mission killed, disabled, abandoned, captured, destroyed, and repairable.
+53. Personnel losses distinguish killed, wounded, missing, captured, exhausted, and unavailable.
+54. Units may surrender, rout, withdraw, fragment, reorganize, or continue at reduced capability.
+55. Recovery requires time, security, personnel, parts, engineering, transport, medicine, replacement equipment, and infrastructure.
+56. Damaged assets do not recover automatically after combat.
+57. Assessment remains separate from physical truth.
+58. Multiple assessments may disagree because of evidence, models, timing, and assumptions.
+59. Subsequent activity may reveal survival, movement, repair, replacement, or deception.
+60. Every conflict begins with political objectives.
+61. Military plans are evaluated against political objectives rather than casualties alone.
+62. Tactical success may create strategic failure through escalation, civilian harm, alliance fracture, economic disruption, occupation burdens, or backlash.
+63. Escalation occurs across geography, targets, intensity, weapons, participants, civilian exposure, economics, cyber effects, and regime survival.
+64. Governments maintain perceived red lines shaped by doctrine, intelligence, politics, credibility, and circumstances.
+65. Red lines may be uncertain, misunderstood, manipulated, or changed.
+66. War support depends on expectations, losses, economics, leadership, media, identity, necessity, and visible progress.
+67. Coalition members may impose restrictions, deny bases, reduce support, negotiate independently, or leave.
+68. War aims may expand, contract, conflict, or become impossible.
+69. Peace negotiations may address territory, guarantees, sanctions, reparations, disarmament, access, recognition, monitoring, prisoners, political transition, and implementation.
+70. Agreements require enforcement and may collapse when incentives remain unresolved.
+71. Occupation requires security, administration, logistics, legitimacy, local partners, intelligence, reconstruction, and endurance.
+72. Military victory does not guarantee political control.
+73. KillWeb has no mandatory historical victory screen. The player may pursue new objectives after resolving the original crisis.
+74. The military loop is define the effect, understand intelligence, select a plan, allocate forces, observe execution, assess, and adapt.
+75. New players receive complete staff recommendations with explicit tradeoffs.
+76. Experienced players may open collection, allocation, routing, timing, weapon, support, engagement, and assessment controls.
+77. Routine competent behavior does not require repeated clicking.
+78. Every surprising outcome has an inspectable causal explanation.
+79. Combat supports deterministic replay from the same state, commands, data version, and seed.
+80. Visual spectacle communicates actual simulation state rather than decorative events disconnected from the engine.
+
+## Round 10: Intelligence, collection, sensor fusion, command networks, target custody, decision support, authorization, and uncertainty
+
 Status: next discussion.
