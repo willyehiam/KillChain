@@ -432,4 +432,70 @@ Status: approved.
 
 ## Round 06: Diplomacy, alliances, international institutions, coercion, covert action, proxies, and escalation
 
+Status: approved.
+
+### Approved decisions
+
+1. Governments pursue survival, security, prosperity, ideology, prestige,
+   historical claims, domestic interests, obligations, and leadership goals.
+2. Bilateral relationships contain trust, public sentiment, military cooperation,
+   economic dependence, intelligence, ideology, grievances, disputes, elite
+   ties, and coercive vulnerability rather than one relationship score.
+3. Diplomatic actions use structured packages containing desired behavior,
+   offers, demands, assurances, threats, deadlines, verification, posture,
+   compromise, and consequences.
+4. Negotiation uses a deterministic bargaining engine that evaluates value,
+   costs, domestic acceptance, risk, credibility, alternatives, expectations,
+   trust, enforcement, and deception.
+5. Agreements create conditional obligations that governments may fulfill,
+   delay, reinterpret, partially observe, or violate.
+6. Credibility emerges from capability, willingness, authority, access, support,
+   historical behavior, and acceptable cost.
+7. Alliances separately model consultation, intelligence, logistics, basing,
+   procurement, interoperability, planning, command integration, defense, and
+   nuclear guarantees.
+8. Collective defense requires political decisions from each member rather than
+   identical automatic participation.
+9. International institutions possess rules that may authorize, constrain,
+   coordinate, legitimize, delay, or obstruct action.
+10. Players may reform, expand, weaken, replace, or create international
+    institutions.
+11. Neutral and nonaligned countries retain agency and may balance, mediate,
+    extract concessions, deny access, trade, cooperate quietly, or change
+    alignment.
+12. Economic statecraft uses actual aid, investment, trade, sanctions, debt,
+    currency, energy, technology, and infrastructure dependencies.
+13. Coercion may progress through warnings, condemnation, isolation, sanctions,
+    demonstrations, deployments, quarantine, blockade, limited force, or war.
+14. Escalation is multidimensional across geography, actors, intensity, targets,
+    civilian harm, economic disruption, cyber effects, nuclear posture, public
+    commitment, and regime survival.
+15. Governments act on imperfect perceptions of intent, capability, readiness,
+    commitments, domestic pressure, red lines, attribution, and resolve.
+16. Crisis bargaining runs in real time through deadlines, mobilization, public
+    signals, private channels, military movement, economic preparation,
+    evacuations, alerts, and accidents.
+17. Gray zone competition may use coast guards, maritime militias, proxies,
+    cyber operations, economic coercion, political influence, legal claims,
+    intelligence, information, and incremental control.
+18. Attribution is a probabilistic assessment based on technical evidence,
+    intelligence, motive, capability, patterns, deception, allied reporting, and
+    narrative.
+19. Proxies retain their own interests, organization, legitimacy, command,
+    dependencies, and capacity to disobey or provoke escalation.
+20. Covert action uses structured strategic packages and resolves access,
+    preparation, opposition, execution, exposure, consequences, and abort
+    conditions without operational step by step gameplay.
+21. Foreign support may strengthen existing movements but cannot manufacture
+    unlimited legitimacy, unity, organization, or social foundations.
+22. Technical success in covert action may still produce diplomatic, political,
+    alliance, retaliatory, or escalation failure.
+23. War termination depends on control, capacity, endurance, political survival,
+    public support, coalition cohesion, escalation risk, objectives, mediation,
+    and expectations about continued fighting.
+24. Diplomacy and any diplomatic portfolio may be delegated through strategic
+    intent.
+
+## Round 07: Science, technology, education, talent, industrial knowledge, artificial intelligence capability, espionage, and diffusion
+
 Status: in discussion.
