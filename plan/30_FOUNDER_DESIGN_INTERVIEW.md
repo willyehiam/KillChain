@@ -835,4 +835,115 @@ The simulation contains truth. Intelligence contains evidence. Commanders make d
 
 ## Round 11: World geography, provinces, cities, terrain, infrastructure, strategic networks, borders, and simulation scope
 
+Status: approved.
+
+### Central rule
+
+Geography is simulation state rather than background artwork. KillWeb uses the actual Earth, actual coordinates, actual administrative boundaries, and actual infrastructure where defensible data exists.
+
+### Approved decisions
+
+1. The primary interface is a seamless interactive globe.
+2. Zoom moves continuously from the planet to individual facilities, formations, and missions.
+3. Dark vector geography is the default style.
+4. Satellite imagery is an immediate toggle using the same state and overlays.
+5. Geographic objects use real latitude and longitude.
+6. Borders use real source data appropriate to the campaign bookmark.
+7. Political boundaries, claims, and military control are separate layers.
+8. Control changes never rewrite the base map.
+9. Every country receives province level geography supporting occupation, civil war, logistics, politics, economics, infrastructure, and operations.
+10. Provinces begin with useful real administrative geography.
+11. Regions may be subdivided when terrain, population, infrastructure, islands, cities, or military geography require it.
+12. Simulation subdivisions never replace recognizable borders with fabricated visible polygons.
+13. Province granularity follows meaningful decisions rather than uniform size.
+14. Dense urban corridors may contain more regions than sparse terrain.
+15. Province count will be chosen through gameplay and performance prototypes.
+16. Connected spatial structures represent sovereignty, claims, control, administration, cities, theaters, markets, logistics, airspace, maritime geography, and a hidden hierarchical grid.
+17. The hidden grid supports calculation, indexing, aggregation, pathfinding, influence, sensing, and level of detail.
+18. The hidden grid remains invisible unless deliberately shown for diagnostics.
+19. Land movement follows terrain and transportation rather than straight lines between centers.
+20. Maritime movement uses continuous routes, navigable waters, ports, depth, chokepoints, hazards, and constraints.
+21. Air movement uses continuous routes, altitude, range, airspace, bases, refueling, threats, and timing.
+22. Satellites occupy real orbital trajectories.
+23. Command regions organize forces without artificially constraining physical movement.
+24. The world separately represents recognized sovereignty, claims, disputes, occupation, administration, insurgent presence, loyalty, access, demilitarization, and temporary zones.
+25. Recognition and physical control may disagree.
+26. Control derives from security, administration, logistics, communications, cooperation, access, and contestation.
+27. Control boundaries change without rewriting administration.
+28. Civil wars and breakaway regions create new control and governing layers.
+29. Recognition of breakaway governments is diplomatic rather than automatic.
+30. Maritime claims, economic zones, territorial waters, identification zones, and exercise zones remain distinct.
+31. Temporary exercise zones use published coordinates and activation periods where available.
+32. Cities are geographic systems rather than point markers.
+33. Major cities include urban extent, population, transport, utilities, industry, governance, communications, and strategic facilities.
+34. Population cohorts are distributed across provinces and urban regions.
+35. Population movement includes migration, evacuation, displacement, refugees, mobilization, and relevant commuting.
+36. Urban warfare depends on population, density, infrastructure, terrain, access, support, defenses, and civilian conditions.
+37. Players shape urban development through broad objectives.
+38. Ordinary streets, homes, shops, and utility poles do not require manual placement.
+39. Major projects and strategic facilities may be placed geographically.
+40. City growth changes demand, power, infrastructure, output, and military relevance.
+41. Terrain derives from real elevation, land cover, coastlines, rivers, lakes, islands, and built environments.
+42. Terrain affects movement, sensing, concealment, construction, logistics, defense, communications, and weapons.
+43. Rivers include crossings, navigability, direction, ports, dams, and strategic importance where relevant.
+44. Coastlines and islands preserve real geometry at appropriate zoom.
+45. Ocean geography includes depth, approaches, straits, channels, ports, and undersea infrastructure.
+46. Weather appears only when it creates meaningful decisions.
+47. Routine forecast administration is not gameplay.
+48. Natural disasters affect population, infrastructure, readiness, markets, legitimacy, and cooperation.
+49. Infrastructure exists as connected networks rather than isolated bonuses.
+50. Major categories include transport, fuel, electricity, telecommunications, cables, data centers, water, dams, industry, shipyards, military sites, research, semiconductors, and space facilities.
+51. Named strategic facilities use exact coordinates when reliable public information supports them.
+52. Uncertain locations use uncertainty areas rather than false precision.
+53. Every strategic entity stores provenance, observation date, confidence, and geographic precision.
+54. Public military installations may be represented without claiming knowledge of secret facilities or dispositions.
+55. Ordinary local infrastructure remains aggregated into capacity and resilience.
+56. Electrical systems represent generation, transmission regions, interconnection, storage, fuel, distribution, demand, and restoration.
+57. Every substation or distribution line need not be individual.
+58. Telecommunications represent backbone capacity, exchanges, wireless coverage, satellites, cables, data centers, and international connectivity.
+59. Transportation networks contain capacity, time, congestion, damage, control, repair, and alternatives.
+60. Damage propagates through real dependencies rather than generic penalties.
+61. A facility produces a large effect only when genuinely important to its network.
+62. Redundancy, stockpiles, rerouting, imports, repair, emergency measures, and distribution create resilience.
+63. Trade routes emerge from production, consumption, contracts, capacity, prices, access, security, and policy.
+64. Thousands of cargo flows may be simulated without rendering every shipment.
+65. Shipping lanes display representative moving traffic based on simulated flow.
+66. Representative vessels communicate density, direction, cargo, class, risk, disruption, and nationality.
+67. Civilian aircraft similarly represent passenger and cargo flow.
+68. Important civilian vehicles become individual entities when a crisis makes them relevant.
+69. Maritime traffic reroutes around danger, closure, blockade, insurance restrictions, port disruption, and orders.
+70. Civilian activity continues during operations and may congest, reveal, obstruct, support, or become endangered.
+71. The map remains visible beneath nearly every workflow.
+72. Panels and workbenches overlay the map without reducing it to decoration.
+73. Zoom controls aggregation.
+74. Strategic zoom combines units into formations, flows, theaters, and clusters.
+75. Detailed zoom reveals subordinate units and precise objects.
+76. Mobile units visibly move when time advances.
+77. Stationary equipment remains stationary unless displaced, transported, or ordered.
+78. Movement animation reflects authoritative position and time.
+79. Higher game speed visibly accelerates movement and other relevant activity.
+80. Symbols communicate domain, affiliation, class, posture, readiness, uncertainty, and activity.
+81. Civilian and military symbols are immediately distinguishable.
+82. Unknown tracks display observer uncertainty rather than truth.
+83. Overlays include politics, control, population, economy, infrastructure, logistics, terrain, energy, communications, sensors, defense, maritime activity, information, and space.
+84. Only contextually relevant overlays activate automatically.
+85. Visual design prioritizes hierarchy, contrast, legibility, and purpose.
+86. Every country, dependency, disputed territory, and relevant nonstate actor exists.
+87. Initial full content targets the top eighty countries by economic and strategic significance.
+88. Other countries use the same rules with less bespoke launch content.
+89. Any country may become important through geography, resources, alliances, politics, conflict, or player action.
+90. The world model supports expansion without replacing fundamental schemas.
+91. KillWeb does not simulate every person, building, vehicle, transaction, component, or shipment.
+92. Individual representation is reserved for strategic identity, agency, vulnerability, or relevance.
+93. Aggregation preserves population, production, capacity, cargo, ownership, damage, commitments, and causality.
+94. Expanding aggregates cannot create resources.
+95. Collapsing detail cannot erase loss, damage, location, or obligation.
+96. Detailed active theaters and aggregated quiet regions coexist in one saved game.
+97. Geographic data is versioned by campaign bookmark.
+98. Alternate history begins after campaign start from historically grounded opening state.
+99. Construction, destruction, migration, occupation, disasters, politics, and development may permanently alter the map.
+100. The world model remains compatible with deterministic replay, browser performance, modding, and correction.
+
+## Round 12: Artificial intelligence, adaptation, planning, delegation, difficulty, and historical behavior
+
 Status: next discussion.
