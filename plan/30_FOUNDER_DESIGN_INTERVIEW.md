@@ -946,4 +946,119 @@ Geography is simulation state rather than background artwork. KillWeb uses the a
 
 ## Round 12: Artificial intelligence, adaptation, planning, delegation, difficulty, and historical behavior
 
+Status: approved.
+
+### Central rule
+
+KillWeb does not use one artificial intelligence to play the world. It uses a hierarchy of bounded planners controlling actors, institutions, portfolios, theaters, missions, and entities without a language model.
+
+### Approved decisions
+
+1. Countries contain leaders, cabinets, parties, institutions, commands, companies, populations, allies, and legal authorities rather than one utility score.
+2. Every actor has goals, beliefs, capabilities, relationships, constraints, memory, and limited information.
+3. Political actors pursue personal, ideological, institutional, regional, electoral, and national interests.
+4. Institutions pursue mandates, resources, autonomy, reputation, survival, and organizational interests.
+5. Companies pursue profit, growth, security, influence, technology, access, and leadership preferences.
+6. Commanders pursue objectives through doctrine, forces, intelligence, authority, and competence.
+7. Actors may cooperate, compete, obstruct, bargain, miscommunicate, or form coalitions.
+8. The player represents national strategic will while acting through political and institutional systems.
+9. National planners select objectives over months and years.
+10. Portfolio planners manage economics, diplomacy, science, intelligence, government, procurement, and military resources.
+11. Theater planners create campaigns and allocate formations.
+12. Mission planners construct executable packages.
+13. Entity controllers execute local movement, sensing, engagement, logistics, and behavior.
+14. Political actors reconsider decisions after relevant elections, crises, scandals, losses, opportunities, and coalition changes.
+15. Planning levels communicate through structured objectives, requests, plans, commitments, constraints, and events.
+16. Higher levels establish intent and resources.
+17. Lower levels report feasibility, requirements, risks, progress, failure, and changed conditions.
+18. Lower planners may warn that an objective is impossible, costly, or incoherent.
+19. National selection uses utility scoring under political and resource constraints.
+20. Programs and operations use hierarchical task planning.
+21. Local execution uses behavior trees, state machines, doctrine, and standing orders.
+22. Resource allocation uses constrained optimization, priority queues, auctions, and authored rules where appropriate.
+23. Diplomacy uses deterministic bargaining.
+24. Intelligence beliefs use probabilistic evidence updates.
+25. Economic actors respond to incentives, expectations, constraints, ownership, risk, and markets.
+26. Different decisions use different appropriate algorithms.
+27. Candidate plans derive from modular actions, doctrine, templates, geography, and capabilities.
+28. Planners may combine modules into strategies not authored as fixed historical scripts.
+29. Plans are evaluated for benefit, cost, time, uncertainty, risk, acceptance, opportunity cost, and robustness.
+30. Evaluation uses perceived state rather than objective truth.
+31. Important plans may compare several futures through bounded simulation.
+32. Planning receives strict computation budgets.
+33. Depth depends on importance, time, competence, and difficulty.
+34. Reusable plan fragments may be cached.
+35. Historical events are not forced after their causes disappear.
+36. Countries begin with grounded leaders, institutions, doctrine, relationships, plans, concerns, and capabilities.
+37. Historical behavior expresses initial incentives rather than predestination.
+38. Artificial intelligence responds to alternate history.
+39. Actors remember agreements, threats, betrayals, assistance, failure, losses, and cooperation.
+40. Military planners remember observed tactics, performance, deployments, and vulnerabilities.
+41. Intelligence updates estimates after predictions succeed or fail.
+42. Economic actors update expectations as conditions change.
+43. Adaptation uses bounded statistical updates, beliefs, counters, and rules rather than runtime machine learning.
+44. Repeated defeat may produce dispersal, route changes, emission changes, defense, deception, or avoidance.
+45. Adaptation requires awareness, capacity, resources, authority, and time.
+46. Knowledge of a useful response does not create the ability to implement it.
+47. Institutions may resist lessons that threaten doctrine, budgets, leadership, or narratives.
+48. Adaptation speed differs for explainable reasons.
+49. Artificial intelligence is competent without perfect optimization.
+50. Actors possess bounded rationality, incomplete information, habits, biases, pressures, and deadlines.
+51. Mistakes emerge from conditions rather than arbitrary incompetence.
+52. Strategic personalities modify priorities, confidence, risk, patience, escalation tolerance, and preferred methods without creating stereotypes.
+53. Governments may pursue inconsistent policies when influential actors disagree.
+54. Plans gain momentum through commitments, statements, contracts, deployments, and political ownership.
+55. Governments may continue deteriorating policies because reversal has real costs.
+56. Artificial intelligence uses its own intelligence picture.
+57. It cannot inspect hidden player units, plans, resources, or truth.
+58. It may infer intentions from visible deployment, logistics, policy, communications, economics, and behavior.
+59. Intelligence quality follows actual capability and access.
+60. Higher difficulty never grants universal map knowledge.
+61. Default play grants no hidden resources, impossible range, instant movement, or privileged combat.
+62. Optional resource bonuses are explicit settings.
+63. Success must be explainable through information, assumptions, planning, and capability.
+64. Delegated staff use the same architecture.
+65. Delegation specifies objective, budget, priority, scope, risk, limits, protected assets, horizon, and review.
+66. Staff return plans, effects, requirements, uncertainty, risks, and alternatives.
+67. Players may approve, alter, request alternatives, delegate approval, or take control.
+68. Staff quality depends on personnel, institutions, doctrine, information, authority, communications, corruption, loyalty, and workload.
+69. Delegated staff may make honest mistakes.
+70. Staff sabotage requires simulated disloyalty, corruption, defection, or conflicting authority.
+71. Delegated decisions enter the audit timeline.
+72. Direct control does not erase existing commitments.
+73. Opponent competence controls planning depth, coordination, reaction delay, error, learning, and reserve use.
+74. National challenge reflects actual starting position.
+75. Command assistance controls recommendations, delegation, automation, warnings, and inactivity protection.
+76. Historical behavior controls preference for plausible strategies when supported by conditions.
+77. Pause policy controls interruption behavior.
+78. These settings remain independent.
+79. Easy assistance advances sensible priorities and pauses for major decisions without guaranteeing victory.
+80. Higher competence improves planning rather than weapon statistics.
+81. KillWeb avoids hidden adaptive difficulty and rubber banding.
+82. Artificial intelligence is primarily event driven.
+83. Actors reconsider decisions when relevant thresholds change rather than every frame.
+84. National planners use daily or weekly cadences.
+85. Portfolios use appropriate economic, political, and operational cadences.
+86. Active theaters receive frequent updates.
+87. Quiet regions use inexpensive maintenance logic.
+88. Mission and entity logic runs for active or scheduled activity.
+89. Spatial indexing limits interactions.
+90. Independent planning may use browser worker threads.
+91. Authoritative planning executes in WebAssembly compatible deterministic code.
+92. WebGPU may accelerate derived spatial evaluation without owning strategic decisions.
+93. State, commands, data, and seed reproduce decisions.
+94. KillWeb remains playable offline without inference cost.
+95. Replayability emerges from systems, uncertainty, turnover, plans, alliances, and adaptation.
+96. Scenario events create pressure and opportunity rather than fixed outcomes.
+97. One crisis may become settlement, blockade, limited war, regional war, collapse, alliance confrontation, or prolonged competition.
+98. Artificial intelligence factions are tested through thousands of accelerated campaigns.
+99. Test personalities include aggressive, defensive, deceptive, economic, logistical, diplomatic, opportunistic, and information focused strategies.
+100. Exploit tests search for dominant strategies, loops, passivity, useless mechanics, impossible counters, and resource creation.
+101. Systems tests verify conservation, causality, legal transitions, fog of war, and replay.
+102. Evaluation measures coherence, adaptation, compliance, variety, cost, and enjoyment rather than victory alone.
+103. Players can inspect why objectives, plans, and reconsiderations occurred.
+104. Complexity comes from interacting systems and actors rather than generated prose.
+
+## Round 13: Campaign bookmarks, historical state, event chains, tutorials, open victory, continuity, and replayability
+
 Status: next discussion.
