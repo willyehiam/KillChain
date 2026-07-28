@@ -1061,4 +1061,112 @@ KillWeb does not use one artificial intelligence to play the world. It uses a hi
 
 ## Round 13: Campaign bookmarks, historical state, event chains, tutorials, open victory, continuity, and replayability
 
+Status: approved.
+
+### Central rule
+
+History establishes the opening conditions. Simulation determines everything afterward. KillWeb is one persistent world rather than disconnected combat scenarios.
+
+### Approved decisions
+
+1. Every bookmark loads the complete world.
+2. Crisis bookmarks change date, state, focus, briefing, and suggested countries without removing unrelated conflicts.
+3. The recommended primary grand campaign begins in autumn 2025.
+4. The exact start date remains a research decision.
+5. The date provides time to influence Justice Mission 2025, the Gulf confrontation, and major 2026 developments.
+6. The grand campaign includes every represented active conflict, crisis, alliance, deployment, economy, and government.
+7. Additional bookmarks may begin before major crises.
+8. Early recommendations include autumn 2025, Justice Mission 2025, January 2026 Gulf crisis, July 2026 global crisis, and other introductory theaters.
+9. Crisis bookmarks remain curated entries into the same global simulation.
+10. Nothing after a bookmark start is guaranteed.
+11. Fully modeled theaters include Ukraine, Gaza and the Levant, Sudan, Myanmar, Eastern Congo, the Sahel, Venezuela and the Caribbean, Iran and the Gulf, and China, Taiwan, and the South China Sea.
+12. Secondary crises include Somalia, South Sudan, India and Pakistan, Afghanistan and Pakistan, Armenia and Azerbaijan, Ethiopia and Eritrea, Colombia, Ecuador, and Haiti.
+13. Political chains include Nepal, Indonesia, Bolivia, Brazil, Argentina, Peru, Syria, and Lebanon.
+14. Situations remain connected through diplomacy, markets, alliances, migration, weapons, trade, intelligence, energy, shipping, ideology, and distraction.
+15. Players and opponents may deliberately connect distant crises.
+16. No theater exists inside an isolated scenario bubble.
+17. Bookmarks research governments, actors, publics, diplomacy, alliances, conflict, forces, deployment, readiness, infrastructure, economics, trade, technology, intelligence, plans, construction, procurement, treaties, sanctions, and negotiations.
+18. Data retains sources, dates, confidence, geographic precision, and disagreements.
+19. Uncertainty remains uncertainty.
+20. Each faction begins with plausible knowledge rather than the complete research database.
+21. Uncertain physical facts may be selected deterministically at campaign creation.
+22. Seeds may resolve uncertain opening facts within documented bounds.
+23. Confirmed facts remain stable across seeds.
+24. Events are causal systems rather than calendar popups.
+25. Event chains contain preconditions, actors, pressures, triggers, objectives, decisions, deadlines, observability, reactions, consequences, expiration, and transformation.
+26. Events occur only while necessary causes exist.
+27. Events may occur earlier, later, differently, or never.
+28. Historical behavior changes preference without forcing outcomes.
+29. Player action may remove, redirect, or replace event causes.
+30. Artificial intelligence may prevent, accelerate, exploit, or transform crises.
+31. Major events appear as map embedded decisions.
+32. Minor developments enter grouped briefings.
+33. Events explain why they occurred.
+34. Causal histories respect faction knowledge.
+35. Event text uses authored templates and simulation state without a language model.
+36. A separate guided tutorial uses a controlled crisis opening.
+37. Justice Mission 2025 extending into an ambiguous blockade is the recommended tutorial.
+38. The first ten minutes teach warning, map inspection, collection, track evaluation, desired effects, staff planning, response, time, and assessment.
+39. Detailed systems remain initially hidden.
+40. Complexity appears as it becomes useful.
+41. Mechanics are introduced through strategic problems.
+42. The tutorial teaches that confidence differs from truth.
+43. It teaches that missions require real assets and support.
+44. It permits multiple successful solutions.
+45. Diplomacy, deterrence, preparation, withdrawal, and limited action may resolve the opening.
+46. Guidance is optional.
+47. Experts may expose every system immediately.
+48. KillWeb has no universal victory condition.
+49. Countries begin with interests, commitments, promises, concerns, and ambitions.
+50. Players may adopt, reject, modify, or create objectives.
+51. Objectives may be territorial, political, economic, technological, diplomatic, military, cultural, religious, environmental, or institutional.
+52. Campaigns record progress against selected objectives.
+53. Crisis outcomes include decisive success, limited success, compromise, unresolved, setback, and failure.
+54. Evaluation includes cost, durability, consequences, opportunity cost, and position.
+55. Winning or losing a war does not automatically end the campaign.
+56. A crisis may evolve into any causally supported trajectory.
+57. Play may continue after elections, coups, revolutions, occupation, loss, exile, or fragmentation.
+58. Campaigns end by player choice or when no viable continuation remains.
+59. Closing reports summarize alternate history, decisions, objectives, consequences, costs, and transformation.
+60. Score is optional analysis rather than the purpose of play.
+61. Conquest is not the sole form of success.
+62. The world continues evolving without player action.
+63. Governments, firms, populations, wars, technology, and alliances continue autonomously.
+64. Passive countries follow inherited policy but may stagnate or become overwhelmed.
+65. Easy assistance prevents accidental inactivity without erasing consequences.
+66. Long campaigns support succession and procedurally introduced future actors.
+67. Future actors emerge from existing institutions and social conditions.
+68. Future technology grows from capabilities rather than a fixed calendar.
+69. New conflicts emerge from simulated interests, grievances, opportunities, commitments, and misperceptions.
+70. Peaceful development remains fully playable.
+71. Several decades of alternate history are supported without a fixed end date.
+72. Researched history remains visually distinct from increasingly simulated future development.
+73. Replayability comes from country, uncertainty, objectives, adaptation, politics, elections, diplomacy, intelligence, economics, military plans, technology, interacting crises, and seeds.
+74. Randomness creates uncertainty without replacing causality.
+75. Identical state, commands, data, and seed reproduce results.
+76. New seeds vary only valid uncertain facts and contingent outcomes.
+77. Artificial intelligence does not choose random strategy solely for variety.
+78. Strategies differ because actors perceive different opportunities, risks, information, and constraints.
+79. Campaign history is a searchable timeline.
+80. Players may inspect previous maps, borders, governments, alliances, economies, wars, and forces.
+81. Decisions and outcomes may replay through the actual record.
+82. Saves preserve causal state for continuation and replay.
+83. Long campaign state may compact without deleting strategically meaningful history.
+84. Bookmarks, actors, events, doctrines, objectives, technology, units, facilities, and scenarios are data defined.
+85. Historical content remains separate from simulation code.
+86. Corrected research does not require redesigning the engine.
+87. Mods may add bookmarks, crises, countries, actors, and starting assumptions.
+88. Schemas validate relationships, dates, coordinates, sources, and required fields.
+89. Saves record their content and data versions.
+90. Updates do not silently alter existing campaign truth.
+91. Players control compatible migrations.
+92. The primary launch campaign is provisionally autumn 2025 pending research.
+93. Justice Mission 2025 is the first tutorial and crisis bookmark.
+94. January 2026 is the recommended Gulf crisis bookmark.
+95. July 2026 may become a later researched bookmark.
+96. Every bookmark loads one complete world.
+97. Alternate history begins when the clock starts.
+
+## Round 14: Gray zone competition, covert action, proxies, insurgency, sabotage, cyber operations, and political warfare
+
 Status: next discussion.
