@@ -1169,4 +1169,127 @@ History establishes the opening conditions. Simulation determines everything aft
 
 ## Round 14: Gray zone competition, covert action, proxies, insurgency, sabotage, cyber operations, and political warfare
 
+Status: approved.
+
+### Central rule
+
+Gray zone power comes from access, ambiguity, deniability, leverage, and gradual change rather than instant sabotage buttons.
+
+### Approved decisions
+
+1. Covert and gray zone actions use structured operation packages.
+2. Packages specify objective, effect, target system, sponsor, executor, access, resources, preparation, attribution, authority, risk, escalation, abort conditions, follow through, and exposure consequences.
+3. Operations progress through access, preparation, execution, exploitation, assessment, and containment.
+4. KillWeb models strategic requirements and consequences without procedural instructions for real violence or sabotage.
+5. Operations require appropriate access.
+6. Access may be political, social, technical, physical, financial, organizational, geographic, or informational.
+7. Access develops through intelligence, relationships, institutions, commerce, diaspora, criminal networks, cyber compromise, and local partners.
+8. Access may decay, become compromised, defect, misreport, or become controlled.
+9. Preparation consumes resources and time.
+10. Rushing increases failure, exposure, collateral consequences, and uncertainty.
+11. Every action has a true sponsor and separate perceived attribution for each observer.
+12. Attribution derives from evidence, intelligence, motive, capability, history, sources, deception, and politics.
+13. Deniability is continuous rather than binary.
+14. Governments may privately attribute while remaining publicly silent.
+15. Governments may accuse with weak confidence for strategic reasons.
+16. False attribution requires access, preparation, credibility, and a plausible alternative.
+17. Exposure may be immediate, delayed, partial, disputed, fabricated, or unresolved.
+18. Exposure affects diplomacy, sanctions, legitimacy, intelligence, retaliation, and future freedom.
+19. Technical success may become strategic failure.
+20. Repeated suspicious behavior erodes deniability.
+21. Gray zone actions include exercises, patrols, coast guards, maritime militias, air pressure, incremental occupation, legal claims, administration, economic coercion, political influence, cyber activity, information campaigns, proxy support, intelligence, and sabotage.
+22. Exercises consume real readiness and resources.
+23. Exercises may conceal mobilization, collect intelligence, rehearse, signal, normalize presence, or become coercion.
+24. Exercise zones use real geography and affect transport, insurance, trade, intelligence, and escalation.
+25. Exercises may gradually become quarantine or blockade.
+26. Coast guards and maritime militias remain distinct actors.
+27. Civilian vessels used by states retain ambiguous civilian status and behavior.
+28. Incremental control requires presence, enforcement, administration, logistics, communications, and acceptance.
+29. Gray zone action may exploit the gap between provocation and war.
+30. Defenders respond through presence, escort, documentation, law, sanctions, coalitions, exposure, and calibrated force.
+31. Foreign influence operates through real political and social networks.
+32. Instruments include media, diplomacy, finance, elite ties, lobbying, organizations, religion, culture, commerce, corruption, and covert support.
+33. Audiences retain existing beliefs, interests, grievances, identities, and sources.
+34. Influence cannot arbitrarily rewrite opinion.
+35. Credible messages aligned with conditions outperform implausible narratives.
+36. Election influence may affect turnout, trust, salience, coalitions, resources, and legitimacy without guaranteeing a winner.
+37. Political parties and candidates retain agency.
+38. Exposed foreign support may damage domestic legitimacy.
+39. Coups require plausible coalitions, leadership, institutional support, coercive access, communications, and expected acceptance.
+40. Foreign support cannot summon a coup without domestic foundations.
+41. Political assassination or leadership removal exists only as a high level strategic operation.
+42. Such operations require exceptional access and carry succession, martyrdom, retaliation, refusal, exposure, instability, and escalation risks.
+43. Removing a leader never guarantees the desired successor.
+44. Information operations specify objective, audience, narrative, messenger, channels, timing, resources, attribution, and desired behavior.
+45. Effects depend on credibility, conditions, evidence, repetition, reach, competition, trust, platforms, and legitimacy.
+46. Operations may seek persuasion, confusion, mobilization, demobilization, polarization, deterrence, reassurance, concealment, or agenda control.
+47. Contradictory messages undermine credibility.
+48. Fabrication risks exposure and long term trust damage.
+49. Censorship trades reduced penetration for rumor, distrust, economic cost, and reaction.
+50. Platforms, broadcasters, influencers, journalists, officials, religious institutions, and networks are distinct channels.
+51. Synthetic media changes evidence conditions without automatically convincing audiences.
+52. Provenance, verification, evidence, and trusted messengers provide defenses.
+53. Information affects politics, morale, alliances, recruitment, protest, diplomacy, and markets.
+54. Cyber operations require knowledge, vulnerability, access, persistence, compatibility, authority, and timing.
+55. Cyber access may be used, preserved, shared, sold, discovered, or lost.
+56. Cyber objectives include espionage, manipulation, disruption, degradation, deception, and destruction.
+57. Effects apply through actual system dependencies.
+58. Systems without dependency do not receive generic penalties.
+59. Effects may be temporary because of isolation, restoration, patching, replacement, and manual fallback.
+60. Valuable access may be preserved rather than used.
+61. Premature action may expose capabilities.
+62. Defenders use segmentation, redundancy, monitoring, recovery, authentication, training, intelligence, and replacement.
+63. Cyber uses strategic campaigns rather than hacking puzzles.
+64. Cyber remains deterministic without an external language model.
+65. Proxies are independent organizations.
+66. Proxies possess ideology, leadership, membership, cohesion, legitimacy, territory, intelligence, finance, weapons, logistics, relationships, and factions.
+67. Sponsors may provide finance, training, equipment, intelligence, diplomacy, sanctuary, media, or recognition.
+68. Support travels through real networks and may be intercepted, diverted, stolen, or exposed.
+69. Proxies may disobey, fragment, escalate, abuse, negotiate, or change sponsors.
+70. Dependence improves leverage while potentially reducing legitimacy.
+71. Insurgency requires grievance, organization, leadership, recruits, intelligence, logistics, geography, sanctuary, finance, and politics.
+72. Foreign support cannot manufacture unlimited domestic support.
+73. Separatism requires social and geographic foundations.
+74. Protest, underground organization, insurgency, civil war, and government are related without being automatic stages.
+75. Insurgents compete for support, intelligence, resources, security, governance, and legitimacy.
+76. Counterinsurgency includes security, intelligence, partnerships, reform, services, relief, negotiation, amnesty, policing, and force.
+77. Repression may suppress activity while increasing grievance, radicalization, pressure, fracture, and recruitment.
+78. Civilian harm affects legitimacy, information, recruitment, access, diplomacy, and support.
+79. Proxy wars may continue after sponsors seek deescalation.
+80. Sabotage targets capabilities and dependencies rather than generic infrastructure points.
+81. Strategic targets may include transportation, energy, communications, logistics, industry, command, and readiness.
+82. Targeting remains at strategic entity or network level without procedural methods.
+83. Effects depend on access, protection, redundancy, timing, repair, attribution, and importance.
+84. Damage may be partial, delayed, temporary, misdirected, contained, or excessive.
+85. Networks may reroute around damage.
+86. Repetition increases protection and counterintelligence pressure.
+87. Disruption may affect civilians, allies, neutrals, markets, and the environment.
+88. Attacking shared infrastructure may unite countries against the sponsor.
+89. Criminal organizations may smuggle, finance, corrupt, provide access, collect intelligence, or mediate while retaining independent profit motives.
+90. Commercial firms may cooperate, resist, comply, or become unknowingly exploited.
+91. Front organizations require real finance, people, legal existence, communications, and relationships.
+92. Financial flows create evidence.
+93. Sanctions, enforcement, corruption, regulation, and alternative payments shape covert finance.
+94. Counterintelligence protects actors, institutions, communications, facilities, data, supply chains, and politics.
+95. Defenders may detect preparation before identifying intent or sponsor.
+96. Defenders may preserve compromised operations for observation.
+97. Exposure may deter while revealing sources.
+98. Defensive options include resilience, law enforcement, intelligence, cyber defense, reform, verification, diplomacy, sanctions, deception, and retaliation.
+99. No universal defense defeats every method.
+100. Repression may close one vulnerability while opening another.
+101. The map remains the primary interface.
+102. Networks, access, influence, risk, attribution, and activity appear only through available intelligence.
+103. Operations display requirements, likely outcomes, uncertainty, time, exposure, escalation, and consequences.
+104. Progress reflects access and preparation rather than a decorative timer.
+105. Staff may propose operations in response to objectives.
+106. Players constrain targets, methods, civilian risk, attribution, escalation, geography, and partners.
+107. Reckless strategies remain available where authority permits.
+108. KillWeb has no universal morality meter.
+109. Consequences emerge through casualties, institutions, law, politics, legitimacy, alliances, retaliation, economics, and history.
+110. Artificial intelligence uses the same rules.
+111. Every outcome retains an inspectable causal record.
+112. Gray zone competition remains integrated with conventional forces, diplomacy, economics, intelligence, politics, and society.
+
+## Round 15: Player experience, information architecture, progressive disclosure, map workflows, accessibility, and clarity
+
 Status: next discussion.
