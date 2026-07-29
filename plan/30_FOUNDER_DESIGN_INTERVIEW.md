@@ -1682,4 +1682,216 @@ Space capability comes from physical satellites, orbital geometry, ground infras
 
 ## Round 18: Gameplay pacing, fun, abstraction, rewards, failure, recovery, asymmetry, balance, and session structure
 
+Status: approved.
+
+### Central rule
+
+KillWeb simulates enormous complexity without requiring the player to operate
+enormous complexity.
+
+The governing doctrine is deep simulation with arcade interaction. Complexity
+belongs in the world state. Simplicity, clarity, responsiveness, and expressive
+power belong in the controls.
+
+The player spends time making decisions, not feeding the simulation.
+
+### Approved decisions
+
+1. Gameplay operates across immediate, session, and campaign horizons.
+2. The immediate loop takes seconds or minutes: notice, understand, choose or
+   delegate, commit, receive feedback, and adapt.
+3. The session loop takes roughly thirty minutes to several hours: establish an
+   objective, prepare, act, respond, and resolve or transform the situation.
+4. The campaign loop spans many sessions: build institutions, national capacity,
+   alliances, society, technology, and an alternate history.
+5. Detailed actions connect upward to operational and national objectives.
+6. Large objectives produce legible immediate decisions rather than vague
+   progress bars.
+7. A mechanic earns complexity only when it creates meaningful choice,
+   dependency, counterplay, uncertainty, player expression, consequence, or a
+   compelling fantasy.
+8. Detail without meaningful choice is aggregated.
+9. Repetitive implementation is delegated by default.
+10. Good play rewards judgment, preparation, prioritization, and adaptation
+    rather than click speed.
+11. Major choices provide credible alternatives and visible opportunity costs.
+12. The player represents strategic will rather than a universal administrator.
+13. The player may move freely among military command, diplomacy, economic
+    planning, intelligence, reform, industry, science, and technology.
+14. Every major portfolio supports three control levels: full delegation,
+    strategic intent with review, and detailed direct control.
+15. Guided strategic control is the normal default.
+16. Detailed control is an optional temporary spotlight, not a permanent job.
+17. Delegation remains competitive when institutions, staff, information, and
+    resources are strong.
+18. Direct control remains valuable when the player wants precision, accepts the
+    attention cost, or distrusts staff.
+19. Small countries remain interesting through specialization, geography,
+    diplomacy, finance, technology, intelligence, legitimacy, alliances, and
+    asymmetric strategy.
+20. Great powers gain capacity while also acquiring commitments, dependencies,
+    coordination burdens, and exposure.
+21. Historical asymmetry remains intact. Balance does not require equal countries.
+22. A crisis may develop through warning, interpretation, preparation,
+    bargaining, commitment, action, adaptation, resolution or escalation, and
+    aftermath.
+23. Not every crisis must use every phase.
+24. Quiet periods remain playable and may advance safely at high speed.
+25. Important events slow or pause according to the selected pause policy.
+26. The simulation does not manufacture constant disasters merely to occupy the
+    player.
+27. Simultaneous crises are grouped into coherent situations instead of becoming
+    popup spam.
+28. Tactical speed permits observation of detailed action.
+29. Strategic speed advances days or weeks without concealing critical decisions.
+30. Every active object, route, project, market, front, and relevant process
+    visibly advances when game speed increases.
+31. Preparation creates anticipation and counterplay rather than passive waiting.
+32. During preparation the player may improve intelligence, change posture,
+    negotiate, protect dependencies, allocate reserves, create contingencies,
+    deceive, cancel, or revise.
+33. Long projects expose strategically meaningful milestones.
+34. Routine milestones enter briefings instead of interrupting play.
+35. Delays explain their causes and available remedies.
+36. KillWeb has no universal player experience level.
+37. Progress comes from real capabilities such as institutions, personnel,
+    alliances, intelligence, infrastructure, industry, trust, technology,
+    experienced formations, access, legitimacy, and reliable plans.
+38. Rewards primarily create new options rather than arbitrary percentage
+    bonuses.
+39. Named actors, units, facilities, companies, institutions, and projects retain
+    history.
+40. Achievements are optional and never grant campaign power.
+41. Prestige matters only through simulated political, diplomatic, social, or
+    economic effects.
+42. The game never rewards unnecessary destruction merely because it occurred.
+43. Success visibly changes geography, behavior, capability, relationships,
+    objectives, and available choices.
+44. Every important operation receives a concise assessment with an optional deep
+    review.
+45. Important success is acknowledged without turning serious events into arcade
+    celebration.
+46. Civilian catastrophe, atrocity, and catastrophic weapon use are never
+    celebrated.
+47. Most failure is partial rather than binary.
+48. Failure may appear as delay, exposure, detection, degradation, redirection,
+    political obstruction, tactical defeat, or strategic counterproductivity.
+49. Failure creates new decisions instead of only removing play.
+50. Losing an operation, government, war, alliance, territory, or institution does
+    not automatically end the campaign.
+51. Recovery may use reform, rebuilding, negotiation, mobilization, retreat,
+    replacement, alliances, changed objectives, or a successor political project.
+52. Some mistakes remain genuinely irreversible.
+53. The interface warns about risks the player could reasonably know without
+    revealing hidden outcomes.
+54. Normal campaigns permit ordinary saves and reloads.
+55. An optional strict campaign mode may restrict manual reloads without changing
+    simulation fairness.
+56. Balance means interesting decisions, meaningful asymmetry, and credible
+    counters rather than artificial equality.
+57. Units and countries are never made equal through hidden normalization.
+58. Power comes from actual capability, position, access, preparation, and
+    organization.
+59. Strong strategies consume scarce resources, create exposure, produce
+    dependencies, impose consequences, or invite counters.
+60. Dominant strategies are controlled through causality and counterplay rather
+    than arbitrary restrictions.
+61. Repetition allows opponents to observe, learn, prepare, and adapt.
+62. Concentrating power in one theater creates risks and opportunities elsewhere.
+63. Military expansion burdens finance, industry, personnel, logistics,
+    maintenance, readiness, diplomacy, and society.
+64. Economic optimization may create military, political, social, geographic, or
+    resilience weaknesses.
+65. Repression may create immediate control while increasing long term
+    instability, resistance, isolation, or institutional decay.
+66. Excess delegation reduces oversight and may permit drift, error, capture, or
+    disloyalty.
+67. Excess direct control overwhelms both the player and the simulated command
+    system.
+68. There is no universal build order.
+69. Countries support multiple viable strategic identities grounded in their
+    circumstances.
+70. Automated testing searches for dominant openings, passive equilibria,
+    unavoidable tactics, useless systems, infinite loops, and impossible
+    counters.
+71. Surprise comes from incomplete information, hidden plans, interacting systems,
+    uncertainty, deception, and unintended consequences.
+72. The game never changes rules without explanation merely to create surprise.
+73. Random events require causes and bounded outcomes.
+74. Players may investigate outcomes through intelligence, reports, history, and
+    system explanations.
+75. Hidden information remains protected until collected or reasonably inferred.
+76. Artificial intelligence countries follow the same simulation rules.
+77. Difficulty improves planning, coordination, prioritization, and adaptation
+    without hidden rubber banding.
+78. A short session supports one meaningful decision and a safe save point.
+79. A medium session supports one operational, political, diplomatic, or economic
+    phase.
+80. A long session may resolve or substantially transform a crisis.
+81. Campaigns are designed to span many sessions.
+82. A returning player receives a concise briefing containing objectives,
+    important changes, active plans, blocked work, approaching decisions,
+    intelligence, and risk.
+83. The returning player is not forced to review a complete event transcript.
+84. Autosaves occur at deterministic and recoverable boundaries.
+85. Campaigns save and load offline.
+86. Players may name saves, objectives, plans, formations, operations, projects,
+    and alternate historical eras.
+87. Campaign history is searchable.
+88. Scale compresses routine control. Ships become task forces, factories become
+    industrial portfolios, shipments become corridors, and reports become
+    decision relevant findings.
+89. Aggregation preserves underlying quantities, identities, dependencies, and
+    causal effects.
+90. Endgame becomes broader rather than slower.
+91. Greater power unlocks better organizations, doctrines, templates, standing
+    orders, automation, and command tools instead of merely creating more clicks.
+92. Routine events enter briefings.
+93. The game interrupts the player only for genuine decisions, dangerous
+    exceptions, and configured thresholds.
+94. The basic repeatable loop is see a problem, understand the important
+    tradeoffs, choose an objective, commit resources, observe the world, and
+    adapt.
+95. A default kill chain asks for the target, desired effect, timing, acceptable
+    risk, and authorization.
+96. The deterministic planning engine proposes a real package containing named
+    platforms, munitions, sensors, support assets, bases, routes, timing,
+    dependencies, conflicts, and expected risk.
+97. The player may authorize the proposed package, compare alternatives, edit it,
+    or enter the detailed Maven workbench.
+98. Delegated staff may execute routine kill chains only within explicit doctrine,
+    authority, risk, and review rules.
+99. Arcade abstraction never becomes the hand of God.
+100. Every important effect explains which asset produced it, where it originated,
+     what it consumed, what supported it, why it succeeded or failed, and what
+     could have countered it.
+101. Every proposed feature must answer what decision it creates, why the decision
+     is fun, what is abstracted, what information is provided, which alternatives
+     and counters exist, how the result is observed, whether routine use can be
+     delegated, how it connects to the wider simulation, and whether it justifies
+     its cognitive and computational cost.
+102. Features that fail this test are redesigned, aggregated, or removed.
+103. Fidelity serves gameplay rather than replacing gameplay.
+104. KillWeb must be easy to begin, difficult to master, and capable of revealing
+     new strategic depth across years of play.
+
+### Fun and micromanagement doctrine
+
+Plain fun is a release requirement rather than an optional layer of polish.
+
+KillWeb may selectively use arcade conventions wherever they make complicated
+systems fast, legible, tactile, and satisfying. Arcade interaction does not mean
+false causality, arbitrary outcomes, or shallow simulation. It means that the
+player can understand a choice quickly, act without clerical labor, receive
+immediate feedback, and feel the world respond.
+
+A system has failed when becoming more powerful creates proportionally more
+routine clicking. Increasing scale should change the level of command.
+
+The game should let a player personally manage one decisive mission, negotiation,
+battle, reform, or industrial program and then return to national command without
+requiring the same detail everywhere else.
+
+## Round 19: Multiplayer, cooperative command, competitive campaigns, pause and time synchronization, secrecy, observers, and deterministic networking
+
 Status: next discussion.
