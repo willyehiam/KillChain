@@ -1292,4 +1292,143 @@ Gray zone power comes from access, ambiguity, deniability, leverage, and gradual
 
 ## Round 15: Player experience, information architecture, progressive disclosure, map workflows, accessibility, and clarity
 
+Status: approved.
+
+### Central rule
+
+Complexity belongs in the simulation. Clarity belongs in the interface. This round defines usability while reserving final visual styling for the later design stage.
+
+### Approved decisions
+
+1. The world map is the base screen.
+2. Nearly every workflow opens over the map.
+3. The map never becomes a decorative panel beside permanent dashboards.
+4. Selection opens contextual information connected to geography.
+5. Deep workbenches preserve geographic context.
+6. Closing work restores map position, zoom, overlays, time, and selection.
+7. Every portfolio uses the same underlying map.
+8. Portfolio changes alter overlays, tools, recommendations, and context rather than loading unrelated applications.
+9. Global search locates countries, actors, units, facilities, cities, objectives, operations, technologies, companies, and events.
+10. Search results focus the map and open context.
+11. Basic and expert play use the same simulation.
+12. Basic play emphasizes outcomes, tradeoffs, recommendations, and necessary decisions.
+13. Expert play reveals assumptions, dependencies, evidence, allocation, formulas, schedules, and subordinate controls.
+14. Complexity appears through drill down.
+15. Mechanics are not permanently hidden behind arbitrary progression.
+16. Experts may expose all controls immediately.
+17. Portfolios support direct control, supervised delegation, and full delegation.
+18. Delegation may change at any time.
+19. Staff summarize routine work and elevate exceptions.
+20. Detail appears only when it creates meaningful choice.
+21. Major workflows follow select, understand, define outcome, review plans, compare, commit, observe, assess, and adapt.
+22. Similar actions use consistent placement, language, controls, and confirmation.
+23. Buttons use concrete verbs.
+24. Ambiguous labels are avoided when results can be named.
+25. Every action identifies its performer.
+26. Military actions identify delivering platform, capability, support, origin, route, timing, authority, and expected effect.
+27. Economic actions identify resources, time, sectors, and tradeoffs.
+28. Diplomatic actions identify demand, offer, leverage, response, and consequences.
+29. Covert actions identify access, preparation, attribution, escalation, and responsible organization.
+30. No action occurs through an unexplained generic deduction.
+31. Every screen answers what is happening, why it matters, what is uncertain, what can be done, and what inaction causes.
+32. Information is ordered by decision relevance.
+33. Primary decisions receive strongest emphasis.
+34. Detail remains accessible without competing for attention.
+35. Current state, history, prediction, recommendation, and uncertainty remain distinct.
+36. Simulation truth never leaks into player knowledge.
+37. Observations, inferences, estimates, and assumptions use distinct treatments.
+38. Stale information displays age and uncertainty.
+39. Percentages label exactly what they measure.
+40. Metrics provide definitions, causes, and changes.
+41. Summaries do not conceal failed requirements or contradictions.
+42. Recommendations explain what would change them.
+43. Objectives organize strategy, programs, theaters, operations, tasks, resources, and outcomes.
+44. Objective views show outcome, authority, plan, resources, dependencies, progress, uncertainty, risks, developments, and decisions.
+45. Plans support direct comparison.
+46. Comparisons emphasize meaningful differences.
+47. Assumptions remain inspectable.
+48. Recommendations explain preferences.
+49. Commitment distinguishes reversible preparation from irreversible action.
+50. Cancellation states recoverable resources and remaining consequences.
+51. Time controls remain visible and consistent.
+52. Pause is immediate.
+53. Speed changes the real simulation.
+54. Mobile objects and active processes visibly advance at every speed.
+55. Critical events pause according to policy.
+56. Pauses identify the trigger and required decision.
+57. Attention levels remain information, recommendation, decision, and existential.
+58. Related alerts group by crisis, objective, theater, or portfolio.
+59. Routine updates enter briefings.
+60. Alerts anchor to geography and objects.
+61. Deadlines display remaining time and default outcome.
+62. Alerts never cover essential controls.
+63. Players define alert and pause rules.
+64. Zoom controls objects and aggregation.
+65. Units combine into formations at strategic zoom.
+66. Civilian movement combines into flows and density.
+67. Labels avoid collision and prioritize relevance.
+68. Symbols remain legible across basemaps.
+69. Affiliation never relies on color alone.
+70. Icons communicate domain and class.
+71. Color semantics remain consistent.
+72. Motion, heading, route, posture, and activity appear contextually.
+73. Uncertainty areas differ from ranges, borders, and control.
+74. Friendly, hostile, neutral, civilian, unknown, and disputed objects are distinct.
+75. Selection uses clear emphasis without excessive effects.
+76. Clustering never hides urgency.
+77. Aggregates reveal contents through hover and selection.
+78. Overlays provide legends, opacity, and visible active state.
+79. Incompatible overlays cannot produce unreadable noise.
+80. Body text uses a legible interface typeface.
+81. Monospace is reserved for coordinates, identifiers, time codes, technical values, and selected labels.
+82. Long text does not use thin technical monospace.
+83. Default text supports sustained desktop reading.
+84. Critical text is never tiny or low contrast.
+85. Text and controls meet accessible contrast.
+86. Dense tables rely on hierarchy rather than microscopic typography.
+87. Text wraps safely.
+88. Long names, translations, extreme values, and missing data receive testing.
+89. Normal panels have no horizontal overflow.
+90. Truncated technical values remain fully accessible.
+91. Visual direction combines Palantir information clarity with Brass Hands polish and restraint.
+92. KillWeb does not copy another interface one to one.
+93. The system feels credible, modern, cinematic, and purposeful.
+94. Technical style never overrides usability.
+95. Glitch, surveillance, terminal, and classified references remain atmospheric accents.
+96. Decorative telemetry, scan lines, flicker, noise, and tiny labels are avoided.
+97. Persistent visuals must justify their cost through state, action, navigation, hierarchy, or valuable atmosphere.
+98. The later design stage defines exact typography, color, spacing, motion, materials, icons, and components.
+99. Core gameplay supports mouse and keyboard.
+100. Frequent commands receive discoverable shortcuts.
+101. Keyboard focus is visible.
+102. Color vision alternatives preserve meaning.
+103. Reduced motion preserves meaningful simulation feedback.
+104. Interface scale is adjustable.
+105. Tooltips explain terminology.
+106. Acronyms expand and remain searchable.
+107. Accessible support covers menus, panels, tables, decisions, alerts, and map selections where feasible.
+108. Localization supports expansion and naming conventions.
+109. Accessibility does not alter difficulty unless separately selected.
+110. Interactions provide immediate acknowledgment.
+111. Operations distinguish queued, preparing, active, delayed, blocked, completed, failed, and canceled.
+112. Blocked actions state exact causes.
+113. Live updates do not unexpectedly reorder panels or lose selection.
+114. The map remains smooth while simulation runs.
+115. Expensive work stays off the interface thread.
+116. Loading, empty, partial, unavailable, error, and dense states receive intentional design.
+117. Network loss does not prevent local campaign play.
+118. Save state remains clear without intrusive interruption.
+119. Every interface surface receives interaction testing.
+120. Extreme states receive dedicated testing.
+121. Visual regression covers Chrome, Firefox, Safari, and major desktop resolutions.
+122. Layout testing covers laptops, desktops, ultrawides, and high resolution displays.
+123. Automation detects overflow, clipping, contrast failure, unreachable controls, and modal stacking.
+124. Screenshot review accompanies major interface changes.
+125. User tests include experts, new players, enthusiasts, and players unfamiliar with military language.
+126. Simulation functionality alone does not complete a feature.
+127. A mechanic is complete when players can understand, control, observe, and assess it.
+128. The default interface feels like a game rather than administrative work.
+
+## Round 16: Strategic deterrence, nuclear forces, chemical and biological weapons, missile defense, civil defense, arms control, and catastrophic escalation
+
 Status: next discussion.
