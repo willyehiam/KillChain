@@ -2171,4 +2171,196 @@ These layers remain separate.
 
 ## Round 21: Launch scope, first playable campaign, vertical slice, development order, and deliberate exclusions
 
+Status: approved with war entry amendment.
+
+### Central rule
+
+The first playable version proves the complete KillWeb fantasy at limited
+geographic detail. It cannot be a broad collection of shallow systems.
+
+Possessing a military capability never grants automatic political or legal
+authority to use it.
+
+### Starting world
+
+1. The first bookmark begins in late summer or early fall 2025.
+2. The exact starting date is resolved during research.
+3. The entire world exists and continues advancing.
+4. Every country receives macro simulation.
+5. The Taiwan Strait and surrounding Indo Pacific receive the first operational
+   and detailed simulation.
+6. The first playable countries are the United States, China, and Taiwan.
+7. Japan, the Philippines, South Korea, North Korea, Russia, ASEAN members, NATO,
+   Iran, Israel, Ukraine, and other actors continue under artificial intelligence.
+8. Justice Mission 2025 becomes the first major escalating event chain when its
+   causal conditions remain present.
+9. Other global crises remain active at macro resolution and influence the Indo
+   Pacific through energy, trade, diplomacy, military commitments, intelligence,
+   and political attention.
+10. The campaign does not end automatically when Taiwan is defended, blockaded,
+    occupied, or politically resolved.
+
+### Required playable systems
+
+11. A real world basemap supports global panning, zooming, province geography,
+    strategic overlays, and orbital viewing.
+12. Military and representative civilian traffic visibly moves.
+13. Zooming changes formations into individual assets where appropriate.
+14. The global clock continues when the player does nothing.
+15. Artificial intelligence countries pursue objectives, react, prepare, and
+    adapt.
+16. The player can govern economy, industry, politics, diplomacy, science,
+    intelligence, logistics, military forces, and information activity at useful
+    initial depth.
+17. Every portfolio supports delegation.
+18. The opening ten minutes teach the basic loop through an escalating Chinese
+    exercise and blockade risk.
+19. The player can complete a full kill chain through detection, classification,
+    custody, effect selection, package comparison, authorization, execution,
+    assessment, and adaptation.
+20. Every package identifies its delivering platform, weapon, support assets,
+    origin, route, timing, logistics, risk, and authority.
+21. Destroyed or disabled assets behave accordingly.
+22. No mission appears from nowhere or executes through the hand of God.
+23. Fog of war, stale intelligence, decoys, deception, collateral risk, and
+    uncertain assessment materially affect decisions.
+24. Diplomacy and economic strategy offer credible alternatives to immediate
+    combat.
+25. China can pursue blockade, coercion, isolation, information warfare, economic
+    pressure, deception, limited attack, or invasion.
+26. Taiwan can pursue resilience, mobilization, diplomacy, deception, denial,
+    continuity, information strategy, and asymmetric defense.
+27. The United States can pursue deterrence, coalition building, sanctions,
+    logistics, intelligence support, blockade breaking, limited intervention, or
+    wider war.
+
+### War entry and authority
+
+28. No playable country can begin attacking merely because the player selected a
+    military unit.
+29. Military action requires a valid chain connecting political intent, domestic
+    authority, military authority, orders, rules of engagement, capable forces,
+    and executable plans.
+30. KillWeb models each country's actual constitutional, party, legislative,
+    executive, military, alliance, and emergency authority at an appropriate
+    level of abstraction.
+31. War entry is not controlled by one generic war support bar.
+32. Relevant conditions include public acceptance, legislative authority, elite
+    cohesion, institutional compliance, military confidence, allied legitimacy,
+    legal justification, narrative credibility, expected cost, casualty
+    tolerance, and perceived necessity.
+33. The interface may summarize freedom of action while preserving these
+    underlying causes.
+34. The game distinguishes actions that are authorized, contested, unlawful but
+    executable, institutionally blocked, and physically impossible.
+35. The player may pursue a deeply unpopular war when the governing system allows
+    it.
+36. An unpopular war risks protest, electoral defeat, resignations, legislative
+    obstruction, budget restrictions, refusal, leaks, unrest, coalition fracture,
+    legitimacy loss, recruitment problems, and regime instability.
+37. Political resistance creates strategic consequences without turning gameplay
+    into procedural paperwork.
+38. Prewar gameplay includes building a public case, sharing intelligence,
+    briefing institutions, consulting allies, negotiating commitments, adjusting
+    posture, preparing forces, defining objectives, obtaining authorization, and
+    establishing rules of engagement.
+39. These actions use clear strategic decisions rather than simulated meetings,
+    forms, or line item appropriations.
+40. Support grows or collapses through events, evidence, leadership credibility,
+    media, casualties, economic effects, allied behavior, intelligence,
+    historical memory, and opponent actions.
+41. Fabricated or manipulated justification may be attempted where the player's
+    institutions and capabilities permit it.
+42. Exposure of fabricated justification damages trust, legitimacy, alliances,
+    institutions, and future credibility.
+43. Defensive obligations lower the political threshold for intervention because
+    the government previously accepted a commitment.
+44. An obligation never guarantees automatic participation.
+45. Alliance members still decide whether an event qualifies, what assistance is
+    required, and which risks they will accept.
+46. Forming a defense commitment before a crisis requires diplomacy and domestic
+    acceptance while also affecting deterrence and escalation.
+47. The United States begins with its historically supported Taiwan policy rather
+    than an invented automatic mutual defense obligation.
+48. A United States player may pursue a clearer defense commitment, legislative
+    authorization, coalition mandate, protection of citizens or forces, limited
+    emergency action, or formal war.
+49. Different legal pathways authorize different targets, durations, force
+    levels, budgets, and geographic scopes.
+50. An attack on United States forces may rapidly expand authority and public
+    support without automatically producing unlimited war.
+51. China follows its own party, state, Central Military Commission, theater
+    command, mobilization, and political authority structures rather than a
+    democratic declaration model.
+52. China may publicly frame action as an exercise, quarantine, law enforcement
+    operation, blockade, anti separatist action, special military operation, or
+    war.
+53. The label chosen for an operation affects narrative and diplomacy but does not
+    erase its physical, economic, domestic, or international consequences.
+54. Chinese nationalist support, elite cohesion, economic confidence, military
+    performance, casualties, sanctions, and perceived legitimacy can strengthen
+    or weaken freedom of action.
+55. Taiwan receives broad defensive authority after a confirmed attack but faces
+    a much higher threshold for preventive or escalatory action.
+56. Uncertain attribution may delay authorization or create disagreement.
+57. Covert, cyber, intelligence, information, and gray zone actions use separate
+    authorities and attribution risks.
+58. Covert authority does not permit unlimited conventional warfare.
+59. Discovery may force public authorization, termination, denial, escalation, or
+    political crisis.
+60. Rules of engagement define permitted targets, geography, identification
+    standards, self defense, collateral tolerance, and escalation boundaries.
+61. Commanders and institutions may delay, narrow, reinterpret, or refuse orders
+    when authority, legality, feasibility, or loyalty is contested.
+62. Emergency powers shorten decision paths but create institutional and political
+    costs.
+63. Formal declarations are one possible legal form rather than a universal
+    requirement for every state.
+64. The crucial mechanic is obtaining and maintaining authority for a defined
+    scope of force.
+65. Authorization may expire, narrow, expand, or be revoked as conditions change.
+66. The player receives clear explanations of what currently prevents an action
+    and which political or strategic steps could change that condition.
+67. A separate unrestricted sandbox may relax political locks for experimentation,
+    but the standard campaign preserves consequences and institutional reality.
+
+### Deliberate first version exclusions
+
+68. The first playable version does not provide detailed control of eighty
+    countries.
+69. It does not include multiplayer.
+70. It does not include public mod distribution.
+71. It does not depend on live data feeds.
+72. It does not use a runtime language model.
+73. It does not represent every civilian, transaction, factory, vehicle,
+    electrical substation, or vessel individually.
+74. It does not simulate tactical infantry combat like a shooter.
+75. It does not become a flight simulator or naval engineering simulator.
+76. Weather remains abstract unless research proves it creates essential
+    decisions.
+77. Mobile and controller interfaces do not delay the desktop experience.
+78. Decorative dashboards do not substitute for playable mechanics.
+79. Countries outside the detailed theater are never frozen, but their fine
+    operational detail may remain aggregated.
+
+### Completion standard
+
+80. A new player understands the basic loop within ten minutes.
+81. A first campaign supports several hours of meaningful play and multiple
+    sessions.
+82. The map feels alive at every simulation speed.
+83. Every visible control performs a real action.
+84. Every important outcome has a causal explanation.
+85. Delegation prevents endgame click inflation.
+86. Saves, deterministic replay, fog of war, and resource conservation work
+    correctly.
+87. The player can pursue strategies not anticipated by the scenario author.
+88. Artificial intelligence adapts without cheating or following a fixed script.
+89. The interface remains readable under ordinary and extreme states.
+90. The game reaches stable performance on a normal modern desktop browser.
+91. The slice is not complete until it is genuinely fun, polished,
+    understandable, and replayable.
+
+## Round 22: Final contradiction audit, unresolved decisions, game constitution approval, and brainstorming closure
+
 Status: next discussion.
