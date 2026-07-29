@@ -1894,4 +1894,135 @@ requiring the same detail everywhere else.
 
 ## Round 19: Multiplayer, cooperative command, competitive campaigns, pause and time synchronization, secrecy, observers, and deterministic networking
 
+Status: approved.
+
+### Central rule
+
+Multiplayer is the same deterministic world simulation viewed through multiple
+authorized perspectives. It is not a separate balance mode.
+
+KillWeb builds and validates an excellent single player experience first. The
+simulation architecture must nevertheless preserve the authority, determinism,
+knowledge separation, command logging, and synchronization boundaries required
+for later multiplayer implementation.
+
+### Approved product direction
+
+1. Single player is the first product priority.
+2. The complete single player campaign functions offline.
+3. Multiplayer does not delay the first excellent single player vertical slice.
+4. Early architecture must not make later multiplayer prohibitively expensive or
+   require replacement of the simulation kernel.
+5. Multiplayer is a future major feature rather than a launch dependency.
+6. Future modes may include multiple players governing one country, players
+   governing allied countries, competitive countries, observers, and referees.
+7. Cooperative national command should eventually allow friends to divide
+   responsibility across military, economy, diplomacy, intelligence, domestic
+   affairs, science, industry, and theaters.
+8. Roles are flexible portfolios rather than permanent character classes.
+9. One player may temporarily assume another portfolio or return it to
+   deterministic staff automation.
+10. A campaign never requires every playable country to have a human participant.
+
+### Shared command
+
+11. Players share an objective board, national priorities, plans, warnings,
+    campaign history, and resource commitments according to their authority.
+12. Authority rules determine who may draft, approve, modify, cancel, or execute
+    an action.
+13. Conflicting orders are surfaced before execution rather than silently
+    overwriting one another.
+14. Important changes record who made them, what changed, and which resources
+    were committed.
+15. One player may control a detailed operation while another manages the wider
+    theater or national strategy.
+16. Portfolio boundaries are configurable.
+17. Cooperative groups may use unrestricted shared control or formal command
+    responsibilities.
+18. A disconnected portfolio continues under its existing standing orders and
+    delegation policy.
+
+### Time control
+
+19. The world has one shared simulation clock.
+20. Multiplayer pause policy is independent from difficulty.
+21. Supported policies may include unlimited cooperative pause, host moderated
+    pause, consensus speed changes, majority speed changes, structured
+    competitive decision windows, and no automatic pause except existential
+    events.
+22. Critical decisions display their deadline and default behavior.
+23. Players may inspect maps, reports, history, and plans while time continues.
+24. Draft plans do not affect the world until submitted.
+25. Submitted commands receive a deterministic simulation timestamp.
+26. No player may secretly accelerate their portion of the world.
+27. Competitive pause rules prevent griefing without forcing blind catastrophic
+    decisions.
+28. Campaigns may be saved, closed, and resumed across scheduled sessions.
+
+### Fog of war and secrecy
+
+29. Every country retains its own knowledge state.
+30. Human players only see information their country has collected, inferred,
+    received, or been authorized to access.
+31. Allied intelligence sharing follows agreements, classifications,
+    interoperability, trust, and dissemination rules.
+32. Hidden world truth remains on the authoritative host during competitive play.
+33. Human diplomacy does not automatically reveal hidden simulation information.
+34. Observers may receive delayed, filtered, or public information.
+35. Omniscient observers and referees are disclosed to all participants.
+36. Campaign settings determine whether complete truth becomes available during
+    final review.
+
+### Deterministic architecture
+
+37. Later multiplayer uses an authoritative simulation host or dedicated server.
+38. Clients send structured commands rather than authoritative outcomes.
+39. The simulation uses fixed ticks, seeded randomness, canonical command
+    ordering, and deterministic calculations.
+40. Periodic checksums detect divergence.
+41. State snapshots and the complete command log permit reconnection and recovery.
+42. Replays reconstruct the same campaign from initial state, commands, seeds,
+    and content versions.
+43. Network delay cannot duplicate orders, resources, attacks, or construction.
+44. Clients interpolate visual movement independently from simulation authority.
+45. WebGPU and WebGL render the world but do not determine authoritative outcomes.
+46. Multiplayer requires matching game data, simulation rules, scenario versions,
+    and mod manifests.
+47. Desynchronization creates a diagnostic record rather than silently corrupting
+    a campaign.
+
+### Competitive play
+
+48. Competitive countries remain historically asymmetric.
+49. Difficulty never gives individual human players secret combat or economic
+    bonuses.
+50. Formal agreements may be recorded and enforced by game systems.
+51. Informal promises remain possible and may be broken.
+52. Betrayal creates political, diplomatic, military, intelligence, and
+    reputational consequences rather than an artificial prohibition.
+53. A defeated player may continue through occupation, resistance, exile, civil
+    conflict, or a successor government when the campaign permits it.
+54. If a player leaves, deterministic country artificial intelligence assumes
+    control using existing objectives and delegation rules.
+55. Replacement players may join an existing country after receiving a campaign
+    briefing.
+56. Referee interventions remain visible in the audit history.
+
+### Eventual scope target
+
+57. The first cooperative implementation should target two to four players
+    sharing one country or alliance.
+58. The first competitive implementation should target two to eight human
+    controlled countries.
+59. The architecture may permit later expansion without promising eighty
+    simultaneous human players.
+60. Artificial intelligence continues operating every unclaimed country under the
+    same rules.
+61. Multiplayer scale must not reduce simulation fidelity merely because humans
+    do not control most countries.
+62. KillWeb never requires a permanent online service for local single player
+    campaigns.
+
+## Round 20: Data architecture, modding, scenario authoring, public sources, content versioning, and the creator ecosystem
+
 Status: next discussion.
