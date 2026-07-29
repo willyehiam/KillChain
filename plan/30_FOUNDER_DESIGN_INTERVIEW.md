@@ -1555,4 +1555,131 @@ Nuclear weapons are political systems backed by military capabilities rather tha
 
 ## Round 17: Space, orbital mechanics, satellites, launch capacity, commercial constellations, counterspace warfare, debris, and resilience
 
+Status: approved.
+
+### Central rule
+
+Space capability comes from physical satellites, orbital geometry, ground infrastructure, launch capacity, industrial supply chains, and political access rather than country bonuses.
+
+### Approved decisions
+
+1. Space is a continuous physical layer above the globe.
+2. Players zoom from Earth into orbital space.
+3. Satellites move along real trajectories as time advances.
+4. Public satellites begin with defensible orbital data.
+5. Classified systems use uncertain orbits and missions.
+6. Important satellites remain individually persistent.
+7. Large constellations may aggregate while preserving relevant individual objects.
+8. Rendering never creates capacity.
+9. Orbital regimes include low, medium, geostationary, highly elliptical, and emerging cislunar space.
+10. Satellites cannot hover or move arbitrarily.
+11. Maneuvers require propulsion, propellant, time, geometry, authority, and tracking.
+12. Maneuvers change coverage, conjunctions, lifetime, and availability.
+13. Satellites retain launch, ownership, operation, mission, payload, orbit, health, power, communications, processing, propellant, lifetime, and dependencies.
+14. Space objects visibly move at every speed.
+15. Services include navigation, timing, communications, warning, imagery, signals, weather, monitoring, awareness, science, and connectivity.
+16. Services depend on coverage, geometry, revisit, bandwidth, latency, processing, links, and user equipment.
+17. Invalid geometry cannot provide immediate coverage.
+18. Persistent service generally requires constellations.
+19. Imaging requires tasking, opportunity, downlink, processing, exploitation, and dissemination.
+20. Communications have finite beams, terminals, gateways, spectrum, and capacity.
+21. Navigation depends on geometry, timing, control, receivers, and integrity.
+22. Warning depends on coverage, health, processing, links, and interpretation.
+23. Space weather appears when strategically relevant.
+24. Service loss affects only dependent systems without alternatives.
+25. Forces may fall back to degraded terrestrial alternatives.
+26. Space depends on ground stations, control, data centers, processing, launch, tracking, and communications.
+27. Public ground infrastructure uses real locations.
+28. Foreign station access depends on agreements.
+29. Losing one station affects actual dependencies.
+30. Compatible networks may reroute.
+31. Ground systems require power, connectivity, security, personnel, maintenance, software, and spares.
+32. Cyber compromise follows access and knowledge.
+33. Architecture and authentication determine possible cyber effects.
+34. Ground resilience uses distribution, alternate links, protection, mobility, autonomy, and restoration.
+35. Launch is strategic industrial capability.
+36. Launch requires vehicles, engines, stages, propellant, integration, sites, tracking, safety, personnel, suppliers, and authority.
+37. Sites have geographic limits, inclinations, infrastructure, cadence, security, and weather exposure.
+38. Vehicles have capacity, reliability, availability, cost, production, supported orbits, and preparation.
+39. Reuse requires recovery, inspection, refurbishment, transport, and sites.
+40. Satellite production requires electronics, sensors, optics, communications, propulsion, structures, software, testing, labor, and supply chains.
+41. Launch requires payload, compatible vehicle, manifest, site, approval, and orbital opportunity.
+42. Backlogs and failures cause delay.
+43. Constellations require replenishment.
+44. Controls, alliances, contracts, insurance, sanctions, and transfer shape markets.
+45. Countries may purchase, partner, acquire, or seek access.
+46. Commercial providers retain independent ownership, contracts, investors, customers, and interests.
+47. Governments may requisition, prioritize, subsidize, regulate, sanction, or contract subject to institutions.
+48. National command establishes priorities.
+49. Space commands allocate service and protection.
+50. Theaters request coverage, bandwidth, warning, navigation, and collection.
+51. Missions receive actual windows and capacity.
+52. Competing requests create tradeoffs.
+53. Players prioritize outcomes without scheduling every satellite.
+54. Advanced controls expose passes, windows, downlinks, bandwidth, allocation, and contingencies.
+55. Commercial capacity may be divided among military, civilian, allied, and private demand.
+56. Military priority may reduce civilian service.
+57. Allies may share services while withholding detail or authority.
+58. Space data follows intelligence provenance and dissemination.
+59. Governments maintain separate catalogs of observed objects.
+60. Catalogs retain uncertain orbit, identity, ownership, mission, maneuver, capability, and status.
+61. Tracking quality depends on sensors, geometry, frequency, processing, sharing, and cooperation.
+62. Unannounced maneuvers degrade prediction.
+63. Awareness distinguishes routine, malfunction, inspection, testing, preparation, and ambiguous proximity.
+64. Proximity alone does not prove hostility.
+65. Governments may share safety warnings while withholding intelligence.
+66. Commercial tracking may provide independent evidence.
+67. Counterspace includes jamming, spoofing, cyber, dazzling, ground disruption, proximity, interception, and other supported capabilities.
+68. Methods differ by reversibility, attribution, persistence, geography, debris, preparation, access, and escalation.
+69. Use requires knowledge, tracking, capability, geometry, timing, authority, and expected effect.
+70. Jamming is geographically and technically constrained.
+71. Jamming may affect friendly, civilian, allied, and neutral users.
+72. Spoofing requires compatible signals, receivers, access, and conditions.
+73. Cyber follows access and dependency.
+74. Sensor interference requires compatible payloads and geometry.
+75. Proximity systems must reach relevant orbits.
+76. Destructive interception may create debris and reveal capability.
+77. Commercial attacks may affect many countries.
+78. Temporary disruption may be strategically valuable.
+79. Reversible action may appear preparatory.
+80. Counterspace affects warning, command, navigation, intelligence, alliances, civilians, and escalation.
+81. Players select strategic effects without receiving operational attack instructions.
+82. Debris is a physical hazard.
+83. Important fragments may remain individual.
+84. Large populations may aggregate statistically by orbital region.
+85. Collision depends on intersection, uncertainty, tracking, population, and avoidance.
+86. Operators receive uncertain conjunction warnings.
+87. Avoidance consumes propellant and interrupts missions.
+88. Destruction increases long term collision risk.
+89. Debris may degrade orbital regions for every actor.
+90. Liability, norms, diplomacy, insurance, and commerce respond.
+91. Debris persists after conflict.
+92. Resilience comes from hardening, distribution, commerce, allies, terrestrial backups, replacements, rapid launch, and adaptable receivers.
+93. Constellations resist individual loss while retaining systemic vulnerabilities.
+94. Unique systems create powerful services and concentrated risk.
+95. Most damaged satellites cannot receive ordinary terrestrial repair.
+96. Recovery requires reconfiguration, alternatives, replacement, launch, or future servicing.
+97. Launch capacity and stored payloads determine recovery speed.
+98. Resilience consumes resources before crisis.
+99. Future capability grows through technology and industry.
+100. Future options include servicing, refueling, debris removal, propulsion, larger constellations, reusable launch, manufacturing, stations, lunar systems, and cislunar communications.
+101. Future capability requires research, demonstration, production, infrastructure, organizations, economics, and maturity.
+102. KillWeb does not jump from 2026 capability to effortless science fiction.
+103. Lunar and cislunar activity becomes relevant only when capability exists.
+104. Commercial and scientific activity continues beside competition.
+105. Prestige, science, industry, diplomacy, services, and security motivate investment.
+106. Artificial intelligence uses the same knowledge, launch, allocation, access, and counterspace rules.
+107. It cannot see hidden objects or maneuvers without collection.
+108. It values space through supported terrestrial capability.
+109. It does not optimize a generic space score.
+110. Space decisions remain deterministic without a language model.
+111. Orbital views show objects, trajectories, coverage, passes, links, uncertainty, stations, debris, and services.
+112. Zoom and filters prevent clutter.
+113. Satellite views show identity, mission, owner, operator, orbit, health, service, coverage, dependencies, tasking, and uncertainty.
+114. Constellations aggregate at strategic zoom and resolve when relevant.
+115. Coverage reflects geometry and time.
+116. Movement, passes, launches, maneuvers, interruption, and counterspace activity remain visibly alive.
+
+## Round 18: Gameplay pacing, fun, abstraction, rewards, failure, recovery, asymmetry, balance, and session structure
+
 Status: next discussion.
