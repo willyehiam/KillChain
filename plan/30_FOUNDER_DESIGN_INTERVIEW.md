@@ -2025,4 +2025,150 @@ for later multiplayer implementation.
 
 ## Round 20: Data architecture, modding, scenario authoring, public sources, content versioning, and the creator ecosystem
 
+Status: approved.
+
+### Central rule
+
+The engine owns rules. Data describes the world. Scenarios define starting
+conditions. Saves contain alternate history. Player knowledge determines what is
+visible.
+
+These layers remain separate.
+
+### World data architecture
+
+1. Every persistent entity receives a stable identifier.
+2. Entities include countries, provinces, cities, people, institutions,
+   companies, formations, platforms, facilities, infrastructure, resources,
+   agreements, conflicts, and strategic networks.
+3. Relationships form a world graph connecting ownership, command, supply,
+   dependence, access, allegiance, geography, production, communications, and
+   authority.
+4. Factual fields may retain value, effective date, source, confidence,
+   geographic precision, review status, contradicting evidence, and known use
+   restrictions.
+5. Research uncertainty, simulated hidden truth, and player intelligence
+   uncertainty remain separate concepts.
+6. KillWeb never presents estimated coordinates or secret capabilities as
+   confirmed facts.
+7. Location precision supports exact points, bounded areas, provinces, routes,
+   uncertain regions, and unknown locations.
+8. Exact coordinates are used when supported by available evidence and
+   strategically meaningful.
+9. Ordinary facilities and activity remain aggregated when individual
+   representation creates no gameplay value.
+10. The database is not an attempted one to one replica of Earth.
+
+### Scenario construction
+
+11. A scenario is an immutable snapshot of the world at a specific date.
+12. Starting conditions reference a versioned world data release.
+13. Scenario authors modify the baseline through explicit deltas rather than
+    duplicating the entire planet.
+14. Deltas may change leaders, readiness, deployments, inventories, policies,
+    conflicts, markets, public opinion, alliances, and active plans.
+15. Once a campaign begins, outside data never silently overwrites its alternate
+    history.
+16. New evidence produces a corrected scenario version rather than rewriting
+    existing saves.
+17. Bookmarks may begin during peace, crisis preparation, escalation, active war,
+    or political transition.
+18. Historical event chains require causal prerequisites.
+19. If alternate history removes those prerequisites, the historical event does
+    not fire automatically.
+20. Scenario validation checks impossible inventories, duplicate assets, invalid
+    coordinates, broken command relationships, missing dependencies, and
+    inconsistent totals.
+
+### Research pipeline
+
+21. Research agents produce candidate records rather than directly changing
+    canonical game data.
+22. The pipeline follows source collection, extraction, normalization,
+    corroboration, review, validation, and publication.
+23. Sources retain citations, metadata, confidence, and available archival
+    references.
+24. The corpus distinguishes government reporting, commercial data, academic
+    work, journalism, open source analysis, propaganda, estimates, and disputed
+    claims.
+25. Contradictory sources remain visible to reviewers.
+26. Automated extraction accelerates research but cannot invent precision.
+27. Historical maritime and aviation data may inform routes, density,
+    deployments, and movement patterns.
+28. Baseline gameplay cannot depend on an expensive live data subscription.
+29. The research corpus preserves raw observations separately from game
+    abstractions.
+30. Because KillWeb is a private personal project, noncommercial source licensing
+    does not automatically exclude a source from private research and gameplay
+    use.
+31. Source provenance and known restrictions are still retained so any future
+    public distribution can receive a dedicated rights review.
+32. No present design decision assumes that the private research corpus may be
+    redistributed publicly.
+
+### Data resolution
+
+33. Every strategic entity defines behavior at macro, operational, and detailed
+    resolution.
+34. Expanding an aggregate into individual objects conserves inventory, location,
+    capacity, cargo, personnel, readiness, damage, and commitments.
+35. Collapsing detail back into an aggregate preserves the same state.
+36. Active theaters load greater geographic and entity detail.
+37. Inactive regions continue through macro simulation rather than freezing.
+38. Rendering samples may communicate activity without equaling the simulated
+    object count.
+39. Data loads progressively by geography, relevance, and resolution.
+40. A global campaign does not require every detailed record in browser memory
+    simultaneously.
+
+### Modding
+
+41. KillWeb is data driven from the beginning.
+42. Internal scenario tools use the same formats eventually exposed to creators.
+43. Public modding follows the stable simulation foundation rather than delaying
+    the first campaign.
+44. Mod categories may include historical corrections, new bookmarks, alternate
+    scenarios, countries, political actors, equipment, formations, technologies,
+    doctrines, economic and political systems, event chains, map changes,
+    interface themes, and complete conversions.
+45. Most content uses validated declarative schemas rather than unrestricted
+    code.
+46. Advanced logic uses a deterministic and sandboxed rules environment.
+47. Mods cannot access private files, arbitrary networks, credentials, or unsafe
+    browser capabilities.
+48. Mods declare dependencies, compatibility, schema version, authorship, and
+    licensing.
+49. Load order and overrides are explicit.
+50. Validation identifies conflicts before a campaign begins.
+51. Multiplayer participants require identical simulation content and mod
+    manifests.
+52. Modded campaigns remain replayable when their exact content versions are
+    available.
+
+### Creator tools
+
+53. A visual scenario editor should eventually support maps, countries, political
+    actors, deployments, objectives, event chains, diplomacy, and starting
+    conditions.
+54. Authors can inspect validation errors without reading engine code.
+55. The editor previews what each country knows at scenario start.
+56. Authors can simulate months or years automatically to detect broken
+    economies, dominant strategies, impossible wars, and unstable event loops.
+57. Scenario comparison shows every difference from its baseline.
+58. Creators can package and share campaigns without operating a server.
+59. Official, verified community, experimental, and local content remain clearly
+    distinguished.
+
+### Save and content stability
+
+60. Saves record engine version, world data version, scenario version, mod
+    manifest, random seed, and command history.
+61. Content updates do not silently mutate an active campaign.
+62. Save migrations are explicit, tested, and reversible where practical.
+63. Missing content produces a clear compatibility report.
+64. Campaign exports include enough metadata to reproduce the world.
+65. KillWeb remains fully deterministic and functional without a language model.
+
+## Round 21: Launch scope, first playable campaign, vertical slice, development order, and deliberate exclusions
+
 Status: next discussion.
