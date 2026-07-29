@@ -1431,4 +1431,128 @@ Complexity belongs in the simulation. Clarity belongs in the interface. This rou
 
 ## Round 16: Strategic deterrence, nuclear forces, chemical and biological weapons, missile defense, civil defense, arms control, and catastrophic escalation
 
+Status: approved.
+
+### Central rule
+
+Nuclear weapons are political systems backed by military capabilities rather than oversized conventional attacks.
+
+### Approved decisions
+
+1. Deterrence depends on beliefs about capability, survivability, authority, credibility, and cost.
+2. Nuclear strength is not warhead count alone.
+3. Posture includes doctrine, readiness, survivability, warning, authority, delivery, defense, alliances, communications, and resolve.
+4. Governments signal through doctrine, ambiguity, assurances, exercises, deployments, alerts, and statements.
+5. Adversaries interpret signals through their own intelligence.
+6. Second strike capability limits disarming attack incentives.
+7. Deterrence may fail through misperception, overconfidence, desperation, failure, instability, or conflicting red lines.
+8. Attacking strategic forces may increase catastrophic escalation.
+9. Attacks on warning, leadership, communications, submarines, and strategic bases affect perceived intent.
+10. Dual capable systems create ambiguity.
+11. Nuclear forces contain persistent warheads, delivery systems, bases, crews, commands, communications, warning, maintenance, and security.
+12. Delivery systems include publicly supported land missiles, submarines, aircraft, and other capabilities.
+13. Strategic submarines occupy uncertain patrol areas.
+14. Mobile forces depend on dispersal, concealment, communications, logistics, and deception.
+15. Fixed sites trade readiness for vulnerability.
+16. Bombers depend on airbases, alerts, tankers, routes, escorts, communications, and weapons.
+17. Forces require maintenance, personnel, testing, security, and command links.
+18. Warheads and delivery systems are separate inventories.
+19. Production does not automatically create deployment.
+20. Nuclear sharing and extended deterrence depend on agreements, custody, delivery, basing, doctrine, and alliance confidence.
+21. Foreign arsenal and readiness estimates remain uncertain.
+22. Secret deployment uses uncertainty rather than false precision.
+23. Release requires valid political and military authority.
+24. Authority is never delegated to a language model or ordinary planner.
+25. Use requires explicit human decision by the player or simulated leadership.
+26. Retaliatory plans prepare options without bypassing authority.
+27. Exceptional delegated authority creates accident and control risks.
+28. Command includes leadership, succession, authentication, communications, continuity, launch units, and confirmation.
+29. One lost node does not automatically disable an arsenal.
+30. Succession depends on institutions, communications, survival, and law.
+31. Warning uses satellites, radar, intelligence, communications, allies, and observed launches.
+32. Warning retains uncertainty, sensor failure, deception, and limited time.
+33. False alarms require causal failures.
+34. Alerting improves responsiveness while increasing visibility, pressure, accident risk, and concern.
+35. Launch under attack, retaliation after impact, and deliberate first use remain distinct.
+36. Hotlines may clarify, negotiate, fail, or provide warning.
+37. Crises evolve through posture rather than one escalation meter.
+38. Relevant actions include dispersal, patrols, alerts, civil defense, relocation, exercises, signaling, diplomacy, protection, and deescalation.
+39. Actions combine military value with interpretive risk.
+40. Defensive dispersal may appear offensive.
+41. Public threats trade credibility for flexibility.
+42. Private assurances may reduce danger without satisfying domestic audiences.
+43. Allies may seek reassurance while opposing escalation.
+44. Other governments may mediate, remain neutral, evacuate, sanction, or prepare.
+45. Nuclear decisions pause as existential events by default.
+46. Players receive intelligence, uncertainty, doctrine, retaliation, alliance, civilian, and alternative assessments.
+47. Suspected preparation, uncertain warning, and detected launch remain visually distinct.
+48. Decision time remains meaningful during a player pause.
+49. Nuclear options use strategic effect packages.
+50. Packages identify objective, effect, delivery, target category, timing, retaliation, uncertainty, civilian exposure, environment, and escalation.
+51. Categories include strategic forces, military formations, command, infrastructure, and population centers.
+52. KillWeb provides no procedural guidance for real nuclear operations.
+53. Plans require surviving weapons, reach, links, information, readiness, authority, and doctrine.
+54. Missile defense reduces expected leakage without becoming perfect.
+55. Defense depends on warning, geometry, sensors, inventory, opportunities, reliability, saturation, and discrimination.
+56. Penetration and deception affect defense at strategic simulation level.
+57. Retaliation depends on survival, continuity, warning, doctrine, communications, leadership, and attribution.
+58. Governments may delay, limit, redirect, or withhold retaliation.
+59. Limited use does not guarantee limited escalation.
+60. Conventional attacks may trigger nuclear escalation when survival or strategic forces appear threatened.
+61. Effects include blast, heat, radiation, fallout, electromagnetic disruption where applicable, fire, infrastructure failure, and medical collapse.
+62. Effects depend on weapon category, location, environment, population, infrastructure, shelter, warning, and response.
+63. Consequences remain strategically modeled without weapon design instruction.
+64. Deaths, injuries, displacement, contamination, health effects, and service collapse persist.
+65. Fallout uses an abstract environmental model where relevant.
+66. Contamination affects access, agriculture, population, logistics, operations, legitimacy, and reconstruction.
+67. Connected services may fail together.
+68. Large exchanges affect global trade, finance, food, energy, migration, alliances, and stability.
+69. Sufficient exchanges create long term global environmental and agricultural effects.
+70. Unattacked countries still experience consequences.
+71. Nuclear use changes norms, alliances, politics, doctrine, and proliferation.
+72. Nuclear war has no clean victory state.
+73. Survival remains playable through emergency government, relief, diplomacy, defense, reconstruction, and politics.
+74. Arms control defines limits, declarations, inspections, notifications, verification, prohibition, and enforcement.
+75. Compliance may be complete, partial, disputed, concealed, or violated.
+76. Verification depends on technical means, inspections, intelligence, trust, access, and exchange.
+77. Transparency may reveal sensitive information.
+78. Withdrawal and collapse change planning and expectations.
+79. Proliferation requires intent, science, material, industry, facilities, security, delivery, finance, and time.
+80. Technology does not instantly create an arsenal.
+81. Programs may be hidden, hedged, negotiated, sanctioned, sabotaged, abandoned, or accelerated.
+82. Foreign aid may shorten paths while creating dependency and exposure.
+83. Intelligence may misjudge program maturity.
+84. Testing provides information and credibility with detection, political, and environmental costs.
+85. Countries may maintain latent capability.
+86. Guarantees, conventional power, survival, prestige, alliances, and threats shape proliferation.
+87. Chemical and biological capabilities remain separate.
+88. They require research, production, storage, security, personnel, delivery, doctrine, protection, and authority.
+89. They are modeled strategically without recipes or operational instructions.
+90. Effects depend on environment, protection, detection, medicine, preparedness, and reliability.
+91. Protection, detection, decontamination, medicine, training, and public health reduce harm.
+92. Chemical use affects access, protection, civilians, logistics, and international response.
+93. Biological incidents may resemble natural outbreaks or accidents.
+94. Attribution uses epidemiology, intelligence, access, motive, evidence, and investigation.
+95. Public health responds to natural and deliberate outbreaks.
+96. Use creates diplomatic, legal, military, domestic, and retaliatory consequences.
+97. Nonstate acquisition requires extraordinary access, expertise, organization, failure, and resources.
+98. Catastrophic weapons are not universal shortcuts.
+99. Artificial intelligence does not use them randomly.
+100. Decisions depend on doctrine, survival, objectives, warning, intent, authority, alliances, alternatives, and consequences.
+101. Artificial intelligence acts from uncertain information without hidden knowledge.
+102. Leaders and institutions may disagree.
+103. Instability increases risk without guaranteeing unauthorized use.
+104. Difficulty never creates suicidal nuclear behavior.
+105. Testing covers stability, warning, limited use, leadership fears, alliances, proliferation, and deescalation.
+106. Strategic forces remain visible through map, command, readiness, patrol uncertainty, and warning.
+107. Players inspect survivability, readiness, command, warning, defense, doctrine, and estimated response.
+108. Nuclear controls use sober visual treatment.
+109. Catastrophic actions require clear irreversible confirmation.
+110. Presentation avoids arcade scoring and celebration.
+111. Consequences persist across geography, population, infrastructure, politics, economics, and history.
+112. KillWeb has no morality meter.
+113. Reckless decisions remain possible where authority permits, while the complete simulation responds.
+
+## Round 17: Space, orbital mechanics, satellites, launch capacity, commercial constellations, counterspace warfare, debris, and resilience
+
 Status: next discussion.
