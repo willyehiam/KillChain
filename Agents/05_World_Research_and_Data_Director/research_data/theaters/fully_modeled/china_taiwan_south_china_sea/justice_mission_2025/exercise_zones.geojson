@@ -1,0 +1,237 @@
+{
+  "type": "FeatureCollection",
+  "name": "Justice Mission 2025 initial five publicly announced live fire areas",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "metadata": {
+    "dataset_id": "dataset_justice_mission_2025_v0_1",
+    "source_ids": [
+      "src_xinhua_2025_12_29_zone_notice"
+    ],
+    "effective_from": "2025-12-30T08:00:00+08:00",
+    "effective_to": "2025-12-30T18:00:00+08:00",
+    "coordinate_precision_m": 31,
+    "notes": "Coordinates were converted from degrees, minutes, and seconds to decimal degrees. Longitude precedes latitude as required by GeoJSON. The initial announcement contained five areas."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "jm25_zone_1",
+      "properties": {
+        "zone_id": "jm25_zone_1",
+        "zone_number": 1,
+        "location_status": "reported_area",
+        "evidence_state": "official_claim",
+        "confidence": "confirmed",
+        "source_ids": [
+          "src_xinhua_2025_12_29_zone_notice"
+        ],
+        "effective_from": "2025-12-30T08:00:00+08:00",
+        "effective_to": "2025-12-30T18:00:00+08:00"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.666667,
+              26.533333
+            ],
+            [
+              122.6,
+              26.533333
+            ],
+            [
+              122.6,
+              25.716667
+            ],
+            [
+              121.666667,
+              25.716667
+            ],
+            [
+              121.666667,
+              26.533333
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "jm25_zone_2",
+      "properties": {
+        "zone_id": "jm25_zone_2",
+        "zone_number": 2,
+        "location_status": "reported_area",
+        "evidence_state": "official_claim",
+        "confidence": "confirmed",
+        "source_ids": [
+          "src_xinhua_2025_12_29_zone_notice"
+        ],
+        "effective_from": "2025-12-30T08:00:00+08:00",
+        "effective_to": "2025-12-30T18:00:00+08:00"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              120.066667,
+              24.983333
+            ],
+            [
+              121.216667,
+              25.65
+            ],
+            [
+              121.216667,
+              26.283333
+            ],
+            [
+              120.066667,
+              25.616667
+            ],
+            [
+              120.066667,
+              24.983333
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "jm25_zone_3",
+      "properties": {
+        "zone_id": "jm25_zone_3",
+        "zone_number": 3,
+        "location_status": "reported_area",
+        "evidence_state": "official_claim",
+        "confidence": "confirmed",
+        "source_ids": [
+          "src_xinhua_2025_12_29_zone_notice"
+        ],
+        "effective_from": "2025-12-30T08:00:00+08:00",
+        "effective_to": "2025-12-30T18:00:00+08:00"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              118.233333,
+              23.45
+            ],
+            [
+              119.216667,
+              23.45
+            ],
+            [
+              119.733333,
+              22.216667
+            ],
+            [
+              118.75,
+              22.216667
+            ],
+            [
+              118.233333,
+              23.45
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "jm25_zone_4",
+      "properties": {
+        "zone_id": "jm25_zone_4",
+        "zone_number": 4,
+        "location_status": "reported_area",
+        "evidence_state": "official_claim",
+        "confidence": "confirmed",
+        "source_ids": [
+          "src_xinhua_2025_12_29_zone_notice"
+        ],
+        "effective_from": "2025-12-30T08:00:00+08:00",
+        "effective_to": "2025-12-30T18:00:00+08:00"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              119.266667,
+              21.816667
+            ],
+            [
+              121,
+              21.816667
+            ],
+            [
+              121,
+              21.083333
+            ],
+            [
+              119.266667,
+              21.083333
+            ],
+            [
+              119.266667,
+              21.816667
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "jm25_zone_5",
+      "properties": {
+        "zone_id": "jm25_zone_5",
+        "zone_number": 5,
+        "location_status": "reported_area",
+        "evidence_state": "official_claim",
+        "confidence": "confirmed",
+        "source_ids": [
+          "src_xinhua_2025_12_29_zone_notice"
+        ],
+        "effective_from": "2025-12-30T08:00:00+08:00",
+        "effective_to": "2025-12-30T18:00:00+08:00"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.666667,
+              21.966667
+            ],
+            [
+              122.466667,
+              21.966667
+            ],
+            [
+              122.466667,
+              23.383333
+            ],
+            [
+              121.666667,
+              23.383333
+            ],
+            [
+              121.666667,
+              21.966667
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
