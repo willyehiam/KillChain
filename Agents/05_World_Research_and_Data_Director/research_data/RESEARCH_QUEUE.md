@@ -10,12 +10,19 @@
 
 ## P0: Corpus foundation
 
-1. Validate all JSON schemas.
-2. Define source registry storage format.
-3. Define claim and contradiction storage format.
-4. Freeze confidence and precision vocabulary.
-5. Normalize the existing Justice Mission 2025 sourcebook as a benchmark.
-6. Add automated checks for missing provenance and invalid time fields.
+1. Validate all JSON schemas. Status: syntax validated, semantic validation
+   tooling pending.
+2. Define source registry storage format. Status: schema complete.
+3. Define claim and contradiction storage format. Status: claim schema complete,
+   contradiction schema pending.
+4. Freeze confidence and precision vocabulary. Status: provisional vocabulary
+   documented.
+5. Normalize Justice Mission 2025 as a benchmark. Status: active.
+6. Add automated checks for missing provenance and invalid time fields. Status:
+   queued.
+7. Add cross file identity and source reference validation. Status: queued.
+8. Define dataset acceptance gates. Status: documented in
+   `RESEARCH_STAGE_KICKOFF.md`.
 
 ## P1: Country cohort
 
@@ -26,14 +33,18 @@
 5. Create a country dossier for every selected state.
 6. Assign strategic and institutional archetypes.
 7. Prioritize bespoke content tiers.
+8. Create political actor rosters with twenty plausible national figures where
+   public evidence supports inclusion.
 
 ## P1: Starting bookmark
 
-1. Select the exact summer or fall 2026 date.
+1. Select the exact late summer or early fall 2025 date.
 2. Define the historical information cutoff.
 3. Separate known history from scenario divergence.
 4. Assemble governments, alliances, conflicts, sanctions, and force posture.
 5. Record all unresolved or future dependent assumptions.
+6. Define which post cutoff events are available as optional historical pressure
+   paths rather than predetermined outcomes.
 
 ## P2: Fully modeled theaters
 
@@ -98,3 +109,4 @@ civilian systems, outside powers, escalation paths, and scenario branches.
 5. Entity identity collision checks.
 6. Dataset licensing review.
 7. Scenario cutoff validation.
+8. Research to simulation traceability reports.
