@@ -1,0 +1,275 @@
+{
+  "dataset_id": "dataset_justice_mission_2025_v0_1",
+  "schema_note": "Each observation retains its reporting window and force measure. Derived values declare their operation and inputs.",
+  "observations": [
+    {
+      "observation_id": "obs_jm25_mnd_window_1_air_sorties",
+      "subject_id": "pla_air_activity",
+      "reported_by": "roc_mnd",
+      "observed_from": "2025-12-29T06:00:00+08:00",
+      "observed_to": "2025-12-30T06:00:00+08:00",
+      "quantity": 130,
+      "measure": "sortie",
+      "unique_identity_supported": false,
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "src_roc_mnd_2025_12_30_pla_activity"
+      ],
+      "notes": "Taiwan official detection count. Aircraft types and unique tail identities were not published."
+    },
+    {
+      "observation_id": "obs_jm25_mnd_window_1_median_crossing_sorties",
+      "subject_id": "pla_air_activity",
+      "reported_by": "roc_mnd",
+      "observed_from": "2025-12-29T06:00:00+08:00",
+      "observed_to": "2025-12-30T06:00:00+08:00",
+      "quantity": 90,
+      "measure": "sortie",
+      "unique_identity_supported": false,
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "src_roc_mnd_2025_12_30_pla_activity"
+      ],
+      "notes": "Subset of the 130 sorties that crossed the Taiwan Strait median line and entered reported ADIZ sectors."
+    },
+    {
+      "observation_id": "obs_jm25_mnd_window_1_plan",
+      "subject_id": "plan_activity",
+      "reported_by": "roc_mnd",
+      "observed_from": "2025-12-29T06:00:00+08:00",
+      "observed_to": "2025-12-30T06:00:00+08:00",
+      "quantity": 14,
+      "measure": "detected_platform",
+      "unique_identity_supported": false,
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "src_roc_mnd_2025_12_30_pla_activity"
+      ],
+      "notes": "Reported presence during one 24 hour window. Do not assume 14 unique exercise participants across the whole exercise."
+    },
+    {
+      "observation_id": "obs_jm25_mnd_window_1_official_ships",
+      "subject_id": "prc_official_ship_activity",
+      "reported_by": "roc_mnd",
+      "observed_from": "2025-12-29T06:00:00+08:00",
+      "observed_to": "2025-12-30T06:00:00+08:00",
+      "quantity": 8,
+      "measure": "detected_platform",
+      "unique_identity_supported": false,
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "src_roc_mnd_2025_12_30_pla_activity"
+      ],
+      "notes": "Taiwan MND category is official ships. It should not automatically be treated as the complete China Coast Guard exercise count."
+    },
+    {
+      "observation_id": "obs_jm25_mnd_window_2_air_sorties",
+      "subject_id": "pla_air_activity",
+      "reported_by": "roc_mnd",
+      "observed_from": "2025-12-30T06:00:00+08:00",
+      "observed_to": "2025-12-31T06:00:00+08:00",
+      "quantity": 77,
+      "measure": "sortie",
+      "unique_identity_supported": false,
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "src_roc_mnd_2025_12_31_pla_activity"
+      ],
+      "notes": "Complete 24 hour report. This replaces 71 as the complete window total but does not invalidate the earlier interim snapshot."
+    },
+    {
+      "observation_id": "obs_jm25_mnd_window_2_median_crossing_sorties",
+      "subject_id": "pla_air_activity",
+      "reported_by": "roc_mnd",
+      "observed_from": "2025-12-30T06:00:00+08:00",
+      "observed_to": "2025-12-31T06:00:00+08:00",
+      "quantity": 35,
+      "measure": "sortie",
+      "unique_identity_supported": false,
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "src_roc_mnd_2025_12_31_pla_activity"
+      ],
+      "notes": "Subset of the 77 sorties that crossed the Taiwan Strait median line and entered reported ADIZ sectors."
+    },
+    {
+      "observation_id": "obs_jm25_mnd_window_2_plan",
+      "subject_id": "plan_activity",
+      "reported_by": "roc_mnd",
+      "observed_from": "2025-12-30T06:00:00+08:00",
+      "observed_to": "2025-12-31T06:00:00+08:00",
+      "quantity": 17,
+      "measure": "detected_platform",
+      "unique_identity_supported": false,
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "src_roc_mnd_2025_12_31_pla_activity"
+      ],
+      "notes": "Reported presence during one 24 hour window."
+    },
+    {
+      "observation_id": "obs_jm25_mnd_window_2_official_ships",
+      "subject_id": "prc_official_ship_activity",
+      "reported_by": "roc_mnd",
+      "observed_from": "2025-12-30T06:00:00+08:00",
+      "observed_to": "2025-12-31T06:00:00+08:00",
+      "quantity": 8,
+      "measure": "detected_platform",
+      "unique_identity_supported": false,
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "src_roc_mnd_2025_12_31_pla_activity"
+      ],
+      "notes": "Taiwan MND category is official ships. It should not automatically be treated as the complete China Coast Guard exercise count."
+    },
+    {
+      "observation_id": "obs_jm25_interim_day_2_air_sorties",
+      "subject_id": "pla_air_activity",
+      "reported_by": "roc_mnd_briefing_as_synthesized",
+      "observed_from": "2025-12-30T00:00:00+08:00",
+      "observed_to": "2025-12-30T15:00:00+08:00",
+      "quantity": 71,
+      "measure": "sortie",
+      "unique_identity_supported": false,
+      "evidence_state": "independently_reported",
+      "confidence": "medium",
+      "source_ids": [
+        "src_gti_2026_01_02_justice_mission",
+        "src_tsm_2026_justice_mission_timeline"
+      ],
+      "notes": "Interim snapshot by 15:00. It must not be added to the complete 77 sortie reporting window."
+    },
+    {
+      "observation_id": "obs_jm25_interim_day_2_ccg_peak",
+      "subject_id": "china_coast_guard_activity",
+      "reported_by": "roc_mnd_briefing_as_synthesized",
+      "observed_from": "2025-12-30T00:00:00+08:00",
+      "observed_to": "2025-12-30T15:00:00+08:00",
+      "quantity": 15,
+      "measure": "peak_presence",
+      "unique_identity_supported": false,
+      "evidence_state": "independently_reported",
+      "confidence": "medium",
+      "source_ids": [
+        "src_gti_2026_01_02_justice_mission",
+        "src_tsm_2026_justice_mission_timeline"
+      ],
+      "notes": "Exercise specific snapshot. Reporting scope differs from the standard daily official ship count."
+    },
+    {
+      "observation_id": "obs_jm25_amphibious_formation",
+      "subject_id": "plan_amphibious_activity",
+      "reported_by": "roc_mnd_briefing_as_synthesized",
+      "observed_from": "2025-12-29T00:00:00+08:00",
+      "observed_to": "2025-12-30T23:59:59+08:00",
+      "quantity": 4,
+      "measure": "detected_platform",
+      "unique_identity_supported": false,
+      "evidence_state": "independently_reported",
+      "confidence": "medium",
+      "source_ids": [
+        "src_gti_2026_01_02_justice_mission"
+      ],
+      "notes": "Four ship amphibious formation reported east or southeast of Taiwan. Exact membership remains unresolved."
+    },
+    {
+      "observation_id": "obs_jm25_rockets_zone_1",
+      "subject_id": "plagf_long_range_fires",
+      "reported_by": "roc_mnd_briefing_as_synthesized",
+      "observed_from": "2025-12-30T09:00:00+08:00",
+      "observed_to": "2025-12-30T13:00:00+08:00",
+      "quantity": 17,
+      "measure": "munition",
+      "unique_identity_supported": false,
+      "evidence_state": "independently_reported",
+      "confidence": "medium",
+      "source_ids": [
+        "src_gti_2026_01_02_justice_mission",
+        "src_tsm_2026_justice_mission_timeline"
+      ],
+      "notes": "Reported impacts in zone 1 from the Pingtan firing period. Launcher quantity is unknown."
+    },
+    {
+      "observation_id": "obs_jm25_rockets_zone_3",
+      "subject_id": "plagf_long_range_fires",
+      "reported_by": "roc_mnd_briefing_as_synthesized",
+      "observed_from": "2025-12-30T09:00:00+08:00",
+      "observed_to": "2025-12-30T13:00:00+08:00",
+      "quantity": 10,
+      "measure": "munition",
+      "unique_identity_supported": false,
+      "evidence_state": "independently_reported",
+      "confidence": "medium",
+      "source_ids": [
+        "src_gti_2026_01_02_justice_mission",
+        "src_tsm_2026_justice_mission_timeline"
+      ],
+      "notes": "Reported impacts in zone 3 from the Shishi firing period. Launcher quantity is unknown."
+    }
+  ],
+  "derived_measures": [
+    {
+      "derived_id": "derived_jm25_two_window_air_sorties",
+      "subject_id": "pla_air_activity",
+      "quantity": 207,
+      "measure": "sortie",
+      "operation": "sum_non_overlapping_complete_windows",
+      "input_observation_ids": [
+        "obs_jm25_mnd_window_1_air_sorties",
+        "obs_jm25_mnd_window_2_air_sorties"
+      ],
+      "unique_identity_supported": false,
+      "confidence": "high",
+      "notes": "Valid as a sortie total only. It does not imply 207 unique aircraft."
+    },
+    {
+      "derived_id": "derived_jm25_two_window_median_crossing_sorties",
+      "subject_id": "pla_air_activity",
+      "quantity": 125,
+      "measure": "sortie",
+      "operation": "sum_non_overlapping_complete_windows",
+      "input_observation_ids": [
+        "obs_jm25_mnd_window_1_median_crossing_sorties",
+        "obs_jm25_mnd_window_2_median_crossing_sorties"
+      ],
+      "unique_identity_supported": false,
+      "confidence": "high"
+    },
+    {
+      "derived_id": "derived_jm25_plan_peak",
+      "subject_id": "plan_activity",
+      "quantity": 17,
+      "measure": "peak_presence",
+      "operation": "maximum_across_overlapping_or_persistent_presence_windows",
+      "input_observation_ids": [
+        "obs_jm25_mnd_window_1_plan",
+        "obs_jm25_mnd_window_2_plan"
+      ],
+      "unique_identity_supported": false,
+      "confidence": "high",
+      "notes": "The daily vessel observations are not added because ships can persist across windows."
+    },
+    {
+      "derived_id": "derived_jm25_reported_rocket_impacts",
+      "subject_id": "plagf_long_range_fires",
+      "quantity": 27,
+      "measure": "munition",
+      "operation": "sum_distinct_firing_periods",
+      "input_observation_ids": [
+        "obs_jm25_rockets_zone_1",
+        "obs_jm25_rockets_zone_3"
+      ],
+      "unique_identity_supported": false,
+      "confidence": "medium",
+      "notes": "This is a munition count, not a launcher or firing platform count."
+    }
+  ]
+}
