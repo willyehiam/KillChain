@@ -2363,4 +2363,108 @@ authority to use it.
 
 ## Round 22: Final contradiction audit, unresolved decisions, game constitution approval, and brainstorming closure
 
-Status: next discussion.
+Status: approved.
+
+### Contradiction audit
+
+No unresolved contradiction blocks the research stage.
+
+1. Realism and fun coexist through deep simulation beneath arcade interaction.
+2. Global scope and browser performance coexist through macro, operational, and
+   detailed resolution.
+3. National command and Maven detail coexist through flexible zoom, delegation,
+   and temporary direct control.
+4. Broad player authority and fog of war coexist because the player controls
+   national strategy while seeing only national knowledge.
+5. Exact real world data and uncertainty coexist through supported exact
+   locations, bounded estimates, and aggregated unknown activity.
+6. Reckless strategies and institutional resistance coexist because executable
+   actions remain possible while authority and consequences remain real.
+7. Player freedom and war authorization coexist through institutionally grounded
+   campaigns and an optional unrestricted sandbox.
+8. Adaptive artificial intelligence and determinism coexist through seeded
+   planners that respond to state without hidden knowledge or language models.
+9. One continuous world and an achievable first version coexist because every
+   country runs at macro resolution while Taiwan receives the first detailed
+   theater.
+10. Eighty eventual playable countries and the first release coexist through
+    staged expansion from the United States, China, and Taiwan.
+11. Real time simulation and crisis overload coexist through pause rules,
+    delegation, grouped situations, and decision deadlines.
+12. Historical events and alternate history coexist because events require causal
+    prerequisites rather than dates alone.
+13. Palantir inspiration and original design coexist by preserving information
+    clarity and Maven workflows without copying another interface one to one.
+14. WebGPU performance and broad accessibility coexist through preferred WebGPU
+    rendering, WebGL fallback, and renderer independent authoritative simulation.
+15. Single player priority and later multiplayer coexist through deterministic
+    architecture with single player shipping first.
+16. Private research and restricted sources coexist because noncommercial data
+    may support the private project while provenance remains recorded.
+17. Open world continuity and victory coexist because objectives may be achieved
+    without forcing the campaign to end.
+18. Military detail and manageable play coexist through formations, templates,
+    doctrines, standing orders, staff, and aggregation.
+
+### Final KillWeb constitution
+
+1. KillWeb is a modern global geopolitics and alternate history game.
+2. It combines Civilization breadth, Hearts of Iron depth, and Maven style
+   decision workflows.
+3. It is real time with pause.
+4. It begins in late summer or early fall 2025.
+5. The entire world continues advancing without player input.
+6. The player represents the strategic will of a country across governments and
+   regimes.
+7. The eventual target is the top eighty economies as fully playable countries.
+8. The first detailed theater is the Taiwan Strait.
+9. The first playable countries are the United States, China, and Taiwan.
+10. The map is the primary interface.
+11. Simulation operates at macro, operational, and detailed resolution.
+12. Every major portfolio can be delegated or directly controlled.
+13. Complexity must create decisions rather than clerical labor.
+14. Endgame scale must produce broader command tools rather than more clicks.
+15. Every military effect requires real assets, authority, logistics, movement,
+    execution, and assessment.
+16. Political support, legal authority, alliances, and institutional behavior
+    constrain war entry.
+17. Fog of war and uncertain intelligence apply to the player and artificial
+    intelligence.
+18. Artificial intelligence follows the same rules and adapts without cheating.
+19. The authoritative simulation is deterministic and requires no language model.
+20. Morally reckless strategies may be available, but the entire world responds
+    causally.
+21. Historical events emerge from conditions rather than fixed scripts.
+22. Campaigns remain open after their original crisis concludes.
+23. The game must be understandable within ten minutes and capable of sustaining
+    years of mastery.
+24. Plain fun is a completion requirement.
+
+### Decisions intentionally deferred
+
+1. Exact starting date.
+2. Exact province topology.
+3. Exact simulation formulas.
+4. Detailed artificial intelligence architecture.
+5. Final browser technology stack.
+6. Final visual design system.
+7. Research source selection.
+8. Final scenario inventory.
+9. Performance budgets.
+10. Development schedule.
+
+These decisions belong to the research, engine design, visual design, and
+implementation stages.
+
+## Brainstorming stage closure
+
+Status: complete.
+
+The founder design interview is approved as the authoritative product
+constitution for later work.
+
+Later research, design, simulation, interface, scenario, testing, and development
+decisions must either comply with this constitution or explicitly document a
+founder approved amendment.
+
+The next stage is research planning and corpus construction.
