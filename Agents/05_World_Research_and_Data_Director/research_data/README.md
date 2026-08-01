@@ -52,12 +52,14 @@ The corpus exists to answer player and simulation questions such as:
 4. `global_infrastructure/` owns network and strategic asset taxonomies.
 5. `sources/` owns source registry and archival conventions.
 6. `schemas/` owns machine readable data contracts.
-7. `METHODOLOGY.md` defines the research workflow.
-8. `SOURCE_POLICY.md` defines evidence acceptance and safety.
-9. `DATA_DICTIONARY.md` defines common fields and units.
-10. `TOP_80_COUNTRIES.md` owns country cohort selection.
-11. `RESEARCH_QUEUE.md` owns execution order and status.
-12. `RESEARCH_STAGE_KICKOFF.md` owns the active stage charter and quality gates.
+7. `tools/` owns corpus validation utilities.
+8. `METHODOLOGY.md` defines the research workflow.
+9. `SOURCE_POLICY.md` defines evidence acceptance and safety.
+10. `DATA_DICTIONARY.md` defines common fields and units.
+11. `TOP_80_COUNTRIES.md` owns country cohort selection.
+12. `RESEARCH_QUEUE.md` owns execution order and status.
+13. `RESEARCH_STAGE_KICKOFF.md` owns the active stage charter and quality gates.
+14. `COVERAGE_PROGRAM.md` owns research depth tiers and global work packages.
 
 ## Evidence states
 
@@ -106,6 +108,15 @@ A numeric precision value and the source must accompany any point or polygon.
 9. Record a review date.
 10. Publish a coherent checkpoint.
 
+## Validation
+
+Run the current integrity validator from the repository root:
+
+`node Agents/05_World_Research_and_Data_Director/research_data/tools/validate_research.mjs Agents/05_World_Research_and_Data_Director/research_data`
+
+The validator currently checks the Justice Mission benchmark. It will expand as
+additional datasets reach machine readable form.
+
 ## First benchmark
 
 Justice Mission 2025 is the initial methodology benchmark because existing
@@ -113,5 +124,6 @@ project research already distinguishes exercise polygons, ships, Coast Guard
 vessels, aircraft sorties, firing formations, rockets, and uncertain unique
 platform counts.
 
-The benchmark must be normalized into this corpus before the same method is
-scaled to other theaters.
+The first machine readable checkpoint passes its current integrity validator but
+remains in `collecting` status while key identities and later warning areas are
+resolved.
