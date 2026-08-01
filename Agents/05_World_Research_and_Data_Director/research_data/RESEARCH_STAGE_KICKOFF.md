@@ -76,7 +76,7 @@
 2. Research the first playable countries in depth.
 3. Research other countries in tiered depth.
 4. Build political actor rosters.
-5. Build public military structure and inventory datasets.
+5. Build complete, dated force ledgers for every top 80 country, including all services, reserves, maintenance, storage, construction, commands, formations, basing, and global deployments.
 6. Build strategic infrastructure and industry datasets.
 7. Build crisis and event chain datasets.
 
@@ -143,7 +143,7 @@ The research stage is not complete until:
 2. The top 80 cohort is frozen.
 3. The first playable countries have reviewed dossiers.
 4. The Taiwan Strait has a reviewed theater dataset.
-5. Global macro starting state coverage exists.
+5. Global macro starting state coverage and complete top 80 force ledgers exist.
 6. Critical infrastructure taxonomies have representative datasets.
 7. Provenance, contradiction, and validation tooling is operational.
 8. Known gaps are explicit enough for game design to choose abstractions.
