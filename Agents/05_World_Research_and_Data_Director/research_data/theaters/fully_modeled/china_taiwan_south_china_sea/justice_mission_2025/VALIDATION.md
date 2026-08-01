@@ -6,7 +6,13 @@
 2. Dataset version: 0.1.0.
 3. Dataset status: collecting.
 4. Machine readable files checked: 6.
-5. Result: pass for the checks listed below.
+5. Result: pass.
+
+## Command
+
+From the repository root:
+
+`node Agents/05_World_Research_and_Data_Director/research_data/tools/validate_research.mjs Agents/05_World_Research_and_Data_Director/research_data`
 
 ## Record counts
 
@@ -17,23 +23,24 @@
 5. Derived force measures: 4.
 6. Exact initial exercise polygons: 5.
 
-## Checks passed
+## Automated checks passed
 
 1. JSON and NDJSON syntax.
 2. Stable identifier format.
 3. Identifier uniqueness within each record class.
-4. Manifest source references.
-5. Manifest contradiction references.
-6. Claim source references.
-7. Contradiction claim and source references.
-8. Derived force measure input references.
-9. GeoJSON feature collection type.
-10. Five expected initial polygons present.
-11. Polygon ring closure.
-12. Longitude and latitude bounds.
-13. Minimum required source fields.
-14. Minimum required claim fields.
-15. Minimum two claims per contradiction set.
+4. Required provenance fields.
+5. ISO date and timestamp formats.
+6. Manifest source references.
+7. Manifest contradiction references.
+8. Claim source references.
+9. Contradiction claim and source references.
+10. Derived force measure input references.
+11. GeoJSON feature collection type.
+12. Five expected initial polygons present.
+13. Polygon ring closure.
+14. Longitude and latitude bounds.
+15. Minimum required claim fields.
+16. Minimum two claims per contradiction set.
 
 ## Semantic checks passed by review
 
