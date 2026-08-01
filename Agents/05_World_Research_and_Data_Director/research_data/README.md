@@ -60,6 +60,7 @@ The corpus exists to answer player and simulation questions such as:
 12. `RESEARCH_QUEUE.md` owns execution order and status.
 13. `RESEARCH_STAGE_KICKOFF.md` owns the active stage charter and quality gates.
 14. `COVERAGE_PROGRAM.md` owns research depth tiers and global work packages.
+15. `FULL_FORCE_INVENTORY_PROGRAM.md` owns complete top 80 military inventory coverage and conservation requirements.
 
 ## Evidence states
 
