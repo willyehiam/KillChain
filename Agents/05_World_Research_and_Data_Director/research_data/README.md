@@ -2,10 +2,15 @@
 
 ## Status
 
-Corpus architecture is active during the brainstorming stage.
+The research stage is active.
 
-Large scale collection has not yet been declared complete, and no file in this
-directory should be interpreted as a live or exhaustive picture of the world.
+The approved brainstorming constitution is the design authority for research
+priorities. Large scale collection is incomplete, and no file in this directory
+should be interpreted as a live or exhaustive picture of the world.
+
+Research may populate sourced historical and structural data. It may not silently
+turn provisional findings into game rules or begin simulation engine
+implementation.
 
 ## Purpose
 
@@ -52,6 +57,7 @@ The corpus exists to answer player and simulation questions such as:
 9. `DATA_DICTIONARY.md` defines common fields and units.
 10. `TOP_80_COUNTRIES.md` owns country cohort selection.
 11. `RESEARCH_QUEUE.md` owns execution order and status.
+12. `RESEARCH_STAGE_KICKOFF.md` owns the active stage charter and quality gates.
 
 ## Evidence states
 
@@ -107,5 +113,5 @@ project research already distinguishes exercise polygons, ships, Coast Guard
 vessels, aircraft sorties, firing formations, rockets, and uncertain unique
 platform counts.
 
-The benchmark should be normalized into this corpus before the same method is
+The benchmark must be normalized into this corpus before the same method is
 scaled to other theaters.
