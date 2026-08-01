@@ -25,6 +25,25 @@ The future engine likely requires a versioned `WorldState` containing:
 19. Event queue.
 20. Historical and scenario metadata.
 
+## Global force ledger
+
+`WorldState` contains the complete force universe for every top 80 country.
+
+1. Theater rosters reference the global ledger rather than creating isolated
+   copies.
+2. Every platform and formation belongs to an individual entity or conserved
+   inventory pool.
+3. Active, committed, transit, training, maintenance, reserve, stored, damaged,
+   destroyed, and construction states remain distinct.
+4. Forces outside the current crisis continue their assignments and can be
+   redeployed through authoritative events.
+5. Aggregating or expanding a formation cannot change its constituent quantity,
+   readiness, damage, location, or commitments.
+6. A mission package can execute only with named executing and supporting assets
+   present in the ledger.
+
+See `17_GLOBAL_FORCE_LEDGER.md` for the complete contract.
+
 ## Stable identity
 
 Every persistent object needs:
