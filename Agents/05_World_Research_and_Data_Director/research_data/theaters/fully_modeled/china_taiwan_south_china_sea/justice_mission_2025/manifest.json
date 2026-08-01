@@ -1,0 +1,43 @@
+{
+  "dataset_id": "dataset_justice_mission_2025_v0_1",
+  "title": "Justice Mission 2025 Research Benchmark",
+  "version": "0.1.0",
+  "schema_version": "1.0.0",
+  "status": "collecting",
+  "coverage": {
+    "description": "Publicly reported exercise activity around Taiwan, including announced live fire areas, force measures, activity claims, and unresolved asset identities.",
+    "valid_from": "2025-12-29T00:00:00+08:00",
+    "valid_to": "2025-12-31T23:59:59+08:00",
+    "country_codes": [
+      "CHN",
+      "TWN"
+    ]
+  },
+  "source_ids": [
+    "src_roc_mnd_2025_12_30_pla_activity",
+    "src_roc_mnd_2025_12_31_pla_activity",
+    "src_xinhua_2025_12_29_zone_notice",
+    "src_prc_mnd_2025_12_29_exercise_announcement",
+    "src_gti_2026_01_02_justice_mission",
+    "src_tsm_2026_justice_mission_timeline"
+  ],
+  "known_gaps": [
+    "Exact public notices and geometries for the additional warning areas reported after the initial five zone announcement have not been recovered.",
+    "No complete public type breakdown exists for the 207 aircraft sorties.",
+    "No complete public roster of unique participating aircraft or ships exists.",
+    "The exact number of rocket launcher vehicles is unknown.",
+    "The identity of the Type 075 amphibious assault ship remains disputed in collected reporting.",
+    "Individually named PLAN and China Coast Guard hulls require source by source validation.",
+    "The 15 vessel Coast Guard exercise snapshot and 8 official ship daily reports use different reporting scopes."
+  ],
+  "open_contradiction_ids": [
+    "contradiction_jm25_amphibious_hull",
+    "contradiction_jm25_second_day_air_count",
+    "contradiction_jm25_warning_zone_count",
+    "contradiction_jm25_rocket_system"
+  ],
+  "owner": "agent_05_world_research_and_data_director",
+  "last_reviewed": "2026-08-01",
+  "review_after": "2026-09-01",
+  "notes": "Research benchmark only. Not an approved simulation starting state."
+}
