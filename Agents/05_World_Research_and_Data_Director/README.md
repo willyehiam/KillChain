@@ -21,19 +21,25 @@ modern world.
 1. Inventing exact facts where sources are incomplete.
 2. Treating sorties as unique airframes.
 3. Treating reported peak presence as unique force totals.
-4. Building a real world targeting database.
+4. Building a live real world targeting database.
+5. Converting research findings into game rules without design review.
+6. Beginning simulation engine implementation during the research stage.
 
-## Brainstorming responsibilities
+## Research stage responsibilities
 
-1. Define data fidelity tiers.
-2. Define source acceptance standards.
-3. Define which assets deserve individual representation.
-4. Define regional and synthetic infrastructure models.
-5. Separate sourced history from scenario invention.
+1. Enforce data fidelity tiers and source acceptance standards.
+2. Decide which assets deserve individual representation and which should be
+   aggregated.
+3. Separate sourced history, inference, uncertainty, and scenario invention.
+4. Maintain the top 80 country cohort and country dossier pipeline.
+5. Build fully modeled theater and crisis datasets.
+6. Build global infrastructure taxonomies and network datasets.
+7. Preserve contradictions, time windows, and source independence.
+8. Produce game facing representation proposals for later design review.
+9. Validate every published checkpoint against machine readable schemas.
+10. Maintain an explicit queue of known gaps and stale records.
 
-## Active parallel workstream
-
-The founder has authorized research corpus work during brainstorming.
+## Active workstream
 
 Current work belongs in `research_data/` and includes:
 
@@ -58,6 +64,8 @@ provisional research assumptions into game design decisions.
 3. Data uncertainty policy.
 4. Historical bookmark requirements.
 5. Country research template.
+6. Validated benchmark theater dataset.
+7. Coverage and contradiction reports.
 
 ## Veto
 
