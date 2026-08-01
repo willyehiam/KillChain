@@ -36,7 +36,7 @@ Required depth:
 1. National and province level political state.
 2. Twenty plausible political actors where public evidence supports inclusion.
 3. Branch and major command level military structure.
-4. Inventory with readiness and location uncertainty.
+4. Complete force inventory with readiness, command, basing, reserve, maintenance, construction, and location uncertainty.
 5. Public major bases and strategic infrastructure.
 6. Economic production, trade, energy, technology, and logistics networks.
 7. Detailed decision paths for the Taiwan Strait.
@@ -71,7 +71,7 @@ Required depth:
 
 1. Bespoke government and leader system.
 2. Province level political and economic state.
-3. Major military commands and formations.
+3. Complete military inventory, major commands, formations, readiness states, and global deployments.
 4. Public strategic facilities and industrial nodes.
 5. Major intervention routes and alliance decisions.
 6. Detailed content in theaters where the country can materially intervene.
@@ -82,7 +82,7 @@ Required depth:
 
 1. Government, political actor roster, and succession paths.
 2. Province level administrative geography.
-3. National military structure and inventory aggregates.
+3. Complete national military structure and inventory ledger, with aggregation used for control and rendering rather than omission.
 4. Major public installations and infrastructure networks.
 5. Economic sectors, trade dependencies, and production conversion potential.
 6. Relevant regional crises and foreign policy alignments.
@@ -101,6 +101,27 @@ Required depth:
 
 Tier D states remain active actors. They are not intended as initial fully
 playable countries.
+
+## Global force inventory requirement
+
+Every top 80 country uses the same full force accounting standard defined in
+`FULL_FORCE_INVENTORY_PROGRAM.md`.
+
+1. Crisis rosters are disposition overlays, not total force lists.
+2. Every service, reserve component, and strategically relevant government force
+   is included.
+3. Every platform and formation belongs to an individual record or quantity
+   conserving pool.
+4. Readiness, maintenance, training, storage, construction, and current
+   commitments remain distinct states.
+5. The entire force can respond to the campaign, subject to time, access,
+   sustainment, command, and political constraints.
+6. Map aggregation changes presentation and control resolution, not inventory.
+7. No mission package may use a platform absent from the national force ledger.
+8. Losses, transfers, production, repairs, captures, and retirements must
+   reconcile against the ledger.
+
+Research order may differ by country. Completeness standards do not.
 
 ## Country research lanes
 
