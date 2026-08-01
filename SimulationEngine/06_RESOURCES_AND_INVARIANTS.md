@@ -55,6 +55,20 @@ Each resource should define:
 13. Same state, commands, seed, and content produce the same result.
 14. Aggregation conserves constituent state.
 15. Mission reach requires a valid support chain.
+16. Every military platform belongs to exactly one national ledger entity or inventory pool.
+17. Theater overlays cannot create or delete platforms.
+18. Every mission package identifies actual executing and supporting assets.
+19. A platform cannot become available without an explicit readiness transition.
+20. Inventory aggregation and expansion preserve quantity and constituent state.
+
+## Force ledger equation
+
+For every country and equipment type:
+
+`opening inventory + production + imports + captures = active + committed + transit + training + maintenance + reserve + stored + damaged + destroyed + exports + retirements`
+
+Every term is authoritative state. Differences are invariant violations, not
+values to repair silently.
 
 ## Network invariants
 
