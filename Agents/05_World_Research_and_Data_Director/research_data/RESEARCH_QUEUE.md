@@ -10,19 +10,21 @@
 
 ## P0: Corpus foundation
 
-1. Validate all JSON schemas. Status: syntax validated, semantic validation
-   tooling pending.
-2. Define source registry storage format. Status: schema complete.
-3. Define claim and contradiction storage format. Status: claim schema complete,
-   contradiction schema pending.
+1. Validate all JSON schemas. Status: syntax validated; full JSON Schema
+   evaluation pending.
+2. Define source registry storage format. Status: complete.
+3. Define claim and contradiction storage format. Status: complete.
 4. Freeze confidence and precision vocabulary. Status: provisional vocabulary
    documented.
-5. Normalize Justice Mission 2025 as a benchmark. Status: active.
+5. Normalize Justice Mission 2025 as a benchmark. Status: checkpoint 0.1
+   published and collecting.
 6. Add automated checks for missing provenance and invalid time fields. Status:
-   queued.
-7. Add cross file identity and source reference validation. Status: queued.
-8. Define dataset acceptance gates. Status: documented in
-   `RESEARCH_STAGE_KICKOFF.md`.
+   initial validator complete.
+7. Add cross file identity and source reference validation. Status: initial
+   validator complete.
+8. Define dataset acceptance gates. Status: complete.
+9. Expand the validator from the benchmark to every machine readable dataset.
+   Status: queued.
 
 ## P1: Country cohort
 
