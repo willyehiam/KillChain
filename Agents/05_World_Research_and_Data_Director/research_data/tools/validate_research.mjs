@@ -5,6 +5,21 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ID_PATTERN = /^[a-z0-9][a-z0-9_:-]*$/;
+const ISO_PATTERN = /^\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2}(?::\\d{2}(?:\\.\\d+)?)?(?:Z|[+-]\\d{2}:\\d{2})?)?$/;
+const DATE_FIELDS = new Set([
+  "published_at",
+  "observed_from",
+  "observed_to",
+  "observed_at",
+  "accessed_at",
+  "valid_from",
+  "valid_to",
+  "reviewed_at",
+  "review_after",
+  "last_reviewed",
+  "effective_from",
+  "effective_to",
+]);
 
 function fail(errors, message) {
   errors.push(message);
@@ -55,6 +70,23 @@ function requireFields(records, fields, label, errors) {
   }
 }
 
+function validateDateFields(value, label, errors) {
+  if (Array.isArray(value)) {
+    value.forEach((entry, index) => validateDateFields(entry, `${label}[${index}]`, errors));
+    return;
+  }
+  if (!value || typeof value !== "object") return;
+  for (const [key, entry] of Object.entries(value)) {
+    if (DATE_FIELDS.has(key)) {
+      if (typeof entry !== "string" || !ISO_PATTERN.test(entry)) {
+        fail(errors, `${label}.${key}: invalid ISO date or timestamp ${JSON.stringify(entry)}`);
+      }
+    } else {
+      validateDateFields(entry, `${label}.${key}`, errors);
+    }
+  }
+}
+
 function validateGeoJson(geo, errors) {
   if (!geo || geo.type !== "FeatureCollection") {
     fail(errors, "exercise_zones.geojson: expected FeatureCollection");
@@ -99,6 +131,13 @@ function validateJusticeMission(directory, errors, report) {
 
   requireFields(sources, ["title", "publisher", "accessed_at", "source_tier", "source_type"], "source", errors);
   requireFields(claims, ["subject_id", "predicate", "value", "evidence_state", "confidence", "source_ids"], "claim", errors);
+
+  validateDateFields(manifest, "manifest", errors);
+  validateDateFields(sources, "sources", errors);
+  validateDateFields(claims, "claims", errors);
+  validateDateFields(contradictions, "contradictions", errors);
+  validateDateFields(force, "force_measures", errors);
+  validateDateFields(geo, "exercise_zones", errors);
 
   for (const claim of claims) {
     for (const sourceId of claim.source_ids ?? []) {
