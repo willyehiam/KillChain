@@ -48,6 +48,7 @@ at national, theater, formation, platform, and intelligence track resolutions.
 15. `14_CONTENT_AND_MODDING.md`
 16. `15_TECHNOLOGY_OPTIONS.md`
 17. `16_OPEN_ENGINE_QUESTIONS.md`
+18. `17_GLOBAL_FORCE_LEDGER.md`
 
 ## Prototype relationship
 
