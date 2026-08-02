@@ -266,11 +266,14 @@ into individual facilities only where individual identity matters.
 
 ### Package 2: Cohort
 
-1. World Bank nominal GDP source.
-2. Complete reference year selection.
-3. Top 80 candidate ranking.
-4. Boundary review.
+Status: complete.
+
+1. IMF April 2026 World Economic Outlook source.
+2. 2025 reference year.
+3. Top 80 sovereign country and Taiwan ranking.
+4. Hong Kong and Puerto Rico boundary exclusions.
 5. Frozen roster version 1.
+6. Mandatory strategic additions outside the GDP cutoff.
 
 ### Package 3: Bookmark
 
