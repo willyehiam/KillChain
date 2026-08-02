@@ -54,6 +54,8 @@
 
 ### Checkpoint 2: Top 80 cohort
 
+Status: complete. The cohort is frozen to the IMF April 2026 WEO vintage and 2025 NGDPD values.
+
 1. Select one complete GDP reference year.
 2. Retrieve and archive the canonical dataset.
 3. Resolve territories and missing values.
