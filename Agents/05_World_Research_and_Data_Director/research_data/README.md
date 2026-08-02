@@ -111,12 +111,27 @@ A numeric precision value and the source must accompany any point or polygon.
 
 ## Validation
 
-Run the current integrity validator from the repository root:
+Validate the Justice Mission benchmark:
 
 `node Agents/05_World_Research_and_Data_Director/research_data/tools/validate_research.mjs Agents/05_World_Research_and_Data_Director/research_data`
 
-The validator currently checks the Justice Mission benchmark. It will expand as
-additional datasets reach machine readable form.
+Validate the frozen top 80 cohort:
+
+`node Agents/05_World_Research_and_Data_Director/research_data/tools/validate_top80.mjs Agents/05_World_Research_and_Data_Director/research_data/countries/top_80_2025/top_80_2025_gdp.json`
+
+Each validator exits with a failure code when an invariant breaks.
+
+## Frozen country cohort
+
+The baseline playable research cohort is frozen to the top 80 sovereign countries
+and Taiwan by 2025 nominal GDP using the IMF April 2026 WEO vintage.
+
+The authoritative roster is:
+
+`countries/top_80_2025/top_80_2025_gdp.json`
+
+Strategically essential countries outside the GDP cutoff remain modeled through
+the mandatory strategic addition list. They do not displace ranked countries.
 
 ## First benchmark
 
