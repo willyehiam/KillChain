@@ -28,10 +28,10 @@
 
 ## P1: Country cohort
 
-1. Retrieve the canonical nominal GDP dataset.
-2. Produce the top 80 candidate cohort.
-3. Resolve territories, missing data, and reference year.
-4. Freeze cohort version 1 after approval.
+1. Retrieve the canonical nominal GDP dataset. Status: complete; IMF April 2026 WEO vintage registered.
+2. Produce the top 80 candidate cohort. Status: complete; 80 ranked country records published.
+3. Resolve territories, missing data, and reference year. Status: complete; 2025 NGDPD selected, Hong Kong and Puerto Rico excluded from the country count, Taiwan included.
+4. Freeze cohort version 1 after approval. Status: complete; founder approved 2025 GDP rule and roster version 1 is frozen.
 5. Create a country dossier for every selected state.
 6. Assign strategic and institutional archetypes.
 7. Prioritize bespoke content tiers.
