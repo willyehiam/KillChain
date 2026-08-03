@@ -1,0 +1,124 @@
+{
+  "schema_version": "0.1.0",
+  "bookmark_id": "bookmark_global_fracture_2026_07_01",
+  "title": "Global Fracture, 1 July 2026",
+  "status": "frozen",
+  "world_time": "2026-07-01T00:00:00Z",
+  "approved_at": "2026-08-02",
+  "temporal_policy": {
+    "claim_validity_rule": "claim_must_describe_state_at_or_before_world_time",
+    "source_publication_rule": "later_sources_allowed_only_for_retrospective_pre_start_state",
+    "post_start_event_rule": "reference_trajectory_only_never_precommitted",
+    "player_knowledge_rule": "faction_beliefs_derive_from_pre_start_information_and_gameplay_observation",
+    "simulation_clock_rule": "real_time_with_pause_from_world_time"
+  },
+  "design_rationale": [
+    "The approved opening window is summer or fall 2026, and 1 July is the earliest clean summer month boundary.",
+    "The June United States and Iran memorandum has paused one phase of conflict without removing the possibility of renewed war, preserving coercion, diplomacy, force protection, shipping, and escalation choices.",
+    "Justice Mission 2025 is recent history while the later July Taiwan Strait live fire event remains outside the initial state, creating a useful historical reference without forcing it to recur.",
+    "The Ukraine war, the Gaza and Levant crisis, Sudan, Myanmar, and the transformed Venezuelan political order keep the rest of the world strategically active.",
+    "A clean UTC boundary gives every country, inventory, deployment, market, alliance, sanction, and faction record one reconciliation time."
+  ],
+  "opening_conditions": [
+    {
+      "condition_id": "condition_iran_gulf_fragile_mou",
+      "region": "Iran and the Gulf",
+      "summary": "A June memorandum between the United States and Iran has announced a cessation of hostilities and reopening of the Strait of Hormuz, but verification, implementation, force posture, and political durability remain unresolved.",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "source_wh_iran_mou_2026_06_19"
+      ],
+      "research_status": "collecting"
+    },
+    {
+      "condition_id": "condition_ukraine_active_war",
+      "region": "Ukraine and Russia",
+      "summary": "The interstate war remains active after a winter campaign that heavily degraded energy generation, transmission, distribution, and heating while civilian casualties and long range attacks continued through June.",
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "source_un_ukraine_energy_2026_06_29",
+        "source_un_ukraine_civilians_june_2026"
+      ],
+      "research_status": "collecting"
+    },
+    {
+      "condition_id": "condition_gaza_fragile_ceasefire",
+      "region": "Gaza and the Levant",
+      "summary": "A ceasefire framework exists, but military activity, lethal incidents, expanding access restrictions, displacement, constrained humanitarian access, and severely damaged essential systems continue.",
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "source_ocha_gaza_2026_07_01"
+      ],
+      "research_status": "collecting"
+    },
+    {
+      "condition_id": "condition_taiwan_post_justice_mission",
+      "region": "Taiwan Strait and South China Sea",
+      "summary": "Justice Mission 2025 has ended as an announced exercise, but its blockade and joint strike concepts remain recent operational evidence within a continuing campaign of military, political, economic, cyber, and cognitive pressure.",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "source_xinhua_justice_mission_complete_2025_12_31",
+        "source_tw_mofa_justice_mission_2026_01_23"
+      ],
+      "research_status": "collecting"
+    },
+    {
+      "condition_id": "condition_venezuela_transformed_order",
+      "region": "Venezuela and the Caribbean",
+      "summary": "The January United States operation and apprehension of Nicolás Maduro and Cilia Flores have transformed Venezuela's leadership, sovereignty, military posture, oil governance, and regional alignment questions.",
+      "evidence_state": "official_claim",
+      "confidence": "medium",
+      "source_ids": [
+        "source_wh_venezuela_sjr98_2026_01_08"
+      ],
+      "research_status": "collecting"
+    },
+    {
+      "condition_id": "condition_sudan_active_war",
+      "region": "Sudan",
+      "summary": "Violence continues across Sudan with escalating regional and humanitarian consequences; force control, external support, and territorial state require theater level reconstruction.",
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "source_un_sudan_2026_06_20"
+      ],
+      "research_status": "collecting"
+    },
+    {
+      "condition_id": "condition_myanmar_active_crisis",
+      "region": "Myanmar",
+      "summary": "Armed conflict and institutional fragmentation continue while a fuel crisis linked to wider Middle East disruption compounds mobility, services, livelihoods, and humanitarian capacity.",
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "source_un_myanmar_fuel_2026_06_29"
+      ],
+      "research_status": "collecting"
+    }
+  ],
+  "historical_trajectory_references": [
+    {
+      "event_id": "trajectory_iran_hormuz_and_us_strikes_2026_07",
+      "occurred_after_start": "2026-07-06",
+      "summary": "A later United States account says Iran attacked neutral flagged shipping on 6 and 7 July and United States strikes began on 7 July. This is a historical comparison path, not a scripted certainty.",
+      "use": "reference_only_not_initial_state",
+      "source_ids": [
+        "source_wh_iran_sjr181_2026_07_30"
+      ]
+    },
+    {
+      "event_id": "trajectory_taiwan_strait_live_fire_2026_07",
+      "occurred_after_start": "2026-07-23",
+      "summary": "Taiwan reported newly announced live fire activity in the western Taiwan Strait on 23 and 24 July. This is a historical comparison path, not a scripted certainty.",
+      "use": "reference_only_not_initial_state",
+      "source_ids": [
+        "source_tw_mofa_live_fire_2026_07_23"
+      ]
+    }
+  ],
+  "notes": "This file freezes time, not completeness. Every opening condition remains subject to source triangulation and detailed country and theater reconstruction."
+}
