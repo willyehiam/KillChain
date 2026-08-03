@@ -94,6 +94,17 @@
     },
     "reliability_notes": {
       "type": "string"
+    },
+    "download_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "dataset_version": {
+      "type": "string"
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
     }
   },
   "additionalProperties": false
