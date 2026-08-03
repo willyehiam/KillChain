@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/force_deployment_record.schema.json",
+  "title": "Force Deployment Record",
+  "type": "object",
+  "required": [
+    "deployment_id",
+    "country_id",
+    "entity_type",
+    "entity_id",
+    "assignment",
+    "observed_from",
+    "observed_to",
+    "stale_after",
+    "location",
+    "evidence_state",
+    "confidence",
+    "source_ids"
+  ],
+  "properties": {
+    "deployment_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "country_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "entity_type": {
+      "type": "string",
+      "enum": [
+        "organization",
+        "individual_platform",
+        "inventory_pool",
+        "task_force",
+        "unknown_force"
+      ]
+    },
+    "entity_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "assignment": {
+      "type": "string",
+      "enum": [
+        "home_station",
+        "training",
+        "exercise",
+        "patrol",
+        "forward_deployed",
+        "combat",
+        "escort",
+        "blockade",
+        "transport",
+        "maintenance",
+        "reserve",
+        "unknown"
+      ]
+    },
+    "observed_from": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "observed_to": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "stale_after": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "location": {
+      "$ref": "common.schema.json#/$defs/geometryRecord"
+    },
+    "route_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "origin_location_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "destination_location_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "evidence_state": {
+      "$ref": "common.schema.json#/$defs/evidenceState"
+    },
+    "confidence": {
+      "$ref": "common.schema.json#/$defs/confidence"
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
