@@ -3,7 +3,7 @@
 ## Canonical registry
 
 `country_registry.json` contains the frozen 80 country GDP cohort plus 11
-mandatory strategic additions for the 1 July 2026 bookmark.
+mandatory strategic additions for the 1 September 2025 bookmark.
 
 The registry is the authority for country identity, research tier, coverage
 status, priority, and dossier path. It does not claim that every registered
