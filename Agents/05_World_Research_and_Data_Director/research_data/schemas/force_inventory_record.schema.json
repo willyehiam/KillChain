@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/force_inventory_record.schema.json",
+  "title": "National Force Inventory Record",
+  "type": "object",
+  "required": [
+    "inventory_record_id",
+    "country_id",
+    "equipment_type_id",
+    "domain",
+    "category",
+    "accounting_state",
+    "quantity",
+    "as_of",
+    "organization_id",
+    "location_id",
+    "evidence_state",
+    "confidence",
+    "source_ids"
+  ],
+  "properties": {
+    "inventory_record_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "country_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "equipment_type_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "ground",
+        "maritime",
+        "air",
+        "space",
+        "cyber",
+        "information",
+        "logistics",
+        "joint"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "representation_tier": {
+      "$ref": "common.schema.json#/$defs/representationTier"
+    },
+    "accounting_state": {
+      "type": "string",
+      "enum": [
+        "active",
+        "committed",
+        "in_transit",
+        "training",
+        "maintenance",
+        "reserve",
+        "stored",
+        "under_construction",
+        "damaged",
+        "destroyed",
+        "exported",
+        "retired",
+        "captured",
+        "unknown"
+      ]
+    },
+    "quantity": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "exact",
+            "range",
+            "unknown"
+          ]
+        },
+        "value": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minimum": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maximum": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "exact"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "range"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "minimum",
+              "maximum"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "as_of": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "organization_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "location_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "readiness_band": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "unavailable",
+        "low",
+        "limited",
+        "standard",
+        "high",
+        "surge"
+      ]
+    },
+    "assignment_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source_inventory_scope": {
+      "type": "string",
+      "enum": [
+        "national_total",
+        "service_total",
+        "formation_total",
+        "location_total",
+        "observed_presence",
+        "production_record",
+        "loss_record",
+        "transfer_record",
+        "other"
+      ]
+    },
+    "evidence_state": {
+      "$ref": "common.schema.json#/$defs/evidenceState"
+    },
+    "confidence": {
+      "$ref": "common.schema.json#/$defs/confidence"
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
+    },
+    "contradiction_set_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
