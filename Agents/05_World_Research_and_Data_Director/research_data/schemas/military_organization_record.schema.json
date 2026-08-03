@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/military_organization_record.schema.json",
+  "title": "Military Organization Record",
+  "type": "object",
+  "required": [
+    "organization_id",
+    "country_id",
+    "name",
+    "service",
+    "component",
+    "echelon",
+    "parent_organization_id",
+    "valid_from",
+    "evidence_state",
+    "confidence",
+    "source_ids"
+  ],
+  "properties": {
+    "organization_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "country_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "native_name": {
+      "type": "string"
+    },
+    "service": {
+      "type": "string",
+      "enum": [
+        "joint",
+        "army",
+        "navy",
+        "marine",
+        "air_force",
+        "space",
+        "rocket_or_missile",
+        "coast_guard",
+        "gendarmerie",
+        "cyber",
+        "intelligence",
+        "special_operations",
+        "paramilitary",
+        "other"
+      ]
+    },
+    "component": {
+      "type": "string",
+      "enum": [
+        "active",
+        "reserve",
+        "guard",
+        "mobilization",
+        "training",
+        "civilian_agency",
+        "other"
+      ]
+    },
+    "echelon": {
+      "type": "string",
+      "enum": [
+        "ministry",
+        "general_staff",
+        "theater_command",
+        "service_command",
+        "fleet",
+        "army_group",
+        "army",
+        "corps",
+        "division",
+        "brigade",
+        "regiment",
+        "battalion",
+        "squadron",
+        "wing",
+        "group",
+        "flotilla",
+        "task_force",
+        "base_command",
+        "facility_unit",
+        "detachment",
+        "pool",
+        "other"
+      ]
+    },
+    "parent_organization_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "headquarters_location_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "valid_from": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "valid_to": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "personnel_authorized": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "personnel_assigned": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "readiness_state": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "inactive",
+        "forming",
+        "training",
+        "ready",
+        "deployed",
+        "degraded",
+        "reconstituting",
+        "demobilizing"
+      ]
+    },
+    "evidence_state": {
+      "$ref": "common.schema.json#/$defs/evidenceState"
+    },
+    "confidence": {
+      "$ref": "common.schema.json#/$defs/confidence"
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
