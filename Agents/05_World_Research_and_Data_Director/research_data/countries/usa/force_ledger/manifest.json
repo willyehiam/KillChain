@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1.0",
+  "force_ledger_id": "force_ledger_usa_2026_07_01",
+  "country_id": "country_usa",
+  "bookmark_id": "bookmark_global_fracture_2026_07_01",
+  "as_of": "2026-07-01T00:00:00Z",
+  "status": "shell",
+  "accounting_states": [
+    "active",
+    "committed",
+    "in_transit",
+    "training",
+    "maintenance",
+    "reserve",
+    "stored",
+    "under_construction",
+    "damaged",
+    "destroyed",
+    "exported",
+    "retired",
+    "captured",
+    "unknown"
+  ],
+  "scope": {
+    "services": [],
+    "components": [],
+    "government_forces": [],
+    "individualization_rule": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision"
+  },
+  "dataset_paths": {
+    "organizations": null,
+    "equipment_types": null,
+    "inventory": null,
+    "deployments": null,
+    "facilities": null,
+    "sources": null,
+    "contradictions": null
+  },
+  "reconciliation": {
+    "state": "not_started",
+    "organization_records": 0,
+    "equipment_type_records": 0,
+    "inventory_records": 0,
+    "deployment_records": 0,
+    "exact_quantity_records": 0,
+    "range_quantity_records": 0,
+    "unknown_quantity_records": 0,
+    "open_conservation_exceptions": 0,
+    "double_booking_exceptions": 0
+  },
+  "source_ids": [],
+  "unknowns": [
+    "Service, component, and command hierarchy records have not been accepted.",
+    "National equipment totals have not been reconciled across active, reserve, guard, training, maintenance, storage, construction, damage, loss, export, and retirement states.",
+    "Named platforms and quantity conserving pools have not been assigned.",
+    "Global deployments, home stations, readiness, maintenance, munitions, crews, sustainment, and commitments have not been reconciled."
+  ],
+  "reviewed_at": "2026-08-02",
+  "review_after": "2026-08-16",
+  "notes": "No platform can appear in a mission package until it exists in this ledger or a later accepted replacement. Empty arrays are explicit unknown coverage, not assertions of absence."
+}
