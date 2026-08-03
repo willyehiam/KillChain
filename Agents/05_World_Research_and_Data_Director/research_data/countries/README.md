@@ -1,5 +1,23 @@
 # Country Dossiers
 
+## Canonical registry
+
+`country_registry.json` contains the frozen 80 country GDP cohort plus 11
+mandatory strategic additions for the 1 July 2026 bookmark.
+
+The registry is the authority for country identity, research tier, coverage
+status, priority, and dossier path. It does not claim that every registered
+country is already populated.
+
+The first Tier A foundations are:
+
+1. `usa/profile.json`
+2. `chn/profile.json`
+3. `twn/profile.json`
+
+Each profile links to a force ledger manifest. The acceptance questions and
+collection order are in `TIER_A_FOUNDATION.md`.
+
 ## Organization
 
 Each selected country receives one directory named by lowercase ISO alpha 3 code.
@@ -16,7 +34,12 @@ countries/
     organizations.geojson
     facilities.geojson
     infrastructure.geojson
-    inventory.json
+    force_ledger/
+      manifest.json
+      organizations.ndjson
+      equipment_types.ndjson
+      inventory.ndjson
+      deployments.ndjson
     starting_state.json
 ```
 
