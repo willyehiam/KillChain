@@ -95,7 +95,7 @@ const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const researchRoot = path.resolve(process.argv[2] ?? path.join(scriptDirectory, ".."));
 const schemaRoot = path.join(researchRoot, "schemas");
 const countriesRoot = path.join(researchRoot, "countries");
-const bookmarkRoot = path.join(researchRoot, "bookmarks", "2026_07_01");
+const bookmarkRoot = path.join(researchRoot, "bookmarks", "2025_09_01");
 
 for (const schema of NEW_SCHEMAS) {
   readJson(path.join(schemaRoot, schema));
@@ -117,7 +117,7 @@ for (const source of allSources) {
 }
 
 assert(bookmark?.status === "frozen", "Bookmark must be frozen");
-assert(bookmark?.world_time === "2026-07-01T00:00:00Z", "Unexpected bookmark world time");
+assert(bookmark?.world_time === "2025-09-01T00:00:00Z", "Unexpected bookmark world time");
 for (const condition of bookmark?.opening_conditions ?? []) {
   for (const sourceId of condition.source_ids ?? []) {
     assert(sourceIds.has(sourceId), `${condition.condition_id}: unknown source ${sourceId}`);
