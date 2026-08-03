@@ -3,7 +3,7 @@
 ## Status
 
 The United States, China, and Taiwan now have canonical dossier manifests and
-national force ledger shells for the 1 July 2026 bookmark.
+national force ledger shells for the 1 September 2025 bookmark.
 
 These files establish identity, scope, completeness accounting, and data
 contracts. They deliberately do not invent leaders, force counts, readiness, or
