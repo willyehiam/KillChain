@@ -9,7 +9,6 @@
 
 ## Campaign
 
-1. What exact summer or fall 2026 date should become the first bookmark?
 2. What crisis provides the opening tutorial?
 3. How many bookmarks should exist at first?
 4. Are there optional formal victory modes alongside open ended play?
@@ -98,3 +97,8 @@
 5. What is the save compatibility promise?
 6. What performance target defines success?
 7. How are agent tasks orchestrated and reviewed?
+
+
+## Resolved during research
+
+1. The first bookmark is `2026-07-01T00:00:00Z`.
