@@ -8,7 +8,11 @@ faction dataset so those records can later initialize one coherent world.
 
 ## Active bookmark
 
-`2026_07_01/` is the frozen first campaign bookmark.
+`2025_09_01/` is the frozen first campaign bookmark.
+
+It begins before Justice Mission 2025, the January 2026 Venezuela operation,
+and the February 2026 Iran campaign. Those later events are historical
+comparison trajectories, not guaranteed outcomes.
 
 ## Rules
 
