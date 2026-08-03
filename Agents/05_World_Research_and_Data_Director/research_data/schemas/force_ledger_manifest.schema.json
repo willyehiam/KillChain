@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/force_ledger_manifest.schema.json",
+  "title": "National Force Ledger Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "force_ledger_id",
+    "country_id",
+    "bookmark_id",
+    "as_of",
+    "status",
+    "accounting_states",
+    "scope",
+    "dataset_paths",
+    "reconciliation",
+    "source_ids",
+    "unknowns"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "force_ledger_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "country_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "bookmark_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "as_of": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "shell",
+        "collecting",
+        "needs_review",
+        "reconciled",
+        "stale",
+        "deprecated"
+      ]
+    },
+    "accounting_states": {
+      "type": "array",
+      "minItems": 14,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "active",
+          "committed",
+          "in_transit",
+          "training",
+          "maintenance",
+          "reserve",
+          "stored",
+          "under_construction",
+          "damaged",
+          "destroyed",
+          "exported",
+          "retired",
+          "captured",
+          "unknown"
+        ]
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "services",
+        "components",
+        "government_forces",
+        "individualization_rule"
+      ],
+      "properties": {
+        "services": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "joint",
+              "army",
+              "navy",
+              "marine",
+              "air_force",
+              "space",
+              "rocket_or_missile",
+              "coast_guard",
+              "gendarmerie",
+              "cyber",
+              "intelligence",
+              "special_operations",
+              "paramilitary",
+              "other"
+            ]
+          }
+        },
+        "components": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "active",
+              "reserve",
+              "guard",
+              "mobilization",
+              "training",
+              "civilian_agency",
+              "other"
+            ]
+          }
+        },
+        "government_forces": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "individualization_rule": {
+          "type": "string",
+          "const": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision"
+        }
+      },
+      "additionalProperties": false
+    },
+    "dataset_paths": {
+      "type": "object",
+      "required": [
+        "organizations",
+        "equipment_types",
+        "inventory",
+        "deployments",
+        "facilities",
+        "sources",
+        "contradictions"
+      ],
+      "properties": {
+        "organizations": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "equipment_types": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "inventory": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "deployments": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "facilities": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sources": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "contradictions": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "reconciliation": {
+      "type": "object",
+      "required": [
+        "state",
+        "organization_records",
+        "equipment_type_records",
+        "inventory_records",
+        "deployment_records",
+        "exact_quantity_records",
+        "range_quantity_records",
+        "unknown_quantity_records",
+        "open_conservation_exceptions",
+        "double_booking_exceptions"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "not_started",
+            "partial",
+            "balanced",
+            "blocked_by_unknowns",
+            "failed"
+          ]
+        },
+        "organization_records": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "equipment_type_records": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "inventory_records": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "deployment_records": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "exact_quantity_records": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "range_quantity_records": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unknown_quantity_records": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "open_conservation_exceptions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "double_booking_exceptions": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "reviewed_at": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "review_after": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
