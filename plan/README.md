@@ -8,11 +8,14 @@ engineering contracts.
 
 ## Current authority
 
-KillWeb is in the brainstorming stage.
+KillWeb is in the research stage.
 
-Documents describing research, design, simulation, implementation, testing, or
-agent orchestration are planning artifacts only. They do not authorize work in a
-later stage.
+The approved brainstorming corpus is the authority for scope, player fantasy,
+abstraction, and quality. Research documents may now establish sourced world
+state, temporal cutoffs, uncertainty, and representation proposals. Documents
+describing later game design, experience design, engineering, implementation,
+testing, or agent orchestration remain planning artifacts until their stage gates
+are deliberately passed.
 
 ## Reading order
 
