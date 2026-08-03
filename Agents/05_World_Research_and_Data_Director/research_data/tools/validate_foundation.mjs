@@ -144,6 +144,10 @@ assert(
 );
 assert(registry?.countries?.length === 91, "Country registry must contain 91 records");
 assert(
+  registry?.registry_id === "country_registry_2025_09_01_v1",
+  "Country registry identifier must match the fall 2025 bookmark",
+);
+assert(
   registry?.bookmark_id === bookmark?.bookmark_id,
   "Country registry and bookmark identifiers must match",
 );
