@@ -275,3 +275,17 @@ datasets, and publish representation proposals.
 The new simulation engine, final experience design, engineering stack, and
 development swarm remain gated until their later stages are deliberately
 completed.
+
+
+## 2026 08 02: First campaign bookmark
+
+### Decision
+
+Freeze the first KillWeb campaign at `2026-07-01T00:00:00Z`.
+
+### Temporal rule
+
+Sources published later may correct or describe prebookmark state only when their
+claim validity interval reaches back to the bookmark. Events after the bookmark
+remain historical comparison trajectories and may not become faction
+foreknowledge or scripted certainty.
