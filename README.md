@@ -22,17 +22,17 @@ lineage, not a constraint that the larger game must inherit unchanged.
 
 ## Current stage
 
-KillWeb is in the brainstorming stage.
+KillWeb is in the research stage.
 
-No later stage should begin until the brainstorming gate in
-`plan/04_STAGE_GATES.md` is deliberately approved. Simulation engine documents
-currently capture hypotheses, contracts, and open questions. They are not an
-instruction to begin implementation.
+The brainstorming constitution is approved and frozen as the current design
+authority. Research now builds the dated, sourced, uncertain world model required
+to design the simulation. Game and simulation design, experience design,
+engineering design, and development remain gated by `plan/04_STAGE_GATES.md`.
 
-A parallel public source research corpus is authorized under
-`Agents/05_World_Research_and_Data_Director/research_data/`. That workstream
-builds evidence and data infrastructure while product brainstorming remains
-open. It does not activate engine development.
+Active research lives under
+`Agents/05_World_Research_and_Data_Director/research_data/`. The research stage
+may define data contracts and representation proposals, but it may not silently
+turn evidence into mechanics or begin the new simulation engine.
 
 ## Repository knowledge map
 
