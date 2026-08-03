@@ -1,0 +1,132 @@
+{
+  "schema_version": "0.1.0",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "title": "Global Fracture, 1 September 2025",
+  "status": "frozen",
+  "world_time": "2025-09-01T00:00:00Z",
+  "approved_at": "2026-08-02",
+  "temporal_policy": {
+    "claim_validity_rule": "claim_must_describe_state_at_or_before_world_time",
+    "source_publication_rule": "later_sources_allowed_only_for_retrospective_pre_start_state",
+    "post_start_event_rule": "reference_trajectory_only_never_precommitted",
+    "player_knowledge_rule": "faction_beliefs_derive_from_pre_start_information_and_gameplay_observation",
+    "simulation_clock_rule": "real_time_with_pause_from_world_time"
+  },
+  "design_rationale": [
+    "The founder approved a fall 2025 opening and 1 September is the earliest clean month boundary in that window.",
+    "The bookmark begins before Justice Mission 2025 so the exercise, blockade logic, and any resulting Taiwan crisis can emerge from simulation rather than prior history.",
+    "The bookmark begins before the January 2026 Venezuela operation and the February 2026 Iran campaign so coercion, diplomacy, force posture, domestic support, and escalation can produce different outcomes.",
+    "Active wars in Ukraine, Gaza and the Levant, Sudan, and Myanmar keep the world strategically alive from the first tick.",
+    "A clean UTC boundary gives every country, force, market, alliance, sanction, faction, and infrastructure record one reconciliation time."
+  ],
+  "opening_conditions": [
+    {
+      "condition_id": "condition_taiwan_persistent_pressure_2025_09_01",
+      "region": "Taiwan Strait and South China Sea",
+      "summary": "Routine but persistent PLA pressure is already active. Taiwan reported 8 PLA aircraft sorties, 6 PLAN ships, and 1 official ship around the island in the preceding reporting day, with 2 sorties crossing the median line into northern and southwestern ADIZ sectors.",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "source_roc_mnd_pla_activity_2025_09_01"
+      ],
+      "research_status": "collecting"
+    },
+    {
+      "condition_id": "condition_venezuela_caribbean_buildup_2025_09_01",
+      "region": "Venezuela and the Caribbean",
+      "summary": "United States pressure on Nicolás Maduro has intensified while additional United States personnel, naval vessels, and air assets have begun deploying to the Caribbean. Their ultimate political and operational purpose is not precommitted in the simulation.",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "source_dod_southern_spear_retrospective_2026_07_31",
+        "source_state_maduro_reward_2025_08_07"
+      ],
+      "research_status": "collecting"
+    },
+    {
+      "condition_id": "condition_iran_post_june_strikes_2025_09_01",
+      "region": "Iran and the Gulf",
+      "summary": "The region remains unstable after the June 2025 attacks on Iranian nuclear facilities. IAEA verification access is materially disrupted, leaving nuclear knowledge, damage assessment, diplomacy, force protection, and renewed escalation unresolved.",
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "source_iaea_iran_safeguards_2025_09_03"
+      ],
+      "research_status": "collecting"
+    },
+    {
+      "condition_id": "condition_ukraine_active_war_2025_09_01",
+      "region": "Ukraine and Russia",
+      "summary": "The interstate war remains active. Frontline fighting, short range drones, aerial bombs, damaged infrastructure, degraded services, and displacement continue to shape military and political choices.",
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "source_un_ukraine_frontline_2025_08_18"
+      ],
+      "research_status": "collecting"
+    },
+    {
+      "condition_id": "condition_gaza_levant_active_crisis_2025_09_01",
+      "region": "Gaza and the Levant",
+      "summary": "Hostilities, mass displacement, constrained humanitarian access, damaged essential systems, and regional escalation risks remain active across Gaza and the wider Levant.",
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "source_ocha_gaza_2025_08_28"
+      ],
+      "research_status": "collecting"
+    },
+    {
+      "condition_id": "condition_sudan_active_war_2025_09_01",
+      "region": "Sudan",
+      "summary": "Sudan remains in a large scale civil war with severe humanitarian need and regional spillover. Territorial control, force cohesion, external sponsorship, and logistics require theater level reconstruction.",
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "source_un_sudan_humanitarian_2025_08_28"
+      ],
+      "research_status": "collecting"
+    },
+    {
+      "condition_id": "condition_myanmar_fragmented_conflict_2025_09_01",
+      "region": "Myanmar",
+      "summary": "Armed conflict, displacement, institutional fragmentation, and unresolved Rohingya security and accountability conditions continue. Control and force disposition require actor by actor reconstruction.",
+      "evidence_state": "observed",
+      "confidence": "high",
+      "source_ids": [
+        "source_iimm_myanmar_2025_08_21"
+      ],
+      "research_status": "collecting"
+    }
+  ],
+  "historical_trajectory_references": [
+    {
+      "event_id": "trajectory_justice_mission_2025",
+      "occurred_after_start": "2025-12-29",
+      "summary": "The PLA later began Justice Mission 2025 around Taiwan with Army, Navy, Air Force, and Rocket Force participation and announced blockade and joint superiority objectives. This is a comparison trajectory, not a guaranteed event.",
+      "use": "reference_only_not_initial_state",
+      "source_ids": [
+        "source_xinhua_justice_mission_start_2025_12_29"
+      ]
+    },
+    {
+      "event_id": "trajectory_venezuela_operation_2026_01_03",
+      "occurred_after_start": "2026-01-03",
+      "summary": "The United States later conducted strikes in Venezuela and an operation to apprehend Nicolás Maduro and Cilia Flores. This is a comparison trajectory, not a guaranteed event.",
+      "use": "reference_only_not_initial_state",
+      "source_ids": [
+        "source_wh_venezuela_sjr98_2026_01_08"
+      ]
+    },
+    {
+      "event_id": "trajectory_iran_epic_fury_2026_02_28",
+      "occurred_after_start": "2026-02-28",
+      "summary": "The United States later opened Operation Epic Fury against Iran. This is a comparison trajectory, not a guaranteed event.",
+      "use": "reference_only_not_initial_state",
+      "source_ids": [
+        "source_wh_iran_epic_fury_2026_03_01"
+      ]
+    }
+  ],
+  "notes": "This file freezes time, not completeness. The opening is deliberately before the three major researched escalation trajectories. Every condition remains subject to source triangulation and detailed country and theater reconstruction."
+}
