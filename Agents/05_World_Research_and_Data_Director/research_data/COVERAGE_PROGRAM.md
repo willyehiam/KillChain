@@ -277,12 +277,15 @@ Status: complete.
 
 ### Package 3: Bookmark
 
-1. Candidate dates in late summer and early fall 2025.
-2. Historical cutoff.
-3. Global government roster.
-4. Alliances and sanctions.
-5. Active conflict state.
-6. Economic and military posture.
+Status: temporal foundation complete; world population in progress.
+
+1. First bookmark frozen at 1 July 2026.
+2. Historical cutoff and post start knowledge firewall defined.
+3. Opening condition source ledger published.
+4. Global government roster queued.
+5. Alliances and sanctions queued.
+6. Active conflict state collecting.
+7. Economic and military posture collecting.
 
 ### Package 4: First playable world
 
