@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/equipment_type_record.schema.json",
+  "title": "Military Equipment Type Record",
+  "type": "object",
+  "required": [
+    "equipment_type_id",
+    "display_name",
+    "domain",
+    "category",
+    "entity_kind",
+    "roles",
+    "individualizable",
+    "evidence_state",
+    "confidence",
+    "source_ids"
+  ],
+  "properties": {
+    "equipment_type_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "native_name": {
+      "type": "string"
+    },
+    "reporting_names": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "origin_country_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "ground",
+        "maritime",
+        "air",
+        "space",
+        "cyber",
+        "information",
+        "logistics",
+        "joint"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "entity_kind": {
+      "type": "string",
+      "enum": [
+        "platform",
+        "weapon",
+        "munition",
+        "sensor",
+        "communications",
+        "support_equipment",
+        "facility_system",
+        "software_system",
+        "other"
+      ]
+    },
+    "roles": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "individualizable": {
+      "type": "boolean"
+    },
+    "individualization_reason": {
+      "type": "string"
+    },
+    "measured_characteristics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "metric",
+          "value_kind",
+          "unit",
+          "evidence_state",
+          "confidence",
+          "source_ids"
+        ],
+        "properties": {
+          "metric": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value_kind": {
+            "type": "string",
+            "enum": [
+              "exact",
+              "range",
+              "unknown"
+            ]
+          },
+          "value": {
+            "type": "number"
+          },
+          "minimum": {
+            "type": "number"
+          },
+          "maximum": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conditions": {
+            "type": "string"
+          },
+          "evidence_state": {
+            "$ref": "common.schema.json#/$defs/evidenceState"
+          },
+          "confidence": {
+            "$ref": "common.schema.json#/$defs/confidence"
+          },
+          "source_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "$ref": "common.schema.json#/$defs/stableId"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_state": {
+      "$ref": "common.schema.json#/$defs/evidenceState"
+    },
+    "confidence": {
+      "$ref": "common.schema.json#/$defs/confidence"
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
