@@ -2,22 +2,53 @@
 
 ## Frozen first bookmark
 
-The first campaign begins at `2026-07-01T00:00:00Z`.
-
-The research stage selected this date within the approved summer 2026 window
-because it creates a clean global reconciliation boundary and a strong divergence
-point. A June United States and Iran memorandum has created a fragile pause, the
-Taiwan Strait remains shaped by Justice Mission 2025, and several later July
-escalations remain historical reference trajectories rather than guaranteed
-events.
+The first KillWeb campaign begins at `2025-09-01T00:00:00Z`.
 
 The machine readable authority and source ledger live in
-`Agents/05_World_Research_and_Data_Director/research_data/bookmarks/2026_07_01/`.
+`Agents/05_World_Research_and_Data_Director/research_data/bookmarks/2025_09_01/`.
 
-## Why the opening must precede irreversible war
+## Why 1 September 2025
 
-A strong grand strategy bookmark should begin while several outcomes remain
-possible. Players need time to:
+The campaign must begin before its defining escalation paths, while diplomacy,
+coercion, military preparation, domestic politics, and deterrence can still
+change history.
+
+1. Justice Mission 2025 begins on 29 December 2025.
+2. The United States operation in Venezuela occurs on 3 January 2026.
+3. Operation Epic Fury begins on 28 February 2026.
+
+These are historical comparison trajectories, not scheduled events. The
+simulation may reproduce, delay, transform, or prevent them through ordinary
+world state and actor decisions.
+
+The opening provides nearly four months before Justice Mission 2025. That gives
+the player a Hearts of Iron style strategic runway rather than beginning after
+the decisive choices have already been made.
+
+## Opening world
+
+At the bookmark:
+
+1. Persistent PLA air and maritime pressure is active around Taiwan, but Justice
+   Mission 2025 has not begun.
+2. Additional United States military personnel, ships, and aircraft have begun
+   deploying to the Caribbean amid rising pressure on Venezuela.
+3. The Gulf remains unstable after the June 2025 attacks on Iranian nuclear
+   facilities, and IAEA verification access is materially disrupted.
+4. The war between Russia and Ukraine remains active.
+5. The Gaza and Levant crisis remains active.
+6. The wars in Sudan and Myanmar remain active.
+7. The rest of the world continues to act at the appropriate simulation
+   resolution from the first tick.
+
+These are initial research anchors. The full bookmark requires country, force,
+economy, infrastructure, alliance, sanctions, faction, and theater
+reconciliation.
+
+## Why the opening precedes irreversible war
+
+A strong grand strategy bookmark begins while several outcomes remain possible.
+Players need time to:
 
 1. Reposition forces.
 2. Negotiate.
@@ -33,42 +64,29 @@ possible. Players need time to:
 Beginning on the first day of a major conflict removes many of the game’s most
 important systems.
 
-## Previously explored opening
-
-An earlier concept considered late summer or fall 2025 so the player could
-experience a long buildup through Justice Mission 2025 and several global crises.
-
-The later summer or fall 2026 direction supersedes that as the current target,
-but the earlier date remains a possible alternative bookmark.
-
 ## World conditions requiring research
 
 The research stage must establish the actual state of:
 
-1. The Iran conflict and its regional consequences.
-2. Ukraine and Russia.
-3. China and Taiwan after Justice Mission 2025.
-4. Japan and China.
-5. North and South Korea.
-6. Israel and neighboring actors.
-7. Saudi Arabia, the Gulf states, and energy security.
-8. Venezuela and regional alignment.
-9. Myanmar.
-10. Sudan.
-11. The Sahel.
-12. The Democratic Republic of the Congo and regional actors.
-13. Armenia and Azerbaijan.
-14. India, Pakistan, Kashmir, and China.
-15. Afghanistan and neighboring powers.
-16. Political instability and elections affecting major states.
-17. Global shipping, energy, sanctions, trade, and technology controls.
-18. NATO, ASEAN, and other alliance or regional structures.
-
-This list records research questions, not claims about the verified 2026 world.
+1. China, Taiwan, Japan, the Koreas, the Philippines, and the South China Sea.
+2. Iran, Israel, the Gulf states, and the wider Middle East.
+3. Venezuela, the Caribbean, and Latin American political alignment.
+4. Ukraine, Russia, NATO, and European security.
+5. Gaza, Lebanon, Syria, and the wider Levant.
+6. Sudan, South Sudan, the Sahel, the Horn of Africa, and eastern Congo.
+7. Myanmar and neighboring powers.
+8. Armenia and Azerbaijan.
+9. India, Pakistan, Kashmir, Afghanistan, and China.
+10. Global shipping, energy, sanctions, trade, technology, and industrial
+    controls.
+11. Elections, coups, protests, and political successions affecting playable
+    states.
+12. Every playable country’s government, economy, society, military, geography,
+    infrastructure, and external relationships.
 
 ## Opening design requirements
 
-The chosen bookmark should contain:
+The bookmark must contain:
 
 1. Several active wars.
 2. Several crises that may still deescalate.
@@ -81,27 +99,24 @@ The chosen bookmark should contain:
 9. No single mandatory war.
 10. Strategic relevance for countries outside the initial crisis.
 
-## Possible opening focus
+## Tutorial focus
 
-The global game may open through one highly legible crisis while the rest of the
-world continues at strategic resolution.
+The global campaign may introduce itself through one legible regional crisis
+while every other country continues at strategic resolution.
 
-Candidate openings discussed include:
-
-1. A Gulf crisis surrounding Iran.
-2. A Chinese exercise around Taiwan that becomes a persistent quarantine or
-   blockade.
-3. A linked global crisis in which several theaters compete for attention,
-   munitions, alliance support, shipping, and intelligence.
-
-The exact tutorial crisis remains a later game design decision. Freezing the
-bookmark does not force one opening path.
+The tutorial crisis remains a later game design decision. Freezing the bookmark
+does not force one opening path or one playable country.
 
 ## Historical source rule
 
-The final bookmark must distinguish:
+Every record must distinguish:
 
 1. Verified historical state.
 2. Estimated or disputed state.
 3. Designed starting assumptions.
 4. Fictional divergence after game start.
+
+Later publications may correct the historical opening only when they
+retrospectively document state valid at or before 1 September 2025. Events after
+that moment may inform validation but never faction foreknowledge or scripted
+certainty.
