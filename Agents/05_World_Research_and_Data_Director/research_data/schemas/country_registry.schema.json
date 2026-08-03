@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/country_registry.schema.json",
+  "title": "KillWeb Country Research Registry",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "registry_id",
+    "bookmark_id",
+    "generated_at",
+    "countries"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "registry_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "bookmark_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "countries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "country_id",
+          "country_code",
+          "name",
+          "roster_basis",
+          "depth_tier",
+          "coverage_status",
+          "research_priority",
+          "profile_path"
+        ],
+        "properties": {
+          "country_id": {
+            "$ref": "common.schema.json#/$defs/stableId"
+          },
+          "country_code": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "roster_basis": {
+            "type": "string",
+            "enum": [
+              "top_80_2025_nominal_gdp",
+              "mandatory_strategic_addition"
+            ]
+          },
+          "gdp_rank": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "maximum": 80
+          },
+          "gdp_2025_usd_billions": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "depth_tier": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "coverage_status": {
+            "type": "string",
+            "enum": [
+              "shell",
+              "collecting",
+              "needs_review",
+              "verified",
+              "stale",
+              "deprecated"
+            ]
+          },
+          "research_priority": {
+            "type": "string",
+            "enum": [
+              "P0",
+              "P1",
+              "P2",
+              "P3",
+              "P4"
+            ]
+          },
+          "profile_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "strategic_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
