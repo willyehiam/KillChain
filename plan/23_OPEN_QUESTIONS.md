@@ -101,4 +101,6 @@
 
 ## Resolved during research
 
-1. The first bookmark is `2026-07-01T00:00:00Z`.
+1. The first bookmark is `2025-09-01T00:00:00Z`.
+2. Justice Mission 2025 and the later Venezuela and Iran operations are
+   comparison trajectories, not scripted opening state.
