@@ -1,6 +1,9 @@
 # Stage Gates
 
-## Current stage: Brainstorming
+## Completed stage: Brainstorming
+
+Status: completed and approved on 2026-08-02.
+
 
 ### Purpose
 
@@ -20,16 +23,17 @@ what it simulates, what it abstracts, and what quality means.
 9. Approved research questions.
 10. Explicitly prioritized open questions.
 
-### Completion standard
+### Completion record
 
-The brainstorming stage is not complete because an architecture thesis exists.
-It is complete only when the team can describe an entire representative campaign
-from opening bookmark through peacetime preparation, crisis, conflict, settlement,
-and continued play without hiding the fun behind words such as "simulate" or
-"abstract."
+The founder approved the complete brainstorming program, including player
+identity, progressive complexity, delegation, global persistence, real time with
+pause, country continuity, war authority, force accounting, accessibility,
+single player first architecture, and the rule that fun outranks performative
+complexity.
 
-The canonical completion checklist lives in
-`29_BRAINSTORMING_DELIVERABLE.md`.
+The canonical completed deliverable lives in
+`29_BRAINSTORMING_DELIVERABLE.md`. Later discoveries may amend individual
+decisions through the decision log, but they do not reopen the entire stage.
 
 ### Authorized parallel research workstream
 
@@ -58,7 +62,29 @@ data silently decide unresolved game design.
 5. Choosing a final technical stack.
 6. Treating provisional architecture documents as implementation tickets.
 
-## Next stage: Research
+## Current stage: Research
+
+Status: active from 2026-08-02.
+
+### Current work packages
+
+1. Freeze the historical bookmark and cutoff rules.
+2. Build the canonical country registry and dossier contracts.
+3. Build complete, quantity conserving national force ledger contracts.
+4. Populate Tier A country foundations for the United States, China, and Taiwan.
+5. Expand fully modeled theaters from the Justice Mission benchmark.
+6. Build macro world shells for every baseline country.
+7. Register strategic infrastructure networks with explicit aggregation rules.
+8. Publish source, confidence, contradiction, and coverage reports.
+
+### Current prohibitions
+
+1. Do not implement the new simulation engine.
+2. Do not lock the final interface or technical stack.
+3. Do not claim exhaustive or current real world coverage.
+4. Do not convert uncertain research into confident scenario truth.
+5. Do not move into the next stage merely because a schema exists.
+
 
 ### Purpose
 
