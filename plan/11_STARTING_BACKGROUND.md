@@ -1,11 +1,18 @@
 # Starting Background
 
-## Current target window
+## Frozen first bookmark
 
-The current founder direction is to begin in summer or fall 2026.
+The first campaign begins at `2026-07-01T00:00:00Z`.
 
-The exact date remains unresolved and must be established during the research
-stage.
+The research stage selected this date within the approved summer 2026 window
+because it creates a clean global reconciliation boundary and a strong divergence
+point. A June United States and Iran memorandum has created a fragile pause, the
+Taiwan Strait remains shaped by Justice Mission 2025, and several later July
+escalations remain historical reference trajectories rather than guaranteed
+events.
+
+The machine readable authority and source ledger live in
+`Agents/05_World_Research_and_Data_Director/research_data/bookmarks/2026_07_01/`.
 
 ## Why the opening must precede irreversible war
 
@@ -87,7 +94,8 @@ Candidate openings discussed include:
 3. A linked global crisis in which several theaters compete for attention,
    munitions, alliance support, shipping, and intelligence.
 
-No opening is approved yet.
+The exact tutorial crisis remains a later game design decision. Freezing the
+bookmark does not force one opening path.
 
 ## Historical source rule
 
