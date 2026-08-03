@@ -279,7 +279,10 @@ Status: complete.
 
 Status: temporal foundation complete; world population in progress.
 
-1. First bookmark frozen at 1 July 2026.
+1. First bookmark frozen at 1 September 2025.
+2. Reconstruct every opening dataset at the 1 September 2025 temporal boundary.
+3. Treat Justice Mission 2025, the January 2026 Venezuela operation, and the
+   February 2026 Iran campaign as reference trajectories only.
 2. Historical cutoff and post start knowledge firewall defined.
 3. Opening condition source ledger published.
 4. Global government roster queued.
