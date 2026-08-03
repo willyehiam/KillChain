@@ -1,9 +1,9 @@
 {
   "schema_version": "0.1.0",
-  "force_ledger_id": "force_ledger_usa_2026_07_01",
+  "force_ledger_id": "force_ledger_usa_2025_09_01",
   "country_id": "country_usa",
-  "bookmark_id": "bookmark_global_fracture_2026_07_01",
-  "as_of": "2026-07-01T00:00:00Z",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
   "status": "shell",
   "accounting_states": [
     "active",
