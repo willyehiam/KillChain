@@ -257,3 +257,21 @@ layer comparable in function to Hearts of Iron IV.
 Provinces must support territorial control, occupation, breakaway regions,
 fronts, infrastructure, population, economy, logistics, and changing borders.
 The exact number, shape, hierarchy, and generation method remain open.
+
+
+## 2026 08 02: Brainstorming gate completed
+
+### Decision
+
+The founder approved the complete brainstorming program. KillWeb has entered the
+research stage.
+
+### Consequence
+
+The World Research and Data Director may now freeze the campaign bookmark, build
+the canonical country and force data contracts, populate country and theater
+datasets, and publish representation proposals.
+
+The new simulation engine, final experience design, engineering stack, and
+development swarm remain gated until their later stages are deliberately
+completed.
