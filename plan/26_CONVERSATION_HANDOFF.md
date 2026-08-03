@@ -254,7 +254,8 @@ The ambition expanded toward:
 5. Maven style optional mission control.
 6. A recognizable real world.
 7. Approximately 80 playable countries.
-8. A modern 2026 bookmark.
+8. A fall 2025 bookmark that precedes Justice Mission 2025 and the later
+   Venezuela and Iran escalations.
 
 ## 15: Stage sequence
 
