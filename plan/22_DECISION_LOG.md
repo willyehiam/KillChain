@@ -289,3 +289,26 @@ Sources published later may correct or describe prebookmark state only when thei
 claim validity interval reaches back to the bookmark. Events after the bookmark
 remain historical comparison trajectories and may not become faction
 foreknowledge or scripted certainty.
+
+## 2026 08 02: First campaign bookmark correction
+
+### Correction
+
+The prior `2026-07-01T00:00:00Z` bookmark was a transcription error and is
+deprecated.
+
+### Decision
+
+Freeze the first KillWeb campaign at `2025-09-01T00:00:00Z`.
+
+### Rationale
+
+The campaign must begin before Justice Mission 2025, the January 2026 Venezuela
+operation, and the February 2026 Iran campaign. Those later events are historical
+comparison trajectories that may emerge, diverge, or never occur.
+
+### Temporal rule
+
+Sources published later may correct or describe prebookmark state only when their
+claim validity interval reaches back to the bookmark. Events after the bookmark
+may not become faction foreknowledge or scripted certainty.
