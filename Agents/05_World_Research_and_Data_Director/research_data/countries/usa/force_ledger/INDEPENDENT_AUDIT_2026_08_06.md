@@ -221,6 +221,12 @@ Some fields use dates and others full timestamps. Normalize all temporal fields 
 
 Army, Marine Corps, Space Force, and Coast Guard unknown pools state that a source confirms capability, but do not identify a specific capability claim. Link each placeholder to a typed claim or make provenance explicit as taxonomy-only.
 
+## Full-suite status
+
+The full repository `npm test` suite passed on the audit publication commit. This included research-foundation validation; all current United States and China force-ledger validators and their existing regressions; the opening-posture firewall and 25 negative cases; Tier A authority validation and 34 authority regressions; politics regressions; TypeScript typecheck; 43 deterministic simulation tests; the production build; and rendered-HTML validation.
+
+This green result is a repository regression result, not evidence that B01 through B07 are closed. The audit's eight additional semantic probes were intentionally run against isolated packet copies and show why the current United States validator's passing result cannot support `internally_consistent: true`.
+
 ## Promotion gate
 
 The packet may remain in research as a useful scaffold, but do not promote it or retain `internally_consistent: true` until:
@@ -232,4 +238,3 @@ The packet may remain in research as a useful scaffold, but do not promote it or
 5. a second auditor reruns the full repository suite on the exact remote commit.
 
 The minimum safe interim change is to set `internally_consistent: false`, preserve all non-executable acceptance flags, and quarantine the Navy range, Air Force component attribution, plan-derived capacity, and unsupported mobilization edges from every consumer.
-
