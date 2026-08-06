@@ -1,0 +1,59 @@
+{
+  "manifest_id": "op_manifest_taiwan_opening_posture_2025",
+  "title": "Taiwan theater opening posture at the Global Fracture bookmark",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "opening_truth": true,
+  "status": "research_checkpoint",
+  "simulation_readiness": "blocked_research_only",
+  "status_firewall": {
+    "allowed_consumers": [
+      "research_review",
+      "historical_design_review"
+    ],
+    "forbidden_consumers": [
+      "simulation_initialization",
+      "country_ai",
+      "balance_calibration",
+      "mission_generation"
+    ],
+    "release_conditions": [
+      "independent Agent 09 review",
+      "force ledger inventory and readiness reconciliation",
+      "scenario design approval",
+      "contradiction adjudication policy"
+    ]
+  },
+  "record_counts": {
+    "sources": 21,
+    "claims": 20,
+    "posture_records": 8,
+    "exercise_lineage": 5,
+    "crisis_triggers": 8,
+    "contradictions": 5,
+    "force_exceptions": 0
+  },
+  "files": [
+    "README.md",
+    "manifest.json",
+    "sources.ndjson",
+    "claims.ndjson",
+    "posture_records.json",
+    "exercise_lineage.json",
+    "crisis_triggers.json",
+    "contradictions.json",
+    "force_reconciliation.json",
+    "future_reference_firewall.json",
+    "validate_opening_posture.mjs",
+    "test_opening_posture.mjs"
+  ],
+  "safety_boundary": "No exact current mobile positions, vulnerable coordinates, routes, covert lists, target sequencing, or attack guidance.",
+  "known_unknowns": [
+    "Unique platform identities and complete inventories",
+    "Opening disposition and readiness",
+    "Munitions, sustainment, and repair state",
+    "Mission specific allied permission",
+    "Private political thresholds and intent",
+    "Probability and timing of crisis triggers"
+  ]
+}
