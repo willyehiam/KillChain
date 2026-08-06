@@ -1,0 +1,83 @@
+{
+  "schema_version": "0.2.0",
+  "contract_id": "country_research_contract_v1",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "allowed_statuses": [
+    "shell",
+    "collecting",
+    "needs_review",
+    "verified",
+    "stale",
+    "deprecated"
+  ],
+  "lanes": [
+    {
+      "lane_id": "politics_and_institutions",
+      "name": "Politics and institutions"
+    },
+    {
+      "lane_id": "economy_trade_finance_resources",
+      "name": "Economy, trade, finance, and resources"
+    },
+    {
+      "lane_id": "military_organization_inventory",
+      "name": "Military organization and inventory"
+    },
+    {
+      "lane_id": "fixed_facilities_basing",
+      "name": "Public fixed facilities and basing"
+    },
+    {
+      "lane_id": "strategic_industry_conversion",
+      "name": "Strategic industry and conversion capacity"
+    },
+    {
+      "lane_id": "energy_transport_communications_logistics",
+      "name": "Energy, transport, communications, and logistics"
+    },
+    {
+      "lane_id": "geography_provinces_terrain",
+      "name": "Geography, provinces, terrain, rivers, and maritime access"
+    },
+    {
+      "lane_id": "crises_alliances_sanctions_deployments",
+      "name": "Active crises, alliances, sanctions, and foreign deployments"
+    }
+  ],
+  "required_country_files": [
+    "README.md",
+    "profile.json",
+    "research_manifest.json",
+    "lane_coverage.json",
+    "evidence_registry.json",
+    "bookmark_state.json",
+    "WORK_PACKAGES.md",
+    "force_ledger/manifest.json"
+  ],
+  "evidence_rules": {
+    "source_before_claim": true,
+    "atomic_claims": true,
+    "source_ids_required_for_factual_claims": true,
+    "empty_records_are_unknown_not_zero": true,
+    "preserve_contradictions": true,
+    "exact_coordinates_require_public_support": true,
+    "mobile_locations_require_observation_time": true,
+    "post_cutoff_knowledge_requires_firewall_review": true
+  },
+  "readiness_gates": {
+    "needs_review": [
+      "all_lanes_have_coverage_disposition",
+      "all_claims_have_sources",
+      "all_counts_declare_measure_and_scope",
+      "contradictions_linked",
+      "cutoff_enforced"
+    ],
+    "verified": [
+      "independent_review_complete",
+      "force_ledger_reconciled",
+      "bookmark_firewall_passed",
+      "simulation_traceability_complete"
+    ]
+  }
+}
