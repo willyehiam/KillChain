@@ -11,7 +11,7 @@
     "head_of_state_actor_id": "actor_twn_lai_ching_te",
     "head_of_government_actor_id": "actor_twn_cho_jung_tai",
     "first_constitutional_successor_actor_id": "actor_twn_bikhim_hsiao",
-    "opening_summary": "Lai Ching-te was President and DPP Chair, Bi-khim Hsiao was Vice President, Cho Jung-tai was Premier, and KMT and TPP institutions held decisive opposition leverage in the Legislative Yuan.",
+    "opening_summary": "Lai Ching-te was President and DPP Chair, Bi-khim Hsiao was Vice President, and Cho Jung-tai was Premier. The Legislative Yuan seat ledger was KMT 52, DPP 51, TPP 8, and independent 2. The KMT held the formal plurality, no single party held the 57 seats required for a majority, and KMT-TPP cooperation was not an automatic coalition.",
     "authority_model": "Track presidential command and declaration powers, Executive Yuan implementation, Legislative Yuan war and peace legislation, party support, and external United States policy as separate gates.",
     "status": "needs_review"
   },
@@ -34,7 +34,7 @@
     "actor_twn_chiang_wan_an",
     "actor_twn_chen_chi_mai",
     "actor_twn_ker_chien_ming",
-    "actor_twn_lin_yu_chang",
+    "actor_twn_hsu_kuo_yung",
     "actor_twn_tsai_ing_wen"
   ],
   "administrative_geography": [],
@@ -62,6 +62,11 @@
     "src_twn_cho_2025",
     "src_twn_cheng_2025",
     "src_twn_dpp_congress_2025",
+    "src_twn_lin_resignation_hsu_appointment_2025",
+    "src_twn_hsu_dpp_secretary_general_2025",
+    "src_twn_cec_legislative_result_2024",
+    "src_twn_cec_recall_results_2025_07_26",
+    "src_twn_cec_recall_results_2025_08_23",
     "src_twn_legislative_leadership_2025",
     "src_twn_us_taiwan_relations_act"
   ],
@@ -78,6 +83,11 @@
     "claim_twn_actor_hsiao_role",
     "claim_twn_actor_cho_role",
     "claim_twn_2024_presidential_result",
+    "claim_twn_actor_hsu_kuo_yung_role",
+    "claim_twn_legislative_seats_certified_2024",
+    "claim_twn_recall_round_2025_07_26_seat_delta",
+    "claim_twn_recall_round_2025_08_23_seat_delta",
+    "claim_twn_legislative_seats_2025_09_01",
     "claim_twn_tra_security_context"
   ],
   "notes": "Only the politics and institutions lane has crossed from shell into the opening bookmark. All military, economic, geography, infrastructure, and crisis fields remain intentionally unpopulated."
