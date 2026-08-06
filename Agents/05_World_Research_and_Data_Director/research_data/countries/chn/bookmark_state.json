@@ -11,7 +11,7 @@
     "head_of_state_actor_id": "actor_chn_xi_jinping",
     "head_of_government_actor_id": "actor_chn_li_qiang",
     "first_state_presidency_successor_actor_id": "actor_chn_han_zheng",
-    "opening_summary": "Xi Jinping concurrently held the top Party, state presidency, and command chair offices; Li Qiang was Premier; the CPC was the governing political leadership institution.",
+    "opening_summary": "Xi Jinping concurrently held the top Party, state presidency, and CMC chair offices; Li Qiang was Premier. The formal CMC roster retained vice chairs Zhang Youxia and He Weidong and members Liu Zhenli and Zhang Shengmin after Miao Hua's removal. He's public operational availability and the Political Work Department leadership were unresolved at the bookmark.",
     "authority_model": "Track CPC leadership, state presidency, State Council administration, NPC authority, and top command office as related but distinct institutions.",
     "status": "needs_review"
   },
@@ -35,7 +35,11 @@
     "actor_chn_li_shulei",
     "actor_chn_ma_xingrui",
     "actor_chn_chen_jining",
-    "actor_chn_yuan_jiajun"
+    "actor_chn_yuan_jiajun",
+    "actor_chn_zhang_youxia",
+    "actor_chn_he_weidong",
+    "actor_chn_liu_zhenli",
+    "actor_chn_zhang_shengmin"
   ],
   "administrative_geography": [],
   "economic_state": null,
@@ -50,7 +54,9 @@
   "unresolved_assumptions": [
     "State presidency succession does not automatically transfer CPC General Secretary or Central Military Commission Chair authority.",
     "The China-DPRK treaty does not create a fully resolved automatic contingency response in this packet.",
-    "Actor inclusion is not a promotion, purge, retirement, or succession forecast."
+    "Actor inclusion is not a promotion, purge, retirement, or succession forecast.",
+    "No pre-bookmark official disposition of He Weidong was located; observed absences do not establish removal.",
+    "Post-bookmark announcements about CMC personnel are excluded from opening knowledge."
   ],
   "source_ids": [
     "src_chn_prc_constitution",
@@ -60,7 +66,15 @@
     "src_chn_xi_triple_role_2025",
     "src_chn_party_leadership_2022",
     "src_chn_han_zheng_2025",
-    "src_chn_dprk_treaty_anniversary_2021"
+    "src_chn_dprk_treaty_anniversary_2021",
+    "src_chn_cmc_roster_2022",
+    "src_chn_cmc_departments",
+    "src_chn_liu_zhenli_joint_staff_2023",
+    "src_chn_miao_hua_suspended_2024",
+    "src_chn_miao_hua_removed_2025",
+    "src_chn_ma_xingrui_reassigned_2025",
+    "src_chn_he_weidong_absence_bloomberg_2025",
+    "src_chn_he_weidong_absence_scmp_2025"
   ],
   "claim_ids": [
     "claim_chn_cpc_highest_political_leadership",
@@ -75,7 +89,19 @@
     "claim_chn_actor_xi_role",
     "claim_chn_actor_li_qiang_role",
     "claim_chn_actor_han_zheng_role",
-    "claim_chn_dprk_treaty_context"
+    "claim_chn_dprk_treaty_context",
+    "claim_chn_cmc_administers_armed_forces",
+    "claim_chn_cmc_joint_staff_duties",
+    "claim_chn_actor_zhang_youxia_role",
+    "claim_chn_actor_he_weidong_formal_role",
+    "claim_chn_he_weidong_public_availability",
+    "claim_chn_actor_liu_zhenli_role",
+    "claim_chn_actor_zhang_shengmin_role",
+    "claim_chn_miao_hua_suspended",
+    "claim_chn_miao_hua_removed_from_cmc",
+    "claim_chn_cmc_political_work_head_opening_status",
+    "claim_chn_ma_xingrui_xinjiang_role_ended",
+    "claim_chn_ma_xingrui_future_appointment_unresolved"
   ],
   "notes": "Only the politics and institutions lane has crossed from shell into the opening bookmark. All military, economic, geography, infrastructure, and crisis fields remain intentionally unpopulated."
 }
