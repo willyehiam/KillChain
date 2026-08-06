@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/force_construction_record.schema.json",
+  "title": "Military Construction and Procurement Record",
+  "description": "A source backed acquisition lot or individually tracked platform before it enters accepted inventory.",
+  "type": "object",
+  "required": [
+    "construction_record_id",
+    "country_id",
+    "customer_id",
+    "equipment_type_id",
+    "program_or_lot",
+    "quantity_ordered",
+    "quantity_delivered",
+    "quantity_accepted",
+    "state",
+    "producer_ids",
+    "milestones",
+    "temporal_validity",
+    "provenance"
+  ],
+  "properties": {
+    "construction_record_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "country_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "customer_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "equipment_type_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "platform_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "program_or_lot": {
+      "type": "string",
+      "minLength": 1
+    },
+    "quantity_ordered": {
+      "$ref": "common.schema.json#/$defs/quantityEstimate"
+    },
+    "quantity_delivered": {
+      "$ref": "common.schema.json#/$defs/quantityEstimate"
+    },
+    "quantity_accepted": {
+      "$ref": "common.schema.json#/$defs/quantityEstimate"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "authorized",
+        "contracted",
+        "materials_allocated",
+        "under_construction",
+        "launched_or_rolled_out",
+        "trials",
+        "delivered_not_accepted",
+        "accepted",
+        "paused",
+        "cancelled",
+        "unknown"
+      ]
+    },
+    "producer_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
+    },
+    "production_site_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
+    },
+    "milestones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "milestone_type",
+          "date_kind"
+        ],
+        "properties": {
+          "milestone_type": {
+            "type": "string",
+            "enum": [
+              "authorized",
+              "contracted",
+              "construction_started",
+              "launched_or_rolled_out",
+              "first_flight",
+              "trials_started",
+              "delivered",
+              "accepted",
+              "initial_operating_capability",
+              "full_operating_capability",
+              "cancelled",
+              "other"
+            ]
+          },
+          "date_kind": {
+            "type": "string",
+            "enum": [
+              "observed",
+              "official_plan",
+              "estimated",
+              "unknown"
+            ]
+          },
+          "date": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "temporal_validity": {
+      "$ref": "common.schema.json#/$defs/temporalValidity"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
