@@ -21,6 +21,7 @@ for (const code of ['usa', 'twn']) {
 
   const institutionIds = new Set(politics.institutions.map(item => item.institution_id));
   const sourceIds = new Set(evidence.sources.map(item => item.source_id));
+  const sourceById = new Map(evidence.sources.map(item => [item.source_id, item]));
   const sourceFamilyById = new Map(evidence.sources.map(item => [item.source_id, item.source_family_id]));
   const publisherFamilies = new Map();
   for (const source of evidence.sources) {
@@ -38,6 +39,7 @@ for (const code of ['usa', 'twn']) {
   if (bookmark.knowledge_firewall_status === 'passed_for_politics_lane' && !manifest.acceptance.bookmark_firewall_passed) errors.push(`${code}: contradictory bookmark firewall acceptance`);
   if (bookmark.acceptance_state?.bookmark_firewall_passed !== manifest.acceptance.bookmark_firewall_passed) errors.push(`${code}: bookmark and manifest firewall states differ`);
   if (bookmark.acceptance_state?.independent_review_complete !== manifest.acceptance.independent_review_complete) errors.push(`${code}: bookmark and manifest review states differ`);
+  if (bookmark.acceptance_state?.authority_contract_reviewed !== manifest.acceptance.politics_lane_authority_contract_reviewed) errors.push(`${code}: bookmark and manifest authority review states differ`);
   if (bookmark.acceptance_state?.politics_lane_status !== 'needs_review' || politics.status !== 'needs_review') errors.push(`${code}: politics acceptance states are contradictory`);
 
   if (politics.actor_selection_policy?.roster_size_is_acceptance_criterion !== false) errors.push(`${code}: actor roster remains count driven`);
@@ -47,8 +49,20 @@ for (const code of ['usa', 'twn']) {
     const influence = actor.practical_influence;
     if (!influence) errors.push(`${code}: ${actor.actor_id} lacks practical influence disposition`);
     else if (influence.status === 'accepted') {
+      const missingSourceIds = (influence.source_ids ?? []).filter(sourceId => !sourceIds.has(sourceId));
+      for (const sourceId of missingSourceIds) errors.push(`${code}: ${actor.actor_id} practical influence cites missing ${sourceId}`);
       const families = new Set((influence.source_ids ?? []).map(sourceId => sourceFamilyById.get(sourceId)).filter(Boolean));
-      if (families.size < 2 || influence.source_family_ids?.length < 2) errors.push(`${code}: ${actor.actor_id} practical influence lacks two independent source families`);
+      const declaredFamilies = new Set(influence.source_family_ids ?? []);
+      if (families.size < 2 || declaredFamilies.size < 2) errors.push(`${code}: ${actor.actor_id} practical influence lacks two independent source families`);
+      if ([...families].some(familyId => !declaredFamilies.has(familyId)) || [...declaredFamilies].some(familyId => !families.has(familyId))) {
+        errors.push(`${code}: ${actor.actor_id} practical influence declared source families do not match cited sources`);
+      }
+      for (const sourceId of influence.source_ids ?? []) {
+        const source = sourceById.get(sourceId);
+        if (source?.published_at && Date.parse(source.published_at) > Date.parse(bookmark.as_of) && !['reference_only_not_initial_state', 'retrospective_reference_only'].includes(source.use) && !['reference_only', 'trajectory_reference_only'].includes(source.simulation_use)) {
+          errors.push(`${code}: ${actor.actor_id} practical influence depends on post-bookmark source ${sourceId}`);
+        }
+      }
     } else if (influence.status !== 'unaccepted') errors.push(`${code}: ${actor.actor_id} has unsupported influence status ${influence.status}`);
   }
 
@@ -57,6 +71,11 @@ for (const code of ['usa', 'twn']) {
     if (claim.effective_from && claim.interval_start_status !== 'known') errors.push(`${code}: ${claim.claim_id} known interval start is not labeled known`);
     if (!claim.effective_to && claim.interval_end_status !== 'open_at_bookmark_end_not_established') errors.push(`${code}: ${claim.claim_id} has no interval end disposition`);
     if (claim.effective_to && claim.interval_end_status !== 'known') errors.push(`${code}: ${claim.claim_id} known interval end is not labeled known`);
+    if (claim.effective_from && Number.isNaN(Date.parse(claim.effective_from))) errors.push(`${code}: ${claim.claim_id} interval start is not a valid date`);
+    if (claim.effective_to && Number.isNaN(Date.parse(claim.effective_to))) errors.push(`${code}: ${claim.claim_id} interval end is not a valid date`);
+    if (claim.effective_from && claim.effective_to && Date.parse(claim.effective_from) > Date.parse(claim.effective_to)) errors.push(`${code}: ${claim.claim_id} interval starts after it ends`);
+    if (claim.effective_from && Date.parse(claim.effective_from) > Date.parse(bookmark.as_of)) errors.push(`${code}: ${claim.claim_id} opening role begins after the bookmark`);
+    if (claim.as_of && Date.parse(claim.as_of) > Date.parse(bookmark.as_of)) errors.push(`${code}: ${claim.claim_id} role assertion is post-bookmark`);
   }
 
   if (!workflow.decision_gates.length || !workflow.routes.length) errors.push(`${code}: authority workflow lacks executable routes or gates`);
@@ -76,6 +95,22 @@ for (const code of ['usa', 'twn']) {
     if (route.contradiction_set_id && !contradictionIds.has(route.contradiction_set_id)) errors.push(`${code}: ${route.route_id} cites missing contradiction set`);
   }
   for (const sourceId of workflow.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`${code}: authority workflow cites missing source ${sourceId}`);
+  for (const branch of [...(workflow.alliance_and_taiwan_branches ?? []), ...(workflow.foreign_support_branches ?? [])]) {
+    for (const sourceId of branch.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`${code}: ${branch.branch_id} cites missing ${sourceId}`);
+  }
+  const openingPacketSourceIds = new Set([
+    ...(workflow.source_ids ?? []),
+    ...workflow.decision_gates.flatMap(item => item.source_ids ?? []),
+    ...workflow.routes.flatMap(item => item.source_ids ?? []),
+    ...(workflow.alliance_and_taiwan_branches ?? []).flatMap(item => item.source_ids ?? []),
+    ...(workflow.foreign_support_branches ?? []).flatMap(item => item.source_ids ?? []),
+  ]);
+  for (const sourceId of openingPacketSourceIds) {
+    const source = sourceById.get(sourceId);
+    if (source?.published_at && Date.parse(source.published_at) > Date.parse(bookmark.as_of) && !['reference_only_not_initial_state', 'retrospective_reference_only'].includes(source.use) && !['reference_only', 'trajectory_reference_only'].includes(source.simulation_use)) {
+      errors.push(`${code}: authority workflow depends on post-bookmark source ${sourceId}`);
+    }
+  }
   for (const item of workflow.unresolved_interpretations ?? []) {
     if (!item.question_id || !item.question || !item.status) errors.push(`${code}: unresolved interpretation is not explicit`);
     for (const sourceId of item.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`${code}: ${item.question_id} cites missing ${sourceId}`);
@@ -90,6 +125,8 @@ for (const code of ['usa', 'twn']) {
     if (clock?.base_deadline_days !== 60 || clock?.withdrawal_extension_max_days !== 30) errors.push('usa: WPR termination clock is not 60 plus conditional 30 days');
     const taiwan = workflow.alliance_and_taiwan_branches.find(item => item.branch_id === 'branch_usa_taiwan_discretionary_intervention');
     if (taiwan?.domestic_force_authority_effect !== 'none_by_itself') errors.push('usa: Taiwan policy improperly creates domestic force authority');
+    if (!taiwan?.required_route_ids?.length) errors.push('usa: Taiwan policy bypasses domestic authority routes');
+    for (const routeId of taiwan?.required_route_ids ?? []) if (!routeIds.has(routeId)) errors.push(`usa: Taiwan policy cites missing authority route ${routeId}`);
     if (workflow.acceptance_rules.treaty_or_policy_commitment_implies_domestic_force_authority !== false) errors.push('usa: treaty commitment improperly implies domestic force authority');
     const succession = read(path.join(dir, 'presidential_succession.json'));
     if (!succession) errors.push('usa: presidential succession workflow is absent');
@@ -102,6 +139,12 @@ for (const code of ['usa', 'twn']) {
         for (const sourceId of node.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`usa: succession rank ${node.rank} cites missing ${sourceId}`);
         if (node.opening_actor_id && !politics.political_actors.some(actor => actor.actor_id === node.opening_actor_id)) errors.push(`usa: succession rank ${node.rank} cites missing actor`);
         if (!node.opening_actor_id && !node.opening_actor_resolution) errors.push(`usa: succession rank ${node.rank} silently omits opening officeholder`);
+      }
+      for (const sourceId of succession.nodes.flatMap(node => node.source_ids ?? [])) {
+        const source = sourceById.get(sourceId);
+        if (source?.published_at && Date.parse(source.published_at) > Date.parse(bookmark.as_of) && !['reference_only_not_initial_state', 'retrospective_reference_only'].includes(source.use) && !['reference_only', 'trajectory_reference_only'].includes(source.simulation_use)) {
+          errors.push(`usa: presidential succession depends on post-bookmark source ${sourceId}`);
+        }
       }
       const speaker = succession.nodes[1];
       const proTem = succession.nodes[2];
@@ -120,6 +163,8 @@ for (const code of ['usa', 'twn']) {
     if (ratification?.deadline_days !== 10 || ratification?.failure_effect !== 'decree_ceases_forthwith') errors.push('twn: emergency decree ratification rule is incorrect');
     const usPolicy = workflow.foreign_support_branches.find(item => item.branch_id === 'branch_twn_us_security_policy');
     if (usPolicy?.automatic_us_intervention !== false) errors.push('twn: United States intervention is incorrectly automatic');
+    const foreignSupport = workflow.foreign_support_branches.find(item => item.branch_id === 'branch_twn_request_foreign_support');
+    if (!foreignSupport?.foreign_force_authority_effect?.startsWith('none')) errors.push('twn: foreign support improperly creates foreign force authority');
   }
 }
 
