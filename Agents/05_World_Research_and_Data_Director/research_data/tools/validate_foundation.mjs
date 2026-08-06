@@ -96,6 +96,7 @@ const researchRoot = path.resolve(process.argv[2] ?? path.join(scriptDirectory, 
 const schemaRoot = path.join(researchRoot, "schemas");
 const countriesRoot = path.join(researchRoot, "countries");
 const bookmarkRoot = path.join(researchRoot, "bookmarks", "2025_09_01");
+const TIER_A_COUNTRY_DIRECTORIES = ["usa", "chn", "twn"];
 
 for (const schema of NEW_SCHEMAS) {
   readJson(path.join(schemaRoot, schema));
@@ -106,10 +107,55 @@ const registry = readJson(path.join(countriesRoot, "country_registry.json"));
 const bookmark = readJson(path.join(bookmarkRoot, "bookmark.json"));
 const globalSources = readNdjson(path.join(researchRoot, "sources", "sources.ndjson"));
 const bookmarkSources = readNdjson(path.join(bookmarkRoot, "sources.ndjson"));
-const allSources = [...globalSources, ...bookmarkSources];
-const sourceIds = new Set(allSources.map((source) => source.source_id));
+const tierALocalSources = TIER_A_COUNTRY_DIRECTORIES.flatMap((countryCode) => {
+  const registryPath = path.join(countriesRoot, countryCode, "evidence_registry.json");
+  const evidenceRegistry = readJson(registryPath);
+  return (evidenceRegistry?.sources ?? []).map((source) => ({
+    source,
+    origin: path.relative(researchRoot, registryPath),
+  }));
+});
 
-assert(sourceIds.size === allSources.length, "Source identifiers must be globally unique");
+const sourceRecords = [
+  ...globalSources.map((source) => ({ source, origin: "sources/sources.ndjson" })),
+  ...bookmarkSources.map((source) => ({
+    source,
+    origin: "bookmarks/2025_09_01/sources.ndjson",
+  })),
+  ...tierALocalSources,
+];
+const canonicalSourceById = new Map();
+
+function canonicalJson(value) {
+  if (Array.isArray(value)) return `[${value.map(canonicalJson).join(",")}]`;
+  if (value && typeof value === "object") {
+    return `{${Object.keys(value)
+      .sort()
+      .map((key) => `${JSON.stringify(key)}:${canonicalJson(value[key])}`)
+      .join(",")}}`;
+  }
+  return JSON.stringify(value);
+}
+
+for (const { source, origin } of sourceRecords) {
+  if (!source?.source_id) {
+    fail(`${origin}: source missing source_id`);
+    continue;
+  }
+  const existing = canonicalSourceById.get(source.source_id);
+  if (existing) {
+    assert(
+      canonicalJson(existing.source) === canonicalJson(source),
+      `${source.source_id}: divergent duplicate source records in ${existing.origin} and ${origin}`,
+    );
+  } else {
+    canonicalSourceById.set(source.source_id, { source, origin });
+  }
+}
+
+const allSources = [...canonicalSourceById.values()].map(({ source }) => source);
+const sourceIds = new Set(canonicalSourceById.keys());
+
 for (const source of allSources) {
   for (const field of ["source_id", "title", "publisher", "accessed_at", "source_tier", "source_type"]) {
     assert(source[field] !== undefined, `${source.source_id ?? "unknown source"}: missing ${field}`);
