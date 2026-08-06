@@ -49,20 +49,33 @@
     ],
     "coverage_matrix": [
       {
-        "coverage_id": "coverage_usa_combat_aircraft",
+        "coverage_id": "coverage_usa_statutory_command_and_guard",
+        "service": "joint",
+        "domain": "joint",
+        "organization_depth": "structured",
+        "equipment_taxonomy": "identified",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "identified",
+        "conservation": "structured",
+        "notes": "Operational chain and state versus federal Guard authority modeled; individual state organizations remain aggregate."
+      },
+      {
+        "coverage_id": "coverage_usa_air_force_national_inventory",
         "service": "air_force",
         "domain": "air",
-        "organization_depth": "identified",
+        "organization_depth": "structured",
         "equipment_taxonomy": "structured",
         "inventory": "inventory_partial",
         "dispositions": "identified",
         "maintenance": "identified",
         "construction": "not_started",
         "conservation": "structured",
-        "notes": "Public national aggregate slice only; not decision usable."
+        "notes": "Mission categories conserve to 4,832. Tanker and airlift split, readiness, and component allocation remain unknown."
       },
       {
-        "coverage_id": "coverage_usa_surface_combatant",
+        "coverage_id": "coverage_usa_navy_battle_force",
         "service": "navy",
         "domain": "maritime",
         "organization_depth": "identified",
@@ -70,14 +83,40 @@
         "inventory": "inventory_partial",
         "dispositions": "identified",
         "maintenance": "identified",
-        "construction": "not_started",
+        "construction": "identified",
         "conservation": "structured",
-        "notes": "Public national aggregate slice only; not decision usable."
+        "notes": "Battle force ship total is range bounded; class breakdown and readiness remain unaccepted."
       },
       {
-        "coverage_id": "coverage_usa_joint_command_network",
-        "service": "joint",
+        "coverage_id": "coverage_usa_army_force_and_training",
+        "service": "army",
+        "domain": "ground",
+        "organization_depth": "identified",
+        "equipment_taxonomy": "identified",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "identified",
+        "conservation": "structured",
+        "notes": "Personnel authorization and annual CTC plan accepted; equipment inventories and actual completed throughput remain unknown."
+      },
+      {
+        "coverage_id": "coverage_usa_marine_corps_national_force",
+        "service": "marine",
         "domain": "joint",
+        "organization_depth": "identified",
+        "equipment_taxonomy": "identified",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "not_started",
+        "conservation": "structured",
+        "notes": "Authorized personnel accepted; mutually exclusive national equipment inventory remains unknown."
+      },
+      {
+        "coverage_id": "coverage_usa_space_force_national_force",
+        "service": "space",
+        "domain": "space",
         "organization_depth": "identified",
         "equipment_taxonomy": "structured",
         "inventory": "inventory_partial",
@@ -85,7 +124,20 @@
         "maintenance": "identified",
         "construction": "not_started",
         "conservation": "structured",
-        "notes": "Public national aggregate slice only; not decision usable."
+        "notes": "Authorized personnel accepted; platform counts remain unknown where public evidence is incomplete or sensitive."
+      },
+      {
+        "coverage_id": "coverage_usa_coast_guard_national_force",
+        "service": "coast_guard",
+        "domain": "maritime",
+        "organization_depth": "identified",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "identified",
+        "conservation": "structured",
+        "notes": "Budget supported military positions and selected acquisition lots accepted; whole fleet inventory remains unknown."
       }
     ]
   },
@@ -105,23 +157,23 @@
   },
   "reconciliation": {
     "state": "blocked_by_unknowns",
-    "organization_records": 31,
+    "organization_records": 37,
     "platform_records": 0,
-    "equipment_type_records": 8,
-    "inventory_records": 3,
-    "deployment_records": 3,
-    "maintenance_records": 3,
-    "construction_records": 0,
-    "conservation_records": 3,
-    "exact_quantity_records": 0,
-    "range_quantity_records": 0,
-    "unknown_quantity_records": 3,
-    "open_conservation_exceptions": 0,
+    "equipment_type_records": 24,
+    "inventory_records": 15,
+    "deployment_records": 15,
+    "maintenance_records": 15,
+    "construction_records": 3,
+    "conservation_records": 15,
+    "exact_quantity_records": 8,
+    "range_quantity_records": 1,
+    "unknown_quantity_records": 6,
+    "open_conservation_exceptions": 6,
     "double_booking_exceptions": 0,
     "orphan_platform_records": 0,
     "orphan_organization_records": 0,
     "expired_records": 0,
-    "relationship_records": 32
+    "relationship_records": 40
   },
   "conservation_policy": {
     "equation": "opening_plus_inflows_equals_closing_states_plus_outflows",
@@ -142,19 +194,29 @@
     "src_force_usa_title10_section10101_2023",
     "src_force_usa_crs_commanding_operations_2024",
     "src_force_usa_crs_air_force_2025",
-    "src_force_usa_title14_section103_2024"
+    "src_force_usa_title14_section103_2024",
+    "src_force_usa_public_law_118_159_fy2025_ndaa",
+    "src_force_usa_title32_section102_2024",
+    "src_force_usa_title32_section325_2024",
+    "src_force_usa_title10_section12401_2024",
+    "src_force_usa_crs_fy2025_force_structure",
+    "src_force_usa_crs_air_force_inventory_2025",
+    "src_force_usa_crs_navy_force_structure_2025",
+    "src_force_usa_army_budget_overview_2025",
+    "src_force_usa_coast_guard_budget_2025"
   ],
   "unknowns": [
-    "Subordinate service commands, component commands, fleets, armies, wings, divisions, brigades, and equivalent formations have not been accepted.",
-    "Organization personnel, readiness, mobilization delays, and current force assignments remain unknown in this slice.",
-    "The aggregate equipment taxonomy records do not assert models, quantities, possession totals, readiness, or disposition.",
-    "National equipment totals have not been reconciled across accounting states.",
-    "Named platforms and exact platform totals remain deliberately unresolved; the accepted operational slice is national aggregate only.",
-    "Construction programs remain unresolved; explicit coverage status prevents absence from being interpreted as zero."
+    "Assigned and deployable personnel remain unknown; statutory authorization and budget supported positions are not readiness measures.",
+    "Army and Marine Corps major equipment totals remain collecting and are never represented as zero.",
+    "Tanker and airlift subsets of the 1,191 aircraft mobility category remain unknown pending a source with compatible definitions.",
+    "Navy battle force exact bookmark total, class decomposition, maintenance allocation, and readiness remain unresolved.",
+    "Space Force platform counts remain unknown where public aggregate evidence is incomplete or unsuitable for a safe national ledger.",
+    "Coast Guard whole fleet count and current maintenance allocation remain unknown; selected planned acquisition lots are not opening inventory.",
+    "Individual state Guard organizations, status transitions, and mobilization delays remain uncollected below the national authority model."
   ],
   "reviewed_at": "2026-08-06",
   "review_after": "2026-11-06",
-  "notes": "First accepted Tier A national organization slice. It distinguishes civilian authority, military departments, service administration, reserve components, and operational combatant commands while withholding unsupported operational detail.",
+  "notes": "Second United States national packet: statutory operational chain, Guard state and federal status, enacted personnel authorities, selected national inventory pools, planned training throughput, and selected construction programs. It deliberately excludes exact present locations, actionable movement, and unsupported readiness.",
   "acceptance": {
     "schema_valid": true,
     "internally_consistent": true,
@@ -162,12 +224,13 @@
     "decision_usable": false,
     "simulation_ready": false,
     "untested_claims": [
-      "National inventory completeness, exact readiness, and subnational disposition are not tested by this packet."
+      "Exact Navy bookmark total and several service equipment categories require independent reconciliation.",
+      "Current readiness, maintenance allocation, and mission support availability remain untested."
     ],
     "blockers": [
-      "Exact or bounded conserved inventory is not yet accepted.",
-      "Named mission decisive platforms and executable support dependencies are not yet resolved.",
-      "Construction coverage is not started and maintenance quantities remain unknown."
+      "Army, Marine Corps, Space Force, and Coast Guard mutually exclusive equipment totals are incomplete.",
+      "Tanker versus airlift allocation is unknown.",
+      "No mission may draw from national aggregates without a conserved child allocation and resolved support package."
     ]
   }
 }
