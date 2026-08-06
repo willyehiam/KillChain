@@ -3,6 +3,7 @@ import path from 'node:path';
 
 const root = path.resolve(process.argv[2] ?? new URL('.', import.meta.url).pathname);
 const errors = [];
+const rolePredicates = new Set(['held_office_until','holds_office','holds_offices','member_of','opening_relevance']);
 
 function read(file) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); }
@@ -20,6 +21,7 @@ for (const code of ['usa', 'twn']) {
 
   const institutionIds = new Set(politics.institutions.map(item => item.institution_id));
   const sourceIds = new Set(evidence.sources.map(item => item.source_id));
+  const sourceFamilyById = new Map(evidence.sources.map(item => [item.source_id, item.source_family_id]));
   const contradictionIds = new Set(evidence.contradiction_sets.map(item => item.contradiction_set_id));
   const routeIds = new Set(workflow.routes.map(item => item.route_id));
   const gateIds = new Set(workflow.decision_gates.map(item => item.gate_id));
@@ -30,6 +32,26 @@ for (const code of ['usa', 'twn']) {
   if (bookmark.knowledge_firewall_status === 'passed_for_politics_lane' && !manifest.acceptance.bookmark_firewall_passed) errors.push(`${code}: contradictory bookmark firewall acceptance`);
   if (bookmark.acceptance_state?.bookmark_firewall_passed !== manifest.acceptance.bookmark_firewall_passed) errors.push(`${code}: bookmark and manifest firewall states differ`);
   if (bookmark.acceptance_state?.independent_review_complete !== manifest.acceptance.independent_review_complete) errors.push(`${code}: bookmark and manifest review states differ`);
+  if (bookmark.acceptance_state?.politics_lane_status !== 'needs_review' || politics.status !== 'needs_review') errors.push(`${code}: politics acceptance states are contradictory`);
+
+  if (politics.actor_selection_policy?.roster_size_is_acceptance_criterion !== false) errors.push(`${code}: actor roster remains count driven`);
+  if (politics.actor_selection_policy?.practical_influence_default !== 'unaccepted') errors.push(`${code}: practical influence does not default to unaccepted`);
+  for (const actor of politics.political_actors) {
+    if (actor.selection_basis_status !== 'institutional_relevance_only') errors.push(`${code}: ${actor.actor_id} lacks gameplay selection meaning`);
+    const influence = actor.practical_influence;
+    if (!influence) errors.push(`${code}: ${actor.actor_id} lacks practical influence disposition`);
+    else if (influence.status === 'accepted') {
+      const families = new Set((influence.source_ids ?? []).map(sourceId => sourceFamilyById.get(sourceId)).filter(Boolean));
+      if (families.size < 2 || influence.source_family_ids?.length < 2) errors.push(`${code}: ${actor.actor_id} practical influence lacks two independent source families`);
+    } else if (influence.status !== 'unaccepted') errors.push(`${code}: ${actor.actor_id} has unsupported influence status ${influence.status}`);
+  }
+
+  for (const claim of evidence.claims.filter(item => rolePredicates.has(item.predicate))) {
+    if (!claim.effective_from && claim.interval_start_status !== 'unknown_not_established_by_packet_source') errors.push(`${code}: ${claim.claim_id} has no interval start or explicit unknown`);
+    if (claim.effective_from && claim.interval_start_status !== 'known') errors.push(`${code}: ${claim.claim_id} known interval start is not labeled known`);
+    if (!claim.effective_to && claim.interval_end_status !== 'open_at_bookmark_end_not_established') errors.push(`${code}: ${claim.claim_id} has no interval end disposition`);
+    if (claim.effective_to && claim.interval_end_status !== 'known') errors.push(`${code}: ${claim.claim_id} known interval end is not labeled known`);
+  }
 
   if (!workflow.decision_gates.length || !workflow.routes.length) errors.push(`${code}: authority workflow lacks executable routes or gates`);
   for (const institution of workflow.institutions) {
@@ -63,6 +85,24 @@ for (const code of ['usa', 'twn']) {
     const taiwan = workflow.alliance_and_taiwan_branches.find(item => item.branch_id === 'branch_usa_taiwan_discretionary_intervention');
     if (taiwan?.domestic_force_authority_effect !== 'none_by_itself') errors.push('usa: Taiwan policy improperly creates domestic force authority');
     if (workflow.acceptance_rules.treaty_or_policy_commitment_implies_domestic_force_authority !== false) errors.push('usa: treaty commitment improperly implies domestic force authority');
+    const succession = read(path.join(dir, 'presidential_succession.json'));
+    if (!succession) errors.push('usa: presidential succession workflow is absent');
+    else {
+      const ranks = succession.nodes.map(node => node.rank);
+      if (ranks.length !== 18 || ranks.some((rank, index) => rank !== index + 1)) errors.push('usa: presidential succession does not cover the full statutory office order');
+      const expected = ['Vice President','Speaker of the House','President pro tempore of the Senate','Secretary of State','Secretary of the Treasury','Secretary of Defense','Attorney General','Secretary of the Interior','Secretary of Agriculture','Secretary of Commerce','Secretary of Labor','Secretary of Health and Human Services','Secretary of Housing and Urban Development','Secretary of Transportation','Secretary of Energy','Secretary of Education','Secretary of Veterans Affairs','Secretary of Homeland Security'];
+      if (succession.nodes.some((node, index) => node.office !== expected[index])) errors.push('usa: presidential succession office order is incorrect');
+      for (const node of succession.nodes) {
+        for (const sourceId of node.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`usa: succession rank ${node.rank} cites missing ${sourceId}`);
+        if (node.opening_actor_id && !politics.political_actors.some(actor => actor.actor_id === node.opening_actor_id)) errors.push(`usa: succession rank ${node.rank} cites missing actor`);
+        if (!node.opening_actor_id && !node.opening_actor_resolution) errors.push(`usa: succession rank ${node.rank} silently omits opening officeholder`);
+      }
+      const speaker = succession.nodes[1];
+      const proTem = succession.nodes[2];
+      if (!speaker.qualification_conditions.includes('resign_as_speaker') || !speaker.qualification_conditions.includes('resign_as_representative')) errors.push('usa: Speaker resignation conditions are absent');
+      if (!proTem.qualification_conditions.includes('resign_as_president_pro_tempore') || !proTem.qualification_conditions.includes('resign_as_senator')) errors.push('usa: President pro tempore resignation conditions are absent');
+      if (succession.distinctions.vice_president_on_presidential_vacancy !== 'succeeds_as_president' || succession.distinctions.statutory_successors !== 'act_as_president_after_qualification_and_any_required_resignation') errors.push('usa: succession and acting distinctions are collapsed');
+    }
   }
 
   if (code === 'twn') {
