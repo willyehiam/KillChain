@@ -10,9 +10,9 @@
       "name": "Politics and institutions",
       "status": "needs_review",
       "owner": "agent_05_world_research_and_data_director",
-      "record_count": 26,
-      "source_count": 19,
-      "claim_count": 24,
+      "record_count": 27,
+      "source_count": 23,
+      "claim_count": 28,
       "contradiction_count": 1,
       "exact_geometry_count": 0,
       "approximate_geometry_count": 0,
@@ -21,12 +21,12 @@
       "newest_source_date": "2025-07-09",
       "reviewed_at": "2026-08-06",
       "review_after": "2026-09-06",
-      "coverage_disposition": "usable_for_opening_state_with_explicit_authority_ambiguity",
+      "coverage_disposition": "needs_independent_review_after_blocker_corrections",
       "blocking_questions": [
         "Independent legal review of the open war authority contradiction set.",
         "Independent review of actor relevance without treating the roster as a forecast."
       ],
-      "notes": "Primary constitutional, statutory, treaty, and official officeholder sources support the opening packet."
+      "notes": "Primary constitutional, statutory, treaty, and official officeholder sources support the opening packet. The NSC's statutory membership, presidential advisory structure, Rubio dual role, and May capacity modifier are separated from command authority."
     },
     "economy_trade_finance_resources": {
       "name": "Economy, trade, finance, and resources",
