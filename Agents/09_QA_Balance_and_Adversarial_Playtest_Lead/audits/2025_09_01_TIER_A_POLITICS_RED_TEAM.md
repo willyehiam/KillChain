@@ -18,15 +18,15 @@ All commands completed successfully against the audited commit before this revie
 
 1. `npm test`
 2. `npm run validate:artifact`
-3. `node Agents/05_World_Research_and_Data_Director/research_data/validate_research.mjs`
-4. `node Agents/05_World_Research_and_Data_Director/research_data/countries/validate_top80.mjs`
-5. `node Agents/05_World_Research_and_Data_Director/research_data/countries/generate_top80_shells.mjs --check`
-6. `node Agents/05_World_Research_and_Data_Director/research_data/countries/validate_top80_shells.mjs`
-7. `node Agents/05_World_Research_and_Data_Director/research_data/countries/validate_registry_profiles.mjs`
+3. `node Agents/05_World_Research_and_Data_Director/research_data/tools/validate_research.mjs`
+4. `node Agents/05_World_Research_and_Data_Director/research_data/tools/validate_top80.mjs`
+5. `node Agents/05_World_Research_and_Data_Director/research_data/countries/tools/generate_top80_shells.mjs --check`
+6. `node Agents/05_World_Research_and_Data_Director/research_data/countries/tools/validate_top80_shells.mjs`
+7. `node Agents/05_World_Research_and_Data_Director/research_data/countries/tools/validate_registry_profiles.mjs`
 8. `node Agents/05_World_Research_and_Data_Director/research_data/countries/validate_tier_a_structure.mjs`
 9. `node Agents/05_World_Research_and_Data_Director/research_data/countries/validate_tier_a_force_ledgers.mjs`
-10. `node Agents/05_World_Research_and_Data_Director/research_data/countries/test_corpus_integrity.mjs`
-11. `node Agents/05_World_Research_and_Data_Director/research_data/countries/validate_corpus_integrity.mjs`
+10. `node Agents/05_World_Research_and_Data_Director/research_data/tools/test_corpus_integrity.mjs`
+11. `node Agents/05_World_Research_and_Data_Director/research_data/tools/validate_corpus_integrity.mjs`
 
 The corpus validator reported zero warnings. That result is itself evidence that the present gates test structure, not opening truth.
 
