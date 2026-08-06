@@ -96,5 +96,12 @@ mutation('A09 legislative successors require resignation conditions', root => {
   write(file, value);
 }, 'Speaker resignation conditions are absent');
 
+mutation('A10 one publisher cannot masquerade as independent source families', root => {
+  const file = path.join(root, 'usa', 'evidence_registry.json');
+  const value = read(file);
+  value.sources.find(item => item.source_id === 'src_usa_presidential_succession_statute').source_family_id = 'false_independent_alias';
+  write(file, value);
+}, 'is split across source families');
+
 console.log(JSON.stringify({status: failures.length ? 'FAIL' : 'PASS', regressions: results, failures}, null, 2));
 if (failures.length) process.exit(1);
