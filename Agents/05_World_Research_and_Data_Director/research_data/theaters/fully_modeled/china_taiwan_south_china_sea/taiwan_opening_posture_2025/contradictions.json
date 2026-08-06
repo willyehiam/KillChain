@@ -1,0 +1,99 @@
+{
+  "as_of": "2025-09-01T00:00:00Z",
+  "contradictions": [
+    {
+      "contradiction_id": "op_contradiction_exercise_framing",
+      "topic": "exercise_legitimacy",
+      "positions": [
+        {
+          "label": "prc_official",
+          "claim_ids": [
+            "op_claim_prc_external_interference_opposition"
+          ]
+        },
+        {
+          "label": "taiwan_defense",
+          "claim_ids": [
+            "op_claim_taiwan_response_pattern"
+          ]
+        }
+      ],
+      "resolution": "preserve_parallel_actor_framing"
+    },
+    {
+      "contradiction_id": "op_contradiction_commitment_entry",
+      "topic": "united_states_commitment",
+      "positions": [
+        {
+          "label": "standing_policy",
+          "claim_ids": [
+            "op_claim_us_policy_commitment"
+          ]
+        },
+        {
+          "label": "no_automatic_entry_rule",
+          "claim_ids": [
+            "op_claim_us_no_automatic_entry"
+          ]
+        }
+      ],
+      "resolution": "both_true_at_different_decision_layers"
+    },
+    {
+      "contradiction_id": "op_contradiction_activity_inventory",
+      "topic": "force_counting",
+      "positions": [
+        {
+          "label": "observed_activity",
+          "claim_ids": [
+            "op_claim_opening_snapshot"
+          ]
+        },
+        {
+          "label": "inventory_unknown",
+          "claim_ids": [
+            "op_claim_force_disposition_unknown"
+          ]
+        }
+      ],
+      "resolution": "activity_counts_do_not_populate_inventory"
+    },
+    {
+      "contradiction_id": "op_contradiction_exercise_readiness",
+      "topic": "readiness_inference",
+      "positions": [
+        {
+          "label": "demonstrated_subjects",
+          "claim_ids": [
+            "op_claim_lineage_2025a"
+          ]
+        },
+        {
+          "label": "complete_readiness_unknown",
+          "claim_ids": [
+            "op_claim_readiness_unknown"
+          ]
+        }
+      ],
+      "resolution": "exercise_subjects_are_not_readiness_scores"
+    },
+    {
+      "contradiction_id": "op_contradiction_access_permission",
+      "topic": "allied_access",
+      "positions": [
+        {
+          "label": "standing_access_frameworks",
+          "claim_ids": [
+            "op_claim_japan_access_constraint",
+            "op_claim_philippines_access_constraint"
+          ]
+        },
+        {
+          "label": "mission_permission",
+          "claim_ids": []
+        }
+      ],
+      "resolution": "require_scenario_specific_political_authorization"
+    }
+  ]
+}
