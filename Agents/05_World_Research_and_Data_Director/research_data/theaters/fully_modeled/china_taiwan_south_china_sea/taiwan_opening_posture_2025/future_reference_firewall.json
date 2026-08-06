@@ -1,0 +1,19 @@
+{
+  "as_of": "2025-09-01T00:00:00Z",
+  "excluded_reference_trajectories": [
+    {
+      "reference_id": "future_reference_justice_mission_2025",
+      "display_name": "Justice Mission 2025",
+      "status": "excluded_future_reference",
+      "may_inform_opening_truth": false,
+      "allowed_use_after_bookmark": "later event chain research only",
+      "prohibited_fields": [
+        "opening_activity",
+        "opening_force_count",
+        "opening_readiness",
+        "opening_trigger_state"
+      ]
+    }
+  ],
+  "validation_rule": "No source, claim, posture record, lineage record, contradiction, or trigger may contain this future event name or derive opening state from it."
+}
