@@ -1,0 +1,1 @@
+{"fixture_id":"chn_command_service_releases_component","mutation":"service_releases_component","target_id":"relationship_chn_air_force_eastern_theater_component_organize_train_equip","expected_diagnostic":"organization_chn_eastern_theater_air_force lacks bounded generating-service relationship"}
