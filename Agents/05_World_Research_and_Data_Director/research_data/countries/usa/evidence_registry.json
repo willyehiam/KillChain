@@ -280,6 +280,32 @@
       "relevant_locator": "May 2025 staff reductions and restructuring under interim adviser Marco Rubio",
       "reliability_notes": "Supports the organizational capacity modifier, not a change to statutory NSC membership.",
       "source_family_id": "family_reuters"
+    },
+    {
+      "source_id": "src_usa_presidential_succession_statute",
+      "title": "3 USC 19, Vacancy in offices of both President and Vice President; officers eligible to act",
+      "publisher": "Office of the Law Revision Counsel, United States House of Representatives",
+      "published_at": "1947-07-18",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "source_family_id": "family_usa_office_law_revision_counsel",
+      "url": "https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title3-section19",
+      "relevant_locator": "3 USC 19(a) through (e)",
+      "reliability_notes": "Statutory office order and qualification conditions. Office order does not establish person-specific eligibility."
+    },
+    {
+      "source_id": "src_usa_senate_president_pro_tempore_2025",
+      "title": "Presidents Pro Tempore of the United States Senate",
+      "publisher": "United States Senate",
+      "published_at": "2025-01-03",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "source_family_id": "family_usa_senate",
+      "url": "https://www.senate.gov/about/officers-staff/president-pro-tempore/presidents-pro-tempore.htm",
+      "relevant_locator": "119th Congress, Chuck Grassley, January 3 2025 to present",
+      "reliability_notes": "Official Senate officeholder history establishes the opening office interval."
     }
   ],
   "claims": [
@@ -390,7 +416,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_white_house_administration"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_vance_role",
@@ -402,7 +430,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_white_house_administration"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_rubio_role",
@@ -419,7 +449,9 @@
       "source_ids": [
         "src_usa_rubio_swearing_2025",
         "src_usa_rubio_acting_nsa_reuters_2025"
-      ]
+      ],
+      "interval_start_status": "known",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_hegseth_role",
@@ -431,7 +463,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_hegseth_swearing_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_gabbard_role",
@@ -443,7 +477,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_white_house_national_security_team"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_ratcliffe_role",
@@ -455,7 +491,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_white_house_national_security_team"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_wiles_role",
@@ -467,7 +505,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_white_house_wiles_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_miller_role",
@@ -479,7 +519,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_white_house_miller_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_johnson_role",
@@ -491,7 +533,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_house_republican_leadership"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_scalise_role",
@@ -503,7 +547,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_house_republican_leadership"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_thune_role",
@@ -515,7 +561,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_senate_republican_leadership"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_barrasso_role",
@@ -527,7 +575,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_senate_republican_leadership"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_cotton_role",
@@ -539,7 +589,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_senate_republican_leadership"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_jeffries_role",
@@ -551,7 +603,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_house_democratic_leader"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_schumer_role",
@@ -563,7 +617,9 @@
       "confidence": "high",
       "source_ids": [
         "src_usa_senate_democratic_leadership"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_usa_actor_governor_roles",
@@ -651,6 +707,104 @@
         "src_usa_nspm1_nsc_organization_2025"
       ],
       "derivation": "The statute defines the council's membership and function while NSPM-1 defines the President's interagency advisory process and committees."
+    },
+    {
+      "claim_id": "claim_usa_actor_pam_bondi_opening_relevance",
+      "subject_id": "actor_usa_pam_bondi",
+      "predicate": "opening_relevance",
+      "value": "Attorney General",
+      "as_of": "2025-09-01",
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_cabinet"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_kristi_noem_opening_relevance",
+      "subject_id": "actor_usa_kristi_noem",
+      "predicate": "opening_relevance",
+      "value": "Secretary of Homeland Security",
+      "as_of": "2025-09-01",
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_cabinet"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_ron_desantis_opening_relevance",
+      "subject_id": "actor_usa_ron_desantis",
+      "predicate": "opening_relevance",
+      "value": "Governor of Florida",
+      "as_of": "2025-09-01",
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_council_of_governors_2025"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_gretchen_whitmer_opening_relevance",
+      "subject_id": "actor_usa_gretchen_whitmer",
+      "predicate": "opening_relevance",
+      "value": "Governor of Michigan",
+      "as_of": "2025-09-01",
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_council_of_governors_2025"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_josh_shapiro_opening_relevance",
+      "subject_id": "actor_usa_josh_shapiro",
+      "predicate": "opening_relevance",
+      "value": "Governor of Pennsylvania",
+      "as_of": "2025-09-01",
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_council_of_governors_2025"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_grassley_role",
+      "subject_id": "actor_usa_chuck_grassley",
+      "predicate": "holds_office",
+      "value": "President pro tempore of the Senate",
+      "effective_from": "2025-01-03",
+      "as_of": "2025-09-01",
+      "interval_start_status": "known",
+      "interval_end_status": "open_at_bookmark_end_not_established",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_senate_president_pro_tempore_2025"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_presidential_succession_statutory_order",
+      "subject_id": "institution_usa_executive_branch",
+      "predicate": "presidential_succession_order",
+      "value": "vice_president_then_speaker_then_president_pro_tempore_then_eligible_department_heads_in_statutory_order",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_constitution_amendment_xxv",
+        "src_usa_presidential_succession_statute"
+      ]
     }
   ],
   "contradiction_sets": [
