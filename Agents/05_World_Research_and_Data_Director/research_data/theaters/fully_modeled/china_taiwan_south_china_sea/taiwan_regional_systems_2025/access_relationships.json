@@ -1,0 +1,59 @@
+{
+  "dataset_id": "twrs_access_relationships_2025",
+  "as_of": "2025-09-01T00:00:00Z",
+  "opening_truth": true,
+  "relationships": [
+    {
+      "relationship_id": "twrs_access_us_japan",
+      "parties": ["USA", "JPN"],
+      "access_region": "Japan",
+      "legal_basis": "Mutual Cooperation and Security treaty facilities framework",
+      "automaticity": "existing_presence_not_blanket_automaticity_for_every_taiwan_scenario_operation",
+      "game_gates": ["host_nation_coordination", "mission_scope", "local_capacity", "force_protection"],
+      "uncertainty": {"confidence": "high_for_treaty_medium_for_scenario_permission", "unknowns": ["mission specific consent", "operational restrictions"]},
+      "sensitivity_treatment": "aggregate_public",
+      "decisions_enabled": ["request expanded access", "stage at greater depth", "trade political cost for throughput"],
+      "source_ids": ["twrs_src_us_japan_treaty"],
+      "observed_at": "2025-09-01"
+    },
+    {
+      "relationship_id": "twrs_access_us_philippines",
+      "parties": ["USA", "PHL"],
+      "access_region": "Philippine archipelago",
+      "legal_basis": "Mutual Defense Treaty, Visiting Forces Agreement and Enhanced Defense Cooperation Agreement framework",
+      "automaticity": "rotational_and_agreed_location_access_subject_to_bilateral_coordination",
+      "game_gates": ["host_nation_approval", "agreed_activity", "site_capacity", "domestic_support"],
+      "uncertainty": {"confidence": "high_for_framework_medium_for_taiwan_contingency_use", "unknowns": ["approved missions", "available throughput"]},
+      "sensitivity_treatment": "synthetic_region",
+      "decisions_enabled": ["negotiate access package", "fund capacity improvements", "accept political delay"],
+      "source_ids": ["twrs_src_edca_sites_2023", "twrs_src_us_philippines_2plus2_2024"],
+      "observed_at": "2025-09-01"
+    },
+    {
+      "relationship_id": "twrs_access_us_taiwan",
+      "parties": ["USA", "TWN"],
+      "access_region": "Taiwan",
+      "legal_basis": "Taiwan Relations Act policy framework",
+      "automaticity": "no_automatic_mutual_defense_or_basing_right_in_the_act",
+      "game_gates": ["national_decision", "war_authority", "Taiwan_consent", "escalation_posture"],
+      "uncertainty": {"confidence": "high_for_law", "unknowns": ["opening political decision", "scope of assistance"]},
+      "sensitivity_treatment": "aggregate_public",
+      "decisions_enabled": ["commit to defense", "provide material support", "delay pending authorization"],
+      "source_ids": ["twrs_src_taiwan_relations_act"],
+      "observed_at": "2025-09-01"
+    },
+    {
+      "relationship_id": "twrs_access_taiwan_commercial",
+      "parties": ["TWN", "commercial_carriers"],
+      "access_region": "Taiwan ports and airports",
+      "legal_basis": "commercial operating and emergency direction authorities abstracted at national level",
+      "automaticity": "capacity_does_not_equal_compellable_lift",
+      "game_gates": ["charter_authority", "crew_willingness", "insurance", "terminal_fit", "civilian_demand"],
+      "uncertainty": {"confidence": "medium", "unknowns": ["charterable share", "carrier risk response"]},
+      "sensitivity_treatment": "synthetic_region",
+      "decisions_enabled": ["charter airlift or sealift", "offer risk guarantees", "reserve civilian capacity"],
+      "source_ids": ["twrs_src_twport_national_2024", "twrs_src_caa_traffic_2024", "twrs_src_unctad_maritime_2024"],
+      "observed_at": "2025-09-01"
+    }
+  ]
+}
