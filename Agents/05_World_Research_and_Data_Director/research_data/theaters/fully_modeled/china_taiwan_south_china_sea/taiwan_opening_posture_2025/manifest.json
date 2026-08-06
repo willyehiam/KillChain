@@ -3,7 +3,7 @@
   "title": "Taiwan theater opening posture at the Global Fracture bookmark",
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
   "as_of": "2025-09-01T00:00:00Z",
-  "opening_truth": true,
+  "opening_truth": false,
   "status": "research_checkpoint",
   "simulation_readiness": "blocked_research_only",
   "status_firewall": {
@@ -18,19 +18,32 @@
       "mission_generation"
     ],
     "release_conditions": [
-      "independent Agent 09 review",
-      "force ledger inventory and readiness reconciliation",
-      "scenario design approval",
-      "contradiction adjudication policy"
-    ]
+      {
+        "condition_id": "independent_reaudit",
+        "status": "unmet"
+      },
+      {
+        "condition_id": "all_blocking_findings_closed",
+        "status": "unmet"
+      },
+      {
+        "condition_id": "scenario_design_approval",
+        "status": "unmet"
+      },
+      {
+        "condition_id": "contradiction_adjudication_policy",
+        "status": "unmet"
+      }
+    ],
+    "unresolved_blocker_count": 2
   },
   "record_counts": {
-    "sources": 21,
+    "sources": 20,
     "claims": 20,
     "posture_records": 8,
     "exercise_lineage": 5,
     "crisis_triggers": 8,
-    "contradictions": 5,
+    "contradictions": 4,
     "force_exceptions": 0
   },
   "files": [
@@ -55,5 +68,6 @@
     "Mission specific allied permission",
     "Private political thresholds and intent",
     "Probability and timing of crisis triggers"
-  ]
+  ],
+  "knowledge_layer": "unaccepted_public_report_and_research_hypothesis"
 }
