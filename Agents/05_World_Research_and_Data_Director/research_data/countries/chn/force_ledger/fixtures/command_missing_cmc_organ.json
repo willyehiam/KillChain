@@ -1,0 +1,1 @@
+{"fixture_id":"chn_command_missing_cmc_organ","mutation":"remove_organization","target_id":"organization_chn_cmc_logistic_support_department","expected_diagnostic":"missing public CMC organ logistic_support_department"}
