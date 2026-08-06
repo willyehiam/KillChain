@@ -50,6 +50,8 @@
         "launcher",
         "battery",
         "munition",
+        "person",
+        "formation",
         "capacity_unit"
       ]
     },

@@ -1,0 +1,1 @@
+{"fixture_id":"twn_construction_plan_promoted","mutation":"promote_plan","target_id":"construction_twn_planned_follow_on_indigenous_submarines","value":7,"unit":"platform","expected_diagnostic":"improperly promotes a plan to ordered, delivered, or accepted"}

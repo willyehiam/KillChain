@@ -1,0 +1,1 @@
+{"fixture_id":"twn_command_missing_jocc","mutation":"remove_organization","target_id":"organization_twn_joint_operations_command_center","expected_diagnostic":"missing required Taiwan command organization_twn_joint_operations_command_center"}

@@ -1,0 +1,1 @@
+{"fixture_id":"twn_fighter_scope_corrupted","mutation":"corrupt_fighter_scope","target_id":"contradiction_twn_fighter_scope_2024","expected_diagnostic":"fighter 350 and 400 nested scopes are not explicitly protected from addition"}

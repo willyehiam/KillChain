@@ -1,0 +1,1 @@
+{"fixture_id":"twn_inventory_exact_deployment","mutation":"assert_deployment","target_id":"deployment_twn_coastal_patrol_missile_craft_national_accounting","expected_diagnostic":"asserts location, movement, assignment, or availability"}

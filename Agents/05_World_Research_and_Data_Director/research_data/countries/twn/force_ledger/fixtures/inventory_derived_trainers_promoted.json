@@ -1,0 +1,1 @@
+{"fixture_id":"twn_inventory_derived_trainers_promoted","mutation":"promote_inventory","target_id":"inventory_twn_fighter_trainer_subset","value":50,"unit":"platform","expected_diagnostic":"derived fighter trainer difference must not become opening inventory"}

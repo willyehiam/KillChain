@@ -1,0 +1,1 @@
+{"fixture_id":"twn_inventory_estimate_promoted","mutation":"promote_inventory","target_id":"inventory_twn_destroyer","value":4,"unit":"platform","expected_diagnostic":"improperly promotes a dated estimate into opening inventory"}

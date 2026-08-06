@@ -34,7 +34,9 @@
     "components": [
       "active",
       "reserve",
-      "civilian_agency"
+      "civilian_agency",
+      "mobilization",
+      "training"
     ],
     "government_forces": [
       "Republic of China Armed Forces",
@@ -48,33 +50,7 @@
     ],
     "coverage_matrix": [
       {
-        "coverage_id": "coverage_twn_combat_aircraft",
-        "service": "air_force",
-        "domain": "air",
-        "organization_depth": "identified",
-        "equipment_taxonomy": "structured",
-        "inventory": "inventory_partial",
-        "dispositions": "identified",
-        "maintenance": "identified",
-        "construction": "not_started",
-        "conservation": "structured",
-        "notes": "Public national aggregate slice only; not decision usable."
-      },
-      {
-        "coverage_id": "coverage_twn_surface_combatant",
-        "service": "navy",
-        "domain": "maritime",
-        "organization_depth": "identified",
-        "equipment_taxonomy": "structured",
-        "inventory": "inventory_partial",
-        "dispositions": "identified",
-        "maintenance": "identified",
-        "construction": "not_started",
-        "conservation": "structured",
-        "notes": "Public national aggregate slice only; not decision usable."
-      },
-      {
-        "coverage_id": "coverage_twn_joint_command_isr",
+        "coverage_id": "coverage_twn_national_1",
         "service": "joint",
         "domain": "joint",
         "organization_depth": "identified",
@@ -82,9 +58,87 @@
         "inventory": "inventory_partial",
         "dispositions": "identified",
         "maintenance": "identified",
-        "construction": "not_started",
+        "construction": "inventory_partial",
         "conservation": "structured",
-        "notes": "Public national aggregate slice only; not decision usable."
+        "notes": "National aggregate only. Opening quantities remain unknown and nonexecutable; dated numeric evidence is retained as claims."
+      },
+      {
+        "coverage_id": "coverage_twn_national_2",
+        "service": "army",
+        "domain": "ground",
+        "organization_depth": "identified",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "inventory_partial",
+        "conservation": "structured",
+        "notes": "National aggregate only. Opening quantities remain unknown and nonexecutable; dated numeric evidence is retained as claims."
+      },
+      {
+        "coverage_id": "coverage_twn_national_3",
+        "service": "marine",
+        "domain": "ground",
+        "organization_depth": "identified",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "inventory_partial",
+        "conservation": "structured",
+        "notes": "National aggregate only. Opening quantities remain unknown and nonexecutable; dated numeric evidence is retained as claims."
+      },
+      {
+        "coverage_id": "coverage_twn_national_4",
+        "service": "navy",
+        "domain": "maritime",
+        "organization_depth": "identified",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "inventory_partial",
+        "conservation": "structured",
+        "notes": "National aggregate only. Opening quantities remain unknown and nonexecutable; dated numeric evidence is retained as claims."
+      },
+      {
+        "coverage_id": "coverage_twn_national_5",
+        "service": "air_force",
+        "domain": "air",
+        "organization_depth": "identified",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "inventory_partial",
+        "conservation": "structured",
+        "notes": "National aggregate only. Opening quantities remain unknown and nonexecutable; dated numeric evidence is retained as claims."
+      },
+      {
+        "coverage_id": "coverage_twn_national_6",
+        "service": "coast_guard",
+        "domain": "maritime",
+        "organization_depth": "identified",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "inventory_partial",
+        "conservation": "structured",
+        "notes": "National aggregate only. Opening quantities remain unknown and nonexecutable; dated numeric evidence is retained as claims."
+      },
+      {
+        "coverage_id": "coverage_twn_national_7",
+        "service": "joint",
+        "domain": "logistics",
+        "organization_depth": "identified",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "inventory_partial",
+        "conservation": "structured",
+        "notes": "National aggregate only. Opening quantities remain unknown and nonexecutable; dated numeric evidence is retained as claims."
       }
     ]
   },
@@ -106,15 +160,15 @@
     "state": "blocked_by_unknowns",
     "organization_records": 27,
     "platform_records": 0,
-    "equipment_type_records": 10,
-    "inventory_records": 3,
-    "deployment_records": 3,
-    "maintenance_records": 3,
-    "construction_records": 0,
-    "conservation_records": 3,
+    "equipment_type_records": 38,
+    "inventory_records": 36,
+    "deployment_records": 36,
+    "maintenance_records": 36,
+    "construction_records": 2,
+    "conservation_records": 36,
     "exact_quantity_records": 0,
     "range_quantity_records": 0,
-    "unknown_quantity_records": 3,
+    "unknown_quantity_records": 36,
     "open_conservation_exceptions": 0,
     "double_booking_exceptions": 0,
     "orphan_platform_records": 0,
@@ -147,14 +201,16 @@
     "src_force_twn_mnd_aircraft_parts_2024"
   ],
   "unknowns": [
-    "The dated command packet resolves the continuous JOCC and principal Army, Navy, Marine Corps, and Air Force functional commands but does not assert exact headquarters coordinates, current allocations, or subordinate unit dispositions.",
-    "The 2024 US Department of Defense table is a dated operational estimate, not an exact 1 September 2025 possession, availability, readiness, maintenance, or deployment state.",
-    "Active, reserve, Coast Guard, aircraft, naval, ground, air and missile defense, lift, training, construction, maintenance, and munitions opening pools remain nonexecutable pending source reconciliation and independent review.",
-    "No source in this packet establishes exact ready, available, deployed, stored, damaged, or maintenance quantities at the bookmark."
+    "Exact 1 September 2025 authorized, possessed, available, ready, deployed, maintenance, stored, damaged, and retired quantities remain unresolved unless expressly stated as a dated claim.",
+    "The US Department of Defense 2024 Taiwan balance tables are operational estimates from a prior reporting snapshot, not a Taiwan custody ledger and not an exact bookmark inventory.",
+    "The public fighter figures of 350 and 400 are nested scopes. They may not be summed, and the derived difference is not accepted as a separate trainer opening inventory.",
+    "National active personnel, national reserve personnel, Coast Guard personnel, tanker aircraft, rotary wing lift, naval support, ground lift, integrated air and missile defense, munitions, maintenance throughput, training throughput, and mobilization throughput remain unknown.",
+    "No exact location, route, movement, base assignment, theater allocation, current mission, readiness percentage, or maintenance percentage is represented.",
+    "The seven-submarine and five-brigade figures are plan claims. Ordered, delivered, accepted, manned, possessed, available, and ready states remain unknown."
   ],
   "reviewed_at": "2026-08-06",
   "review_after": "2026-11-06",
-  "notes": "Collecting national aggregate packet. The dated command structure checkpoint resolves the public JOCC and principal functional commands without exposing current positions or inventing mission availability.",
+  "notes": "Collecting Taiwan national force packet. Public aggregate estimates are retained as atomic claims while all 1 September 2025 opening pools remain structurally conserved unknowns. No pool is executable pending independent review.",
   "acceptance": {
     "schema_valid": true,
     "internally_consistent": false,
@@ -162,11 +218,12 @@
     "decision_usable": false,
     "simulation_ready": false,
     "untested_claims": [
-      "Command relationships require independent review before promotion."
+      "Dated estimates, command paths, parent-child scopes, and plan-state quarantines require independent review."
     ],
     "blockers": [
-      "National inventory pools and dated estimate claims are not yet reconciled.",
-      "Independent command and inventory review has not passed."
+      "No exact bookmark custody ledger reconciles the public estimates.",
+      "Ready, available, deployed, maintenance, lift, munitions, and mobilization quantities remain unknown.",
+      "Independent review has not passed."
     ]
   }
 }

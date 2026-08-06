@@ -1,0 +1,1 @@
+{"fixture_id":"twn_acceptance_premature","mutation":"accept_packet","expected_diagnostic":"must remain collecting, unaccepted, and nonexecutable"}
