@@ -28,8 +28,8 @@
           "claim_twn_nsc_advises_president"
         ],
         "source_ids": [
-          "src_twn_president_authority",
-          "src_twn_central_government"
+          "src_twn_constitution_main_text",
+          "src_twn_additional_articles"
         ]
       },
       {
@@ -40,8 +40,7 @@
           "claim_twn_legislative_yuan_war_and_peace_bills"
         ],
         "source_ids": [
-          "src_twn_president_authority",
-          "src_twn_legislative_functions"
+          "src_twn_constitution_main_text"
         ]
       },
       {
@@ -66,8 +65,7 @@
         "claim_twn_premier_acts_if_both_vacant"
       ],
       "source_ids": [
-        "src_twn_additional_articles",
-        "src_twn_vice_president_authority"
+        "src_twn_additional_articles"
       ]
     },
     "election_cycle": {
@@ -101,7 +99,7 @@
       "category": "executive",
       "opening_status": "dpp_governing",
       "source_ids": [
-        "src_twn_president_authority",
+        "src_twn_constitution_main_text",
         "src_twn_inauguration_2024"
       ]
     },
@@ -122,7 +120,7 @@
       "category": "legislature",
       "opening_status": "kmt_plurality_no_single_party_majority",
       "source_ids": [
-        "src_twn_legislative_functions",
+        "src_twn_constitution_main_text",
         "src_twn_legislative_leadership_2025",
         "src_twn_cec_legislative_result_2024",
         "src_twn_cec_recall_results_2025_07_26",
@@ -172,7 +170,7 @@
       "category": "national_security_advisory_body",
       "opening_status": "advising_president",
       "source_ids": [
-        "src_twn_central_government",
+        "src_twn_additional_articles",
         "src_twn_resilience_committee"
       ]
     }
@@ -214,7 +212,7 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_inauguration_2024",
-        "src_twn_vice_president_authority"
+        "src_twn_additional_articles"
       ],
       "selection_basis_status": "institutional_relevance_only",
       "practical_influence": {
@@ -499,7 +497,7 @@
       "succession_eligibility": "constitutionally_eligible_potential_candidate",
       "confidence": "high",
       "source_ids": [
-        "src_twn_new_taipei_hou",
+        "src_twn_new_taipei_hou_dated_2025_08_29",
         "src_twn_cec_presidential_result_2024"
       ],
       "selection_basis_status": "institutional_relevance_only",
