@@ -1,0 +1,109 @@
+{
+  "as_of": "2025-09-01T00:00:00Z",
+  "triggers": [
+    {
+      "trigger_id": "op_trigger_status_change",
+      "description": "A perceived formal change to Taiwan’s political status crosses an asserted PRC red line.",
+      "knowledge_state": "scenario_hypothesis",
+      "probability": "unknown",
+      "activation": "disabled_until_scenario_rules_are_reviewed",
+      "decision_effects": [
+        "raise_warning",
+        "open_diplomatic_response",
+        "request_readiness_review"
+      ],
+      "safety_note": "Strategic trigger only. No tactical route, target, timing, or execution guidance."
+    },
+    {
+      "trigger_id": "op_trigger_external_commitment",
+      "description": "A new external security commitment or military presence is interpreted as changing the cross strait status quo.",
+      "knowledge_state": "scenario_hypothesis",
+      "probability": "unknown",
+      "activation": "disabled_until_scenario_rules_are_reviewed",
+      "decision_effects": [
+        "raise_warning",
+        "open_diplomatic_response",
+        "request_readiness_review"
+      ],
+      "safety_note": "Strategic trigger only. No tactical route, target, timing, or execution guidance."
+    },
+    {
+      "trigger_id": "op_trigger_exercise_extension",
+      "description": "A notified exercise expands, persists, or adds coercive controls beyond expectations.",
+      "knowledge_state": "scenario_hypothesis",
+      "probability": "unknown",
+      "activation": "disabled_until_scenario_rules_are_reviewed",
+      "decision_effects": [
+        "raise_warning",
+        "open_diplomatic_response",
+        "request_readiness_review"
+      ],
+      "safety_note": "Strategic trigger only. No tactical route, target, timing, or execution guidance."
+    },
+    {
+      "trigger_id": "op_trigger_inspection_incident",
+      "description": "An attempted inspection, exclusion, or quarantine action produces a confrontation with military or civilian traffic.",
+      "knowledge_state": "scenario_hypothesis",
+      "probability": "unknown",
+      "activation": "disabled_until_scenario_rules_are_reviewed",
+      "decision_effects": [
+        "raise_warning",
+        "open_diplomatic_response",
+        "request_readiness_review"
+      ],
+      "safety_note": "Strategic trigger only. No tactical route, target, timing, or execution guidance."
+    },
+    {
+      "trigger_id": "op_trigger_maritime_casualty",
+      "description": "A collision, boarding, or law enforcement encounter causes deaths and rapid domestic pressure.",
+      "knowledge_state": "scenario_hypothesis",
+      "probability": "unknown",
+      "activation": "disabled_until_scenario_rules_are_reviewed",
+      "decision_effects": [
+        "raise_warning",
+        "open_diplomatic_response",
+        "request_readiness_review"
+      ],
+      "safety_note": "Strategic trigger only. No tactical route, target, timing, or execution guidance."
+    },
+    {
+      "trigger_id": "op_trigger_contested_attribution",
+      "description": "A severe cyber, information, or infrastructure disruption is attributed under uncertainty.",
+      "knowledge_state": "scenario_hypothesis",
+      "probability": "unknown",
+      "activation": "disabled_until_scenario_rules_are_reviewed",
+      "decision_effects": [
+        "raise_warning",
+        "open_diplomatic_response",
+        "request_readiness_review"
+      ],
+      "safety_note": "Strategic trigger only. No tactical route, target, timing, or execution guidance."
+    },
+    {
+      "trigger_id": "op_trigger_mobilization_spiral",
+      "description": "Defensive dispersal or mobilization is interpreted by another actor as preparation for offensive action.",
+      "knowledge_state": "scenario_hypothesis",
+      "probability": "unknown",
+      "activation": "disabled_until_scenario_rules_are_reviewed",
+      "decision_effects": [
+        "raise_warning",
+        "open_diplomatic_response",
+        "request_readiness_review"
+      ],
+      "safety_note": "Strategic trigger only. No tactical route, target, timing, or execution guidance."
+    },
+    {
+      "trigger_id": "op_trigger_economic_coercion",
+      "description": "Trade or transport coercion escalates from selective pressure to a sustained denial campaign.",
+      "knowledge_state": "scenario_hypothesis",
+      "probability": "unknown",
+      "activation": "disabled_until_scenario_rules_are_reviewed",
+      "decision_effects": [
+        "raise_warning",
+        "open_diplomatic_response",
+        "request_readiness_review"
+      ],
+      "safety_note": "Strategic trigger only. No tactical route, target, timing, or execution guidance."
+    }
+  ]
+}
