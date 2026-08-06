@@ -1,26 +1,36 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://killweb.game/research/schemas/military_organization_record.schema.json",
-  "title": "Military Organization Record",
+  "title": "Military Organization and Formation Record",
+  "description": "A dated node in a country's military, government security, or mobilization command hierarchy.",
   "type": "object",
   "required": [
     "organization_id",
     "country_id",
+    "controller_id",
     "name",
     "service",
     "component",
+    "organization_kind",
     "echelon",
     "parent_organization_id",
-    "valid_from",
-    "evidence_state",
-    "confidence",
-    "source_ids"
+    "command_relationship",
+    "headquarters_location_id",
+    "personnel",
+    "readiness",
+    "mobilization",
+    "roles",
+    "temporal_validity",
+    "provenance"
   ],
   "properties": {
     "organization_id": {
       "$ref": "common.schema.json#/$defs/stableId"
     },
     "country_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "controller_id": {
       "$ref": "common.schema.json#/$defs/stableId"
     },
     "name": {
@@ -30,40 +40,43 @@
     "native_name": {
       "type": "string"
     },
+    "aliases": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "service": {
-      "type": "string",
-      "enum": [
-        "joint",
-        "army",
-        "navy",
-        "marine",
-        "air_force",
-        "space",
-        "rocket_or_missile",
-        "coast_guard",
-        "gendarmerie",
-        "cyber",
-        "intelligence",
-        "special_operations",
-        "paramilitary",
-        "other"
-      ]
+      "$ref": "common.schema.json#/$defs/service"
     },
     "component": {
+      "$ref": "common.schema.json#/$defs/component"
+    },
+    "organization_kind": {
       "type": "string",
       "enum": [
-        "active",
-        "reserve",
-        "guard",
-        "mobilization",
-        "training",
-        "civilian_agency",
+        "political_authority",
+        "ministry",
+        "general_staff",
+        "joint_command",
+        "service_command",
+        "operational_command",
+        "formation",
+        "unit",
+        "base_command",
+        "facility_unit",
+        "reserve_pool",
+        "mobilization_pool",
+        "government_security_force",
         "other"
       ]
     },
     "echelon": {
       "type": "string",
       "enum": [
+        "national_authority",
         "ministry",
         "general_staff",
         "theater_command",
@@ -76,6 +89,7 @@
         "brigade",
         "regiment",
         "battalion",
+        "company",
         "squadron",
         "wing",
         "group",
@@ -98,6 +112,27 @@
         }
       ]
     },
+    "command_relationship": {
+      "type": "string",
+      "enum": [
+        "organic",
+        "operational_control",
+        "tactical_control",
+        "administrative_control",
+        "supporting",
+        "attached",
+        "mobilization_assignment",
+        "dual_hatted",
+        "unknown"
+      ]
+    },
+    "supported_organization_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
+    },
     "headquarters_location_id": {
       "anyOf": [
         {
@@ -108,68 +143,136 @@
         }
       ]
     },
-    "valid_from": {
-      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
-    },
-    "valid_to": {
-      "anyOf": [
-        {
-          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    "personnel": {
+      "type": "object",
+      "required": [
+        "authorized",
+        "assigned",
+        "deployable"
+      ],
+      "properties": {
+        "authorized": {
+          "$ref": "common.schema.json#/$defs/quantityEstimate"
         },
-        {
-          "type": "null"
+        "assigned": {
+          "$ref": "common.schema.json#/$defs/quantityEstimate"
+        },
+        "deployable": {
+          "$ref": "common.schema.json#/$defs/quantityEstimate"
         }
-      ]
+      },
+      "additionalProperties": false
     },
-    "personnel_authorized": {
-      "anyOf": [
-        {
-          "type": "integer",
+    "readiness": {
+      "type": "object",
+      "required": [
+        "state",
+        "basis"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "inactive",
+            "forming",
+            "training",
+            "ready",
+            "deployed",
+            "degraded",
+            "reconstituting",
+            "demobilizing"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "direct_public_status",
+            "official_aggregate",
+            "independent_assessment",
+            "scenario_assumption",
+            "unknown"
+          ]
+        },
+        "limiting_factors": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "mobilization": {
+      "type": "object",
+      "required": [
+        "status",
+        "authority_id",
+        "minimum_delay_hours"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_applicable",
+            "standing",
+            "call_up_required",
+            "mobilizing",
+            "mobilized",
+            "demobilizing",
+            "unknown"
+          ]
+        },
+        "authority_id": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/stableId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "minimum_delay_hours": {
+          "type": [
+            "number",
+            "null"
+          ],
           "minimum": 0
         },
-        {
-          "type": "null"
+        "equipment_pool_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/stableId"
+          }
         }
-      ]
+      },
+      "additionalProperties": false
     },
-    "personnel_assigned": {
-      "anyOf": [
-        {
-          "type": "integer",
-          "minimum": 0
-        },
-        {
-          "type": "null"
-        }
-      ]
-    },
-    "readiness_state": {
-      "type": "string",
-      "enum": [
-        "unknown",
-        "inactive",
-        "forming",
-        "training",
-        "ready",
-        "deployed",
-        "degraded",
-        "reconstituting",
-        "demobilizing"
-      ]
-    },
-    "evidence_state": {
-      "$ref": "common.schema.json#/$defs/evidenceState"
-    },
-    "confidence": {
-      "$ref": "common.schema.json#/$defs/confidence"
-    },
-    "source_ids": {
+    "roles": {
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
       "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "inventory_record_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
         "$ref": "common.schema.json#/$defs/stableId"
       }
+    },
+    "temporal_validity": {
+      "$ref": "common.schema.json#/$defs/temporalValidity"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
     },
     "notes": {
       "type": "string"
