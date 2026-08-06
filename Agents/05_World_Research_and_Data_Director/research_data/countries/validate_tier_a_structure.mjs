@@ -131,6 +131,21 @@ for (const code of countries) {
       const he = evidence.claims.find(claim => claim.claim_id === 'claim_chn_he_weidong_public_availability');
       if (he?.value !== 'unknown_after_repeated_absences') errors.push('chn: He Weidong opening uncertainty is not preserved');
     }
+
+    if (code === 'usa') {
+      const nsc = politics.institutions.find(institution => institution.institution_id === 'institution_usa_nsc');
+      const rubio = politics.political_actors.find(actor => actor.actor_id === 'actor_usa_marco_rubio');
+      const rubioRole = evidence.claims.find(claim => claim.claim_id === 'claim_usa_actor_rubio_role');
+      const requiredNscClaims = ['claim_usa_nsc_statutory_membership', 'claim_usa_nsc_advisory_structure', 'claim_usa_nsc_restructuring_capacity_modifier', 'claim_usa_nsc_statutory_and_advisory_distinction'];
+      if (!nsc) errors.push('usa: NSC institution is absent from politics packet');
+      if (!rubio?.institution_ids.includes('institution_usa_nsc') || !rubio.office.includes('Acting National Security Advisor')) {
+        errors.push('usa: Marco Rubio dual opening role is incomplete');
+      }
+      if (rubioRole?.effective_from !== '2025-05-01' || !rubioRole.value?.includes('Acting National Security Advisor')) {
+        errors.push('usa: Marco Rubio acting NSA interval is incomplete');
+      }
+      for (const claimId of requiredNscClaims) if (!claimIds.has(claimId)) errors.push(`usa: missing NSC claim ${claimId}`);
+    }
   }
   if (bookmark.economic_state !== null || bookmark.military_posture !== null) errors.push(`${code}: unsourced non-politics bookmark facts populated`);
 }
