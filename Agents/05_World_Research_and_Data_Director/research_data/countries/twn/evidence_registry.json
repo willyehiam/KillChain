@@ -477,7 +477,9 @@
       "source_ids": [
         "src_twn_inauguration_2024",
         "src_twn_dpp_congress_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_hsiao_role",
@@ -489,7 +491,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_inauguration_2024"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_cho_role",
@@ -501,7 +505,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_cho_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_cheng_role",
@@ -513,7 +519,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_cheng_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_lin_chia_lung_role",
@@ -525,7 +533,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_inauguration_luncheon_2024"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_wellington_koo_role",
@@ -537,7 +547,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_mnd_koo_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_joseph_wu_role",
@@ -550,7 +562,9 @@
       "source_ids": [
         "src_twn_resilience_committee",
         "src_twn_inauguration_luncheon_2024"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_pan_role",
@@ -562,7 +576,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_resilience_committee"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_han_role",
@@ -574,7 +590,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_legislative_leadership_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_johnny_chiang_role",
@@ -586,7 +604,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_legislative_leadership_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_eric_chu_role",
@@ -598,7 +618,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_kmt_chu_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_fu_role",
@@ -610,7 +632,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_kmt_fu_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_huang_role",
@@ -623,7 +647,9 @@
       "source_ids": [
         "src_twn_tpp_caucus_2025",
         "src_twn_tpp_huang_chair_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_lu_role",
@@ -635,7 +661,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_taichung_lu"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_hou_role",
@@ -647,7 +675,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_new_taipei_hou"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_chiang_role",
@@ -659,7 +689,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_taipei_chiang"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_chen_role",
@@ -671,7 +703,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_kaohsiung_chen_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_ker_role",
@@ -683,7 +717,9 @@
       "confidence": "high",
       "source_ids": [
         "src_twn_dpp_congress_2025"
-      ]
+      ],
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_lin_yu_chang_tenure_ended",
@@ -697,7 +733,9 @@
       "source_ids": [
         "src_twn_lin_resignation_hsu_appointment_2025"
       ],
-      "confidence_reason": "The dated transition report identifies Lin as the departing officeholder. No opening authority is assigned to him."
+      "confidence_reason": "The dated transition report identifies Lin as the departing officeholder. No opening authority is assigned to him.",
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "known"
     },
     {
       "claim_id": "claim_twn_actor_hsu_kuo_yung_role",
@@ -711,7 +749,9 @@
       "source_ids": [
         "src_twn_lin_resignation_hsu_appointment_2025",
         "src_twn_hsu_dpp_secretary_general_2025"
-      ]
+      ],
+      "interval_start_status": "known",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_actor_tsai_role",
@@ -724,7 +764,9 @@
       "source_ids": [
         "src_twn_inauguration_2024"
       ],
-      "confidence_reason": "Lai's 2024 inauguration establishes the presidential transition; no present informal influence is asserted."
+      "confidence_reason": "Lai's 2024 inauguration establishes the presidential transition; no present informal influence is asserted.",
+      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_end_status": "open_at_bookmark_end_not_established"
     },
     {
       "claim_id": "claim_twn_2024_presidential_result",
