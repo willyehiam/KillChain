@@ -11,7 +11,7 @@
     "head_of_state_actor_id": "actor_usa_donald_trump",
     "head_of_government_actor_id": "actor_usa_donald_trump",
     "first_constitutional_successor_actor_id": "actor_usa_jd_vance",
-    "opening_summary": "Donald Trump was President, JD Vance was Vice President, Republicans held the federal executive and congressional majorities, and Democrats were the major opposition party.",
+    "opening_summary": "Donald Trump was President, JD Vance was Vice President, Republicans held the federal executive and congressional majorities, and Democrats were the major opposition party. Marco Rubio concurrently served as Secretary of State and Acting National Security Advisor, coordinating a National Security Council staff reduced and restructured in May 2025.",
     "authority_model": "Separate presidential command and executive initiative from Congress's declare-war power, statutory authorization, reporting deadlines, and political legitimacy.",
     "status": "needs_review"
   },
@@ -50,7 +50,8 @@
   "unresolved_assumptions": [
     "War authority is an open institutional tension rather than a binary permission flag.",
     "The Taiwan Relations Act does not predetermine intervention in a particular contingency.",
-    "Actor inclusion is not a succession or election forecast."
+    "Actor inclusion is not a succession or election forecast.",
+    "National Security Advisor coordination authority does not itself confer statutory command authority."
   ],
   "source_ids": [
     "src_usa_white_house_administration",
@@ -64,7 +65,11 @@
     "src_usa_house_republican_leadership",
     "src_usa_house_democratic_leader",
     "src_usa_nato_hague_2025",
-    "src_usa_taiwan_relations_act"
+    "src_usa_taiwan_relations_act",
+    "src_usa_nsc_statute",
+    "src_usa_nspm1_nsc_organization_2025",
+    "src_usa_rubio_acting_nsa_reuters_2025",
+    "src_usa_nsc_restructuring_reuters_2025"
   ],
   "claim_ids": [
     "claim_usa_president_executive_power",
@@ -76,7 +81,12 @@
     "claim_usa_nato_article_five_commitment",
     "claim_usa_taiwan_relations_act_policy",
     "claim_usa_actor_trump_role",
-    "claim_usa_actor_vance_role"
+    "claim_usa_actor_vance_role",
+    "claim_usa_actor_rubio_role",
+    "claim_usa_nsc_statutory_membership",
+    "claim_usa_nsc_advisory_structure",
+    "claim_usa_nsc_restructuring_capacity_modifier",
+    "claim_usa_nsc_statutory_and_advisory_distinction"
   ],
   "notes": "Only the politics and institutions lane has crossed from shell into the opening bookmark. All military, economic, geography, infrastructure, and crisis fields remain intentionally unpopulated."
 }
