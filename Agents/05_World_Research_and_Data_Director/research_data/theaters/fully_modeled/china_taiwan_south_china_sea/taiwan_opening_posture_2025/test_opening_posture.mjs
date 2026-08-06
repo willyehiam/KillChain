@@ -18,6 +18,7 @@ reject('future source',root=>mutateNdjson(root,'sources.ndjson',rows=>{rows[0].a
 reject('future event leakage',root=>mutateJson(root,'posture_records.json',doc=>{doc.records[0].summary='Derived from Justice Mission 2025';}),'future reference leaked');
 reject('unsafe geometry',root=>mutateJson(root,'posture_records.json',doc=>{doc.records[0].coordinates=[121.56,25.03];}),'forbidden');
 reject('unresolved source',root=>mutateNdjson(root,'claims.ndjson',rows=>{rows[0].source_ids=['op_src_missing'];}),'unresolved source');
+reject('missing atomic temporal key',root=>mutateNdjson(root,'claims.ndjson',rows=>{delete rows[0].as_of;}),'as_of mismatch');
 reject('unresolved force',root=>mutateJson(root,'posture_records.json',doc=>{doc.records[0].force_refs=['organization_unaccepted'];}),'unresolved force reference');
 reject('invented readiness',root=>mutateJson(root,'posture_records.json',doc=>{doc.records[0].readiness='fully_ready';}),'unsupported readiness inference');
 reject('unique platform inflation',root=>mutateJson(root,'posture_records.json',doc=>{doc.records.find(x=>x.category==='observed_activity').count_semantics='unique_platform_inventory';}),'cannot be treated as unique platform inventory');
@@ -25,4 +26,4 @@ reject('factualized trigger',root=>mutateJson(root,'crisis_triggers.json',doc=>{
 reject('future lineage',root=>mutateJson(root,'exercise_lineage.json',doc=>{doc.events[0].ended_on='2025-12-30';}),'post bookmark');
 reject('open status firewall',root=>mutateJson(root,'manifest.json',doc=>{doc.simulation_readiness='simulation_ready';}),'status firewall must remain blocked');
 reject('mutated artifact',root=>mutateNdjson(root,'sources.ndjson',rows=>{rows[0].claim_snapshot+=' changed';}),'frozen artifact hash mismatch');
-console.log(JSON.stringify({ok:true,negative_cases:11,canonical_force_refs:forceIds.size},null,2));
+console.log(JSON.stringify({ok:true,negative_cases:12,canonical_force_refs:forceIds.size},null,2));
