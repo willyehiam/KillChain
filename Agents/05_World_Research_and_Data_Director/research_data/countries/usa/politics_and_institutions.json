@@ -21,84 +21,640 @@
       {
         "domain": "executive_and_military_command",
         "rule": "The President holds the executive power and is Commander in Chief.",
-        "claim_ids": ["claim_usa_president_executive_power", "claim_usa_president_commander_in_chief"],
-        "source_ids": ["src_usa_constitution_article_ii"]
+        "claim_ids": [
+          "claim_usa_president_executive_power",
+          "claim_usa_president_commander_in_chief"
+        ],
+        "source_ids": [
+          "src_usa_constitution_article_ii"
+        ]
       },
       {
         "domain": "war_initiation",
         "rule": "Congress has the power to declare war, while the War Powers Resolution states that introduction of forces into hostilities is to follow a declaration, specific authorization, or an attack created national emergency and imposes consultation and reporting rules.",
-        "claim_ids": ["claim_usa_congress_declares_war", "claim_usa_war_powers_framework"],
-        "source_ids": ["src_usa_constitution_article_i", "src_usa_war_powers_resolution"]
+        "claim_ids": [
+          "claim_usa_congress_declares_war",
+          "claim_usa_war_powers_framework"
+        ],
+        "source_ids": [
+          "src_usa_constitution_article_i",
+          "src_usa_war_powers_resolution"
+        ]
       },
       {
         "domain": "national_security_advice_and_coordination",
         "rule": "The statutory National Security Council and presidential interagency advisory structure are distinct from the President's constitutional command authority. Marco Rubio served concurrently as Secretary of State and Acting National Security Advisor from May 1, while May staff reductions imposed a separate coordination-capacity modifier.",
-        "claim_ids": ["claim_usa_nsc_statutory_membership", "claim_usa_nsc_advisory_structure", "claim_usa_nsc_restructuring_capacity_modifier", "claim_usa_nsc_statutory_and_advisory_distinction", "claim_usa_actor_rubio_role"],
-        "source_ids": ["src_usa_nsc_statute", "src_usa_nspm1_nsc_organization_2025", "src_usa_rubio_acting_nsa_reuters_2025", "src_usa_nsc_restructuring_reuters_2025"]
+        "claim_ids": [
+          "claim_usa_nsc_statutory_membership",
+          "claim_usa_nsc_advisory_structure",
+          "claim_usa_nsc_restructuring_capacity_modifier",
+          "claim_usa_nsc_statutory_and_advisory_distinction",
+          "claim_usa_actor_rubio_role"
+        ],
+        "source_ids": [
+          "src_usa_nsc_statute",
+          "src_usa_nspm1_nsc_organization_2025",
+          "src_usa_rubio_acting_nsa_reuters_2025",
+          "src_usa_nsc_restructuring_reuters_2025"
+        ]
       }
     ],
     "practical_authority_notes": "Executive branch legal opinions claim limited presidential authority to use force without prior statutory authorization. This creates a real constitutional and political tension rather than a single permission switch.",
     "succession": {
+      "workflow_file": "presidential_succession.json",
       "first_successor_actor_id": "actor_usa_jd_vance",
-      "rule": "The Vice President becomes President upon removal, death, or resignation of the President; further succession is statutory.",
-      "claim_ids": ["claim_usa_vp_first_successor"],
-      "source_ids": ["src_usa_constitution_amendment_xxv"]
+      "distinction": "The Vice President succeeds to a presidential vacancy or acts during inability; legislative officers and department heads act as President subject to statutory qualification conditions.",
+      "claim_ids": [
+        "claim_usa_vp_first_successor",
+        "claim_usa_presidential_succession_statutory_order"
+      ],
+      "source_ids": [
+        "src_usa_constitution_amendment_xxv",
+        "src_usa_presidential_succession_statute"
+      ]
     },
     "election_cycle": {
       "presidential_term_started": "2025-01-20",
       "regular_term_years": 4,
       "next_regular_presidential_election_year": 2028,
       "status": "expected_under_fixed_constitutional_cycle",
-      "source_ids": ["src_usa_white_house_administration", "src_usa_constitution_article_ii"]
+      "source_ids": [
+        "src_usa_white_house_administration",
+        "src_usa_constitution_article_ii"
+      ]
     },
     "alliance_commitment_context": [
       {
         "commitment": "NATO collective defense",
         "opening_rule": "The United States was one of 32 NATO members and reaffirmed Article 5 in June 2025. Each ally retains discretion over the action it deems necessary.",
-        "claim_ids": ["claim_usa_nato_article_five_commitment"],
-        "source_ids": ["src_usa_nato_hague_2025"]
+        "claim_ids": [
+          "claim_usa_nato_article_five_commitment"
+        ],
+        "source_ids": [
+          "src_usa_nato_hague_2025"
+        ]
       },
       {
         "commitment": "Taiwan security policy",
         "opening_rule": "The Taiwan Relations Act treats nonpeaceful determination of Taiwan's future as grave concern, provides for defensive arms, and requires maintenance of capacity to resist force or coercion. It does not itself create an automatic declaration of war.",
-        "claim_ids": ["claim_usa_taiwan_relations_act_policy"],
-        "source_ids": ["src_usa_taiwan_relations_act"]
+        "claim_ids": [
+          "claim_usa_taiwan_relations_act_policy"
+        ],
+        "source_ids": [
+          "src_usa_taiwan_relations_act"
+        ]
       }
     ]
   },
   "institutions": [
-    {"institution_id":"institution_usa_presidency","name":"Presidency of the United States","category":"executive","opening_status":"governing","source_ids":["src_usa_constitution_article_ii","src_usa_white_house_administration"]},
-    {"institution_id":"institution_usa_executive_branch","name":"United States executive branch","category":"executive","opening_status":"governing","source_ids":["src_usa_white_house_administration"]},
-    {"institution_id":"institution_usa_congress_119","name":"119th United States Congress","category":"legislature","opening_status":"republican_majorities","source_ids":["src_usa_senate_republican_leadership","src_usa_house_republican_leadership"]},
-    {"institution_id":"institution_usa_republican_party","name":"Republican Party","category":"political_party","opening_status":"governing_party","source_ids":["src_usa_senate_republican_leadership","src_usa_house_republican_leadership"]},
-    {"institution_id":"institution_usa_democratic_party","name":"Democratic Party","category":"political_party","opening_status":"major_opposition","source_ids":["src_usa_senate_democratic_leadership","src_usa_house_democratic_leader"]},
-    {"institution_id":"institution_usa_nsc","name":"National Security Council","category":"statutory_council_and_presidential_interagency_advisory_system","opening_status":"rubio_acting_national_security_advisor_with_reduced_restructured_staff","source_ids":["src_usa_nsc_statute","src_usa_nspm1_nsc_organization_2025","src_usa_rubio_acting_nsa_reuters_2025","src_usa_nsc_restructuring_reuters_2025"]}
+    {
+      "institution_id": "institution_usa_presidency",
+      "name": "Presidency of the United States",
+      "category": "executive",
+      "opening_status": "governing",
+      "source_ids": [
+        "src_usa_constitution_article_ii",
+        "src_usa_white_house_administration"
+      ]
+    },
+    {
+      "institution_id": "institution_usa_executive_branch",
+      "name": "United States executive branch",
+      "category": "executive",
+      "opening_status": "governing",
+      "source_ids": [
+        "src_usa_white_house_administration"
+      ]
+    },
+    {
+      "institution_id": "institution_usa_congress_119",
+      "name": "119th United States Congress",
+      "category": "legislature",
+      "opening_status": "republican_majorities",
+      "source_ids": [
+        "src_usa_senate_republican_leadership",
+        "src_usa_house_republican_leadership"
+      ]
+    },
+    {
+      "institution_id": "institution_usa_republican_party",
+      "name": "Republican Party",
+      "category": "political_party",
+      "opening_status": "governing_party",
+      "source_ids": [
+        "src_usa_senate_republican_leadership",
+        "src_usa_house_republican_leadership"
+      ]
+    },
+    {
+      "institution_id": "institution_usa_democratic_party",
+      "name": "Democratic Party",
+      "category": "political_party",
+      "opening_status": "major_opposition",
+      "source_ids": [
+        "src_usa_senate_democratic_leadership",
+        "src_usa_house_democratic_leader"
+      ]
+    },
+    {
+      "institution_id": "institution_usa_nsc",
+      "name": "National Security Council",
+      "category": "statutory_council_and_presidential_interagency_advisory_system",
+      "opening_status": "rubio_acting_national_security_advisor_with_reduced_restructured_staff",
+      "source_ids": [
+        "src_usa_nsc_statute",
+        "src_usa_nspm1_nsc_organization_2025",
+        "src_usa_rubio_acting_nsa_reuters_2025",
+        "src_usa_nsc_restructuring_reuters_2025"
+      ]
+    }
   ],
   "political_actors": [
-    {"actor_id":"actor_usa_donald_trump","name":"Donald J. Trump","office":"President","institution_ids":["institution_usa_presidency","institution_usa_republican_party"],"relevance":"head_of_state_and_government","succession_eligibility":"incumbent","confidence":"high","source_ids":["src_usa_white_house_administration"]},
-    {"actor_id":"actor_usa_jd_vance","name":"JD Vance","office":"Vice President","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party"],"relevance":"constitutional_first_successor","succession_eligibility":"first_in_line","confidence":"high","source_ids":["src_usa_white_house_administration","src_usa_constitution_amendment_xxv"]},
-    {"actor_id":"actor_usa_marco_rubio","name":"Marco Rubio","office":"Secretary of State; Acting National Security Advisor","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party","institution_usa_nsc"],"relevance":"dual_hatted_foreign_policy_principal_and_nsc_coordinator","succession_eligibility":"statutory_line_member","confidence":"high","source_ids":["src_usa_rubio_swearing_2025","src_usa_rubio_acting_nsa_reuters_2025"]},
-    {"actor_id":"actor_usa_pete_hegseth","name":"Pete Hegseth","office":"Secretary of Defense","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party"],"relevance":"defense_policy_principal","succession_eligibility":"statutory_line_member","confidence":"high","source_ids":["src_usa_hegseth_swearing_2025"]},
-    {"actor_id":"actor_usa_tulsi_gabbard","name":"Tulsi Gabbard","office":"Director of National Intelligence","institution_ids":["institution_usa_executive_branch"],"relevance":"intelligence_principal","succession_eligibility":"not_in_presidential_line","confidence":"high","source_ids":["src_usa_white_house_national_security_team"]},
-    {"actor_id":"actor_usa_john_ratcliffe","name":"John Ratcliffe","office":"Director of the Central Intelligence Agency","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party"],"relevance":"intelligence_principal","succession_eligibility":"not_in_presidential_line","confidence":"high","source_ids":["src_usa_white_house_national_security_team"]},
-    {"actor_id":"actor_usa_pam_bondi","name":"Pam Bondi","office":"Attorney General","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party"],"relevance":"chief_federal_law_officer","succession_eligibility":"statutory_line_member","confidence":"high","source_ids":["src_usa_white_house_cabinet"]},
-    {"actor_id":"actor_usa_kristi_noem","name":"Kristi Noem","office":"Secretary of Homeland Security","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party"],"relevance":"homeland_security_principal","succession_eligibility":"statutory_line_member","confidence":"high","source_ids":["src_usa_white_house_cabinet"]},
-    {"actor_id":"actor_usa_susie_wiles","name":"Susie Wiles","office":"White House Chief of Staff","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party"],"relevance":"presidential_gatekeeper","succession_eligibility":"not_in_presidential_line","confidence":"high","source_ids":["src_usa_white_house_wiles_2025"]},
-    {"actor_id":"actor_usa_stephen_miller","name":"Stephen Miller","office":"White House Deputy Chief of Staff for Policy and Homeland Security Advisor","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party"],"relevance":"senior_policy_and_homeland_security_adviser","succession_eligibility":"not_in_presidential_line","confidence":"high","source_ids":["src_usa_white_house_miller_2025"]},
-    {"actor_id":"actor_usa_mike_johnson","name":"Mike Johnson","office":"Speaker of the House","institution_ids":["institution_usa_congress_119","institution_usa_republican_party"],"relevance":"legislative_leader_and_statutory_successor","succession_eligibility":"second_in_line_after_vice_president","confidence":"high","source_ids":["src_usa_house_republican_leadership"]},
-    {"actor_id":"actor_usa_steve_scalise","name":"Steve Scalise","office":"House Majority Leader","institution_ids":["institution_usa_congress_119","institution_usa_republican_party"],"relevance":"house_majority_leader","succession_eligibility":"not_in_presidential_line_by_office","confidence":"high","source_ids":["src_usa_house_republican_leadership"]},
-    {"actor_id":"actor_usa_john_thune","name":"John Thune","office":"Senate Majority Leader","institution_ids":["institution_usa_congress_119","institution_usa_republican_party"],"relevance":"senate_majority_leader","succession_eligibility":"not_in_presidential_line_by_office","confidence":"high","source_ids":["src_usa_senate_republican_leadership"]},
-    {"actor_id":"actor_usa_john_barrasso","name":"John Barrasso","office":"Senate Majority Whip","institution_ids":["institution_usa_congress_119","institution_usa_republican_party"],"relevance":"senate_majority_whip","succession_eligibility":"not_in_presidential_line_by_office","confidence":"high","source_ids":["src_usa_senate_republican_leadership"]},
-    {"actor_id":"actor_usa_tom_cotton","name":"Tom Cotton","office":"Chair of the Senate Republican Conference","institution_ids":["institution_usa_congress_119","institution_usa_republican_party"],"relevance":"party_and_national_security_leader","succession_eligibility":"not_in_presidential_line_by_office","confidence":"high","source_ids":["src_usa_senate_republican_leadership"]},
-    {"actor_id":"actor_usa_hakeem_jeffries","name":"Hakeem Jeffries","office":"House Democratic Leader","institution_ids":["institution_usa_congress_119","institution_usa_democratic_party"],"relevance":"house_opposition_leader","succession_eligibility":"not_in_presidential_line_by_office","confidence":"high","source_ids":["src_usa_house_democratic_leader"]},
-    {"actor_id":"actor_usa_chuck_schumer","name":"Chuck Schumer","office":"Senate Democratic Leader","institution_ids":["institution_usa_congress_119","institution_usa_democratic_party"],"relevance":"senate_opposition_leader","succession_eligibility":"not_in_presidential_line_by_office","confidence":"high","source_ids":["src_usa_senate_democratic_leadership"]},
-    {"actor_id":"actor_usa_ron_desantis","name":"Ron DeSantis","office":"Governor of Florida","institution_ids":["institution_usa_republican_party"],"relevance":"national_party_figure_and_state_executive","succession_eligibility":"constitutionally_eligible_candidate","confidence":"high","source_ids":["src_usa_council_of_governors_2025"]},
-    {"actor_id":"actor_usa_gretchen_whitmer","name":"Gretchen Whitmer","office":"Governor of Michigan","institution_ids":["institution_usa_democratic_party"],"relevance":"national_party_figure_and_state_executive","succession_eligibility":"constitutionally_eligible_candidate","confidence":"high","source_ids":["src_usa_council_of_governors_2025"]},
-    {"actor_id":"actor_usa_josh_shapiro","name":"Josh Shapiro","office":"Governor of Pennsylvania","institution_ids":["institution_usa_democratic_party"],"relevance":"national_party_figure_and_state_executive","succession_eligibility":"constitutionally_eligible_candidate","confidence":"high","source_ids":["src_usa_council_of_governors_2025"]}
+    {
+      "actor_id": "actor_usa_donald_trump",
+      "name": "Donald J. Trump",
+      "office": "President",
+      "institution_ids": [
+        "institution_usa_presidency",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "head_of_state_and_government",
+      "succession_eligibility": "incumbent",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_administration"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_jd_vance",
+      "name": "JD Vance",
+      "office": "Vice President",
+      "institution_ids": [
+        "institution_usa_executive_branch",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "constitutional_first_successor",
+      "succession_eligibility": "first_in_line",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_administration",
+        "src_usa_constitution_amendment_xxv"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_marco_rubio",
+      "name": "Marco Rubio",
+      "office": "Secretary of State; Acting National Security Advisor",
+      "institution_ids": [
+        "institution_usa_executive_branch",
+        "institution_usa_republican_party",
+        "institution_usa_nsc"
+      ],
+      "relevance": "dual_hatted_foreign_policy_principal_and_nsc_coordinator",
+      "succession_eligibility": "statutory_line_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_rubio_swearing_2025",
+        "src_usa_rubio_acting_nsa_reuters_2025"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_pete_hegseth",
+      "name": "Pete Hegseth",
+      "office": "Secretary of Defense",
+      "institution_ids": [
+        "institution_usa_executive_branch",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "defense_policy_principal",
+      "succession_eligibility": "statutory_line_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_hegseth_swearing_2025"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_tulsi_gabbard",
+      "name": "Tulsi Gabbard",
+      "office": "Director of National Intelligence",
+      "institution_ids": [
+        "institution_usa_executive_branch"
+      ],
+      "relevance": "intelligence_principal",
+      "succession_eligibility": "not_in_presidential_line",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_national_security_team"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_john_ratcliffe",
+      "name": "John Ratcliffe",
+      "office": "Director of the Central Intelligence Agency",
+      "institution_ids": [
+        "institution_usa_executive_branch",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "intelligence_principal",
+      "succession_eligibility": "not_in_presidential_line",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_national_security_team"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_pam_bondi",
+      "name": "Pam Bondi",
+      "office": "Attorney General",
+      "institution_ids": [
+        "institution_usa_executive_branch",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "chief_federal_law_officer",
+      "succession_eligibility": "statutory_line_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_cabinet"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_kristi_noem",
+      "name": "Kristi Noem",
+      "office": "Secretary of Homeland Security",
+      "institution_ids": [
+        "institution_usa_executive_branch",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "homeland_security_principal",
+      "succession_eligibility": "statutory_line_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_cabinet"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_susie_wiles",
+      "name": "Susie Wiles",
+      "office": "White House Chief of Staff",
+      "institution_ids": [
+        "institution_usa_executive_branch",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "presidential_gatekeeper",
+      "succession_eligibility": "not_in_presidential_line",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_wiles_2025"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_stephen_miller",
+      "name": "Stephen Miller",
+      "office": "White House Deputy Chief of Staff for Policy and Homeland Security Advisor",
+      "institution_ids": [
+        "institution_usa_executive_branch",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "senior_policy_and_homeland_security_adviser",
+      "succession_eligibility": "not_in_presidential_line",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_miller_2025"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_mike_johnson",
+      "name": "Mike Johnson",
+      "office": "Speaker of the House",
+      "institution_ids": [
+        "institution_usa_congress_119",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "legislative_leader_and_statutory_successor",
+      "succession_eligibility": "second_in_line_after_vice_president",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_house_republican_leadership"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_steve_scalise",
+      "name": "Steve Scalise",
+      "office": "House Majority Leader",
+      "institution_ids": [
+        "institution_usa_congress_119",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "house_majority_leader",
+      "succession_eligibility": "not_in_presidential_line_by_office",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_house_republican_leadership"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_john_thune",
+      "name": "John Thune",
+      "office": "Senate Majority Leader",
+      "institution_ids": [
+        "institution_usa_congress_119",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "senate_majority_leader",
+      "succession_eligibility": "not_in_presidential_line_by_office",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_senate_republican_leadership"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_john_barrasso",
+      "name": "John Barrasso",
+      "office": "Senate Majority Whip",
+      "institution_ids": [
+        "institution_usa_congress_119",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "senate_majority_whip",
+      "succession_eligibility": "not_in_presidential_line_by_office",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_senate_republican_leadership"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_tom_cotton",
+      "name": "Tom Cotton",
+      "office": "Chair of the Senate Republican Conference",
+      "institution_ids": [
+        "institution_usa_congress_119",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "party_and_national_security_leader",
+      "succession_eligibility": "not_in_presidential_line_by_office",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_senate_republican_leadership"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_hakeem_jeffries",
+      "name": "Hakeem Jeffries",
+      "office": "House Democratic Leader",
+      "institution_ids": [
+        "institution_usa_congress_119",
+        "institution_usa_democratic_party"
+      ],
+      "relevance": "house_opposition_leader",
+      "succession_eligibility": "not_in_presidential_line_by_office",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_house_democratic_leader"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_chuck_schumer",
+      "name": "Chuck Schumer",
+      "office": "Senate Democratic Leader",
+      "institution_ids": [
+        "institution_usa_congress_119",
+        "institution_usa_democratic_party"
+      ],
+      "relevance": "senate_opposition_leader",
+      "succession_eligibility": "not_in_presidential_line_by_office",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_senate_democratic_leadership"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_ron_desantis",
+      "name": "Ron DeSantis",
+      "office": "Governor of Florida",
+      "institution_ids": [
+        "institution_usa_republican_party"
+      ],
+      "relevance": "national_party_figure_and_state_executive",
+      "succession_eligibility": "constitutionally_eligible_candidate",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_council_of_governors_2025"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_gretchen_whitmer",
+      "name": "Gretchen Whitmer",
+      "office": "Governor of Michigan",
+      "institution_ids": [
+        "institution_usa_democratic_party"
+      ],
+      "relevance": "national_party_figure_and_state_executive",
+      "succession_eligibility": "constitutionally_eligible_candidate",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_council_of_governors_2025"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_josh_shapiro",
+      "name": "Josh Shapiro",
+      "office": "Governor of Pennsylvania",
+      "institution_ids": [
+        "institution_usa_democratic_party"
+      ],
+      "relevance": "national_party_figure_and_state_executive",
+      "succession_eligibility": "constitutionally_eligible_candidate",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_council_of_governors_2025"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_usa_chuck_grassley",
+      "name": "Chuck Grassley",
+      "office": "President pro tempore of the Senate",
+      "institution_ids": [
+        "institution_usa_congress_119",
+        "institution_usa_republican_party"
+      ],
+      "relevance": "statutory_presidential_succession_officer",
+      "succession_eligibility": "statutory_line_member_subject_to_resignation_and_person_specific_qualification",
+      "confidence": "high",
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      },
+      "source_ids": [
+        "src_usa_senate_president_pro_tempore_2025",
+        "src_usa_presidential_succession_statute"
+      ]
+    }
   ],
   "unknowns": [
     "Actor inclusion records institutional relevance, not a forecast of nomination, election, coup participation, or succession probability.",
     "The boundary between limited presidential uses of force and a war requiring prior congressional authorization remains contested and context dependent.",
     "The Taiwan Relations Act does not resolve the political decision whether United States forces would enter a particular Taiwan conflict."
-  ]
+  ],
+  "actor_selection_policy": {
+    "roster_membership_meaning": "candidate_for_gameplay_relevance_review_not_practical_influence_fact",
+    "roster_size_is_acceptance_criterion": false,
+    "practical_influence_default": "unaccepted",
+    "acceptance_requires_minimum_independent_source_families": 2,
+    "formal_office_source_alone_can_accept_practical_influence": false,
+    "actor_selection_gameplay_value_fields": [
+      "institutional_role",
+      "decision_domain",
+      "succession_relevance",
+      "opposition_or_coalition_relevance"
+    ],
+    "prohibited_inferences": [
+      "coup_probability",
+      "election_probability",
+      "succession_probability",
+      "practical_control_from_office_title_alone"
+    ]
+  }
 }
