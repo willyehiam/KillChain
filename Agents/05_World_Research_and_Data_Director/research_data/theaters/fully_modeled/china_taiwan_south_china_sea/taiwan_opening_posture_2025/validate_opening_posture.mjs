@@ -11,6 +11,8 @@ const forbiddenFuture = /justice mission 2025/i;
 const unsafeKey = /^(?:lat|latitude|lon|lng|longitude|coord|coords|coordinate|coordinates|geometry|geom|bbox|position|centroid|center|centre|geohash|wkt|polyline|exactsite|exactlocation|address|mgrs)$/i;
 const coordinateText = /(?:^|\s|\[|\()[-+]?\d{1,3}\.\d{3,}\s*[,/]\s*[-+]?\d{1,3}\.\d{3,}(?:$|\s|\]|\))/;
 const requiredFiles = ['manifest.json','sources.ndjson','claims.ndjson','posture_records.json','exercise_lineage.json','crisis_triggers.json','contradictions.json','force_reconciliation.json','future_reference_firewall.json'];
+const forceReferenceKeys = new Set(['organization_id','reference_semantics','deployment_status','readiness_status','access_status','theater_availability_status','does_not_imply']);
+const forceReferenceSemantics = new Set(['organization_identity_only','context_identity_not_observed_participant','historical_organization_identity_only']);
 
 function readJson(root,name,errors){try{return JSON.parse(fs.readFileSync(path.join(root,name),'utf8'));}catch(error){errors.push(`${name}: ${error.message}`);return {};}}
 function readNdjson(root,name,errors){try{return fs.readFileSync(path.join(root,name),'utf8').split(/\r?\n/).filter(Boolean).map((line,index)=>{try{return JSON.parse(line);}catch(error){errors.push(`${name} line ${index+1}: ${error.message}`);return null;}}).filter(Boolean);}catch(error){errors.push(`${name}: ${error.message}`);return [];}}
@@ -87,10 +89,16 @@ export function validateOpeningPosture(root=here,options={}){
     for(const ref of record.force_refs??[]){
       const label=record.posture_id??record.lineage_id;
       if(!ref||typeof ref!=='object'||Array.isArray(ref)){errors.push(`${label}: force reference must be a semantic object`);continue;}
+      for(const key of Object.keys(ref)) if(!forceReferenceKeys.has(key)) errors.push(`${label}: force reference contains unsupported field ${key}`);
       if(!canonicalForceIds.has(ref.organization_id)) errors.push(`${label}: unresolved force reference ${ref.organization_id}`);
       for(const field of ['reference_semantics','deployment_status','readiness_status','access_status','theater_availability_status']) if(!ref[field]) errors.push(`${label}: force reference missing ${field}`);
+      if(!forceReferenceSemantics.has(ref.reference_semantics)) errors.push(`${label}: force reference semantics must remain identity only`);
       if(ref.deployment_status!=='unknown'||ref.readiness_status!=='unknown'||ref.theater_availability_status!=='unknown') errors.push(`${label}: unsupported organization state must remain unknown`);
-      for(const concept of ['deployment','readiness','access','theater_availability']) if(!(ref.does_not_imply??[]).some(item=>item.includes(concept))) errors.push(`${label}: force identity does not disclaim ${concept}`);
+      if(!['unknown','not_applicable'].includes(ref.access_status)) errors.push(`${label}: unsupported organization access state must remain unknown or not applicable`);
+      const expectedDisclaimers=ref.reference_semantics==='historical_organization_identity_only'
+        ? ['opening_deployment','opening_readiness','opening_access','opening_theater_availability']
+        : ['deployment','readiness','access','theater_availability'];
+      if(!Array.isArray(ref.does_not_imply)||ref.does_not_imply.length!==expectedDisclaimers.length||expectedDisclaimers.some(item=>!ref.does_not_imply.includes(item))) errors.push(`${label}: force identity disclaimers are incomplete or contradictory`);
     }
     if(forbiddenFuture.test(JSON.stringify(record))) errors.push(`${record.posture_id??record.lineage_id}: future reference leaked into opening record`);
   }
@@ -109,7 +117,11 @@ export function validateOpeningPosture(root=here,options={}){
   for(const trigger of triggers.triggers??[]){if(trigger.knowledge_state!=='scenario_hypothesis'||trigger.probability!=='unknown'||trigger.activation!=='disabled_until_scenario_rules_are_reviewed') errors.push(`${trigger.trigger_id}: trigger must remain a disabled scenario hypothesis`);if(/already fired|forces automatic|guaranteed|deterministic/i.test(trigger.description??'')) errors.push(`${trigger.trigger_id}: deterministic trigger prose is forbidden`);if(forbiddenFuture.test(JSON.stringify(trigger))) errors.push(`${trigger.trigger_id}: future reference leaked into trigger`);}
   for(const item of contradictions.contradictions??[]){if((item.positions??[]).length<2) errors.push(`${item.contradiction_id}: at least two contradiction positions required`);for(const side of item.positions??[]){if(!(side.claim_ids??[]).length) errors.push(`${item.contradiction_id}: empty contradiction side is forbidden`);for(const id of side.claim_ids??[]) if(!claimIndex.has(id)) errors.push(`${item.contradiction_id}: unresolved claim ${id}`);}if(!item.resolution) errors.push(`${item.contradiction_id}: resolution policy required`);}
   if((reconciliation.exceptions??[]).length) errors.push('force reconciliation: unresolved exceptions are blocked');
-  if(firewall.excluded_reference_trajectories?.[0]?.may_inform_opening_truth!==false) errors.push('future reference firewall is open');
+  if(!firewall.excluded_reference_trajectories?.length) errors.push('future reference firewall has no excluded trajectories');
+  for(const reference of firewall.excluded_reference_trajectories??[]){
+    if(reference.status!=='excluded_future_reference'||reference.may_inform_opening_truth!==false) errors.push(`future reference firewall is open for ${reference.reference_id??'unknown reference'}`);
+    for(const field of ['opening_activity','opening_force_count','opening_readiness','opening_trigger_state']) if(!reference.prohibited_fields?.includes(field)) errors.push(`${reference.reference_id}: future reference firewall omits ${field}`);
+  }
   for(const [name,value] of [['manifest',manifest],['sources',sources],['claims',claims],['posture',posture],['lineage',lineage],['triggers',triggers],['contradictions',contradictions],['reconciliation',reconciliation]]) walk(value,errors,name);
   return {ok:errors.length===0,errors,counts:expected,canonical_force_refs:canonicalForceIds.size};
 }
