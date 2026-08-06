@@ -11,6 +11,14 @@ function readJson(file) {
   catch (error) { errors.push(`${file}: ${error.message}`); return null; }
 }
 
+function dateAtOrBefore(value, cutoff) {
+  return !value || Date.parse(value) <= Date.parse(cutoff);
+}
+
+function dateAtOrAfter(value, cutoff) {
+  return !value || Date.parse(value) >= Date.parse(cutoff);
+}
+
 const contract = readJson(path.join(root, 'country_research_contract.json'));
 if (contract && contract.lanes.map(x => x.lane_id).join('|') !== requiredLanes.join('|')) errors.push('contract lane order mismatch');
 
@@ -62,6 +70,21 @@ for (const code of countries) {
       if (profile?.completeness?.political_actor_count !== actorIds.size) errors.push(`${code}: profile actor count mismatch`);
       for (const actorId of bookmark.political_actors) if (!actorIds.has(actorId)) errors.push(`${code}: bookmark cites missing actor ${actorId}`);
       if (bookmark.political_actors.length !== actorIds.size) errors.push(`${code}: bookmark actor count mismatch`);
+      for (const actorId of bookmark.political_actors) {
+        const endedRoleClaims = evidence.claims.filter(claim =>
+          claim.subject_id === actorId &&
+          ['held_office_until', 'holds_office', 'holds_offices'].includes(claim.predicate) &&
+          claim.effective_to &&
+          Date.parse(claim.effective_to) < Date.parse(bookmark.as_of)
+        );
+        const activeRoleClaims = evidence.claims.filter(claim =>
+          claim.subject_id === actorId &&
+          ['holds_office', 'holds_offices', 'opening_relevance'].includes(claim.predicate) &&
+          dateAtOrBefore(claim.effective_from ?? claim.as_of, bookmark.as_of) &&
+          dateAtOrAfter(claim.effective_to, bookmark.as_of)
+        );
+        if (endedRoleClaims.length && !activeRoleClaims.length) errors.push(`${code}: opening actor ${actorId} has only role evidence that ended before ${bookmark.as_of}`);
+      }
       for (const record of [...(politics.institutions ?? []), ...(politics.political_actors ?? [])]) {
         if (!record.source_ids?.length) errors.push(`${code}: politics record ${record.institution_id ?? record.actor_id} lacks source ids`);
         for (const sourceId of record.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`${code}: politics record cites missing ${sourceId}`);
@@ -72,6 +95,26 @@ for (const code of countries) {
     if (manifest.open_contradiction_count !== evidence.contradiction_sets.filter(set => set.status === 'open').length) errors.push(`${code}: manifest contradiction count mismatch`);
     const lane = matrix.lanes.politics_and_institutions;
     if (lane.source_count !== evidence.sources.length || lane.claim_count !== evidence.claims.length) errors.push(`${code}: lane evidence count mismatch`);
+
+    if (code === 'twn') {
+      const certified = evidence.claims.find(claim => claim.claim_id === 'claim_twn_legislative_seats_certified_2024')?.value;
+      const recalls = ['claim_twn_recall_round_2025_07_26_seat_delta', 'claim_twn_recall_round_2025_08_23_seat_delta']
+        .map(id => evidence.claims.find(claim => claim.claim_id === id)?.value?.seat_delta);
+      const opening = evidence.claims.find(claim => claim.claim_id === 'claim_twn_legislative_seats_2025_09_01')?.value;
+      const parties = ['kmt', 'dpp', 'tpp', 'independent'];
+      if (!certified || recalls.some(delta => !delta) || !opening) errors.push('twn: incomplete legislative seat derivation evidence');
+      else {
+        for (const party of parties) {
+          const expected = certified[party] + recalls.reduce((sum, delta) => sum + delta[party], 0);
+          if (opening[party] !== expected) errors.push(`twn: opening ${party} seats do not reconcile to certified result and recall deltas`);
+        }
+        const total = parties.reduce((sum, party) => sum + opening[party], 0);
+        if (total !== opening.total || opening.total !== 113) errors.push('twn: opening seat total does not reconcile to 113');
+        if (opening.largest_party !== 'kmt' || opening.single_party_majority !== false || opening.majority_threshold !== 57) {
+          errors.push('twn: opening plurality or majority classification is incorrect');
+        }
+      }
+    }
   }
   if (bookmark.economic_state !== null || bookmark.military_posture !== null) errors.push(`${code}: unsourced non-politics bookmark facts populated`);
 }
