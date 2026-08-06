@@ -29,6 +29,12 @@
         "rule": "Congress has the power to declare war, while the War Powers Resolution states that introduction of forces into hostilities is to follow a declaration, specific authorization, or an attack created national emergency and imposes consultation and reporting rules.",
         "claim_ids": ["claim_usa_congress_declares_war", "claim_usa_war_powers_framework"],
         "source_ids": ["src_usa_constitution_article_i", "src_usa_war_powers_resolution"]
+      },
+      {
+        "domain": "national_security_advice_and_coordination",
+        "rule": "The statutory National Security Council and presidential interagency advisory structure are distinct from the President's constitutional command authority. Marco Rubio served concurrently as Secretary of State and Acting National Security Advisor from May 1, while May staff reductions imposed a separate coordination-capacity modifier.",
+        "claim_ids": ["claim_usa_nsc_statutory_membership", "claim_usa_nsc_advisory_structure", "claim_usa_nsc_restructuring_capacity_modifier", "claim_usa_nsc_statutory_and_advisory_distinction", "claim_usa_actor_rubio_role"],
+        "source_ids": ["src_usa_nsc_statute", "src_usa_nspm1_nsc_organization_2025", "src_usa_rubio_acting_nsa_reuters_2025", "src_usa_nsc_restructuring_reuters_2025"]
       }
     ],
     "practical_authority_notes": "Executive branch legal opinions claim limited presidential authority to use force without prior statutory authorization. This creates a real constitutional and political tension rather than a single permission switch.",
@@ -65,12 +71,13 @@
     {"institution_id":"institution_usa_executive_branch","name":"United States executive branch","category":"executive","opening_status":"governing","source_ids":["src_usa_white_house_administration"]},
     {"institution_id":"institution_usa_congress_119","name":"119th United States Congress","category":"legislature","opening_status":"republican_majorities","source_ids":["src_usa_senate_republican_leadership","src_usa_house_republican_leadership"]},
     {"institution_id":"institution_usa_republican_party","name":"Republican Party","category":"political_party","opening_status":"governing_party","source_ids":["src_usa_senate_republican_leadership","src_usa_house_republican_leadership"]},
-    {"institution_id":"institution_usa_democratic_party","name":"Democratic Party","category":"political_party","opening_status":"major_opposition","source_ids":["src_usa_senate_democratic_leadership","src_usa_house_democratic_leader"]}
+    {"institution_id":"institution_usa_democratic_party","name":"Democratic Party","category":"political_party","opening_status":"major_opposition","source_ids":["src_usa_senate_democratic_leadership","src_usa_house_democratic_leader"]},
+    {"institution_id":"institution_usa_nsc","name":"National Security Council","category":"statutory_council_and_presidential_interagency_advisory_system","opening_status":"rubio_acting_national_security_advisor_with_reduced_restructured_staff","source_ids":["src_usa_nsc_statute","src_usa_nspm1_nsc_organization_2025","src_usa_rubio_acting_nsa_reuters_2025","src_usa_nsc_restructuring_reuters_2025"]}
   ],
   "political_actors": [
     {"actor_id":"actor_usa_donald_trump","name":"Donald J. Trump","office":"President","institution_ids":["institution_usa_presidency","institution_usa_republican_party"],"relevance":"head_of_state_and_government","succession_eligibility":"incumbent","confidence":"high","source_ids":["src_usa_white_house_administration"]},
     {"actor_id":"actor_usa_jd_vance","name":"JD Vance","office":"Vice President","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party"],"relevance":"constitutional_first_successor","succession_eligibility":"first_in_line","confidence":"high","source_ids":["src_usa_white_house_administration","src_usa_constitution_amendment_xxv"]},
-    {"actor_id":"actor_usa_marco_rubio","name":"Marco Rubio","office":"Secretary of State","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party"],"relevance":"foreign_policy_principal","succession_eligibility":"statutory_line_member","confidence":"high","source_ids":["src_usa_rubio_swearing_2025"]},
+    {"actor_id":"actor_usa_marco_rubio","name":"Marco Rubio","office":"Secretary of State; Acting National Security Advisor","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party","institution_usa_nsc"],"relevance":"dual_hatted_foreign_policy_principal_and_nsc_coordinator","succession_eligibility":"statutory_line_member","confidence":"high","source_ids":["src_usa_rubio_swearing_2025","src_usa_rubio_acting_nsa_reuters_2025"]},
     {"actor_id":"actor_usa_pete_hegseth","name":"Pete Hegseth","office":"Secretary of Defense","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party"],"relevance":"defense_policy_principal","succession_eligibility":"statutory_line_member","confidence":"high","source_ids":["src_usa_hegseth_swearing_2025"]},
     {"actor_id":"actor_usa_tulsi_gabbard","name":"Tulsi Gabbard","office":"Director of National Intelligence","institution_ids":["institution_usa_executive_branch"],"relevance":"intelligence_principal","succession_eligibility":"not_in_presidential_line","confidence":"high","source_ids":["src_usa_white_house_national_security_team"]},
     {"actor_id":"actor_usa_john_ratcliffe","name":"John Ratcliffe","office":"Director of the Central Intelligence Agency","institution_ids":["institution_usa_executive_branch","institution_usa_republican_party"],"relevance":"intelligence_principal","succession_eligibility":"not_in_presidential_line","confidence":"high","source_ids":["src_usa_white_house_national_security_team"]},
