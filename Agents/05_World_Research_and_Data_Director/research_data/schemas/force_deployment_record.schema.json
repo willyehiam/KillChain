@@ -1,27 +1,35 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://killweb.game/research/schemas/force_deployment_record.schema.json",
-  "title": "Force Deployment Record",
+  "title": "Force Disposition and Deployment Record",
+  "description": "A dated research assertion about the disposition of a real force ledger entity. It does not represent what any player faction knows.",
   "type": "object",
   "required": [
     "deployment_id",
     "country_id",
+    "controller_id",
     "entity_type",
     "entity_id",
+    "quantity",
     "assignment",
-    "observed_from",
-    "observed_to",
-    "stale_after",
+    "command_organization_id",
+    "availability_state",
     "location",
-    "evidence_state",
-    "confidence",
-    "source_ids"
+    "movement",
+    "commitment",
+    "support_dependency_ids",
+    "temporal_validity",
+    "stale_after",
+    "provenance"
   ],
   "properties": {
     "deployment_id": {
       "$ref": "common.schema.json#/$defs/stableId"
     },
     "country_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "controller_id": {
       "$ref": "common.schema.json#/$defs/stableId"
     },
     "entity_type": {
@@ -37,6 +45,9 @@
     "entity_id": {
       "$ref": "common.schema.json#/$defs/stableId"
     },
+    "quantity": {
+      "$ref": "common.schema.json#/$defs/quantityEstimate"
+    },
     "assignment": {
       "type": "string",
       "enum": [
@@ -51,64 +62,162 @@
         "transport",
         "maintenance",
         "reserve",
+        "storage",
+        "mobilizing",
+        "reconstituting",
         "unknown"
       ]
     },
-    "observed_from": {
-      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    "command_organization_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
-    "observed_to": {
-      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
-    },
-    "stale_after": {
-      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    "availability_state": {
+      "$ref": "common.schema.json#/$defs/accountingState"
     },
     "location": {
       "$ref": "common.schema.json#/$defs/geometryRecord"
     },
-    "route_id": {
-      "anyOf": [
-        {
-          "$ref": "common.schema.json#/$defs/stableId"
+    "movement": {
+      "type": "object",
+      "required": [
+        "state",
+        "route_id",
+        "origin_location_id",
+        "destination_location_id",
+        "departed_at",
+        "estimated_arrival"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "stationary",
+            "planned",
+            "embarking",
+            "in_transit",
+            "holding",
+            "diverted",
+            "arrived",
+            "unknown"
+          ]
         },
-        {
-          "type": "null"
-        }
-      ]
-    },
-    "origin_location_id": {
-      "anyOf": [
-        {
-          "$ref": "common.schema.json#/$defs/stableId"
+        "route_id": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/stableId"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
-        {
-          "type": "null"
-        }
-      ]
-    },
-    "destination_location_id": {
-      "anyOf": [
-        {
-          "$ref": "common.schema.json#/$defs/stableId"
+        "origin_location_id": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/stableId"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
-        {
-          "type": "null"
+        "destination_location_id": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/stableId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "departed_at": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "estimated_arrival": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
-      ]
+      },
+      "additionalProperties": false
     },
-    "evidence_state": {
-      "$ref": "common.schema.json#/$defs/evidenceState"
+    "commitment": {
+      "type": "object",
+      "required": [
+        "commitment_kind",
+        "operation_or_event_id",
+        "release_constraints"
+      ],
+      "properties": {
+        "commitment_kind": {
+          "type": "string",
+          "enum": [
+            "none",
+            "routine_mission",
+            "exercise",
+            "contingency",
+            "combat_operation",
+            "alliance_commitment",
+            "strategic_reserve",
+            "unknown"
+          ]
+        },
+        "operation_or_event_id": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/stableId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "release_constraints": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
     },
-    "confidence": {
-      "$ref": "common.schema.json#/$defs/confidence"
-    },
-    "source_ids": {
+    "support_dependency_ids": {
       "type": "array",
-      "minItems": 1,
       "uniqueItems": true,
       "items": {
         "$ref": "common.schema.json#/$defs/stableId"
       }
+    },
+    "temporal_validity": {
+      "$ref": "common.schema.json#/$defs/temporalValidity"
+    },
+    "stale_after": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
     },
     "notes": {
       "type": "string"
