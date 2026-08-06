@@ -1,0 +1,101 @@
+{
+  "schema_version": "0.1.0",
+  "country_id": "country_twn",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "needs_review",
+  "government": {
+    "system_summary": "Democratic semi-presidential constitutional system with a directly elected President, an Executive Yuan led by a presidentially appointed Premier, and a separately elected Legislative Yuan.",
+    "head_of_state_actor_id": "actor_twn_lai_ching_te",
+    "head_of_government_actor_id": "actor_twn_cho_jung_tai",
+    "governing_institution_ids": [
+      "institution_twn_presidency",
+      "institution_twn_executive_yuan",
+      "institution_twn_dpp"
+    ],
+    "major_opposition_institution_ids": [
+      "institution_twn_kmt",
+      "institution_twn_tpp"
+    ],
+    "legislative_context": "The DPP controlled the presidency and Executive Yuan while KMT and TPP institutions held decisive opposition leverage in the Legislative Yuan, creating divided government rather than unified party control.",
+    "formal_decision_authority": [
+      {
+        "domain": "executive_and_national_security",
+        "rule": "The President is head of state, represents the country in foreign relations, and commands the armed forces. The National Security Council advises the President on major national security policies.",
+        "claim_ids": ["claim_twn_president_head_of_state_and_command", "claim_twn_nsc_advises_president"],
+        "source_ids": ["src_twn_president_authority", "src_twn_central_government"]
+      },
+      {
+        "domain": "war_and_peace",
+        "rule": "The President declares war and concludes peace in the name of the state, while the Legislative Yuan resolves bills concerning declaration of war and peace treaties.",
+        "claim_ids": ["claim_twn_president_declares_war", "claim_twn_legislative_yuan_war_and_peace_bills"],
+        "source_ids": ["src_twn_president_authority", "src_twn_legislative_functions"]
+      },
+      {
+        "domain": "government_accountability",
+        "rule": "The President appoints the President of the Executive Yuan, and the Executive Yuan is responsible to the Legislative Yuan under the Additional Articles.",
+        "claim_ids": ["claim_twn_president_appoints_premier", "claim_twn_executive_responsible_to_legislature"],
+        "source_ids": ["src_twn_additional_articles"]
+      }
+    ],
+    "practical_authority_notes": "President Lai combined the state presidency and DPP chairmanship. Premier Cho directed the Executive Yuan, while opposition control of the legislature imposed a separate political gate on budgets and legislation.",
+    "succession": {
+      "first_successor_actor_id": "actor_twn_bikhim_hsiao",
+      "second_contingency_actor_id": "actor_twn_cho_jung_tai",
+      "rule": "The Vice President succeeds when the presidency becomes vacant. If both presidency and vice presidency are vacant, the President of the Executive Yuan exercises their official powers pending a new election for the remainder of the term.",
+      "claim_ids": ["claim_twn_vp_succeeds_president", "claim_twn_premier_acts_if_both_vacant"],
+      "source_ids": ["src_twn_additional_articles", "src_twn_vice_president_authority"]
+    },
+    "election_cycle": {
+      "presidential_term_started": "2024-05-20",
+      "regular_term_years": 4,
+      "next_regular_presidential_election_year": 2028,
+      "status": "expected_under_fixed_constitutional_cycle",
+      "source_ids": ["src_twn_inauguration_2024", "src_twn_additional_articles", "src_twn_cec_presidential_result_2024"]
+    },
+    "alliance_commitment_context": [
+      {
+        "commitment": "United States policy under the Taiwan Relations Act",
+        "opening_rule": "The Act describes nonpeaceful coercion as a grave concern, supports defensive arms, and requires United States capacity to resist coercion. It is not an automatic bilateral declaration of war or mutual defense clause.",
+        "claim_ids": ["claim_twn_tra_security_context"],
+        "source_ids": ["src_twn_us_taiwan_relations_act"]
+      }
+    ]
+  },
+  "institutions": [
+    {"institution_id":"institution_twn_presidency","name":"Office of the President, Republic of China (Taiwan)","category":"executive","opening_status":"dpp_governing","source_ids":["src_twn_president_authority","src_twn_inauguration_2024"]},
+    {"institution_id":"institution_twn_executive_yuan","name":"Executive Yuan","category":"executive_government","opening_status":"dpp_led_government","source_ids":["src_twn_additional_articles","src_twn_cho_2025","src_twn_cheng_2025"]},
+    {"institution_id":"institution_twn_legislative_yuan","name":"Legislative Yuan","category":"legislature","opening_status":"opposition_led","source_ids":["src_twn_legislative_functions","src_twn_legislative_leadership_2025"]},
+    {"institution_id":"institution_twn_dpp","name":"Democratic Progressive Party","category":"political_party","opening_status":"presidential_and_governing_party","source_ids":["src_twn_dpp_congress_2025"]},
+    {"institution_id":"institution_twn_kmt","name":"Kuomintang","category":"political_party","opening_status":"largest_opposition_party","source_ids":["src_twn_kmt_chu_2025","src_twn_kmt_fu_2025"]},
+    {"institution_id":"institution_twn_tpp","name":"Taiwan People's Party","category":"political_party","opening_status":"opposition_and_legislative_pivot","source_ids":["src_twn_tpp_caucus_2025"]},
+    {"institution_id":"institution_twn_nsc","name":"National Security Council","category":"national_security_advisory_body","opening_status":"advising_president","source_ids":["src_twn_central_government","src_twn_resilience_committee"]}
+  ],
+  "political_actors": [
+    {"actor_id":"actor_twn_lai_ching_te","name":"Lai Ching-te","office":"President; DPP Chair","institution_ids":["institution_twn_presidency","institution_twn_dpp"],"relevance":"head_of_state_and_governing_party_chair","succession_eligibility":"incumbent","confidence":"high","source_ids":["src_twn_inauguration_2024","src_twn_dpp_congress_2025"]},
+    {"actor_id":"actor_twn_bikhim_hsiao","name":"Bi-khim Hsiao","office":"Vice President","institution_ids":["institution_twn_presidency","institution_twn_dpp"],"relevance":"constitutional_first_successor","succession_eligibility":"first_in_line","confidence":"high","source_ids":["src_twn_inauguration_2024","src_twn_vice_president_authority"]},
+    {"actor_id":"actor_twn_cho_jung_tai","name":"Cho Jung-tai","office":"President of the Executive Yuan (Premier)","institution_ids":["institution_twn_executive_yuan","institution_twn_dpp"],"relevance":"head_of_government_and_contingent_acting_president","succession_eligibility":"acts_if_president_and_vice_president_both_vacant","confidence":"high","source_ids":["src_twn_cho_2025","src_twn_additional_articles"]},
+    {"actor_id":"actor_twn_cheng_li_chun","name":"Cheng Li-chun","office":"Vice President of the Executive Yuan (Vice Premier)","institution_ids":["institution_twn_executive_yuan","institution_twn_dpp"],"relevance":"deputy_head_of_government","succession_eligibility":"acts_for_premier_if_premiership_vacant_pending_appointment","confidence":"high","source_ids":["src_twn_cheng_2025","src_twn_additional_articles"]},
+    {"actor_id":"actor_twn_lin_chia_lung","name":"Lin Chia-lung","office":"Minister of Foreign Affairs","institution_ids":["institution_twn_executive_yuan","institution_twn_dpp"],"relevance":"foreign_policy_principal","succession_eligibility":"institutionally_relevant_no_automatic_presidential_rule","confidence":"high","source_ids":["src_twn_inauguration_luncheon_2024"]},
+    {"actor_id":"actor_twn_wellington_koo","name":"Wellington Koo","office":"Minister of National Defense","institution_ids":["institution_twn_executive_yuan"],"relevance":"defense_policy_principal","succession_eligibility":"institutionally_relevant_no_automatic_presidential_rule","confidence":"high","source_ids":["src_twn_mnd_koo_2025"]},
+    {"actor_id":"actor_twn_joseph_wu","name":"Joseph Wu","office":"Secretary-General of the National Security Council","institution_ids":["institution_twn_nsc"],"relevance":"national_security_principal","succession_eligibility":"institutionally_relevant_no_automatic_presidential_rule","confidence":"high","source_ids":["src_twn_resilience_committee","src_twn_inauguration_luncheon_2024"]},
+    {"actor_id":"actor_twn_pan_men_an","name":"Pan Men-an","office":"Secretary-General to the President","institution_ids":["institution_twn_presidency","institution_twn_dpp"],"relevance":"presidential_gatekeeper","succession_eligibility":"institutionally_relevant_no_automatic_presidential_rule","confidence":"high","source_ids":["src_twn_resilience_committee"]},
+    {"actor_id":"actor_twn_han_kuo_yu","name":"Han Kuo-yu","office":"President of the Legislative Yuan","institution_ids":["institution_twn_legislative_yuan","institution_twn_kmt"],"relevance":"legislative_presiding_officer","succession_eligibility":"no_automatic_presidential_rule_by_office","confidence":"high","source_ids":["src_twn_legislative_leadership_2025"]},
+    {"actor_id":"actor_twn_johnny_chiang","name":"Johnny Chiang","office":"Vice President of the Legislative Yuan","institution_ids":["institution_twn_legislative_yuan","institution_twn_kmt"],"relevance":"deputy_legislative_presiding_officer","succession_eligibility":"no_automatic_presidential_rule_by_office","confidence":"high","source_ids":["src_twn_legislative_leadership_2025"]},
+    {"actor_id":"actor_twn_eric_chu","name":"Eric Chu","office":"Kuomintang Chair","institution_ids":["institution_twn_kmt"],"relevance":"largest_opposition_party_chair","succession_eligibility":"potential_party_nominee_not_automatic_successor","confidence":"high","source_ids":["src_twn_kmt_chu_2025"]},
+    {"actor_id":"actor_twn_fu_kun_chi","name":"Fu Kun-chi","office":"Kuomintang Legislative Caucus General Convener","institution_ids":["institution_twn_legislative_yuan","institution_twn_kmt"],"relevance":"largest_opposition_caucus_leader","succession_eligibility":"potential_party_actor_not_automatic_successor","confidence":"high","source_ids":["src_twn_kmt_fu_2025"]},
+    {"actor_id":"actor_twn_huang_kuo_chang","name":"Huang Kuo-chang","office":"Taiwan People's Party Chair and legislative caucus leader","institution_ids":["institution_twn_legislative_yuan","institution_twn_tpp"],"relevance":"third_party_and_legislative_pivot_leader","succession_eligibility":"potential_party_nominee_not_automatic_successor","confidence":"high","source_ids":["src_twn_tpp_caucus_2025","src_twn_tpp_huang_chair_2025"]},
+    {"actor_id":"actor_twn_lu_shiow_yen","name":"Lu Shiow-yen","office":"Mayor of Taichung","institution_ids":["institution_twn_kmt"],"relevance":"major_opposition_local_executive","succession_eligibility":"constitutionally_eligible_potential_candidate","confidence":"high","source_ids":["src_twn_taichung_lu"]},
+    {"actor_id":"actor_twn_hou_yu_ih","name":"Hou Yu-ih","office":"Mayor of New Taipei City","institution_ids":["institution_twn_kmt"],"relevance":"2024_presidential_nominee_and_major_local_executive","succession_eligibility":"constitutionally_eligible_potential_candidate","confidence":"high","source_ids":["src_twn_new_taipei_hou","src_twn_cec_presidential_result_2024"]},
+    {"actor_id":"actor_twn_chiang_wan_an","name":"Chiang Wan-an","office":"Mayor of Taipei","institution_ids":["institution_twn_kmt"],"relevance":"major_opposition_local_executive","succession_eligibility":"constitutionally_eligible_potential_candidate","confidence":"high","source_ids":["src_twn_taipei_chiang"]},
+    {"actor_id":"actor_twn_chen_chi_mai","name":"Chen Chi-mai","office":"Mayor of Kaohsiung","institution_ids":["institution_twn_dpp"],"relevance":"major_governing_party_local_executive","succession_eligibility":"constitutionally_eligible_potential_candidate","confidence":"high","source_ids":["src_twn_dpp_local_leaders"]},
+    {"actor_id":"actor_twn_ker_chien_ming","name":"Ker Chien-ming","office":"DPP Legislative Caucus Convener","institution_ids":["institution_twn_legislative_yuan","institution_twn_dpp"],"relevance":"governing_party_legislative_caucus_leader","succession_eligibility":"party_actor_not_automatic_successor","confidence":"high","source_ids":["src_twn_dpp_congress_2025"]},
+    {"actor_id":"actor_twn_lin_yu_chang","name":"Lin Yu-chang","office":"DPP Secretary-General","institution_ids":["institution_twn_dpp"],"relevance":"governing_party_organizational_leader","succession_eligibility":"party_actor_not_automatic_successor","confidence":"high","source_ids":["src_twn_dpp_congress_2025"]},
+    {"actor_id":"actor_twn_tsai_ing_wen","name":"Tsai Ing-wen","office":"Former President","institution_ids":["institution_twn_dpp"],"relevance":"former_head_of_state","succession_eligibility":"not_in_constitutional_line","confidence":"high","source_ids":["src_twn_inauguration_2024"]}
+  ],
+  "unknowns": [
+    "Actor inclusion records institutional relevance and does not forecast nomination, election, recall, coalition behavior, or succession probability.",
+    "The constitutional relationship between presidential declaration authority and Legislative Yuan approval should be modeled as separate legal and political gates, not collapsed into a single action button.",
+    "United States policy creates consequential support and capacity commitments without a public automatic defense guarantee for every Taiwan contingency."
+  ]
+}

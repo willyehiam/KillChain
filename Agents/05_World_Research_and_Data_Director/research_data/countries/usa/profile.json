@@ -12,11 +12,11 @@
   "gdp_2025_usd_billions": 30767.075,
   "coverage": {
     "politics_and_institutions": {
-      "status": "shell",
-      "record_count": 0,
-      "source_count": 0,
-      "open_question_count": 1,
-      "notes": "Coverage has not begun."
+      "status": "needs_review",
+      "record_count": 26,
+      "source_count": 19,
+      "open_question_count": 3,
+      "notes": "Opening government, authority, succession, alliance context, institutions, and 20 relevant actors are sourced; independent review remains open."
     },
     "economy_trade_finance_resources": {
       "status": "collecting",
@@ -69,35 +69,54 @@
     }
   },
   "dataset_paths": {
-    "government": null,
-    "political_actors": null,
+    "government": "politics_and_institutions.json",
+    "political_actors": "politics_and_institutions.json",
     "provinces": null,
     "economy": "../top_80_2025/top_80_2025_gdp.json",
     "force_ledger": "force_ledger/manifest.json",
     "facilities": null,
     "infrastructure": null,
     "relationships": null,
-    "claims": null,
-    "sources": "../../sources/sources.ndjson",
-    "contradictions": null
+    "claims": "evidence_registry.json",
+    "sources": "evidence_registry.json",
+    "contradictions": "evidence_registry.json"
   },
   "completeness": {
     "political_actor_target": 20,
-    "political_actor_count": 0,
+    "political_actor_count": 20,
     "province_layer_status": "absent",
     "force_ledger_status": "shell"
   },
   "source_ids": [
-    "src_imf_weo_2026_04_ngdpd_2025"
+    "src_imf_weo_2026_04_ngdpd_2025",
+    "src_usa_white_house_administration",
+    "src_usa_white_house_cabinet",
+    "src_usa_rubio_swearing_2025",
+    "src_usa_hegseth_swearing_2025",
+    "src_usa_white_house_national_security_team",
+    "src_usa_white_house_wiles_2025",
+    "src_usa_white_house_miller_2025",
+    "src_usa_constitution_article_i",
+    "src_usa_constitution_article_ii",
+    "src_usa_constitution_amendment_xxv",
+    "src_usa_war_powers_resolution",
+    "src_usa_olc_presidential_force_1980",
+    "src_usa_senate_republican_leadership",
+    "src_usa_senate_democratic_leadership",
+    "src_usa_house_republican_leadership",
+    "src_usa_house_democratic_leader",
+    "src_usa_council_of_governors_2025",
+    "src_usa_nato_hague_2025",
+    "src_usa_taiwan_relations_act"
   ],
   "unknowns": [
-    "National government and leadership state at the bookmark is not yet populated.",
-    "Twenty plausible political actors and succession paths are not yet populated.",
+    "The 20 actor opening roster is populated but still needs an independent political science and legal review.",
+    "The boundary between limited presidential uses of force and prior congressional authorization remains an explicit open contradiction set.",
     "Province and metropolitan strategic geography is not yet populated.",
     "Complete military organization, inventory, readiness, basing, and deployments are not yet reconciled.",
     "Strategic industry, energy, transport, communications, logistics, alliances, sanctions, and crisis commitments are not yet populated."
   ],
-  "reviewed_at": "2026-08-02",
-  "review_after": "2026-08-16",
-  "notes": "This is a truthful Tier A foundation, not a completeness claim. New files are added only when sourced records exist."
+  "reviewed_at": "2026-08-06",
+  "review_after": "2026-09-06",
+  "notes": "The politics lane now has a dated evidence packet. Every other Tier A lane remains incomplete and no politics record should be read as a full country simulation claim."
 }

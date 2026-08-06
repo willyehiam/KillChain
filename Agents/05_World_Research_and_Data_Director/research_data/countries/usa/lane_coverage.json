@@ -8,22 +8,25 @@
   "lanes": {
     "politics_and_institutions": {
       "name": "Politics and institutions",
-      "status": "shell",
-      "owner": null,
-      "record_count": 0,
-      "source_count": 0,
-      "claim_count": 0,
-      "contradiction_count": 0,
+      "status": "needs_review",
+      "owner": "agent_05_world_research_and_data_director",
+      "record_count": 26,
+      "source_count": 19,
+      "claim_count": 24,
+      "contradiction_count": 1,
       "exact_geometry_count": 0,
       "approximate_geometry_count": 0,
       "unknown_geometry_count": 0,
-      "oldest_source_date": null,
-      "newest_source_date": null,
-      "reviewed_at": null,
-      "review_after": null,
-      "coverage_disposition": null,
-      "blocking_questions": [],
-      "notes": "No country specific records are accepted yet."
+      "oldest_source_date": "1973-11-07",
+      "newest_source_date": "2025-07-09",
+      "reviewed_at": "2026-08-06",
+      "review_after": "2026-09-06",
+      "coverage_disposition": "usable_for_opening_state_with_explicit_authority_ambiguity",
+      "blocking_questions": [
+        "Independent legal review of the open war authority contradiction set.",
+        "Independent review of actor relevance without treating the roster as a forecast."
+      ],
+      "notes": "Primary constitutional, statutory, treaty, and official officeholder sources support the opening packet."
     },
     "economy_trade_finance_resources": {
       "name": "Economy, trade, finance, and resources",
@@ -161,9 +164,9 @@
   },
   "rollup": {
     "lanes_total": 8,
-    "shell": 8,
+    "shell": 7,
     "collecting": 0,
-    "needs_review": 0,
+    "needs_review": 1,
     "verified": 0,
     "stale": 0,
     "deprecated": 0

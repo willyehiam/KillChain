@@ -1,0 +1,101 @@
+{
+  "schema_version": "0.1.0",
+  "country_id": "country_chn",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "needs_review",
+  "government": {
+    "system_summary": "Socialist state under the leadership of the Communist Party of China, with state offices selected through the National People's Congress system rather than a competitive national executive election.",
+    "head_of_state_actor_id": "actor_chn_xi_jinping",
+    "head_of_government_actor_id": "actor_chn_li_qiang",
+    "governing_institution_ids": [
+      "institution_chn_cpc_central_committee",
+      "institution_chn_cpc_politburo_standing_committee",
+      "institution_chn_state_presidency",
+      "institution_chn_state_council",
+      "institution_chn_npc"
+    ],
+    "major_opposition_institution_ids": [],
+    "opposition_context": "The opening sources describe CPC leadership and consultative participation by other parties, not a competitive opposition institution capable of replacing the government through a national election.",
+    "formal_decision_authority": [
+      {
+        "domain": "state_leadership_selection",
+        "rule": "The National People's Congress elects the President and Vice President. The President acts pursuant to decisions of the NPC and its Standing Committee in the powers enumerated by the Constitution.",
+        "claim_ids": ["claim_chn_npc_elects_president", "claim_chn_president_acts_on_npc_decisions"],
+        "source_ids": ["src_chn_prc_constitution"]
+      },
+      {
+        "domain": "government_administration",
+        "rule": "The State Council is the highest state administrative organ and the Premier directs its work.",
+        "claim_ids": ["claim_chn_state_council_highest_administrative_organ", "claim_chn_premier_directs_state_council"],
+        "source_ids": ["src_chn_prc_constitution"]
+      },
+      {
+        "domain": "war_and_peace",
+        "rule": "The NPC decides questions of war and peace; the President proclaims a state of war pursuant to decisions of the NPC or its Standing Committee.",
+        "claim_ids": ["claim_chn_npc_decides_war_and_peace", "claim_chn_president_proclaims_state_of_war"],
+        "source_ids": ["src_chn_prc_constitution"]
+      }
+    ],
+    "practical_authority_notes": "The CPC is described in official sources as the highest force for political leadership. At the bookmark Xi Jinping concurrently held the offices of CPC General Secretary, PRC President, and Central Military Commission Chair, concentrating party, state, and top command authority in one actor.",
+    "succession": {
+      "state_presidency_first_successor_actor_id": "actor_chn_han_zheng",
+      "rule": "The Vice President succeeds to the presidency if that office becomes vacant. If both offices become vacant, the Chair of the NPC Standing Committee temporarily acts as President until the NPC elects replacements.",
+      "scope_limit": "The state constitutional rule does not itself select a new CPC General Secretary or Central Military Commission Chair.",
+      "claim_ids": ["claim_chn_state_presidency_succession", "claim_chn_party_command_succession_not_specified_by_state_constitution"],
+      "source_ids": ["src_chn_prc_constitution", "src_chn_cpc_first_plenum_2022"]
+    },
+    "selection_cycle": {
+      "current_npc_term_started_year": 2023,
+      "npc_term_years": 5,
+      "next_regular_npc_year": 2028,
+      "current_cpc_central_committee_selected_year": 2022,
+      "next_regular_party_congress_year": 2027,
+      "status": "expected_under_regular_five_year_cycles",
+      "source_ids": ["src_chn_prc_constitution", "src_chn_cpc_first_plenum_2022", "src_chn_npc_2023_state_leaders"]
+    },
+    "alliance_commitment_context": [
+      {
+        "commitment": "China-DPRK Treaty of Friendship, Cooperation and Mutual Assistance",
+        "opening_rule": "Official Chinese material treated the treaty as an active legal basis for bilateral mutual support. The source does not by itself resolve how either government would apply the treaty to a specific future conflict.",
+        "claim_ids": ["claim_chn_dprk_treaty_context"],
+        "source_ids": ["src_chn_dprk_treaty_anniversary_2021"]
+      }
+    ]
+  },
+  "institutions": [
+    {"institution_id":"institution_chn_cpc_central_committee","name":"Communist Party of China Central Committee","category":"governing_party","opening_status":"governing","source_ids":["src_chn_cpc_first_plenum_2022","src_chn_party_leadership_2022"]},
+    {"institution_id":"institution_chn_cpc_politburo_standing_committee","name":"Standing Committee of the Political Bureau of the CPC Central Committee","category":"party_leadership","opening_status":"top_collective_leadership_body","source_ids":["src_chn_cpc_first_plenum_2022","src_chn_psc_2025"]},
+    {"institution_id":"institution_chn_state_presidency","name":"Presidency of the People's Republic of China","category":"executive_state_office","opening_status":"governing","source_ids":["src_chn_prc_constitution","src_chn_xi_triple_role_2025"]},
+    {"institution_id":"institution_chn_state_council","name":"State Council of the People's Republic of China","category":"executive_government","opening_status":"governing","source_ids":["src_chn_prc_constitution","src_chn_state_council_institutions"]},
+    {"institution_id":"institution_chn_npc","name":"National People's Congress","category":"legislature","opening_status":"in_term","source_ids":["src_chn_prc_constitution","src_chn_npc_2023_state_leaders"]},
+    {"institution_id":"institution_chn_cppcc","name":"Chinese People's Political Consultative Conference National Committee","category":"consultative_body","opening_status":"in_term","source_ids":["src_chn_cppcc_2025"]}
+  ],
+  "political_actors": [
+    {"actor_id":"actor_chn_xi_jinping","name":"Xi Jinping","office":"CPC General Secretary; PRC President; Central Military Commission Chair","institution_ids":["institution_chn_cpc_central_committee","institution_chn_cpc_politburo_standing_committee","institution_chn_state_presidency"],"relevance":"paramount_party_state_and_command_leader","succession_eligibility":"incumbent","confidence":"high","source_ids":["src_chn_xi_triple_role_2025","src_chn_cpc_first_plenum_2022"]},
+    {"actor_id":"actor_chn_li_qiang","name":"Li Qiang","office":"Premier; member of the CPC Politburo Standing Committee","institution_ids":["institution_chn_state_council","institution_chn_cpc_politburo_standing_committee"],"relevance":"head_of_government","succession_eligibility":"institutionally_relevant_no_automatic_party_succession","confidence":"high","source_ids":["src_chn_state_council_institutions","src_chn_psc_2025"]},
+    {"actor_id":"actor_chn_zhao_leji","name":"Zhao Leji","office":"Chair of the NPC Standing Committee; member of the CPC Politburo Standing Committee","institution_ids":["institution_chn_npc","institution_chn_cpc_politburo_standing_committee"],"relevance":"top_legislative_leader_and_temporary_state_successor_if_both_state_offices_vacant","succession_eligibility":"temporary_state_actor_under_constitution","confidence":"high","source_ids":["src_chn_psc_2025","src_chn_prc_constitution"]},
+    {"actor_id":"actor_chn_wang_huning","name":"Wang Huning","office":"Chair of the CPPCC National Committee; member of the CPC Politburo Standing Committee","institution_ids":["institution_chn_cppcc","institution_chn_cpc_politburo_standing_committee"],"relevance":"top_ideology_and_consultative_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_cppcc_2025","src_chn_psc_2025"]},
+    {"actor_id":"actor_chn_cai_qi","name":"Cai Qi","office":"Member of the CPC Politburo Standing Committee and CPC Central Secretariat","institution_ids":["institution_chn_cpc_central_committee","institution_chn_cpc_politburo_standing_committee"],"relevance":"senior_party_coordination_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_cpc_first_plenum_2022","src_chn_psc_2025"]},
+    {"actor_id":"actor_chn_ding_xuexiang","name":"Ding Xuexiang","office":"Executive Vice Premier; member of the CPC Politburo Standing Committee","institution_ids":["institution_chn_state_council","institution_chn_cpc_politburo_standing_committee"],"relevance":"senior_government_and_party_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_state_council_institutions","src_chn_psc_2025"]},
+    {"actor_id":"actor_chn_li_xi","name":"Li Xi","office":"Secretary of the CPC Central Commission for Discipline Inspection; member of the CPC Politburo Standing Committee","institution_ids":["institution_chn_cpc_central_committee","institution_chn_cpc_politburo_standing_committee"],"relevance":"top_party_discipline_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_cpc_first_plenum_2022","src_chn_psc_2025"]},
+    {"actor_id":"actor_chn_han_zheng","name":"Han Zheng","office":"Vice President","institution_ids":["institution_chn_state_presidency"],"relevance":"constitutional_first_successor_to_state_presidency","succession_eligibility":"first_in_line_for_state_presidency","confidence":"high","source_ids":["src_chn_han_zheng_2025","src_chn_prc_constitution"]},
+    {"actor_id":"actor_chn_he_lifeng","name":"He Lifeng","office":"Vice Premier","institution_ids":["institution_chn_state_council","institution_chn_cpc_central_committee"],"relevance":"senior_economic_policy_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_state_council_institutions","src_chn_cpc_first_plenum_2022"]},
+    {"actor_id":"actor_chn_zhang_guoqing","name":"Zhang Guoqing","office":"Vice Premier","institution_ids":["institution_chn_state_council","institution_chn_cpc_central_committee"],"relevance":"senior_government_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_state_council_institutions","src_chn_cpc_first_plenum_2022"]},
+    {"actor_id":"actor_chn_liu_guozhong","name":"Liu Guozhong","office":"Vice Premier","institution_ids":["institution_chn_state_council","institution_chn_cpc_central_committee"],"relevance":"senior_government_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_state_council_institutions","src_chn_cpc_first_plenum_2022"]},
+    {"actor_id":"actor_chn_wang_yi","name":"Wang Yi","office":"Member of the CPC Political Bureau; Minister of Foreign Affairs","institution_ids":["institution_chn_cpc_central_committee","institution_chn_state_council"],"relevance":"top_foreign_policy_principal","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_cpc_first_plenum_2022","src_chn_state_council_institutions"]},
+    {"actor_id":"actor_chn_wang_xiaohong","name":"Wang Xiaohong","office":"State Councilor; Minister of Public Security; member of CPC Central Secretariat","institution_ids":["institution_chn_state_council","institution_chn_cpc_central_committee"],"relevance":"domestic_security_principal","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_state_council_institutions","src_chn_cpc_first_plenum_2022"]},
+    {"actor_id":"actor_chn_chen_wenqing","name":"Chen Wenqing","office":"Member of the CPC Political Bureau and CPC Central Secretariat","institution_ids":["institution_chn_cpc_central_committee"],"relevance":"senior_party_security_and_legal_affairs_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_cpc_first_plenum_2022"]},
+    {"actor_id":"actor_chn_shi_taifeng","name":"Shi Taifeng","office":"Member of the CPC Political Bureau and CPC Central Secretariat","institution_ids":["institution_chn_cpc_central_committee"],"relevance":"senior_party_organization_and_united_front_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_cpc_first_plenum_2022"]},
+    {"actor_id":"actor_chn_li_ganjie","name":"Li Ganjie","office":"Member of the CPC Political Bureau and CPC Central Secretariat","institution_ids":["institution_chn_cpc_central_committee"],"relevance":"senior_party_organization_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_cpc_first_plenum_2022"]},
+    {"actor_id":"actor_chn_li_shulei","name":"Li Shulei","office":"Member of the CPC Political Bureau and CPC Central Secretariat","institution_ids":["institution_chn_cpc_central_committee"],"relevance":"senior_party_publicity_and_ideology_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_cpc_first_plenum_2022"]},
+    {"actor_id":"actor_chn_ma_xingrui","name":"Ma Xingrui","office":"Member of the CPC Political Bureau","institution_ids":["institution_chn_cpc_central_committee"],"relevance":"senior_provincial_and_party_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_cpc_first_plenum_2022"]},
+    {"actor_id":"actor_chn_chen_jining","name":"Chen Jining","office":"Member of the CPC Political Bureau","institution_ids":["institution_chn_cpc_central_committee"],"relevance":"senior_provincial_and_party_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_cpc_first_plenum_2022"]},
+    {"actor_id":"actor_chn_yuan_jiajun","name":"Yuan Jiajun","office":"Member of the CPC Political Bureau","institution_ids":["institution_chn_cpc_central_committee"],"relevance":"senior_provincial_and_party_leader","succession_eligibility":"institutionally_relevant_no_automatic_rule","confidence":"high","source_ids":["src_chn_cpc_first_plenum_2022"]}
+  ],
+  "unknowns": [
+    "Actor inclusion records institutional relevance and does not forecast appointment, promotion, retirement, purge, or succession probability.",
+    "Public constitutional texts do not define a single automatic succession path across the offices of PRC President, CPC General Secretary, and Central Military Commission Chair.",
+    "The practical application of the China-DPRK treaty to any specific contingency remains a political and legal judgment rather than an automatic simulation trigger."
+  ]
+}
