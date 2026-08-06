@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/force_ledger_bundle.schema.json",
+  "title": "Complete National Force Ledger Bundle",
+  "description": "A transport and validation envelope for one country's complete dated force ledger. Production corpora may store each array as NDJSON at paths registered by the manifest.",
+  "type": "object",
+  "required": [
+    "bundle_id",
+    "country_id",
+    "bookmark_id",
+    "as_of",
+    "manifest",
+    "organizations",
+    "equipment_types",
+    "platforms",
+    "inventory_pools",
+    "deployments",
+    "maintenance",
+    "construction",
+    "conservation"
+  ],
+  "properties": {
+    "bundle_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "country_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "bookmark_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "as_of": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "manifest": {
+      "$ref": "force_ledger_manifest.schema.json"
+    },
+    "organizations": {
+      "type": "array",
+      "items": {
+        "$ref": "military_organization_record.schema.json"
+      }
+    },
+    "equipment_types": {
+      "type": "array",
+      "items": {
+        "$ref": "equipment_type_record.schema.json"
+      }
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "$ref": "force_platform_record.schema.json"
+      }
+    },
+    "inventory_pools": {
+      "type": "array",
+      "items": {
+        "$ref": "force_inventory_record.schema.json"
+      }
+    },
+    "deployments": {
+      "type": "array",
+      "items": {
+        "$ref": "force_deployment_record.schema.json"
+      }
+    },
+    "maintenance": {
+      "type": "array",
+      "items": {
+        "$ref": "force_maintenance_record.schema.json"
+      }
+    },
+    "construction": {
+      "type": "array",
+      "items": {
+        "$ref": "force_construction_record.schema.json"
+      }
+    },
+    "conservation": {
+      "type": "array",
+      "items": {
+        "$ref": "inventory_conservation_record.schema.json"
+      }
+    }
+  },
+  "additionalProperties": false
+}
