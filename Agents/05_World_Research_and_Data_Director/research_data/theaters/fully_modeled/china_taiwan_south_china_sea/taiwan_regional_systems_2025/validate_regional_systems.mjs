@@ -15,6 +15,8 @@ const errors = [];
 const cutoff = Date.parse('2025-09-01T23:59:59Z');
 const idPattern = /^[a-z0-9_]+$/;
 const exactLocationKeys = new Set(['latitude', 'longitude', 'coordinates', 'address', 'mgrs', 'exact_site', 'exact_location']);
+const sourceTiers = new Set(['A', 'B', 'C', 'D']);
+const sourceTypes = new Set(['official_release', 'law_or_treaty', 'statistical_dataset', 'company_filing', 'news_report', 'research_report', 'academic_paper', 'map', 'imagery', 'video', 'social_post', 'database', 'other']);
 
 function walk(value, at = '$') {
   if (Array.isArray(value)) return value.forEach((item, index) => walk(item, `${at}[${index}]`));
@@ -31,6 +33,8 @@ for (const source of sources) {
   if (sourceIds.has(source.source_id)) errors.push(`duplicate source_id ${source.source_id}`);
   sourceIds.add(source.source_id);
   if (!source.title || !source.publisher || !source.url || !source.accessed_at) errors.push(`${source.source_id}: incomplete source record`);
+  if (!sourceTiers.has(source.source_tier)) errors.push(`${source.source_id}: invalid source_tier`);
+  if (!sourceTypes.has(source.source_type)) errors.push(`${source.source_id}: invalid source_type`);
   if (source.published_at && Date.parse(source.published_at) > cutoff) errors.push(`${source.source_id}: published after opening cutoff`);
 }
 
