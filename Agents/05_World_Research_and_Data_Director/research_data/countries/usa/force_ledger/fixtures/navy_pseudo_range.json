@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_navy_pseudo_range","mutation":"invent_navy_range","target_id":"inventory_usa_navy_battle_force_ship","expected_diagnostic":"Navy request and prior actual cannot form a bookmark opening range"}

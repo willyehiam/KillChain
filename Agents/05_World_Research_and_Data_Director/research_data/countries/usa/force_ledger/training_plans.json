@@ -1,0 +1,48 @@
+[
+  {
+    "plan_id": "plan_usa_army_fy2025_combat_training_center_rotations",
+    "country_id": "country_usa",
+    "organization_id": "organization_usa_army",
+    "plan_kind": "annual_training_throughput_target",
+    "period": {
+      "valid_from": "2024-10-01",
+      "valid_to": "2025-09-30"
+    },
+    "target": {
+      "kind": "exact",
+      "value": 22,
+      "unit": "capacity_unit",
+      "counting_rule": "FY2025 budget plan: 8 NTC, 8 JRTC, 4 JMRC, and 2 exportable Pacific rotations."
+    },
+    "completed": {
+      "kind": "unknown",
+      "unit": "capacity_unit",
+      "counting_rule": "No accepted source establishes completed rotations."
+    },
+    "scheduled": {
+      "kind": "unknown",
+      "unit": "capacity_unit",
+      "counting_rule": "No accepted source establishes the bookmark schedule."
+    },
+    "remaining": {
+      "kind": "unknown",
+      "unit": "capacity_unit",
+      "counting_rule": "A fiscal-year target does not establish remaining capacity on 1 September."
+    },
+    "canceled": {
+      "kind": "unknown",
+      "unit": "capacity_unit",
+      "counting_rule": "No accepted source establishes cancellations."
+    },
+    "available": {
+      "kind": "unknown",
+      "unit": "capacity_unit",
+      "counting_rule": "No accepted source establishes executable opening capacity."
+    },
+    "source_ids": [
+      "src_force_usa_army_budget_overview_2025"
+    ],
+    "executable": false,
+    "notes": "Planning target only. It is excluded from opening inventory, deployment, maintenance, and conservation."
+  }
+]

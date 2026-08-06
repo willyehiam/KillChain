@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_assigned_strength_fabrication","mutation":"set_assigned_exact","target_id":"organization_usa_army","value":999999,"expected_diagnostic":"organization_usa_army illegally fabricates assigned strength from authorization"}

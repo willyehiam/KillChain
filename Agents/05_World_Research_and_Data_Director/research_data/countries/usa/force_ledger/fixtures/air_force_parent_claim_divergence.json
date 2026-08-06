@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_air_force_parent_claim_divergence","mutation":"set_claim_value","target_id":"claim_usa_air_force_total_aircraft_inventory_4832","value":1,"expected_diagnostic":"USAF parent fiscal-year estimate claim diverges from 4,832 all-component taxonomy"}

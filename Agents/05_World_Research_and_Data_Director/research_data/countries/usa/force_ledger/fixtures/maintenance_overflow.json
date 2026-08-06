@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_maintenance_overflow","mutation":"set_maintenance_exact","target_id":"maintenance_usa_air_force_bomber_unknown_state","value":9999,"expected_diagnostic":"maintenance quantity lacks independent source-bounded allocation"}

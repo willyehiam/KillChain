@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_mutable_source_interval","mutation":"restore_mutable_interval","target_id":"src_force_usa_dod_about","expected_diagnostic":"mutable live source bypasses temporal quarantine"}

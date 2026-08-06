@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_identity_statute_activation","mutation":"replace_activation_provenance","target_id":"relationship_usa_president_army_national_guard_guard_call_12406","expected_diagnostic":"reserve identity statute cannot prove activation authority"}

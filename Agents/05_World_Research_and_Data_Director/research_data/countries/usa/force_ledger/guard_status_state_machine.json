@@ -1,0 +1,124 @@
+{
+  "state_machine_id": "state_machine_usa_national_guard_duty_status",
+  "as_of": "2025-09-01T00:00:00Z",
+  "initial_state": "unknown",
+  "exclusivity_scope": "Each conserved Guard force allocation, not the aggregate component, has exactly one runtime duty status.",
+  "states": [
+    {
+      "state_id": "state_active_duty",
+      "controller": "state",
+      "federal_pay_status": false,
+      "compatible_relationship_types": [
+        "state_control"
+      ]
+    },
+    {
+      "state_id": "title_32",
+      "controller": "state",
+      "federal_pay_status": true,
+      "compatible_relationship_types": [
+        "state_control",
+        "organize_train_equip"
+      ]
+    },
+    {
+      "state_id": "title_10",
+      "controller": "federal",
+      "federal_pay_status": true,
+      "compatible_relationship_types": [
+        "federal_activation",
+        "operational_control"
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "from": "state_active_duty",
+      "to": "title_32",
+      "authority_source_ids": [
+        "src_force_usa_title32_section502_2024"
+      ],
+      "predicates": [
+        "Lawful Title 32 orders and required consent or request are recorded for the affected allocation."
+      ]
+    },
+    {
+      "from": "title_32",
+      "to": "state_active_duty",
+      "authority_source_ids": [
+        "src_force_usa_title32_section502_2024"
+      ],
+      "predicates": [
+        "Title 32 orders terminate and state authority lawfully retains the affected allocation."
+      ]
+    },
+    {
+      "from": "state_active_duty",
+      "to": "title_10",
+      "authority_source_ids": [
+        "src_force_usa_title10_section12301_2024",
+        "src_force_usa_title10_section12302_2024",
+        "src_force_usa_title10_section12304_2024",
+        "src_force_usa_title10_section12406_2024"
+      ],
+      "predicates": [
+        "Exactly one specific federal activation route is satisfied."
+      ]
+    },
+    {
+      "from": "title_32",
+      "to": "title_10",
+      "authority_source_ids": [
+        "src_force_usa_title10_section12301_2024",
+        "src_force_usa_title10_section12302_2024",
+        "src_force_usa_title10_section12304_2024",
+        "src_force_usa_title10_section12406_2024"
+      ],
+      "predicates": [
+        "Exactly one specific federal activation route is satisfied."
+      ]
+    },
+    {
+      "from": "title_10",
+      "to": "state_active_duty",
+      "authority_source_ids": [
+        "src_force_usa_title10_section12401_2024"
+      ],
+      "predicates": [
+        "Federal service terminates and state authority lawfully resumes for the affected allocation."
+      ]
+    },
+    {
+      "from": "title_10",
+      "to": "title_32",
+      "authority_source_ids": [
+        "src_force_usa_title10_section12401_2024",
+        "src_force_usa_title32_section502_2024"
+      ],
+      "predicates": [
+        "Federal service terminates and lawful Title 32 orders exist for the affected allocation."
+      ]
+    }
+  ],
+  "partial_unit_rule": "A transition creates a conserved child allocation; it never changes the status of unallocated sibling forces or duplicates the parent quantity.",
+  "forbidden_combinations": [
+    [
+      "state_active_duty",
+      "title_32"
+    ],
+    [
+      "state_active_duty",
+      "title_10"
+    ],
+    [
+      "title_32",
+      "title_10"
+    ]
+  ],
+  "status_at_bookmark": {
+    "army_national_guard": "unknown",
+    "air_national_guard": "unknown"
+  },
+  "executable": false,
+  "notes": "This research state machine prevents simultaneous state and federal command. No force is activated merely because a legal route exists."
+}

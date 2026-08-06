@@ -37,7 +37,8 @@
       "active",
       "reserve",
       "guard",
-      "civilian_agency"
+      "civilian_agency",
+      "all_components"
     ],
     "government_forces": [
       "United States Armed Forces",
@@ -59,7 +60,7 @@
         "maintenance": "identified",
         "construction": "identified",
         "conservation": "structured",
-        "notes": "Operational chain and state versus federal Guard authority modeled; individual state organizations remain aggregate."
+        "notes": "Specific reserve call routes and a mutually exclusive Guard allocation state machine are modeled; individual state organizations and bookmark duty status remain aggregate or unknown."
       },
       {
         "coverage_id": "coverage_usa_air_force_national_inventory",
@@ -72,7 +73,7 @@
         "maintenance": "identified",
         "construction": "not_started",
         "conservation": "structured",
-        "notes": "Mission categories conserve to 4,832. Tanker and airlift split, readiness, and component allocation remain unknown."
+        "notes": "Six mission-category claims reconcile arithmetically to the 4,832 fiscal-year all-component estimate. Opening quantities, component allocations, tanker and airlift split, readiness, and availability remain unknown."
       },
       {
         "coverage_id": "coverage_usa_navy_battle_force",
@@ -85,7 +86,7 @@
         "maintenance": "identified",
         "construction": "identified",
         "conservation": "structured",
-        "notes": "Battle force ship total is range bounded; class breakdown and readiness remain unaccepted."
+        "notes": "The exact 1 September battle-force ship total is unknown. A planning request and prior-year actual are historical claims only and are not valid bounds."
       },
       {
         "coverage_id": "coverage_usa_army_force_and_training",
@@ -98,7 +99,7 @@
         "maintenance": "identified",
         "construction": "identified",
         "conservation": "structured",
-        "notes": "Personnel authorization and annual CTC plan accepted; equipment inventories and actual completed throughput remain unknown."
+        "notes": "Personnel authorization is accepted. The 22-rotation fiscal-year target is a non-executable plan outside opening inventory; actual completed and available throughput remain unknown."
       },
       {
         "coverage_id": "coverage_usa_marine_corps_national_force",
@@ -157,23 +158,23 @@
   },
   "reconciliation": {
     "state": "blocked_by_unknowns",
-    "organization_records": 37,
+    "organization_records": 38,
     "platform_records": 0,
     "equipment_type_records": 24,
-    "inventory_records": 15,
-    "deployment_records": 15,
-    "maintenance_records": 15,
+    "inventory_records": 14,
+    "deployment_records": 14,
+    "maintenance_records": 14,
     "construction_records": 3,
-    "conservation_records": 15,
-    "exact_quantity_records": 8,
-    "range_quantity_records": 1,
-    "unknown_quantity_records": 6,
-    "open_conservation_exceptions": 6,
+    "conservation_records": 14,
+    "exact_quantity_records": 0,
+    "range_quantity_records": 0,
+    "unknown_quantity_records": 14,
+    "open_conservation_exceptions": 14,
     "double_booking_exceptions": 0,
     "orphan_platform_records": 0,
     "orphan_organization_records": 0,
     "expired_records": 0,
-    "relationship_records": 40
+    "relationship_records": 66
   },
   "conservation_policy": {
     "equation": "opening_plus_inflows_equals_closing_states_plus_outflows",
@@ -203,7 +204,12 @@
     "src_force_usa_crs_air_force_inventory_2025",
     "src_force_usa_crs_navy_force_structure_2025",
     "src_force_usa_army_budget_overview_2025",
-    "src_force_usa_coast_guard_budget_2025"
+    "src_force_usa_coast_guard_budget_2025",
+    "src_force_usa_title10_section12301_2024",
+    "src_force_usa_title10_section12302_2024",
+    "src_force_usa_title10_section12304_2024",
+    "src_force_usa_title10_section12406_2024",
+    "src_force_usa_title32_section502_2024"
   ],
   "unknowns": [
     "Assigned and deployable personnel remain unknown; statutory authorization and budget supported positions are not readiness measures.",
@@ -212,22 +218,24 @@
     "Navy battle force exact bookmark total, class decomposition, maintenance allocation, and readiness remain unresolved.",
     "Space Force platform counts remain unknown where public aggregate evidence is incomplete or unsuitable for a safe national ledger.",
     "Coast Guard whole fleet count and current maintenance allocation remain unknown; selected planned acquisition lots are not opening inventory.",
-    "Individual state Guard organizations, status transitions, and mobilization delays remain uncollected below the national authority model."
+    "Individual state Guard organizations, bookmark duty status by allocation, and mobilization delays remain uncollected below the national authority model."
   ],
   "reviewed_at": "2026-08-06",
   "review_after": "2026-11-06",
-  "notes": "Second United States national packet: statutory operational chain, Guard state and federal status, enacted personnel authorities, selected national inventory pools, planned training throughput, and selected construction programs. It deliberately excludes exact present locations, actionable movement, and unsupported readiness.",
+  "notes": "Corrected United States national packet: cutoff-safe aggregate opening truth, specific reserve activation routes, mutually exclusive Guard duty status, enacted personnel authorities, unresolved opening equipment pools, non-executable fiscal-year training and acquisition plans, and selected construction research. It deliberately excludes exact present locations, actionable movement, unsupported readiness, and postbookmark player knowledge.",
   "acceptance": {
     "schema_valid": true,
-    "internally_consistent": true,
+    "internally_consistent": false,
     "research_complete": false,
     "decision_usable": false,
     "simulation_ready": false,
     "untested_claims": [
+      "Independent re-audit of B01 through B07 is pending.",
       "Exact Navy bookmark total and several service equipment categories require independent reconciliation.",
       "Current readiness, maintenance allocation, and mission support availability remain untested."
     ],
     "blockers": [
+      "Independent re-audit is required before internal-consistency acceptance.",
       "Army, Marine Corps, Space Force, and Coast Guard mutually exclusive equipment totals are incomplete.",
       "Tanker versus airlift allocation is unknown.",
       "No mission may draw from national aggregates without a conserved child allocation and resolved support package."

@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_missing_aircraft_parent_link","mutation":"remove_parent_link","target_id":"inventory_usa_air_force_bomber","expected_diagnostic":"USAF bomber structural parent link is missing"}

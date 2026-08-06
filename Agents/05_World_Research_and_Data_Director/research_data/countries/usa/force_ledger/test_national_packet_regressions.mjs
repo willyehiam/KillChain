@@ -32,10 +32,71 @@ for (const fixture of fixtures) {
       const rows = readRows(file);
       rows.find((row) => row.deployment_id === fixture.target_id).entity_id = 'inventory_usa_anonymous_capacity';
       writeRows(file, rows);
-    } else if (fixture.mutation === 'increment_aircraft_category') {
+    } else if (fixture.mutation === 'set_claim_value') {
+      const file = path.join(packet, 'claims.ndjson');
+      const rows = readRows(file);
+      rows.find((row) => row.claim_id === fixture.target_id).value = fixture.value;
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'set_assigned_exact') {
+      const file = path.join(packet, 'organizations.ndjson');
+      const rows = readRows(file);
+      rows.find((row) => row.organization_id === fixture.target_id).personnel.assigned = { kind:'exact', value:fixture.value, unit:'person', counting_rule:'adversarial fabrication' };
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'postbookmark_source') {
+      const file = path.join(packet, 'sources.ndjson');
+      const rows = readRows(file);
+      const source = rows.find((row) => row.source_id === fixture.target_id);
+      source.published_at = '2025-10-01'; source.bookmark_evidence_status = 'not_applicable'; source.available_to_player_at_bookmark = false;
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'set_maintenance_exact') {
+      const file = path.join(packet, 'maintenance.ndjson');
+      const rows = readRows(file);
+      rows.find((row) => row.maintenance_record_id === fixture.target_id).quantity = { kind:'exact', value:fixture.value, unit:'platform', counting_rule:'adversarial fabrication' };
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'complete_construction_without_claim') {
+      const file = path.join(packet, 'construction.ndjson');
+      const rows = readRows(file);
+      const row = rows.find((item) => item.construction_record_id === fixture.target_id);
+      row.state = 'completed';
+      row.quantity_delivered = { kind:'exact', value:fixture.value, unit:'platform', counting_rule:'adversarial fabrication' };
+      row.quantity_accepted = { kind:'exact', value:fixture.value, unit:'platform', counting_rule:'adversarial fabrication' };
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'promote_training_plan') {
+      const file = path.join(packet, 'training_plans.json');
+      const rows = JSON.parse(fs.readFileSync(file, 'utf8'));
+      const row = rows.find((item) => item.plan_id === fixture.target_id);
+      row.executable = true; row.available = { kind:'exact', value:22, unit:'capacity_unit', counting_rule:'adversarial fabrication' };
+      fs.writeFileSync(file, `${JSON.stringify(rows,null,2)}\n`);
+    } else if (fixture.mutation === 'remove_parent_link') {
       const file = path.join(packet, 'inventory.ndjson');
       const rows = readRows(file);
-      rows.find((row) => row.inventory_record_id === fixture.target_id).quantity.value += 1;
+      rows.find((row) => row.inventory_record_id === fixture.target_id).counting_scope.parent_inventory_record_id = null;
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'replace_activation_provenance') {
+      const file = path.join(packet, 'relationships.ndjson');
+      const rows = readRows(file);
+      rows.find((row) => row.relationship_id === fixture.target_id).provenance.source_ids = ['src_force_usa_title10_section10101_2023'];
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'invent_navy_range') {
+      const file = path.join(packet, 'inventory.ndjson');
+      const rows = readRows(file);
+      rows.find((row) => row.inventory_record_id === fixture.target_id).quantity = { kind:'range', minimum:287, maximum:296, unit:'platform', counting_rule:'request plus prior actual pseudo-bound' };
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'restore_mutable_interval') {
+      const file = path.join(packet, 'sources.ndjson');
+      const rows = readRows(file);
+      const row = rows.find((item) => item.source_id === fixture.target_id);
+      row.observed_from = '2025-01-01'; row.observed_to = '2025-09-01'; row.available_to_player_at_bookmark = true;
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'expire_child_with_zero_summary') {
+      const file = path.join(packet, 'inventory.ndjson');
+      const rows = readRows(file);
+      rows.find((row) => row.inventory_record_id === fixture.target_id).temporal_validity.review_after = '2025-10-01';
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'activate_guard_state_edge') {
+      const file = path.join(packet, 'relationships.ndjson');
+      const rows = readRows(file);
+      rows.find((row) => row.relationship_id === fixture.target_id).activation_state = 'active';
       writeRows(file, rows);
     } else throw new Error(`Unknown mutation ${fixture.mutation}`);
     const result = spawnSync(process.execPath, [path.join(packet, 'validate_national_packet.mjs'), packet], { encoding: 'utf8' });

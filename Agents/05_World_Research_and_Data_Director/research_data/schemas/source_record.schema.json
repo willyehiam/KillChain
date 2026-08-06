@@ -105,6 +105,27 @@
     "source_sha256": {
       "type": "string",
       "pattern": "^[a-f0-9]{64}$"
+    },
+    "mutability_class": {
+      "type": "string",
+      "enum": ["immutable_artifact", "versioned_legal_instrument", "live_mutable", "unknown"]
+    },
+    "bookmark_evidence_status": {
+      "type": "string",
+      "enum": ["prebookmark_available", "retrospective_direct_coverage", "quarantined_no_prebookmark_temporal_proof", "not_applicable"]
+    },
+    "available_to_player_at_bookmark": {
+      "type": "boolean"
+    },
+    "retrieved_at": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "snapshot_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "temporal_proof": {
+      "type": "string"
     }
   },
   "additionalProperties": false

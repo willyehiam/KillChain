@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_expired_child_zero_summary","mutation":"expire_child_with_zero_summary","target_id":"inventory_usa_air_force_bomber","expected_diagnostic":"manifest expired record count is false"}

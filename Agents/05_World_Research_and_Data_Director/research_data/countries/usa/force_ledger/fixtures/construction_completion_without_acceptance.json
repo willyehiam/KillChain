@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_construction_completion_without_acceptance","mutation":"complete_construction_without_claim","target_id":"construction_usa_coast_guard_wcc_fy2025","value":3,"expected_diagnostic":"construction completion lacks an acceptance claim"}

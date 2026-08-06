@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_simultaneous_guard_status","mutation":"activate_guard_state_edge","target_id":"relationship_usa_state_joint_force_headquarters_army_national_guard_state_control","expected_diagnostic":"state control must be conditional on an exclusive runtime status"}
