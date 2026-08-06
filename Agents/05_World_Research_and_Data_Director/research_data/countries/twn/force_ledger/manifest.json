@@ -4,7 +4,7 @@
   "country_id": "country_twn",
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
   "as_of": "2025-09-01T00:00:00Z",
-  "status": "shell",
+  "status": "collecting",
   "accounting_states": [
     "active",
     "committed",
@@ -22,10 +22,37 @@
     "unknown"
   ],
   "scope": {
-    "services": [],
-    "components": [],
-    "government_forces": [],
-    "individualization_rule": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision"
+    "services": [
+      "joint",
+      "army",
+      "navy",
+      "air_force",
+      "coast_guard",
+      "gendarmerie"
+    ],
+    "components": [
+      "active",
+      "reserve",
+      "civilian_agency"
+    ],
+    "government_forces": [
+      "Republic of China Armed Forces",
+      "Military Police Command",
+      "Reserve Command",
+      "Coast Guard Administration"
+    ],
+    "individualization_rule": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision",
+    "covered_domains": [
+      "ground",
+      "maritime",
+      "air",
+      "information",
+      "logistics",
+      "joint"
+    ],
+    "exclusion_notes": [
+      "No exact headquarters coordinates, current mobile positions, covert organizations, vulnerable component locations, or speculative capabilities are collected in this slice."
+    ]
   },
   "dataset_paths": {
     "organizations": "organizations.ndjson",
@@ -37,14 +64,14 @@
     "construction": "construction.ndjson",
     "conservation": "conservation.ndjson",
     "facilities": null,
-    "sources": null,
-    "contradictions": null
+    "sources": "sources.ndjson",
+    "contradictions": "contradictions.ndjson"
   },
   "reconciliation": {
-    "state": "not_started",
-    "organization_records": 0,
+    "state": "partial",
+    "organization_records": 12,
     "platform_records": 0,
-    "equipment_type_records": 0,
+    "equipment_type_records": 10,
     "inventory_records": 0,
     "deployment_records": 0,
     "maintenance_records": 0,
@@ -71,14 +98,22 @@
     "mission_resolution": "individual executing and supporting platforms",
     "aggregation_preserves_quantity": true
   },
-  "source_ids": [],
-  "unknowns": [
-    "Armed services, joint commands, reserves, coast guard, and other relevant government force records have not been accepted.",
-    "National equipment totals have not been reconciled across every accounting state.",
-    "Named platforms and quantity conserving pools have not been assigned.",
-    "Home stations, readiness, mobilization, maintenance, munitions, crews, sustainment, and commitments have not been reconciled."
+  "source_ids": [
+    "src_force_twn_mnd_organization_2016",
+    "src_force_twn_mnd_national_defense_report_2023",
+    "src_force_twn_adma_history_2022",
+    "src_force_twn_mnd_reserve_employment_2022",
+    "src_force_twn_mnd_force_structure_2023",
+    "src_force_twn_oac_subordinate_agencies_2025"
   ],
-  "reviewed_at": "2026-08-02",
-  "review_after": "2026-08-16",
-  "notes": "No platform can appear in a mission package until it exists in this ledger or a later accepted replacement. Empty arrays are explicit unknown coverage, not assertions of absence."
+  "unknowns": [
+    "Subordinate Army corps and defense commands, naval fleets, Marine Corps, air combat commands, wings, brigades, groups, and equivalent formations have not been accepted.",
+    "Organization personnel, readiness, mobilization delays, detailed command workflows, and current force assignments remain unknown in this slice.",
+    "The aggregate equipment taxonomy records do not assert models, quantities, possession totals, readiness, or disposition.",
+    "National equipment totals have not been reconciled across accounting states.",
+    "Named platforms, inventory pools, deployments, maintenance, construction, conservation, facilities, and logistics dependencies remain unresolved."
+  ],
+  "reviewed_at": "2026-08-06",
+  "review_after": "2026-11-06",
+  "notes": "First accepted Tier A national organization slice. It distinguishes constitutional command, defense administration, General Staff operational command, service headquarters, the 2022 reserve administration reform, Army coordinated reserve employment, and the civilian Coast Guard chain without asserting readiness, quantity, or disposition."
 }
