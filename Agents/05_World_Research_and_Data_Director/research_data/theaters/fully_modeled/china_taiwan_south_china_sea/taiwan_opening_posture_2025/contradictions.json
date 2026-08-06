@@ -76,24 +76,6 @@
         }
       ],
       "resolution": "exercise_subjects_are_not_readiness_scores"
-    },
-    {
-      "contradiction_id": "op_contradiction_access_permission",
-      "topic": "allied_access",
-      "positions": [
-        {
-          "label": "standing_access_frameworks",
-          "claim_ids": [
-            "op_claim_japan_access_constraint",
-            "op_claim_philippines_access_constraint"
-          ]
-        },
-        {
-          "label": "mission_permission",
-          "claim_ids": []
-        }
-      ],
-      "resolution": "require_scenario_specific_political_authorization"
     }
   ]
 }
