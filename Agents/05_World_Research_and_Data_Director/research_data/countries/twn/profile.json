@@ -14,9 +14,9 @@
     "politics_and_institutions": {
       "status": "needs_review",
       "record_count": 28,
-      "source_count": 24,
+      "source_count": 28,
       "open_question_count": 3,
-      "notes": "Opening divided government, constitutional succession, war authority, United States policy context, institutions, and 20 relevant actors are sourced; independent review remains open."
+      "notes": "Opening executive control, the certified and recall-adjusted legislative seat ledger, constitutional succession, war authority, United States policy context, institutions, and 20 relevant actors are sourced; independent review remains open."
     },
     "economy_trade_finance_resources": {
       "status": "collecting",
@@ -110,7 +110,11 @@
     "src_twn_taichung_lu",
     "src_twn_new_taipei_hou",
     "src_twn_taipei_chiang",
-    "src_twn_dpp_local_leaders",
+    "src_twn_lin_resignation_hsu_appointment_2025",
+    "src_twn_hsu_dpp_secretary_general_2025",
+    "src_twn_cec_legislative_result_2024",
+    "src_twn_cec_recall_results_2025_07_26",
+    "src_twn_cec_recall_results_2025_08_23",
     "src_twn_kaohsiung_chen_2025",
     "src_twn_us_taiwan_relations_act"
   ],
