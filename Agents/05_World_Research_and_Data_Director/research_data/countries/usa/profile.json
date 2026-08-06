@@ -83,7 +83,7 @@
   },
   "completeness": {
     "political_actor_target": 20,
-    "political_actor_count": 20,
+    "political_actor_count": 21,
     "province_layer_status": "absent",
     "force_ledger_status": "shell"
   },
