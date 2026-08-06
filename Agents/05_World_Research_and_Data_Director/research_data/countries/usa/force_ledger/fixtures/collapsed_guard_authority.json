@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_collapsed_guard_authority","mutation":"add_ngb_operational_control","target_id":"organization_usa_army_national_guard","expected_diagnostic":"National Guard Bureau may not collapse state Guard operational control into one federal chain"}

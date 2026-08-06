@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_aircraft_reconciliation_mismatch","mutation":"increment_aircraft_category","target_id":"inventory_usa_air_force_bomber","expected_diagnostic":"USAF mission categories do not sum to the national parent total"}

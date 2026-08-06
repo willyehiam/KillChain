@@ -1,0 +1,1 @@
+{"fixture_id":"usa_force_missing_secdef","mutation":"remove_organization","target_id":"organization_usa_secretary_of_defense_office","expected_diagnostic":"missing required command or Guard authority organization_usa_secretary_of_defense_office"}

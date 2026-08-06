@@ -18,7 +18,7 @@
     "validate:tier-a-political-authority": "node Agents/05_World_Research_and_Data_Director/research_data/countries/validate_tier_a_political_authority.mjs Agents/05_World_Research_and_Data_Director/research_data/countries",
     "test:tier-a-political-authority-regressions": "node Agents/05_World_Research_and_Data_Director/research_data/countries/test_tier_a_political_authority_regressions.mjs",
     "test:tier-a-politics-regressions": "node Agents/05_World_Research_and_Data_Director/research_data/countries/test_tier_a_politics_regressions.mjs",
-    "validate:research-foundation": "node Agents/05_World_Research_and_Data_Director/research_data/tools/validate_foundation.mjs",
+    "validate:research-foundation": "node Agents/05_World_Research_and_Data_Director/research_data/tools/validate_foundation.mjs && node Agents/05_World_Research_and_Data_Director/research_data/countries/validate_tier_a_force_ledgers.mjs && node Agents/05_World_Research_and_Data_Director/research_data/countries/usa/force_ledger/validate_national_packet.mjs && node Agents/05_World_Research_and_Data_Director/research_data/countries/usa/force_ledger/test_national_packet_regressions.mjs",
     "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate"
   },
