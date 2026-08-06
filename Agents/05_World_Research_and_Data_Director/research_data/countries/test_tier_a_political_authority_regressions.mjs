@@ -32,15 +32,15 @@ function mutation(name, mutate, diagnostic) {
 mutation('A01 prose cannot replace required United States gates', root => {
   const file = path.join(root, 'usa', 'war_authority_workflow.json');
   const value = read(file);
-  value.routes.find(route => route.route_id === 'route_usa_specific_statutory_authorization').required_gate_ids = [];
+  value.routes.find(route => route.route_id === 'route_usa_specific_statutory_authorization').transitions[0].gate_ids = [];
   write(file, value);
-}, 'route_usa_specific_statutory_authorization is prose only');
+}, 'transition_usa_specific_authorization_activation lacks structured gates');
 
 mutation('A02 Taiwan declaration requires the Legislative Yuan gate', root => {
   const file = path.join(root, 'twn', 'war_authority_workflow.json');
   const value = read(file);
   const route = value.routes.find(item => item.route_id === 'route_twn_formal_declaration_of_war');
-  route.required_gate_ids = route.required_gate_ids.filter(id => id !== 'gate_twn_legislative_yuan_war_resolution');
+  route.transitions[0].gate_ids = route.transitions[0].gate_ids.filter(id => id !== 'gate_twn_legislative_yuan_war_resolution');
   write(file, value);
 }, 'formal war route omits gate_twn_legislative_yuan_war_resolution');
 
@@ -194,6 +194,98 @@ mutation('A20 authority branch provenance must resolve', root => {
   value.foreign_support_branches[0].source_ids.push('src_missing_branch_provenance');
   write(file, value);
 }, 'branch_twn_request_foreign_support cites missing src_missing_branch_provenance');
+mutation('A21 WPR report cannot become an activation prerequisite', root => {
+  const file = path.join(root, 'usa', 'war_authority_workflow.json');
+  const value = read(file);
+  value.routes.find(item => item.route_id === 'route_usa_attack_emergency').transitions.find(item => item.phase === 'activation').gate_ids.push('gate_usa_wpr_report_if_triggered');
+  write(file, value);
+}, 'treats post-introduction obligations as activation prerequisites');
 
+mutation('A22 timed WPR gate requires an executable anchor', root => {
+  const file = path.join(root, 'usa', 'war_authority_workflow.json');
+  const value = read(file);
+  delete value.decision_gates.find(item => item.gate_id === 'gate_usa_wpr_termination_clock').anchor_event_id;
+  write(file, value);
+}, 'timed gate gate_usa_wpr_termination_clock lacks anchor_event_id');
+
+mutation('A23 unknown WPR anchor cannot silently become no clock', root => {
+  const file = path.join(root, 'usa', 'war_authority_workflow.json');
+  const value = read(file);
+  value.decision_gates.find(item => item.gate_id === 'gate_usa_wpr_report_if_triggered').unknown_anchor_policy.zero_false_or_no_deadline_coercion_forbidden = false;
+  write(file, value);
+}, 'can silently coerce an unknown anchor to no clock');
+
+mutation('A24 Taiwan ratification cannot be an emergency decree activation prerequisite', root => {
+  const file = path.join(root, 'twn', 'war_authority_workflow.json');
+  const value = read(file);
+  value.routes.find(item => item.route_id === 'route_twn_emergency_decree').transitions.find(item => item.transition_id === 'transition_twn_emergency_decree_issuance').gate_ids.push('gate_twn_legislative_ratification_within_ten_days');
+  write(file, value);
+}, 'emergency decree is not provisionally effective before ratification');
+
+mutation('A25 unresolved Taiwan immediate defense cannot execute', root => {
+  const file = path.join(root, 'twn', 'war_authority_workflow.json');
+  const value = read(file);
+  value.routes.find(item => item.route_id === 'route_twn_immediate_defensive_command').execution_status = 'executable';
+  write(file, value);
+}, 'unresolved immediate defensive command route is executable');
+
+mutation('A26 Taiwan presidency cannot manufacture the defense trigger', root => {
+  const file = path.join(root, 'twn', 'war_authority_workflow.json');
+  const value = read(file);
+  const gate = value.decision_gates.find(item => item.gate_id === 'gate_twn_attack_or_imminent_defense_fact_established');
+  gate.required_institution_ids = ['institution_twn_presidency'];
+  write(file, value);
+}, 'presidency can manufacture its own immediate defense trigger');
+
+mutation('A27 live mutable source must be quarantined or proven', root => {
+  const file = path.join(root, 'usa', 'evidence_registry.json');
+  const value = read(file);
+  const source = value.sources.find(item => item.source_id === 'src_usa_white_house_administration');
+  delete source.bookmark_evidence_status;
+  delete source.temporal_proof_requirements;
+  write(file, value);
+}, 'lacks prebookmark temporal proof or quarantine');
+
+mutation('A28 quarantined live source cannot become opening truth', root => {
+  const file = path.join(root, 'usa', 'evidence_registry.json');
+  const value = read(file);
+  value.claims.find(item => item.claim_id === 'claim_usa_actor_trump_role').source_ids = ['src_usa_white_house_administration'];
+  write(file, value);
+}, 'imports quarantined live mutable source');
+
+mutation('A29 impossible WPR deadline ordering is rejected', root => {
+  const file = path.join(root, 'usa', 'war_authority_workflow.json');
+  const value = read(file);
+  value.decision_gates.find(item => item.gate_id === 'gate_usa_wpr_termination_clock').deadline_ordering = ['withdrawal_extension_due_at_before_termination_due_at'];
+  write(file, value);
+}, 'impossible WPR deadline ordering is not rejected');
+
+function evaluateEmergencyDecree({issuedAt, ratifiedAt = null, rejectedAt = null, now}) {
+  const workflow = read(path.join(sourceRoot, 'twn', 'war_authority_workflow.json'));
+  const route = workflow.routes.find(item => item.route_id === 'route_twn_emergency_decree');
+  const ratification = workflow.decision_gates.find(item => item.gate_id === 'gate_twn_legislative_ratification_within_ten_days');
+  const issued = Date.parse(issuedAt);
+  const due = issued + ratification.duration_days * 86_400_000;
+  const at = Date.parse(now);
+  if (!route.transitions.some(item => item.to_state === 'provisionally_effective_pending_ratification')) return 'invalid_contract';
+  if (rejectedAt && Date.parse(rejectedAt) <= at) return 'ceased_forthwith';
+  if (ratifiedAt && Date.parse(ratifiedAt) <= due) return 'ratified_effective';
+  if (at > due || (ratifiedAt && Date.parse(ratifiedAt) > due)) return 'ceased_forthwith';
+  return 'provisionally_effective_pending_ratification';
+}
+
+const emergencyFixtures = [
+  {name:'A30 pre-ratification use is provisionally effective', input:{issuedAt:'2025-09-01T00:00:00Z',now:'2025-09-05T00:00:00Z'}, expected:'provisionally_effective_pending_ratification'},
+  {name:'A31 timely ratification becomes effective', input:{issuedAt:'2025-09-01T00:00:00Z',ratifiedAt:'2025-09-10T00:00:00Z',now:'2025-09-10T00:00:00Z'}, expected:'ratified_effective'},
+  {name:'A32 legislative rejection ceases the decree forthwith', input:{issuedAt:'2025-09-01T00:00:00Z',rejectedAt:'2025-09-04T00:00:00Z',now:'2025-09-04T00:00:00Z'}, expected:'ceased_forthwith'},
+  {name:'A33 expiry without ratification ceases the decree forthwith', input:{issuedAt:'2025-09-01T00:00:00Z',now:'2025-09-12T00:00:00Z'}, expected:'ceased_forthwith'},
+  {name:'A34 ratification after the deadline cannot revive the decree', input:{issuedAt:'2025-09-01T00:00:00Z',ratifiedAt:'2025-09-12T00:00:00Z',now:'2025-09-12T00:00:00Z'}, expected:'ceased_forthwith'}
+];
+for (const fixture of emergencyFixtures) {
+  const actual = evaluateEmergencyDecree(fixture.input);
+  const passed = actual === fixture.expected;
+  results.push({name:fixture.name, passed, expected_state:fixture.expected, actual_state:actual});
+  if (!passed) failures.push(`${fixture.name}: expected ${fixture.expected}, received ${actual}`);
+}
 console.log(JSON.stringify({status: failures.length ? 'FAIL' : 'PASS', regressions: results, failures}, null, 2));
 if (failures.length) process.exit(1);
