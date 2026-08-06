@@ -79,7 +79,7 @@ for (const code of countries) {
         );
         const activeRoleClaims = evidence.claims.filter(claim =>
           claim.subject_id === actorId &&
-          ['holds_office', 'holds_offices', 'opening_relevance'].includes(claim.predicate) &&
+          ['holds_office', 'holds_offices', 'member_of', 'opening_relevance'].includes(claim.predicate) &&
           dateAtOrBefore(claim.effective_from ?? claim.as_of, bookmark.as_of) &&
           dateAtOrAfter(claim.effective_to, bookmark.as_of)
         );
@@ -114,6 +114,22 @@ for (const code of countries) {
           errors.push('twn: opening plurality or majority classification is incorrect');
         }
       }
+    }
+
+    if (code === 'chn') {
+      const cmc = politics.institutions.find(institution => institution.institution_id === 'institution_chn_cmc');
+      const currentActorIds = new Set(politics.political_actors.map(actor => actor.actor_id));
+      const requiredCmcActors = ['actor_chn_zhang_youxia', 'actor_chn_he_weidong', 'actor_chn_liu_zhenli', 'actor_chn_zhang_shengmin'];
+      if (!cmc) errors.push('chn: CMC institution is absent from politics packet');
+      for (const actorId of requiredCmcActors) if (!currentActorIds.has(actorId)) errors.push(`chn: missing opening CMC actor ${actorId}`);
+      const ma = politics.political_actors.find(actor => actor.actor_id === 'actor_chn_ma_xingrui');
+      if (!ma || /Xinjiang authority(?! after)/i.test(ma.office) || ma.institution_ids.some(id => /xinjiang/i.test(id))) {
+        errors.push('chn: Ma Xingrui retains unsupported Xinjiang opening authority');
+      }
+      const maEnd = evidence.claims.find(claim => claim.claim_id === 'claim_chn_ma_xingrui_xinjiang_role_ended');
+      if (maEnd?.effective_to !== '2025-07-01') errors.push('chn: Ma Xingrui Xinjiang tenure end is not represented');
+      const he = evidence.claims.find(claim => claim.claim_id === 'claim_chn_he_weidong_public_availability');
+      if (he?.value !== 'unknown_after_repeated_absences') errors.push('chn: He Weidong opening uncertainty is not preserved');
     }
   }
   if (bookmark.economic_state !== null || bookmark.military_posture !== null) errors.push(`${code}: unsourced non-politics bookmark facts populated`);
