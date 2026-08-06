@@ -1,0 +1,1 @@
+{"fixture_id":"chn_command_arm_misclassified","mutation":"misclassify_strategic_arm","target_id":"organization_chn_pla_information_support_force","expected_diagnostic":"information_support_force must use the official neutral strategic_arm classification"}
