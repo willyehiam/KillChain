@@ -16,10 +16,32 @@
         "op_src_anti_secession_law"
       ],
       "force_refs": [
-        "organization_chn_central_military_commission"
+        {
+          "organization_id": "organization_chn_central_military_commission",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        }
       ],
-      "readiness": "not_assessed",
-      "valid_at": "2025-09-01T00:00:00Z"
+      "valid_at": "2025-09-01T00:00:00Z",
+      "readiness_assessment": "unknown",
+      "evidence_status": "research_only_not_opening_truth",
+      "access_permission": "not_applicable",
+      "theater_availability": "unknown",
+      "inference_prohibition": [
+        "organization_identity_does_not_imply_deployment",
+        "organization_identity_does_not_imply_readiness",
+        "organization_identity_does_not_imply_access",
+        "organization_identity_does_not_imply_theater_availability"
+      ]
     },
     {
       "posture_id": "op_posture_prc_joint_command",
@@ -35,11 +57,46 @@
         "op_src_pla_strait_thunder_2025a"
       ],
       "force_refs": [
-        "organization_chn_eastern_theater_command",
-        "organization_chn_cmc_joint_staff_department"
+        {
+          "organization_id": "organization_chn_eastern_theater_command",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_chn_cmc_joint_staff_department",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        }
       ],
-      "readiness": "unknown",
-      "valid_at": "2025-09-01T00:00:00Z"
+      "valid_at": "2025-09-01T00:00:00Z",
+      "readiness_assessment": "unknown",
+      "evidence_status": "research_only_not_opening_truth",
+      "access_permission": "not_applicable",
+      "theater_availability": "unknown",
+      "inference_prohibition": [
+        "organization_identity_does_not_imply_deployment",
+        "organization_identity_does_not_imply_readiness",
+        "organization_identity_does_not_imply_access",
+        "organization_identity_does_not_imply_theater_availability"
+      ]
     },
     {
       "posture_id": "op_posture_prc_multi_domain_pool",
@@ -54,36 +111,184 @@
         "op_src_cmpr_2024"
       ],
       "force_refs": [
-        "organization_chn_pla_army",
-        "organization_chn_pla_navy",
-        "organization_chn_pla_air_force",
-        "organization_chn_pla_rocket_force",
-        "organization_chn_pla_information_support_force",
-        "organization_chn_pla_joint_logistic_support_force",
-        "organization_chn_china_coast_guard",
-        "organization_chn_militia"
+        {
+          "organization_id": "organization_chn_pla_army",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_chn_pla_navy",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_chn_pla_air_force",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_chn_pla_rocket_force",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_chn_pla_information_support_force",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_chn_pla_joint_logistic_support_force",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_chn_china_coast_guard",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_chn_militia",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        }
       ],
-      "readiness": "unknown",
-      "valid_at": "2025-09-01T00:00:00Z"
+      "valid_at": "2025-09-01T00:00:00Z",
+      "readiness_assessment": "unknown",
+      "evidence_status": "research_only_not_opening_truth",
+      "access_permission": "not_applicable",
+      "theater_availability": "unknown",
+      "inference_prohibition": [
+        "organization_identity_does_not_imply_deployment",
+        "organization_identity_does_not_imply_readiness",
+        "organization_identity_does_not_imply_access",
+        "organization_identity_does_not_imply_theater_availability"
+      ]
     },
     {
       "posture_id": "op_posture_opening_activity",
       "actor_id": "country_chn",
       "category": "observed_activity",
-      "summary": "Final prebookmark daily snapshot reports persistent but non surge aggregate activity.",
+      "summary": "Last safely available prebookmark public report records non surge aggregate activity; it is Taiwan public-report knowledge, not unique platform inventory, command attribution, or omniscient truth.",
       "claim_ids": [
         "op_claim_opening_snapshot"
       ],
       "source_ids": [
-        "op_src_twn_september1_2025_activity"
+        "op_src_twn_august31_2025_activity"
       ],
       "force_refs": [
-        "organization_chn_eastern_theater_command",
-        "organization_chn_china_coast_guard"
+        {
+          "organization_id": "organization_chn_eastern_theater_command",
+          "reference_semantics": "context_identity_not_observed_participant",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_chn_china_coast_guard",
+          "reference_semantics": "context_identity_not_observed_participant",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        }
       ],
-      "readiness": "not_inferred",
       "count_semantics": "activity_instances_not_unique_platforms",
-      "valid_at": "2025-09-01T00:00:00Z"
+      "valid_at": "2025-09-01T00:00:00Z",
+      "readiness_assessment": "unknown",
+      "evidence_status": "research_only_not_opening_truth",
+      "access_permission": "not_applicable",
+      "theater_availability": "unknown",
+      "inference_prohibition": [
+        "organization_identity_does_not_imply_deployment",
+        "organization_identity_does_not_imply_readiness",
+        "organization_identity_does_not_imply_access",
+        "organization_identity_does_not_imply_theater_availability"
+      ]
     },
     {
       "posture_id": "op_posture_twn_command",
@@ -94,15 +299,63 @@
         "op_claim_taiwan_response_pattern"
       ],
       "source_ids": [
-        "op_src_twn_september1_2025_activity"
+        "op_src_twn_april3_2025_activity"
       ],
       "force_refs": [
-        "organization_twn_president_commander_in_chief",
-        "organization_twn_ministry_of_national_defense",
-        "organization_twn_general_staff_headquarters"
+        {
+          "organization_id": "organization_twn_president_commander_in_chief",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_twn_ministry_of_national_defense",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_twn_general_staff_headquarters",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        }
       ],
-      "readiness": "unknown",
-      "valid_at": "2025-09-01T00:00:00Z"
+      "valid_at": "2025-09-01T00:00:00Z",
+      "readiness_assessment": "unknown",
+      "evidence_status": "research_only_not_opening_truth",
+      "access_permission": "not_applicable",
+      "theater_availability": "unknown",
+      "inference_prohibition": [
+        "organization_identity_does_not_imply_deployment",
+        "organization_identity_does_not_imply_readiness",
+        "organization_identity_does_not_imply_access",
+        "organization_identity_does_not_imply_theater_availability"
+      ]
     },
     {
       "posture_id": "op_posture_twn_response_pool",
@@ -115,18 +368,105 @@
       ],
       "source_ids": [
         "op_src_twn_han_kuang_41_plan",
-        "op_src_twn_september1_2025_activity"
+        "op_src_twn_april3_2025_activity"
       ],
       "force_refs": [
-        "organization_twn_army_command_headquarters",
-        "organization_twn_navy_command_headquarters",
-        "organization_twn_air_force_command_headquarters",
-        "organization_twn_coast_guard_administration",
-        "organization_twn_all_out_defense_mobilization_agency",
-        "organization_twn_reserve_command"
+        {
+          "organization_id": "organization_twn_army_command_headquarters",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_twn_navy_command_headquarters",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_twn_air_force_command_headquarters",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_twn_coast_guard_administration",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_twn_all_out_defense_mobilization_agency",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_twn_reserve_command",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        }
       ],
-      "readiness": "unknown",
-      "valid_at": "2025-09-01T00:00:00Z"
+      "valid_at": "2025-09-01T00:00:00Z",
+      "readiness_assessment": "unknown",
+      "evidence_status": "research_only_not_opening_truth",
+      "access_permission": "not_applicable",
+      "theater_availability": "unknown",
+      "inference_prohibition": [
+        "organization_identity_does_not_imply_deployment",
+        "organization_identity_does_not_imply_readiness",
+        "organization_identity_does_not_imply_access",
+        "organization_identity_does_not_imply_theater_availability"
+      ]
     },
     {
       "posture_id": "op_posture_usa_policy",
@@ -141,12 +481,60 @@
         "op_src_taiwan_relations_act"
       ],
       "force_refs": [
-        "organization_usa_president_commander_in_chief",
-        "organization_usa_department_of_defense",
-        "organization_usa_indo_pacific_command"
+        {
+          "organization_id": "organization_usa_president_commander_in_chief",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "unknown",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_usa_department_of_defense",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "unknown",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_usa_indo_pacific_command",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "unknown",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        }
       ],
-      "readiness": "not_assessed",
-      "valid_at": "2025-09-01T00:00:00Z"
+      "valid_at": "2025-09-01T00:00:00Z",
+      "readiness_assessment": "not_applicable_policy_record",
+      "evidence_status": "research_only_not_opening_truth",
+      "access_permission": "unknown_not_approved",
+      "theater_availability": "unknown",
+      "inference_prohibition": [
+        "organization_identity_does_not_imply_deployment",
+        "organization_identity_does_not_imply_readiness",
+        "organization_identity_does_not_imply_access",
+        "organization_identity_does_not_imply_theater_availability"
+      ]
     },
     {
       "posture_id": "op_posture_allied_access",
@@ -164,11 +552,46 @@
         "op_src_us_philippines_2plus2_2024"
       ],
       "force_refs": [
-        "organization_usa_indo_pacific_command",
-        "organization_usa_transportation_command"
+        {
+          "organization_id": "organization_usa_indo_pacific_command",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "unknown",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_usa_transportation_command",
+          "reference_semantics": "organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "unknown",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "deployment",
+            "readiness",
+            "access",
+            "theater_availability"
+          ]
+        }
       ],
-      "readiness": "conditional",
-      "valid_at": "2025-09-01T00:00:00Z"
+      "valid_at": "2025-09-01T00:00:00Z",
+      "readiness_assessment": "not_applicable_policy_record",
+      "evidence_status": "research_only_not_opening_truth",
+      "access_permission": "unknown_not_approved",
+      "theater_availability": "unknown",
+      "inference_prohibition": [
+        "organization_identity_does_not_imply_deployment",
+        "organization_identity_does_not_imply_readiness",
+        "organization_identity_does_not_imply_access",
+        "organization_identity_does_not_imply_theater_availability"
+      ]
     }
   ]
 }
