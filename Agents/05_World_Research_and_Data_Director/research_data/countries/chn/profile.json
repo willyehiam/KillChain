@@ -13,10 +13,10 @@
   "coverage": {
     "politics_and_institutions": {
       "status": "needs_review",
-      "record_count": 27,
-      "source_count": 10,
+      "record_count": 32,
+      "source_count": 18,
       "open_question_count": 3,
-      "notes": "Opening party-state authority, constitutional succession, war authority, treaty context, institutions, and 20 relevant actors are sourced; independent review remains open."
+      "notes": "Opening party-state authority, CMC command architecture and uncertainty, constitutional succession, war authority, treaty context, seven institutions, and 24 relevant actors are sourced; independent review remains open."
     },
     "economy_trade_finance_resources": {
       "status": "collecting",
@@ -83,7 +83,7 @@
   },
   "completeness": {
     "political_actor_target": 20,
-    "political_actor_count": 20,
+    "political_actor_count": 24,
     "province_layer_status": "absent",
     "force_ledger_status": "shell"
   },
@@ -98,7 +98,15 @@
     "src_chn_npc_2023_state_leaders",
     "src_chn_cppcc_2025",
     "src_chn_han_zheng_2025",
-    "src_chn_dprk_treaty_anniversary_2021"
+    "src_chn_dprk_treaty_anniversary_2021",
+    "src_chn_cmc_roster_2022",
+    "src_chn_cmc_departments",
+    "src_chn_liu_zhenli_joint_staff_2023",
+    "src_chn_miao_hua_suspended_2024",
+    "src_chn_miao_hua_removed_2025",
+    "src_chn_ma_xingrui_reassigned_2025",
+    "src_chn_he_weidong_absence_bloomberg_2025",
+    "src_chn_he_weidong_absence_scmp_2025"
   ],
   "unknowns": [
     "The 20 actor opening roster is populated but still needs an independent China politics and constitutional review.",
