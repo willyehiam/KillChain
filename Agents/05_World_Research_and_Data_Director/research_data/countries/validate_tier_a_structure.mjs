@@ -38,6 +38,7 @@ for (const code of countries) {
   if (Object.keys(matrix.lanes).join('|') !== requiredLanes.join('|')) errors.push(`${code}: lane set mismatch`);
   if (matrix.rollup.lanes_total !== requiredLanes.length) errors.push(`${code}: lane total mismatch`);
   const sourceIds = new Set(evidence.sources.map(source => source.source_id));
+  const sourceById = new Map(evidence.sources.map(source => [source.source_id, source]));
   const claimIds = new Set(evidence.claims.map(claim => claim.claim_id));
   if (sourceIds.size !== evidence.sources.length) errors.push(`${code}: duplicate evidence source id`);
   if (claimIds.size !== evidence.claims.length) errors.push(`${code}: duplicate evidence claim id`);
@@ -55,8 +56,36 @@ for (const code of countries) {
       for (const sourceId of set.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`${code}: ${set.contradiction_set_id} cites missing ${sourceId}`);
     }
   }
-  for (const sourceId of bookmark.source_ids) if (!sourceIds.has(sourceId)) errors.push(`${code}: bookmark cites missing ${sourceId}`);
+  for (const sourceId of bookmark.source_ids) {
+    if (!sourceIds.has(sourceId)) {
+      errors.push(`${code}: bookmark cites missing ${sourceId}`);
+      continue;
+    }
+    const source = sourceById.get(sourceId);
+    if (
+      source?.published_at &&
+      Date.parse(source.published_at) > Date.parse(bookmark.as_of) &&
+      !['reference_only_not_initial_state', 'retrospective_reference_only'].includes(source.use) &&
+      !['reference_only', 'trajectory_reference_only'].includes(source.simulation_use)
+    ) {
+      errors.push(`${code}: bookmark source ${sourceId} was published after ${bookmark.as_of}`);
+    }
+  }
   for (const claimId of bookmark.claim_ids) if (!claimIds.has(claimId)) errors.push(`${code}: bookmark cites missing ${claimId}`);
+  for (const claimId of bookmark.claim_ids) {
+    const claim = evidence.claims.find(candidate => candidate.claim_id === claimId);
+    for (const sourceId of claim?.source_ids ?? []) {
+      const source = sourceById.get(sourceId);
+      if (
+        source?.published_at &&
+        Date.parse(source.published_at) > Date.parse(bookmark.as_of) &&
+        !['reference_only_not_initial_state', 'retrospective_reference_only'].includes(source.use) &&
+        !['reference_only', 'trajectory_reference_only'].includes(source.simulation_use)
+      ) {
+        errors.push(`${code}: opening claim ${claimId} depends on post-bookmark source ${sourceId}`);
+      }
+    }
+  }
   if (bookmark.government === null) {
     if (bookmark.source_ids.length || bookmark.claim_ids.length || bookmark.political_actors.length) errors.push(`${code}: shell politics bookmark must not cite absent evidence`);
   } else {
