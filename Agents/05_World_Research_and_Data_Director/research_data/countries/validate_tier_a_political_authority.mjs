@@ -22,6 +22,12 @@ for (const code of ['usa', 'twn']) {
   const institutionIds = new Set(politics.institutions.map(item => item.institution_id));
   const sourceIds = new Set(evidence.sources.map(item => item.source_id));
   const sourceFamilyById = new Map(evidence.sources.map(item => [item.source_id, item.source_family_id]));
+  const publisherFamilies = new Map();
+  for (const source of evidence.sources) {
+    if (!publisherFamilies.has(source.publisher)) publisherFamilies.set(source.publisher, new Set());
+    publisherFamilies.get(source.publisher).add(source.source_family_id);
+  }
+  for (const [publisher, families] of publisherFamilies) if (families.size !== 1) errors.push(`${code}: publisher ${publisher} is split across source families`);
   const contradictionIds = new Set(evidence.contradiction_sets.map(item => item.contradiction_set_id));
   const routeIds = new Set(workflow.routes.map(item => item.route_id));
   const gateIds = new Set(workflow.decision_gates.map(item => item.gate_id));
