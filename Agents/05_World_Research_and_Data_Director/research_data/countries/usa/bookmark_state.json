@@ -35,7 +35,8 @@
     "actor_usa_chuck_schumer",
     "actor_usa_ron_desantis",
     "actor_usa_gretchen_whitmer",
-    "actor_usa_josh_shapiro"
+    "actor_usa_josh_shapiro",
+    "actor_usa_chuck_grassley"
   ],
   "administrative_geography": [],
   "economic_state": null,
@@ -69,7 +70,9 @@
     "src_usa_nsc_statute",
     "src_usa_nspm1_nsc_organization_2025",
     "src_usa_rubio_acting_nsa_reuters_2025",
-    "src_usa_nsc_restructuring_reuters_2025"
+    "src_usa_nsc_restructuring_reuters_2025",
+    "src_usa_presidential_succession_statute",
+    "src_usa_senate_president_pro_tempore_2025"
   ],
   "claim_ids": [
     "claim_usa_president_executive_power",
@@ -86,7 +89,9 @@
     "claim_usa_nsc_statutory_membership",
     "claim_usa_nsc_advisory_structure",
     "claim_usa_nsc_restructuring_capacity_modifier",
-    "claim_usa_nsc_statutory_and_advisory_distinction"
+    "claim_usa_nsc_statutory_and_advisory_distinction",
+    "claim_usa_actor_grassley_role",
+    "claim_usa_presidential_succession_statutory_order"
   ],
   "notes": "Only the politics and institutions lane has crossed from shell into the opening bookmark. All military, economic, geography, infrastructure, and crisis fields remain intentionally unpopulated.",
   "acceptance_state": {
