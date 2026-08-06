@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/inventory_conservation_record.schema.json",
+  "title": "Inventory Conservation Record",
+  "description": "A reconciliation of one mutually exclusive inventory scope across a dated interval. Terms are never mixed across platforms, launchers, batteries, munitions, formations, personnel, or capacity.",
+  "type": "object",
+  "required": [
+    "conservation_record_id",
+    "country_id",
+    "equipment_type_id",
+    "scope",
+    "counting_unit",
+    "period",
+    "opening_inventory",
+    "inflows",
+    "closing_states",
+    "outflows",
+    "result",
+    "provenance"
+  ],
+  "properties": {
+    "conservation_record_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "country_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "equipment_type_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "scope_kind",
+        "scope_id",
+        "exclusion_rule"
+      ],
+      "properties": {
+        "scope_kind": {
+          "type": "string",
+          "enum": [
+            "national",
+            "service",
+            "component",
+            "command",
+            "formation",
+            "location",
+            "inventory_pool"
+          ]
+        },
+        "scope_id": {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        "parent_conservation_record_id": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/stableId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "exclusion_rule": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "counting_unit": {
+      "type": "string",
+      "enum": [
+        "platform",
+        "equipment_item",
+        "launcher",
+        "battery",
+        "munition",
+        "formation",
+        "person",
+        "capacity_unit"
+      ]
+    },
+    "period": {
+      "type": "object",
+      "required": [
+        "opening_at",
+        "closing_at"
+      ],
+      "properties": {
+        "opening_at": {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        },
+        "closing_at": {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        }
+      },
+      "additionalProperties": false
+    },
+    "opening_inventory": {
+      "$ref": "common.schema.json#/$defs/quantityEstimate"
+    },
+    "inflows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/flowTerm"
+      }
+    },
+    "closing_states": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/stateTerm"
+      }
+    },
+    "outflows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/flowTerm"
+      }
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "state",
+        "residual_kind",
+        "unresolved_record_ids"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "balanced",
+            "balanced_with_ranges",
+            "blocked_by_unknowns",
+            "failed"
+          ]
+        },
+        "residual_kind": {
+          "type": "string",
+          "enum": [
+            "exact",
+            "range",
+            "unknown"
+          ]
+        },
+        "residual_value": {
+          "type": "integer"
+        },
+        "residual_minimum": {
+          "type": "integer"
+        },
+        "residual_maximum": {
+          "type": "integer"
+        },
+        "unresolved_record_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/stableId"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "flowTerm": {
+      "type": "object",
+      "required": [
+        "term_id",
+        "flow_kind",
+        "quantity",
+        "effective_at",
+        "source_record_ids"
+      ],
+      "properties": {
+        "term_id": {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        "flow_kind": {
+          "type": "string",
+          "enum": [
+            "production_or_acceptance",
+            "import",
+            "transfer_in",
+            "capture",
+            "classification_change_in",
+            "export",
+            "transfer_out",
+            "retirement",
+            "destruction",
+            "loss",
+            "classification_change_out",
+            "correction"
+          ]
+        },
+        "quantity": {
+          "$ref": "common.schema.json#/$defs/quantityEstimate"
+        },
+        "effective_at": {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        },
+        "source_record_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/stableId"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "stateTerm": {
+      "type": "object",
+      "required": [
+        "accounting_state",
+        "quantity",
+        "inventory_record_ids"
+      ],
+      "properties": {
+        "accounting_state": {
+          "$ref": "common.schema.json#/$defs/accountingState"
+        },
+        "quantity": {
+          "$ref": "common.schema.json#/$defs/quantityEstimate"
+        },
+        "inventory_record_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/stableId"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
