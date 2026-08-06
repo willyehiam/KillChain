@@ -103,5 +103,97 @@ mutation('A10 one publisher cannot masquerade as independent source families', r
   write(file, value);
 }, 'is split across source families');
 
+mutation('A11 practical influence declared families must match cited sources', root => {
+  const file = path.join(root, 'usa', 'politics_and_institutions.json');
+  const value = read(file);
+  value.political_actors[0].practical_influence = {
+    status: 'accepted',
+    source_ids: ['src_usa_white_house_administration', 'src_usa_rubio_acting_nsa_reuters_2025'],
+    source_family_ids: ['family_the_white_house', 'fabricated_independent_family'],
+    minimum_independent_source_families: 2,
+  };
+  write(file, value);
+}, 'practical influence declared source families do not match cited sources');
+
+mutation('A12 practical influence cannot cite a missing source', root => {
+  const file = path.join(root, 'usa', 'politics_and_institutions.json');
+  const value = read(file);
+  value.political_actors[0].practical_influence = {
+    status: 'accepted',
+    source_ids: ['src_usa_white_house_administration', 'src_usa_rubio_acting_nsa_reuters_2025', 'src_missing_influence'],
+    source_family_ids: ['family_the_white_house', 'family_reuters'],
+    minimum_independent_source_families: 2,
+  };
+  write(file, value);
+}, 'practical influence cites missing src_missing_influence');
+
+mutation('A13 role interval cannot start after it ends', root => {
+  const file = path.join(root, 'usa', 'evidence_registry.json');
+  const value = read(file);
+  const claim = value.claims.find(item => item.claim_id === 'claim_usa_actor_rubio_role');
+  claim.effective_to = '2025-04-30';
+  claim.interval_end_status = 'known';
+  write(file, value);
+}, 'interval starts after it ends');
+
+mutation('A14 opening role cannot begin after the bookmark', root => {
+  const file = path.join(root, 'usa', 'evidence_registry.json');
+  const value = read(file);
+  const claim = value.claims.find(item => item.claim_id === 'claim_usa_actor_grassley_role');
+  claim.effective_from = '2025-09-02';
+  write(file, value);
+}, 'opening role begins after the bookmark');
+
+mutation('A15 authority workflow rejects explicit post-bookmark evidence', root => {
+  const file = path.join(root, 'usa', 'evidence_registry.json');
+  const value = read(file);
+  value.sources.find(item => item.source_id === 'src_usa_war_powers_resolution').published_at = '2025-09-02';
+  write(file, value);
+}, 'authority workflow depends on post-bookmark source src_usa_war_powers_resolution');
+
+mutation('A16 Taiwan foreign support cannot manufacture foreign force authority', root => {
+  const file = path.join(root, 'twn', 'war_authority_workflow.json');
+  const value = read(file);
+  value.foreign_support_branches.find(item => item.branch_id === 'branch_twn_request_foreign_support').foreign_force_authority_effect = 'automatic_on_request';
+  write(file, value);
+}, 'foreign support improperly creates foreign force authority');
+
+mutation('A17 United States Taiwan policy cannot omit domestic authority routes', root => {
+  const file = path.join(root, 'usa', 'war_authority_workflow.json');
+  const value = read(file);
+  value.alliance_and_taiwan_branches.find(item => item.branch_id === 'branch_usa_taiwan_discretionary_intervention').required_route_ids = [];
+  write(file, value);
+}, 'Taiwan policy bypasses domestic authority routes');
+
+mutation('A18 authority review acceptance must agree across bookmark and manifest', root => {
+  const file = path.join(root, 'usa', 'bookmark_state.json');
+  const value = read(file);
+  value.acceptance_state.authority_contract_reviewed = true;
+  write(file, value);
+}, 'bookmark and manifest authority review states differ');
+
+mutation('A19 practical influence rejects post-bookmark evidence', root => {
+  const politicsFile = path.join(root, 'usa', 'politics_and_institutions.json');
+  const evidenceFile = path.join(root, 'usa', 'evidence_registry.json');
+  const politics = read(politicsFile);
+  const evidence = read(evidenceFile);
+  politics.political_actors[0].practical_influence = {
+    status: 'accepted',
+    source_ids: ['src_usa_white_house_administration', 'src_usa_rubio_acting_nsa_reuters_2025'],
+    source_family_ids: ['family_the_white_house', 'family_reuters'],
+    minimum_independent_source_families: 2,
+  };
+  evidence.sources.find(item => item.source_id === 'src_usa_rubio_acting_nsa_reuters_2025').published_at = '2025-09-02';
+  write(politicsFile, politics);
+  write(evidenceFile, evidence);
+}, 'practical influence depends on post-bookmark source src_usa_rubio_acting_nsa_reuters_2025');
+
+mutation('A20 authority branch provenance must resolve', root => {
+  const file = path.join(root, 'twn', 'war_authority_workflow.json');
+  const value = read(file);
+  value.foreign_support_branches[0].source_ids.push('src_missing_branch_provenance');
+  write(file, value);
+}, 'branch_twn_request_foreign_support cites missing src_missing_branch_provenance');
+
 console.log(JSON.stringify({status: failures.length ? 'FAIL' : 'PASS', regressions: results, failures}, null, 2));
 if (failures.length) process.exit(1);
