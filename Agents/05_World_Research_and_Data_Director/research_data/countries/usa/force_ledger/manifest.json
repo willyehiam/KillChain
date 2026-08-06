@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "force_ledger_id": "force_ledger_usa_2025_09_01",
   "country_id": "country_usa",
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
@@ -44,16 +44,49 @@
       "United States Coast Guard"
     ],
     "individualization_rule": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision",
-    "covered_domains": [
-      "ground",
-      "maritime",
-      "air",
-      "space",
-      "cyber",
-      "joint"
-    ],
     "exclusion_notes": [
       "No exact headquarters coordinates, current mobile positions, covert organizations, or vulnerable component locations are collected in this slice."
+    ],
+    "coverage_matrix": [
+      {
+        "coverage_id": "coverage_usa_combat_aircraft",
+        "service": "air_force",
+        "domain": "air",
+        "organization_depth": "identified",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "not_started",
+        "conservation": "structured",
+        "notes": "Public national aggregate slice only; not decision usable."
+      },
+      {
+        "coverage_id": "coverage_usa_surface_combatant",
+        "service": "navy",
+        "domain": "maritime",
+        "organization_depth": "identified",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "not_started",
+        "conservation": "structured",
+        "notes": "Public national aggregate slice only; not decision usable."
+      },
+      {
+        "coverage_id": "coverage_usa_joint_command_network",
+        "service": "joint",
+        "domain": "joint",
+        "organization_depth": "identified",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "not_started",
+        "conservation": "structured",
+        "notes": "Public national aggregate slice only; not decision usable."
+      }
     ]
   },
   "dataset_paths": {
@@ -67,26 +100,28 @@
     "conservation": "conservation.ndjson",
     "facilities": null,
     "sources": "sources.ndjson",
-    "contradictions": "contradictions.ndjson"
+    "contradictions": "contradictions.ndjson",
+    "relationships": "relationships.ndjson"
   },
   "reconciliation": {
-    "state": "partial",
+    "state": "blocked_by_unknowns",
     "organization_records": 31,
     "platform_records": 0,
     "equipment_type_records": 8,
-    "inventory_records": 0,
-    "deployment_records": 0,
-    "maintenance_records": 0,
+    "inventory_records": 3,
+    "deployment_records": 3,
+    "maintenance_records": 3,
     "construction_records": 0,
-    "conservation_records": 0,
+    "conservation_records": 3,
     "exact_quantity_records": 0,
     "range_quantity_records": 0,
-    "unknown_quantity_records": 0,
+    "unknown_quantity_records": 3,
     "open_conservation_exceptions": 0,
     "double_booking_exceptions": 0,
     "orphan_platform_records": 0,
     "orphan_organization_records": 0,
-    "expired_records": 0
+    "expired_records": 0,
+    "relationship_records": 32
   },
   "conservation_policy": {
     "equation": "opening_plus_inflows_equals_closing_states_plus_outflows",
@@ -114,9 +149,25 @@
     "Organization personnel, readiness, mobilization delays, and current force assignments remain unknown in this slice.",
     "The aggregate equipment taxonomy records do not assert models, quantities, possession totals, readiness, or disposition.",
     "National equipment totals have not been reconciled across accounting states.",
-    "Named platforms, inventory pools, deployments, maintenance, construction, conservation, facilities, and logistics dependencies remain unresolved."
+    "Named platforms and exact platform totals remain deliberately unresolved; the accepted operational slice is national aggregate only.",
+    "Construction programs remain unresolved; explicit coverage status prevents absence from being interpreted as zero."
   ],
   "reviewed_at": "2026-08-06",
   "review_after": "2026-11-06",
-  "notes": "First accepted Tier A national organization slice. It distinguishes civilian authority, military departments, service administration, reserve components, and operational combatant commands while withholding unsupported operational detail."
+  "notes": "First accepted Tier A national organization slice. It distinguishes civilian authority, military departments, service administration, reserve components, and operational combatant commands while withholding unsupported operational detail.",
+  "acceptance": {
+    "schema_valid": true,
+    "internally_consistent": true,
+    "research_complete": false,
+    "decision_usable": false,
+    "simulation_ready": false,
+    "untested_claims": [
+      "National inventory completeness, exact readiness, and subnational disposition are not tested by this packet."
+    ],
+    "blockers": [
+      "Exact or bounded conserved inventory is not yet accepted.",
+      "Named mission decisive platforms and executable support dependencies are not yet resolved.",
+      "Construction coverage is not started and maintenance quantities remain unknown."
+    ]
+  }
 }

@@ -6,6 +6,10 @@
   "type": "object",
   "required": [
     "equipment_type_id",
+    "ontology_id",
+    "parent_equipment_type_id",
+    "counting_unit",
+    "aggregation_rule",
     "display_name",
     "taxonomy",
     "origin_country_ids",
@@ -15,6 +19,7 @@
     "crew_requirements",
     "mobility",
     "support_dependency_types",
+    "dependency_requirements",
     "measured_characteristics",
     "temporal_validity",
     "provenance"
@@ -22,6 +27,40 @@
   "properties": {
     "equipment_type_id": {
       "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "ontology_id": {
+      "description": "Country independent ontology identifier used for cross country comparison and package compatibility.",
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "parent_equipment_type_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "counting_unit": {
+      "type": "string",
+      "enum": [
+        "platform",
+        "equipment_item",
+        "launcher",
+        "battery",
+        "munition",
+        "capacity_unit"
+      ]
+    },
+    "aggregation_rule": {
+      "type": "string",
+      "enum": [
+        "leaf_counts_may_be_summed_when_scopes_are_mutually_exclusive",
+        "parent_is_reconciliation_only_and_must_not_be_summed_with_children",
+        "capability_capacity_is_not_additive",
+        "unknown"
+      ]
     },
     "display_name": {
       "type": "string",
@@ -180,19 +219,27 @@
             "orbital",
             "portable",
             "virtual",
+            "varies",
             "other"
           ]
         },
         "self_deploying": {
-          "type": "boolean"
+          "type": [
+            "boolean",
+            "null"
+          ]
         },
         "strategic_lift_required": {
-          "type": "boolean"
+          "type": [
+            "boolean",
+            "null"
+          ]
         }
       },
       "additionalProperties": false
     },
     "support_dependency_types": {
+      "description": "Search index only. Executable package logic must use dependency_requirements.",
       "type": "array",
       "uniqueItems": true,
       "items": {
@@ -215,6 +262,96 @@
           "strategic_lift",
           "other"
         ]
+      }
+    },
+    "dependency_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "dependency_id",
+          "dependency_kind",
+          "required_equipment_type_id",
+          "required_capability_id",
+          "quantity",
+          "substitution_allowed",
+          "conditions"
+        ],
+        "properties": {
+          "dependency_id": {
+            "$ref": "common.schema.json#/$defs/stableId"
+          },
+          "dependency_kind": {
+            "type": "string",
+            "enum": [
+              "crew",
+              "fuel",
+              "electric_power",
+              "runway",
+              "port",
+              "launcher",
+              "radar",
+              "command_network",
+              "satellite_link",
+              "maintenance_facility",
+              "spares",
+              "munition",
+              "tanker",
+              "escort",
+              "strategic_lift",
+              "other"
+            ]
+          },
+          "required_equipment_type_id": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/stableId"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required_capability_id": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/stableId"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "quantity": {
+            "$ref": "common.schema.json#/$defs/quantityEstimate"
+          },
+          "substitution_allowed": {
+            "type": "boolean"
+          },
+          "conditions": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "allOf": [
+          {
+            "not": {
+              "properties": {
+                "required_equipment_type_id": {
+                  "type": "null"
+                },
+                "required_capability_id": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "required_equipment_type_id",
+                "required_capability_id"
+              ]
+            }
+          }
+        ],
+        "additionalProperties": false
       }
     },
     "measured_characteristics": {

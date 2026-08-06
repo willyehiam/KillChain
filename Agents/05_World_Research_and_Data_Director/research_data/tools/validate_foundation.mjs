@@ -37,6 +37,7 @@ const NEW_SCHEMAS = [
   "country_registry.schema.json",
   "country_dossier.schema.json",
   "military_organization_record.schema.json",
+  "military_organization_relationship.schema.json",
   "equipment_type_record.schema.json",
   "force_inventory_record.schema.json",
   "force_deployment_record.schema.json",

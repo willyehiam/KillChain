@@ -68,6 +68,8 @@ const PRIMARY_ID_FIELDS = [
   "bookmark_state_id",
   "matrix_id",
   "force_ledger_id",
+  "relationship_id",
+  "equipment_type_id",
   "organization_id",
   "inventory_record_id",
   "deployment_id",
@@ -84,7 +86,20 @@ const PRIMARY_ID_FIELDS = [
   "authority_id",
   "theater_id",
 ];
-const STRONG_PRIMARY_ID_FIELDS = new Set(PRIMARY_ID_FIELDS.slice(0, 13));
+const STRONG_PRIMARY_ID_FIELDS = new Set([
+  "source_id",
+  "claim_id",
+  "contradiction_set_id",
+  "observation_id",
+  "derived_id",
+  "condition_id",
+  "event_id",
+  "manifest_id",
+  "registry_id",
+  "bookmark_state_id",
+  "matrix_id",
+  "force_ledger_id",
+]);
 const UNKNOWN_EXPLANATION_PATTERN = /\b(?:absent|empty|no|not|pending|shell|unknown|unresolved|yet)\b/i;
 const FIREWALL_USES = new Set([
   "reference_only_not_initial_state",
@@ -227,13 +242,15 @@ function primaryIdentity(record) {
     const value = record[field];
     if (typeof value !== "string") continue;
     if (STRONG_PRIMARY_ID_FIELDS.has(field)) return { field, value };
+    if (field === "relationship_id" && record.relationship_type) return { field, value };
+    if (field === "equipment_type_id" && record.taxonomy) return { field, value };
     if (field === "organization_id" && record.organization_kind) return { field, value };
     if (field === "inventory_record_id" && record.inventory_kind) return { field, value };
     if (field === "deployment_id" && record.entity_type && record.assignment) return { field, value };
     if (field === "maintenance_record_id" && record.maintenance_kind) return { field, value };
     if (field === "construction_record_id" && record.program_or_lot) return { field, value };
     if (field === "conservation_record_id" && record.period && record.opening_inventory) return { field, value };
-    if (field === "platform_id" && record.platform_kind) return { field, value };
+    if (field === "platform_id" && (record.platform_kind || record.identity)) return { field, value };
     if (field === "facility_id" && record.facility_type && record.name) return { field, value };
     if (field === "site_id" && record.site_type && record.name) return { field, value };
     if (field === "route_id" && record.route_type) return { field, value };

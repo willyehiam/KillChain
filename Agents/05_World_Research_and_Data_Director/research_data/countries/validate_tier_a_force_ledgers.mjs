@@ -14,6 +14,7 @@ const schemaFiles = [
   "common.schema.json",
   "force_ledger_manifest.schema.json",
   "military_organization_record.schema.json",
+  "military_organization_relationship.schema.json",
   "equipment_type_record.schema.json",
   "force_platform_record.schema.json",
   "force_inventory_record.schema.json",
@@ -30,6 +31,11 @@ const families = {
     pathKey: "organizations",
     countKey: "organization_records",
     schemaFile: "military_organization_record.schema.json",
+  },
+  relationships: {
+    pathKey: "relationships",
+    countKey: "relationship_records",
+    schemaFile: "military_organization_relationship.schema.json",
   },
   equipment_types: {
     pathKey: "equipment_types",
@@ -261,6 +267,45 @@ function collectSourceReferences(value, references = new Set()) {
   return references;
 }
 
+function stableRecordId(record) {
+  return Object.entries(record).find(([key]) => key.endsWith("_id"))?.[1] ?? null;
+}
+
+function duplicateRecordIds(recordsByFamily, manifestPath, errors) {
+  const seen = new Map();
+  for (const [family, records] of Object.entries(recordsByFamily)) {
+    for (const record of records) {
+      const id = stableRecordId(record);
+      if (!id) continue;
+      if (seen.has(id)) errors.push(`${manifestPath}: duplicate record id ${id} in ${seen.get(id)} and ${family}`);
+      seen.set(id, family);
+    }
+  }
+  return seen;
+}
+
+function detectDirectedCycles(edges, label, errors) {
+  const adjacency = new Map();
+  for (const [source, target] of edges) {
+    if (!adjacency.has(source)) adjacency.set(source, []);
+    adjacency.get(source).push(target);
+  }
+  const visiting = new Set();
+  const visited = new Set();
+  function visit(node, trail) {
+    if (visiting.has(node)) {
+      errors.push(`${label}: directed cycle ${[...trail, node].join(" -> ")}`);
+      return;
+    }
+    if (visited.has(node)) return;
+    visiting.add(node);
+    for (const target of adjacency.get(node) ?? []) visit(target, [...trail, node]);
+    visiting.delete(node);
+    visited.add(node);
+  }
+  for (const node of adjacency.keys()) visit(node, []);
+}
+
 const report = {
   status: "PASS",
   bookmark_id: bookmarkId,
@@ -382,21 +427,245 @@ for (const countryCode of countryCodes) {
     }
   }
 
+  const allRecordIds = duplicateRecordIds(familyRecords, manifestPath, countryErrors);
   const organizations = familyRecords.organizations ?? [];
+  const relationships = familyRecords.relationships ?? [];
+  const equipmentTypes = familyRecords.equipment_types ?? [];
+  const platforms = familyRecords.platforms ?? [];
+  const inventory = familyRecords.inventory ?? [];
+  const deployments = familyRecords.deployments ?? [];
+  const maintenance = familyRecords.maintenance ?? [];
+  const construction = familyRecords.construction ?? [];
+  const conservation = familyRecords.conservation ?? [];
   const organizationIds = new Set(organizations.map((record) => record.organization_id));
+  const relationshipIds = new Set(relationships.map((record) => record.relationship_id));
+  const equipmentById = new Map(equipmentTypes.map((record) => [record.equipment_type_id, record]));
+  const platformIds = new Set(platforms.map((record) => record.platform_id));
+  const inventoryById = new Map(inventory.map((record) => [record.inventory_record_id, record]));
+  const deploymentIds = new Set(deployments.map((record) => record.deployment_id));
+  const maintenanceIds = new Set(maintenance.map((record) => record.maintenance_record_id));
+  const conservationIds = new Set(conservation.map((record) => record.conservation_record_id));
+
+  const displayEdges = [];
   for (const organization of organizations) {
-    if (organization.parent_organization_id && !organizationIds.has(organization.parent_organization_id)) {
-      countryErrors.push(
-        `${manifestPath}: organization ${organization.organization_id} has unresolved parent ${organization.parent_organization_id}`,
-      );
+    const parent = organization.display_parent_organization_id;
+    if (parent && !organizationIds.has(parent)) {
+      countryErrors.push(`${manifestPath}: organization ${organization.organization_id} has unresolved display parent ${parent}`);
+    }
+    if (parent === organization.organization_id) {
+      countryErrors.push(`${manifestPath}: organization ${organization.organization_id} is its own display parent`);
+    }
+    if (parent) displayEdges.push([parent, organization.organization_id]);
+    for (const relationshipId of organization.relationship_record_ids ?? []) {
+      if (!relationshipIds.has(relationshipId)) {
+        countryErrors.push(`${manifestPath}: organization ${organization.organization_id} references unresolved relationship ${relationshipId}`);
+      }
+    }
+    for (const inventoryId of organization.inventory_record_ids ?? []) {
+      if (!inventoryById.has(inventoryId)) {
+        countryErrors.push(`${manifestPath}: organization ${organization.organization_id} references unresolved inventory ${inventoryId}`);
+      }
     }
     for (const supportedId of organization.supported_organization_ids ?? []) {
       if (!organizationIds.has(supportedId)) {
-        countryErrors.push(
-          `${manifestPath}: organization ${organization.organization_id} supports unresolved organization ${supportedId}`,
-        );
+        countryErrors.push(`${manifestPath}: organization ${organization.organization_id} supports unresolved organization ${supportedId}`);
       }
     }
+  }
+  detectDirectedCycles(displayEdges, `${manifestPath}: display containment`, countryErrors);
+
+  const authorityTypes = new Set([
+    "administrative_control",
+    "operational_control",
+    "tactical_control",
+    "force_assignment",
+    "mobilization_authority",
+    "state_control",
+    "federal_activation",
+    "party_control",
+  ]);
+  const authorityEdgesByType = new Map();
+  for (const relationship of relationships) {
+    if (!organizationIds.has(relationship.source_organization_id)) {
+      countryErrors.push(`${manifestPath}: relationship ${relationship.relationship_id} has unresolved source organization`);
+    }
+    if (!organizationIds.has(relationship.target_organization_id)) {
+      countryErrors.push(`${manifestPath}: relationship ${relationship.relationship_id} has unresolved target organization`);
+    }
+    if (relationship.source_organization_id === relationship.target_organization_id) {
+      countryErrors.push(`${manifestPath}: relationship ${relationship.relationship_id} is self referential`);
+    }
+    for (const organizationId of [relationship.source_organization_id, relationship.target_organization_id]) {
+      const organization = organizations.find((candidate) => candidate.organization_id === organizationId);
+      if (organization && !organization.relationship_record_ids.includes(relationship.relationship_id)) {
+        countryErrors.push(`${manifestPath}: relationship ${relationship.relationship_id} is missing from incident organization ${organizationId}`);
+      }
+    }
+    if (relationship.authority_scope.may_release_for_mission && !relationship.authority_scope.may_issue_orders) {
+      countryErrors.push(`${manifestPath}: relationship ${relationship.relationship_id} may release forces but may not issue orders`);
+    }
+    if (authorityTypes.has(relationship.relationship_type) && relationship.activation_state === "active") {
+      if (!authorityEdgesByType.has(relationship.relationship_type)) authorityEdgesByType.set(relationship.relationship_type, []);
+      authorityEdgesByType.get(relationship.relationship_type).push([
+        relationship.source_organization_id,
+        relationship.target_organization_id,
+      ]);
+    }
+  }
+  for (const [type, edges] of authorityEdgesByType) {
+    detectDirectedCycles(edges, `${manifestPath}: ${type}`, countryErrors);
+  }
+
+  const ontologyIds = new Set();
+  for (const equipment of equipmentTypes) {
+    if (ontologyIds.has(equipment.ontology_id)) {
+      countryErrors.push(`${manifestPath}: duplicate ontology_id ${equipment.ontology_id}`);
+    }
+    ontologyIds.add(equipment.ontology_id);
+    if (equipment.parent_equipment_type_id && !equipmentById.has(equipment.parent_equipment_type_id)) {
+      countryErrors.push(`${manifestPath}: equipment ${equipment.equipment_type_id} has unresolved parent equipment type`);
+    }
+    if (equipment.taxonomy.entity_kind === "platform" && !equipment.individualization.supported) {
+      countryErrors.push(`${manifestPath}: platform type ${equipment.equipment_type_id} prohibits required individualization`);
+    }
+    if (equipment.mobility.mobility_kind === "varies" &&
+      (equipment.mobility.self_deploying !== null || equipment.mobility.strategic_lift_required !== null)) {
+      countryErrors.push(`${manifestPath}: varied mobility type ${equipment.equipment_type_id} asserts uniform deployment booleans`);
+    }
+    const dependencyIds = new Set();
+    for (const dependency of equipment.dependency_requirements) {
+      if (dependencyIds.has(dependency.dependency_id)) {
+        countryErrors.push(`${manifestPath}: duplicate dependency ${dependency.dependency_id}`);
+      }
+      dependencyIds.add(dependency.dependency_id);
+      if (dependency.required_equipment_type_id && !equipmentById.has(dependency.required_equipment_type_id)) {
+        countryErrors.push(`${manifestPath}: dependency ${dependency.dependency_id} references unresolved equipment type`);
+      }
+    }
+  }
+
+  for (const platform of platforms) {
+    const equipment = equipmentById.get(platform.equipment_type_id);
+    if (!equipment) countryErrors.push(`${manifestPath}: platform ${platform.platform_id} has unresolved equipment type`);
+    if (platform.command_organization_id && !organizationIds.has(platform.command_organization_id)) {
+      countryErrors.push(`${manifestPath}: platform ${platform.platform_id} has unresolved command organization`);
+    }
+    if (platform.current_deployment_id && !deploymentIds.has(platform.current_deployment_id)) {
+      countryErrors.push(`${manifestPath}: platform ${platform.platform_id} has unresolved current deployment`);
+    }
+  }
+
+  for (const pool of inventory) {
+    const equipment = equipmentById.get(pool.equipment_type_id);
+    if (!equipment) {
+      countryErrors.push(`${manifestPath}: inventory ${pool.inventory_record_id} has unresolved equipment type`);
+      continue;
+    }
+    if (pool.quantity.unit !== equipment.counting_unit) {
+      countryErrors.push(`${manifestPath}: inventory ${pool.inventory_record_id} unit differs from equipment counting unit`);
+    }
+    if (pool.organization_id && !organizationIds.has(pool.organization_id)) {
+      countryErrors.push(`${manifestPath}: inventory ${pool.inventory_record_id} has unresolved organization`);
+    }
+    if (pool.current_deployment_id && !deploymentIds.has(pool.current_deployment_id)) {
+      countryErrors.push(`${manifestPath}: inventory ${pool.inventory_record_id} has unresolved deployment`);
+    }
+    if (pool.conservation_record_id && !conservationIds.has(pool.conservation_record_id)) {
+      countryErrors.push(`${manifestPath}: inventory ${pool.inventory_record_id} has unresolved conservation record`);
+    }
+    for (const maintenanceId of pool.maintenance.maintenance_record_ids ?? []) {
+      if (!maintenanceIds.has(maintenanceId)) {
+        countryErrors.push(`${manifestPath}: inventory ${pool.inventory_record_id} has unresolved maintenance ${maintenanceId}`);
+      }
+    }
+    for (const platformId of pool.individual_platform_ids) {
+      if (!platformIds.has(platformId)) {
+        countryErrors.push(`${manifestPath}: inventory ${pool.inventory_record_id} references unresolved platform ${platformId}`);
+      }
+    }
+  }
+
+  for (const deployment of deployments) {
+    const entityExists =
+      (deployment.entity_type === "inventory_pool" && inventoryById.has(deployment.entity_id)) ||
+      (deployment.entity_type === "individual_platform" && platformIds.has(deployment.entity_id)) ||
+      (deployment.entity_type === "organization" && organizationIds.has(deployment.entity_id)) ||
+      deployment.entity_type === "task_force" || deployment.entity_type === "unknown_force";
+    if (!entityExists) countryErrors.push(`${manifestPath}: deployment ${deployment.deployment_id} has unresolved entity`);
+    if (deployment.command_organization_id && !organizationIds.has(deployment.command_organization_id)) {
+      countryErrors.push(`${manifestPath}: deployment ${deployment.deployment_id} has unresolved command organization`);
+    }
+    if (deployment.entity_type === "inventory_pool") {
+      const pool = inventoryById.get(deployment.entity_id);
+      const equipment = pool ? equipmentById.get(pool.equipment_type_id) : null;
+      const allowedDependencies = new Set(equipment?.dependency_requirements.map((dependency) => dependency.dependency_id) ?? []);
+      for (const dependencyId of deployment.support_dependency_ids) {
+        if (!allowedDependencies.has(dependencyId)) {
+          countryErrors.push(`${manifestPath}: deployment ${deployment.deployment_id} uses unresolved dependency ${dependencyId}`);
+        }
+      }
+    }
+  }
+
+  for (const record of maintenance) {
+    const subjectExists = record.subject_type === "inventory_pool"
+      ? inventoryById.has(record.subject_id)
+      : platformIds.has(record.subject_id);
+    if (!subjectExists) countryErrors.push(`${manifestPath}: maintenance ${record.maintenance_record_id} has unresolved subject`);
+  }
+
+  for (const record of construction) {
+    if (!equipmentById.has(record.equipment_type_id)) {
+      countryErrors.push(`${manifestPath}: construction ${record.construction_record_id} has unresolved equipment type`);
+    }
+  }
+
+  for (const record of conservation) {
+    const equipment = equipmentById.get(record.equipment_type_id);
+    if (!equipment) countryErrors.push(`${manifestPath}: conservation ${record.conservation_record_id} has unresolved equipment type`);
+    if (equipment && record.counting_unit !== equipment.counting_unit) {
+      countryErrors.push(`${manifestPath}: conservation ${record.conservation_record_id} unit differs from equipment counting unit`);
+    }
+    const referencedInventory = new Set();
+    for (const state of record.closing_states) {
+      for (const inventoryId of state.inventory_record_ids) {
+        if (!inventoryById.has(inventoryId)) {
+          countryErrors.push(`${manifestPath}: conservation ${record.conservation_record_id} has unresolved inventory ${inventoryId}`);
+        }
+        if (referencedInventory.has(inventoryId)) {
+          countryErrors.push(`${manifestPath}: conservation ${record.conservation_record_id} counts inventory ${inventoryId} twice`);
+        }
+        referencedInventory.add(inventoryId);
+      }
+    }
+    for (const flow of [...record.inflows, ...record.outflows]) {
+      for (const sourceRecordId of flow.source_record_ids) {
+        if (!allRecordIds.has(sourceRecordId)) {
+          countryErrors.push(`${manifestPath}: conservation ${record.conservation_record_id} has unresolved flow record ${sourceRecordId}`);
+        }
+      }
+    }
+  }
+
+  const acceptance = manifest.acceptance;
+  if (acceptance.simulation_ready && (!acceptance.decision_usable || !acceptance.research_complete)) {
+    countryErrors.push(`${manifestPath}: simulation_ready requires decision_usable and research_complete`);
+  }
+  if (acceptance.decision_usable) {
+    for (const family of ["relationships", "inventory", "deployments", "maintenance", "conservation"]) {
+      if ((counts[family] ?? 0) === 0) countryErrors.push(`${manifestPath}: decision_usable ledger has no ${family}`);
+    }
+    if (inventory.every((record) => record.quantity.kind === "unknown")) {
+      countryErrors.push(`${manifestPath}: decision_usable ledger has only unknown inventory quantities`);
+    }
+    if (manifest.scope.coverage_matrix.some((coverage) =>
+      ["organization_depth", "equipment_taxonomy", "inventory", "dispositions", "maintenance", "conservation"]
+        .some((field) => coverage[field] !== "decision_usable"))) {
+      countryErrors.push(`${manifestPath}: decision_usable ledger has incomplete coverage matrix rows`);
+    }
+  }
+  if (manifest.status === "collecting" && (acceptance.decision_usable || acceptance.simulation_ready)) {
+    countryErrors.push(`${manifestPath}: collecting ledger cannot be decision_usable or simulation_ready`);
   }
 
   if (manifest.status === "shell") {
@@ -424,6 +693,7 @@ for (const countryCode of countryCodes) {
   report.countries[countryCode] = {
     status: countryErrors.length ? "FAIL" : "PASS",
     manifest_status: manifest.status,
+    acceptance: manifest.acceptance,
     records: counts,
     unknown_statements: manifest.unknowns.length,
   };

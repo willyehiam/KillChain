@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/military_organization_relationship.schema.json",
+  "title": "Military Organization Relationship Record",
+  "description": "A sourced, dated, and conditional relationship between two organizations. Relationships are independent of display containment and may coexist.",
+  "type": "object",
+  "required": [
+    "relationship_id",
+    "country_id",
+    "source_organization_id",
+    "target_organization_id",
+    "relationship_type",
+    "authority_scope",
+    "activation_state",
+    "conditions",
+    "temporal_validity",
+    "provenance"
+  ],
+  "properties": {
+    "relationship_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "country_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "source_organization_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "target_organization_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "relationship_type": {
+      "type": "string",
+      "enum": [
+        "administrative_control",
+        "operational_control",
+        "tactical_control",
+        "supporting",
+        "supported",
+        "advisory",
+        "organize_train_equip",
+        "force_assignment",
+        "mobilization_authority",
+        "mobilization_assignment",
+        "state_control",
+        "federal_activation",
+        "party_control",
+        "statutory_oversight",
+        "attached",
+        "dual_hatted",
+        "other",
+        "unknown"
+      ]
+    },
+    "authority_scope": {
+      "type": "object",
+      "required": [
+        "domains",
+        "missions",
+        "may_issue_orders",
+        "may_reassign_forces",
+        "may_release_for_mission"
+      ],
+      "properties": {
+        "domains": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/domain"
+          }
+        },
+        "missions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "may_issue_orders": {
+          "type": "boolean"
+        },
+        "may_reassign_forces": {
+          "type": "boolean"
+        },
+        "may_release_for_mission": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "activation_state": {
+      "type": "string",
+      "enum": [
+        "active",
+        "conditional",
+        "dormant",
+        "unknown"
+      ]
+    },
+    "conditions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "precedence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "temporal_validity": {
+      "$ref": "common.schema.json#/$defs/temporalValidity"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

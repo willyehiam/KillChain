@@ -13,9 +13,10 @@ These files are research contracts. They do not implement the simulation engine.
 
 | Record | Responsibility | Must not be used for |
 | --- | --- | --- |
-| `force_ledger_manifest.schema.json` | Coverage, file paths, reconciliation status, and review state for one country | Individual assets or quantities |
-| `military_organization_record.schema.json` | Services, commands, formations, units, personnel, readiness, and mobilization relationships | Equipment totals |
-| `equipment_type_record.schema.json` | Normalized class, model, variant, roles, mobility, support needs, and sourced characteristics | Possession or disposition |
+| `force_ledger_manifest.schema.json` | Independent acceptance states, explicit coverage matrix, file paths, reconciliation status, and review state | Claiming that a schema pass means decision usability |
+| `military_organization_record.schema.json` | Organization identity, display containment, personnel, readiness, and mobilization state | Granting command authority from the display tree |
+| `military_organization_relationship.schema.json` | Concurrent, sourced, conditional command, support, mobilization, state, party, and statutory relationships | Display containment or equipment totals |
+| `equipment_type_record.schema.json` | Global ontology identity, hierarchy, conserved counting unit, individualization, mobility, and executable dependency requirements | Possession or disposition |
 | `force_platform_record.schema.json` | One uniquely represented hull, airframe, satellite, launcher, or named system | Anonymous pooled equipment |
 | `force_inventory_record.schema.json` | One mutually exclusive equipment pool or aggregate reconciliation total | Counting an individualized platform twice |
 | `force_deployment_record.schema.json` | Dated disposition, assignment, movement, commitment, and support dependencies | Player knowledge or intelligence tracks |
@@ -143,4 +144,3 @@ node Agents/05_World_Research_and_Data_Director/research_data/schemas/validate_f
 The validator parses every schema and checks the valid fixture for reference
 integrity, temporal ordering, range ordering, quantity conservation, readiness
 bounds, deployment bounds, and double counting between platforms and pools.
-

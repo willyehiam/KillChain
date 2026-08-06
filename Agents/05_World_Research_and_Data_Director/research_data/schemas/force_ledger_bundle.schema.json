@@ -11,6 +11,7 @@
     "as_of",
     "manifest",
     "organizations",
+    "relationships",
     "equipment_types",
     "platforms",
     "inventory_pools",
@@ -39,6 +40,12 @@
       "type": "array",
       "items": {
         "$ref": "military_organization_record.schema.json"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "military_organization_relationship.schema.json"
       }
     },
     "equipment_types": {

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://killweb.game/research/schemas/military_organization_record.schema.json",
   "title": "Military Organization and Formation Record",
-  "description": "A dated node in a country's military, government security, or mobilization command hierarchy.",
+  "description": "A dated organization node. Display containment is intentionally separate from sourced command, support, mobilization, party, and statutory relationships.",
   "type": "object",
   "required": [
     "organization_id",
@@ -13,8 +13,8 @@
     "component",
     "organization_kind",
     "echelon",
-    "parent_organization_id",
-    "command_relationship",
+    "display_parent_organization_id",
+    "relationship_record_ids",
     "headquarters_location_id",
     "personnel",
     "readiness",
@@ -62,6 +62,7 @@
         "general_staff",
         "joint_command",
         "service_command",
+        "strategic_arm",
         "operational_command",
         "formation",
         "unit",
@@ -80,7 +81,9 @@
         "ministry",
         "general_staff",
         "theater_command",
+        "functional_command",
         "service_command",
+        "strategic_arm",
         "fleet",
         "army_group",
         "army",
@@ -102,7 +105,8 @@
         "other"
       ]
     },
-    "parent_organization_id": {
+    "display_parent_organization_id": {
+      "description": "Navigation containment only. This field never grants command, support, mobilization, ownership, or release authority.",
       "anyOf": [
         {
           "$ref": "common.schema.json#/$defs/stableId"
@@ -112,19 +116,13 @@
         }
       ]
     },
-    "command_relationship": {
-      "type": "string",
-      "enum": [
-        "organic",
-        "operational_control",
-        "tactical_control",
-        "administrative_control",
-        "supporting",
-        "attached",
-        "mobilization_assignment",
-        "dual_hatted",
-        "unknown"
-      ]
+    "relationship_record_ids": {
+      "description": "Typed external relationship records involving this organization. Empty only when no relationship has yet been accepted.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
     },
     "supported_organization_ids": {
       "type": "array",

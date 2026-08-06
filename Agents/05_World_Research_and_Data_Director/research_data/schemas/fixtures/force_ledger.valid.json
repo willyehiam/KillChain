@@ -4,7 +4,7 @@
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
   "as_of": "2025-09-01T00:00:00Z",
   "manifest": {
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "force_ledger_id": "force_ledger_fixture_2025_09_01",
     "country_id": "country_fixture",
     "bookmark_id": "bookmark_global_fracture_2025_09_01",
@@ -39,7 +39,21 @@
         "air"
       ],
       "excluded_force_ids": [],
-      "exclusion_notes": []
+      "exclusion_notes": [],
+      "coverage_matrix": [
+        {
+          "coverage_id": "coverage_fixture_air",
+          "service": "air_force",
+          "domain": "air",
+          "organization_depth": "decision_usable",
+          "equipment_taxonomy": "decision_usable",
+          "inventory": "decision_usable",
+          "dispositions": "decision_usable",
+          "maintenance": "decision_usable",
+          "construction": "reconciled",
+          "conservation": "decision_usable"
+        }
+      ]
     },
     "dataset_paths": {
       "organizations": "organizations.ndjson",
@@ -52,7 +66,8 @@
       "conservation": "conservation.ndjson",
       "facilities": "facilities.ndjson",
       "sources": "sources.ndjson",
-      "contradictions": "contradictions.ndjson"
+      "contradictions": "contradictions.ndjson",
+      "relationships": "relationships.ndjson"
     },
     "reconciliation": {
       "state": "balanced",
@@ -71,7 +86,8 @@
       "double_booking_exceptions": 0,
       "orphan_platform_records": 0,
       "orphan_organization_records": 0,
-      "expired_records": 0
+      "expired_records": 0,
+      "relationship_records": 1
     },
     "conservation_policy": {
       "equation": "opening_plus_inflows_equals_closing_states_plus_outflows",
@@ -90,7 +106,20 @@
     ],
     "unknowns": [],
     "reviewed_at": "2025-09-01",
-    "review_after": "2025-10-01"
+    "review_after": "2025-10-01",
+    "acceptance": {
+      "schema_valid": true,
+      "internally_consistent": true,
+      "research_complete": true,
+      "decision_usable": true,
+      "simulation_ready": false,
+      "untested_claims": [
+        "Fixture does not test simulation runtime integration."
+      ],
+      "blockers": [
+        "Runtime integration is outside the schema fixture."
+      ]
+    }
   },
   "organizations": [
     {
@@ -102,8 +131,6 @@
       "component": "active",
       "organization_kind": "service_command",
       "echelon": "service_command",
-      "parent_organization_id": null,
-      "command_relationship": "organic",
       "headquarters_location_id": "location_fixture_air_base",
       "personnel": {
         "authorized": {
@@ -147,7 +174,11 @@
           "source_fixture"
         ],
         "method": "fixture"
-      }
+      },
+      "display_parent_organization_id": null,
+      "relationship_record_ids": [
+        "relationship_fixture_air_force_squadron_administrative_control"
+      ]
     },
     {
       "organization_id": "organization_fixture_squadron",
@@ -158,8 +189,6 @@
       "component": "active",
       "organization_kind": "formation",
       "echelon": "squadron",
-      "parent_organization_id": "organization_fixture_air_force",
-      "command_relationship": "organic",
       "headquarters_location_id": "location_fixture_air_base",
       "personnel": {
         "authorized": {
@@ -210,7 +239,11 @@
           "source_fixture"
         ],
         "method": "fixture"
-      }
+      },
+      "display_parent_organization_id": "organization_fixture_air_force",
+      "relationship_record_ids": [
+        "relationship_fixture_air_force_squadron_administrative_control"
+      ]
     }
   ],
   "equipment_types": [
@@ -277,7 +310,78 @@
           "source_fixture"
         ],
         "method": "fixture"
-      }
+      },
+      "ontology_id": "ontology_air_multirole_fighter",
+      "parent_equipment_type_id": null,
+      "counting_unit": "platform",
+      "aggregation_rule": "parent_is_reconciliation_only_and_must_not_be_summed_with_children",
+      "dependency_requirements": [
+        {
+          "dependency_id": "dependency_fixture_crew",
+          "dependency_kind": "crew",
+          "required_equipment_type_id": null,
+          "required_capability_id": "capability_crew",
+          "quantity": {
+            "kind": "unknown",
+            "unit": "capacity_unit",
+            "counting_rule": "Fixture dependency quantity."
+          },
+          "substitution_allowed": true,
+          "conditions": "Fixture requirement."
+        },
+        {
+          "dependency_id": "dependency_fixture_fuel",
+          "dependency_kind": "fuel",
+          "required_equipment_type_id": null,
+          "required_capability_id": "capability_fuel",
+          "quantity": {
+            "kind": "unknown",
+            "unit": "capacity_unit",
+            "counting_rule": "Fixture dependency quantity."
+          },
+          "substitution_allowed": true,
+          "conditions": "Fixture requirement."
+        },
+        {
+          "dependency_id": "dependency_fixture_runway",
+          "dependency_kind": "runway",
+          "required_equipment_type_id": null,
+          "required_capability_id": "capability_runway",
+          "quantity": {
+            "kind": "unknown",
+            "unit": "capacity_unit",
+            "counting_rule": "Fixture dependency quantity."
+          },
+          "substitution_allowed": true,
+          "conditions": "Fixture requirement."
+        },
+        {
+          "dependency_id": "dependency_fixture_maintenance_facility",
+          "dependency_kind": "maintenance_facility",
+          "required_equipment_type_id": null,
+          "required_capability_id": "capability_maintenance_facility",
+          "quantity": {
+            "kind": "unknown",
+            "unit": "capacity_unit",
+            "counting_rule": "Fixture dependency quantity."
+          },
+          "substitution_allowed": true,
+          "conditions": "Fixture requirement."
+        },
+        {
+          "dependency_id": "dependency_fixture_munition",
+          "dependency_kind": "munition",
+          "required_equipment_type_id": null,
+          "required_capability_id": "capability_munition",
+          "quantity": {
+            "kind": "unknown",
+            "unit": "capacity_unit",
+            "counting_rule": "Fixture dependency quantity."
+          },
+          "substitution_allowed": true,
+          "conditions": "Fixture requirement."
+        }
+      ]
     }
   ],
   "platforms": [
@@ -507,8 +611,8 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            121.0,
-            24.0
+            121,
+            24
           ]
         },
         "location_status": "reported_point",
@@ -714,6 +818,44 @@
         "residual_kind": "exact",
         "residual_value": 0,
         "unresolved_record_ids": []
+      },
+      "provenance": {
+        "evidence_state": "observed",
+        "confidence": "high",
+        "source_ids": [
+          "source_fixture"
+        ],
+        "method": "fixture"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "relationship_id": "relationship_fixture_air_force_squadron_administrative_control",
+      "country_id": "country_fixture",
+      "source_organization_id": "organization_fixture_air_force",
+      "target_organization_id": "organization_fixture_squadron",
+      "relationship_type": "administrative_control",
+      "authority_scope": {
+        "domains": [
+          "air"
+        ],
+        "missions": [
+          "fixture administration"
+        ],
+        "may_issue_orders": true,
+        "may_reassign_forces": true,
+        "may_release_for_mission": false
+      },
+      "activation_state": "active",
+      "conditions": [],
+      "precedence": 100,
+      "temporal_validity": {
+        "valid_from": "2025-01-01",
+        "valid_to": null,
+        "as_of": "2025-09-01T00:00:00Z",
+        "observed_at": "2025-08-15",
+        "review_after": "2025-10-01"
       },
       "provenance": {
         "evidence_state": "observed",
