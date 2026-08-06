@@ -1,0 +1,22 @@
+{
+  "as_of": "2025-09-01T00:00:00Z",
+  "ledgers": [
+    {
+      "country_id": "country_usa",
+      "manifest_id": "force_ledger_usa_2025_09_01",
+      "path": "../../../../countries/usa/force_ledger/organizations.ndjson"
+    },
+    {
+      "country_id": "country_chn",
+      "manifest_id": "force_ledger_chn_2025_09_01",
+      "path": "../../../../countries/chn/force_ledger/organizations.ndjson"
+    },
+    {
+      "country_id": "country_twn",
+      "manifest_id": "force_ledger_twn_2025_09_01",
+      "path": "../../../../countries/twn/force_ledger/organizations.ndjson"
+    }
+  ],
+  "exceptions": [],
+  "rule": "Every force reference must resolve to one canonical ledger organization. Inventory, readiness, deployment, and location remain unknown unless separately reconciled."
+}
