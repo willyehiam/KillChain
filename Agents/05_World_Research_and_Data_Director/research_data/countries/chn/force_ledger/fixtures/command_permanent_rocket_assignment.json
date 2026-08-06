@@ -1,0 +1,1 @@
+{"fixture_id":"chn_command_permanent_rocket_assignment","mutation":"activate_relationship","target_id":"relationship_chn_pla_rocket_force_eastern_theater_conditional_force_assignment","expected_diagnostic":"Eastern Theater Rocket Force participation must remain conditional"}
