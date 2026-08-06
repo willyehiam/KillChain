@@ -1,29 +1,63 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://killweb.game/research/schemas/force_inventory_record.schema.json",
-  "title": "National Force Inventory Record",
+  "title": "National Force Inventory Pool Record",
+  "description": "A mutually exclusive, quantity conserving inventory pool. Individually represented platforms are referenced rather than counted again.",
   "type": "object",
   "required": [
     "inventory_record_id",
+    "inventory_kind",
     "country_id",
+    "controller_id",
+    "service",
+    "component",
     "equipment_type_id",
     "domain",
     "category",
     "accounting_state",
     "quantity",
-    "as_of",
     "organization_id",
     "location_id",
-    "evidence_state",
-    "confidence",
-    "source_ids"
+    "readiness",
+    "maintenance",
+    "counting_scope",
+    "individual_platform_ids",
+    "temporal_validity",
+    "provenance"
   ],
   "properties": {
     "inventory_record_id": {
       "$ref": "common.schema.json#/$defs/stableId"
     },
+    "inventory_kind": {
+      "type": "string",
+      "enum": [
+        "equipment_pool",
+        "aggregate_total",
+        "unknown_estimate"
+      ]
+    },
     "country_id": {
       "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "owner_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "controller_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "service": {
+      "$ref": "common.schema.json#/$defs/service"
+    },
+    "component": {
+      "$ref": "common.schema.json#/$defs/component"
     },
     "equipment_type_id": {
       "$ref": "common.schema.json#/$defs/stableId"
@@ -33,17 +67,7 @@
       "minLength": 1
     },
     "domain": {
-      "type": "string",
-      "enum": [
-        "ground",
-        "maritime",
-        "air",
-        "space",
-        "cyber",
-        "information",
-        "logistics",
-        "joint"
-      ]
+      "$ref": "common.schema.json#/$defs/domain"
     },
     "category": {
       "type": "string",
@@ -53,88 +77,22 @@
       "$ref": "common.schema.json#/$defs/representationTier"
     },
     "accounting_state": {
-      "type": "string",
-      "enum": [
-        "active",
-        "committed",
-        "in_transit",
-        "training",
-        "maintenance",
-        "reserve",
-        "stored",
-        "under_construction",
-        "damaged",
-        "destroyed",
-        "exported",
-        "retired",
-        "captured",
-        "unknown"
-      ]
+      "$ref": "common.schema.json#/$defs/accountingState"
     },
     "quantity": {
-      "type": "object",
-      "required": [
-        "kind"
-      ],
-      "properties": {
-        "kind": {
-          "type": "string",
-          "enum": [
-            "exact",
-            "range",
-            "unknown"
-          ]
-        },
-        "value": {
-          "type": "integer",
-          "minimum": 0
-        },
-        "minimum": {
-          "type": "integer",
-          "minimum": 0
-        },
-        "maximum": {
-          "type": "integer",
-          "minimum": 0
-        }
-      },
-      "allOf": [
-        {
-          "if": {
-            "properties": {
-              "kind": {
-                "const": "exact"
-              }
-            }
-          },
-          "then": {
-            "required": [
-              "value"
-            ]
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "kind": {
-                "const": "range"
-              }
-            }
-          },
-          "then": {
-            "required": [
-              "minimum",
-              "maximum"
-            ]
-          }
-        }
-      ],
-      "additionalProperties": false
-    },
-    "as_of": {
-      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+      "$ref": "common.schema.json#/$defs/quantityEstimate"
     },
     "organization_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "formation_id": {
       "anyOf": [
         {
           "$ref": "common.schema.json#/$defs/stableId"
@@ -154,19 +112,7 @@
         }
       ]
     },
-    "readiness_band": {
-      "type": "string",
-      "enum": [
-        "unknown",
-        "unavailable",
-        "low",
-        "limited",
-        "standard",
-        "high",
-        "surge"
-      ]
-    },
-    "assignment_id": {
+    "current_deployment_id": {
       "anyOf": [
         {
           "$ref": "common.schema.json#/$defs/stableId"
@@ -176,35 +122,157 @@
         }
       ]
     },
-    "source_inventory_scope": {
-      "type": "string",
-      "enum": [
-        "national_total",
-        "service_total",
-        "formation_total",
-        "location_total",
-        "observed_presence",
-        "production_record",
-        "loss_record",
-        "transfer_record",
-        "other"
-      ]
+    "readiness": {
+      "type": "object",
+      "required": [
+        "band",
+        "basis",
+        "ready_quantity"
+      ],
+      "properties": {
+        "band": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "unavailable",
+            "low",
+            "limited",
+            "standard",
+            "high",
+            "surge"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "direct_public_status",
+            "official_aggregate",
+            "independent_assessment",
+            "derived_from_maintenance",
+            "scenario_assumption",
+            "unknown"
+          ]
+        },
+        "ready_quantity": {
+          "$ref": "common.schema.json#/$defs/quantityEstimate"
+        },
+        "mobilization_delay_hours": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "limiting_factors": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
     },
-    "evidence_state": {
-      "$ref": "common.schema.json#/$defs/evidenceState"
+    "maintenance": {
+      "type": "object",
+      "required": [
+        "state",
+        "quantity"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "not_reported",
+            "mixed",
+            "available",
+            "inspection",
+            "scheduled_maintenance",
+            "unscheduled_maintenance",
+            "overhaul",
+            "refit",
+            "modernization",
+            "repair",
+            "awaiting_parts",
+            "awaiting_facility",
+            "unknown"
+          ]
+        },
+        "quantity": {
+          "$ref": "common.schema.json#/$defs/quantityEstimate"
+        },
+        "maintenance_record_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/stableId"
+          }
+        }
+      },
+      "additionalProperties": false
     },
-    "confidence": {
-      "$ref": "common.schema.json#/$defs/confidence"
+    "counting_scope": {
+      "type": "object",
+      "required": [
+        "scope_kind",
+        "scope_id",
+        "mutually_exclusive_with"
+      ],
+      "properties": {
+        "scope_kind": {
+          "type": "string",
+          "enum": [
+            "national_total",
+            "service_total",
+            "component_total",
+            "command_total",
+            "formation_total",
+            "location_total",
+            "inventory_pool",
+            "observed_presence",
+            "other"
+          ]
+        },
+        "scope_id": {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        "parent_inventory_record_id": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/stableId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mutually_exclusive_with": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/stableId"
+          }
+        }
+      },
+      "additionalProperties": false
     },
-    "source_ids": {
+    "individual_platform_ids": {
+      "description": "Platforms represented individually within this scope. Their quantity is excluded from this record unless counting_rule explicitly states that this record is an aggregate parent used only for reconciliation.",
       "type": "array",
-      "minItems": 1,
       "uniqueItems": true,
       "items": {
         "$ref": "common.schema.json#/$defs/stableId"
       }
     },
-    "contradiction_set_id": {
+    "construction_record_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
+    },
+    "conservation_record_id": {
       "anyOf": [
         {
           "$ref": "common.schema.json#/$defs/stableId"
@@ -214,9 +282,41 @@
         }
       ]
     },
+    "temporal_validity": {
+      "$ref": "common.schema.json#/$defs/temporalValidity"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
     "notes": {
       "type": "string"
     }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "inventory_kind": {
+            "const": "aggregate_total"
+          }
+        },
+        "required": [
+          "inventory_kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "representation_tier": {
+            "enum": [
+              "formation",
+              "regional_network",
+              "national_capability",
+              "background_only"
+            ]
+          }
+        }
+      }
+    }
+  ],
   "additionalProperties": false
 }
