@@ -13,10 +13,10 @@
   "coverage": {
     "politics_and_institutions": {
       "status": "needs_review",
-      "record_count": 26,
-      "source_count": 19,
+      "record_count": 27,
+      "source_count": 23,
       "open_question_count": 3,
-      "notes": "Opening government, authority, succession, alliance context, institutions, and 20 relevant actors are sourced; independent review remains open."
+      "notes": "Opening government, authority, succession, alliance context, NSC statutory and advisory structure, institutions, and 20 relevant actors are sourced; independent review remains open."
     },
     "economy_trade_finance_resources": {
       "status": "collecting",
@@ -107,7 +107,11 @@
     "src_usa_house_democratic_leader",
     "src_usa_council_of_governors_2025",
     "src_usa_nato_hague_2025",
-    "src_usa_taiwan_relations_act"
+    "src_usa_taiwan_relations_act",
+    "src_usa_nsc_statute",
+    "src_usa_nspm1_nsc_organization_2025",
+    "src_usa_rubio_acting_nsa_reuters_2025",
+    "src_usa_nsc_restructuring_reuters_2025"
   ],
   "unknowns": [
     "The 20 actor opening roster is populated but still needs an independent political science and legal review.",
