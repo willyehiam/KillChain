@@ -4,7 +4,7 @@
   "country_id": "country_usa",
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
   "as_of": "2025-09-01T00:00:00Z",
-  "status": "shell",
+  "status": "collecting",
   "accounting_states": [
     "active",
     "committed",
@@ -22,10 +22,39 @@
     "unknown"
   ],
   "scope": {
-    "services": [],
-    "components": [],
-    "government_forces": [],
-    "individualization_rule": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision"
+    "services": [
+      "joint",
+      "army",
+      "navy",
+      "marine",
+      "air_force",
+      "space",
+      "coast_guard",
+      "cyber",
+      "special_operations"
+    ],
+    "components": [
+      "active",
+      "reserve",
+      "guard",
+      "civilian_agency"
+    ],
+    "government_forces": [
+      "United States Armed Forces",
+      "United States Coast Guard"
+    ],
+    "individualization_rule": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision",
+    "covered_domains": [
+      "ground",
+      "maritime",
+      "air",
+      "space",
+      "cyber",
+      "joint"
+    ],
+    "exclusion_notes": [
+      "No exact headquarters coordinates, current mobile positions, covert organizations, or vulnerable component locations are collected in this slice."
+    ]
   },
   "dataset_paths": {
     "organizations": "organizations.ndjson",
@@ -37,14 +66,14 @@
     "construction": "construction.ndjson",
     "conservation": "conservation.ndjson",
     "facilities": null,
-    "sources": null,
-    "contradictions": null
+    "sources": "sources.ndjson",
+    "contradictions": "contradictions.ndjson"
   },
   "reconciliation": {
-    "state": "not_started",
-    "organization_records": 0,
+    "state": "partial",
+    "organization_records": 31,
     "platform_records": 0,
-    "equipment_type_records": 0,
+    "equipment_type_records": 8,
     "inventory_records": 0,
     "deployment_records": 0,
     "maintenance_records": 0,
@@ -71,14 +100,23 @@
     "mission_resolution": "individual executing and supporting platforms",
     "aggregation_preserves_quantity": true
   },
-  "source_ids": [],
-  "unknowns": [
-    "Service, component, and command hierarchy records have not been accepted.",
-    "National equipment totals have not been reconciled across active, reserve, guard, training, maintenance, storage, construction, damage, loss, export, and retirement states.",
-    "Named platforms and quantity conserving pools have not been assigned.",
-    "Global deployments, home stations, readiness, maintenance, munitions, crews, sustainment, and commitments have not been reconciled."
+  "source_ids": [
+    "src_force_usa_dod_about",
+    "src_force_usa_dod_combatant_commands",
+    "src_force_usa_title10_section162_2024",
+    "src_force_usa_title10_section10101_2023",
+    "src_force_usa_crs_commanding_operations_2024",
+    "src_force_usa_crs_air_force_2025",
+    "src_force_usa_title14_section103_2024"
   ],
-  "reviewed_at": "2026-08-02",
-  "review_after": "2026-08-16",
-  "notes": "No platform can appear in a mission package until it exists in this ledger or a later accepted replacement. Empty arrays are explicit unknown coverage, not assertions of absence."
+  "unknowns": [
+    "Subordinate service commands, component commands, fleets, armies, wings, divisions, brigades, and equivalent formations have not been accepted.",
+    "Organization personnel, readiness, mobilization delays, and current force assignments remain unknown in this slice.",
+    "The aggregate equipment taxonomy records do not assert models, quantities, possession totals, readiness, or disposition.",
+    "National equipment totals have not been reconciled across accounting states.",
+    "Named platforms, inventory pools, deployments, maintenance, construction, conservation, facilities, and logistics dependencies remain unresolved."
+  ],
+  "reviewed_at": "2026-08-06",
+  "review_after": "2026-11-06",
+  "notes": "First accepted Tier A national organization slice. It distinguishes civilian authority, military departments, service administration, reserve components, and operational combatant commands while withholding unsupported operational detail."
 }

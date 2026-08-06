@@ -21,6 +21,8 @@ const schemaFiles = [
   "force_maintenance_record.schema.json",
   "force_construction_record.schema.json",
   "inventory_conservation_record.schema.json",
+  "source_record.schema.json",
+  "contradiction_set.schema.json",
 ];
 
 const families = {
@@ -246,6 +248,19 @@ function resolveDatasetPath(ledgerDir, relativePath, label, errors) {
   return resolved;
 }
 
+function collectSourceReferences(value, references = new Set()) {
+  if (Array.isArray(value)) {
+    for (const item of value) collectSourceReferences(item, references);
+    return references;
+  }
+  if (value === null || typeof value !== "object") return references;
+  if (value.provenance?.source_ids) {
+    for (const sourceId of value.provenance.source_ids) references.add(sourceId);
+  }
+  for (const child of Object.values(value)) collectSourceReferences(child, references);
+  return references;
+}
+
 const report = {
   status: "PASS",
   bookmark_id: bookmarkId,
@@ -273,6 +288,8 @@ for (const countryCode of countryCodes) {
 
   const counts = {};
   let totalRecords = 0;
+  const familyRecords = {};
+  const sourceReferences = new Set();
   for (const [familyName, family] of Object.entries(families)) {
     const datasetPath = resolveDatasetPath(
       ledgerDir,
@@ -286,6 +303,7 @@ for (const countryCode of countryCodes) {
     }
 
     const records = readNdjson(datasetPath, countryErrors);
+    familyRecords[familyName] = records.map((record) => record.value);
     counts[familyName] = records.length;
     totalRecords += records.length;
 
@@ -298,12 +316,86 @@ for (const countryCode of countryCodes) {
       if (record.value.country_id && record.value.country_id !== manifest.country_id) {
         countryErrors.push(`${datasetPath}:${record.line}: country_id differs from manifest`);
       }
+      collectSourceReferences(record.value, sourceReferences);
     }
 
     if (manifest.reconciliation?.[family.countKey] !== records.length) {
       countryErrors.push(
         `${manifestPath}: ${family.countKey} is ${manifest.reconciliation?.[family.countKey]}, expected ${records.length}`,
       );
+    }
+  }
+
+  const sourceDatasetPath = manifest.status === "shell" && manifest.dataset_paths?.sources === null
+    ? null
+    : resolveDatasetPath(
+      ledgerDir,
+      manifest.dataset_paths?.sources,
+      `${countryCode}.sources`,
+      countryErrors,
+    );
+  const sources = sourceDatasetPath ? readNdjson(sourceDatasetPath, countryErrors) : [];
+  counts.sources = sources.length;
+  const localSourceIds = new Set();
+  for (const source of sources) {
+    countryErrors.push(
+      ...validateDocument(source.value, "source_record.schema.json").map(
+        (error) => `${sourceDatasetPath}:${source.line}: ${error}`,
+      ),
+    );
+    if (localSourceIds.has(source.value.source_id)) {
+      countryErrors.push(`${sourceDatasetPath}:${source.line}: duplicate source_id ${source.value.source_id}`);
+    }
+    localSourceIds.add(source.value.source_id);
+  }
+
+  const contradictionDatasetPath = manifest.status === "shell" && manifest.dataset_paths?.contradictions === null
+    ? null
+    : resolveDatasetPath(
+      ledgerDir,
+      manifest.dataset_paths?.contradictions,
+      `${countryCode}.contradictions`,
+      countryErrors,
+    );
+  const contradictions = contradictionDatasetPath
+    ? readNdjson(contradictionDatasetPath, countryErrors)
+    : [];
+  counts.contradictions = contradictions.length;
+  for (const contradiction of contradictions) {
+    countryErrors.push(
+      ...validateDocument(contradiction.value, "contradiction_set.schema.json").map(
+        (error) => `${contradictionDatasetPath}:${contradiction.line}: ${error}`,
+      ),
+    );
+    for (const sourceId of contradiction.value.source_ids ?? []) sourceReferences.add(sourceId);
+  }
+
+  for (const sourceId of manifest.source_ids ?? []) sourceReferences.add(sourceId);
+  for (const sourceId of sourceReferences) {
+    if (!localSourceIds.has(sourceId)) {
+      countryErrors.push(`${manifestPath}: unresolved local force ledger source_id ${sourceId}`);
+    }
+  }
+  for (const sourceId of localSourceIds) {
+    if (!manifest.source_ids.includes(sourceId)) {
+      countryErrors.push(`${manifestPath}: local source_id ${sourceId} is omitted from manifest.source_ids`);
+    }
+  }
+
+  const organizations = familyRecords.organizations ?? [];
+  const organizationIds = new Set(organizations.map((record) => record.organization_id));
+  for (const organization of organizations) {
+    if (organization.parent_organization_id && !organizationIds.has(organization.parent_organization_id)) {
+      countryErrors.push(
+        `${manifestPath}: organization ${organization.organization_id} has unresolved parent ${organization.parent_organization_id}`,
+      );
+    }
+    for (const supportedId of organization.supported_organization_ids ?? []) {
+      if (!organizationIds.has(supportedId)) {
+        countryErrors.push(
+          `${manifestPath}: organization ${organization.organization_id} supports unresolved organization ${supportedId}`,
+        );
+      }
     }
   }
 
@@ -323,6 +415,10 @@ for (const countryCode of countryCodes) {
         countryErrors.push(`${manifestPath}: shell scope ${key} implies unsupported coverage`);
       }
     }
+  }
+
+  if (manifest.status !== "shell" && manifest.reconciliation.state === "not_started") {
+    countryErrors.push(`${manifestPath}: populated ledger cannot retain not_started reconciliation`);
   }
 
   report.countries[countryCode] = {
