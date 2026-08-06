@@ -11,13 +11,14 @@
 6. First playable detailed theater: Taiwan Strait.
 7. Initial playable countries: United States, China, and Taiwan.
 8. Global layer: macro simulation for all represented countries.
+9. Canonical opening bookmark: 1 September 2025.
 
 ## Research objectives
 
 1. Build a stable source and claim system before scaling collection.
 2. Freeze a reproducible top 80 economy cohort.
-3. Assemble historical starting conditions for a late summer or early fall 2025
-   bookmark.
+3. Reconstruct the global opening state at the 1 September 2025 historical
+   cutoff.
 4. Create country dossiers covering political leadership, institutions, economy,
    military structure, inventory, strategic industry, infrastructure, alliances,
    and active crises.
@@ -65,12 +66,15 @@ Status: complete. The cohort is frozen to the IMF April 2026 WEO vintage and 202
 
 ### Checkpoint 3: Starting bookmark
 
-1. Evaluate late summer and early fall 2025 candidate dates.
-2. Choose the date by gameplay and data quality.
-3. Freeze the historical cutoff.
-4. Assemble governments, leaders, alliances, conflicts, sanctions, economies,
-   and force posture.
-5. Label all later historical events as optional reference trajectories.
+Status: date and knowledge boundary frozen.
+
+1. Use 1 September 2025 as the canonical opening date.
+2. Freeze the historical information cutoff at the opening instant.
+3. Assemble governments, leaders, alliances, conflicts, sanctions, economies,
+   and force posture as they existed at that boundary.
+4. Label every later historical event as an optional reference trajectory.
+5. Reject future knowledge from opening datasets unless it is explicitly marked
+   as designer reference material unavailable to the simulation.
 
 ### Checkpoint 4: Country and global coverage
 
@@ -98,6 +102,8 @@ A dataset may be marked `verified` only when all applicable gates pass.
 10. Machine readable files pass schema and cross reference validation.
 11. A reviewer records the review date and known gaps.
 12. Simulation representation proposals remain proposals until design review.
+13. Opening state records contain no unmarked information learned after
+    1 September 2025.
 
 ## Representation levels
 
@@ -128,20 +134,20 @@ region, a capability aggregate, a synthetic game object, or an explicit unknown.
 
 ## Immediate deliverables
 
-1. Stage status corrections.
-2. Justice Mission 2025 benchmark directory.
-3. Primary source registry for the benchmark.
-4. Exact five zone GeoJSON.
-5. Reporting window force measures.
-6. Contradiction log.
-7. Validation report.
-8. Top 80 cohort acquisition plan.
+1. Corpus integrity validation.
+2. Justice Mission 2025 benchmark completion.
+3. Complete force ledger data contracts.
+4. United States, China, and Taiwan dossier foundations.
+5. Opening state source ledger for 1 September 2025.
+6. Global country dossier generation workflow.
+7. Theater and infrastructure research work packages.
+8. Autonomous research wave reporting.
 
 ## Stage exit criteria
 
 The research stage is not complete until:
 
-1. The starting bookmark is frozen.
+1. The 1 September 2025 opening bookmark is reconstructed and reviewed.
 2. The top 80 cohort is frozen.
 3. The first playable countries have reviewed dossiers.
 4. The Taiwan Strait has a reviewed theater dataset.
