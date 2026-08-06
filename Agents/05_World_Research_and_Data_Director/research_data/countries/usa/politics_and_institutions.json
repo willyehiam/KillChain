@@ -79,7 +79,7 @@
       "next_regular_presidential_election_year": 2028,
       "status": "expected_under_fixed_constitutional_cycle",
       "source_ids": [
-        "src_usa_white_house_administration",
+        "src_usa_congressional_inauguration_record_2025",
         "src_usa_constitution_article_ii"
       ]
     },
@@ -114,7 +114,7 @@
       "opening_status": "governing",
       "source_ids": [
         "src_usa_constitution_article_ii",
-        "src_usa_white_house_administration"
+        "src_usa_congressional_inauguration_record_2025"
       ]
     },
     {
@@ -123,7 +123,7 @@
       "category": "executive",
       "opening_status": "governing",
       "source_ids": [
-        "src_usa_white_house_administration"
+        "src_usa_congressional_inauguration_record_2025"
       ]
     },
     {
@@ -153,7 +153,7 @@
       "opening_status": "major_opposition",
       "source_ids": [
         "src_usa_senate_democratic_leadership",
-        "src_usa_house_democratic_leader"
+        "src_usa_congressional_record_jeffries_2025"
       ]
     },
     {
@@ -182,7 +182,7 @@
       "succession_eligibility": "incumbent",
       "confidence": "high",
       "source_ids": [
-        "src_usa_white_house_administration"
+        "src_usa_congressional_inauguration_record_2025"
       ],
       "selection_basis_status": "institutional_relevance_only",
       "practical_influence": {
@@ -204,7 +204,7 @@
       "succession_eligibility": "first_in_line",
       "confidence": "high",
       "source_ids": [
-        "src_usa_white_house_administration",
+        "src_usa_congressional_inauguration_record_2025",
         "src_usa_constitution_amendment_xxv"
       ],
       "selection_basis_status": "institutional_relevance_only",
@@ -316,7 +316,7 @@
       "succession_eligibility": "statutory_line_member",
       "confidence": "high",
       "source_ids": [
-        "src_usa_white_house_cabinet"
+        "src_usa_congressional_record_bondi_confirmation_2025"
       ],
       "selection_basis_status": "institutional_relevance_only",
       "practical_influence": {
@@ -338,7 +338,7 @@
       "succession_eligibility": "statutory_line_member",
       "confidence": "high",
       "source_ids": [
-        "src_usa_white_house_cabinet"
+        "src_usa_congressional_record_noem_confirmation_2025"
       ],
       "selection_basis_status": "institutional_relevance_only",
       "practical_influence": {
@@ -514,7 +514,7 @@
       "succession_eligibility": "not_in_presidential_line_by_office",
       "confidence": "high",
       "source_ids": [
-        "src_usa_house_democratic_leader"
+        "src_usa_congressional_record_jeffries_2025"
       ],
       "selection_basis_status": "institutional_relevance_only",
       "practical_influence": {
