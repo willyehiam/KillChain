@@ -2,18 +2,22 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://killweb.game/research/schemas/equipment_type_record.schema.json",
   "title": "Military Equipment Type Record",
+  "description": "A normalized class, model, block, or variant shared by platform and inventory records. It describes what an item is, not how many exist.",
   "type": "object",
   "required": [
     "equipment_type_id",
     "display_name",
-    "domain",
-    "category",
-    "entity_kind",
+    "taxonomy",
+    "origin_country_ids",
+    "manufacturer_ids",
     "roles",
-    "individualizable",
-    "evidence_state",
-    "confidence",
-    "source_ids"
+    "individualization",
+    "crew_requirements",
+    "mobility",
+    "support_dependency_types",
+    "measured_characteristics",
+    "temporal_validity",
+    "provenance"
   ],
   "properties": {
     "equipment_type_id": {
@@ -30,8 +34,62 @@
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       }
+    },
+    "taxonomy": {
+      "type": "object",
+      "required": [
+        "domain",
+        "category",
+        "entity_kind",
+        "family",
+        "model",
+        "variant"
+      ],
+      "properties": {
+        "domain": {
+          "$ref": "common.schema.json#/$defs/domain"
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity_kind": {
+          "type": "string",
+          "enum": [
+            "platform",
+            "weapon",
+            "munition",
+            "sensor",
+            "communications",
+            "support_equipment",
+            "facility_system",
+            "software_system",
+            "other"
+          ]
+        },
+        "family": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "variant": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
     },
     "origin_country_ids": {
       "type": "array",
@@ -40,50 +98,124 @@
         "$ref": "common.schema.json#/$defs/stableId"
       }
     },
-    "domain": {
-      "type": "string",
-      "enum": [
-        "ground",
-        "maritime",
-        "air",
-        "space",
-        "cyber",
-        "information",
-        "logistics",
-        "joint"
-      ]
-    },
-    "category": {
-      "type": "string",
-      "minLength": 1
-    },
-    "entity_kind": {
-      "type": "string",
-      "enum": [
-        "platform",
-        "weapon",
-        "munition",
-        "sensor",
-        "communications",
-        "support_equipment",
-        "facility_system",
-        "software_system",
-        "other"
-      ]
+    "manufacturer_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
     },
     "roles": {
       "type": "array",
+      "minItems": 1,
       "uniqueItems": true,
       "items": {
         "type": "string",
         "minLength": 1
       }
     },
-    "individualizable": {
-      "type": "boolean"
+    "individualization": {
+      "type": "object",
+      "required": [
+        "supported",
+        "default_research_resolution",
+        "reason"
+      ],
+      "properties": {
+        "supported": {
+          "type": "boolean"
+        },
+        "default_research_resolution": {
+          "type": "string",
+          "enum": [
+            "individual",
+            "formation_pool",
+            "service_pool",
+            "national_pool"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
     },
-    "individualization_reason": {
-      "type": "string"
+    "crew_requirements": {
+      "type": "object",
+      "required": [
+        "operating_crew",
+        "support_personnel"
+      ],
+      "properties": {
+        "operating_crew": {
+          "$ref": "common.schema.json#/$defs/quantityEstimate"
+        },
+        "support_personnel": {
+          "$ref": "common.schema.json#/$defs/quantityEstimate"
+        }
+      },
+      "additionalProperties": false
+    },
+    "mobility": {
+      "type": "object",
+      "required": [
+        "mobility_kind",
+        "self_deploying",
+        "strategic_lift_required"
+      ],
+      "properties": {
+        "mobility_kind": {
+          "type": "string",
+          "enum": [
+            "fixed",
+            "towed",
+            "road_mobile",
+            "rail_mobile",
+            "tracked",
+            "rotary_wing",
+            "fixed_wing",
+            "surface_vessel",
+            "subsurface_vessel",
+            "orbital",
+            "portable",
+            "virtual",
+            "other"
+          ]
+        },
+        "self_deploying": {
+          "type": "boolean"
+        },
+        "strategic_lift_required": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "support_dependency_types": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "crew",
+          "fuel",
+          "electric_power",
+          "runway",
+          "port",
+          "launcher",
+          "radar",
+          "command_network",
+          "satellite_link",
+          "maintenance_facility",
+          "spares",
+          "munition",
+          "tanker",
+          "escort",
+          "strategic_lift",
+          "other"
+        ]
+      }
     },
     "measured_characteristics": {
       "type": "array",
@@ -93,9 +225,7 @@
           "metric",
           "value_kind",
           "unit",
-          "evidence_state",
-          "confidence",
-          "source_ids"
+          "provenance"
         ],
         "properties": {
           "metric": {
@@ -126,37 +256,18 @@
           "conditions": {
             "type": "string"
           },
-          "evidence_state": {
-            "$ref": "common.schema.json#/$defs/evidenceState"
-          },
-          "confidence": {
-            "$ref": "common.schema.json#/$defs/confidence"
-          },
-          "source_ids": {
-            "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-              "$ref": "common.schema.json#/$defs/stableId"
-            }
+          "provenance": {
+            "$ref": "common.schema.json#/$defs/provenance"
           }
         },
         "additionalProperties": false
       }
     },
-    "evidence_state": {
-      "$ref": "common.schema.json#/$defs/evidenceState"
+    "temporal_validity": {
+      "$ref": "common.schema.json#/$defs/temporalValidity"
     },
-    "confidence": {
-      "$ref": "common.schema.json#/$defs/confidence"
-    },
-    "source_ids": {
-      "type": "array",
-      "minItems": 1,
-      "uniqueItems": true,
-      "items": {
-        "$ref": "common.schema.json#/$defs/stableId"
-      }
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
     },
     "notes": {
       "type": "string"
