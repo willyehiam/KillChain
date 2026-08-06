@@ -423,7 +423,10 @@
           "aggregation_policy"
         ],
         "properties": {
+          "conservation_policy": {},
+          "aggregation_policy": {},
           "reconciliation": {
+            "type": "object",
             "properties": {
               "state": {
                 "enum": [
