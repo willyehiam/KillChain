@@ -16,7 +16,16 @@
       "url": "https://www.whitehouse.gov/administration/",
       "relevant_locator": "President and Vice President",
       "reliability_notes": "Official officeholder page. Used only for roles established before the bookmark.",
-      "source_family_id": "family_the_white_house"
+      "source_family_id": "family_the_white_house",
+      "mutability_class": "live_mutable",
+      "bookmark_evidence_status": "quarantined_no_prebookmark_temporal_proof",
+      "temporal_proof_requirements": {
+        "accepted_alternatives": [
+          "archive_url_plus_snapshot_at_on_or_before_bookmark_plus_content_hash",
+          "dated_prebookmark_official_source"
+        ],
+        "continuity_inference_forbidden": true
+      }
     },
     {
       "source_id": "src_usa_white_house_cabinet",
@@ -28,7 +37,16 @@
       "url": "https://www.whitehouse.gov/administration/cabinet/",
       "relevant_locator": "Cabinet officeholder cards",
       "reliability_notes": "Live page can change. It is used only for offices held before the bookmark and is never used to import later title changes.",
-      "source_family_id": "family_the_white_house"
+      "source_family_id": "family_the_white_house",
+      "mutability_class": "live_mutable",
+      "bookmark_evidence_status": "quarantined_no_prebookmark_temporal_proof",
+      "temporal_proof_requirements": {
+        "accepted_alternatives": [
+          "archive_url_plus_snapshot_at_on_or_before_bookmark_plus_content_hash",
+          "dated_prebookmark_official_source"
+        ],
+        "continuity_inference_forbidden": true
+      }
     },
     {
       "source_id": "src_usa_rubio_swearing_2025",
@@ -40,7 +58,12 @@
       "source_type": "official_release",
       "url": "https://www.whitehouse.gov/videos/vice-president-jd-vance-swears-in-marco-rubio-as-united-states-secretary-of-state/",
       "relevant_locator": "Dated title and office",
-      "source_family_id": "family_the_white_house"
+      "source_family_id": "family_the_white_house",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-01-21"
+      }
     },
     {
       "source_id": "src_usa_hegseth_swearing_2025",
@@ -53,7 +76,12 @@
       "url": "https://www.whitehouse.gov/videos/vice-president-vance-swears-in-pete-hegseth-to-be-secretary-of-defense/",
       "relevant_locator": "Dated title and office",
       "reliability_notes": "This dated record controls the bookmark title even if the live Cabinet page later changes.",
-      "source_family_id": "family_the_white_house"
+      "source_family_id": "family_the_white_house",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-01-25"
+      }
     },
     {
       "source_id": "src_usa_white_house_national_security_team",
@@ -65,7 +93,12 @@
       "source_type": "official_release",
       "url": "https://www.whitehouse.gov/gallery/president-donald-trump-and-his-national-security-team-meet-in-the-situation-room-of-the-white-house/",
       "relevant_locator": "Official photo captions naming national security principals",
-      "source_family_id": "family_the_white_house"
+      "source_family_id": "family_the_white_house",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-06-21"
+      }
     },
     {
       "source_id": "src_usa_white_house_wiles_2025",
@@ -77,7 +110,12 @@
       "source_type": "official_release",
       "url": "https://www.whitehouse.gov/videos/white-house-chief-of-staff-susie-wiles-on-working-in-the-white-house-it-is-superhuman-pace/",
       "relevant_locator": "Title and office",
-      "source_family_id": "family_the_white_house"
+      "source_family_id": "family_the_white_house",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-07-09"
+      }
     },
     {
       "source_id": "src_usa_white_house_miller_2025",
@@ -89,7 +127,12 @@
       "source_type": "official_release",
       "url": "https://www.whitehouse.gov/videos/%F0%9F%94%A5deputy-chief-of-staff-for-policy-and-homeland-security-advisor-stephen-miller-destroys-the-media/",
       "relevant_locator": "Title and office",
-      "source_family_id": "family_the_white_house"
+      "source_family_id": "family_the_white_house",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-05-01"
+      }
     },
     {
       "source_id": "src_usa_constitution_article_i",
@@ -100,7 +143,13 @@
       "source_type": "law_or_treaty",
       "url": "https://constitution.congress.gov/constitution/article-1/",
       "relevant_locator": "Section 8, Declare War Clause",
-      "source_family_id": "family_congress_gov_constitution_annotated"
+      "source_family_id": "family_congress_gov_constitution_annotated",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1789-03-04",
+        "rule": "Legal instruments are evaluated by historically valid effective edition, not by the retrieval date of a mutable web presentation."
+      }
     },
     {
       "source_id": "src_usa_constitution_article_ii",
@@ -111,7 +160,13 @@
       "source_type": "law_or_treaty",
       "url": "https://constitution.congress.gov/constitution/article-2/",
       "relevant_locator": "Sections 1 and 2",
-      "source_family_id": "family_congress_gov_constitution_annotated"
+      "source_family_id": "family_congress_gov_constitution_annotated",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1789-03-04",
+        "rule": "Legal instruments are evaluated by historically valid effective edition, not by the retrieval date of a mutable web presentation."
+      }
     },
     {
       "source_id": "src_usa_constitution_amendment_xxv",
@@ -122,7 +177,13 @@
       "source_type": "law_or_treaty",
       "url": "https://constitution.congress.gov/constitution/amendment-25/",
       "relevant_locator": "Section 1",
-      "source_family_id": "family_congress_gov_constitution_annotated"
+      "source_family_id": "family_congress_gov_constitution_annotated",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1967-02-10",
+        "rule": "Legal instruments are evaluated by historically valid effective edition, not by the retrieval date of a mutable web presentation."
+      }
     },
     {
       "source_id": "src_usa_war_powers_resolution",
@@ -134,7 +195,13 @@
       "source_type": "law_or_treaty",
       "url": "https://uscode.house.gov/view.xhtml?path=/prelim@title50/chapter33&edition=prelim",
       "relevant_locator": "50 USC chapter 33, sections 1541 through 1548",
-      "source_family_id": "family_office_of_the_law_revision_counsel_united_states_house_of_representatives"
+      "source_family_id": "family_office_of_the_law_revision_counsel_united_states_house_of_representatives",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1973-11-07",
+        "rule": "Legal instruments are evaluated by historically valid effective edition, not by the retrieval date of a mutable web presentation."
+      }
     },
     {
       "source_id": "src_usa_olc_presidential_force_1980",
@@ -147,7 +214,12 @@
       "url": "https://www.justice.gov/olc/opinion/presidential-power-use-armed-forces-abroad-without-statutory-authorization",
       "relevant_locator": "Headnotes",
       "reliability_notes": "Authoritative executive branch legal position, not a neutral resolution of the separation of powers dispute.",
-      "source_family_id": "family_united_states_department_of_justice_office_of_legal_counsel"
+      "source_family_id": "family_united_states_department_of_justice_office_of_legal_counsel",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "1980-02-12"
+      }
     },
     {
       "source_id": "src_usa_senate_republican_leadership",
@@ -159,7 +231,12 @@
       "source_type": "official_release",
       "url": "https://www.republican.senate.gov/2024/11/13/barrasso-announces-senate-gop-leadership-for-the-119th-congress/",
       "relevant_locator": "Leadership roster",
-      "source_family_id": "family_senate_republican_conference"
+      "source_family_id": "family_senate_republican_conference",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2024-11-13"
+      }
     },
     {
       "source_id": "src_usa_senate_democratic_leadership",
@@ -171,7 +248,12 @@
       "source_type": "official_release",
       "url": "https://www.democrats.senate.gov/newsroom/press-releases/majority-leader-schumer-announces-senate-democratic-leadership-team-for-the-119th-congress",
       "relevant_locator": "Leadership roster",
-      "source_family_id": "family_senate_democratic_caucus"
+      "source_family_id": "family_senate_democratic_caucus",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2024-12-03"
+      }
     },
     {
       "source_id": "src_usa_house_republican_leadership",
@@ -183,7 +265,12 @@
       "source_type": "official_release",
       "url": "https://scalise.house.gov/press-releases/Scalise-Statement-on-Being-Re-Elected-Majority-Leader-for-119th-Congress",
       "relevant_locator": "119th Congress House Republican leadership",
-      "source_family_id": "family_office_of_house_majority_leader_steve_scalise"
+      "source_family_id": "family_office_of_house_majority_leader_steve_scalise",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2024-11-13"
+      }
     },
     {
       "source_id": "src_usa_house_democratic_leader",
@@ -195,7 +282,16 @@
       "url": "https://jeffries.house.gov/about/",
       "relevant_locator": "Democratic Leader role",
       "reliability_notes": "Live official biography. Used only for office held at the bookmark.",
-      "source_family_id": "family_office_of_representative_hakeem_jeffries"
+      "source_family_id": "family_office_of_representative_hakeem_jeffries",
+      "mutability_class": "live_mutable",
+      "bookmark_evidence_status": "quarantined_no_prebookmark_temporal_proof",
+      "temporal_proof_requirements": {
+        "accepted_alternatives": [
+          "archive_url_plus_snapshot_at_on_or_before_bookmark_plus_content_hash",
+          "dated_prebookmark_official_source"
+        ],
+        "continuity_inference_forbidden": true
+      }
     },
     {
       "source_id": "src_usa_council_of_governors_2025",
@@ -207,7 +303,12 @@
       "source_type": "official_release",
       "url": "https://www.nga.org/news/commentary/council-of-governors-holds-30th-plenary-meeting/",
       "relevant_locator": "2025 Council member roster",
-      "source_family_id": "family_national_governors_association"
+      "source_family_id": "family_national_governors_association",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-02-20"
+      }
     },
     {
       "source_id": "src_usa_nato_hague_2025",
@@ -219,7 +320,13 @@
       "source_type": "law_or_treaty",
       "url": "https://www.ncia.nato.int/newsroom/news/the-hague-summit-declaration",
       "relevant_locator": "Paragraphs 1 and 2",
-      "source_family_id": "family_north_atlantic_treaty_organization"
+      "source_family_id": "family_north_atlantic_treaty_organization",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "2025-06-25",
+        "rule": "Legal instruments are evaluated by historically valid effective edition, not by the retrieval date of a mutable web presentation."
+      }
     },
     {
       "source_id": "src_usa_taiwan_relations_act",
@@ -231,7 +338,13 @@
       "source_type": "law_or_treaty",
       "url": "https://uscode.house.gov/view.xhtml?edition=1999&req=granuleid%3AUSC-1999-title22-chapter48",
       "relevant_locator": "Section 3301(b)",
-      "source_family_id": "family_office_of_the_law_revision_counsel_united_states_house_of_representatives"
+      "source_family_id": "family_office_of_the_law_revision_counsel_united_states_house_of_representatives",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1979-04-10",
+        "rule": "Legal instruments are evaluated by historically valid effective edition, not by the retrieval date of a mutable web presentation."
+      }
     },
     {
       "source_id": "src_usa_nsc_statute",
@@ -242,7 +355,13 @@
       "source_type": "law_or_treaty",
       "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section3021&num=0&edition=prelim",
       "relevant_locator": "Statutory NSC members, advisers, and function",
-      "source_family_id": "family_office_of_the_law_revision_counsel_united_states_house_of_representatives"
+      "source_family_id": "family_office_of_the_law_revision_counsel_united_states_house_of_representatives",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1947-07-26",
+        "rule": "Legal instruments are evaluated by historically valid effective edition, not by the retrieval date of a mutable web presentation."
+      }
     },
     {
       "source_id": "src_usa_nspm1_nsc_organization_2025",
@@ -254,7 +373,12 @@
       "source_type": "official_release",
       "url": "https://www.whitehouse.gov/presidential-actions/2025/01/organization-of-the-national-security-council-and-subcommittees/",
       "relevant_locator": "NSPM-1; NSC, Principals Committee, Deputies Committee, and Policy Coordination Committees",
-      "source_family_id": "family_the_white_house"
+      "source_family_id": "family_the_white_house",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-01-20"
+      }
     },
     {
       "source_id": "src_usa_rubio_acting_nsa_reuters_2025",
@@ -266,7 +390,12 @@
       "source_type": "news_report",
       "url": "https://www.reuters.com/world/us/white-house-national-security-adviser-waltz-leave-post-source-says-2025-05-01/",
       "relevant_locator": "President's announcement that Rubio would serve as Secretary of State and interim National Security Advisor",
-      "source_family_id": "family_reuters"
+      "source_family_id": "family_reuters",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-05-01"
+      }
     },
     {
       "source_id": "src_usa_nsc_restructuring_reuters_2025",
@@ -279,7 +408,12 @@
       "url": "https://www.reuters.com/world/us/white-house-national-security-council-hit-by-more-firings-sources-say-2025-05-23/",
       "relevant_locator": "May 2025 staff reductions and restructuring under interim adviser Marco Rubio",
       "reliability_notes": "Supports the organizational capacity modifier, not a change to statutory NSC membership.",
-      "source_family_id": "family_reuters"
+      "source_family_id": "family_reuters",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-05-23"
+      }
     },
     {
       "source_id": "src_usa_presidential_succession_statute",
@@ -292,7 +426,13 @@
       "source_family_id": "family_office_of_the_law_revision_counsel_united_states_house_of_representatives",
       "url": "https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title3-section19",
       "relevant_locator": "3 USC 19(a) through (e)",
-      "reliability_notes": "Statutory office order and qualification conditions. Office order does not establish person-specific eligibility."
+      "reliability_notes": "Statutory office order and qualification conditions. Office order does not establish person-specific eligibility.",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1947-07-18",
+        "rule": "Legal instruments are evaluated by historically valid effective edition, not by the retrieval date of a mutable web presentation."
+      }
     },
     {
       "source_id": "src_usa_senate_president_pro_tempore_2025",
@@ -305,7 +445,84 @@
       "source_family_id": "family_usa_senate",
       "url": "https://www.senate.gov/about/officers-staff/president-pro-tempore/presidents-pro-tempore.htm",
       "relevant_locator": "119th Congress, Chuck Grassley, January 3 2025 to present",
-      "reliability_notes": "Official Senate officeholder history establishes the opening office interval."
+      "reliability_notes": "Official Senate officeholder history establishes the opening office interval.",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-01-03"
+      }
+    },
+    {
+      "source_id": "src_usa_congressional_inauguration_record_2025",
+      "title": "Congressional Record: Inauguration Ceremonies for President Donald Trump and Vice President J.D. Vance",
+      "publisher": "Congress.gov, Library of Congress",
+      "published_at": "2025-01-20",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "source_family_id": "family_congress_gov_library_of_congress",
+      "url": "https://www.congress.gov/congressional-record/volume-171/issue-11/daily-digest/article/D56-2",
+      "relevant_locator": "Inauguration Ceremonies, pages H225 to H226",
+      "reliability_notes": "Dated Congressional Record entry establishes that Donald Trump and JD Vance were inaugurated on January 20, 2025.",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-01-20"
+      }
+    },
+    {
+      "source_id": "src_usa_congressional_record_jeffries_2025",
+      "title": "Congressional Record: Minority Leader selected for the 119th Congress",
+      "publisher": "Congress.gov, Library of Congress",
+      "published_at": "2025-01-03",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "source_family_id": "family_congress_gov_library_of_congress",
+      "url": "https://www.congress.gov/congressional-record/volume-171/issue-1/house-section/article/H7-3",
+      "relevant_locator": "Page H7, Minority Leader",
+      "reliability_notes": "Dated chamber record establishes Hakeem Jeffries as the House minority leader for the 119th Congress.",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-01-03"
+      }
+    },
+    {
+      "source_id": "src_usa_congressional_record_bondi_confirmation_2025",
+      "title": "Congressional Record: Pamela Bondi confirmed as Attorney General",
+      "publisher": "Congress.gov, Library of Congress",
+      "published_at": "2025-02-04",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "source_family_id": "family_congress_gov_library_of_congress",
+      "url": "https://www.congress.gov/congressional-record/volume-171/issue-23/daily-digest/article/D112-1",
+      "relevant_locator": "Nominations Confirmed, Vote No. EX. 33",
+      "reliability_notes": "Dated Senate confirmation record establishes confirmation before the bookmark; it does not independently prove later continuity, so the opening interval remains subject to the packet role interval rules.",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-02-04"
+      }
+    },
+    {
+      "source_id": "src_usa_congressional_record_noem_confirmation_2025",
+      "title": "Congressional Record: Kristi Noem confirmed as Secretary of Homeland Security",
+      "publisher": "Congress.gov, Library of Congress",
+      "published_at": "2025-01-25",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "source_family_id": "family_congress_gov_library_of_congress",
+      "url": "https://www.congress.gov/congressional-record/volume-171/issue-16/senate-section/article/S381-6",
+      "relevant_locator": "Page S381, Confirmation",
+      "reliability_notes": "Dated Senate confirmation record establishes confirmation before the bookmark; it does not independently prove later continuity, so the opening interval remains subject to the packet role interval rules.",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-01-25"
+      }
     }
   ],
   "claims": [
@@ -415,10 +632,11 @@
       "evidence_state": "official_claim",
       "confidence": "high",
       "source_ids": [
-        "src_usa_white_house_administration"
+        "src_usa_congressional_inauguration_record_2025"
       ],
-      "interval_start_status": "unknown_not_established_by_packet_source",
-      "interval_end_status": "open_at_bookmark_end_not_established"
+      "interval_start_status": "known",
+      "interval_end_status": "open_at_bookmark_end_not_established",
+      "effective_from": "2025-01-20"
     },
     {
       "claim_id": "claim_usa_actor_vance_role",
@@ -429,10 +647,11 @@
       "evidence_state": "official_claim",
       "confidence": "high",
       "source_ids": [
-        "src_usa_white_house_administration"
+        "src_usa_congressional_inauguration_record_2025"
       ],
-      "interval_start_status": "unknown_not_established_by_packet_source",
-      "interval_end_status": "open_at_bookmark_end_not_established"
+      "interval_start_status": "known",
+      "interval_end_status": "open_at_bookmark_end_not_established",
+      "effective_from": "2025-01-20"
     },
     {
       "claim_id": "claim_usa_actor_rubio_role",
@@ -602,10 +821,11 @@
       "evidence_state": "official_claim",
       "confidence": "high",
       "source_ids": [
-        "src_usa_house_democratic_leader"
+        "src_usa_congressional_record_jeffries_2025"
       ],
-      "interval_start_status": "unknown_not_established_by_packet_source",
-      "interval_end_status": "open_at_bookmark_end_not_established"
+      "interval_start_status": "known",
+      "interval_end_status": "open_at_bookmark_end_not_established",
+      "effective_from": "2025-01-03"
     },
     {
       "claim_id": "claim_usa_actor_schumer_role",
@@ -712,29 +932,31 @@
       "claim_id": "claim_usa_actor_pam_bondi_opening_relevance",
       "subject_id": "actor_usa_pam_bondi",
       "predicate": "opening_relevance",
-      "value": "Attorney General",
+      "value": "Senate-confirmed Attorney General; continuity to bookmark remains an explicit open interval pending independent review",
       "as_of": "2025-09-01",
-      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_start_status": "known",
       "interval_end_status": "open_at_bookmark_end_not_established",
       "evidence_state": "official_claim",
       "confidence": "high",
       "source_ids": [
-        "src_usa_white_house_cabinet"
-      ]
+        "src_usa_congressional_record_bondi_confirmation_2025"
+      ],
+      "effective_from": "2025-02-04"
     },
     {
       "claim_id": "claim_usa_actor_kristi_noem_opening_relevance",
       "subject_id": "actor_usa_kristi_noem",
       "predicate": "opening_relevance",
-      "value": "Secretary of Homeland Security",
+      "value": "Senate-confirmed Secretary of Homeland Security; continuity to bookmark remains an explicit open interval pending independent review",
       "as_of": "2025-09-01",
-      "interval_start_status": "unknown_not_established_by_packet_source",
+      "interval_start_status": "known",
       "interval_end_status": "open_at_bookmark_end_not_established",
       "evidence_state": "official_claim",
       "confidence": "high",
       "source_ids": [
-        "src_usa_white_house_cabinet"
-      ]
+        "src_usa_congressional_record_noem_confirmation_2025"
+      ],
+      "effective_from": "2025-01-25"
     },
     {
       "claim_id": "claim_usa_actor_ron_desantis_opening_relevance",
