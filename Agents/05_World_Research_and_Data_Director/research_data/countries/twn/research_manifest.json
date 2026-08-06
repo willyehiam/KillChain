@@ -40,8 +40,8 @@
     "bookmark_firewall_passed": false,
     "independent_review_complete": false
   },
-  "accepted_source_count": 24,
-  "accepted_claim_count": 30,
+  "accepted_source_count": 28,
+  "accepted_claim_count": 35,
   "open_contradiction_count": 1,
   "notes": "Counts describe the country politics evidence registry and exclude the separately linked IMF GDP cohort source. The roster remains needs_review rather than verified."
 }
