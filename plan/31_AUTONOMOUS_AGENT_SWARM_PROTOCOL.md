@@ -249,15 +249,36 @@ headings, or unsourced placeholders.
 8. Infrastructure records reference countries and regions through stable
    identifiers.
 
-### Branch discipline
+### Publication discipline
 
-1. Each worker uses an isolated branch or worktree.
+The founder has approved frequent direct publication to `main` during the
+research and documentation stage. The integrator chooses one of two modes per
+wave.
+
+#### Nonoverlapping research mode
+
+1. Workers may publish directly to `main` only when the integrator assigns
+   exclusive, nonoverlapping paths.
+2. Each write must be a coherent checkpoint that is independently reviewable.
+3. Workers fetch the current file immediately before any update and verify the
+   GitHub copy immediately after publication.
+4. Shared registries, status dashboards, and cross packet reconciliations remain
+   integrator owned.
+5. A failed validator stops further publication from that packet until corrected.
+6. Direct publication is never permission to rewrite another worker's path.
+
+#### Integration branch mode
+
+1. Production code, migrations, destructive refactors, overlapping paths, and
+   semantic conflicts use isolated branches or worktrees.
 2. Branch names contain the packet identifier.
 3. Workers rebase on the integrator checkpoint before handoff.
-4. Only the integrator merges or pushes accepted combined work to `main`.
-5. Direct worker pushes to `main` are prohibited during a concurrent wave.
-6. The integrator never resolves a semantic conflict by choosing the version
+4. The integrator reviews and merges accepted combined work.
+5. The integrator never resolves a semantic conflict by choosing the version
    that happens to merge cleanly.
+
+The integrator may switch any packet from direct publication to an isolated
+branch when collision risk or rollback cost rises.
 
 ### Shared file rule
 
