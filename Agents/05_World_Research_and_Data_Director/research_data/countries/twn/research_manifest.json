@@ -17,7 +17,8 @@
     "bookmark_state": "bookmark_state.json",
     "politics_and_institutions": "politics_and_institutions.json",
     "work_packages": "WORK_PACKAGES.md",
-    "force_ledger": "force_ledger/manifest.json"
+    "force_ledger": "force_ledger/manifest.json",
+    "war_authority_workflow": "war_authority_workflow.json"
   },
   "lane_ids": [
     "politics_and_institutions",
@@ -38,9 +39,10 @@
     "infrastructure_networks_reviewed": false,
     "alliances_and_crises_reviewed": false,
     "bookmark_firewall_passed": false,
-    "independent_review_complete": false
+    "independent_review_complete": false,
+    "politics_lane_authority_contract_reviewed": false
   },
-  "accepted_source_count": 28,
+  "accepted_source_count": 29,
   "accepted_claim_count": 35,
   "open_contradiction_count": 1,
   "notes": "Counts describe the country politics evidence registry and exclude the separately linked IMF GDP cohort source. The roster remains needs_review rather than verified."
