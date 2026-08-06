@@ -11,23 +11,23 @@
       "status": "needs_review",
       "owner": "agent_05_world_research_and_data_director",
       "record_count": 28,
-      "source_count": 24,
-      "claim_count": 30,
+      "source_count": 28,
+      "claim_count": 35,
       "contradiction_count": 1,
       "exact_geometry_count": 0,
       "approximate_geometry_count": 0,
       "unknown_geometry_count": 0,
       "oldest_source_date": "1979-04-10",
-      "newest_source_date": "2025-06-28",
+      "newest_source_date": "2025-08-29",
       "reviewed_at": "2026-08-06",
       "review_after": "2026-09-06",
-      "coverage_disposition": "usable_for_opening_state_with_divided_government_and_dual_war_authority_gates",
+      "coverage_disposition": "needs_independent_review_after_blocker_corrections",
       "blocking_questions": [
         "Independent constitutional review of the presidential and Legislative Yuan war authority workflow.",
-        "Independent corroboration for the two medium-confidence actor office claims.",
+        "Independent review of the corrected DPP secretary-general interval and recall-adjusted legislative seat ledger.",
         "Independent review of actor relevance without treating the roster as a forecast."
       ],
-      "notes": "Constitutional, election, executive, legislative, local government, and party sources support the opening packet."
+      "notes": "Constitutional, election, executive, legislative, local government, and party sources support the opening packet. KMT plurality is kept distinct from issue-specific KMT-TPP cooperation."
     },
     "economy_trade_finance_resources": {
       "name": "Economy, trade, finance, and resources",
