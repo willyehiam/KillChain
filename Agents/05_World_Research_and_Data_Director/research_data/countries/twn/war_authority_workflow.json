@@ -1,0 +1,88 @@
+{
+  "schema_version": "0.1.0",
+  "workflow_id": "war_authority_twn_2025_09_01",
+  "country_id": "country_twn",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "needs_independent_constitutional_review",
+  "purpose": "Executable research inputs for Taiwan war, defense, martial law, and emergency authority. The packet preserves unresolved sequencing rather than converting constitutional prose into a single permission flag.",
+  "institutions": [
+    {"institution_id":"institution_twn_presidency","roles":["supreme_command","declaration_of_war","martial_law_declaration","emergency_decree_issue"]},
+    {"institution_id":"institution_twn_executive_yuan","roles":["war_bill_council_decision","emergency_decree_council_resolution"]},
+    {"institution_id":"institution_twn_legislative_yuan","roles":["war_bill_resolution","martial_law_approval_or_confirmation","emergency_decree_ratification"]}
+  ],
+  "routes": [
+    {
+      "route_id": "route_twn_formal_declaration_of_war",
+      "classification": "joint_constitutional_authority",
+      "required_gate_ids": ["gate_twn_executive_yuan_council_war_bill","gate_twn_legislative_yuan_war_resolution","gate_twn_president_declaration"],
+      "sequence_status": "presidential_and_legislative_authorities_both_required_but_exact_order_needs_independent_constitutional_review",
+      "authority_state_on_completion": "accepted_only_after_all_three_gates",
+      "source_ids": ["src_twn_constitution_main_text","src_twn_president_authority","src_twn_legislative_functions"]
+    },
+    {
+      "route_id": "route_twn_immediate_defensive_command",
+      "classification": "supreme_command_response_to_attack",
+      "required_gate_ids": ["gate_twn_attack_or_imminent_defense_fact_established","gate_twn_president_supreme_command_direction"],
+      "authority_state_on_completion": "defensive_command_accepted_formal_war_status_separate",
+      "source_ids": ["src_twn_constitution_main_text","src_twn_president_authority"]
+    },
+    {
+      "route_id": "route_twn_martial_law",
+      "classification": "exceptional_domestic_legal_regime",
+      "required_gate_ids": ["gate_twn_president_martial_law_declaration","gate_twn_legislative_martial_law_approval_or_confirmation"],
+      "authority_state_on_completion": "accepted_with_legislative_approval_or_confirmation",
+      "source_ids": ["src_twn_constitution_main_text","src_twn_legislative_functions"]
+    },
+    {
+      "route_id": "route_twn_emergency_decree",
+      "classification": "temporary_emergency_power",
+      "required_gate_ids": ["gate_twn_imminent_danger_or_serious_crisis_fact_established","gate_twn_executive_yuan_council_emergency_resolution","gate_twn_president_emergency_decree","gate_twn_legislative_ratification_within_ten_days"],
+      "authority_state_on_completion": "accepted_if_ratified_otherwise_ceases",
+      "source_ids": ["src_twn_additional_articles"]
+    }
+  ],
+  "decision_gates": [
+    {"gate_id":"gate_twn_executive_yuan_council_war_bill","gate_type":"executive_council_decision","required_institution_ids":["institution_twn_executive_yuan"],"completion_evidence":"Executive Yuan Council decision on a bill concerning declaration of war for submission to the Legislative Yuan.","source_ids":["src_twn_constitution_main_text"]},
+    {"gate_id":"gate_twn_legislative_yuan_war_resolution","gate_type":"legislative_resolution","required_institution_ids":["institution_twn_legislative_yuan"],"completion_evidence":"Legislative Yuan resolution on a declaration of war bill.","source_ids":["src_twn_constitution_main_text","src_twn_legislative_functions"]},
+    {"gate_id":"gate_twn_president_declaration","gate_type":"presidential_constitutional_act","required_institution_ids":["institution_twn_presidency"],"completion_evidence":"Presidential declaration made in accordance with the Constitution.","source_ids":["src_twn_constitution_main_text","src_twn_president_authority"]},
+    {"gate_id":"gate_twn_attack_or_imminent_defense_fact_established","gate_type":"fact_finding","required_institution_ids":["institution_twn_presidency"],"completion_evidence":"Opening state records an actual attack or operationally imminent threat requiring immediate defense; political tension alone is insufficient.","source_ids":["src_twn_constitution_main_text"]},
+    {"gate_id":"gate_twn_president_supreme_command_direction","gate_type":"command_action","required_institution_ids":["institution_twn_presidency"],"completion_evidence":"Presidential command direction under Article 36; this does not itself satisfy the formal declaration route.","source_ids":["src_twn_constitution_main_text","src_twn_president_authority"]},
+    {"gate_id":"gate_twn_president_martial_law_declaration","gate_type":"presidential_constitutional_act","required_institution_ids":["institution_twn_presidency"],"completion_evidence":"Presidential martial law declaration in accordance with law.","source_ids":["src_twn_constitution_main_text"]},
+    {"gate_id":"gate_twn_legislative_martial_law_approval_or_confirmation","gate_type":"legislative_approval_or_confirmation","required_institution_ids":["institution_twn_legislative_yuan"],"completion_evidence":"Legislative Yuan approval before, or confirmation after, the declaration.","source_ids":["src_twn_constitution_main_text","src_twn_legislative_functions"]},
+    {"gate_id":"gate_twn_imminent_danger_or_serious_crisis_fact_established","gate_type":"fact_finding","required_institution_ids":["institution_twn_presidency","institution_twn_executive_yuan"],"completion_evidence":"Recorded imminent danger affecting state or public security, or serious financial or economic crisis.","source_ids":["src_twn_additional_articles"]},
+    {"gate_id":"gate_twn_executive_yuan_council_emergency_resolution","gate_type":"executive_council_resolution","required_institution_ids":["institution_twn_executive_yuan"],"completion_evidence":"Executive Yuan Council resolution authorizing emergency decree issuance.","source_ids":["src_twn_additional_articles"]},
+    {"gate_id":"gate_twn_president_emergency_decree","gate_type":"presidential_emergency_act","required_institution_ids":["institution_twn_presidency"],"completion_evidence":"President issues the emergency decree after Council resolution.","source_ids":["src_twn_additional_articles"]},
+    {"gate_id":"gate_twn_legislative_ratification_within_ten_days","gate_type":"timed_legislative_ratification","required_institution_ids":["institution_twn_legislative_yuan"],"deadline_days":10,"failure_effect":"decree_ceases_forthwith","completion_evidence":"Legislative Yuan ratification within ten days of issuance.","source_ids":["src_twn_additional_articles"]}
+  ],
+  "foreign_support_branches": [
+    {
+      "branch_id": "branch_twn_request_foreign_support",
+      "classification": "diplomatic_and_security_coordination",
+      "taiwan_domestic_effect": "does_not_transfer_taiwan_command_or_complete_formal_war_route",
+      "foreign_force_authority_effect": "none; each foreign state must satisfy its own domestic authority",
+      "source_ids": ["src_twn_us_taiwan_relations_act","src_twn_constitution_main_text"]
+    },
+    {
+      "branch_id": "branch_twn_us_security_policy",
+      "classification": "non_treaty_policy_context",
+      "automatic_us_intervention": false,
+      "automatic_taiwan_authority_change": false,
+      "source_ids": ["src_twn_us_taiwan_relations_act"]
+    }
+  ],
+  "unresolved_interpretations": [
+    {"question_id":"unknown_twn_war_declaration_sequence","question":"What is the exact controlling sequence among Executive Yuan Council decision, Legislative Yuan resolution, and presidential declaration?","status":"joint_gates_supported_sequence_not_accepted","source_ids":["src_twn_constitution_main_text","src_twn_president_authority","src_twn_legislative_functions"]},
+    {"question_id":"unknown_twn_defense_to_formal_war_transition","question":"At what factual and legal threshold must immediate defensive command transition to a formal declaration process?","status":"not_established_by_packet_sources","source_ids":["src_twn_constitution_main_text"]},
+    {"question_id":"unknown_twn_martial_law_timing","question":"Which circumstances permit confirmation after rather than approval before a martial law declaration?","status":"not_established_by_packet_sources","source_ids":["src_twn_constitution_main_text"]},
+    {"question_id":"unknown_twn_budget_continuity","question":"Which existing appropriations and emergency fiscal authorities support sustained operations before new legislation?","status":"not_researched_do_not_infer","source_ids":[]}
+  ],
+  "acceptance_rules": {
+    "prose_only_authority_is_executable": false,
+    "all_required_gates_must_be_structured": true,
+    "presidential_command_equals_formal_declaration": false,
+    "foreign_policy_commitment_equals_automatic_intervention": false,
+    "unresolved_sequence_may_be_silently_ordered": false
+  },
+  "source_ids": ["src_twn_constitution_main_text","src_twn_president_authority","src_twn_legislative_functions","src_twn_additional_articles","src_twn_us_taiwan_relations_act"]
+}
