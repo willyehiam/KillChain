@@ -15,7 +15,16 @@
       "source_type": "official_release",
       "url": "https://english.president.gov.tw/POP/240",
       "relevant_locator": "Presidential powers including command, war, peace, treaties, and emergency orders",
-      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan"
+      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan",
+      "mutability_class": "live_mutable",
+      "bookmark_evidence_status": "quarantined_no_prebookmark_temporal_proof",
+      "temporal_proof_requirements": {
+        "accepted_alternatives": [
+          "archive_url_plus_snapshot_at_on_or_before_bookmark_plus_content_hash",
+          "dated_prebookmark_official_source"
+        ],
+        "continuity_inference_forbidden": true
+      }
     },
     {
       "source_id": "src_twn_vice_president_authority",
@@ -26,7 +35,16 @@
       "source_type": "official_release",
       "url": "https://english.president.gov.tw/POP/241",
       "relevant_locator": "Vice presidential succession rule",
-      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan"
+      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan",
+      "mutability_class": "live_mutable",
+      "bookmark_evidence_status": "quarantined_no_prebookmark_temporal_proof",
+      "temporal_proof_requirements": {
+        "accepted_alternatives": [
+          "archive_url_plus_snapshot_at_on_or_before_bookmark_plus_content_hash",
+          "dated_prebookmark_official_source"
+        ],
+        "continuity_inference_forbidden": true
+      }
     },
     {
       "source_id": "src_twn_legislative_functions",
@@ -37,7 +55,16 @@
       "source_type": "official_release",
       "url": "https://english.president.gov.tw/POP/244",
       "relevant_locator": "Legislative powers over martial law, declarations of war, peace, and treaties",
-      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan"
+      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan",
+      "mutability_class": "live_mutable",
+      "bookmark_evidence_status": "quarantined_no_prebookmark_temporal_proof",
+      "temporal_proof_requirements": {
+        "accepted_alternatives": [
+          "archive_url_plus_snapshot_at_on_or_before_bookmark_plus_content_hash",
+          "dated_prebookmark_official_source"
+        ],
+        "continuity_inference_forbidden": true
+      }
     },
     {
       "source_id": "src_twn_additional_articles",
@@ -48,7 +75,14 @@
       "source_type": "law_or_treaty",
       "url": "https://english.president.gov.tw/Page/95",
       "relevant_locator": "Articles 2 and 3 on terms, vacancies, premier appointment, and Executive Yuan responsibility",
-      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan"
+      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan",
+      "instrument_effective_from": "2005-06-10",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "2005-06-10",
+        "rule": "Legal instruments are evaluated by historically valid effective edition, not by the retrieval date of a mutable web presentation."
+      }
     },
     {
       "source_id": "src_twn_central_government",
@@ -60,7 +94,16 @@
       "url": "https://english.president.gov.tw/page/105",
       "relevant_locator": "President, Vice President, Executive Yuan, and National Security Council descriptions",
       "reliability_notes": "Live institutional explainer used for constitutional structures, not later officeholder changes.",
-      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan"
+      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan",
+      "mutability_class": "live_mutable",
+      "bookmark_evidence_status": "quarantined_no_prebookmark_temporal_proof",
+      "temporal_proof_requirements": {
+        "accepted_alternatives": [
+          "archive_url_plus_snapshot_at_on_or_before_bookmark_plus_content_hash",
+          "dated_prebookmark_official_source"
+        ],
+        "continuity_inference_forbidden": true
+      }
     },
     {
       "source_id": "src_twn_inauguration_2024",
@@ -72,7 +115,12 @@
       "source_type": "official_release",
       "url": "https://english.president.gov.tw/NEWS/6726",
       "relevant_locator": "Lai Ching-te and Bi-khim Hsiao inauguration",
-      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan"
+      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2024-05-20"
+      }
     },
     {
       "source_id": "src_twn_cec_presidential_result_2024",
@@ -85,7 +133,12 @@
       "url": "https://www.cec.gov.tw/english/article/41410",
       "relevant_locator": "Candidate pairs, votes, percentages, and party registration",
       "reliability_notes": "The page footer can be regenerated later; only the frozen 2024 election totals are used.",
-      "source_family_id": "family_central_election_commission_republic_of_china_taiwan"
+      "source_family_id": "family_central_election_commission_republic_of_china_taiwan",
+      "mutability_class": "dated_dataset",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2024-01-19"
+      }
     },
     {
       "source_id": "src_twn_cec_legislative_result_2024",
@@ -98,7 +151,12 @@
       "url": "https://web.cec.gov.tw/central/article/41421",
       "relevant_locator": "Certified elected-member list for all 113 seats; party totals are deterministically counted from the certified list",
       "reliability_notes": "Primary election authority. The derived party allocation retains the two non-party seats as independent rather than attributing coalition behavior.",
-      "source_family_id": "family_central_election_commission_republic_of_china_taiwan"
+      "source_family_id": "family_central_election_commission_republic_of_china_taiwan",
+      "mutability_class": "dated_dataset",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2024-01-19"
+      }
     },
     {
       "source_id": "src_twn_cho_2025",
@@ -110,7 +168,12 @@
       "source_type": "official_release",
       "url": "https://english.ey.gov.tw/Page/61BF20C3E89B856/336494b6-d615-4721-960a-58e6fc960b9c",
       "relevant_locator": "Cho Jung-tai identified as Premier",
-      "source_family_id": "family_executive_yuan_republic_of_china_taiwan"
+      "source_family_id": "family_executive_yuan_republic_of_china_taiwan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-04-03"
+      }
     },
     {
       "source_id": "src_twn_cheng_2025",
@@ -122,7 +185,12 @@
       "source_type": "official_release",
       "url": "https://english.ey.gov.tw/Page/61BF20C3E89B856/d4425496-bf05-48cf-ac5e-f8db324ad5f2",
       "relevant_locator": "Cheng Li-chun identified as Vice Premier",
-      "source_family_id": "family_executive_yuan_republic_of_china_taiwan"
+      "source_family_id": "family_executive_yuan_republic_of_china_taiwan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-02-27"
+      }
     },
     {
       "source_id": "src_twn_resilience_committee",
@@ -135,7 +203,12 @@
       "url": "https://english.president.gov.tw/Page/668",
       "relevant_locator": "Committee announcement naming Lai, Hsiao, Pan Men-an, and Joseph Wu",
       "reliability_notes": "Live page includes post-bookmark meeting links. Only the dated 2024 announcement and opening membership are used.",
-      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan"
+      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2024-06-19"
+      }
     },
     {
       "source_id": "src_twn_inauguration_luncheon_2024",
@@ -147,7 +220,12 @@
       "source_type": "official_release",
       "url": "https://english.president.gov.tw/News/6735",
       "relevant_locator": "Lin Chia-lung as Foreign Minister and Joseph Wu as NSC Secretary-General",
-      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan"
+      "source_family_id": "family_office_of_the_president_republic_of_china_taiwan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2024-05-20"
+      }
     },
     {
       "source_id": "src_twn_dpp_congress_2025",
@@ -160,7 +238,12 @@
       "url": "https://www.dpp.org.tw/en/press_releases/contents/124",
       "relevant_locator": "Opening government and party roles",
       "reliability_notes": "Official party source; actor office claims are used when corroborated or self-describing, while partisan characterizations are not treated as neutral fact.",
-      "source_family_id": "family_democratic_progressive_party"
+      "source_family_id": "family_democratic_progressive_party",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-06-28"
+      }
     },
     {
       "source_id": "src_twn_lin_resignation_hsu_appointment_2025",
@@ -173,7 +256,12 @@
       "url": "https://www.taiwannews.com.tw/news/6183577",
       "relevant_locator": "Lin Yu-chang resigned after the 26 July recall vote; Hsu Kuo-yung was appointed on 20 August and was to assume office on 25 August",
       "reliability_notes": "Dated pre-bookmark report used for the transition interval. Party influence beyond the formal office is not inferred.",
-      "source_family_id": "family_taiwan_news"
+      "source_family_id": "family_taiwan_news",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-08-20"
+      }
     },
     {
       "source_id": "src_twn_hsu_dpp_secretary_general_2025",
@@ -186,7 +274,12 @@
       "url": "https://www.taipeitimes.com/News/taiwan/archives/2025/08/21/2003842420",
       "relevant_locator": "Corroborates the appointment and 25 August effective date",
       "reliability_notes": "Independent dated corroboration of the party office transition.",
-      "source_family_id": "family_taipei_times"
+      "source_family_id": "family_taipei_times",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-08-21"
+      }
     },
     {
       "source_id": "src_twn_mnd_koo_2025",
@@ -199,7 +292,12 @@
       "url": "https://www.mnd.gov.tw/en/news/pressrelease/84670/436",
       "relevant_locator": "Wellington Koo identified as Minister of National Defense",
       "reliability_notes": "Pre-bookmark ministry release used only to establish the officeholder at the opening bookmark.",
-      "source_family_id": "family_ministry_of_national_defense_republic_of_china_taiwan"
+      "source_family_id": "family_ministry_of_national_defense_republic_of_china_taiwan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-07-13"
+      }
     },
     {
       "source_id": "src_twn_legislative_leadership_2025",
@@ -211,7 +309,12 @@
       "source_type": "official_release",
       "url": "https://www.ly.gov.tw/EngPages/EngTopicList.aspx?idx=9&nodeid=45579",
       "relevant_locator": "Legislative Yuan President and Vice President roles",
-      "source_family_id": "family_legislative_yuan_republic_of_china_taiwan"
+      "source_family_id": "family_legislative_yuan_republic_of_china_taiwan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-04-15"
+      }
     },
     {
       "source_id": "src_twn_kmt_chu_2025",
@@ -224,7 +327,12 @@
       "url": "https://www.kmt.org.tw/2025/04/why-parliament-majority-has-to-take-it.html",
       "relevant_locator": "Eric Chu identified as KMT Chair",
       "reliability_notes": "Official party source used only for the party officeholder, not partisan assertions.",
-      "source_family_id": "family_kuomintang"
+      "source_family_id": "family_kuomintang",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-04-25"
+      }
     },
     {
       "source_id": "src_twn_kmt_fu_2025",
@@ -236,7 +344,12 @@
       "source_type": "official_release",
       "url": "https://www.ly.gov.tw/EngPages/Detail.aspx?nodeid=45579&pid=239328",
       "relevant_locator": "Fu Kun-chi caucus role",
-      "source_family_id": "family_legislative_yuan_republic_of_china_taiwan"
+      "source_family_id": "family_legislative_yuan_republic_of_china_taiwan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-03-18"
+      }
     },
     {
       "source_id": "src_twn_tpp_caucus_2025",
@@ -249,7 +362,12 @@
       "url": "https://www.tpp.org.tw/newsdetail/3721",
       "relevant_locator": "Huang Kuo-chang party and caucus role",
       "reliability_notes": "Official party source used only for office and caucus organization.",
-      "source_family_id": "family_taiwan_people_s_party"
+      "source_family_id": "family_taiwan_people_s_party",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-02-03"
+      }
     },
     {
       "source_id": "src_twn_tpp_huang_chair_2025",
@@ -262,7 +380,12 @@
       "url": "https://www.tpp.org.tw/newsdetail/3789",
       "relevant_locator": "Huang Kuo-chang formally assumes office as second party chair",
       "reliability_notes": "Official party source used only for the party officeholder.",
-      "source_family_id": "family_taiwan_people_s_party"
+      "source_family_id": "family_taiwan_people_s_party",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-02-19"
+      }
     },
     {
       "source_id": "src_twn_taichung_lu",
@@ -274,7 +397,12 @@
       "source_type": "official_release",
       "url": "https://english.taichung.gov.tw/10273/10554/10706/1178230",
       "relevant_locator": "Current position 2018 to present; updated 2024-11-04",
-      "source_family_id": "family_taichung_city_government"
+      "source_family_id": "family_taichung_city_government",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2022-12-26"
+      }
     },
     {
       "source_id": "src_twn_new_taipei_hou",
@@ -285,7 +413,16 @@
       "source_type": "official_release",
       "url": "https://foreigner.ntpc.gov.tw/home.jsp?id=0c69de209c17e5c4",
       "relevant_locator": "Mayor of New Taipei City, 2018 to present",
-      "source_family_id": "family_new_taipei_city_government"
+      "source_family_id": "family_new_taipei_city_government",
+      "mutability_class": "live_mutable",
+      "bookmark_evidence_status": "quarantined_no_prebookmark_temporal_proof",
+      "temporal_proof_requirements": {
+        "accepted_alternatives": [
+          "archive_url_plus_snapshot_at_on_or_before_bookmark_plus_content_hash",
+          "dated_prebookmark_official_source"
+        ],
+        "continuity_inference_forbidden": true
+      }
     },
     {
       "source_id": "src_twn_taipei_chiang",
@@ -297,7 +434,12 @@
       "source_type": "official_release",
       "url": "https://english.gov.taipei/cp.aspx?n=9098E8D466ED59D5&s=1A2F0EABD298B76F",
       "relevant_locator": "Mayor profile",
-      "source_family_id": "family_taipei_city_government"
+      "source_family_id": "family_taipei_city_government",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2024-09-27"
+      }
     },
     {
       "source_id": "src_twn_kaohsiung_chen_2025",
@@ -310,7 +452,12 @@
       "url": "https://www.kcg.gov.tw/EN/News_Content.aspx?n=6A4E4E17D0B777E1&s=0EB9AE96E2A74F85&sms=59767319A021F7E6",
       "relevant_locator": "Chen Chi-mai identified as Kaohsiung Mayor",
       "reliability_notes": "Pre-bookmark city-government release used only to establish the officeholder.",
-      "source_family_id": "family_kaohsiung_city_government"
+      "source_family_id": "family_kaohsiung_city_government",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-08-01"
+      }
     },
     {
       "source_id": "src_twn_cec_recall_results_2025_07_26",
@@ -323,7 +470,12 @@
       "url": "https://web.cec.gov.tw/central/article/60804",
       "relevant_locator": "All 24 legislative recall proposals were rejected, producing no seat changes",
       "reliability_notes": "Primary election authority. Only the legislative recall outcomes are used in the seat ledger.",
-      "source_family_id": "family_central_election_commission_republic_of_china_taiwan"
+      "source_family_id": "family_central_election_commission_republic_of_china_taiwan",
+      "mutability_class": "dated_dataset",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-07-26"
+      }
     },
     {
       "source_id": "src_twn_cec_recall_results_2025_08_23",
@@ -336,7 +488,12 @@
       "url": "https://www.cec.gov.tw/central/article/61391",
       "relevant_locator": "All seven 23 August legislative recall proposals were rejected, producing no seat changes",
       "reliability_notes": "Primary election authority decision issued before the opening bookmark.",
-      "source_family_id": "family_central_election_commission_republic_of_china_taiwan"
+      "source_family_id": "family_central_election_commission_republic_of_china_taiwan",
+      "mutability_class": "dated_dataset",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-08-29"
+      }
     },
     {
       "source_id": "src_twn_us_taiwan_relations_act",
@@ -348,7 +505,13 @@
       "source_type": "law_or_treaty",
       "url": "https://uscode.house.gov/view.xhtml?edition=1999&req=granuleid%3AUSC-1999-title22-chapter48",
       "relevant_locator": "Section 3301(b)",
-      "source_family_id": "family_office_of_the_law_revision_counsel_united_states_house_of_representatives"
+      "source_family_id": "family_office_of_the_law_revision_counsel_united_states_house_of_representatives",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1979-04-10",
+        "rule": "Legal instruments are evaluated by historically valid effective edition, not by the retrieval date of a mutable web presentation."
+      }
     },
     {
       "source_id": "src_twn_constitution_main_text",
@@ -361,7 +524,31 @@
       "source_family_id": "family_office_of_the_president_republic_of_china_taiwan",
       "url": "https://english.president.gov.tw/Page/94",
       "relevant_locator": "Articles 36, 38, 39, 58, and 63",
-      "reliability_notes": "Constitutional text supports institutional gates. It does not by itself settle disputed sequencing between the Executive Yuan, Legislative Yuan, and President."
+      "reliability_notes": "Constitutional text supports institutional gates. It does not by itself settle disputed sequencing between the Executive Yuan, Legislative Yuan, and President.",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1947-01-01",
+        "rule": "Legal instruments are evaluated by historically valid effective edition, not by the retrieval date of a mutable web presentation."
+      }
+    },
+    {
+      "source_id": "src_twn_new_taipei_hou_dated_2025_08_29",
+      "title": "New Taipei City joins IURC and EU office head visits Mayor Hou",
+      "publisher": "New Taipei City Government",
+      "published_at": "2025-08-29",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "source_family_id": "family_new_taipei_city_government",
+      "url": "https://www.info.ntpc.gov.tw/2025/08/29/new-taipei-city-joins-the-iurc-and-head-of-eu-office-pays-official-visit-to-mayor-hou/",
+      "relevant_locator": "Official visit to New Taipei City Mayor Hou Yu-ih on August 28, 2025",
+      "reliability_notes": "Dated prebookmark city government release establishes Hou Yu-ih was acting as mayor immediately before the bookmark.",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-08-29"
+      }
     }
   ],
   "claims": [
@@ -374,7 +561,7 @@
       "evidence_state": "official_claim",
       "confidence": "high",
       "source_ids": [
-        "src_twn_president_authority"
+        "src_twn_constitution_main_text"
       ]
     },
     {
@@ -386,7 +573,7 @@
       "evidence_state": "official_claim",
       "confidence": "high",
       "source_ids": [
-        "src_twn_central_government"
+        "src_twn_additional_articles"
       ]
     },
     {
@@ -398,7 +585,7 @@
       "evidence_state": "official_claim",
       "confidence": "high",
       "source_ids": [
-        "src_twn_president_authority"
+        "src_twn_constitution_main_text"
       ]
     },
     {
@@ -410,7 +597,7 @@
       "evidence_state": "official_claim",
       "confidence": "high",
       "source_ids": [
-        "src_twn_legislative_functions"
+        "src_twn_constitution_main_text"
       ]
     },
     {
@@ -446,8 +633,7 @@
       "evidence_state": "official_claim",
       "confidence": "high",
       "source_ids": [
-        "src_twn_additional_articles",
-        "src_twn_vice_president_authority"
+        "src_twn_additional_articles"
       ]
     },
     {
@@ -674,10 +860,11 @@
       "evidence_state": "official_claim",
       "confidence": "high",
       "source_ids": [
-        "src_twn_new_taipei_hou"
+        "src_twn_new_taipei_hou_dated_2025_08_29"
       ],
-      "interval_start_status": "unknown_not_established_by_packet_source",
-      "interval_end_status": "open_at_bookmark_end_not_established"
+      "interval_start_status": "known",
+      "interval_end_status": "open_at_bookmark_end_not_established",
+      "effective_from": "2025-08-28"
     },
     {
       "claim_id": "claim_twn_actor_chiang_role",
@@ -893,8 +1080,7 @@
         "claim_twn_legislative_yuan_war_and_peace_bills"
       ],
       "source_ids": [
-        "src_twn_president_authority",
-        "src_twn_legislative_functions"
+        "src_twn_constitution_main_text"
       ],
       "status": "open",
       "simulation_rule": "Treat presidential action, Legislative Yuan authorization, emergency process, and political legitimacy as distinct gates until a constitutional legal review resolves workflow details.",
