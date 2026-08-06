@@ -67,6 +67,7 @@ Additional fixtures cover the Navy pseudo-range, mutable-source interval leakage
 - `node .../usa/force_ledger/validate_national_packet.mjs`: PASS
 - `node .../usa/force_ledger/test_national_packet_regressions.mjs`: PASS, 16 of 16 mandatory negative fixtures rejected
 - `npm run validate:research-foundation`: PASS, including USA, China, and Taiwan Tier A force ledgers
+- `npm test`: PASS on published main `ec0206a`, including the opening-posture firewall, 34 authority regressions, politics regressions, typecheck, 43 simulation tests, production build, and rendered-HTML test
 
 ## Release state
 
