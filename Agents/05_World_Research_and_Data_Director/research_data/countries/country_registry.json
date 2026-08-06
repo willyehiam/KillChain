@@ -40,7 +40,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/deu/profile.json",
       "strategic_reason": null
     },
     {
@@ -53,7 +53,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/jpn/profile.json",
       "strategic_reason": null
     },
     {
@@ -66,7 +66,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/gbr/profile.json",
       "strategic_reason": null
     },
     {
@@ -79,7 +79,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/ind/profile.json",
       "strategic_reason": null
     },
     {
@@ -92,7 +92,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/fra/profile.json",
       "strategic_reason": null
     },
     {
@@ -105,7 +105,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/rus/profile.json",
       "strategic_reason": null
     },
     {
@@ -118,7 +118,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/ita/profile.json",
       "strategic_reason": null
     },
     {
@@ -131,7 +131,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/can/profile.json",
       "strategic_reason": null
     },
     {
@@ -144,7 +144,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/bra/profile.json",
       "strategic_reason": null
     },
     {
@@ -157,7 +157,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/esp/profile.json",
       "strategic_reason": null
     },
     {
@@ -170,7 +170,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/kor/profile.json",
       "strategic_reason": null
     },
     {
@@ -183,7 +183,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/aus/profile.json",
       "strategic_reason": null
     },
     {
@@ -196,7 +196,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/mex/profile.json",
       "strategic_reason": null
     },
     {
@@ -209,7 +209,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/tur/profile.json",
       "strategic_reason": null
     },
     {
@@ -222,7 +222,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/idn/profile.json",
       "strategic_reason": null
     },
     {
@@ -235,7 +235,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/nld/profile.json",
       "strategic_reason": null
     },
     {
@@ -248,7 +248,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/sau/profile.json",
       "strategic_reason": null
     },
     {
@@ -261,7 +261,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/che/profile.json",
       "strategic_reason": null
     },
     {
@@ -274,7 +274,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/pol/profile.json",
       "strategic_reason": null
     },
     {
@@ -300,7 +300,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/bel/profile.json",
       "strategic_reason": null
     },
     {
@@ -313,7 +313,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/irl/profile.json",
       "strategic_reason": null
     },
     {
@@ -326,7 +326,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/arg/profile.json",
       "strategic_reason": null
     },
     {
@@ -339,7 +339,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/swe/profile.json",
       "strategic_reason": null
     },
     {
@@ -352,7 +352,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/isr/profile.json",
       "strategic_reason": null
     },
     {
@@ -365,7 +365,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/sgp/profile.json",
       "strategic_reason": null
     },
     {
@@ -378,7 +378,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/aut/profile.json",
       "strategic_reason": null
     },
     {
@@ -391,7 +391,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/tha/profile.json",
       "strategic_reason": null
     },
     {
@@ -404,7 +404,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/are/profile.json",
       "strategic_reason": null
     },
     {
@@ -417,7 +417,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/nor/profile.json",
       "strategic_reason": null
     },
     {
@@ -430,7 +430,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/vnm/profile.json",
       "strategic_reason": null
     },
     {
@@ -443,7 +443,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/phl/profile.json",
       "strategic_reason": null
     },
     {
@@ -456,7 +456,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/mys/profile.json",
       "strategic_reason": null
     },
     {
@@ -469,7 +469,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/dnk/profile.json",
       "strategic_reason": null
     },
     {
@@ -482,7 +482,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/bgd/profile.json",
       "strategic_reason": null
     },
     {
@@ -495,7 +495,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/col/profile.json",
       "strategic_reason": null
     },
     {
@@ -508,7 +508,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/rou/profile.json",
       "strategic_reason": null
     },
     {
@@ -521,7 +521,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/zaf/profile.json",
       "strategic_reason": null
     },
     {
@@ -534,7 +534,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/pak/profile.json",
       "strategic_reason": null
     },
     {
@@ -547,7 +547,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/cze/profile.json",
       "strategic_reason": null
     },
     {
@@ -560,7 +560,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/irn/profile.json",
       "strategic_reason": null
     },
     {
@@ -573,7 +573,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/egy/profile.json",
       "strategic_reason": null
     },
     {
@@ -586,7 +586,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/chl/profile.json",
       "strategic_reason": null
     },
     {
@@ -599,7 +599,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/prt/profile.json",
       "strategic_reason": null
     },
     {
@@ -612,7 +612,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/per/profile.json",
       "strategic_reason": null
     },
     {
@@ -625,7 +625,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/fin/profile.json",
       "strategic_reason": null
     },
     {
@@ -638,7 +638,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/kaz/profile.json",
       "strategic_reason": null
     },
     {
@@ -651,7 +651,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/nga/profile.json",
       "strategic_reason": null
     },
     {
@@ -664,7 +664,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/dza/profile.json",
       "strategic_reason": null
     },
     {
@@ -677,7 +677,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/grc/profile.json",
       "strategic_reason": null
     },
     {
@@ -690,7 +690,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/irq/profile.json",
       "strategic_reason": null
     },
     {
@@ -703,7 +703,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/nzl/profile.json",
       "strategic_reason": null
     },
     {
@@ -716,7 +716,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/hun/profile.json",
       "strategic_reason": null
     },
     {
@@ -729,7 +729,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/qat/profile.json",
       "strategic_reason": null
     },
     {
@@ -742,7 +742,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/ukr/profile.json",
       "strategic_reason": null
     },
     {
@@ -755,7 +755,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/mar/profile.json",
       "strategic_reason": null
     },
     {
@@ -768,7 +768,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/kwt/profile.json",
       "strategic_reason": null
     },
     {
@@ -781,7 +781,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/svk/profile.json",
       "strategic_reason": null
     },
     {
@@ -794,7 +794,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/uzb/profile.json",
       "strategic_reason": null
     },
     {
@@ -807,7 +807,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/ago/profile.json",
       "strategic_reason": null
     },
     {
@@ -820,7 +820,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/ken/profile.json",
       "strategic_reason": null
     },
     {
@@ -833,7 +833,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/bgr/profile.json",
       "strategic_reason": null
     },
     {
@@ -846,7 +846,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/ecu/profile.json",
       "strategic_reason": null
     },
     {
@@ -859,7 +859,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/dom/profile.json",
       "strategic_reason": null
     },
     {
@@ -872,7 +872,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/gtm/profile.json",
       "strategic_reason": null
     },
     {
@@ -885,7 +885,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/gha/profile.json",
       "strategic_reason": null
     },
     {
@@ -898,7 +898,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/eth/profile.json",
       "strategic_reason": null
     },
     {
@@ -911,7 +911,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/omn/profile.json",
       "strategic_reason": null
     },
     {
@@ -924,7 +924,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/hrv/profile.json",
       "strategic_reason": null
     },
     {
@@ -937,7 +937,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/cri/profile.json",
       "strategic_reason": null
     },
     {
@@ -950,7 +950,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/lux/profile.json",
       "strategic_reason": null
     },
     {
@@ -963,7 +963,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/srb/profile.json",
       "strategic_reason": null
     },
     {
@@ -976,7 +976,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/ven/profile.json",
       "strategic_reason": null
     },
     {
@@ -989,7 +989,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/civ/profile.json",
       "strategic_reason": null
     },
     {
@@ -1002,7 +1002,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/ltu/profile.json",
       "strategic_reason": null
     },
     {
@@ -1015,7 +1015,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/cod/profile.json",
       "strategic_reason": null
     },
     {
@@ -1028,7 +1028,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/blr/profile.json",
       "strategic_reason": null
     },
     {
@@ -1041,7 +1041,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/pan/profile.json",
       "strategic_reason": null
     },
     {

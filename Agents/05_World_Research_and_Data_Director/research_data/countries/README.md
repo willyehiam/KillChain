@@ -9,7 +9,7 @@ The registry is the authority for country identity, research tier, coverage
 status, priority, and dossier path. It does not claim that every registered
 country is already populated.
 
-The first Tier A foundations are:
+The Tier A foundations are:
 
 1. `usa/profile.json`
 2. `chn/profile.json`
@@ -17,6 +17,20 @@ The first Tier A foundations are:
 
 Each profile links to a force ledger manifest. The acceptance questions and
 collection order are in `TIER_A_FOUNDATION.md`.
+
+The remaining 77 members of the frozen top 80 cohort have deterministic dossier
+shells containing only roster backed identity, GDP cohort, research tier, and
+opening bookmark metadata. These shells deliberately leave substantive country
+state unknown. Their numeric zeros count accepted corpus records and never mean
+that a country has zero real world people, units, facilities, or capacity.
+
+Regenerate and verify those shells from the repository root:
+
+```text
+node Agents/05_World_Research_and_Data_Director/research_data/countries/tools/generate_top80_shells.mjs
+node Agents/05_World_Research_and_Data_Director/research_data/countries/tools/generate_top80_shells.mjs --check
+node Agents/05_World_Research_and_Data_Director/research_data/countries/tools/validate_top80_shells.mjs
+```
 
 ## Organization
 

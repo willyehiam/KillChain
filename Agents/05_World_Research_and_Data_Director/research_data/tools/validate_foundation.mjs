@@ -196,6 +196,7 @@ assert(
 );
 
 let profileCount = 0;
+let tierAProfileCount = 0;
 let forceLedgerCount = 0;
 
 for (const country of registry.countries.filter((entry) => entry.profile_path)) {
@@ -209,6 +210,7 @@ for (const country of registry.countries.filter((entry) => entry.profile_path)) 
   assert(profile.bookmark_id === bookmark.bookmark_id, `${country.country_code}: profile bookmark mismatch`);
   assert(profile.as_of === bookmark.world_time, `${country.country_code}: profile time mismatch`);
   assert(profile.depth_tier === country.depth_tier, `${country.country_code}: profile tier mismatch`);
+  if (country.depth_tier === "A") tierAProfileCount += 1;
   assert(
     sameMembers(Object.keys(profile.coverage ?? {}), REQUIRED_LANES),
     `${country.country_code}: dossier must contain exactly eight coverage lanes`,
@@ -221,6 +223,18 @@ for (const country of registry.countries.filter((entry) => entry.profile_path)) 
 
   for (const sourceId of profile.source_ids ?? []) {
     assert(sourceIds.has(sourceId), `${country.country_code}: unknown profile source ${sourceId}`);
+  }
+
+  if (!profile.dataset_paths.force_ledger) {
+    assert(
+      country.depth_tier !== "A",
+      `${country.country_code}: Tier A profile must link a force ledger`,
+    );
+    assert(
+      profile.completeness?.force_ledger_status === "absent",
+      `${country.country_code}: missing force ledger must be reported as absent`,
+    );
+    continue;
   }
 
   const forcePath = path.resolve(path.dirname(profilePath), profile.dataset_paths.force_ledger);
@@ -253,7 +267,8 @@ for (const country of registry.countries.filter((entry) => entry.profile_path)) 
   }
 }
 
-assert(profileCount === 3, `Expected three Tier A profiles, found ${profileCount}`);
+assert(profileCount === 80, `Expected all 80 ranked country profiles, found ${profileCount}`);
+assert(tierAProfileCount === 3, `Expected three Tier A profiles, found ${tierAProfileCount}`);
 assert(forceLedgerCount === 3, `Expected three Tier A force ledgers, found ${forceLedgerCount}`);
 
 const report = {
@@ -264,7 +279,8 @@ const report = {
   ranked_countries: cohort?.countries?.length ?? 0,
   strategic_additions: cohort?.mandatory_strategic_additions?.length ?? 0,
   registry_countries: registry?.countries?.length ?? 0,
-  tier_a_profiles: profileCount,
+  ranked_country_profiles: profileCount,
+  tier_a_profiles: tierAProfileCount,
   tier_a_force_ledgers: forceLedgerCount,
   schemas_parsed: NEW_SCHEMAS.length,
   errors,

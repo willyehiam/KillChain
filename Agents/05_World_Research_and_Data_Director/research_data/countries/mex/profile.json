@@ -1,0 +1,101 @@
+{
+  "schema_version": "0.1.0",
+  "country_id": "country_mex",
+  "country_code": "MEX",
+  "name": "Mexico",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "depth_tier": "C",
+  "coverage_status": "shell",
+  "roster_basis": "top_80_2025_nominal_gdp",
+  "gdp_rank": 15,
+  "gdp_2025_usd_billions": 1832.641,
+  "coverage": {
+    "politics_and_institutions": {
+      "status": "shell",
+      "record_count": 0,
+      "source_count": 0,
+      "open_question_count": 1,
+      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+    },
+    "economy_trade_finance_resources": {
+      "status": "collecting",
+      "record_count": 1,
+      "source_count": 1,
+      "open_question_count": 1,
+      "notes": "Only the frozen 2025 nominal GDP roster record is accepted; no broader economic state is populated."
+    },
+    "military_organization_inventory": {
+      "status": "shell",
+      "record_count": 0,
+      "source_count": 0,
+      "open_question_count": 1,
+      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+    },
+    "fixed_facilities_basing": {
+      "status": "shell",
+      "record_count": 0,
+      "source_count": 0,
+      "open_question_count": 1,
+      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+    },
+    "strategic_industry_conversion": {
+      "status": "shell",
+      "record_count": 0,
+      "source_count": 0,
+      "open_question_count": 1,
+      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+    },
+    "energy_transport_communications_logistics": {
+      "status": "shell",
+      "record_count": 0,
+      "source_count": 0,
+      "open_question_count": 1,
+      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+    },
+    "geography_provinces_terrain": {
+      "status": "shell",
+      "record_count": 0,
+      "source_count": 0,
+      "open_question_count": 1,
+      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+    },
+    "crises_alliances_sanctions_deployments": {
+      "status": "shell",
+      "record_count": 0,
+      "source_count": 0,
+      "open_question_count": 1,
+      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+    }
+  },
+  "dataset_paths": {
+    "government": null,
+    "political_actors": null,
+    "provinces": null,
+    "economy": "../top_80_2025/top_80_2025_gdp.json",
+    "force_ledger": null,
+    "facilities": null,
+    "infrastructure": null,
+    "relationships": null,
+    "claims": null,
+    "sources": "../../sources/sources.ndjson",
+    "contradictions": null
+  },
+  "completeness": {
+    "political_actor_target": 20,
+    "political_actor_count": 0,
+    "province_layer_status": "absent",
+    "force_ledger_status": "absent"
+  },
+  "source_ids": [
+    "src_imf_weo_2026_04_ngdpd_2025"
+  ],
+  "unknowns": [
+    "Government, leadership, institutions, and political actors at the bookmark are unknown in this shell.",
+    "Military organization, inventory, readiness, basing, maintenance, and deployments are unknown in this shell.",
+    "Province, terrain, infrastructure, industry, energy, logistics, and communications state are unknown in this shell.",
+    "Alliances, dependencies, sanctions, crisis commitments, and active plans are unknown in this shell.",
+    "A zero record count means no accepted corpus records and never asserts zero real world entities or capacity."
+  ],
+  "notes": "Generated from the frozen roster only. Numeric coverage zeros count accepted corpus records and never assert real world absence. All substantive country facts remain unknown until sourced."
+}
