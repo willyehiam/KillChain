@@ -53,9 +53,7 @@
     "Actor inclusion is not a nomination, election, recall, coalition, or succession forecast."
   ],
   "source_ids": [
-    "src_twn_president_authority",
-    "src_twn_vice_president_authority",
-    "src_twn_legislative_functions",
+    "src_twn_constitution_main_text",
     "src_twn_additional_articles",
     "src_twn_inauguration_2024",
     "src_twn_cec_presidential_result_2024",
