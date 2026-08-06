@@ -10,7 +10,20 @@
         "op_claim_lineage_2022"
       ],
       "force_refs": [
-        "organization_chn_eastern_theater_command"
+        {
+          "organization_id": "organization_chn_eastern_theater_command",
+          "reference_semantics": "historical_organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "opening_deployment",
+            "opening_readiness",
+            "opening_access",
+            "opening_theater_availability"
+          ]
+        }
       ],
       "lesson_scope": "Demonstrated exercise categories and political signaling only; no automatic readiness or future action inference."
     },
@@ -23,7 +36,20 @@
         "op_claim_lineage_2023"
       ],
       "force_refs": [
-        "organization_chn_eastern_theater_command"
+        {
+          "organization_id": "organization_chn_eastern_theater_command",
+          "reference_semantics": "historical_organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "opening_deployment",
+            "opening_readiness",
+            "opening_access",
+            "opening_theater_availability"
+          ]
+        }
       ],
       "lesson_scope": "Demonstrated exercise categories and political signaling only; no automatic readiness or future action inference."
     },
@@ -36,7 +62,20 @@
         "op_claim_lineage_2024a"
       ],
       "force_refs": [
-        "organization_chn_eastern_theater_command"
+        {
+          "organization_id": "organization_chn_eastern_theater_command",
+          "reference_semantics": "historical_organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "opening_deployment",
+            "opening_readiness",
+            "opening_access",
+            "opening_theater_availability"
+          ]
+        }
       ],
       "lesson_scope": "Demonstrated exercise categories and political signaling only; no automatic readiness or future action inference."
     },
@@ -49,7 +88,20 @@
         "op_claim_lineage_2024b"
       ],
       "force_refs": [
-        "organization_chn_eastern_theater_command"
+        {
+          "organization_id": "organization_chn_eastern_theater_command",
+          "reference_semantics": "historical_organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "opening_deployment",
+            "opening_readiness",
+            "opening_access",
+            "opening_theater_availability"
+          ]
+        }
       ],
       "lesson_scope": "Demonstrated exercise categories and political signaling only; no automatic readiness or future action inference."
     },
@@ -63,8 +115,34 @@
         "op_claim_april_activity_scale"
       ],
       "force_refs": [
-        "organization_chn_eastern_theater_command",
-        "organization_chn_china_coast_guard"
+        {
+          "organization_id": "organization_chn_eastern_theater_command",
+          "reference_semantics": "historical_organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "opening_deployment",
+            "opening_readiness",
+            "opening_access",
+            "opening_theater_availability"
+          ]
+        },
+        {
+          "organization_id": "organization_chn_china_coast_guard",
+          "reference_semantics": "historical_organization_identity_only",
+          "deployment_status": "unknown",
+          "readiness_status": "unknown",
+          "access_status": "not_applicable",
+          "theater_availability_status": "unknown",
+          "does_not_imply": [
+            "opening_deployment",
+            "opening_readiness",
+            "opening_access",
+            "opening_theater_availability"
+          ]
+        }
       ],
       "lesson_scope": "Demonstrated exercise categories and political signaling only; no automatic readiness or future action inference."
     }
