@@ -1,0 +1,728 @@
+{
+  "bundle_id": "bundle_fixture_2025_09_01",
+  "country_id": "country_fixture",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "manifest": {
+    "schema_version": "1.0.0",
+    "force_ledger_id": "force_ledger_fixture_2025_09_01",
+    "country_id": "country_fixture",
+    "bookmark_id": "bookmark_global_fracture_2025_09_01",
+    "as_of": "2025-09-01T00:00:00Z",
+    "status": "reconciled",
+    "accounting_states": [
+      "active",
+      "committed",
+      "in_transit",
+      "training",
+      "maintenance",
+      "reserve",
+      "stored",
+      "under_construction",
+      "damaged",
+      "destroyed",
+      "exported",
+      "retired",
+      "captured",
+      "unknown"
+    ],
+    "scope": {
+      "services": [
+        "air_force"
+      ],
+      "components": [
+        "active"
+      ],
+      "government_forces": [],
+      "individualization_rule": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision",
+      "covered_domains": [
+        "air"
+      ],
+      "excluded_force_ids": [],
+      "exclusion_notes": []
+    },
+    "dataset_paths": {
+      "organizations": "organizations.ndjson",
+      "platforms": "platforms.ndjson",
+      "equipment_types": "equipment_types.ndjson",
+      "inventory": "inventory.ndjson",
+      "deployments": "deployments.ndjson",
+      "maintenance": "maintenance.ndjson",
+      "construction": "construction.ndjson",
+      "conservation": "conservation.ndjson",
+      "facilities": "facilities.ndjson",
+      "sources": "sources.ndjson",
+      "contradictions": "contradictions.ndjson"
+    },
+    "reconciliation": {
+      "state": "balanced",
+      "organization_records": 2,
+      "platform_records": 1,
+      "equipment_type_records": 1,
+      "inventory_records": 2,
+      "deployment_records": 1,
+      "maintenance_records": 1,
+      "construction_records": 1,
+      "conservation_records": 1,
+      "exact_quantity_records": 2,
+      "range_quantity_records": 0,
+      "unknown_quantity_records": 0,
+      "open_conservation_exceptions": 0,
+      "double_booking_exceptions": 0,
+      "orphan_platform_records": 0,
+      "orphan_organization_records": 0,
+      "expired_records": 0
+    },
+    "conservation_policy": {
+      "equation": "opening_plus_inflows_equals_closing_states_plus_outflows",
+      "counting_units_are_not_interchangeable": true,
+      "individuals_are_excluded_from_pools": true,
+      "parent_totals_are_not_summed_with_children": true
+    },
+    "aggregation_policy": {
+      "global_resolution": "service and command aggregates",
+      "theater_resolution": "formations and operational pools",
+      "mission_resolution": "individual executing and supporting platforms",
+      "aggregation_preserves_quantity": true
+    },
+    "source_ids": [
+      "source_fixture"
+    ],
+    "unknowns": [],
+    "reviewed_at": "2025-09-01",
+    "review_after": "2025-10-01"
+  },
+  "organizations": [
+    {
+      "organization_id": "organization_fixture_air_force",
+      "country_id": "country_fixture",
+      "controller_id": "country_fixture",
+      "name": "Fixture Air Force",
+      "service": "air_force",
+      "component": "active",
+      "organization_kind": "service_command",
+      "echelon": "service_command",
+      "parent_organization_id": null,
+      "command_relationship": "organic",
+      "headquarters_location_id": "location_fixture_air_base",
+      "personnel": {
+        "authorized": {
+          "kind": "unknown",
+          "unit": "person"
+        },
+        "assigned": {
+          "kind": "unknown",
+          "unit": "person"
+        },
+        "deployable": {
+          "kind": "unknown",
+          "unit": "person"
+        }
+      },
+      "readiness": {
+        "state": "ready",
+        "basis": "official_aggregate",
+        "limiting_factors": []
+      },
+      "mobilization": {
+        "status": "standing",
+        "authority_id": null,
+        "minimum_delay_hours": 0,
+        "equipment_pool_ids": []
+      },
+      "roles": [
+        "air_operations"
+      ],
+      "temporal_validity": {
+        "valid_from": "2025-01-01",
+        "valid_to": null,
+        "as_of": "2025-09-01T00:00:00Z",
+        "observed_at": "2025-08-15",
+        "review_after": "2025-10-01"
+      },
+      "provenance": {
+        "evidence_state": "observed",
+        "confidence": "high",
+        "source_ids": [
+          "source_fixture"
+        ],
+        "method": "fixture"
+      }
+    },
+    {
+      "organization_id": "organization_fixture_squadron",
+      "country_id": "country_fixture",
+      "controller_id": "country_fixture",
+      "name": "1st Fixture Squadron",
+      "service": "air_force",
+      "component": "active",
+      "organization_kind": "formation",
+      "echelon": "squadron",
+      "parent_organization_id": "organization_fixture_air_force",
+      "command_relationship": "organic",
+      "headquarters_location_id": "location_fixture_air_base",
+      "personnel": {
+        "authorized": {
+          "kind": "unknown",
+          "unit": "person"
+        },
+        "assigned": {
+          "kind": "unknown",
+          "unit": "person"
+        },
+        "deployable": {
+          "kind": "unknown",
+          "unit": "person"
+        }
+      },
+      "readiness": {
+        "state": "ready",
+        "basis": "official_aggregate",
+        "limiting_factors": []
+      },
+      "mobilization": {
+        "status": "standing",
+        "authority_id": null,
+        "minimum_delay_hours": 0,
+        "equipment_pool_ids": [
+          "inventory_fixture_active",
+          "inventory_fixture_maintenance"
+        ]
+      },
+      "roles": [
+        "fighter_operations"
+      ],
+      "inventory_record_ids": [
+        "inventory_fixture_active",
+        "inventory_fixture_maintenance"
+      ],
+      "temporal_validity": {
+        "valid_from": "2025-01-01",
+        "valid_to": null,
+        "as_of": "2025-09-01T00:00:00Z",
+        "observed_at": "2025-08-15",
+        "review_after": "2025-10-01"
+      },
+      "provenance": {
+        "evidence_state": "observed",
+        "confidence": "high",
+        "source_ids": [
+          "source_fixture"
+        ],
+        "method": "fixture"
+      }
+    }
+  ],
+  "equipment_types": [
+    {
+      "equipment_type_id": "equipment_fixture_fighter",
+      "display_name": "Fixture Fighter",
+      "taxonomy": {
+        "domain": "air",
+        "category": "multirole_fighter",
+        "entity_kind": "platform",
+        "family": "Fixture",
+        "model": "F1",
+        "variant": null
+      },
+      "origin_country_ids": [
+        "country_fixture"
+      ],
+      "manufacturer_ids": [
+        "producer_fixture"
+      ],
+      "roles": [
+        "air_superiority"
+      ],
+      "individualization": {
+        "supported": true,
+        "default_research_resolution": "formation_pool",
+        "reason": "Tail identity is optional unless it changes mission, command, or loss accounting."
+      },
+      "crew_requirements": {
+        "operating_crew": {
+          "kind": "exact",
+          "value": 1,
+          "unit": "person"
+        },
+        "support_personnel": {
+          "kind": "unknown",
+          "unit": "person"
+        }
+      },
+      "mobility": {
+        "mobility_kind": "fixed_wing",
+        "self_deploying": true,
+        "strategic_lift_required": false
+      },
+      "support_dependency_types": [
+        "crew",
+        "fuel",
+        "runway",
+        "maintenance_facility",
+        "munition"
+      ],
+      "measured_characteristics": [],
+      "temporal_validity": {
+        "valid_from": "2025-01-01",
+        "valid_to": null,
+        "as_of": "2025-09-01T00:00:00Z",
+        "observed_at": "2025-08-15",
+        "review_after": "2026-09-01"
+      },
+      "provenance": {
+        "evidence_state": "observed",
+        "confidence": "high",
+        "source_ids": [
+          "source_fixture"
+        ],
+        "method": "fixture"
+      }
+    }
+  ],
+  "platforms": [
+    {
+      "platform_id": "platform_fixture_fighter_001",
+      "country_id": "country_fixture",
+      "owner_id": "country_fixture",
+      "controller_id": "country_fixture",
+      "service": "air_force",
+      "component": "active",
+      "domain": "air",
+      "equipment_type_id": "equipment_fixture_fighter",
+      "identity": {
+        "identity_kind": "tail",
+        "display_name": "Fixture 001",
+        "official_identifier": "001",
+        "aliases": []
+      },
+      "command_organization_id": "organization_fixture_squadron",
+      "assigned_formation_id": "organization_fixture_squadron",
+      "accounting_state": "committed",
+      "readiness": {
+        "band": "high",
+        "basis": "direct_public_status",
+        "available_after_hours": 0,
+        "limiting_factors": []
+      },
+      "home_basing": {
+        "location_kind": "airfield",
+        "location_id": "location_fixture_air_base",
+        "confidence": "confirmed"
+      },
+      "current_deployment_id": "deployment_fixture_fighter_001",
+      "maintenance": {
+        "state": "available",
+        "maintenance_record_id": null,
+        "expected_return_to_service": null
+      },
+      "crew": {
+        "authorized": 1,
+        "assigned": 1,
+        "qualified_fraction": 1,
+        "confidence": "high"
+      },
+      "temporal_validity": {
+        "valid_from": "2025-08-01",
+        "valid_to": null,
+        "as_of": "2025-09-01T00:00:00Z",
+        "observed_at": "2025-08-31",
+        "review_after": "2025-09-08"
+      },
+      "provenance": {
+        "evidence_state": "observed",
+        "confidence": "high",
+        "source_ids": [
+          "source_fixture"
+        ],
+        "method": "fixture"
+      }
+    }
+  ],
+  "inventory_pools": [
+    {
+      "inventory_record_id": "inventory_fixture_active",
+      "inventory_kind": "equipment_pool",
+      "country_id": "country_fixture",
+      "owner_id": "country_fixture",
+      "controller_id": "country_fixture",
+      "service": "air_force",
+      "component": "active",
+      "equipment_type_id": "equipment_fixture_fighter",
+      "display_name": "Unindividualized active fixture fighters",
+      "domain": "air",
+      "category": "multirole_fighter",
+      "representation_tier": "formation",
+      "accounting_state": "active",
+      "quantity": {
+        "kind": "exact",
+        "value": 2,
+        "unit": "platform",
+        "counting_rule": "Excludes individually represented platforms."
+      },
+      "organization_id": "organization_fixture_squadron",
+      "formation_id": "organization_fixture_squadron",
+      "location_id": "location_fixture_air_base",
+      "current_deployment_id": null,
+      "readiness": {
+        "band": "standard",
+        "basis": "official_aggregate",
+        "ready_quantity": {
+          "kind": "exact",
+          "value": 2,
+          "unit": "platform"
+        },
+        "mobilization_delay_hours": 0,
+        "limiting_factors": []
+      },
+      "maintenance": {
+        "state": "available",
+        "quantity": {
+          "kind": "exact",
+          "value": 0,
+          "unit": "platform"
+        },
+        "maintenance_record_ids": []
+      },
+      "counting_scope": {
+        "scope_kind": "inventory_pool",
+        "scope_id": "inventory_fixture_active",
+        "parent_inventory_record_id": null,
+        "mutually_exclusive_with": [
+          "inventory_fixture_maintenance"
+        ]
+      },
+      "individual_platform_ids": [],
+      "construction_record_ids": [
+        "construction_fixture_fighter_lot"
+      ],
+      "conservation_record_id": "conservation_fixture_fighter",
+      "temporal_validity": {
+        "valid_from": "2025-09-01T00:00:00Z",
+        "valid_to": null,
+        "as_of": "2025-09-01T00:00:00Z",
+        "observed_at": "2025-09-01T00:00:00Z",
+        "review_after": "2025-10-01"
+      },
+      "provenance": {
+        "evidence_state": "observed",
+        "confidence": "high",
+        "source_ids": [
+          "source_fixture"
+        ],
+        "method": "fixture"
+      }
+    },
+    {
+      "inventory_record_id": "inventory_fixture_maintenance",
+      "inventory_kind": "equipment_pool",
+      "country_id": "country_fixture",
+      "owner_id": "country_fixture",
+      "controller_id": "country_fixture",
+      "service": "air_force",
+      "component": "active",
+      "equipment_type_id": "equipment_fixture_fighter",
+      "display_name": "Fixture fighters in maintenance",
+      "domain": "air",
+      "category": "multirole_fighter",
+      "representation_tier": "formation",
+      "accounting_state": "maintenance",
+      "quantity": {
+        "kind": "exact",
+        "value": 1,
+        "unit": "platform"
+      },
+      "organization_id": "organization_fixture_squadron",
+      "formation_id": "organization_fixture_squadron",
+      "location_id": "location_fixture_air_base",
+      "current_deployment_id": null,
+      "readiness": {
+        "band": "unavailable",
+        "basis": "derived_from_maintenance",
+        "ready_quantity": {
+          "kind": "exact",
+          "value": 0,
+          "unit": "platform"
+        },
+        "mobilization_delay_hours": 240,
+        "limiting_factors": [
+          "scheduled_maintenance"
+        ]
+      },
+      "maintenance": {
+        "state": "scheduled_maintenance",
+        "quantity": {
+          "kind": "exact",
+          "value": 1,
+          "unit": "platform"
+        },
+        "maintenance_record_ids": [
+          "maintenance_fixture_fighter"
+        ]
+      },
+      "counting_scope": {
+        "scope_kind": "inventory_pool",
+        "scope_id": "inventory_fixture_maintenance",
+        "parent_inventory_record_id": null,
+        "mutually_exclusive_with": [
+          "inventory_fixture_active"
+        ]
+      },
+      "individual_platform_ids": [],
+      "construction_record_ids": [],
+      "conservation_record_id": "conservation_fixture_fighter",
+      "temporal_validity": {
+        "valid_from": "2025-09-01T00:00:00Z",
+        "valid_to": null,
+        "as_of": "2025-09-01T00:00:00Z",
+        "observed_at": "2025-09-01T00:00:00Z",
+        "review_after": "2025-10-01"
+      },
+      "provenance": {
+        "evidence_state": "observed",
+        "confidence": "high",
+        "source_ids": [
+          "source_fixture"
+        ],
+        "method": "fixture"
+      }
+    }
+  ],
+  "deployments": [
+    {
+      "deployment_id": "deployment_fixture_fighter_001",
+      "country_id": "country_fixture",
+      "controller_id": "country_fixture",
+      "entity_type": "individual_platform",
+      "entity_id": "platform_fixture_fighter_001",
+      "quantity": {
+        "kind": "exact",
+        "value": 1,
+        "unit": "platform"
+      },
+      "assignment": "patrol",
+      "command_organization_id": "organization_fixture_squadron",
+      "availability_state": "committed",
+      "location": {
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.0,
+            24.0
+          ]
+        },
+        "location_status": "reported_point",
+        "crs": "EPSG:4326",
+        "precision_m": 50000,
+        "source_ids": [
+          "source_fixture"
+        ],
+        "observed_at": "2025-08-31T22:00:00Z",
+        "valid_to": "2025-09-01T04:00:00Z"
+      },
+      "movement": {
+        "state": "in_transit",
+        "route_id": "route_fixture_patrol",
+        "origin_location_id": "location_fixture_air_base",
+        "destination_location_id": "location_fixture_patrol_area",
+        "departed_at": "2025-08-31T22:00:00Z",
+        "estimated_arrival": "2025-09-01T00:30:00Z"
+      },
+      "commitment": {
+        "commitment_kind": "routine_mission",
+        "operation_or_event_id": "operation_fixture_patrol",
+        "release_constraints": []
+      },
+      "support_dependency_ids": [
+        "location_fixture_air_base"
+      ],
+      "temporal_validity": {
+        "valid_from": "2025-08-31T22:00:00Z",
+        "valid_to": "2025-09-01T04:00:00Z",
+        "as_of": "2025-09-01T00:00:00Z",
+        "observed_at": "2025-08-31T22:00:00Z",
+        "review_after": "2025-09-01T04:00:00Z"
+      },
+      "stale_after": "2025-09-01T04:00:00Z",
+      "provenance": {
+        "evidence_state": "observed",
+        "confidence": "medium",
+        "source_ids": [
+          "source_fixture"
+        ],
+        "method": "fixture"
+      }
+    }
+  ],
+  "maintenance": [
+    {
+      "maintenance_record_id": "maintenance_fixture_fighter",
+      "country_id": "country_fixture",
+      "subject_type": "inventory_pool",
+      "subject_id": "inventory_fixture_maintenance",
+      "maintenance_kind": "scheduled_maintenance",
+      "state": "in_progress",
+      "quantity": {
+        "kind": "exact",
+        "value": 1,
+        "unit": "platform"
+      },
+      "started_at": "2025-08-20",
+      "completion_estimate": {
+        "kind": "date_range",
+        "earliest": "2025-09-05",
+        "latest": "2025-09-15"
+      },
+      "facility_id": "location_fixture_air_base",
+      "readiness_effect": "unavailable",
+      "dependency_ids": [],
+      "resulting_equipment_type_id": null,
+      "temporal_validity": {
+        "valid_from": "2025-08-20",
+        "valid_to": null,
+        "as_of": "2025-09-01T00:00:00Z",
+        "observed_at": "2025-08-31",
+        "review_after": "2025-09-15"
+      },
+      "provenance": {
+        "evidence_state": "observed",
+        "confidence": "high",
+        "source_ids": [
+          "source_fixture"
+        ],
+        "method": "fixture"
+      }
+    }
+  ],
+  "construction": [
+    {
+      "construction_record_id": "construction_fixture_fighter_lot",
+      "country_id": "country_fixture",
+      "customer_id": "organization_fixture_air_force",
+      "equipment_type_id": "equipment_fixture_fighter",
+      "platform_id": null,
+      "program_or_lot": "Fixture Lot 1",
+      "quantity_ordered": {
+        "kind": "exact",
+        "value": 1,
+        "unit": "platform"
+      },
+      "quantity_delivered": {
+        "kind": "exact",
+        "value": 1,
+        "unit": "platform"
+      },
+      "quantity_accepted": {
+        "kind": "exact",
+        "value": 1,
+        "unit": "platform"
+      },
+      "state": "accepted",
+      "producer_ids": [
+        "producer_fixture"
+      ],
+      "production_site_ids": [
+        "industrial_site_fixture"
+      ],
+      "milestones": [
+        {
+          "milestone_type": "accepted",
+          "date_kind": "observed",
+          "date": "2025-08-25"
+        }
+      ],
+      "temporal_validity": {
+        "valid_from": "2025-08-25",
+        "valid_to": null,
+        "as_of": "2025-09-01T00:00:00Z",
+        "observed_at": "2025-08-25",
+        "review_after": "2025-10-01"
+      },
+      "provenance": {
+        "evidence_state": "observed",
+        "confidence": "high",
+        "source_ids": [
+          "source_fixture"
+        ],
+        "method": "fixture"
+      }
+    }
+  ],
+  "conservation": [
+    {
+      "conservation_record_id": "conservation_fixture_fighter",
+      "country_id": "country_fixture",
+      "equipment_type_id": "equipment_fixture_fighter",
+      "scope": {
+        "scope_kind": "formation",
+        "scope_id": "organization_fixture_squadron",
+        "parent_conservation_record_id": null,
+        "exclusion_rule": "The individually represented patrol aircraft is outside this fixture reconciliation scope."
+      },
+      "counting_unit": "platform",
+      "period": {
+        "opening_at": "2025-08-01T00:00:00Z",
+        "closing_at": "2025-09-01T00:00:00Z"
+      },
+      "opening_inventory": {
+        "kind": "exact",
+        "value": 2,
+        "unit": "platform"
+      },
+      "inflows": [
+        {
+          "term_id": "flow_fixture_acceptance",
+          "flow_kind": "production_or_acceptance",
+          "quantity": {
+            "kind": "exact",
+            "value": 1,
+            "unit": "platform"
+          },
+          "effective_at": "2025-08-25",
+          "source_record_ids": [
+            "construction_fixture_fighter_lot"
+          ]
+        }
+      ],
+      "closing_states": [
+        {
+          "accounting_state": "active",
+          "quantity": {
+            "kind": "exact",
+            "value": 2,
+            "unit": "platform"
+          },
+          "inventory_record_ids": [
+            "inventory_fixture_active"
+          ]
+        },
+        {
+          "accounting_state": "maintenance",
+          "quantity": {
+            "kind": "exact",
+            "value": 1,
+            "unit": "platform"
+          },
+          "inventory_record_ids": [
+            "inventory_fixture_maintenance"
+          ]
+        }
+      ],
+      "outflows": [],
+      "result": {
+        "state": "balanced",
+        "residual_kind": "exact",
+        "residual_value": 0,
+        "unresolved_record_ids": []
+      },
+      "provenance": {
+        "evidence_state": "observed",
+        "confidence": "high",
+        "source_ids": [
+          "source_fixture"
+        ],
+        "method": "fixture"
+      }
+    }
+  ]
+}
