@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.2.0",
+  "manifest_id": "research_manifest_chn_2025_09_01",
+  "country_id": "country_chn",
+  "country_code": "CHN",
+  "country_name": "China",
+  "depth_tier": "A",
+  "gdp_rank": 2,
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "collecting",
+  "contract_path": "../country_research_contract.json",
+  "files": {
+    "profile": "profile.json",
+    "lane_coverage": "lane_coverage.json",
+    "evidence_registry": "evidence_registry.json",
+    "bookmark_state": "bookmark_state.json",
+    "work_packages": "WORK_PACKAGES.md",
+    "force_ledger": "force_ledger/manifest.json"
+  },
+  "lane_ids": [
+    "politics_and_institutions",
+    "economy_trade_finance_resources",
+    "military_organization_inventory",
+    "fixed_facilities_basing",
+    "strategic_industry_conversion",
+    "energy_transport_communications_logistics",
+    "geography_provinces_terrain",
+    "crises_alliances_sanctions_deployments"
+  ],
+  "acceptance": {
+    "all_lanes_assessed": false,
+    "political_actor_roster_reviewed": false,
+    "administrative_geography_reviewed": false,
+    "force_ledger_reconciled": false,
+    "fixed_facility_layer_reviewed": false,
+    "infrastructure_networks_reviewed": false,
+    "alliances_and_crises_reviewed": false,
+    "bookmark_firewall_passed": false,
+    "independent_review_complete": false
+  },
+  "accepted_source_count": 0,
+  "accepted_claim_count": 0,
+  "open_contradiction_count": 0,
+  "notes": "Counts exclude the separately linked IMF GDP cohort source. Country specific evidence has not yet been accepted into this staging registry."
+}
