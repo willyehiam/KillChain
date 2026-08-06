@@ -1,0 +1,1 @@
+{"fixture_id":"source_live_missing_retrieval","mutation":"remove_retrieval_metadata","target_id":"src_force_twn_adma_history_2022","expected_diagnostic":"lacks retrieval metadata"}

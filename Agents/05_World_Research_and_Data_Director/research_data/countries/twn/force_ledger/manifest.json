@@ -154,7 +154,11 @@
     "facilities": null,
     "sources": "sources.ndjson",
     "contradictions": "contradictions.ndjson",
-    "relationships": "relationships.ndjson"
+    "relationships": "relationships.ndjson",
+    "claims": "claims.ndjson",
+    "cohorts": "cohorts.ndjson",
+    "authority_claims": "authority_claims.ndjson",
+    "aggregation_sets": "aggregation_sets.ndjson"
   },
   "reconciliation": {
     "state": "blocked_by_unknowns",
@@ -169,12 +173,12 @@
     "exact_quantity_records": 0,
     "range_quantity_records": 0,
     "unknown_quantity_records": 36,
-    "open_conservation_exceptions": 0,
+    "open_conservation_exceptions": 36,
     "double_booking_exceptions": 0,
     "orphan_platform_records": 0,
-    "orphan_organization_records": 0,
+    "orphan_organization_records": 2,
     "expired_records": 0,
-    "relationship_records": 32
+    "relationship_records": 30
   },
   "conservation_policy": {
     "equation": "opening_plus_inflows_equals_closing_states_plus_outflows",

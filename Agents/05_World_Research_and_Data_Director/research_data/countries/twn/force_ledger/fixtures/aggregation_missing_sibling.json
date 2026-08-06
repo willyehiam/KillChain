@@ -1,0 +1,1 @@
+{"fixture_id":"aggregation_missing_sibling","mutation":"remove_aggregation_sibling","target_id":"aggregation_set_twn_naval_report_categories","child_id":"inventory_twn_frigate","expected_diagnostic":"sibling set is incomplete"}

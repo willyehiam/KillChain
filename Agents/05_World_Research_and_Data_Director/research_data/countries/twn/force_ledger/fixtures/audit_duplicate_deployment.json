@@ -1,0 +1,1 @@
+{"fixture_id":"audit_duplicate_deployment","mutation":"duplicate_deployment","target_id":"deployment_twn_tank_national_accounting","expected_diagnostic":"must have exactly one national accounting deployment"}

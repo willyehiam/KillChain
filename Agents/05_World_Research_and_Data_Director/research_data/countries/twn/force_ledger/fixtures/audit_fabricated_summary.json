@@ -1,0 +1,1 @@
+{"fixture_id":"audit_fabricated_summary","mutation":"fabricate_manifest_summary","field":"open_conservation_exceptions","value":999,"expected_diagnostic":"manifest open_conservation_exceptions does not match derived value 36"}

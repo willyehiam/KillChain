@@ -1,0 +1,1 @@
+{"fixture_id":"audit_claim_subject_mismatch","mutation":"claim_subject_mismatch","target_id":"claim_twn_us_dod_2024_tank_800","subject_id":"inventory_twn_training_capacity","expected_diagnostic":"diverges from its accepted value, unit, or subject contract"}

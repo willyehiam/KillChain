@@ -210,6 +210,21 @@
         "$ref": "common.schema.json#/$defs/stableId"
       }
     },
+    "accounting_allocation": {
+      "type": "object",
+      "required": ["conservation_record_id", "executable_child_allocation_id", "release_gate"],
+      "properties": {
+        "conservation_record_id": {"$ref": "common.schema.json#/$defs/stableId"},
+        "executable_child_allocation_id": {
+          "anyOf": [{"$ref": "common.schema.json#/$defs/stableId"}, {"type": "null"}]
+        },
+        "release_gate": {
+          "type": "string",
+          "enum": ["blocked_unaccepted_packet", "reviewed_child_allocation_required", "open"]
+        }
+      },
+      "additionalProperties": false
+    },
     "temporal_validity": {
       "$ref": "common.schema.json#/$defs/temporalValidity"
     },

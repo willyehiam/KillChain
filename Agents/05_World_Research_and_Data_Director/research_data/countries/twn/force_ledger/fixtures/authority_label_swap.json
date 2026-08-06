@@ -1,0 +1,1 @@
+{"fixture_id":"authority_label_swap","mutation":"authority_label_swap","target_id":"relationship_twn_ministry_of_national_defense_all_out_defense_mobilization_agency_administrative_control","authority_class":"operational_control","expected_diagnostic":"does not match the typed relationship"}

@@ -1,0 +1,1 @@
+{"fixture_id":"aggregation_residual_omitted","mutation":"omit_residual_state","target_id":"aggregation_set_twn_fighter_report_scopes","expected_diagnostic":"lacks explicit completeness or parent-sum protection"}

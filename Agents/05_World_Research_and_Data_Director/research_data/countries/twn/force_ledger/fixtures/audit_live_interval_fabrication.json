@@ -1,0 +1,1 @@
+{"fixture_id":"audit_live_interval_fabrication","mutation":"fabricate_live_interval","target_id":"src_force_twn_adma_history_2022","expected_diagnostic":"fabricates a live observation interval"}

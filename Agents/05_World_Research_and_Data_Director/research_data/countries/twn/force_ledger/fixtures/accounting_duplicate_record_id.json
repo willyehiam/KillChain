@@ -1,0 +1,1 @@
+{"fixture_id":"accounting_duplicate_record_id","mutation":"duplicate_record_id","dataset":"inventory.ndjson","id_field":"inventory_record_id","target_id":"inventory_twn_tank","expected_diagnostic":"inventory contains duplicate record ID inventory_twn_tank"}

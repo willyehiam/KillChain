@@ -1,0 +1,1 @@
+{"fixture_id":"claim_flow_to_stock","mutation":"flow_to_stock","target_id":"claim_twn_2024_conscript_intake_6956","subject_id":"inventory_twn_training_capacity","expected_diagnostic":"attaches a flow to a stock or unrelated subject"}

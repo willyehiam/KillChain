@@ -1,0 +1,1 @@
+{"fixture_id":"accounting_duplicate_maintenance","mutation":"duplicate_maintenance","target_id":"maintenance_twn_tank_unknown_state","expected_diagnostic":"must have exactly one maintenance record"}

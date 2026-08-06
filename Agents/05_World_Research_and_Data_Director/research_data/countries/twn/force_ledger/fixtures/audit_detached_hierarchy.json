@@ -1,0 +1,1 @@
+{"fixture_id":"audit_detached_hierarchy","mutation":"detach_taxonomy_child","target_id":"equipment_category_twn_frigate","expected_diagnostic":"equipment hierarchy is detached"}

@@ -1,0 +1,1 @@
+{"fixture_id":"audit_negated_magic_phrase","mutation":"negated_magic_phrase_anonymous_capacity","target_id":"deployment_twn_tank_national_accounting","expected_diagnostic":"lacks a typed blocked conservation allocation"}

@@ -1,0 +1,1 @@
+{"fixture_id":"authority_unconditional_reserve","mutation":"unconditional_reserve_employment","target_id":"relationship_twn_all_out_defense_mobilization_agency_reserve_command_mobilization_authority","expected_diagnostic":"asserts executable authority without proved atomic authority"}

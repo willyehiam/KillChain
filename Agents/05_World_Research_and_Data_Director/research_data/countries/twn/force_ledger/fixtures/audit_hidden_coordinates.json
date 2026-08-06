@@ -1,0 +1,1 @@
+{"fixture_id":"audit_hidden_coordinates","mutation":"hidden_coordinates","dataset":"organizations.ndjson","id_field":"organization_id","target_id":"organization_twn_joint_operations_command_center","expected_diagnostic":"contains forbidden hidden location or movement state"}

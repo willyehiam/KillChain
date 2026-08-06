@@ -1,0 +1,1 @@
+{"fixture_id":"audit_admin_to_opcon_release","mutation":"admin_to_opcon_release","target_id":"relationship_twn_ministry_of_national_defense_all_out_defense_mobilization_agency_administrative_control","expected_diagnostic":"asserts executable authority without proved atomic authority"}

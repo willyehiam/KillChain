@@ -1,1 +1,1 @@
-{"fixture_id":"twn_command_service_releases_mission","mutation":"service_releases_mission","target_id":"relationship_twn_navy_command_headquarters_navy_fleet_command_organize_train_equip","expected_diagnostic":"improperly lets a generating command release an operational mission"}
+{"fixture_id":"twn_command_service_releases_mission","mutation":"service_releases_mission","target_id":"relationship_twn_navy_command_headquarters_navy_fleet_command_organize_train_equip","expected_diagnostic":"asserts executable authority without proved atomic authority"}

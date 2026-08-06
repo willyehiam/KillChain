@@ -1,0 +1,1 @@
+{"fixture_id":"summary_expired_child","mutation":"expire_child_without_summary","dataset":"inventory.ndjson","id_field":"inventory_record_id","target_id":"inventory_twn_tank","expected_diagnostic":"manifest expired_records does not match derived value 1"}

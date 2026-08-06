@@ -1,0 +1,1 @@
+{"fixture_id":"accounting_duplicate_conservation","mutation":"duplicate_conservation","target_id":"conservation_twn_tank","expected_diagnostic":"must have exactly one conservation scope"}

@@ -27,6 +27,37 @@
     "unit": {
       "type": "string"
     },
+    "measurement_kind": {
+      "type": "string",
+      "enum": ["stock_estimate", "cohort_flow", "program_plan", "event", "other"]
+    },
+    "subject_kind": {
+      "type": "string",
+      "enum": ["inventory_pool", "cohort", "construction_program", "organization", "other"]
+    },
+    "component_scope": {
+      "type": "string"
+    },
+    "population_definition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observation_period": {
+      "type": "object",
+      "required": ["start", "end", "precision"],
+      "properties": {
+        "start": {"anyOf": [{"$ref": "common.schema.json#/$defs/isoDateOrTimestamp"}, {"type": "null"}]},
+        "end": {"anyOf": [{"$ref": "common.schema.json#/$defs/isoDateOrTimestamp"}, {"type": "null"}]},
+        "precision": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "as_of_semantics": {
+      "type": "string"
+    },
+    "opening_stock_eligible": {
+      "type": "boolean"
+    },
     "observed_at": {
       "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
     },
