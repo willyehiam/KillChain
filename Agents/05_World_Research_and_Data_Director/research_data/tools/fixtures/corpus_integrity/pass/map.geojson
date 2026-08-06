@@ -1,0 +1,11 @@
+{
+  "type": "FeatureCollection",
+  "metadata": { "coordinate_precision_m": 100 },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "source_ids": ["source_fixture_primary"] },
+      "geometry": { "type": "Point", "coordinates": [121.5, 25.0] }
+    }
+  ]
+}
