@@ -9,10 +9,21 @@ import { validateOpeningPosture } from './validate_opening_posture.mjs';
 const here=path.dirname(fileURLToPath(import.meta.url));
 const files=['manifest.json','sources.ndjson','claims.ndjson','posture_records.json','exercise_lineage.json','crisis_triggers.json','contradictions.json','force_reconciliation.json','future_reference_firewall.json'];
 const forceIds=new Set(JSON.parse(fs.readFileSync(path.join(here,'fixture_force_ids.json'),'utf8')));
+const semanticCorruptionCases=new Set([
+  'future event hidden in source metadata',
+  'postbookmark publication concealed by availability',
+  'cross actor force substitution',
+  'readiness assertion in prose',
+  'automatic allied permission in prose',
+  'deterministic trigger in prose',
+  'consumer overlap',
+  'empty contradiction side',
+]);
+const rejectedSemanticCorruptions=new Set();
 function fixture(mutator){const root=fs.mkdtempSync(path.join(os.tmpdir(),'opening-posture-'));for(const file of files) fs.copyFileSync(path.join(here,file),path.join(root,file));mutator(root);const report=validateOpeningPosture(root,{canonicalForceIds:forceIds});fs.rmSync(root,{recursive:true,force:true});return report;}
 function mutateJson(root,file,fn){const full=path.join(root,file);const value=JSON.parse(fs.readFileSync(full,'utf8'));fn(value);fs.writeFileSync(full,JSON.stringify(value,null,2)+'\n');}
 function mutateNdjson(root,file,fn){const full=path.join(root,file);const value=fs.readFileSync(full,'utf8').trim().split(/\n+/).map(JSON.parse);fn(value);fs.writeFileSync(full,value.map(JSON.stringify).join('\n')+'\n');}
-function reject(name,mutator,needle){const report=fixture(mutator);assert.equal(report.ok,false,`${name} unexpectedly passed`);assert.ok(report.errors.some(x=>x.includes(needle)),`${name} did not report ${needle}: ${report.errors.join('; ')}`);}
+function reject(name,mutator,needle){const report=fixture(mutator);assert.equal(report.ok,false,`${name} unexpectedly passed`);assert.ok(report.errors.some(x=>x.includes(needle)),`${name} did not report ${needle}: ${report.errors.join('; ')}`);if(semanticCorruptionCases.has(name)) rejectedSemanticCorruptions.add(name);}
 const clean=validateOpeningPosture(here,{canonicalForceIds:forceIds});
 assert.deepEqual(clean.errors,[],`production packet invalid: ${clean.errors.join('; ')}`);
 reject('future source',root=>mutateNdjson(root,'sources.ndjson',rows=>{rows[0].available_at='2025-09-01T00:00:01Z';}),'post bookmark');
@@ -35,4 +46,10 @@ reject('automatic allied permission in prose',root=>mutateJson(root,'posture_rec
 reject('deterministic trigger in prose',root=>mutateJson(root,'crisis_triggers.json',doc=>{doc.triggers[0].description='This trigger has already fired and forces automatic United States combat entry.';}),'deterministic trigger prose is forbidden');
 reject('consumer overlap',root=>mutateJson(root,'manifest.json',doc=>{doc.status_firewall.allowed_consumers.push('simulation_initialization');}),'cannot be both allowed and forbidden');
 reject('empty contradiction side',root=>mutateJson(root,'contradictions.json',doc=>{doc.contradictions[0].positions[0].claim_ids=[];}),'empty contradiction side is forbidden');
-console.log(JSON.stringify({ok:true,negative_cases:20,proven_semantic_corruptions_rejected:8,canonical_force_refs:forceIds.size},null,2));
+reject('forged force reference semantics',root=>mutateJson(root,'posture_records.json',doc=>{doc.records[0].force_refs[0].reference_semantics='confirmed_forward_deployment';}),'force reference semantics must remain identity only');
+reject('invented force access permission',root=>mutateJson(root,'posture_records.json',doc=>{doc.records[0].force_refs[0].access_status='granted';}),'access state must remain unknown or not applicable');
+reject('smuggled force state field',root=>mutateJson(root,'posture_records.json',doc=>{doc.records[0].force_refs[0].forward_deployed=true;}),'force reference contains unsupported field forward_deployed');
+reject('contradictory force disclaimer',root=>mutateJson(root,'posture_records.json',doc=>{doc.records[0].force_refs[0].does_not_imply=['deployment','readiness','theater_availability','access_granted'];}),'force identity disclaimers are incomplete or contradictory');
+reject('second future trajectory reopens firewall',root=>mutateJson(root,'future_reference_firewall.json',doc=>{doc.excluded_reference_trajectories.push({...doc.excluded_reference_trajectories[0],reference_id:'future_reference_bypass',may_inform_opening_truth:true});}),'future reference firewall is open for future_reference_bypass');
+assert.deepEqual([...rejectedSemanticCorruptions].sort(),[...semanticCorruptionCases].sort(),'all eight named semantic corruptions must be independently rejected');
+console.log(JSON.stringify({ok:true,negative_cases:25,proven_semantic_corruptions_rejected:rejectedSemanticCorruptions.size,canonical_force_refs:forceIds.size},null,2));
