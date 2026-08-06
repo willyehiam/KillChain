@@ -28,7 +28,8 @@
       "navy",
       "air_force",
       "coast_guard",
-      "gendarmerie"
+      "gendarmerie",
+      "marine"
     ],
     "components": [
       "active",
@@ -103,7 +104,7 @@
   },
   "reconciliation": {
     "state": "blocked_by_unknowns",
-    "organization_records": 12,
+    "organization_records": 27,
     "platform_records": 0,
     "equipment_type_records": 10,
     "inventory_records": 3,
@@ -119,7 +120,7 @@
     "orphan_platform_records": 0,
     "orphan_organization_records": 0,
     "expired_records": 0,
-    "relationship_records": 12
+    "relationship_records": 32
   },
   "conservation_policy": {
     "equation": "opening_plus_inflows_equals_closing_states_plus_outflows",
@@ -139,32 +140,33 @@
     "src_force_twn_adma_history_2022",
     "src_force_twn_mnd_reserve_employment_2022",
     "src_force_twn_mnd_force_structure_2023",
-    "src_force_twn_oac_subordinate_agencies_2025"
+    "src_force_twn_oac_subordinate_agencies_2025",
+    "src_force_twn_us_dod_cmpr_2024",
+    "src_force_twn_mnd_fy2025_budget_2024",
+    "src_force_twn_mnd_conscript_review_2025",
+    "src_force_twn_mnd_aircraft_parts_2024"
   ],
   "unknowns": [
-    "Subordinate Army corps and defense commands, naval fleets, Marine Corps, air combat commands, wings, brigades, groups, and equivalent formations have not been accepted.",
-    "Organization personnel, readiness, mobilization delays, detailed command workflows, and current force assignments remain unknown in this slice.",
-    "The aggregate equipment taxonomy records do not assert models, quantities, possession totals, readiness, or disposition.",
-    "National equipment totals have not been reconciled across accounting states.",
-    "Named platforms and exact platform totals remain deliberately unresolved; the accepted operational slice is national aggregate only.",
-    "Construction programs remain unresolved; explicit coverage status prevents absence from being interpreted as zero."
+    "The dated command packet resolves the continuous JOCC and principal Army, Navy, Marine Corps, and Air Force functional commands but does not assert exact headquarters coordinates, current allocations, or subordinate unit dispositions.",
+    "The 2024 US Department of Defense table is a dated operational estimate, not an exact 1 September 2025 possession, availability, readiness, maintenance, or deployment state.",
+    "Active, reserve, Coast Guard, aircraft, naval, ground, air and missile defense, lift, training, construction, maintenance, and munitions opening pools remain nonexecutable pending source reconciliation and independent review.",
+    "No source in this packet establishes exact ready, available, deployed, stored, damaged, or maintenance quantities at the bookmark."
   ],
   "reviewed_at": "2026-08-06",
   "review_after": "2026-11-06",
-  "notes": "First accepted Tier A national organization slice. It distinguishes constitutional command, defense administration, General Staff operational command, service headquarters, the 2022 reserve administration reform, Army coordinated reserve employment, and the civilian Coast Guard chain without asserting readiness, quantity, or disposition.",
+  "notes": "Collecting national aggregate packet. The dated command structure checkpoint resolves the public JOCC and principal functional commands without exposing current positions or inventing mission availability.",
   "acceptance": {
     "schema_valid": true,
-    "internally_consistent": true,
+    "internally_consistent": false,
     "research_complete": false,
     "decision_usable": false,
     "simulation_ready": false,
     "untested_claims": [
-      "National inventory completeness, exact readiness, and subnational disposition are not tested by this packet."
+      "Command relationships require independent review before promotion."
     ],
     "blockers": [
-      "Exact or bounded conserved inventory is not yet accepted.",
-      "Named mission decisive platforms and executable support dependencies are not yet resolved.",
-      "Construction coverage is not started and maintenance quantities remain unknown."
+      "National inventory pools and dated estimate claims are not yet reconciled.",
+      "Independent command and inventory review has not passed."
     ]
   }
 }
