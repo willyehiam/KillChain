@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.2.0",
+  "registry_id": "evidence_registry_twn_2025_09_01",
+  "country_id": "country_twn",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "shell",
+  "sources": [],
+  "claims": [],
+  "contradiction_sets": [],
+  "staging_rules": {
+    "sources_must_be_registered_before_claims": true,
+    "claims_must_be_atomic": true,
+    "factual_claims_require_source_ids": true,
+    "post_cutoff_sources_require_knowledge_firewall_note": true
+  },
+  "notes": "All arrays are intentionally empty until sourced country specific evidence is collected and reviewed. Empty means unknown coverage, not real world absence."
+}
