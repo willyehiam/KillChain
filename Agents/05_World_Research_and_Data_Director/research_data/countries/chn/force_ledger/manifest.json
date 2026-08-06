@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "1.0.0",
   "force_ledger_id": "force_ledger_chn_2025_09_01",
   "country_id": "country_chn",
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
@@ -28,10 +28,14 @@
     "individualization_rule": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision"
   },
   "dataset_paths": {
-    "organizations": null,
-    "equipment_types": null,
-    "inventory": null,
-    "deployments": null,
+    "organizations": "organizations.ndjson",
+    "platforms": "platforms.ndjson",
+    "equipment_types": "equipment_types.ndjson",
+    "inventory": "inventory.ndjson",
+    "deployments": "deployments.ndjson",
+    "maintenance": "maintenance.ndjson",
+    "construction": "construction.ndjson",
+    "conservation": "conservation.ndjson",
     "facilities": null,
     "sources": null,
     "contradictions": null
@@ -39,14 +43,33 @@
   "reconciliation": {
     "state": "not_started",
     "organization_records": 0,
+    "platform_records": 0,
     "equipment_type_records": 0,
     "inventory_records": 0,
     "deployment_records": 0,
+    "maintenance_records": 0,
+    "construction_records": 0,
+    "conservation_records": 0,
     "exact_quantity_records": 0,
     "range_quantity_records": 0,
     "unknown_quantity_records": 0,
     "open_conservation_exceptions": 0,
-    "double_booking_exceptions": 0
+    "double_booking_exceptions": 0,
+    "orphan_platform_records": 0,
+    "orphan_organization_records": 0,
+    "expired_records": 0
+  },
+  "conservation_policy": {
+    "equation": "opening_plus_inflows_equals_closing_states_plus_outflows",
+    "counting_units_are_not_interchangeable": true,
+    "individuals_are_excluded_from_pools": true,
+    "parent_totals_are_not_summed_with_children": true
+  },
+  "aggregation_policy": {
+    "global_resolution": "service and command aggregates",
+    "theater_resolution": "formations and operational pools",
+    "mission_resolution": "individual executing and supporting platforms",
+    "aggregation_preserves_quantity": true
   },
   "source_ids": [],
   "unknowns": [

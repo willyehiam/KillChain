@@ -14,6 +14,7 @@
     "typecheck": "tsc --noEmit",
     "test:sim": "node --import tsx --test tests/simulation.test.ts",
     "validate:artifact": "bash scripts/validate-artifact.sh",
+    "validate:tier-a-forces": "node Agents/05_World_Research_and_Data_Director/research_data/countries/validate_tier_a_force_ledgers.mjs",
     "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate"
   },
