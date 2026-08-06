@@ -1054,7 +1054,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/prk/profile.json",
       "strategic_reason": "Essential actor in the Korea and Taiwan linked security system; no 2025 NGDPD value is published in the selected IMF dataset"
     },
     {
@@ -1067,7 +1067,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/mmr/profile.json",
       "strategic_reason": "Fully modeled conflict theater and first country below the immediate boundary group with major gameplay relevance"
     },
     {
@@ -1080,7 +1080,7 @@
       "depth_tier": "B",
       "coverage_status": "shell",
       "research_priority": "P1",
-      "profile_path": null,
+      "profile_path": "countries/sdn/profile.json",
       "strategic_reason": "Fully modeled conflict theater"
     },
     {
@@ -1093,7 +1093,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/som/profile.json",
       "strategic_reason": "Active secondary crisis and Red Sea security actor"
     },
     {
@@ -1106,7 +1106,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/ssd/profile.json",
       "strategic_reason": "Active secondary crisis"
     },
     {
@@ -1119,7 +1119,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/afg/profile.json",
       "strategic_reason": "Active secondary crisis and regional strategic actor"
     },
     {
@@ -1132,7 +1132,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/arm/profile.json",
       "strategic_reason": "Active secondary crisis"
     },
     {
@@ -1145,7 +1145,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/aze/profile.json",
       "strategic_reason": "Active secondary crisis and energy corridor actor"
     },
     {
@@ -1158,7 +1158,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/hti/profile.json",
       "strategic_reason": "Active secondary crisis"
     },
     {
@@ -1171,7 +1171,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/syr/profile.json",
       "strategic_reason": "Political transition and Levant theater actor"
     },
     {
@@ -1184,7 +1184,7 @@
       "depth_tier": "C",
       "coverage_status": "shell",
       "research_priority": "P2",
-      "profile_path": null,
+      "profile_path": "countries/lbn/profile.json",
       "strategic_reason": "Political event chain and Levant theater actor"
     }
   ],

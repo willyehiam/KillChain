@@ -196,6 +196,8 @@ assert(
 );
 
 let profileCount = 0;
+let rankedProfileCount = 0;
+let strategicAdditionProfileCount = 0;
 let tierAProfileCount = 0;
 let forceLedgerCount = 0;
 
@@ -204,6 +206,10 @@ for (const country of registry.countries.filter((entry) => entry.profile_path)) 
   const profile = readJson(profilePath);
   if (!profile) continue;
   profileCount += 1;
+  if (country.roster_basis === "top_80_2025_nominal_gdp") rankedProfileCount += 1;
+  if (country.roster_basis === "mandatory_strategic_addition") {
+    strategicAdditionProfileCount += 1;
+  }
 
   assert(profile.country_id === country.country_id, `${country.country_code}: profile id mismatch`);
   assert(profile.country_code === country.country_code, `${country.country_code}: profile code mismatch`);
@@ -267,7 +273,12 @@ for (const country of registry.countries.filter((entry) => entry.profile_path)) 
   }
 }
 
-assert(profileCount === 80, `Expected all 80 ranked country profiles, found ${profileCount}`);
+assert(profileCount === 91, `Expected all 91 registry country profiles, found ${profileCount}`);
+assert(rankedProfileCount === 80, `Expected 80 ranked country profiles, found ${rankedProfileCount}`);
+assert(
+  strategicAdditionProfileCount === 11,
+  `Expected 11 strategic addition profiles, found ${strategicAdditionProfileCount}`,
+);
 assert(tierAProfileCount === 3, `Expected three Tier A profiles, found ${tierAProfileCount}`);
 assert(forceLedgerCount === 3, `Expected three Tier A force ledgers, found ${forceLedgerCount}`);
 
@@ -279,7 +290,9 @@ const report = {
   ranked_countries: cohort?.countries?.length ?? 0,
   strategic_additions: cohort?.mandatory_strategic_additions?.length ?? 0,
   registry_countries: registry?.countries?.length ?? 0,
-  ranked_country_profiles: profileCount,
+  country_profiles: profileCount,
+  ranked_country_profiles: rankedProfileCount,
+  strategic_addition_profiles: strategicAdditionProfileCount,
   tier_a_profiles: tierAProfileCount,
   tier_a_force_ledgers: forceLedgerCount,
   schemas_parsed: NEW_SCHEMAS.length,
