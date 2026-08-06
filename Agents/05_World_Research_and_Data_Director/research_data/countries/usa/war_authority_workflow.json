@@ -7,97 +7,499 @@
   "status": "needs_independent_legal_review",
   "purpose": "Executable research inputs for evaluating domestic authority to introduce United States Armed Forces into hostilities. This packet records legal gates and ambiguity; it does not select an outcome or implement game logic.",
   "institutions": [
-    {"institution_id":"institution_usa_presidency","required_for_routes":["route_usa_declaration_of_war","route_usa_specific_statutory_authorization","route_usa_attack_emergency","route_usa_contested_limited_presidential_force"]},
-    {"institution_id":"institution_usa_congress_119","required_for_routes":["route_usa_declaration_of_war","route_usa_specific_statutory_authorization","route_usa_continue_after_wpr_clock"]}
+    {
+      "institution_id": "institution_usa_presidency",
+      "required_for_routes": [
+        "route_usa_declaration_of_war",
+        "route_usa_specific_statutory_authorization",
+        "route_usa_attack_emergency",
+        "route_usa_contested_limited_presidential_force"
+      ]
+    },
+    {
+      "institution_id": "institution_usa_congress_119",
+      "required_for_routes": [
+        "route_usa_declaration_of_war",
+        "route_usa_specific_statutory_authorization",
+        "route_usa_continue_after_wpr_clock"
+      ]
+    }
   ],
   "routes": [
     {
       "route_id": "route_usa_declaration_of_war",
       "classification": "express_congressional_authority",
-      "required_gate_ids": ["gate_usa_president_requests_or_accepts_war_measure","gate_usa_house_passes_war_measure","gate_usa_senate_passes_war_measure","gate_usa_measure_becomes_law"],
-      "authority_state_on_completion": "accepted_for_declared_war",
-      "source_ids": ["src_usa_constitution_article_i","src_usa_constitution_article_ii"]
+      "source_ids": [
+        "src_usa_constitution_article_i",
+        "src_usa_constitution_article_ii"
+      ],
+      "transitions": [
+        {
+          "transition_id": "transition_usa_declared_war_activation",
+          "phase": "activation",
+          "from_state": "not_authorized",
+          "to_state": "accepted_for_declared_war",
+          "gate_ids": [
+            "gate_usa_president_requests_or_accepts_war_measure",
+            "gate_usa_house_passes_war_measure",
+            "gate_usa_senate_passes_war_measure",
+            "gate_usa_measure_becomes_law"
+          ]
+        }
+      ]
     },
     {
       "route_id": "route_usa_specific_statutory_authorization",
       "classification": "express_congressional_authority",
-      "required_gate_ids": ["gate_usa_house_passes_specific_authorization","gate_usa_senate_passes_specific_authorization","gate_usa_measure_becomes_law"],
-      "authority_state_on_completion": "accepted_within_statutory_scope",
-      "source_ids": ["src_usa_war_powers_resolution"]
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ],
+      "transitions": [
+        {
+          "transition_id": "transition_usa_specific_authorization_activation",
+          "phase": "activation",
+          "from_state": "not_authorized",
+          "to_state": "accepted_within_statutory_scope",
+          "gate_ids": [
+            "gate_usa_house_passes_specific_authorization",
+            "gate_usa_senate_passes_specific_authorization",
+            "gate_usa_measure_becomes_law"
+          ]
+        }
+      ]
     },
     {
       "route_id": "route_usa_attack_emergency",
       "classification": "statutory_emergency_branch",
       "trigger": "National emergency created by attack upon the United States, its territories or possessions, or its armed forces.",
-      "required_gate_ids": ["gate_usa_attack_emergency_fact_established","gate_usa_wpr_consult_when_possible","gate_usa_wpr_report_if_triggered","gate_usa_wpr_termination_clock"],
-      "authority_state_on_completion": "temporarily_accepted_subject_to_scope_and_wpr_clock",
-      "source_ids": ["src_usa_war_powers_resolution"]
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ],
+      "transitions": [
+        {
+          "transition_id": "transition_usa_attack_emergency_activation",
+          "phase": "activation",
+          "from_state": "not_authorized",
+          "to_state": "temporarily_accepted_subject_to_scope_and_wpr_clock",
+          "gate_ids": [
+            "gate_usa_attack_emergency_fact_established",
+            "gate_usa_wpr_consult_when_possible"
+          ],
+          "records_runtime_fields": [
+            "forces_introduced_at"
+          ],
+          "post_activation_obligation_gate_ids": [
+            "gate_usa_wpr_report_if_triggered",
+            "gate_usa_wpr_regular_consultation"
+          ]
+        },
+        {
+          "transition_id": "transition_usa_attack_emergency_continuation",
+          "phase": "continuation_condition",
+          "from_state": "temporarily_accepted_subject_to_scope_and_wpr_clock",
+          "to_state": "accepted_within_authorized_scope",
+          "gate_ids": [
+            "gate_usa_declaration_or_specific_authorization_before_deadline"
+          ]
+        },
+        {
+          "transition_id": "transition_usa_attack_emergency_termination",
+          "phase": "termination_condition",
+          "from_state": "temporarily_accepted_subject_to_scope_and_wpr_clock",
+          "to_state": "forces_removed_or_statutory_violation",
+          "gate_ids": [
+            "gate_usa_wpr_termination_clock"
+          ],
+          "noncompletion_effect": "statutory_violation_and_termination_required_not_retroactive_nonactivation"
+        }
+      ]
     },
     {
       "route_id": "route_usa_contested_limited_presidential_force",
       "classification": "constitutional_interpretation_disputed",
       "trigger": "Executive branch asserts limited force falls within independent Article II authority even without prior statutory authorization.",
-      "required_gate_ids": ["gate_usa_article_ii_scope_assessment","gate_usa_wpr_consult_when_possible","gate_usa_wpr_report_if_triggered","gate_usa_wpr_termination_clock"],
-      "authority_state_on_completion": "contested_not_equivalent_to_congressional_authorization",
       "contradiction_set_id": "contradiction_usa_war_authority_scope",
-      "source_ids": ["src_usa_constitution_article_i","src_usa_constitution_article_ii","src_usa_olc_presidential_force_1980","src_usa_war_powers_resolution"]
+      "source_ids": [
+        "src_usa_constitution_article_i",
+        "src_usa_constitution_article_ii",
+        "src_usa_olc_presidential_force_1980",
+        "src_usa_war_powers_resolution"
+      ],
+      "transitions": [
+        {
+          "transition_id": "transition_usa_contested_article_ii_activation",
+          "phase": "activation",
+          "from_state": "not_authorized",
+          "to_state": "contested_temporary_article_ii_claim_not_congressional_authorization",
+          "gate_ids": [
+            "gate_usa_article_ii_scope_assessment",
+            "gate_usa_wpr_consult_when_possible"
+          ],
+          "records_runtime_fields": [
+            "forces_introduced_at"
+          ],
+          "post_activation_obligation_gate_ids": [
+            "gate_usa_wpr_report_if_triggered",
+            "gate_usa_wpr_regular_consultation"
+          ]
+        },
+        {
+          "transition_id": "transition_usa_contested_article_ii_continuation",
+          "phase": "continuation_condition",
+          "from_state": "contested_temporary_article_ii_claim_not_congressional_authorization",
+          "to_state": "accepted_within_authorized_scope",
+          "gate_ids": [
+            "gate_usa_declaration_or_specific_authorization_before_deadline"
+          ]
+        },
+        {
+          "transition_id": "transition_usa_contested_article_ii_termination",
+          "phase": "termination_condition",
+          "from_state": "contested_temporary_article_ii_claim_not_congressional_authorization",
+          "to_state": "forces_removed_or_statutory_violation",
+          "gate_ids": [
+            "gate_usa_wpr_termination_clock"
+          ],
+          "noncompletion_effect": "statutory_violation_and_termination_required_not_retroactive_nonactivation"
+        }
+      ],
+      "contested_state_invariant": "never_equivalent_to_congressional_authorization"
     },
     {
       "route_id": "route_usa_continue_after_wpr_clock",
       "classification": "continuation_authority",
-      "required_gate_ids": ["gate_usa_declaration_or_specific_authorization_before_deadline"],
-      "authority_state_on_completion": "accepted_within_authorized_scope",
-      "source_ids": ["src_usa_war_powers_resolution"]
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ],
+      "transitions": [
+        {
+          "transition_id": "transition_usa_continue_after_wpr_clock",
+          "phase": "continuation_condition",
+          "from_state": "temporary_or_contested_force_state",
+          "to_state": "accepted_within_authorized_scope",
+          "gate_ids": [
+            "gate_usa_declaration_or_specific_authorization_before_deadline"
+          ]
+        }
+      ]
     }
   ],
   "decision_gates": [
-    {"gate_id":"gate_usa_president_requests_or_accepts_war_measure","gate_type":"executive_legislative_action","required_institution_ids":["institution_usa_presidency"],"completion_evidence":"Enacted declaration of war or constitutional presentment record.","source_ids":["src_usa_constitution_article_i","src_usa_constitution_article_ii"]},
-    {"gate_id":"gate_usa_house_passes_war_measure","gate_type":"legislative_vote","required_institution_ids":["institution_usa_congress_119"],"completion_evidence":"House passage record.","source_ids":["src_usa_constitution_article_i"]},
-    {"gate_id":"gate_usa_senate_passes_war_measure","gate_type":"legislative_vote","required_institution_ids":["institution_usa_congress_119"],"completion_evidence":"Senate passage record.","source_ids":["src_usa_constitution_article_i"]},
-    {"gate_id":"gate_usa_house_passes_specific_authorization","gate_type":"legislative_vote","required_institution_ids":["institution_usa_congress_119"],"completion_evidence":"House passage of text that specifically authorizes hostilities.","source_ids":["src_usa_war_powers_resolution"]},
-    {"gate_id":"gate_usa_senate_passes_specific_authorization","gate_type":"legislative_vote","required_institution_ids":["institution_usa_congress_119"],"completion_evidence":"Senate passage of text that specifically authorizes hostilities.","source_ids":["src_usa_war_powers_resolution"]},
-    {"gate_id":"gate_usa_measure_becomes_law","gate_type":"enactment","required_institution_ids":["institution_usa_presidency","institution_usa_congress_119"],"completion_evidence":"Signed enactment or veto override.","source_ids":["src_usa_constitution_article_i","src_usa_constitution_article_ii"]},
-    {"gate_id":"gate_usa_attack_emergency_fact_established","gate_type":"fact_finding","required_institution_ids":["institution_usa_presidency"],"completion_evidence":"Opening state records an attack on a statutory protected object; anticipation or coercion alone is insufficient.","source_ids":["src_usa_war_powers_resolution"]},
-    {"gate_id":"gate_usa_article_ii_scope_assessment","gate_type":"contested_legal_assessment","required_institution_ids":["institution_usa_presidency"],"completion_evidence":"Recorded executive legal basis, anticipated nature, scope, duration, and risk; this never converts the route to accepted congressional authorization.","source_ids":["src_usa_constitution_article_ii","src_usa_olc_presidential_force_1980"]},
-    {"gate_id":"gate_usa_wpr_consult_when_possible","gate_type":"consultation_obligation","required_institution_ids":["institution_usa_presidency","institution_usa_congress_119"],"completion_evidence":"Consultation record before introduction in every possible instance and regular consultation afterward.","source_ids":["src_usa_war_powers_resolution"]},
-    {"gate_id":"gate_usa_wpr_report_if_triggered","gate_type":"timed_reporting_obligation","required_institution_ids":["institution_usa_presidency","institution_usa_congress_119"],"deadline_hours":48,"completion_evidence":"Written report states circumstances, legal authority, and estimated scope and duration after a statutory trigger.","source_ids":["src_usa_war_powers_resolution"]},
-    {"gate_id":"gate_usa_wpr_termination_clock","gate_type":"timed_termination_obligation","required_institution_ids":["institution_usa_presidency","institution_usa_congress_119"],"base_deadline_days":60,"withdrawal_extension_max_days":30,"extension_condition":"President certifies unavoidable military necessity respecting safety of removal.","completion_evidence":"Forces removed by deadline or continuation separately authorized.","source_ids":["src_usa_war_powers_resolution"]},
-    {"gate_id":"gate_usa_declaration_or_specific_authorization_before_deadline","gate_type":"continuation_authorization","required_institution_ids":["institution_usa_congress_119","institution_usa_presidency"],"completion_evidence":"Declaration or specific statutory authorization becomes law before the applicable termination deadline.","source_ids":["src_usa_war_powers_resolution"]}
+    {
+      "gate_id": "gate_usa_president_requests_or_accepts_war_measure",
+      "gate_type": "executive_legislative_action",
+      "required_institution_ids": [
+        "institution_usa_presidency"
+      ],
+      "completion_evidence": "Enacted declaration of war or constitutional presentment record.",
+      "source_ids": [
+        "src_usa_constitution_article_i",
+        "src_usa_constitution_article_ii"
+      ],
+      "phase": "activation"
+    },
+    {
+      "gate_id": "gate_usa_house_passes_war_measure",
+      "gate_type": "legislative_vote",
+      "required_institution_ids": [
+        "institution_usa_congress_119"
+      ],
+      "completion_evidence": "House passage record.",
+      "source_ids": [
+        "src_usa_constitution_article_i"
+      ],
+      "phase": "activation"
+    },
+    {
+      "gate_id": "gate_usa_senate_passes_war_measure",
+      "gate_type": "legislative_vote",
+      "required_institution_ids": [
+        "institution_usa_congress_119"
+      ],
+      "completion_evidence": "Senate passage record.",
+      "source_ids": [
+        "src_usa_constitution_article_i"
+      ],
+      "phase": "activation"
+    },
+    {
+      "gate_id": "gate_usa_house_passes_specific_authorization",
+      "gate_type": "legislative_vote",
+      "required_institution_ids": [
+        "institution_usa_congress_119"
+      ],
+      "completion_evidence": "House passage of text that specifically authorizes hostilities.",
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ],
+      "phase": "activation"
+    },
+    {
+      "gate_id": "gate_usa_senate_passes_specific_authorization",
+      "gate_type": "legislative_vote",
+      "required_institution_ids": [
+        "institution_usa_congress_119"
+      ],
+      "completion_evidence": "Senate passage of text that specifically authorizes hostilities.",
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ],
+      "phase": "activation"
+    },
+    {
+      "gate_id": "gate_usa_measure_becomes_law",
+      "gate_type": "enactment",
+      "required_institution_ids": [
+        "institution_usa_presidency",
+        "institution_usa_congress_119"
+      ],
+      "completion_evidence": "Signed enactment or veto override.",
+      "source_ids": [
+        "src_usa_constitution_article_i",
+        "src_usa_constitution_article_ii"
+      ],
+      "phase": "activation"
+    },
+    {
+      "gate_id": "gate_usa_attack_emergency_fact_established",
+      "gate_type": "fact_finding",
+      "required_institution_ids": [
+        "institution_usa_presidency"
+      ],
+      "completion_evidence": "Opening state records an attack on a statutory protected object; anticipation or coercion alone is insufficient.",
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ],
+      "phase": "activation"
+    },
+    {
+      "gate_id": "gate_usa_article_ii_scope_assessment",
+      "gate_type": "contested_legal_assessment",
+      "required_institution_ids": [
+        "institution_usa_presidency"
+      ],
+      "completion_evidence": "Recorded executive legal basis, anticipated nature, scope, duration, and risk; this never converts the route to accepted congressional authorization.",
+      "source_ids": [
+        "src_usa_constitution_article_ii",
+        "src_usa_olc_presidential_force_1980"
+      ],
+      "phase": "activation"
+    },
+    {
+      "gate_id": "gate_usa_wpr_consult_when_possible",
+      "gate_type": "consultation_obligation",
+      "required_institution_ids": [
+        "institution_usa_presidency",
+        "institution_usa_congress_119"
+      ],
+      "completion_evidence": "Consultation record before introduction in every possible instance and regular consultation afterward.",
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ],
+      "phase": "precondition",
+      "completion_modes": [
+        "consulted_before_introduction",
+        "consultation_not_possible_with_recorded_reason"
+      ]
+    },
+    {
+      "gate_id": "gate_usa_wpr_report_if_triggered",
+      "gate_type": "timed_reporting_obligation",
+      "required_institution_ids": [
+        "institution_usa_presidency",
+        "institution_usa_congress_119"
+      ],
+      "deadline_hours": 48,
+      "completion_evidence": "Written report states circumstances, legal authority, and estimated scope and duration after a statutory trigger.",
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ],
+      "phase": "post_activation_obligation",
+      "anchor_event_type": "force_introduction_into_hostilities_or_imminent_hostilities",
+      "anchor_event_id": "event_usa_forces_introduced",
+      "anchor_status": "runtime_required_known_or_unknown_anchor",
+      "anchor_time": "runtime_field:forces_introduced_at",
+      "due_time": "runtime_field:report_due_at",
+      "deadline_ordering": "forces_introduced_at_less_than_or_equal_to_report_due_at",
+      "duration_hours": 48,
+      "unknown_anchor_state": "unknown_anchor",
+      "unknown_anchor_policy": {
+        "zero_false_or_no_deadline_coercion_forbidden": true,
+        "conservative_bound_rule": "earliest_supportable_force_introduction_candidate_plus_48_hours",
+        "permissive_bound_rule": "latest_supportable_force_introduction_candidate_plus_48_hours",
+        "no_candidate_rule": "preserve_explicit_unknown_due_at_and_block_continuation_promotion"
+      }
+    },
+    {
+      "gate_id": "gate_usa_wpr_termination_clock",
+      "gate_type": "timed_termination_obligation",
+      "required_institution_ids": [
+        "institution_usa_presidency",
+        "institution_usa_congress_119"
+      ],
+      "base_deadline_days": 60,
+      "withdrawal_extension_max_days": 30,
+      "extension_condition": "President certifies unavoidable military necessity respecting safety of removal.",
+      "completion_evidence": "Forces removed by deadline or continuation separately authorized.",
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ],
+      "phase": "termination_condition",
+      "anchor_event_type": "earlier_of_report_submission_or_time_report_was_required",
+      "anchor_event_id": "event_usa_wpr_report_submitted_or_required",
+      "anchor_status": "runtime_required_known_or_unknown_anchor",
+      "anchor_time": "runtime_field:termination_anchor_at",
+      "anchor_time_rule": "earlier_of(report_submitted_at,report_due_at)",
+      "due_time": "runtime_field:termination_due_at",
+      "deadline_ordering": [
+        "termination_anchor_at_less_than_or_equal_to_termination_due_at",
+        "termination_due_at_less_than_or_equal_to_withdrawal_extension_due_at_when_extension_applies"
+      ],
+      "duration_days": 60,
+      "unknown_anchor_state": "unknown_anchor",
+      "unknown_anchor_policy": {
+        "zero_false_or_no_deadline_coercion_forbidden": true,
+        "conservative_bound_rule": "earliest_supportable_report_submitted_or_required_candidate_plus_60_days",
+        "permissive_bound_rule": "latest_supportable_report_submitted_or_required_candidate_plus_60_days",
+        "no_candidate_rule": "preserve_explicit_unknown_deadline_bounds_and_block_indefinite_continuation"
+      },
+      "withdrawal_extension": {
+        "duration_max_days": 30,
+        "begins_at": "termination_due_at",
+        "certification_required": true,
+        "condition": "President certifies unavoidable military necessity respecting safety of removal.",
+        "due_time": "runtime_field:withdrawal_extension_due_at"
+      }
+    },
+    {
+      "gate_id": "gate_usa_declaration_or_specific_authorization_before_deadline",
+      "gate_type": "continuation_authorization",
+      "required_institution_ids": [
+        "institution_usa_congress_119",
+        "institution_usa_presidency"
+      ],
+      "completion_evidence": "Declaration or specific statutory authorization becomes law before the applicable termination deadline.",
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ],
+      "phase": "continuation_condition"
+    },
+    {
+      "gate_id": "gate_usa_wpr_regular_consultation",
+      "gate_type": "ongoing_consultation_obligation",
+      "phase": "post_activation_obligation",
+      "required_institution_ids": [
+        "institution_usa_presidency",
+        "institution_usa_congress_119"
+      ],
+      "completion_evidence": "Regular consultation record for as long as forces remain in hostilities or imminent hostilities.",
+      "noncompletion_effect": "record_statutory_violation_without_retroactively_voiding_initial_activation",
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ]
+    }
   ],
   "alliance_and_taiwan_branches": [
     {
       "branch_id": "branch_usa_taiwan_discretionary_intervention",
       "obligation_class": "policy_and_capacity_commitment_not_automatic_force_authority",
-      "facts": ["The Taiwan Relations Act treats nonpeaceful determination as grave concern, provides defensive articles and services, and maintains capacity to resist force or coercion."],
+      "facts": [
+        "The Taiwan Relations Act treats nonpeaceful determination as grave concern, provides defensive articles and services, and maintains capacity to resist force or coercion."
+      ],
       "domestic_force_authority_effect": "none_by_itself",
-      "required_route_ids": ["route_usa_declaration_of_war","route_usa_specific_statutory_authorization","route_usa_attack_emergency","route_usa_contested_limited_presidential_force"],
-      "source_ids": ["src_usa_taiwan_relations_act","src_usa_war_powers_resolution"]
+      "required_route_ids": [
+        "route_usa_declaration_of_war",
+        "route_usa_specific_statutory_authorization",
+        "route_usa_attack_emergency",
+        "route_usa_contested_limited_presidential_force"
+      ],
+      "source_ids": [
+        "src_usa_taiwan_relations_act",
+        "src_usa_war_powers_resolution"
+      ]
     },
     {
       "branch_id": "branch_usa_treaty_commitment_general_rule",
       "obligation_class": "international_commitment_separate_from_domestic_force_authority",
       "domestic_force_authority_effect": "not_inferred_from_treaty_unless_implementing_legislation_specifically_authorizes",
-      "source_ids": ["src_usa_war_powers_resolution"]
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ]
     },
     {
       "branch_id": "branch_usa_appropriations_general_rule",
       "obligation_class": "funding_separate_from_force_authority",
       "domestic_force_authority_effect": "not_inferred_from_appropriations_unless_enactment_specifically_states_authorization",
-      "source_ids": ["src_usa_war_powers_resolution"]
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ]
     }
   ],
   "unresolved_interpretations": [
-    {"question_id":"unknown_usa_hostilities_threshold","question":"What facts constitute hostilities or imminent involvement for a specific operation?","status":"context_dependent_unresolved","source_ids":["src_usa_war_powers_resolution","src_usa_olc_presidential_force_1980"]},
-    {"question_id":"unknown_usa_article_ii_scope","question":"Where is the boundary between a limited presidential operation and war requiring prior congressional authorization?","status":"constitutional_interpretation_disputed","contradiction_set_id":"contradiction_usa_war_authority_scope","source_ids":["src_usa_constitution_article_i","src_usa_constitution_article_ii","src_usa_olc_presidential_force_1980"]},
-    {"question_id":"unknown_usa_wpr_clock_start","question":"For a disputed report, when should the sixty day clock be treated as having begun?","status":"fact_and_law_dependent_unresolved","source_ids":["src_usa_war_powers_resolution"]},
-    {"question_id":"unknown_usa_concurrent_resolution_removal","question":"What legal effect remains for the concurrent resolution removal mechanism after later constitutional doctrine concerning legislative vetoes?","status":"requires_independent_legal_review","source_ids":["src_usa_war_powers_resolution"]}
+    {
+      "question_id": "unknown_usa_hostilities_threshold",
+      "question": "What facts constitute hostilities or imminent involvement for a specific operation?",
+      "status": "context_dependent_unresolved",
+      "source_ids": [
+        "src_usa_war_powers_resolution",
+        "src_usa_olc_presidential_force_1980"
+      ]
+    },
+    {
+      "question_id": "unknown_usa_article_ii_scope",
+      "question": "Where is the boundary between a limited presidential operation and war requiring prior congressional authorization?",
+      "status": "constitutional_interpretation_disputed",
+      "contradiction_set_id": "contradiction_usa_war_authority_scope",
+      "source_ids": [
+        "src_usa_constitution_article_i",
+        "src_usa_constitution_article_ii",
+        "src_usa_olc_presidential_force_1980"
+      ]
+    },
+    {
+      "question_id": "unknown_usa_wpr_clock_start",
+      "question": "For a disputed report, when should the sixty day clock be treated as having begun?",
+      "status": "fact_and_law_dependent_unresolved",
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ]
+    },
+    {
+      "question_id": "unknown_usa_concurrent_resolution_removal",
+      "question": "What legal effect remains for the concurrent resolution removal mechanism after later constitutional doctrine concerning legislative vetoes?",
+      "status": "requires_independent_legal_review",
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ]
+    }
   ],
   "acceptance_rules": {
     "prose_only_authority_is_executable": false,
     "all_required_gates_must_be_structured": true,
     "treaty_or_policy_commitment_implies_domestic_force_authority": false,
     "appropriation_implies_domestic_force_authority": false,
-    "contested_route_may_be_labeled_uncontested": false
+    "contested_route_may_be_labeled_uncontested": false,
+    "flat_required_gate_contract_is_executable": false,
+    "typed_transitions_required": true
   },
-  "source_ids": ["src_usa_constitution_article_i","src_usa_constitution_article_ii","src_usa_war_powers_resolution","src_usa_olc_presidential_force_1980","src_usa_taiwan_relations_act"]
+  "source_ids": [
+    "src_usa_constitution_article_i",
+    "src_usa_constitution_article_ii",
+    "src_usa_war_powers_resolution",
+    "src_usa_olc_presidential_force_1980",
+    "src_usa_taiwan_relations_act"
+  ],
+  "state_machine_contract": {
+    "activation_precedes_post_activation_obligations": true,
+    "later_violation_never_retroactively_prevents_activation": true,
+    "typed_transition_phases": [
+      "precondition",
+      "activation",
+      "post_activation_obligation",
+      "continuation_condition",
+      "termination_condition"
+    ],
+    "runtime_event_history_is_append_only": true,
+    "unresolved_timed_anchor_is_not_no_clock": true
+  }
 }
