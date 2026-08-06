@@ -1,0 +1,348 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/force_platform_record.schema.json",
+  "title": "Individual Military Platform Record",
+  "description": "A dated research record for one uniquely represented military or government controlled platform. This record describes possession and identity, not a player's current observation of it.",
+  "type": "object",
+  "required": [
+    "platform_id",
+    "country_id",
+    "controller_id",
+    "service",
+    "component",
+    "domain",
+    "equipment_type_id",
+    "identity",
+    "command_organization_id",
+    "accounting_state",
+    "readiness",
+    "home_basing",
+    "maintenance",
+    "temporal_validity",
+    "provenance"
+  ],
+  "properties": {
+    "platform_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "country_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "owner_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "controller_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "service": {
+      "$ref": "common.schema.json#/$defs/service"
+    },
+    "component": {
+      "$ref": "common.schema.json#/$defs/component"
+    },
+    "domain": {
+      "$ref": "common.schema.json#/$defs/domain"
+    },
+    "equipment_type_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "identity": {
+      "type": "object",
+      "required": [
+        "identity_kind",
+        "display_name"
+      ],
+      "properties": {
+        "identity_kind": {
+          "type": "string",
+          "enum": [
+            "hull",
+            "tail",
+            "serial",
+            "registration",
+            "satellite_catalog",
+            "named_system",
+            "research_alias"
+          ]
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "official_identifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "aliases": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "command_organization_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "assigned_formation_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "accounting_state": {
+      "$ref": "common.schema.json#/$defs/accountingState"
+    },
+    "readiness": {
+      "type": "object",
+      "required": [
+        "band",
+        "basis"
+      ],
+      "properties": {
+        "band": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "unavailable",
+            "low",
+            "limited",
+            "standard",
+            "high",
+            "surge"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "direct_public_status",
+            "official_aggregate",
+            "independent_assessment",
+            "derived_from_maintenance",
+            "scenario_assumption",
+            "unknown"
+          ]
+        },
+        "available_after_hours": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "limiting_factors": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "home_basing": {
+      "type": "object",
+      "required": [
+        "location_kind",
+        "location_id",
+        "confidence"
+      ],
+      "properties": {
+        "location_kind": {
+          "type": "string",
+          "enum": [
+            "installation",
+            "port",
+            "airfield",
+            "garrison",
+            "storage_site",
+            "operating_region",
+            "unknown"
+          ]
+        },
+        "location_id": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/stableId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "confidence": {
+          "$ref": "common.schema.json#/$defs/confidence"
+        }
+      },
+      "additionalProperties": false
+    },
+    "current_deployment_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "maintenance": {
+      "type": "object",
+      "required": [
+        "state"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "not_reported",
+            "available",
+            "inspection",
+            "scheduled_maintenance",
+            "unscheduled_maintenance",
+            "overhaul",
+            "refit",
+            "modernization",
+            "repair",
+            "awaiting_parts",
+            "awaiting_facility",
+            "unknown"
+          ]
+        },
+        "maintenance_record_id": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/stableId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expected_return_to_service": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "crew": {
+      "type": "object",
+      "properties": {
+        "authorized": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "assigned": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "qualified_fraction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "confidence": {
+          "$ref": "common.schema.json#/$defs/confidence"
+        }
+      },
+      "additionalProperties": false
+    },
+    "control_constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "constraint_type",
+          "description"
+        ],
+        "properties": {
+          "constraint_type": {
+            "type": "string",
+            "enum": [
+              "political_authority",
+              "alliance_release",
+              "leased_or_foreign_owned",
+              "strategic_command",
+              "export_restriction",
+              "civilian_agency_control",
+              "other"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "properties": {
+        "laid_down_or_ordered": {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        },
+        "delivered": {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        },
+        "commissioned_or_accepted": {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        },
+        "planned_retirement": {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        }
+      },
+      "additionalProperties": false
+    },
+    "temporal_validity": {
+      "$ref": "common.schema.json#/$defs/temporalValidity"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
