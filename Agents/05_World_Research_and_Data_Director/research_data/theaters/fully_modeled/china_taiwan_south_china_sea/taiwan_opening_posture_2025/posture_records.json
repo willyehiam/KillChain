@@ -1,0 +1,174 @@
+{
+  "as_of": "2025-09-01T00:00:00Z",
+  "records": [
+    {
+      "posture_id": "op_posture_prc_political_objective",
+      "actor_id": "country_chn",
+      "category": "political_objective",
+      "summary": "Pursue reunification, oppose formal separation, and deter external involvement while retaining coercive options.",
+      "claim_ids": [
+        "op_claim_prc_reunification_objective",
+        "op_claim_prc_nonpeaceful_conditions",
+        "op_claim_prc_external_interference_opposition"
+      ],
+      "source_ids": [
+        "op_src_prc_taiwan_white_paper_2022",
+        "op_src_anti_secession_law"
+      ],
+      "force_refs": [
+        "organization_chn_central_military_commission"
+      ],
+      "readiness": "not_assessed",
+      "valid_at": "2025-09-01T00:00:00Z"
+    },
+    {
+      "posture_id": "op_posture_prc_joint_command",
+      "actor_id": "country_chn",
+      "category": "command",
+      "summary": "Eastern Theater Command is the accepted aggregate conventional theater command reference for Taiwan related joint operations.",
+      "claim_ids": [
+        "op_claim_lineage_2024b",
+        "op_claim_lineage_2025a"
+      ],
+      "source_ids": [
+        "op_src_pla_joint_sword_2024b",
+        "op_src_pla_strait_thunder_2025a"
+      ],
+      "force_refs": [
+        "organization_chn_eastern_theater_command",
+        "organization_chn_cmc_joint_staff_department"
+      ],
+      "readiness": "unknown",
+      "valid_at": "2025-09-01T00:00:00Z"
+    },
+    {
+      "posture_id": "op_posture_prc_multi_domain_pool",
+      "actor_id": "country_chn",
+      "category": "force_pool",
+      "summary": "Relevant public capability categories span land, maritime, air, rocket, information, logistics, coast guard, and mobilization support; quantities and opening disposition remain unresolved.",
+      "claim_ids": [
+        "op_claim_readiness_unknown",
+        "op_claim_force_disposition_unknown"
+      ],
+      "source_ids": [
+        "op_src_cmpr_2024"
+      ],
+      "force_refs": [
+        "organization_chn_pla_army",
+        "organization_chn_pla_navy",
+        "organization_chn_pla_air_force",
+        "organization_chn_pla_rocket_force",
+        "organization_chn_pla_information_support_force",
+        "organization_chn_pla_joint_logistic_support_force",
+        "organization_chn_china_coast_guard",
+        "organization_chn_militia"
+      ],
+      "readiness": "unknown",
+      "valid_at": "2025-09-01T00:00:00Z"
+    },
+    {
+      "posture_id": "op_posture_opening_activity",
+      "actor_id": "country_chn",
+      "category": "observed_activity",
+      "summary": "Final prebookmark daily snapshot reports persistent but non surge aggregate activity.",
+      "claim_ids": [
+        "op_claim_opening_snapshot"
+      ],
+      "source_ids": [
+        "op_src_twn_september1_2025_activity"
+      ],
+      "force_refs": [
+        "organization_chn_eastern_theater_command",
+        "organization_chn_china_coast_guard"
+      ],
+      "readiness": "not_inferred",
+      "count_semantics": "activity_instances_not_unique_platforms",
+      "valid_at": "2025-09-01T00:00:00Z"
+    },
+    {
+      "posture_id": "op_posture_twn_command",
+      "actor_id": "country_twn",
+      "category": "command",
+      "summary": "Civilian command authority, defense administration, and General Staff operational direction remain distinct.",
+      "claim_ids": [
+        "op_claim_taiwan_response_pattern"
+      ],
+      "source_ids": [
+        "op_src_twn_september1_2025_activity"
+      ],
+      "force_refs": [
+        "organization_twn_president_commander_in_chief",
+        "organization_twn_ministry_of_national_defense",
+        "organization_twn_general_staff_headquarters"
+      ],
+      "readiness": "unknown",
+      "valid_at": "2025-09-01T00:00:00Z"
+    },
+    {
+      "posture_id": "op_posture_twn_response_pool",
+      "actor_id": "country_twn",
+      "category": "force_pool",
+      "summary": "Public response descriptions support aggregate air, maritime, ground based defense, coast guard, and reserve decision channels without identifying current mobile assets.",
+      "claim_ids": [
+        "op_claim_taiwan_response_pattern",
+        "op_claim_taiwan_exercise_priorities"
+      ],
+      "source_ids": [
+        "op_src_twn_han_kuang_41_plan",
+        "op_src_twn_september1_2025_activity"
+      ],
+      "force_refs": [
+        "organization_twn_army_command_headquarters",
+        "organization_twn_navy_command_headquarters",
+        "organization_twn_air_force_command_headquarters",
+        "organization_twn_coast_guard_administration",
+        "organization_twn_all_out_defense_mobilization_agency",
+        "organization_twn_reserve_command"
+      ],
+      "readiness": "unknown",
+      "valid_at": "2025-09-01T00:00:00Z"
+    },
+    {
+      "posture_id": "op_posture_usa_policy",
+      "actor_id": "country_usa",
+      "category": "political_access",
+      "summary": "United States support and coercion resistance capacity are standing policy; combat entry remains a separate political decision.",
+      "claim_ids": [
+        "op_claim_us_policy_commitment",
+        "op_claim_us_no_automatic_entry"
+      ],
+      "source_ids": [
+        "op_src_taiwan_relations_act"
+      ],
+      "force_refs": [
+        "organization_usa_president_commander_in_chief",
+        "organization_usa_department_of_defense",
+        "organization_usa_indo_pacific_command"
+      ],
+      "readiness": "not_assessed",
+      "valid_at": "2025-09-01T00:00:00Z"
+    },
+    {
+      "posture_id": "op_posture_allied_access",
+      "actor_id": "regional_partners",
+      "category": "political_access",
+      "summary": "Existing access in Japan and the Philippines provides options but not automatic permission for every mission or escalation level.",
+      "claim_ids": [
+        "op_claim_japan_access_constraint",
+        "op_claim_philippines_access_constraint"
+      ],
+      "source_ids": [
+        "op_src_us_japan_treaty",
+        "op_src_us_japan_sofa",
+        "op_src_edca_2023",
+        "op_src_us_philippines_2plus2_2024"
+      ],
+      "force_refs": [
+        "organization_usa_indo_pacific_command",
+        "organization_usa_transportation_command"
+      ],
+      "readiness": "conditional",
+      "valid_at": "2025-09-01T00:00:00Z"
+    }
+  ]
+}
