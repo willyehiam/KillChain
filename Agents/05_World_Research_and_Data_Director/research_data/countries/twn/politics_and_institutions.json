@@ -17,7 +17,8 @@
       "institution_twn_kmt",
       "institution_twn_tpp"
     ],
-    "legislative_context": "The DPP controlled the presidency and Executive Yuan while KMT and TPP institutions held decisive opposition leverage in the Legislative Yuan, creating divided government rather than unified party control.",
+    "legislative_context": "The DPP held the presidency and Executive Yuan. The derived opening seat ledger was KMT 52, DPP 51, TPP 8, and independent 2, with 57 seats required for a majority. The KMT was the formal plurality, no single party held a majority, and KMT-TPP cooperation remained a political relationship to resolve issue by issue rather than an automatic coalition.",
+    "legislative_seat_claim_id": "claim_twn_legislative_seats_2025_09_01",
     "formal_decision_authority": [
       {
         "domain": "executive_and_national_security",
@@ -38,7 +39,7 @@
         "source_ids": ["src_twn_additional_articles"]
       }
     ],
-    "practical_authority_notes": "President Lai combined the state presidency and DPP chairmanship. Premier Cho directed the Executive Yuan, while opposition control of the legislature imposed a separate political gate on budgets and legislation.",
+    "practical_authority_notes": "President Lai combined the state presidency and DPP chairmanship. Premier Cho directed the Executive Yuan. The legislature had no single-party majority: the KMT held a one-seat plurality over the DPP, while passage of budgets and legislation depended on issue-specific voting alignments, including but not presuming KMT-TPP cooperation.",
     "succession": {
       "first_successor_actor_id": "actor_twn_bikhim_hsiao",
       "second_contingency_actor_id": "actor_twn_cho_jung_tai",
@@ -65,10 +66,10 @@
   "institutions": [
     {"institution_id":"institution_twn_presidency","name":"Office of the President, Republic of China (Taiwan)","category":"executive","opening_status":"dpp_governing","source_ids":["src_twn_president_authority","src_twn_inauguration_2024"]},
     {"institution_id":"institution_twn_executive_yuan","name":"Executive Yuan","category":"executive_government","opening_status":"dpp_led_government","source_ids":["src_twn_additional_articles","src_twn_cho_2025","src_twn_cheng_2025"]},
-    {"institution_id":"institution_twn_legislative_yuan","name":"Legislative Yuan","category":"legislature","opening_status":"opposition_led","source_ids":["src_twn_legislative_functions","src_twn_legislative_leadership_2025"]},
-    {"institution_id":"institution_twn_dpp","name":"Democratic Progressive Party","category":"political_party","opening_status":"presidential_and_governing_party","source_ids":["src_twn_dpp_congress_2025"]},
-    {"institution_id":"institution_twn_kmt","name":"Kuomintang","category":"political_party","opening_status":"largest_opposition_party","source_ids":["src_twn_kmt_chu_2025","src_twn_kmt_fu_2025"]},
-    {"institution_id":"institution_twn_tpp","name":"Taiwan People's Party","category":"political_party","opening_status":"opposition_and_legislative_pivot","source_ids":["src_twn_tpp_caucus_2025"]},
+    {"institution_id":"institution_twn_legislative_yuan","name":"Legislative Yuan","category":"legislature","opening_status":"kmt_plurality_no_single_party_majority","source_ids":["src_twn_legislative_functions","src_twn_legislative_leadership_2025","src_twn_cec_legislative_result_2024","src_twn_cec_recall_results_2025_07_26","src_twn_cec_recall_results_2025_08_23"]},
+    {"institution_id":"institution_twn_dpp","name":"Democratic Progressive Party","category":"political_party","opening_status":"presidential_and_governing_party_with_51_legislative_seats","source_ids":["src_twn_dpp_congress_2025","src_twn_cec_legislative_result_2024","src_twn_cec_recall_results_2025_07_26","src_twn_cec_recall_results_2025_08_23"]},
+    {"institution_id":"institution_twn_kmt","name":"Kuomintang","category":"political_party","opening_status":"largest_opposition_party_and_52_seat_formal_plurality","source_ids":["src_twn_kmt_chu_2025","src_twn_kmt_fu_2025","src_twn_cec_legislative_result_2024","src_twn_cec_recall_results_2025_07_26","src_twn_cec_recall_results_2025_08_23"]},
+    {"institution_id":"institution_twn_tpp","name":"Taiwan People's Party","category":"political_party","opening_status":"eight_seat_opposition_pivot_not_automatic_coalition","source_ids":["src_twn_tpp_caucus_2025","src_twn_cec_legislative_result_2024","src_twn_cec_recall_results_2025_07_26","src_twn_cec_recall_results_2025_08_23"]},
     {"institution_id":"institution_twn_nsc","name":"National Security Council","category":"national_security_advisory_body","opening_status":"advising_president","source_ids":["src_twn_central_government","src_twn_resilience_committee"]}
   ],
   "political_actors": [
@@ -90,7 +91,7 @@
     {"actor_id":"actor_twn_chiang_wan_an","name":"Chiang Wan-an","office":"Mayor of Taipei","institution_ids":["institution_twn_kmt"],"relevance":"major_opposition_local_executive","succession_eligibility":"constitutionally_eligible_potential_candidate","confidence":"high","source_ids":["src_twn_taipei_chiang"]},
     {"actor_id":"actor_twn_chen_chi_mai","name":"Chen Chi-mai","office":"Mayor of Kaohsiung","institution_ids":["institution_twn_dpp"],"relevance":"major_governing_party_local_executive","succession_eligibility":"constitutionally_eligible_potential_candidate","confidence":"high","source_ids":["src_twn_kaohsiung_chen_2025"]},
     {"actor_id":"actor_twn_ker_chien_ming","name":"Ker Chien-ming","office":"DPP Legislative Caucus Convener","institution_ids":["institution_twn_legislative_yuan","institution_twn_dpp"],"relevance":"governing_party_legislative_caucus_leader","succession_eligibility":"party_actor_not_automatic_successor","confidence":"high","source_ids":["src_twn_dpp_congress_2025"]},
-    {"actor_id":"actor_twn_lin_yu_chang","name":"Lin Yu-chang","office":"DPP Secretary-General","institution_ids":["institution_twn_dpp"],"relevance":"governing_party_organizational_leader","succession_eligibility":"party_actor_not_automatic_successor","confidence":"high","source_ids":["src_twn_dpp_congress_2025"]},
+    {"actor_id":"actor_twn_hsu_kuo_yung","name":"Hsu Kuo-yung","office":"DPP Secretary-General","institution_ids":["institution_twn_dpp"],"relevance":"governing_party_organizational_leader","succession_eligibility":"party_actor_not_automatic_successor","confidence":"high","source_ids":["src_twn_lin_resignation_hsu_appointment_2025","src_twn_hsu_dpp_secretary_general_2025"]},
     {"actor_id":"actor_twn_tsai_ing_wen","name":"Tsai Ing-wen","office":"Former President","institution_ids":["institution_twn_dpp"],"relevance":"former_head_of_state","succession_eligibility":"not_in_constitutional_line","confidence":"high","source_ids":["src_twn_inauguration_2024"]}
   ],
   "unknowns": [
