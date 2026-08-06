@@ -6,71 +6,671 @@
   "as_of": "2025-09-01T00:00:00Z",
   "status": "needs_review",
   "sources": [
-    {"source_id":"src_usa_white_house_administration","title":"The Trump Administration","publisher":"The White House","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://www.whitehouse.gov/administration/","relevant_locator":"President and Vice President","reliability_notes":"Official officeholder page. Used only for roles established before the bookmark."},
-    {"source_id":"src_usa_white_house_cabinet","title":"The Cabinet","publisher":"The White House","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://www.whitehouse.gov/administration/cabinet/","relevant_locator":"Cabinet officeholder cards","reliability_notes":"Live page can change. It is used only for offices held before the bookmark and is never used to import later title changes."},
-    {"source_id":"src_usa_rubio_swearing_2025","title":"Vice President JD Vance Swears In Marco Rubio as United States Secretary of State","publisher":"The White House","published_at":"2025-01-21","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://www.whitehouse.gov/videos/vice-president-jd-vance-swears-in-marco-rubio-as-united-states-secretary-of-state/","relevant_locator":"Dated title and office"},
-    {"source_id":"src_usa_hegseth_swearing_2025","title":"Vice President Vance Swears In Pete Hegseth to be Secretary of Defense","publisher":"The White House","published_at":"2025-01-25","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://www.whitehouse.gov/videos/vice-president-vance-swears-in-pete-hegseth-to-be-secretary-of-defense/","relevant_locator":"Dated title and office","reliability_notes":"This dated record controls the bookmark title even if the live Cabinet page later changes."},
-    {"source_id":"src_usa_white_house_national_security_team","title":"President Donald Trump and his national security team meet in the Situation Room","publisher":"The White House","published_at":"2025-06-21","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://www.whitehouse.gov/gallery/president-donald-trump-and-his-national-security-team-meet-in-the-situation-room-of-the-white-house/","relevant_locator":"Official photo captions naming national security principals"},
-    {"source_id":"src_usa_white_house_wiles_2025","title":"White House Chief of Staff Susie Wiles on working in the White House","publisher":"The White House","published_at":"2025-07-09","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://www.whitehouse.gov/videos/white-house-chief-of-staff-susie-wiles-on-working-in-the-white-house-it-is-superhuman-pace/","relevant_locator":"Title and office"},
-    {"source_id":"src_usa_white_house_miller_2025","title":"Deputy Chief of Staff for Policy and Homeland Security Advisor Stephen Miller","publisher":"The White House","published_at":"2025-05-01","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://www.whitehouse.gov/videos/%F0%9F%94%A5deputy-chief-of-staff-for-policy-and-homeland-security-advisor-stephen-miller-destroys-the-media/","relevant_locator":"Title and office"},
-    {"source_id":"src_usa_constitution_article_i","title":"Constitution of the United States, Article I","publisher":"Congress.gov Constitution Annotated","accessed_at":"2026-08-06","source_tier":"A","source_type":"law_or_treaty","url":"https://constitution.congress.gov/constitution/article-1/","relevant_locator":"Section 8, Declare War Clause"},
-    {"source_id":"src_usa_constitution_article_ii","title":"Constitution of the United States, Article II","publisher":"Congress.gov Constitution Annotated","accessed_at":"2026-08-06","source_tier":"A","source_type":"law_or_treaty","url":"https://constitution.congress.gov/constitution/article-2/","relevant_locator":"Sections 1 and 2"},
-    {"source_id":"src_usa_constitution_amendment_xxv","title":"Constitution of the United States, Twenty Fifth Amendment","publisher":"Congress.gov Constitution Annotated","accessed_at":"2026-08-06","source_tier":"A","source_type":"law_or_treaty","url":"https://constitution.congress.gov/constitution/amendment-25/","relevant_locator":"Section 1"},
-    {"source_id":"src_usa_war_powers_resolution","title":"War Powers Resolution","publisher":"Office of the Law Revision Counsel, United States House of Representatives","published_at":"1973-11-07","accessed_at":"2026-08-06","source_tier":"A","source_type":"law_or_treaty","url":"https://uscode.house.gov/view.xhtml?path=/prelim@title50/chapter33&edition=prelim","relevant_locator":"50 USC chapter 33, sections 1541 through 1548"},
-    {"source_id":"src_usa_olc_presidential_force_1980","title":"Presidential Power to Use the Armed Forces Abroad Without Statutory Authorization","publisher":"United States Department of Justice, Office of Legal Counsel","published_at":"1980-02-12","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://www.justice.gov/olc/opinion/presidential-power-use-armed-forces-abroad-without-statutory-authorization","relevant_locator":"Headnotes","reliability_notes":"Authoritative executive branch legal position, not a neutral resolution of the separation of powers dispute."},
-    {"source_id":"src_usa_senate_republican_leadership","title":"Senate Republican Leadership for the 119th Congress","publisher":"Senate Republican Conference","published_at":"2024-11-13","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://www.republican.senate.gov/2024/11/13/barrasso-announces-senate-gop-leadership-for-the-119th-congress/","relevant_locator":"Leadership roster"},
-    {"source_id":"src_usa_senate_democratic_leadership","title":"Senate Democratic Leadership Team for the 119th Congress","publisher":"Senate Democratic Caucus","published_at":"2024-12-03","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://www.democrats.senate.gov/newsroom/press-releases/majority-leader-schumer-announces-senate-democratic-leadership-team-for-the-119th-congress","relevant_locator":"Leadership roster"},
-    {"source_id":"src_usa_house_republican_leadership","title":"Scalise Statement on Being Re Elected Majority Leader for 119th Congress","publisher":"Office of House Majority Leader Steve Scalise","published_at":"2024-11-13","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://scalise.house.gov/press-releases/Scalise-Statement-on-Being-Re-Elected-Majority-Leader-for-119th-Congress","relevant_locator":"119th Congress House Republican leadership"},
-    {"source_id":"src_usa_house_democratic_leader","title":"About Democratic Leader Hakeem Jeffries","publisher":"Office of Representative Hakeem Jeffries","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://jeffries.house.gov/about/","relevant_locator":"Democratic Leader role","reliability_notes":"Live official biography. Used only for office held at the bookmark."},
-    {"source_id":"src_usa_council_of_governors_2025","title":"Council of Governors Holds 30th Plenary Meeting","publisher":"National Governors Association","published_at":"2025-02-20","accessed_at":"2026-08-06","source_tier":"B","source_type":"official_release","url":"https://www.nga.org/news/commentary/council-of-governors-holds-30th-plenary-meeting/","relevant_locator":"2025 Council member roster"},
-    {"source_id":"src_usa_nato_hague_2025","title":"The Hague Summit Declaration","publisher":"North Atlantic Treaty Organization","published_at":"2025-06-25","accessed_at":"2026-08-06","source_tier":"A","source_type":"law_or_treaty","url":"https://www.ncia.nato.int/newsroom/news/the-hague-summit-declaration","relevant_locator":"Paragraphs 1 and 2"},
-    {"source_id":"src_usa_taiwan_relations_act","title":"22 USC 3301, Congressional findings and declaration of policy","publisher":"Office of the Law Revision Counsel, United States House of Representatives","published_at":"1979-04-10","accessed_at":"2026-08-06","source_tier":"A","source_type":"law_or_treaty","url":"https://uscode.house.gov/view.xhtml?edition=1999&req=granuleid%3AUSC-1999-title22-chapter48","relevant_locator":"Section 3301(b)"},
-    {"source_id":"src_usa_nsc_statute","title":"50 USC 3021: National Security Council","publisher":"Office of the Law Revision Counsel, United States House of Representatives","accessed_at":"2026-08-06","source_tier":"A","source_type":"law_or_treaty","url":"https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section3021&num=0&edition=prelim","relevant_locator":"Statutory NSC members, advisers, and function"},
-    {"source_id":"src_usa_nspm1_nsc_organization_2025","title":"Organization of the National Security Council and Subcommittees","publisher":"The White House","published_at":"2025-01-20","accessed_at":"2026-08-06","source_tier":"A","source_type":"official_release","url":"https://www.whitehouse.gov/presidential-actions/2025/01/organization-of-the-national-security-council-and-subcommittees/","relevant_locator":"NSPM-1; NSC, Principals Committee, Deputies Committee, and Policy Coordination Committees"},
-    {"source_id":"src_usa_rubio_acting_nsa_reuters_2025","title":"Trump names Marco Rubio interim national security adviser","publisher":"Reuters","published_at":"2025-05-01","accessed_at":"2026-08-06","source_tier":"B","source_type":"news_report","url":"https://www.reuters.com/world/us/white-house-national-security-adviser-waltz-leave-post-source-says-2025-05-01/","relevant_locator":"President's announcement that Rubio would serve as Secretary of State and interim National Security Advisor"},
-    {"source_id":"src_usa_nsc_restructuring_reuters_2025","title":"White House National Security Council hit by more firings, sources say","publisher":"Reuters","published_at":"2025-05-23","accessed_at":"2026-08-06","source_tier":"B","source_type":"news_report","url":"https://www.reuters.com/world/us/white-house-national-security-council-hit-by-more-firings-sources-say-2025-05-23/","relevant_locator":"May 2025 staff reductions and restructuring under interim adviser Marco Rubio","reliability_notes":"Supports the organizational capacity modifier, not a change to statutory NSC membership."}
+    {
+      "source_id": "src_usa_white_house_administration",
+      "title": "The Trump Administration",
+      "publisher": "The White House",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.whitehouse.gov/administration/",
+      "relevant_locator": "President and Vice President",
+      "reliability_notes": "Official officeholder page. Used only for roles established before the bookmark.",
+      "source_family_id": "family_the_white_house"
+    },
+    {
+      "source_id": "src_usa_white_house_cabinet",
+      "title": "The Cabinet",
+      "publisher": "The White House",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.whitehouse.gov/administration/cabinet/",
+      "relevant_locator": "Cabinet officeholder cards",
+      "reliability_notes": "Live page can change. It is used only for offices held before the bookmark and is never used to import later title changes.",
+      "source_family_id": "family_the_white_house"
+    },
+    {
+      "source_id": "src_usa_rubio_swearing_2025",
+      "title": "Vice President JD Vance Swears In Marco Rubio as United States Secretary of State",
+      "publisher": "The White House",
+      "published_at": "2025-01-21",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.whitehouse.gov/videos/vice-president-jd-vance-swears-in-marco-rubio-as-united-states-secretary-of-state/",
+      "relevant_locator": "Dated title and office",
+      "source_family_id": "family_the_white_house"
+    },
+    {
+      "source_id": "src_usa_hegseth_swearing_2025",
+      "title": "Vice President Vance Swears In Pete Hegseth to be Secretary of Defense",
+      "publisher": "The White House",
+      "published_at": "2025-01-25",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.whitehouse.gov/videos/vice-president-vance-swears-in-pete-hegseth-to-be-secretary-of-defense/",
+      "relevant_locator": "Dated title and office",
+      "reliability_notes": "This dated record controls the bookmark title even if the live Cabinet page later changes.",
+      "source_family_id": "family_the_white_house"
+    },
+    {
+      "source_id": "src_usa_white_house_national_security_team",
+      "title": "President Donald Trump and his national security team meet in the Situation Room",
+      "publisher": "The White House",
+      "published_at": "2025-06-21",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.whitehouse.gov/gallery/president-donald-trump-and-his-national-security-team-meet-in-the-situation-room-of-the-white-house/",
+      "relevant_locator": "Official photo captions naming national security principals",
+      "source_family_id": "family_the_white_house"
+    },
+    {
+      "source_id": "src_usa_white_house_wiles_2025",
+      "title": "White House Chief of Staff Susie Wiles on working in the White House",
+      "publisher": "The White House",
+      "published_at": "2025-07-09",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.whitehouse.gov/videos/white-house-chief-of-staff-susie-wiles-on-working-in-the-white-house-it-is-superhuman-pace/",
+      "relevant_locator": "Title and office",
+      "source_family_id": "family_the_white_house"
+    },
+    {
+      "source_id": "src_usa_white_house_miller_2025",
+      "title": "Deputy Chief of Staff for Policy and Homeland Security Advisor Stephen Miller",
+      "publisher": "The White House",
+      "published_at": "2025-05-01",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.whitehouse.gov/videos/%F0%9F%94%A5deputy-chief-of-staff-for-policy-and-homeland-security-advisor-stephen-miller-destroys-the-media/",
+      "relevant_locator": "Title and office",
+      "source_family_id": "family_the_white_house"
+    },
+    {
+      "source_id": "src_usa_constitution_article_i",
+      "title": "Constitution of the United States, Article I",
+      "publisher": "Congress.gov Constitution Annotated",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://constitution.congress.gov/constitution/article-1/",
+      "relevant_locator": "Section 8, Declare War Clause",
+      "source_family_id": "family_congress_gov_constitution_annotated"
+    },
+    {
+      "source_id": "src_usa_constitution_article_ii",
+      "title": "Constitution of the United States, Article II",
+      "publisher": "Congress.gov Constitution Annotated",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://constitution.congress.gov/constitution/article-2/",
+      "relevant_locator": "Sections 1 and 2",
+      "source_family_id": "family_congress_gov_constitution_annotated"
+    },
+    {
+      "source_id": "src_usa_constitution_amendment_xxv",
+      "title": "Constitution of the United States, Twenty Fifth Amendment",
+      "publisher": "Congress.gov Constitution Annotated",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://constitution.congress.gov/constitution/amendment-25/",
+      "relevant_locator": "Section 1",
+      "source_family_id": "family_congress_gov_constitution_annotated"
+    },
+    {
+      "source_id": "src_usa_war_powers_resolution",
+      "title": "War Powers Resolution",
+      "publisher": "Office of the Law Revision Counsel, United States House of Representatives",
+      "published_at": "1973-11-07",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://uscode.house.gov/view.xhtml?path=/prelim@title50/chapter33&edition=prelim",
+      "relevant_locator": "50 USC chapter 33, sections 1541 through 1548",
+      "source_family_id": "family_office_of_the_law_revision_counsel_united_states_house_of_representatives"
+    },
+    {
+      "source_id": "src_usa_olc_presidential_force_1980",
+      "title": "Presidential Power to Use the Armed Forces Abroad Without Statutory Authorization",
+      "publisher": "United States Department of Justice, Office of Legal Counsel",
+      "published_at": "1980-02-12",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.justice.gov/olc/opinion/presidential-power-use-armed-forces-abroad-without-statutory-authorization",
+      "relevant_locator": "Headnotes",
+      "reliability_notes": "Authoritative executive branch legal position, not a neutral resolution of the separation of powers dispute.",
+      "source_family_id": "family_united_states_department_of_justice_office_of_legal_counsel"
+    },
+    {
+      "source_id": "src_usa_senate_republican_leadership",
+      "title": "Senate Republican Leadership for the 119th Congress",
+      "publisher": "Senate Republican Conference",
+      "published_at": "2024-11-13",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.republican.senate.gov/2024/11/13/barrasso-announces-senate-gop-leadership-for-the-119th-congress/",
+      "relevant_locator": "Leadership roster",
+      "source_family_id": "family_senate_republican_conference"
+    },
+    {
+      "source_id": "src_usa_senate_democratic_leadership",
+      "title": "Senate Democratic Leadership Team for the 119th Congress",
+      "publisher": "Senate Democratic Caucus",
+      "published_at": "2024-12-03",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.democrats.senate.gov/newsroom/press-releases/majority-leader-schumer-announces-senate-democratic-leadership-team-for-the-119th-congress",
+      "relevant_locator": "Leadership roster",
+      "source_family_id": "family_senate_democratic_caucus"
+    },
+    {
+      "source_id": "src_usa_house_republican_leadership",
+      "title": "Scalise Statement on Being Re Elected Majority Leader for 119th Congress",
+      "publisher": "Office of House Majority Leader Steve Scalise",
+      "published_at": "2024-11-13",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://scalise.house.gov/press-releases/Scalise-Statement-on-Being-Re-Elected-Majority-Leader-for-119th-Congress",
+      "relevant_locator": "119th Congress House Republican leadership",
+      "source_family_id": "family_office_of_house_majority_leader_steve_scalise"
+    },
+    {
+      "source_id": "src_usa_house_democratic_leader",
+      "title": "About Democratic Leader Hakeem Jeffries",
+      "publisher": "Office of Representative Hakeem Jeffries",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://jeffries.house.gov/about/",
+      "relevant_locator": "Democratic Leader role",
+      "reliability_notes": "Live official biography. Used only for office held at the bookmark.",
+      "source_family_id": "family_office_of_representative_hakeem_jeffries"
+    },
+    {
+      "source_id": "src_usa_council_of_governors_2025",
+      "title": "Council of Governors Holds 30th Plenary Meeting",
+      "publisher": "National Governors Association",
+      "published_at": "2025-02-20",
+      "accessed_at": "2026-08-06",
+      "source_tier": "B",
+      "source_type": "official_release",
+      "url": "https://www.nga.org/news/commentary/council-of-governors-holds-30th-plenary-meeting/",
+      "relevant_locator": "2025 Council member roster",
+      "source_family_id": "family_national_governors_association"
+    },
+    {
+      "source_id": "src_usa_nato_hague_2025",
+      "title": "The Hague Summit Declaration",
+      "publisher": "North Atlantic Treaty Organization",
+      "published_at": "2025-06-25",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://www.ncia.nato.int/newsroom/news/the-hague-summit-declaration",
+      "relevant_locator": "Paragraphs 1 and 2",
+      "source_family_id": "family_north_atlantic_treaty_organization"
+    },
+    {
+      "source_id": "src_usa_taiwan_relations_act",
+      "title": "22 USC 3301, Congressional findings and declaration of policy",
+      "publisher": "Office of the Law Revision Counsel, United States House of Representatives",
+      "published_at": "1979-04-10",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://uscode.house.gov/view.xhtml?edition=1999&req=granuleid%3AUSC-1999-title22-chapter48",
+      "relevant_locator": "Section 3301(b)",
+      "source_family_id": "family_office_of_the_law_revision_counsel_united_states_house_of_representatives"
+    },
+    {
+      "source_id": "src_usa_nsc_statute",
+      "title": "50 USC 3021: National Security Council",
+      "publisher": "Office of the Law Revision Counsel, United States House of Representatives",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section3021&num=0&edition=prelim",
+      "relevant_locator": "Statutory NSC members, advisers, and function",
+      "source_family_id": "family_office_of_the_law_revision_counsel_united_states_house_of_representatives"
+    },
+    {
+      "source_id": "src_usa_nspm1_nsc_organization_2025",
+      "title": "Organization of the National Security Council and Subcommittees",
+      "publisher": "The White House",
+      "published_at": "2025-01-20",
+      "accessed_at": "2026-08-06",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/01/organization-of-the-national-security-council-and-subcommittees/",
+      "relevant_locator": "NSPM-1; NSC, Principals Committee, Deputies Committee, and Policy Coordination Committees",
+      "source_family_id": "family_the_white_house"
+    },
+    {
+      "source_id": "src_usa_rubio_acting_nsa_reuters_2025",
+      "title": "Trump names Marco Rubio interim national security adviser",
+      "publisher": "Reuters",
+      "published_at": "2025-05-01",
+      "accessed_at": "2026-08-06",
+      "source_tier": "B",
+      "source_type": "news_report",
+      "url": "https://www.reuters.com/world/us/white-house-national-security-adviser-waltz-leave-post-source-says-2025-05-01/",
+      "relevant_locator": "President's announcement that Rubio would serve as Secretary of State and interim National Security Advisor",
+      "source_family_id": "family_reuters"
+    },
+    {
+      "source_id": "src_usa_nsc_restructuring_reuters_2025",
+      "title": "White House National Security Council hit by more firings, sources say",
+      "publisher": "Reuters",
+      "published_at": "2025-05-23",
+      "accessed_at": "2026-08-06",
+      "source_tier": "B",
+      "source_type": "news_report",
+      "url": "https://www.reuters.com/world/us/white-house-national-security-council-hit-by-more-firings-sources-say-2025-05-23/",
+      "relevant_locator": "May 2025 staff reductions and restructuring under interim adviser Marco Rubio",
+      "reliability_notes": "Supports the organizational capacity modifier, not a change to statutory NSC membership.",
+      "source_family_id": "family_reuters"
+    }
   ],
   "claims": [
-    {"claim_id":"claim_usa_president_executive_power","subject_id":"institution_usa_presidency","predicate":"holds_executive_power","value":true,"as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_constitution_article_ii"]},
-    {"claim_id":"claim_usa_president_commander_in_chief","subject_id":"institution_usa_presidency","predicate":"is_commander_in_chief","value":true,"as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_constitution_article_ii"]},
-    {"claim_id":"claim_usa_congress_declares_war","subject_id":"institution_usa_congress_119","predicate":"has_power_to_declare_war","value":true,"as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_constitution_article_i"]},
-    {"claim_id":"claim_usa_war_powers_framework","subject_id":"institution_usa_presidency","predicate":"subject_to_war_powers_resolution","value":true,"as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_war_powers_resolution"]},
-    {"claim_id":"claim_usa_executive_claims_limited_unilateral_force_authority","subject_id":"institution_usa_executive_branch","predicate":"claims_limited_force_authority_without_prior_statute","value":true,"as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_olc_presidential_force_1980"],"confidence_reason":"The claim describes the executive branch legal position, not acceptance by every branch."},
-    {"claim_id":"claim_usa_vp_first_successor","subject_id":"actor_usa_jd_vance","predicate":"succeeds_on_presidential_vacancy","value":true,"as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_constitution_amendment_xxv"]},
-    {"claim_id":"claim_usa_nato_article_five_commitment","subject_id":"country_usa","predicate":"reaffirmed_nato_article_five","value":true,"observed_at":"2025-06-25","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_nato_hague_2025"]},
-    {"claim_id":"claim_usa_taiwan_relations_act_policy","subject_id":"country_usa","predicate":"taiwan_security_policy_defined_by_tra","value":true,"as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_taiwan_relations_act"]},
-    {"claim_id":"claim_usa_actor_trump_role","subject_id":"actor_usa_donald_trump","predicate":"holds_office","value":"President","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_white_house_administration"]},
-    {"claim_id":"claim_usa_actor_vance_role","subject_id":"actor_usa_jd_vance","predicate":"holds_office","value":"Vice President","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_white_house_administration"]},
-    {"claim_id":"claim_usa_actor_rubio_role","subject_id":"actor_usa_marco_rubio","predicate":"holds_offices","value":["Secretary of State","Acting National Security Advisor"],"effective_from":"2025-05-01","as_of":"2025-09-01","evidence_state":"official_appointment_reported_by_authoritative_wire","confidence":"high","source_ids":["src_usa_rubio_swearing_2025","src_usa_rubio_acting_nsa_reuters_2025"]},
-    {"claim_id":"claim_usa_actor_hegseth_role","subject_id":"actor_usa_pete_hegseth","predicate":"holds_office","value":"Secretary of Defense","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_hegseth_swearing_2025"]},
-    {"claim_id":"claim_usa_actor_gabbard_role","subject_id":"actor_usa_tulsi_gabbard","predicate":"holds_office","value":"Director of National Intelligence","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_white_house_national_security_team"]},
-    {"claim_id":"claim_usa_actor_ratcliffe_role","subject_id":"actor_usa_john_ratcliffe","predicate":"holds_office","value":"Director of the Central Intelligence Agency","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_white_house_national_security_team"]},
-    {"claim_id":"claim_usa_actor_wiles_role","subject_id":"actor_usa_susie_wiles","predicate":"holds_office","value":"White House Chief of Staff","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_white_house_wiles_2025"]},
-    {"claim_id":"claim_usa_actor_miller_role","subject_id":"actor_usa_stephen_miller","predicate":"holds_office","value":"Deputy Chief of Staff for Policy and Homeland Security Advisor","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_white_house_miller_2025"]},
-    {"claim_id":"claim_usa_actor_johnson_role","subject_id":"actor_usa_mike_johnson","predicate":"holds_office","value":"Speaker of the House","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_house_republican_leadership"]},
-    {"claim_id":"claim_usa_actor_scalise_role","subject_id":"actor_usa_steve_scalise","predicate":"holds_office","value":"House Majority Leader","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_house_republican_leadership"]},
-    {"claim_id":"claim_usa_actor_thune_role","subject_id":"actor_usa_john_thune","predicate":"holds_office","value":"Senate Majority Leader","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_senate_republican_leadership"]},
-    {"claim_id":"claim_usa_actor_barrasso_role","subject_id":"actor_usa_john_barrasso","predicate":"holds_office","value":"Senate Majority Whip","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_senate_republican_leadership"]},
-    {"claim_id":"claim_usa_actor_cotton_role","subject_id":"actor_usa_tom_cotton","predicate":"holds_office","value":"Chair of the Senate Republican Conference","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_senate_republican_leadership"]},
-    {"claim_id":"claim_usa_actor_jeffries_role","subject_id":"actor_usa_hakeem_jeffries","predicate":"holds_office","value":"House Democratic Leader","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_house_democratic_leader"]},
-    {"claim_id":"claim_usa_actor_schumer_role","subject_id":"actor_usa_chuck_schumer","predicate":"holds_office","value":"Senate Democratic Leader","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_senate_democratic_leadership"]},
-    {"claim_id":"claim_usa_actor_governor_roles","subject_id":"institution_usa_state_governments","predicate":"named_governors_held_office","value":["Ron DeSantis","Gretchen Whitmer","Josh Shapiro"],"observed_at":"2025-02-20","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_council_of_governors_2025"]},
-    {"claim_id":"claim_usa_nsc_statutory_membership","subject_id":"institution_usa_nsc","predicate":"has_statutory_members_and_advisers","value":{"members":["President","Vice President","Secretary of State","Secretary of Defense","Secretary of the Treasury","Secretary of Energy"],"statutory_advisers":["Chairman of the Joint Chiefs of Staff","Director of National Intelligence"]},"as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_nsc_statute"]},
-    {"claim_id":"claim_usa_nsc_advisory_structure","subject_id":"institution_usa_nsc","predicate":"organized_with_advisory_interagency_committees","value":["National Security Council","Principals Committee","Deputies Committee","Policy Coordination Committees"],"effective_from":"2025-01-20","as_of":"2025-09-01","evidence_state":"official_claim","confidence":"high","source_ids":["src_usa_nspm1_nsc_organization_2025"]},
-    {"claim_id":"claim_usa_nsc_restructuring_capacity_modifier","subject_id":"institution_usa_nsc","predicate":"opening_staff_capacity_modifier","value":"reduced_and_restructured_after_may_2025_staff_firings","effective_from":"2025-05-23","as_of":"2025-09-01","evidence_state":"reported_observation","confidence":"medium","source_ids":["src_usa_nsc_restructuring_reuters_2025"],"confidence_reason":"The scale and practical effects of an internal staff reorganization are not fully public."},
-    {"claim_id":"claim_usa_nsc_statutory_and_advisory_distinction","subject_id":"institution_usa_nsc","predicate":"separates_statutory_council_from_presidential_advisory_structure","value":true,"as_of":"2025-09-01","evidence_state":"derived","confidence":"high","source_ids":["src_usa_nsc_statute","src_usa_nspm1_nsc_organization_2025"],"derivation":"The statute defines the council's membership and function while NSPM-1 defines the President's interagency advisory process and committees."}
+    {
+      "claim_id": "claim_usa_president_executive_power",
+      "subject_id": "institution_usa_presidency",
+      "predicate": "holds_executive_power",
+      "value": true,
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_constitution_article_ii"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_president_commander_in_chief",
+      "subject_id": "institution_usa_presidency",
+      "predicate": "is_commander_in_chief",
+      "value": true,
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_constitution_article_ii"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_congress_declares_war",
+      "subject_id": "institution_usa_congress_119",
+      "predicate": "has_power_to_declare_war",
+      "value": true,
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_constitution_article_i"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_war_powers_framework",
+      "subject_id": "institution_usa_presidency",
+      "predicate": "subject_to_war_powers_resolution",
+      "value": true,
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_war_powers_resolution"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_executive_claims_limited_unilateral_force_authority",
+      "subject_id": "institution_usa_executive_branch",
+      "predicate": "claims_limited_force_authority_without_prior_statute",
+      "value": true,
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_olc_presidential_force_1980"
+      ],
+      "confidence_reason": "The claim describes the executive branch legal position, not acceptance by every branch."
+    },
+    {
+      "claim_id": "claim_usa_vp_first_successor",
+      "subject_id": "actor_usa_jd_vance",
+      "predicate": "succeeds_on_presidential_vacancy",
+      "value": true,
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_constitution_amendment_xxv"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_nato_article_five_commitment",
+      "subject_id": "country_usa",
+      "predicate": "reaffirmed_nato_article_five",
+      "value": true,
+      "observed_at": "2025-06-25",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_nato_hague_2025"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_taiwan_relations_act_policy",
+      "subject_id": "country_usa",
+      "predicate": "taiwan_security_policy_defined_by_tra",
+      "value": true,
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_taiwan_relations_act"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_trump_role",
+      "subject_id": "actor_usa_donald_trump",
+      "predicate": "holds_office",
+      "value": "President",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_administration"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_vance_role",
+      "subject_id": "actor_usa_jd_vance",
+      "predicate": "holds_office",
+      "value": "Vice President",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_administration"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_rubio_role",
+      "subject_id": "actor_usa_marco_rubio",
+      "predicate": "holds_offices",
+      "value": [
+        "Secretary of State",
+        "Acting National Security Advisor"
+      ],
+      "effective_from": "2025-05-01",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_appointment_reported_by_authoritative_wire",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_rubio_swearing_2025",
+        "src_usa_rubio_acting_nsa_reuters_2025"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_hegseth_role",
+      "subject_id": "actor_usa_pete_hegseth",
+      "predicate": "holds_office",
+      "value": "Secretary of Defense",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_hegseth_swearing_2025"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_gabbard_role",
+      "subject_id": "actor_usa_tulsi_gabbard",
+      "predicate": "holds_office",
+      "value": "Director of National Intelligence",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_national_security_team"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_ratcliffe_role",
+      "subject_id": "actor_usa_john_ratcliffe",
+      "predicate": "holds_office",
+      "value": "Director of the Central Intelligence Agency",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_national_security_team"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_wiles_role",
+      "subject_id": "actor_usa_susie_wiles",
+      "predicate": "holds_office",
+      "value": "White House Chief of Staff",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_wiles_2025"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_miller_role",
+      "subject_id": "actor_usa_stephen_miller",
+      "predicate": "holds_office",
+      "value": "Deputy Chief of Staff for Policy and Homeland Security Advisor",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_white_house_miller_2025"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_johnson_role",
+      "subject_id": "actor_usa_mike_johnson",
+      "predicate": "holds_office",
+      "value": "Speaker of the House",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_house_republican_leadership"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_scalise_role",
+      "subject_id": "actor_usa_steve_scalise",
+      "predicate": "holds_office",
+      "value": "House Majority Leader",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_house_republican_leadership"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_thune_role",
+      "subject_id": "actor_usa_john_thune",
+      "predicate": "holds_office",
+      "value": "Senate Majority Leader",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_senate_republican_leadership"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_barrasso_role",
+      "subject_id": "actor_usa_john_barrasso",
+      "predicate": "holds_office",
+      "value": "Senate Majority Whip",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_senate_republican_leadership"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_cotton_role",
+      "subject_id": "actor_usa_tom_cotton",
+      "predicate": "holds_office",
+      "value": "Chair of the Senate Republican Conference",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_senate_republican_leadership"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_jeffries_role",
+      "subject_id": "actor_usa_hakeem_jeffries",
+      "predicate": "holds_office",
+      "value": "House Democratic Leader",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_house_democratic_leader"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_schumer_role",
+      "subject_id": "actor_usa_chuck_schumer",
+      "predicate": "holds_office",
+      "value": "Senate Democratic Leader",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_senate_democratic_leadership"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_actor_governor_roles",
+      "subject_id": "institution_usa_state_governments",
+      "predicate": "named_governors_held_office",
+      "value": [
+        "Ron DeSantis",
+        "Gretchen Whitmer",
+        "Josh Shapiro"
+      ],
+      "observed_at": "2025-02-20",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_council_of_governors_2025"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_nsc_statutory_membership",
+      "subject_id": "institution_usa_nsc",
+      "predicate": "has_statutory_members_and_advisers",
+      "value": {
+        "members": [
+          "President",
+          "Vice President",
+          "Secretary of State",
+          "Secretary of Defense",
+          "Secretary of the Treasury",
+          "Secretary of Energy"
+        ],
+        "statutory_advisers": [
+          "Chairman of the Joint Chiefs of Staff",
+          "Director of National Intelligence"
+        ]
+      },
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_nsc_statute"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_nsc_advisory_structure",
+      "subject_id": "institution_usa_nsc",
+      "predicate": "organized_with_advisory_interagency_committees",
+      "value": [
+        "National Security Council",
+        "Principals Committee",
+        "Deputies Committee",
+        "Policy Coordination Committees"
+      ],
+      "effective_from": "2025-01-20",
+      "as_of": "2025-09-01",
+      "evidence_state": "official_claim",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_nspm1_nsc_organization_2025"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_nsc_restructuring_capacity_modifier",
+      "subject_id": "institution_usa_nsc",
+      "predicate": "opening_staff_capacity_modifier",
+      "value": "reduced_and_restructured_after_may_2025_staff_firings",
+      "effective_from": "2025-05-23",
+      "as_of": "2025-09-01",
+      "evidence_state": "reported_observation",
+      "confidence": "medium",
+      "source_ids": [
+        "src_usa_nsc_restructuring_reuters_2025"
+      ],
+      "confidence_reason": "The scale and practical effects of an internal staff reorganization are not fully public."
+    },
+    {
+      "claim_id": "claim_usa_nsc_statutory_and_advisory_distinction",
+      "subject_id": "institution_usa_nsc",
+      "predicate": "separates_statutory_council_from_presidential_advisory_structure",
+      "value": true,
+      "as_of": "2025-09-01",
+      "evidence_state": "derived",
+      "confidence": "high",
+      "source_ids": [
+        "src_usa_nsc_statute",
+        "src_usa_nspm1_nsc_organization_2025"
+      ],
+      "derivation": "The statute defines the council's membership and function while NSPM-1 defines the President's interagency advisory process and committees."
+    }
   ],
   "contradiction_sets": [
     {
-      "contradiction_set_id":"contradiction_usa_war_authority_scope",
-      "question":"When may a President initiate sustained hostilities without prior congressional authorization?",
-      "claim_ids":["claim_usa_congress_declares_war","claim_usa_executive_claims_limited_unilateral_force_authority"],
-      "source_ids":["src_usa_constitution_article_i","src_usa_olc_presidential_force_1980","src_usa_war_powers_resolution"],
-      "status":"open",
-      "simulation_rule":"Represent executive initiative, statutory authorization, reporting deadlines, congressional reaction, judicial uncertainty, and political legitimacy as separate constraints.",
-      "last_reviewed":"2026-08-06",
-      "review_after":"2026-09-06",
-      "notes":"This is an institutional tension, not a claim that either cited legal text is factually false."
+      "contradiction_set_id": "contradiction_usa_war_authority_scope",
+      "question": "When may a President initiate sustained hostilities without prior congressional authorization?",
+      "claim_ids": [
+        "claim_usa_congress_declares_war",
+        "claim_usa_executive_claims_limited_unilateral_force_authority"
+      ],
+      "source_ids": [
+        "src_usa_constitution_article_i",
+        "src_usa_olc_presidential_force_1980",
+        "src_usa_war_powers_resolution"
+      ],
+      "status": "open",
+      "simulation_rule": "Represent executive initiative, statutory authorization, reporting deadlines, congressional reaction, judicial uncertainty, and political legitimacy as separate constraints.",
+      "last_reviewed": "2026-08-06",
+      "review_after": "2026-09-06",
+      "notes": "This is an institutional tension, not a claim that either cited legal text is factually false."
     }
   ],
   "staging_rules": {
@@ -79,5 +679,5 @@
     "factual_claims_require_source_ids": true,
     "post_cutoff_sources_require_knowledge_firewall_note": true
   },
-  "notes": "Politics and institutions packet assembled from public official and authoritative sources. Actor inclusion denotes opening relevance, not predicted succession probability."
+  "notes": "Politics and institutions packet assembled from public official and authoritative sources. Actor inclusion denotes opening relevance, not predicted succession probability. War authority is now carried in a separate structured workflow; constitutional or executive-branch prose cannot initialize an executable permission by itself."
 }
