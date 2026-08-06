@@ -10,24 +10,24 @@
       "name": "Politics and institutions",
       "status": "needs_review",
       "owner": "agent_05_world_research_and_data_director",
-      "record_count": 27,
-      "source_count": 10,
-      "claim_count": 30,
+      "record_count": 32,
+      "source_count": 18,
+      "claim_count": 42,
       "contradiction_count": 1,
       "exact_geometry_count": 0,
       "approximate_geometry_count": 0,
       "unknown_geometry_count": 0,
       "oldest_source_date": "2021-07-11",
-      "newest_source_date": "2025-06-13",
+      "newest_source_date": "2025-07-01",
       "reviewed_at": "2026-08-06",
       "review_after": "2026-09-06",
-      "coverage_disposition": "usable_for_opening_state_with_distinct_party_state_and_command_offices",
+      "coverage_disposition": "needs_independent_review_after_blocker_corrections",
       "blocking_questions": [
         "Independent review of the party-state succession scope gap.",
         "Full treaty text and legal review for China-DPRK contingency commitments.",
         "Independent review of actor relevance without treating the roster as a forecast."
       ],
-      "notes": "Constitutional and official party-state sources support the opening packet; practical succession remains explicitly unresolved."
+      "notes": "Constitutional and official party-state sources support the opening packet. CMC formal offices, Miao Hua's removal, He Weidong's unresolved public availability, and Ma Xingrui's ended Xinjiang authority are represented without post-bookmark leakage."
     },
     "economy_trade_finance_resources": {
       "name": "Economy, trade, finance, and resources",
