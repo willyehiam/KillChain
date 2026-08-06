@@ -23,6 +23,8 @@ Canonical opening bookmark: September 1, 2025 at 00:00 UTC.
 8. Force ledger shells exist for the United States, China, and Taiwan.
 9. Justice Mission 2025 provides the first validated theater benchmark.
 10. The three current validation suites pass on the audited checkpoint.
+11. A newer Tier A structural validator now defines the required country packet
+   structure and passes for the United States only.
 
 ### Current validated baseline
 
@@ -57,6 +59,8 @@ Canonical opening bookmark: September 1, 2025 at 00:00 UTC.
    inventory.
 12. Research exit criteria are described conceptually but are not yet measured
    through a single gate report.
+13. The Tier A structural validator is currently blocked because the China and
+   Taiwan packet structures have not yet been created.
 
 The corpus has a strong contract foundation and one good benchmark. It does not
 yet contain a playable global world state.
