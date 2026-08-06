@@ -1,0 +1,6 @@
+{
+  "fixture_id": "usa_force_residual_live_source_reclassification",
+  "mutation": "reclassify_known_live_source",
+  "target_id": "src_force_usa_dod_about",
+  "expected_diagnostic": "known mutable live source violates required quarantine tuple: src_force_usa_dod_about"
+}

@@ -120,5 +120,7 @@
     "air_national_guard": "unknown"
   },
   "executable": false,
+  "reviewed_at": "2026-08-06",
+  "review_after": "2026-11-06",
   "notes": "This research state machine prevents simultaneous state and federal command. No force is activated merely because a legal route exists."
 }

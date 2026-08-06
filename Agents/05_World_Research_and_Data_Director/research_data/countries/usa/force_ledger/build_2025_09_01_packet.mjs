@@ -196,7 +196,8 @@ cg.personnel.deployable = unknownPerson('Budget supported positions do not estab
 cg.provenance.source_ids = [...new Set([...cg.provenance.source_ids, 'src_force_usa_coast_guard_budget_2025'])];
 
 for (const id of ['organization_usa_cyber_command','organization_usa_special_operations_command','organization_usa_strategic_command','organization_usa_transportation_command']) orgById.get(id).echelon = 'functional_command';
-orgById.get('organization_usa_space_command').notes = `${orgById.get('organization_usa_space_command').notes ?? ''} Geographic area of responsibility above 100 kilometers; retained as theater command rather than a mission functional command.`.trim();
+const spaceCommandClassificationNote = 'Geographic area of responsibility above 100 kilometers; retained as theater command rather than a mission functional command.';
+if (!orgById.get('organization_usa_space_command').notes?.includes(spaceCommandClassificationNote)) orgById.get('organization_usa_space_command').notes = `${orgById.get('organization_usa_space_command').notes ?? ''} ${spaceCommandClassificationNote}`.trim();
 orgById.get('organization_usa_department_of_defense').roles = ['defense policy','military department administration'];
 for (const organization of organizations) {
   organization.provenance.source_ids = organization.provenance.source_ids.filter((id) => !['src_force_usa_dod_about','src_force_usa_dod_combatant_commands'].includes(id));
@@ -295,6 +296,8 @@ const guardStatusStateMachine = {
   forbidden_combinations: [['state_active_duty','title_32'],['state_active_duty','title_10'],['title_32','title_10']],
   status_at_bookmark: { army_national_guard: 'unknown', air_national_guard: 'unknown' },
   executable: false,
+  reviewed_at: '2026-08-06',
+  review_after: reviewAfter,
   notes: 'This research state machine prevents simultaneous state and federal command. No force is activated merely because a legal route exists.',
 };
 fs.writeFileSync(path.join(root,'guard_status_state_machine.json'),`${JSON.stringify(guardStatusStateMachine,null,2)}\n`);
@@ -380,6 +383,7 @@ const trainingPlans = [{
   canceled: unknownCapacity('No accepted source establishes cancellations.'),
   available: unknownCapacity('No accepted source establishes executable opening capacity.'),
   source_ids: ['src_force_usa_army_budget_overview_2025'], executable: false,
+  reviewed_at: '2026-08-06', review_after: reviewAfter,
   notes: 'Planning target only. It is excluded from opening inventory, deployment, maintenance, and conservation.',
 }];
 fs.writeFileSync(path.join(root,'training_plans.json'),`${JSON.stringify(trainingPlans,null,2)}\n`);
@@ -402,10 +406,64 @@ claims.push(
 );
 for (const [slug,value] of Object.entries(exactAircraft)) claims.push({claim_id:`claim_usa_air_force_fy2025_${slug}_${value}`,subject_id:`inventory_usa_air_force_${slug}`,predicate:'estimated_fy2025_all_component_mission_category',value,unit:'platform',as_of:asOf,evidence_state:'independently_reported',confidence:'medium',confidence_reason:'CRS reproduces a fiscal-year mission-category estimate from Department of the Air Force budget data; it is not a bookmark point observation.',source_ids:['src_force_usa_crs_air_force_inventory_2025'],contradiction_set_id:'contradiction_usa_air_force_total_inventory_definitions_2025',simulation_use:'Taxonomy arithmetic only; opening quantity, component allocation, readiness, and availability remain unknown.',representation_tier:'national_capability',reviewed_at:'2026-08-06',review_after:'2026-11-06'});
 writeNdjson('claims.ndjson',claims);
-writeNdjson('contradictions.ndjson',[
+
+const claimBookmarkUse = claims.map((claim) => {
+  if (claim.predicate === 'authorized_end_strength') return {
+    claim_id: claim.claim_id,
+    available_to_player_at_bookmark: true,
+    opening_assertion_eligible: true,
+    retrospective_only: false,
+    allowed_dependency_classes: ['authorized_personnel_ceiling'],
+  };
+  if (claim.claim_id.startsWith('claim_usa_navy_')) return {
+    claim_id: claim.claim_id,
+    available_to_player_at_bookmark: false,
+    opening_assertion_eligible: false,
+    retrospective_only: true,
+    allowed_dependency_classes: ['retrospective_research_only'],
+  };
+  if (claim.claim_id === 'claim_usa_army_ctc_rotations_22') return {
+    claim_id: claim.claim_id,
+    available_to_player_at_bookmark: true,
+    opening_assertion_eligible: false,
+    retrospective_only: false,
+    allowed_dependency_classes: ['plan_only'],
+  };
+  return {
+    claim_id: claim.claim_id,
+    available_to_player_at_bookmark: true,
+    opening_assertion_eligible: false,
+    retrospective_only: false,
+    allowed_dependency_classes: [claim.claim_id === 'claim_usa_air_force_component_inventory_4903' ? 'contradiction_only' : 'taxonomy_arithmetic_only'],
+  };
+});
+const validatorContracts = {
+  schema_version: '1.0.0',
+  bookmark_id: 'bookmark_global_fracture_2025_09_01',
+  bookmark_at: asOf,
+  opening_quantity_evidence: {
+    accepted_inventory_quantities: [],
+    required_dependency_class: 'accepted_custody_point_observation',
+    notes: 'No exact or range United States opening equipment inventory has been accepted in this collecting packet.',
+  },
+  known_live_source_policies: [
+    {source_id:'src_force_usa_dod_about',required_mutability_class:'live_mutable',required_bookmark_evidence_status:'quarantined_no_prebookmark_temporal_proof',required_player_availability:false,forbidden_temporal_proof_fields:['published_at','observed_from','observed_to','snapshot_uri','content_hash']},
+    {source_id:'src_force_usa_dod_combatant_commands',required_mutability_class:'live_mutable',required_bookmark_evidence_status:'quarantined_no_prebookmark_temporal_proof',required_player_availability:false,forbidden_temporal_proof_fields:['published_at','observed_from','observed_to','snapshot_uri','content_hash']},
+  ],
+  claim_bookmark_use: claimBookmarkUse,
+  temporal_governance: {
+    conservation_records: conservation.map((record) => ({ conservation_record_id:record.conservation_record_id, reviewed_at:'2026-08-06', review_after:reviewAfter })),
+    notes: 'Conservation schema does not carry temporal_validity; this exact-ID sidecar governs expiry without altering the shared conservation schema.',
+  },
+  reviewed_at: '2026-08-06',
+  review_after: reviewAfter,
+};
+fs.writeFileSync(path.join(root,'validator_contracts.json'),`${JSON.stringify(validatorContracts,null,2)}\n`);
+const contradictions = [
   {contradiction_set_id:'contradiction_usa_air_force_total_inventory_definitions_2025',question:'Which FY2025 aircraft total is comparable at the 1 September 2025 bookmark?',claim_ids:['claim_usa_air_force_total_aircraft_inventory_4832','claim_usa_air_force_component_inventory_4903',...Object.entries(exactAircraft).map(([slug,value])=>`claim_usa_air_force_fy2025_${slug}_${value}`)],source_ids:['src_force_usa_crs_air_force_inventory_2025','src_force_usa_crs_fy2025_force_structure'],status:'partially_reconciled',resolution:'The six 4,832 mission categories reconcile arithmetically as an all-component fiscal-year estimate. The 4,903 request-era component sum is preserved but definitions and vintages are not comparable. Neither is an exact opening observation.',simulation_rule:'Use 4,832 and its six categories only for taxonomy arithmetic. Opening quantities and active, Guard, and Reserve allocations remain unknown.',last_reviewed:'2026-08-06',review_after:'2026-11-06'},
   {contradiction_set_id:'contradiction_usa_navy_battle_force_bookmark_total_2025',question:'What was the exact battle force ship total on 1 September 2025?',claim_ids:['claim_usa_navy_fy2025_requested_battle_force_287','claim_usa_navy_fy2024_actual_battle_force_296'],source_ids:['src_force_usa_crs_navy_force_structure_2025'],status:'open',resolution:'The postbookmark source establishes a planning request and prior fiscal-year actual, neither of which bounds or observes the bookmark. Opening quantity is explicit unknown.',simulation_rule:'Do not sample, interpolate, bound, or populate player knowledge from these values. Accept only cutoff-safe direct coverage or a later immutable retrospective source that directly observes 1 September.',last_reviewed:'2026-08-06',review_after:'2026-11-06'},
-]);
+];
+writeNdjson('contradictions.ndjson',contradictions);
 
 // Rebuild incident edge and inventory references from the final graph. This prevents
 // removed relationships or superseded pools from surviving as dangling references.
@@ -432,8 +490,11 @@ manifest.scope.coverage_matrix = [
   {coverage_id:'coverage_usa_coast_guard_national_force',service:'coast_guard',domain:'maritime',organization_depth:'identified',equipment_taxonomy:'structured',inventory:'inventory_partial',dispositions:'identified',maintenance:'identified',construction:'identified',conservation:'structured',notes:'Budget supported military positions and selected acquisition lots accepted; whole fleet inventory remains unknown.'},
 ];
 const evaluationTime = new Date('2026-08-06T23:59:59Z');
-const expirableRecords = [...inventory,...deployments,...maintenance];
-const expiredRecords = expirableRecords.filter((row)=>row.temporal_validity?.review_after && new Date(row.temporal_validity.review_after) < evaluationTime).length;
+const expirableRecords = [...organizations,...relationships,...equipment,...inventory,...deployments,...maintenance,...construction,...claims,...contradictions,...trainingPlans,guardStatusStateMachine,...validatorContracts.temporal_governance.conservation_records];
+const expiredRecords = expirableRecords.filter((row)=>{
+  const expiry = row.temporal_validity?.review_after ?? row.review_after;
+  return expiry && new Date(expiry) < evaluationTime;
+}).length;
 manifest.reconciliation = {state:'blocked_by_unknowns',organization_records:organizations.length,platform_records:0,equipment_type_records:equipment.length,inventory_records:inventory.length,deployment_records:deployments.length,maintenance_records:maintenance.length,construction_records:construction.length,conservation_records:conservation.length,exact_quantity_records:inventory.filter((r)=>r.quantity.kind==='exact').length,range_quantity_records:inventory.filter((r)=>r.quantity.kind==='range').length,unknown_quantity_records:inventory.filter((r)=>r.quantity.kind==='unknown').length,open_conservation_exceptions:inventory.filter((r)=>r.quantity.kind==='unknown').length,double_booking_exceptions:0,orphan_platform_records:0,orphan_organization_records:0,expired_records:expiredRecords,relationship_records:relationships.length};
 manifest.source_ids = sourceRows.map((row)=>row.source_id);
 manifest.unknowns = [

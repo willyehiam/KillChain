@@ -1,0 +1,5 @@
+{
+  "fixture_id": "usa_force_residual_guard_duplicate_forbidden_pairs",
+  "mutation": "duplicate_guard_forbidden_pairs",
+  "expected_diagnostic": "Guard state machine forbidden pairs are not the exact mutually exclusive duty-status set"
+}

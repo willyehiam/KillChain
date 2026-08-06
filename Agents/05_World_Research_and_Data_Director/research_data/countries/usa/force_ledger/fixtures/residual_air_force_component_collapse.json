@@ -1,0 +1,7 @@
+{
+  "fixture_id": "usa_force_residual_air_force_component_collapse",
+  "mutation": "set_inventory_component",
+  "target_id": "inventory_usa_air_force_aircraft_total_inventory",
+  "component": "active",
+  "expected_diagnostic": "USAF fiscal-year estimate is promoted to exact or active-component opening inventory"
+}

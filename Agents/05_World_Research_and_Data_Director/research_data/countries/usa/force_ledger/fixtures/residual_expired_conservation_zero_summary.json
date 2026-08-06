@@ -1,0 +1,6 @@
+{
+  "fixture_id": "usa_force_residual_expired_conservation_zero_summary",
+  "mutation": "expire_conservation_zero_summary",
+  "target_id": "conservation_usa_air_force_bomber",
+  "expected_diagnostic": "manifest expired record count is false: expected 1"
+}

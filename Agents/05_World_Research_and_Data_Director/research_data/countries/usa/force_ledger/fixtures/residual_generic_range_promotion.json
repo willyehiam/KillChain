@@ -1,0 +1,9 @@
+{
+  "fixture_id": "usa_force_residual_generic_range_promotion",
+  "mutation": "promote_generic_range",
+  "target_id": "inventory_usa_army_equipment_unresolved",
+  "minimum": 1,
+  "maximum": 2,
+  "unit": "equipment_item",
+  "expected_diagnostic": "opening exact or range inventory lacks accepted evidence contract: inventory_usa_army_equipment_unresolved"
+}

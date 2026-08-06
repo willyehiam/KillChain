@@ -1,0 +1,324 @@
+{
+  "schema_version": "1.0.0",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "bookmark_at": "2025-09-01T00:00:00Z",
+  "opening_quantity_evidence": {
+    "accepted_inventory_quantities": [],
+    "required_dependency_class": "accepted_custody_point_observation",
+    "notes": "No exact or range United States opening equipment inventory has been accepted in this collecting packet."
+  },
+  "known_live_source_policies": [
+    {
+      "source_id": "src_force_usa_dod_about",
+      "required_mutability_class": "live_mutable",
+      "required_bookmark_evidence_status": "quarantined_no_prebookmark_temporal_proof",
+      "required_player_availability": false,
+      "forbidden_temporal_proof_fields": [
+        "published_at",
+        "observed_from",
+        "observed_to",
+        "snapshot_uri",
+        "content_hash"
+      ]
+    },
+    {
+      "source_id": "src_force_usa_dod_combatant_commands",
+      "required_mutability_class": "live_mutable",
+      "required_bookmark_evidence_status": "quarantined_no_prebookmark_temporal_proof",
+      "required_player_availability": false,
+      "forbidden_temporal_proof_fields": [
+        "published_at",
+        "observed_from",
+        "observed_to",
+        "snapshot_uri",
+        "content_hash"
+      ]
+    }
+  ],
+  "claim_bookmark_use": [
+    {
+      "claim_id": "claim_usa_fy2025_authorized_end_strength_army",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": true,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "authorized_personnel_ceiling"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_fy2025_authorized_end_strength_navy",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": true,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "authorized_personnel_ceiling"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_fy2025_authorized_end_strength_marine_corps",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": true,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "authorized_personnel_ceiling"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_fy2025_authorized_end_strength_air_force",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": true,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "authorized_personnel_ceiling"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_fy2025_authorized_end_strength_space_force",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": true,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "authorized_personnel_ceiling"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_fy2025_authorized_end_strength_army_national_guard",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": true,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "authorized_personnel_ceiling"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_fy2025_authorized_end_strength_army_reserve",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": true,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "authorized_personnel_ceiling"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_fy2025_authorized_end_strength_navy_reserve",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": true,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "authorized_personnel_ceiling"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_fy2025_authorized_end_strength_marine_corps_reserve",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": true,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "authorized_personnel_ceiling"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_fy2025_authorized_end_strength_air_national_guard",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": true,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "authorized_personnel_ceiling"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_fy2025_authorized_end_strength_air_force_reserve",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": true,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "authorized_personnel_ceiling"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_fy2025_authorized_end_strength_coast_guard_reserve",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": true,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "authorized_personnel_ceiling"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_air_force_total_aircraft_inventory_4832",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": false,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "taxonomy_arithmetic_only"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_air_force_component_inventory_4903",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": false,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "contradiction_only"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_navy_fy2025_requested_battle_force_287",
+      "available_to_player_at_bookmark": false,
+      "opening_assertion_eligible": false,
+      "retrospective_only": true,
+      "allowed_dependency_classes": [
+        "retrospective_research_only"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_navy_fy2024_actual_battle_force_296",
+      "available_to_player_at_bookmark": false,
+      "opening_assertion_eligible": false,
+      "retrospective_only": true,
+      "allowed_dependency_classes": [
+        "retrospective_research_only"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_army_ctc_rotations_22",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": false,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "plan_only"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_air_force_fy2025_bomber_139",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": false,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "taxonomy_arithmetic_only"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_air_force_fy2025_fighter_attack_1933",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": false,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "taxonomy_arithmetic_only"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_air_force_fy2025_rotorcraft_241",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": false,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "taxonomy_arithmetic_only"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_air_force_fy2025_special_mission_359",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": false,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "taxonomy_arithmetic_only"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_air_force_fy2025_mobility_1191",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": false,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "taxonomy_arithmetic_only"
+      ]
+    },
+    {
+      "claim_id": "claim_usa_air_force_fy2025_trainer_969",
+      "available_to_player_at_bookmark": true,
+      "opening_assertion_eligible": false,
+      "retrospective_only": false,
+      "allowed_dependency_classes": [
+        "taxonomy_arithmetic_only"
+      ]
+    }
+  ],
+  "temporal_governance": {
+    "conservation_records": [
+      {
+        "conservation_record_id": "conservation_usa_air_force_aircraft_total_inventory",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_air_force_bomber",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_air_force_fighter_attack",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_air_force_rotorcraft",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_air_force_special_mission",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_air_force_mobility",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_air_force_trainer",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_air_force_tanker_subset",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_air_force_airlift_subset",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_navy_battle_force_ship",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_army_equipment_unresolved",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_marine_equipment_unresolved",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_space_systems_unresolved",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      },
+      {
+        "conservation_record_id": "conservation_usa_coast_guard_platforms_unresolved",
+        "reviewed_at": "2026-08-06",
+        "review_after": "2026-11-06"
+      }
+    ],
+    "notes": "Conservation schema does not carry temporal_validity; this exact-ID sidecar governs expiry without altering the shared conservation schema."
+  },
+  "reviewed_at": "2026-08-06",
+  "review_after": "2026-11-06"
+}

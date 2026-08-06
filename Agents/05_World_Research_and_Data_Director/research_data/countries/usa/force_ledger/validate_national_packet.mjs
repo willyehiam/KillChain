@@ -28,6 +28,7 @@ const claims = readRows('claims.ndjson');
 const contradictions = readRows('contradictions.ndjson');
 const trainingPlans = readJson('training_plans.json');
 const guardStateMachine = readJson('guard_status_state_machine.json');
+const validatorContracts = readJson('validator_contracts.json');
 
 const organizationById = by(organizations, 'organization_id');
 const inventoryById = by(inventory, 'inventory_record_id');
@@ -36,6 +37,9 @@ const sourceById = by(sources, 'source_id');
 const claimById = by(claims, 'claim_id');
 const sourceIds = new Set(sourceById.keys());
 const claimIds = new Set(claimById.keys());
+const claimUseById = by(validatorContracts.claim_bookmark_use ?? [], 'claim_id');
+const acceptedOpeningQuantityByInventoryId = by(validatorContracts.opening_quantity_evidence?.accepted_inventory_quantities ?? [], 'inventory_record_id');
+const governedConservationById = by(validatorContracts.temporal_governance?.conservation_records ?? [], 'conservation_record_id');
 
 for (const id of ['organization_usa_secretary_of_defense_office','organization_usa_national_guard_bureau','organization_usa_governors_guard_authority','organization_usa_state_and_territorial_joint_force_headquarters','organization_usa_state_adjutants_general','organization_usa_dual_status_commanders_pool']) {
   if (!organizationById.has(id)) fail(`missing required command or Guard authority ${id}`);
@@ -67,8 +71,29 @@ for (const relationship of relationships) {
 const requiredGuardStates = ['state_active_duty','title_32','title_10'];
 if (guardStateMachine.executable !== false || guardStateMachine.initial_state !== 'unknown') fail('Guard state machine must remain non-executable with bookmark status unknown');
 if (requiredGuardStates.some((id) => !guardStateMachine.states?.some((state) => state.state_id === id))) fail('Guard state machine omits a required duty status');
-if ((guardStateMachine.forbidden_combinations ?? []).length !== 3) fail('Guard state machine does not forbid all simultaneous incompatible duty statuses');
+const canonicalPair = (pair) => Array.isArray(pair) && pair.length === 2 ? [...pair].sort().join('|') : 'invalid';
+const requiredForbiddenPairs = new Set(['state_active_duty|title_32','state_active_duty|title_10','title_10|title_32']);
+const actualForbiddenPairs = (guardStateMachine.forbidden_combinations ?? []).map(canonicalPair);
+if (actualForbiddenPairs.length !== requiredForbiddenPairs.size || new Set(actualForbiddenPairs).size !== requiredForbiddenPairs.size || actualForbiddenPairs.some((pair) => !requiredForbiddenPairs.has(pair))) fail('Guard state machine forbidden pairs are not the exact mutually exclusive duty-status set');
+const guardStateIds = new Set(guardStateMachine.states?.map((state) => state.state_id));
+for (const transition of guardStateMachine.transitions ?? []) {
+  if (!guardStateIds.has(transition.from) || !guardStateIds.has(transition.to)) fail('Guard transition references an unknown duty status');
+  if (!(transition.authority_source_ids ?? []).length || transition.authority_source_ids.some((sourceId) => !sourceIds.has(sourceId))) fail('Guard transition authority source does not resolve');
+}
 if (!guardStateMachine.partial_unit_rule?.includes('conserved child allocation')) fail('Guard partial-unit transition is not conservation bound');
+
+if (validatorContracts.bookmark_at !== '2025-09-01T00:00:00Z' || validatorContracts.bookmark_id !== manifest.bookmark_id) fail('validator contracts do not bind the canonical bookmark');
+const expectedLiveSourceIds = new Set(['src_force_usa_dod_about','src_force_usa_dod_combatant_commands']);
+const contractedLiveSourceIds = new Set((validatorContracts.known_live_source_policies ?? []).map((policy) => policy.source_id));
+if (contractedLiveSourceIds.size !== expectedLiveSourceIds.size || [...expectedLiveSourceIds].some((sourceId) => !contractedLiveSourceIds.has(sourceId))) fail('known mutable live source policy set is incomplete');
+for (const policy of validatorContracts.known_live_source_policies ?? []) {
+  const source = sourceById.get(policy.source_id);
+  if (!source || source.mutability_class !== policy.required_mutability_class || source.bookmark_evidence_status !== policy.required_bookmark_evidence_status || source.available_to_player_at_bookmark !== policy.required_player_availability || !source.retrieved_at || !source.temporal_proof) fail(`known mutable live source violates required quarantine tuple: ${policy.source_id}`);
+  if ((policy.forbidden_temporal_proof_fields ?? []).some((field) => Object.hasOwn(source ?? {}, field))) fail(`known mutable live source fabricates immutable temporal proof: ${policy.source_id}`);
+}
+
+if (claimUseById.size !== claims.length || claims.some((claim) => !claimUseById.has(claim.claim_id)) || [...claimUseById.keys()].some((claimId) => !claimIds.has(claimId))) fail('structured claim bookmark-use contract does not exactly cover local claims');
+if (governedConservationById.size !== conservation.length || conservation.some((record) => !governedConservationById.has(record.conservation_record_id)) || [...governedConservationById.keys()].some((recordId) => !conservationById.has(recordId))) fail('temporal governance contract does not exactly cover conservation records');
 
 const authorized = { organization_usa_army:442300, organization_usa_navy:332300, organization_usa_marine_corps:172300, organization_usa_air_force:320000, organization_usa_space_force:9800, organization_usa_army_national_guard:325000, organization_usa_army_reserve:175800, organization_usa_navy_reserve:57700, organization_usa_marine_corps_reserve:32500, organization_usa_air_national_guard:108300, organization_usa_air_force_reserve:67000, organization_usa_coast_guard_reserve:7000 };
 for (const [id, expected] of Object.entries(authorized)) {
@@ -91,6 +116,19 @@ for (const deployment of deployments) {
 if (inventory.some((row) => row.inventory_record_id.includes('training_rotation')) || deployments.some((row) => row.entity_id.includes('training_rotation')) || maintenance.some((row) => row.subject_id.includes('training_rotation')) || conservation.some((row) => row.scope.scope_id.includes('training_rotation'))) fail('Army annual training plan is illegally promoted into opening force accounting');
 
 for (const pool of inventory) {
+  const planOnlyClaim = (pool.provenance.claim_ids ?? []).map((claimId) => claimUseById.get(claimId)).find((use) => use?.allowed_dependency_classes?.includes('plan_only'));
+  if (planOnlyClaim) fail(`plan-only claim is promoted to opening inventory: ${pool.inventory_record_id}`);
+  if (['exact','range'].includes(pool.quantity.kind)) {
+    const accepted = acceptedOpeningQuantityByInventoryId.get(pool.inventory_record_id);
+    if (!accepted) {
+      if (pool.inventory_record_id === 'inventory_usa_navy_battle_force_ship') fail('Navy request and prior actual cannot form a bookmark opening range');
+      fail(`opening exact or range inventory lacks accepted evidence contract: ${pool.inventory_record_id}`);
+    }
+    else {
+      const dependencyClass = validatorContracts.opening_quantity_evidence.required_dependency_class;
+      if (!(accepted.claim_ids ?? []).length || (accepted.claim_ids ?? []).some((claimId) => !claimUseById.get(claimId)?.opening_assertion_eligible || !claimUseById.get(claimId)?.allowed_dependency_classes?.includes(dependencyClass))) fail(`opening quantity evidence contract lacks an eligible custody observation: ${pool.inventory_record_id}`);
+    }
+  }
   const record = conservationById.get(pool.conservation_record_id);
   if (!record) { fail(`inventory ${pool.inventory_record_id} lacks conservation`); continue; }
   if (record.scope.scope_id !== pool.inventory_record_id) fail(`conservation ${record.conservation_record_id} points at another pool`);
@@ -139,8 +177,13 @@ for (const source of sources) if (source.mutability_class === 'live_mutable' && 
 for (const row of [...organizations,...relationships,...equipment]) for (const sourceId of row.provenance?.source_ids ?? []) if (sourceById.get(sourceId)?.bookmark_evidence_status === 'quarantined_no_prebookmark_temporal_proof') fail(`historical opening record cites quarantined mutable source: ${row.organization_id ?? row.relationship_id ?? row.equipment_type_id}`);
 for (const claim of claims) {
   for (const sourceId of claim.source_ids ?? []) if (!sourceIds.has(sourceId)) fail(`claim ${claim.claim_id} cites unresolved local source ${sourceId}`);
+  const use = claimUseById.get(claim.claim_id);
   const postbookmark = (claim.source_ids ?? []).some((sourceId) => sourceById.get(sourceId)?.published_at && new Date(sourceById.get(sourceId).published_at) > bookmark);
-  if (postbookmark && !/Historical|unavailable|Contradiction/.test(claim.simulation_use ?? '')) fail(`postbookmark claim leaks into opening knowledge: ${claim.claim_id}`);
+  if (postbookmark && (use?.opening_assertion_eligible || use?.available_to_player_at_bookmark || !use?.retrospective_only || !use?.allowed_dependency_classes?.includes('retrospective_research_only'))) fail(`postbookmark claim is not structurally quarantined from opening knowledge: ${claim.claim_id}`);
+  if (use?.opening_assertion_eligible) {
+    if (use.retrospective_only || !use.available_to_player_at_bookmark) fail(`opening-eligible claim has contradictory bookmark-use status: ${claim.claim_id}`);
+    if ((claim.source_ids ?? []).some((sourceId) => sourceById.get(sourceId)?.bookmark_evidence_status !== 'prebookmark_available' || sourceById.get(sourceId)?.available_to_player_at_bookmark !== true)) fail(`opening-eligible claim lacks prebookmark source availability: ${claim.claim_id}`);
+  }
 }
 for (const contradiction of contradictions) {
   if ((contradiction.claim_ids ?? []).some((claimId) => !claimIds.has(claimId))) fail(`contradiction ${contradiction.contradiction_set_id} cites unresolved claim`);
@@ -149,7 +192,11 @@ for (const contradiction of contradictions) {
 for (const sourceId of sourceIds) if (!manifest.source_ids.includes(sourceId)) fail(`manifest omits local source ${sourceId}`);
 
 const evaluationTime = new Date(`${manifest.reviewed_at}T23:59:59Z`);
-const expiredCount = [...inventory,...deployments,...maintenance].filter((row) => row.temporal_validity?.review_after && new Date(row.temporal_validity.review_after) < evaluationTime).length;
+const temporallyGovernedRecords = [...organizations,...relationships,...equipment,...inventory,...deployments,...maintenance,...construction,...claims,...contradictions,...trainingPlans,guardStateMachine,...governedConservationById.values()];
+const expiredCount = temporallyGovernedRecords.filter((row) => {
+  const expiry = row.temporal_validity?.review_after ?? row.review_after;
+  return expiry && new Date(expiry) < evaluationTime;
+}).length;
 if (manifest.reconciliation.expired_records !== expiredCount) fail(`manifest expired record count is false: expected ${expiredCount}`);
 const expectedCounts = { organization_records:organizations.length, equipment_type_records:equipment.length, inventory_records:inventory.length, deployment_records:deployments.length, maintenance_records:maintenance.length, construction_records:construction.length, conservation_records:conservation.length, relationship_records:relationships.length, exact_quantity_records:inventory.filter((row)=>row.quantity.kind==='exact').length, range_quantity_records:inventory.filter((row)=>row.quantity.kind==='range').length, unknown_quantity_records:inventory.filter((row)=>row.quantity.kind==='unknown').length };
 for (const [field, expected] of Object.entries(expectedCounts)) if (manifest.reconciliation[field] !== expected) fail(`manifest ${field} count is false: expected ${expected}`);

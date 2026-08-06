@@ -43,6 +43,8 @@
       "src_force_usa_army_budget_overview_2025"
     ],
     "executable": false,
+    "reviewed_at": "2026-08-06",
+    "review_after": "2026-11-06",
     "notes": "Planning target only. It is excluded from opening inventory, deployment, maintenance, and conservation."
   }
 ]

@@ -1,0 +1,9 @@
+{
+  "fixture_id": "usa_force_residual_plan_inventory_promotion",
+  "mutation": "promote_plan_to_inventory",
+  "target_id": "inventory_usa_army_equipment_unresolved",
+  "claim_id": "claim_usa_army_ctc_rotations_22",
+  "value": 22,
+  "unit": "equipment_item",
+  "expected_diagnostic": "plan-only claim is promoted to opening inventory: inventory_usa_army_equipment_unresolved"
+}

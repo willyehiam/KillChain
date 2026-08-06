@@ -98,6 +98,53 @@ for (const fixture of fixtures) {
       const rows = readRows(file);
       rows.find((row) => row.relationship_id === fixture.target_id).activation_state = 'active';
       writeRows(file, rows);
+    } else if (fixture.mutation === 'promote_generic_range') {
+      const file = path.join(packet, 'inventory.ndjson');
+      const rows = readRows(file);
+      rows.find((row) => row.inventory_record_id === fixture.target_id).quantity = { kind:'range', minimum:fixture.minimum, maximum:fixture.maximum, unit:fixture.unit, counting_rule:'adversarial unsupported opening range' };
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'set_inventory_component') {
+      const file = path.join(packet, 'inventory.ndjson');
+      const rows = readRows(file);
+      rows.find((row) => row.inventory_record_id === fixture.target_id).component = fixture.component;
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'duplicate_guard_forbidden_pairs') {
+      const file = path.join(packet, 'guard_status_state_machine.json');
+      const stateMachine = JSON.parse(fs.readFileSync(file, 'utf8'));
+      stateMachine.forbidden_combinations = [['state_active_duty','title_32'],['state_active_duty','title_32'],['title_32','title_10']];
+      fs.writeFileSync(file, `${JSON.stringify(stateMachine,null,2)}\n`);
+    } else if (fixture.mutation === 'promote_plan_to_inventory') {
+      const file = path.join(packet, 'inventory.ndjson');
+      const rows = readRows(file);
+      const row = rows.find((item) => item.inventory_record_id === fixture.target_id);
+      row.provenance.claim_ids = [fixture.claim_id];
+      row.quantity = { kind:'exact', value:fixture.value, unit:fixture.unit, counting_rule:'adversarial plan-to-opening promotion' };
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'reclassify_known_live_source') {
+      const file = path.join(packet, 'sources.ndjson');
+      const rows = readRows(file);
+      const row = rows.find((item) => item.source_id === fixture.target_id);
+      row.mutability_class = 'static';
+      row.bookmark_evidence_status = 'prebookmark_available';
+      row.available_to_player_at_bookmark = true;
+      row.published_at = '2025-01-01';
+      delete row.retrieved_at;
+      delete row.temporal_proof;
+      writeRows(file, rows);
+    } else if (fixture.mutation === 'expire_conservation_zero_summary') {
+      const file = path.join(packet, 'validator_contracts.json');
+      const contracts = JSON.parse(fs.readFileSync(file, 'utf8'));
+      contracts.temporal_governance.conservation_records.find((item) => item.conservation_record_id === fixture.target_id).review_after = '2025-10-01';
+      fs.writeFileSync(file, `${JSON.stringify(contracts,null,2)}\n`);
+    } else if (fixture.mutation === 'historical_prose_postbookmark') {
+      const sourcesFile = path.join(packet, 'sources.ndjson');
+      const sources = readRows(sourcesFile);
+      sources.find((row) => row.source_id === fixture.source_id).published_at = '2025-10-01';
+      writeRows(sourcesFile, sources);
+      const claimsFile = path.join(packet, 'claims.ndjson');
+      const claims = readRows(claimsFile);
+      claims.find((row) => row.claim_id === fixture.target_id).simulation_use = 'Historical reference only; adversarial prose must not alter structured bookmark status.';
+      writeRows(claimsFile, claims);
     } else throw new Error(`Unknown mutation ${fixture.mutation}`);
     const result = spawnSync(process.execPath, [path.join(packet, 'validate_national_packet.mjs'), packet], { encoding: 'utf8' });
     const output = `${result.stdout}\n${result.stderr}`;

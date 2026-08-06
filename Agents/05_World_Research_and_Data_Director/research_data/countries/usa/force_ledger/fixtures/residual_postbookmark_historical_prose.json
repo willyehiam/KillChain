@@ -1,0 +1,7 @@
+{
+  "fixture_id": "usa_force_residual_postbookmark_historical_prose",
+  "mutation": "historical_prose_postbookmark",
+  "target_id": "claim_usa_fy2025_authorized_end_strength_army",
+  "source_id": "src_force_usa_public_law_118_159_fy2025_ndaa",
+  "expected_diagnostic": "postbookmark claim is not structurally quarantined from opening knowledge: claim_usa_fy2025_authorized_end_strength_army"
+}
