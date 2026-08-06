@@ -42,7 +42,7 @@ for (const code of ['usa', 'twn']) {
     accessed_at: '2026-08-06',
     source_tier: 'A',
     source_type: 'law_or_treaty',
-    source_family_id: 'family_twn_office_of_president_constitution',
+    source_family_id: 'family_office_of_the_president_republic_of_china_taiwan',
     url: 'https://english.president.gov.tw/Page/94',
     relevant_locator: 'Articles 36, 38, 39, 58, and 63',
     reliability_notes: 'Constitutional text supports institutional gates. It does not by itself settle disputed sequencing between the Executive Yuan, Legislative Yuan, and President.'
