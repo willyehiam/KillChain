@@ -40,13 +40,17 @@
 
 ## P1: Starting bookmark
 
-1. Select the exact late summer or early fall 2025 date.
-2. Define the historical information cutoff.
-3. Separate known history from scenario divergence.
-4. Assemble governments, alliances, conflicts, sanctions, and force posture.
-5. Record all unresolved or future dependent assumptions.
-6. Define which post cutoff events are available as optional historical pressure
-   paths rather than predetermined outcomes.
+1. Freeze the opening date at 1 September 2025. Status: complete.
+2. Define the historical information cutoff. Status: complete.
+3. Separate known history from scenario divergence. Status: complete at the
+   policy level; record enforcement queued.
+4. Assemble governments, alliances, conflicts, sanctions, economies, and force
+   posture at the cutoff. Status: collecting.
+5. Record all unresolved or future dependent assumptions. Status: collecting.
+6. Treat post cutoff events as optional historical pressure paths rather than
+   predetermined outcomes. Status: policy complete.
+7. Add automated detection for records that leak post cutoff knowledge into the
+   opening state. Status: queued.
 
 ## P2: Fully modeled theaters
 
