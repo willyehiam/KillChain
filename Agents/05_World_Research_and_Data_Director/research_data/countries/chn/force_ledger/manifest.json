@@ -4,7 +4,7 @@
   "country_id": "country_chn",
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
   "as_of": "2025-09-01T00:00:00Z",
-  "status": "shell",
+  "status": "collecting",
   "accounting_states": [
     "active",
     "committed",
@@ -22,10 +22,44 @@
     "unknown"
   ],
   "scope": {
-    "services": [],
-    "components": [],
-    "government_forces": [],
-    "individualization_rule": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision"
+    "services": [
+      "joint",
+      "army",
+      "navy",
+      "air_force",
+      "space",
+      "rocket_or_missile",
+      "coast_guard",
+      "cyber",
+      "intelligence",
+      "paramilitary"
+    ],
+    "components": [
+      "active",
+      "reserve",
+      "mobilization"
+    ],
+    "government_forces": [
+      "People's Liberation Army",
+      "People's Armed Police Force",
+      "China Coast Guard",
+      "People's Liberation Army Reserve Force",
+      "Militia"
+    ],
+    "individualization_rule": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision",
+    "covered_domains": [
+      "ground",
+      "maritime",
+      "air",
+      "space",
+      "cyber",
+      "information",
+      "logistics",
+      "joint"
+    ],
+    "exclusion_notes": [
+      "No exact headquarters coordinates, current mobile positions, covert organizations, vulnerable component locations, or speculative capabilities are collected in this slice."
+    ]
   },
   "dataset_paths": {
     "organizations": "organizations.ndjson",
@@ -37,14 +71,14 @@
     "construction": "construction.ndjson",
     "conservation": "conservation.ndjson",
     "facilities": null,
-    "sources": null,
-    "contradictions": null
+    "sources": "sources.ndjson",
+    "contradictions": "contradictions.ndjson"
   },
   "reconciliation": {
-    "state": "not_started",
-    "organization_records": 0,
+    "state": "partial",
+    "organization_records": 19,
     "platform_records": 0,
-    "equipment_type_records": 0,
+    "equipment_type_records": 11,
     "inventory_records": 0,
     "deployment_records": 0,
     "maintenance_records": 0,
@@ -71,14 +105,21 @@
     "mission_resolution": "individual executing and supporting platforms",
     "aggregation_preserves_quantity": true
   },
-  "source_ids": [],
-  "unknowns": [
-    "PLA services, theater commands, reserves, militia, coast guard, maritime militia, and other relevant government force records have not been accepted.",
-    "National equipment totals have not been reconciled across every accounting state.",
-    "Named platforms and quantity conserving pools have not been assigned.",
-    "Global deployments, home stations, readiness, maintenance, munitions, crews, sustainment, and commitments have not been reconciled."
+  "source_ids": [
+    "src_force_chn_mod_new_service_system_2024",
+    "src_force_chn_mod_information_support_force_2024",
+    "src_force_chn_state_council_force_flags_2025",
+    "src_force_chn_defense_white_paper_2019",
+    "src_force_chn_us_dod_cmpr_2024"
   ],
-  "reviewed_at": "2026-08-02",
-  "review_after": "2026-08-16",
-  "notes": "No platform can appear in a mission package until it exists in this ledger or a later accepted replacement. Empty arrays are explicit unknown coverage, not assertions of absence."
+  "unknowns": [
+    "Subordinate theater service components, group armies, fleets, bases, brigades, regiments, and equivalent formations have not been accepted.",
+    "Organization personnel, readiness, mobilization delays, command workflow details, and current force assignments remain unknown in this slice.",
+    "The aggregate equipment taxonomy records do not assert models, quantities, possession totals, readiness, or disposition.",
+    "National equipment totals have not been reconciled across accounting states.",
+    "Named platforms, inventory pools, deployments, maintenance, construction, conservation, facilities, and logistics dependencies remain unresolved."
+  ],
+  "reviewed_at": "2026-08-06",
+  "review_after": "2026-11-06",
+  "notes": "First accepted Tier A national organization slice. It incorporates the April 2024 service and arm reform, five theater commands, high level reserve relationships, the People's Armed Police Force, and China Coast Guard without asserting readiness, quantity, or disposition."
 }
