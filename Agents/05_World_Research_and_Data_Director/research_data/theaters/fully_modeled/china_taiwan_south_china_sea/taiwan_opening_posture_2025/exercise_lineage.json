@@ -1,0 +1,72 @@
+{
+  "as_of": "2025-09-01T00:00:00Z",
+  "events": [
+    {
+      "lineage_id": "op_lineage_august_2022",
+      "status": "historical_prebookmark_observed",
+      "started_on": "2022-08-02",
+      "ended_on": "2022-08-10",
+      "claim_ids": [
+        "op_claim_lineage_2022"
+      ],
+      "force_refs": [
+        "organization_chn_eastern_theater_command"
+      ],
+      "lesson_scope": "Demonstrated exercise categories and political signaling only; no automatic readiness or future action inference."
+    },
+    {
+      "lineage_id": "op_lineage_joint_sword_2023",
+      "status": "historical_prebookmark_observed",
+      "started_on": "2023-04-08",
+      "ended_on": "2023-04-10",
+      "claim_ids": [
+        "op_claim_lineage_2023"
+      ],
+      "force_refs": [
+        "organization_chn_eastern_theater_command"
+      ],
+      "lesson_scope": "Demonstrated exercise categories and political signaling only; no automatic readiness or future action inference."
+    },
+    {
+      "lineage_id": "op_lineage_joint_sword_2024a",
+      "status": "historical_prebookmark_observed",
+      "started_on": "2024-05-23",
+      "ended_on": "2024-05-24",
+      "claim_ids": [
+        "op_claim_lineage_2024a"
+      ],
+      "force_refs": [
+        "organization_chn_eastern_theater_command"
+      ],
+      "lesson_scope": "Demonstrated exercise categories and political signaling only; no automatic readiness or future action inference."
+    },
+    {
+      "lineage_id": "op_lineage_joint_sword_2024b",
+      "status": "historical_prebookmark_observed",
+      "started_on": "2024-10-14",
+      "ended_on": "2024-10-14",
+      "claim_ids": [
+        "op_claim_lineage_2024b"
+      ],
+      "force_refs": [
+        "organization_chn_eastern_theater_command"
+      ],
+      "lesson_scope": "Demonstrated exercise categories and political signaling only; no automatic readiness or future action inference."
+    },
+    {
+      "lineage_id": "op_lineage_april_2025",
+      "status": "historical_prebookmark_observed",
+      "started_on": "2025-04-01",
+      "ended_on": "2025-04-03",
+      "claim_ids": [
+        "op_claim_lineage_2025a",
+        "op_claim_april_activity_scale"
+      ],
+      "force_refs": [
+        "organization_chn_eastern_theater_command",
+        "organization_chn_china_coast_guard"
+      ],
+      "lesson_scope": "Demonstrated exercise categories and political signaling only; no automatic readiness or future action inference."
+    }
+  ]
+}
