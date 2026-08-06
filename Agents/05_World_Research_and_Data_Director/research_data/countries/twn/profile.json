@@ -14,7 +14,7 @@
     "politics_and_institutions": {
       "status": "needs_review",
       "record_count": 28,
-      "source_count": 23,
+      "source_count": 24,
       "open_question_count": 3,
       "notes": "Opening divided government, constitutional succession, war authority, United States policy context, institutions, and 20 relevant actors are sourced; independent review remains open."
     },
@@ -111,6 +111,7 @@
     "src_twn_new_taipei_hou",
     "src_twn_taipei_chiang",
     "src_twn_dpp_local_leaders",
+    "src_twn_kaohsiung_chen_2025",
     "src_twn_us_taiwan_relations_act"
   ],
   "unknowns": [
