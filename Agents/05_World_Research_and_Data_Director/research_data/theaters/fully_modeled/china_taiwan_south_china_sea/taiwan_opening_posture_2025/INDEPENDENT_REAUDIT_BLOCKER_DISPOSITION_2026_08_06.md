@@ -75,5 +75,28 @@ The consumer guard scans executable source outside the research packet and appro
 
 ## Release gate
 
-This audit closes the two technical correction blockers only. Do not change `opening_truth`, `simulation_readiness`, or any release condition until scenario-design approval, contradiction policy, and the repository’s independent acceptance process are completed.
+This audit closes the two technical correction blockers only. It is not itself a promotion decision. The following manifest gates remain unmet and must be closed by explicit reviewed acceptance records, not inferred from a passing test:
 
+1. `independent_reaudit`: an independent acceptance owner must record acceptance of this reaudit and its scope. Publication of the reaudit does not self-approve it.
+2. `all_blocking_findings_closed`: the acceptance record must map both former blockers to the corrected evidence, guards, negative fixtures, and passing production-ledger result. The manifest's `unresolved_blocker_count: 2` remains authoritative until that review is recorded.
+3. `scenario_design_approval`: an authorized design review must approve the intended opening-state interpretation, observer/public-report boundary, and explicit unknowns. A research packet cannot choose canonical simulation truth by itself.
+4. `contradiction_adjudication_policy`: an executable reviewed policy must define how unresolved and parallel actor claims are preserved, selected, or exposed to scenario initialization. No current contradiction resolution may silently become omniscient truth.
+
+Until all four gates are evidenced and the manifest is separately revised and reviewed, keep `opening_truth: false`, `simulation_readiness: blocked_research_only`, and every forbidden consumer blocked.
+
+## Full-suite result
+
+The final post-hardening `npm test` run passed in full:
+
+1. research foundation validation;
+2. production opening-posture validation against 68 canonical ledger organizations;
+3. 25 adversarial opening-posture mutations, including all eight named semantic corruptions;
+4. repository consumer guard and its negative self-test;
+5. Tier A authority validation and 20 authority adversarial regressions;
+6. politics regressions;
+7. TypeScript typecheck;
+8. 43 deterministic simulation tests;
+9. production application build; and
+10. rendered-HTML validation.
+
+The production packet resolved 33 force-reference occurrences covering 24 unique organization identities, with zero unresolved references and zero forbidden consumers. These are integrity results, not evidence of deployment, readiness, access, theater availability, or simulation acceptance.
