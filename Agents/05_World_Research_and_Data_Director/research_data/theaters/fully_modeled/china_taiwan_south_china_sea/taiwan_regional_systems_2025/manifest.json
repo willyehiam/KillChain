@@ -6,14 +6,26 @@
   "status": "research_checkpoint",
   "files": [
     "README.md",
+    "CORRECTION_REPORT.md",
     "manifest.json",
     "sources.ndjson",
     "regional_systems.json",
     "dependencies.json",
     "access_relationships.json",
-    "validate_regional_systems.mjs"
+    "actions.json",
+    "modeled_assumptions.json",
+    "apply_correction_packet.mjs",
+    "validate_regional_systems.mjs",
+    "test_regional_systems.mjs"
   ],
-  "record_counts": {"systems": 23, "dependency_edges": 16, "access_relationships": 4, "sources": 28},
+  "record_counts": {
+    "systems": 23,
+    "dependency_edges": 34,
+    "access_relationships": 4,
+    "sources": 28,
+    "actions": 11,
+    "modeled_assumptions": 10
+  },
   "safety_boundary": "No exact vulnerable component coordinates, covert sites, attack pathways or current mobile asset locations.",
   "source_ids": [
     "twrs_src_twport_national_2024",
@@ -36,14 +48,32 @@
     "twrs_src_csis_strait_trade_2025",
     "twrs_src_unctad_maritime_2024",
     "twrs_src_ningbo_port_2024",
-    "twrs_src_japan_ports_2024",
     "twrs_src_edca_sites_2023",
     "twrs_src_us_philippines_2plus2_2024",
-    "twrs_src_us_japan_treaty",
     "twrs_src_taiwan_relations_act",
     "twrs_src_tasa_formosat7",
     "twrs_src_tasa_formosat5",
-    "twrs_src_gps_overview"
+    "twrs_src_gps_overview",
+    "twrs_src_us_japan_treaty_final",
+    "twrs_src_us_japan_sofa_final"
   ],
-  "observed_at": "2025-09-01"
+  "observed_at": "2025-08-31T23:59:59Z",
+  "simulation_readiness": "blocked_pending_calibration_and_agent_09_revalidation",
+  "correction_packets": {
+    "closed_by_contract": [
+      "TWRS-C01",
+      "TWRS-C02",
+      "TWRS-C03"
+    ],
+    "partially_addressed": [
+      "TWRS-C04",
+      "TWRS-C05"
+    ],
+    "unresolved": [
+      "calibrate_physical_flows",
+      "calibrate_recovery_distributions",
+      "source_commercial_emergency_authority",
+      "independent_agent_09_revalidation"
+    ]
+  }
 }

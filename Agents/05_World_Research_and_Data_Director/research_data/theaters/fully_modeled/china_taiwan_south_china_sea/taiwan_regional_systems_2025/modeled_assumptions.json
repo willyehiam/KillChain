@@ -1,0 +1,87 @@
+{
+  "dataset_id": "twrs_modeled_assumptions_2025",
+  "as_of": "2025-09-01T00:00:00Z",
+  "opening_truth": true,
+  "assumptions": [
+    {
+      "assumption_id": "twrs_assumption_power_fuel_dispatch",
+      "statement": "Imported power fuels are transformed into dispatchable electrical service subject to generation mix.",
+      "status": "designed_not_observed",
+      "valid_from": "2025-09-01T00:00:00Z",
+      "falsification_condition": "replaced_by_source_supported_flow_or_rejected_by_review",
+      "sensitivity_treatment": "synthetic_region"
+    },
+    {
+      "assumption_id": "twrs_assumption_specialized_energy_gateway",
+      "statement": "A synthetic southern energy gateway transfers power fuel, without identifying terminals.",
+      "status": "designed_not_observed",
+      "valid_from": "2025-09-01T00:00:00Z",
+      "falsification_condition": "replaced_by_source_supported_flow_or_rejected_by_review",
+      "sensitivity_treatment": "synthetic_region"
+    },
+    {
+      "assumption_id": "twrs_assumption_route_diversion",
+      "statement": "Synthetic route families can carry bounded flows after switching delay and loss.",
+      "status": "designed_not_observed",
+      "valid_from": "2025-09-01T00:00:00Z",
+      "falsification_condition": "replaced_by_source_supported_flow_or_rejected_by_review",
+      "sensitivity_treatment": "synthetic_region"
+    },
+    {
+      "assumption_id": "twrs_assumption_semiconductor_data_service",
+      "statement": "Priority semiconductor output consumes communications service.",
+      "status": "designed_not_observed",
+      "valid_from": "2025-09-01T00:00:00Z",
+      "falsification_condition": "replaced_by_source_supported_flow_or_rejected_by_review",
+      "sensitivity_treatment": "synthetic_region"
+    },
+    {
+      "assumption_id": "twrs_assumption_semiconductor_air_cargo",
+      "statement": "Priority semiconductor output consumes a bounded high value air cargo flow.",
+      "status": "designed_not_observed",
+      "valid_from": "2025-09-01T00:00:00Z",
+      "falsification_condition": "replaced_by_source_supported_flow_or_rejected_by_review",
+      "sensitivity_treatment": "synthetic_region"
+    },
+    {
+      "assumption_id": "twrs_assumption_air_network_fuel",
+      "statement": "Civil and dual use air operations consume liquid fuel.",
+      "status": "designed_not_observed",
+      "valid_from": "2025-09-01T00:00:00Z",
+      "falsification_condition": "replaced_by_source_supported_flow_or_rejected_by_review",
+      "sensitivity_treatment": "synthetic_region"
+    },
+    {
+      "assumption_id": "twrs_assumption_domestic_port_distribution",
+      "statement": "Regional port cargo can support the corresponding broad industrial region after inland lag.",
+      "status": "designed_not_observed",
+      "valid_from": "2025-09-01T00:00:00Z",
+      "falsification_condition": "replaced_by_source_supported_flow_or_rejected_by_review",
+      "sensitivity_treatment": "synthetic_region"
+    },
+    {
+      "assumption_id": "twrs_assumption_china_coastal_distribution",
+      "statement": "Yangtze Delta commercial cargo can transfer through a synthetic coastal distribution chain to Fujian.",
+      "status": "designed_not_observed",
+      "valid_from": "2025-09-01T00:00:00Z",
+      "falsification_condition": "replaced_by_source_supported_flow_or_rejected_by_review",
+      "sensitivity_treatment": "synthetic_region"
+    },
+    {
+      "assumption_id": "twrs_assumption_japan_onward_logistics",
+      "statement": "Aggregate Japanese port cargo may support allied air logistics only after political and physical capacity gates.",
+      "status": "designed_not_observed",
+      "valid_from": "2025-09-01T00:00:00Z",
+      "falsification_condition": "replaced_by_source_supported_flow_or_rejected_by_review",
+      "sensitivity_treatment": "synthetic_region"
+    },
+    {
+      "assumption_id": "twrs_assumption_commercial_emergency_authority",
+      "statement": "Commercial lift is unavailable until legal authority, carrier consent, insurance, crew willingness and terminal fit are resolved.",
+      "status": "designed_not_observed",
+      "valid_from": "2025-09-01T00:00:00Z",
+      "falsification_condition": "replaced_by_source_supported_flow_or_rejected_by_review",
+      "sensitivity_treatment": "synthetic_region"
+    }
+  ]
+}

@@ -1,0 +1,348 @@
+{
+  "dataset_id": "twrs_typed_actions_2025",
+  "as_of": "2025-09-01T00:00:00Z",
+  "opening_truth": true,
+  "actions": [
+    {
+      "action_id": "twrs_action_reroute_cargo",
+      "action_type": "reroute_resource",
+      "required_inputs": [
+        "source_node",
+        "destination_node",
+        "resource_type",
+        "requested_amount"
+      ],
+      "preconditions": [
+        "required_accounts_resolve",
+        "capacity_available",
+        "permission_if_required"
+      ],
+      "costs": [
+        {
+          "resource_type": "decision_attention",
+          "amount": {
+            "state": "bounded_estimate",
+            "unit": "scenario_attention_unit",
+            "minimum": 1,
+            "central": 1,
+            "maximum": 1
+          }
+        }
+      ],
+      "deterministic_transition": [
+        "reserve_origin_flow",
+        "reserve_destination_flow",
+        "apply_edge_loss",
+        "deliver_after_lag"
+      ],
+      "failure_transition": "no_resource_mutation_and_reason_recorded"
+    },
+    {
+      "action_id": "twrs_action_allocate_repair",
+      "action_type": "allocate_repair",
+      "required_inputs": [
+        "target_system",
+        "repair_work_amount"
+      ],
+      "preconditions": [
+        "required_accounts_resolve",
+        "capacity_available",
+        "permission_if_required"
+      ],
+      "costs": [
+        {
+          "resource_type": "decision_attention",
+          "amount": {
+            "state": "bounded_estimate",
+            "unit": "scenario_attention_unit",
+            "minimum": 1,
+            "central": 1,
+            "maximum": 1
+          }
+        }
+      ],
+      "deterministic_transition": [
+        "consume_repair_work",
+        "reduce_repair_requirement",
+        "advance_damage_state_if_threshold_met"
+      ],
+      "failure_transition": "no_resource_mutation_and_reason_recorded"
+    },
+    {
+      "action_id": "twrs_action_allocate_airlift",
+      "action_type": "allocate_resource",
+      "required_inputs": [
+        "destination_node",
+        "requested_amount"
+      ],
+      "preconditions": [
+        "required_accounts_resolve",
+        "capacity_available",
+        "permission_if_required"
+      ],
+      "costs": [
+        {
+          "resource_type": "decision_attention",
+          "amount": {
+            "state": "bounded_estimate",
+            "unit": "scenario_attention_unit",
+            "minimum": 1,
+            "central": 1,
+            "maximum": 1
+          }
+        }
+      ],
+      "deterministic_transition": [
+        "reserve_airlift",
+        "consume_fuel",
+        "deliver_after_lag"
+      ],
+      "failure_transition": "no_resource_mutation_and_reason_recorded"
+    },
+    {
+      "action_id": "twrs_action_request_access",
+      "action_type": "request_permission",
+      "required_inputs": [
+        "relationship_id",
+        "mission_class"
+      ],
+      "preconditions": [
+        "required_accounts_resolve",
+        "capacity_available",
+        "permission_if_required"
+      ],
+      "costs": [
+        {
+          "resource_type": "decision_attention",
+          "amount": {
+            "state": "bounded_estimate",
+            "unit": "scenario_attention_unit",
+            "minimum": 1,
+            "central": 1,
+            "maximum": 1
+          }
+        }
+      ],
+      "deterministic_transition": [
+        "enter_consultation",
+        "resolve_authority_gate",
+        "grant_or_reject_bounded_capacity"
+      ],
+      "failure_transition": "no_resource_mutation_and_reason_recorded"
+    },
+    {
+      "action_id": "twrs_action_ration_fuel",
+      "action_type": "ration_demand",
+      "required_inputs": [
+        "fuel_account",
+        "priority_queue"
+      ],
+      "preconditions": [
+        "required_accounts_resolve",
+        "capacity_available",
+        "permission_if_required"
+      ],
+      "costs": [
+        {
+          "resource_type": "decision_attention",
+          "amount": {
+            "state": "bounded_estimate",
+            "unit": "scenario_attention_unit",
+            "minimum": 1,
+            "central": 1,
+            "maximum": 1
+          }
+        }
+      ],
+      "deterministic_transition": [
+        "reduce_low_priority_demand",
+        "preserve_stock",
+        "apply_political_cost"
+      ],
+      "failure_transition": "no_resource_mutation_and_reason_recorded"
+    },
+    {
+      "action_id": "twrs_action_request_resupply",
+      "action_type": "request_resource",
+      "required_inputs": [
+        "fuel_account",
+        "requested_amount"
+      ],
+      "preconditions": [
+        "required_accounts_resolve",
+        "capacity_available",
+        "permission_if_required"
+      ],
+      "costs": [
+        {
+          "resource_type": "decision_attention",
+          "amount": {
+            "state": "bounded_estimate",
+            "unit": "scenario_attention_unit",
+            "minimum": 1,
+            "central": 1,
+            "maximum": 1
+          }
+        }
+      ],
+      "deterministic_transition": [
+        "reserve_route_and_gateway",
+        "deliver_after_lag_and_loss"
+      ],
+      "failure_transition": "no_resource_mutation_and_reason_recorded"
+    },
+    {
+      "action_id": "twrs_action_shed_load",
+      "action_type": "ration_demand",
+      "required_inputs": [
+        "power_account",
+        "priority_queue"
+      ],
+      "preconditions": [
+        "required_accounts_resolve",
+        "capacity_available",
+        "permission_if_required"
+      ],
+      "costs": [
+        {
+          "resource_type": "decision_attention",
+          "amount": {
+            "state": "bounded_estimate",
+            "unit": "scenario_attention_unit",
+            "minimum": 1,
+            "central": 1,
+            "maximum": 1
+          }
+        }
+      ],
+      "deterministic_transition": [
+        "reduce_low_priority_demand",
+        "preserve_served_critical_load",
+        "apply_output_loss"
+      ],
+      "failure_transition": "no_resource_mutation_and_reason_recorded"
+    },
+    {
+      "action_id": "twrs_action_prioritize_bandwidth",
+      "action_type": "ration_demand",
+      "required_inputs": [
+        "bandwidth_account",
+        "priority_queue"
+      ],
+      "preconditions": [
+        "required_accounts_resolve",
+        "capacity_available",
+        "permission_if_required"
+      ],
+      "costs": [
+        {
+          "resource_type": "decision_attention",
+          "amount": {
+            "state": "bounded_estimate",
+            "unit": "scenario_attention_unit",
+            "minimum": 1,
+            "central": 1,
+            "maximum": 1
+          }
+        }
+      ],
+      "deterministic_transition": [
+        "reserve_priority_bandwidth",
+        "degrade_unreserved_traffic"
+      ],
+      "failure_transition": "no_resource_mutation_and_reason_recorded"
+    },
+    {
+      "action_id": "twrs_action_prioritize_industrial_inputs",
+      "action_type": "allocate_resource",
+      "required_inputs": [
+        "production_account",
+        "priority_queue"
+      ],
+      "preconditions": [
+        "required_accounts_resolve",
+        "capacity_available",
+        "permission_if_required"
+      ],
+      "costs": [
+        {
+          "resource_type": "decision_attention",
+          "amount": {
+            "state": "bounded_estimate",
+            "unit": "scenario_attention_unit",
+            "minimum": 1,
+            "central": 1,
+            "maximum": 1
+          }
+        }
+      ],
+      "deterministic_transition": [
+        "reserve_power_bandwidth_and_cargo",
+        "update_output_bound"
+      ],
+      "failure_transition": "no_resource_mutation_and_reason_recorded"
+    },
+    {
+      "action_id": "twrs_action_charter_sealift",
+      "action_type": "request_permission",
+      "required_inputs": [
+        "commercial_relationship",
+        "requested_amount"
+      ],
+      "preconditions": [
+        "required_accounts_resolve",
+        "capacity_available",
+        "permission_if_required"
+      ],
+      "costs": [
+        {
+          "resource_type": "decision_attention",
+          "amount": {
+            "state": "bounded_estimate",
+            "unit": "scenario_attention_unit",
+            "minimum": 1,
+            "central": 1,
+            "maximum": 1
+          }
+        }
+      ],
+      "deterministic_transition": [
+        "resolve_commercial_permission",
+        "reserve_charterable_share",
+        "apply_political_and_economic_cost"
+      ],
+      "failure_transition": "no_resource_mutation_and_reason_recorded"
+    },
+    {
+      "action_id": "twrs_action_task_observation",
+      "action_type": "allocate_resource",
+      "required_inputs": [
+        "service_account",
+        "target_system"
+      ],
+      "preconditions": [
+        "required_accounts_resolve",
+        "capacity_available",
+        "permission_if_required"
+      ],
+      "costs": [
+        {
+          "resource_type": "decision_attention",
+          "amount": {
+            "state": "bounded_estimate",
+            "unit": "scenario_attention_unit",
+            "minimum": 1,
+            "central": 1,
+            "maximum": 1
+          }
+        }
+      ],
+      "deterministic_transition": [
+        "reserve_service_capacity",
+        "deliver_observation_after_lag",
+        "update_player_estimate"
+      ],
+      "failure_transition": "no_resource_mutation_and_reason_recorded"
+    }
+  ]
+}
