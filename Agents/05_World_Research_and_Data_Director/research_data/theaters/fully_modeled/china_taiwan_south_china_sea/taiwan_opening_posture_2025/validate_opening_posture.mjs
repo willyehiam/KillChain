@@ -69,7 +69,7 @@ export function validateOpeningPosture(root=here,options={}){
     for(const id of item.source_ids??[]) if(!sourceIndex.has(id)) errors.push(`${item.claim_id}: unresolved source ${id}`);
     if(!validEvidence.has(item.evidence_state)) errors.push(`${item.claim_id}: invalid evidence_state`);
     if(!validConfidence.has(item.confidence)) errors.push(`${item.claim_id}: invalid confidence`);
-    if(item.temporal_validity?.as_of!==cutoffText) errors.push(`${item.claim_id}: as_of mismatch`);
+    if(item.as_of!==cutoffText||item.temporal_validity?.as_of!==cutoffText) errors.push(`${item.claim_id}: as_of mismatch`);
     if(forbiddenFuture.test(JSON.stringify(item))) errors.push(`${item.claim_id}: future reference leaked into opening claim`);
   }
   const canonicalForceIds=loadCanonicalForceIds(root,reconciliation,errors,options.canonicalForceIds);
