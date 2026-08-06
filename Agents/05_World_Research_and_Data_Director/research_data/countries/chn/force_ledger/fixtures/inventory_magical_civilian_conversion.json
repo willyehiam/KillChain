@@ -1,0 +1,1 @@
+{"fixture_id":"chn_inventory_magical_civilian_conversion","mutation":"magical_civilian_conversion","target_id":"inventory_chn_civilian_transport_conversion","expected_diagnostic":"civilian transport conversion capacity must remain unknown"}

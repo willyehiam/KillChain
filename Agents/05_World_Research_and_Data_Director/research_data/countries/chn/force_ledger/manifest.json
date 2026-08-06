@@ -52,35 +52,48 @@
     ],
     "coverage_matrix": [
       {
-        "coverage_id": "coverage_chn_combat_aircraft",
-        "service": "air_force",
-        "domain": "air",
-        "organization_depth": "identified",
-        "equipment_taxonomy": "structured",
-        "inventory": "inventory_partial",
-        "dispositions": "identified",
-        "maintenance": "identified",
-        "construction": "not_started",
-        "conservation": "structured",
-        "notes": "Public national aggregate slice only; not decision usable."
-      },
-      {
-        "coverage_id": "coverage_chn_surface_combatant",
+        "coverage_id": "coverage_chn_plan_national_force",
         "service": "navy",
         "domain": "maritime",
-        "organization_depth": "identified",
+        "organization_depth": "structured",
         "equipment_taxonomy": "structured",
         "inventory": "inventory_partial",
         "dispositions": "identified",
         "maintenance": "identified",
-        "construction": "not_started",
+        "construction": "identified",
         "conservation": "structured",
-        "notes": "Public national aggregate slice only; not decision usable."
+        "notes": "Battle force and class pools are conserved; projections remain claims and carrier identities have no locations."
       },
       {
-        "coverage_id": "coverage_chn_joint_logistics_support",
-        "service": "joint",
-        "domain": "logistics",
+        "coverage_id": "coverage_chn_air_and_naval_aviation",
+        "service": "air_force",
+        "domain": "air",
+        "organization_depth": "structured",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "not_started",
+        "conservation": "structured",
+        "notes": "Mission categories exist as unknown pools; dated estimates are not opening totals."
+      },
+      {
+        "coverage_id": "coverage_chn_ground_and_rocket_force",
+        "service": "army",
+        "domain": "ground",
+        "organization_depth": "structured",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "not_started",
+        "conservation": "structured",
+        "notes": "Ground and Rocket Force categories conserve; personnel and missile estimates remain source-vintage claims."
+      },
+      {
+        "coverage_id": "coverage_chn_coast_guard_militia_reserve",
+        "service": "paramilitary",
+        "domain": "joint",
         "organization_depth": "identified",
         "equipment_taxonomy": "structured",
         "inventory": "inventory_partial",
@@ -88,7 +101,20 @@
         "maintenance": "identified",
         "construction": "not_started",
         "conservation": "structured",
-        "notes": "Public national aggregate slice only; not decision usable."
+        "notes": "Institutions and national pools modeled; quantities, readiness, and mobilization delay remain unknown."
+      },
+      {
+        "coverage_id": "coverage_chn_lift_sustainment_and_mobilization",
+        "service": "joint",
+        "domain": "logistics",
+        "organization_depth": "structured",
+        "equipment_taxonomy": "structured",
+        "inventory": "inventory_partial",
+        "dispositions": "identified",
+        "maintenance": "identified",
+        "construction": "identified",
+        "conservation": "structured",
+        "notes": "Lift, sealift, tanker, maintenance, training, construction, and civilian conversion pools are explicit. Civilian capacity requires activation, lead time, inspection, and economic cost."
       }
     ]
   },
@@ -109,17 +135,17 @@
   "reconciliation": {
     "state": "blocked_by_unknowns",
     "organization_records": 38,
-    "platform_records": 0,
-    "equipment_type_records": 11,
-    "inventory_records": 3,
-    "deployment_records": 3,
-    "maintenance_records": 3,
-    "construction_records": 0,
-    "conservation_records": 3,
+    "platform_records": 3,
+    "equipment_type_records": 46,
+    "inventory_records": 36,
+    "deployment_records": 36,
+    "maintenance_records": 36,
+    "construction_records": 3,
+    "conservation_records": 36,
     "exact_quantity_records": 0,
-    "range_quantity_records": 0,
-    "unknown_quantity_records": 3,
-    "open_conservation_exceptions": 0,
+    "range_quantity_records": 1,
+    "unknown_quantity_records": 35,
+    "open_conservation_exceptions": 35,
     "double_booking_exceptions": 0,
     "orphan_platform_records": 0,
     "orphan_organization_records": 0,
@@ -143,24 +169,25 @@
     "src_force_chn_mod_information_support_force_2024",
     "src_force_chn_state_council_force_flags_2025",
     "src_force_chn_defense_white_paper_2019",
-    "src_force_chn_us_dod_cmpr_2024"
+    "src_force_chn_us_dod_cmpr_2024",
+    "src_force_chn_crs_naval_modernization_2025",
+    "src_force_chn_mod_reserve_law_2023",
+    "src_force_chn_state_council_reserve_regulations_2024",
+    "src_force_chn_state_council_defense_budget_2025",
+    "src_force_chn_mod_national_defense_transport_2022",
+    "src_force_chn_state_council_military_facilities_2025"
   ],
   "unknowns": [
-    "The public CMC organ and theater component layer does not establish internal staffing, command workflow latency, or current assignments.",
-    "Group armies, bases, brigades, regiments, fleets below theater component level, and Rocket Force base assignments remain unaccepted.",
-    "A conditional Rocket Force to Eastern Theater relationship does not assert a permanent theater Rocket Force component.",
-    "The public CMC organ and theater component layer does not establish internal staffing, command workflow latency, or current assignments.",
-    "Group armies, bases, brigades, regiments, fleets below theater component level, and Rocket Force base assignments remain unaccepted.",
-    "A conditional Rocket Force to Eastern Theater relationship does not assert a permanent theater Rocket Force component.",
-    "Organization personnel, readiness, mobilization delays, command workflow details, and current force assignments remain unknown in this slice.",
-    "The aggregate equipment taxonomy records do not assert models, quantities, possession totals, readiness, or disposition.",
-    "National equipment totals have not been reconciled across accounting states.",
-    "Named platforms and exact platform totals remain deliberately unresolved; the accepted operational slice is national aggregate only.",
-    "Construction programs remain unresolved; explicit coverage status prevents absence from being interpreted as zero."
+    "No public source in this packet establishes a complete mutually exclusive national equipment inventory at 1 September 2025.",
+    "Dated 2024 assessments and calendar-year 2025 projections remain claims; they are not promoted into opening truth.",
+    "All current theater allocations, exact positions, routes, movement, readiness, maintenance subsets, and support availability remain unknown.",
+    "PLAN class projections, PLARF category estimates, and aircraft scope definitions require independent reconciliation.",
+    "Reserve, militia, Coast Guard, sealift, airlift, tanker, maintenance, training, construction, and mobilization quantities remain unknown rather than zero.",
+    "Civilian conversion capacity requires lawful designation, lead time, acceptance, crew, interoperability, and economic opportunity cost; it cannot create magical lift."
   ],
   "reviewed_at": "2026-08-06",
   "review_after": "2026-11-06",
-  "notes": "China command checkpoint: official four-service/four-arm classification, public CMC organ layer, five Army and Air Force theater components, three Navy theater components, and typed generating-to-operating relationships. No current assignment, readiness, or location is inferred.",
+  "notes": "China inventory checkpoint: national public aggregate pools across PLA services and arms, Navy class categories, air mission categories, ground and Rocket Force, Coast Guard, militia, reserve, lift, sustainment, construction, and bounded civilian conversion. It excludes exact present positions and actionable movement and remains collecting/non-executable.",
   "acceptance": {
     "schema_valid": true,
     "internally_consistent": true,
@@ -168,12 +195,13 @@
     "decision_usable": false,
     "simulation_ready": false,
     "untested_claims": [
-      "National inventory completeness, exact readiness, and subnational disposition are not tested by this packet."
+      "Complete national inventory and class totals are not independently reconciled.",
+      "Current readiness, maintenance, support availability, mobilization delay, and theater allocation are untested."
     ],
     "blockers": [
-      "Exact or bounded conserved inventory is not yet accepted.",
-      "Named mission decisive platforms and executable support dependencies are not yet resolved.",
-      "Construction coverage is not started and maintenance quantities remain unknown."
+      "Most national quantities remain unknown at the bookmark.",
+      "Source projections and dated assessments require independent review before any promotion.",
+      "No mission may draw from national pools without a conserved child allocation, authority, readiness, and resolved support package."
     ]
   }
 }

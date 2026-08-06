@@ -1,0 +1,1 @@
+{"fixture_id":"chn_inventory_projection_promoted","mutation":"promote_projection","target_id":"inventory_chn_plan_battle_force","expected_diagnostic":"PLAN 2025 projection must not become opening inventory"}

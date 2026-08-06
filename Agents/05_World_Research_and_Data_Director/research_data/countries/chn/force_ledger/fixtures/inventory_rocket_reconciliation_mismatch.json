@@ -1,0 +1,1 @@
+{"fixture_id":"chn_inventory_rocket_reconciliation_mismatch","mutation":"corrupt_claim_value","target_id":"claim_chn_plarf_launcher_estimate_mid2024","field":"icbm","value":501,"expected_diagnostic":"PLARF launcher estimate categories do not reconcile to 1,500"}
