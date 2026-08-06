@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/force_maintenance_record.schema.json",
+  "title": "Military Maintenance and Refit Record",
+  "description": "A source backed maintenance, repair, overhaul, refit, or modernization interval for one platform or a conserved pool.",
+  "type": "object",
+  "required": [
+    "maintenance_record_id",
+    "country_id",
+    "subject_type",
+    "subject_id",
+    "maintenance_kind",
+    "state",
+    "quantity",
+    "started_at",
+    "completion_estimate",
+    "facility_id",
+    "readiness_effect",
+    "temporal_validity",
+    "provenance"
+  ],
+  "properties": {
+    "maintenance_record_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "country_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "subject_type": {
+      "type": "string",
+      "enum": [
+        "individual_platform",
+        "inventory_pool"
+      ]
+    },
+    "subject_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "maintenance_kind": {
+      "type": "string",
+      "enum": [
+        "inspection",
+        "scheduled_maintenance",
+        "unscheduled_maintenance",
+        "repair",
+        "battle_damage_repair",
+        "overhaul",
+        "refit",
+        "modernization",
+        "reactivation",
+        "preservation",
+        "other"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "announced",
+        "scheduled",
+        "in_progress",
+        "paused",
+        "awaiting_parts",
+        "awaiting_facility",
+        "trials",
+        "completed",
+        "cancelled",
+        "unknown"
+      ]
+    },
+    "quantity": {
+      "$ref": "common.schema.json#/$defs/quantityEstimate"
+    },
+    "started_at": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "completion_estimate": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "exact_date",
+            "date_range",
+            "unknown"
+          ]
+        },
+        "date": {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        },
+        "earliest": {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        },
+        "latest": {
+          "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+        }
+      },
+      "additionalProperties": false
+    },
+    "facility_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": [
+        "no_change",
+        "unavailable",
+        "restricted",
+        "restores_baseline",
+        "improves_capability",
+        "unknown"
+      ]
+    },
+    "dependency_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
+    },
+    "resulting_equipment_type_id": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableId"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "temporal_validity": {
+      "$ref": "common.schema.json#/$defs/temporalValidity"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
