@@ -1,0 +1,961 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "metadata": {
+    "schema_version": "0.1.0",
+    "dataset_id": "dataset_twn_civilian_access_airports_2025_09_01",
+    "title": "Taiwan civilian aviation access nodes and observed activity baseline",
+    "as_of": "2025-09-01T00:00:00Z",
+    "activity_window_start": "2024-09",
+    "activity_window_end": "2025-08",
+    "coordinate_precision_m": 30,
+    "source_ids": [
+      "src_twn_caa_eaip_amdt_01_24_airports",
+      "src_twn_caa_airport_activity_2024",
+      "src_twn_caa_airport_activity_2025"
+    ],
+    "raw_source_sha256": {
+      "eaip_menu": "b5c767271e87d7a86f22ad442c6c71d0dbb20da819749e6df688ec53faa08831",
+      "activity_2024": "3710f119da11006fa61b95a5c408a2461ddf6a2eb247ed694ede4b2ddc85f72f",
+      "activity_2025": "e9392e7496199d8971edf650a66e1581dba2210fdd1fd21bcb8885114a45b5fd",
+      "eaip_pages": {
+        "RCBS": "8db15165619785d960bf5498892b7e346ae41a8ec1153d47345503d02337868e",
+        "RCCM": "4c692f2bde70329fe4d2ea062b5014bdb413b8dccee7f6cc4fb87fc1d4ff9671",
+        "RCFG": "9ff43f9118b870c1d2171f2cd9ed2d8fa3551e5b343c5290742c5a59796fb6fd",
+        "RCFN": "4c090376247cfdb3161d1469a61ce150f9fff6854da32fe4be434421b5bad2a3",
+        "RCGI": "339d927ee3aa0e94abf4d9b460f9926e8e58e8e129d1cef645f7ebc68cf55657",
+        "RCKH": "5c4abb79780e470d43ada9421e33e363bff383e110cb1b1bd0f213ff2a25cde6",
+        "RCKU": "eb239d00f94d994776a805e4985db812f5804a3ed7b8aa866c2dfba6a15ab5ff",
+        "RCKW": "51caea16bcaf86f500cbe48685213a28fb55722fdd225f4946a94fbfd41e0636",
+        "RCLY": "829f584ba921dec05aee7ce448c06b66240db00ab1f314f499cb77c3d3be7747",
+        "RCMQ": "bf9fcacab473d19826ac6802fc370a897d5ff43b5a0a5012020ee52ce3cefc08",
+        "RCMT": "5254ebff4355b72c79b0ff29cc2dffe0d87d073ee7ebdb14c73cd16470aec67a",
+        "RCNN": "743a5ae9de39ff5aa28845179a896c5ff62a6427d8afbb7fe26a6c7a99482961",
+        "RCQC": "9297fb1cf76fb0484c80ec9eab0ad87f2c6d7f41b7bfd20432e1347ae8baf5da",
+        "RCSS": "626b62c22ef9e82a2681a85a7626c083689b8a3e905ebea6d5636901318c15d4",
+        "RCTP": "eef89c7837b3451fd5c5de90eb117c56359633ddf4599b0761af8eedca9d0507",
+        "RCWA": "4f6e8695441bdd1646017a1734f1706a6ffefe211d2fcd15a1280674d7556201",
+        "RCYU": "fcc5f3212ff36ed089415d7e759b8dbcf6214e26fa5de97c254606c66a1ffb7a"
+      }
+    },
+    "excluded_reporting_columns": {
+      "Pingtung": "Civil operations ceased on 2011-08-11 according to the CAA workbook note.",
+      "Hsinchu": "The workbook column is retained by the source but is not normalized as an active civilian access airport."
+    },
+    "transformation": "Official eAIP aerodrome reference point DMS coordinates converted to EPSG:4326 decimal degrees; official monthly observations retained without interpolation."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_taoyuan",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_taoyuan",
+        "name": "Taiwan Taoyuan International Airport",
+        "local_name": "臺灣桃園國際機場",
+        "icao_code": "RCTP",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "250449N",
+          "longitude_dms": "1211356E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 257472,
+          "passengers": {
+            "total": 46617637,
+            "transit": 183432,
+            "arrival_departure": 46434205
+          },
+          "cargo_tonnes": 2420234.765,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.232222222,
+          25.080277778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_kaohsiung",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_kaohsiung",
+        "name": "Kaohsiung International Airport",
+        "local_name": "高雄國際機場",
+        "icao_code": "RCKH",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "223437N",
+          "longitude_dms": "1202101E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 56840,
+          "passengers": {
+            "total": 6517331,
+            "transit": 7647,
+            "arrival_departure": 6509684
+          },
+          "cargo_tonnes": 48938.213,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.350277778,
+          22.576944444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_taipei_songshan",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_taipei_songshan",
+        "name": "Taipei Songshan Airport",
+        "local_name": "臺北松山機場",
+        "icao_code": "RCSS",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "250411N",
+          "longitude_dms": "1213309E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 51488,
+          "passengers": {
+            "total": 5508927,
+            "transit": 0,
+            "arrival_departure": 5508927
+          },
+          "cargo_tonnes": 41716.038,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5525,
+          25.069722222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_hualien",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_hualien",
+        "name": "Hualien Airport",
+        "local_name": "花蓮機場",
+        "icao_code": "RCYU",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "240124N",
+          "longitude_dms": "1213636E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 2290,
+          "passengers": {
+            "total": 77681
+          },
+          "cargo_tonnes": 65.749,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.61,
+          24.023333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_taitung",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_taitung",
+        "name": "Taitung Airport",
+        "local_name": "臺東機場",
+        "icao_code": "RCFN",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "224519N",
+          "longitude_dms": "1210601E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 42989,
+          "passengers": {
+            "total": 256266
+          },
+          "cargo_tonnes": 159.56,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.100277778,
+          22.755277778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_penghu",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_penghu",
+        "name": "Penghu Airport",
+        "local_name": "澎湖機場",
+        "icao_code": "RCQC",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "233407N",
+          "longitude_dms": "1193742E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 35814,
+          "passengers": {
+            "total": 2378505
+          },
+          "cargo_tonnes": 5532.222,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.628333333,
+          23.568611111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_taichung",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_taichung",
+        "name": "Taichung International Airport",
+        "local_name": "臺中國際機場",
+        "icao_code": "RCMQ",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "241554N",
+          "longitude_dms": "1203715E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 26272,
+          "passengers": {
+            "total": 2556487
+          },
+          "cargo_tonnes": 1745.624,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.620833333,
+          24.265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_tainan",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_tainan",
+        "name": "Tainan Airport",
+        "local_name": "臺南機場",
+        "icao_code": "RCNN",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "225657N",
+          "longitude_dms": "1201240E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 4336,
+          "passengers": {
+            "total": 268617
+          },
+          "cargo_tonnes": 781.1,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.211111111,
+          22.949166667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_chiayi",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_chiayi",
+        "name": "Chiayi Airport",
+        "local_name": "嘉義機場",
+        "icao_code": "RCKU",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "232716N",
+          "longitude_dms": "1202412E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 1302,
+          "passengers": {
+            "total": 76941
+          },
+          "cargo_tonnes": 144.4,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.403333333,
+          23.454444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_qimei",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_qimei",
+        "name": "Qimei Airport",
+        "local_name": "七美機場",
+        "icao_code": "RCCM",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "231247N",
+          "longitude_dms": "1192503E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 1889,
+          "passengers": {
+            "total": 21143
+          },
+          "cargo_tonnes": 9.623,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.4175,
+          23.213055556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_wangan",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_wangan",
+        "name": "Wangan Airport",
+        "local_name": "望安機場",
+        "icao_code": "RCWA",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "232209N",
+          "longitude_dms": "1193013E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 168,
+          "passengers": {
+            "total": 1723
+          },
+          "cargo_tonnes": 0.122,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.503611111,
+          23.369166667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_lanyu",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_lanyu",
+        "name": "Lanyu Airport",
+        "local_name": "蘭嶼機場",
+        "icao_code": "RCLY",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "220140N",
+          "longitude_dms": "1213205E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 2174,
+          "passengers": {
+            "total": 31585
+          },
+          "cargo_tonnes": 20,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.534722222,
+          22.027777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_green_island",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_green_island",
+        "name": "Green Island Airport",
+        "local_name": "綠島機場",
+        "icao_code": "RCGI",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "224024N",
+          "longitude_dms": "1212758E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 2276,
+          "passengers": {
+            "total": 22032
+          },
+          "cargo_tonnes": 16,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.466111111,
+          22.673333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_kinmen",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_kinmen",
+        "name": "Kinmen Airport",
+        "local_name": "金門機場",
+        "icao_code": "RCBS",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "242544N",
+          "longitude_dms": "1182140E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 27414,
+          "passengers": {
+            "total": 2091475
+          },
+          "cargo_tonnes": 6910.074,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.361111111,
+          24.428888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_matsu_beigan",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_matsu_beigan",
+        "name": "Matsu Beigan Airport",
+        "local_name": "馬祖北竿機場",
+        "icao_code": "RCMT",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "261327N",
+          "longitude_dms": "1200010E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 1676,
+          "passengers": {
+            "total": 74650
+          },
+          "cargo_tonnes": 393.79,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.002777778,
+          26.224166667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_matsu_nangan",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_matsu_nangan",
+        "name": "Matsu Nangan Airport",
+        "local_name": "馬祖南竿機場",
+        "icao_code": "RCFG",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "260935N",
+          "longitude_dms": "1195730E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 5664,
+          "passengers": {
+            "total": 329687
+          },
+          "cargo_tonnes": 1433.167,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.958333333,
+          26.159722222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "infrastructure_twn_airport_hengchun",
+      "properties": {
+        "feature_id": "infrastructure_twn_airport_hengchun",
+        "name": "Hengchun Airport",
+        "local_name": "恆春機場",
+        "icao_code": "RCKW",
+        "facility_type": "civilian_access_airport",
+        "infrastructure_domain": "aviation_logistics",
+        "civilian_access_node": true,
+        "military_facility_status": "not_assessed",
+        "military_use_asserted": false,
+        "target_status": "not_assessed",
+        "dual_use_status": "not_assessed",
+        "operational_use": [
+          "civilian_transport",
+          "aviation_access",
+          "passenger_and_cargo_flow"
+        ],
+        "location_method": "official_eaip_aerodrome_reference_point",
+        "source_coordinate": {
+          "latitude_dms": "220227N",
+          "longitude_dms": "1204349E"
+        },
+        "coordinate_precision_m": 30,
+        "activity_baseline": {
+          "months": 12,
+          "window_start": "2024-09",
+          "window_end": "2025-08",
+          "aircraft_movements": 0,
+          "passengers": {
+            "total": 0
+          },
+          "cargo_tonnes": 0,
+          "interpretation": "Trailing twelve month observed civilian utilization, not airport capacity or military throughput."
+        },
+        "as_of": "2025-09-01T00:00:00Z",
+        "source_ids": [
+          "src_twn_caa_eaip_amdt_01_24_airports",
+          "src_twn_caa_airport_activity_2024",
+          "src_twn_caa_airport_activity_2025"
+        ],
+        "representation_note": "Point represents civilian aerodrome access only. It does not assert exclusive civilian ownership, military use, military absence, strike status, damage state, authorization, runway geometry, terminal geometry, engineering capacity, or readiness."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.730277778,
+          22.040833333
+        ]
+      }
+    }
+  ]
+}

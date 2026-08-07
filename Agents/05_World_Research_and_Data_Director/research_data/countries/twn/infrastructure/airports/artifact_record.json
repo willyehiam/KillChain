@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_id": "artifact_twn_civilian_access_airports_2025_09_01",
+  "dataset_id": "dataset_twn_civilian_access_airports_2025_09_01",
+  "artifacts": {
+    "airport_nodes": {
+      "path": "civilian_access_airports.geojson",
+      "format": "GeoJSON",
+      "crs": "EPSG:4326",
+      "feature_count": 17,
+      "coordinate_precision_m": 30,
+      "bounds": [
+        118.361111111,
+        22.027777778,
+        121.61,
+        26.224166667
+      ],
+      "artifact_sha256": "df1528e1ecccf280267f88711b9c48402b1ab0f0858fd5d3b43e0a6b07ade7e6"
+    },
+    "monthly_activity": {
+      "path": "airport_activity_monthly_2024_09_to_2025_08.ndjson",
+      "format": "NDJSON",
+      "record_count": 204,
+      "period_start": "2024-09",
+      "period_end": "2025-08",
+      "artifact_sha256": "189d5d0b9d3ccf316c3964b6dd18ba68840c0d26209d3a21c2ada49272bd43a8"
+    }
+  },
+  "raw_source_sha256": {
+    "eaip_menu": "b5c767271e87d7a86f22ad442c6c71d0dbb20da819749e6df688ec53faa08831",
+    "activity_2024": "3710f119da11006fa61b95a5c408a2461ddf6a2eb247ed694ede4b2ddc85f72f",
+    "activity_2025": "e9392e7496199d8971edf650a66e1581dba2210fdd1fd21bcb8885114a45b5fd",
+    "eaip_pages": {
+      "RCBS": "8db15165619785d960bf5498892b7e346ae41a8ec1153d47345503d02337868e",
+      "RCCM": "4c692f2bde70329fe4d2ea062b5014bdb413b8dccee7f6cc4fb87fc1d4ff9671",
+      "RCFG": "9ff43f9118b870c1d2171f2cd9ed2d8fa3551e5b343c5290742c5a59796fb6fd",
+      "RCFN": "4c090376247cfdb3161d1469a61ce150f9fff6854da32fe4be434421b5bad2a3",
+      "RCGI": "339d927ee3aa0e94abf4d9b460f9926e8e58e8e129d1cef645f7ebc68cf55657",
+      "RCKH": "5c4abb79780e470d43ada9421e33e363bff383e110cb1b1bd0f213ff2a25cde6",
+      "RCKU": "eb239d00f94d994776a805e4985db812f5804a3ed7b8aa866c2dfba6a15ab5ff",
+      "RCKW": "51caea16bcaf86f500cbe48685213a28fb55722fdd225f4946a94fbfd41e0636",
+      "RCLY": "829f584ba921dec05aee7ce448c06b66240db00ab1f314f499cb77c3d3be7747",
+      "RCMQ": "bf9fcacab473d19826ac6802fc370a897d5ff43b5a0a5012020ee52ce3cefc08",
+      "RCMT": "5254ebff4355b72c79b0ff29cc2dffe0d87d073ee7ebdb14c73cd16470aec67a",
+      "RCNN": "743a5ae9de39ff5aa28845179a896c5ff62a6427d8afbb7fe26a6c7a99482961",
+      "RCQC": "9297fb1cf76fb0484c80ec9eab0ad87f2c6d7f41b7bfd20432e1347ae8baf5da",
+      "RCSS": "626b62c22ef9e82a2681a85a7626c083689b8a3e905ebea6d5636901318c15d4",
+      "RCTP": "eef89c7837b3451fd5c5de90eb117c56359633ddf4599b0761af8eedca9d0507",
+      "RCWA": "4f6e8695441bdd1646017a1734f1706a6ffefe211d2fcd15a1280674d7556201",
+      "RCYU": "fcc5f3212ff36ed089415d7e759b8dbcf6214e26fa5de97c254606c66a1ffb7a"
+    }
+  },
+  "source_ids": [
+    "src_twn_caa_eaip_amdt_01_24_airports",
+    "src_twn_caa_airport_activity_2024",
+    "src_twn_caa_airport_activity_2025"
+  ],
+  "transformations": [
+    "Selected seventeen active civilian access airports from the official CAA activity workbook.",
+    "Excluded the Pingtung and Hsinchu reporting columns rather than implying active civilian airport access.",
+    "Converted official eAIP aerodrome reference point coordinates from DMS to decimal EPSG:4326.",
+    "Retained exactly September 2024 through August 2025 and preserved zero activity observations.",
+    "Preserved total passenger conservation for the three source columns that separately report transit and arrival or departure passengers.",
+    "Derived trailing twelve month sums by addition only and did not infer capacity, readiness, or military use."
+  ],
+  "interpretation_warning": "Civilian access and observed activity do not establish military use, military absence, exclusive ownership, target status, engineering capacity, or readiness."
+}

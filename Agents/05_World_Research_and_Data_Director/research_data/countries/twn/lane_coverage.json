@@ -113,26 +113,27 @@
       "name": "Energy, transport, communications, and logistics",
       "status": "collecting",
       "owner": "agent_05_world_research_and_data_director",
-      "record_count": 91,
-      "source_count": 3,
+      "record_count": 312,
+      "source_count": 6,
       "claim_count": 0,
       "contradiction_count": 0,
-      "exact_geometry_count": 7,
+      "exact_geometry_count": 24,
       "approximate_geometry_count": 0,
       "unknown_geometry_count": 0,
       "oldest_source_date": "2017-01-24",
-      "newest_source_date": "2017-11-28",
+      "newest_source_date": "2026-01-26",
       "reviewed_at": "2026-08-07",
       "review_after": "2026-11-07",
       "coverage_disposition": "collecting_civilian_access_nodes_pending_independent_review",
       "blocking_questions": [
         "Independent infrastructure review has not passed.",
-        "The source locations are landmark points, not harbor polygons, berth geometry, storage areas, channels, or engineering capacity.",
-        "Observed traffic is a utilization baseline and must not be interpreted as maximum throughput or mobilization capacity.",
-        "The wharf resource is a postbookmark live snapshot; only records carrying source update months no later than August 2025 are admitted.",
-        "Military facilities, military access, defenses, and targeting semantics are intentionally excluded."
+        "Access points do not provide full facility polygons, engineering systems, storage, fuel, repair, defenses, or physical capacity.",
+        "Observed activity is utilization and must not be interpreted as maximum throughput, mobilization capacity, readiness, or guaranteed service.",
+        "The airport 2025 activity workbook and port geometry snapshot have explicit retrospective evidence limits that must remain visible to consumers.",
+        "Military ownership, military tenancy, military access, defenses, target status, and damage susceptibility have not been assessed.",
+        "Road, rail, inland waterway, power, fuel, communications, route, fleet, repair, substitution, and hinterland network links are not populated."
       ],
-      "notes": "This packet supports trade, logistics, blockade, evacuation, and access mechanics after a separate simulation contract is accepted. It does not create strike targets or executable capacity by itself. The exact source derived points are civilian access nodes and observed activity is not engineering capacity."
+      "notes": "This rollup is a research index over two independently validated collecting packets. It does not merge port and airport semantics, create military facilities, or authorize executable simulation behavior. The exact source derived points are civilian access nodes and observed activity is not engineering capacity."
     },
     "geography_provinces_terrain": {
       "name": "Geography, provinces, terrain, rivers, and maritime access",

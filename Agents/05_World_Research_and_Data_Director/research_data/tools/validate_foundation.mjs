@@ -125,12 +125,18 @@ const tierAGeographySources = TIER_A_COUNTRY_DIRECTORIES.flatMap((countryCode) =
   }));
 });
 const tierAInfrastructureSources = TIER_A_COUNTRY_DIRECTORIES.flatMap((countryCode) => {
-  const sourcePath = path.join(countriesRoot, countryCode, "infrastructure", "ports", "sources.ndjson");
-  if (!fs.existsSync(sourcePath)) return [];
-  return readNdjson(sourcePath).map((source) => ({
-    source,
-    origin: path.relative(researchRoot, sourcePath),
-  }));
+  const infrastructureRoot = path.join(countriesRoot, countryCode, "infrastructure");
+  if (!fs.existsSync(infrastructureRoot)) return [];
+  return fs.readdirSync(infrastructureRoot, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .flatMap((entry) => {
+      const sourcePath = path.join(infrastructureRoot, entry.name, "sources.ndjson");
+      if (!fs.existsSync(sourcePath)) return [];
+      return readNdjson(sourcePath).map((source) => ({
+        source,
+        origin: path.relative(researchRoot, sourcePath),
+      }));
+    });
 });
 
 const sourceRecords = [
@@ -327,12 +333,21 @@ for (const country of registry.countries.filter((entry) => entry.profile_path)) 
     const infrastructureManifest = readJson(infrastructureManifestPath);
     if (infrastructureManifest) {
       infrastructureLayerCount += 1;
-      const infrastructureArtifact = readJson(path.join(path.dirname(infrastructureManifestPath), "artifact_record.json"));
       assert(infrastructureManifest.country_id === undefined || infrastructureManifest.country_id === country.country_id, `${country.country_code}: infrastructure manifest country mismatch`);
       assert(infrastructureManifest.coverage?.as_of === bookmark.world_time, `${country.country_code}: infrastructure bookmark mismatch`);
-      assert(infrastructureManifest.record_counts?.port_nodes === infrastructureArtifact?.artifacts?.port_nodes?.feature_count, `${country.country_code}: infrastructure port count differs from artifact metadata`);
       assert(infrastructureManifest.record_counts?.total_records === profile.coverage.energy_transport_communications_logistics.record_count, `${country.country_code}: infrastructure record count differs from dossier metadata`);
       assert(profile.completeness?.infrastructure_layer_status !== "absent", `${country.country_code}: populated infrastructure layer cannot be reported as absent`);
+      const childManifests = Object.values(infrastructureManifest.child_manifests ?? {}).map((relative) => {
+        const childPath = path.resolve(path.dirname(infrastructureManifestPath), relative);
+        assert(fs.existsSync(childPath), `${country.country_code}: infrastructure child manifest does not exist: ${relative}`);
+        return readJson(childPath);
+      }).filter(Boolean);
+      if (childManifests.length) {
+        const childRecordCount = childManifests.reduce((sum, child) => sum + (child.record_counts?.total_records ?? 0), 0);
+        assert(childRecordCount === infrastructureManifest.record_counts?.total_records, `${country.country_code}: infrastructure rollup does not conserve child record counts`);
+        const childSourceIds = new Set(childManifests.flatMap((child) => child.source_ids ?? []));
+        assert(sameMembers([...childSourceIds], infrastructureManifest.source_ids ?? []), `${country.country_code}: infrastructure rollup source set differs from children`);
+      }
     }
   } else {
     assert(profile.completeness?.infrastructure_layer_status === undefined || profile.completeness?.infrastructure_layer_status === "absent", `${country.country_code}: absent infrastructure layer has a populated status`);

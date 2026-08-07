@@ -20,7 +20,9 @@
     "force_ledger": "force_ledger/manifest.json",
     "war_authority_workflow": "war_authority_workflow.json",
     "administrative_geography": "geography/manifest.json",
-    "civilian_international_ports": "infrastructure/ports/manifest.json"
+    "civilian_international_ports": "infrastructure/ports/manifest.json",
+    "civilian_access_infrastructure": "infrastructure/manifest.json",
+    "civilian_access_airports": "infrastructure/airports/manifest.json"
   },
   "lane_ids": [
     "politics_and_institutions",

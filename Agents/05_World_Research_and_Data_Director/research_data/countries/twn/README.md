@@ -18,7 +18,9 @@ All armed services, joint commands, reserves, Coast Guard, civil defense organiz
 6. `WORK_PACKAGES.md` defines bounded parallel research packages.
 7. `force_ledger/manifest.json` owns complete military accounting status.
 8. `geography/manifest.json` owns the 22 feature first order administrative layer.
-9. `infrastructure/ports/manifest.json` owns seven international commercial port nodes and their prebookmark activity baseline.
+9. `infrastructure/manifest.json` indexes the civilian maritime and aviation access layers.
+10. `infrastructure/ports/manifest.json` owns seven international commercial port nodes and their prebookmark activity baseline.
+11. `infrastructure/airports/manifest.json` owns seventeen civilian aviation access nodes and their observed activity baseline.
 
 ## Truth rule
 

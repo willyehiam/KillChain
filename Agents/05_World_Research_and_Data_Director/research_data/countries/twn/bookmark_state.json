@@ -49,7 +49,24 @@
     "infrastructure_twn_port_taichung",
     "infrastructure_twn_port_kaohsiung",
     "infrastructure_twn_port_anping",
-    "infrastructure_twn_port_hualien"
+    "infrastructure_twn_port_hualien",
+    "infrastructure_twn_airport_taoyuan",
+    "infrastructure_twn_airport_kaohsiung",
+    "infrastructure_twn_airport_taipei_songshan",
+    "infrastructure_twn_airport_hualien",
+    "infrastructure_twn_airport_taitung",
+    "infrastructure_twn_airport_penghu",
+    "infrastructure_twn_airport_taichung",
+    "infrastructure_twn_airport_tainan",
+    "infrastructure_twn_airport_chiayi",
+    "infrastructure_twn_airport_qimei",
+    "infrastructure_twn_airport_wangan",
+    "infrastructure_twn_airport_lanyu",
+    "infrastructure_twn_airport_green_island",
+    "infrastructure_twn_airport_kinmen",
+    "infrastructure_twn_airport_matsu_beigan",
+    "infrastructure_twn_airport_matsu_nangan",
+    "infrastructure_twn_airport_hengchun"
   ],
   "alliances": [],
   "sanctions": [],
@@ -77,7 +94,10 @@
     "src_twn_us_taiwan_relations_act",
     "src_twn_moi_wharf_main_1150409",
     "src_twn_tipc_container_activity_8368",
-    "src_twn_tipc_vessel_activity_8365"
+    "src_twn_tipc_vessel_activity_8365",
+    "src_twn_caa_eaip_amdt_01_24_airports",
+    "src_twn_caa_airport_activity_2024",
+    "src_twn_caa_airport_activity_2025"
   ],
   "claim_ids": [
     "claim_twn_president_head_of_state_and_command",
@@ -99,7 +119,7 @@
     "claim_twn_legislative_seats_2025_09_01",
     "claim_twn_tra_security_context"
   ],
-  "notes": "Politics and institutions, national force accounting, first order administrative geography, and seven civilian international commercial port access nodes have entered collecting or review states. Economic, fixed facility, strategic industry, and crisis integration remain incomplete. No collecting packet is executable simulation truth before its acceptance gates pass.",
+  "notes": "Politics and institutions, national force accounting, first order administrative geography, seven civilian international commercial port access nodes, and seventeen civilian aviation access nodes have entered collecting or review states. Economic, fixed facility, strategic industry, and crisis integration remain incomplete. No collecting packet is executable simulation truth before its acceptance gates pass.",
   "acceptance_state": {
     "politics_lane_status": "needs_review",
     "bookmark_firewall_passed": false,

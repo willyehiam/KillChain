@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "dataset_twn_civilian_access_airports_2025_09_01",
+  "title": "Taiwan civilian aviation access nodes and observed activity baseline",
+  "status": "collecting",
+  "coverage": {
+    "description": "Seventeen active civilian aviation access airports represented by official aerodrome reference points, with twelve months of observed CAA activity from September 2024 through August 2025.",
+    "country_codes": [
+      "TWN"
+    ],
+    "activity_window_start": "2024-09",
+    "activity_window_end": "2025-08",
+    "as_of": "2025-09-01T00:00:00Z"
+  },
+  "record_counts": {
+    "airport_nodes": 17,
+    "monthly_activity_records": 204,
+    "total_records": 221
+  },
+  "source_ids": [
+    "src_twn_caa_eaip_amdt_01_24_airports",
+    "src_twn_caa_airport_activity_2024",
+    "src_twn_caa_airport_activity_2025"
+  ],
+  "known_gaps": [
+    "Independent infrastructure review has not passed.",
+    "The source locations are aerodrome reference points, not runway, apron, terminal, fuel, warehouse, navigation, or perimeter geometry.",
+    "Observed traffic is a utilization baseline and must not be interpreted as maximum throughput, engineering capacity, readiness, or military lift capacity.",
+    "The 2025 activity workbook was published after the bookmark and is admitted only as retrospective evidence for January through August 2025; it was not contemporaneously available to the player.",
+    "Military ownership, military tenancy, military use, military access, defenses, and target status have not been assessed.",
+    "Pingtung civil operations and the Hsinchu reporting column are intentionally excluded from the active civilian access set.",
+    "Route networks, airline schedules, fleet assignment, fuel supply, ground access, repair capacity, diversion suitability, and substitution are not populated."
+  ],
+  "open_contradiction_ids": [],
+  "owner": "agent_05_world_research_and_data_director",
+  "last_reviewed": "2026-08-07",
+  "review_after": "2026-11-07",
+  "notes": "This packet supports civilian access, mobility, evacuation, blockade, disruption, and logistics research after a separate simulation contract is accepted. It does not create military bases, strike targets, capacity, or executable missions by itself."
+}
