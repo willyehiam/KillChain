@@ -22,6 +22,10 @@ const datasetRows = (ledgerDir, manifest, family, fallback = null) => {
   const file = path.join(ledgerDir, relative);
   return fs.existsSync(file) ? readRows(file) : [];
 };
+const isOpeningProfileEligible = (source) => !(
+  source.mutability_class === 'live_mutable'
+  && source.bookmark_evidence_status === 'quarantined_no_prebookmark_temporal_proof'
+);
 
 for (const code of countryCodes) {
   const countryDir = path.join(countriesRoot, code);
@@ -46,6 +50,10 @@ for (const code of countryCodes) {
   const airportsManifestPath = path.join(airportsDir, 'manifest.json');
   const airportsSourcesPath = path.join(airportsDir, 'sources.ndjson');
   const airportsArtifactPath = path.join(airportsDir, 'artifact_record.json');
+  const railDir = path.join(infrastructureDir, 'rail');
+  const railManifestPath = path.join(railDir, 'manifest.json');
+  const railSourcesPath = path.join(railDir, 'sources.ndjson');
+  const railArtifactPath = path.join(railDir, 'artifact_record.json');
   const profile = readJson(profilesPath);
   const coverage = readJson(coveragePath);
   const researchManifest = readJson(researchManifestPath);
@@ -63,9 +71,13 @@ for (const code of countryCodes) {
   const airportsManifest = hasAirports ? readJson(airportsManifestPath) : null;
   const airportsSources = hasAirports ? readRows(airportsSourcesPath) : [];
   const airportsArtifact = hasAirports ? readJson(airportsArtifactPath) : null;
-  const hasInfrastructure = fs.existsSync(infrastructureManifestPath) && hasPorts && hasAirports;
+  const hasRail = fs.existsSync(railManifestPath) && fs.existsSync(railSourcesPath) && fs.existsSync(railArtifactPath);
+  const railManifest = hasRail ? readJson(railManifestPath) : null;
+  const railSources = hasRail ? readRows(railSourcesPath) : [];
+  const railArtifact = hasRail ? readJson(railArtifactPath) : null;
+  const hasInfrastructure = fs.existsSync(infrastructureManifestPath) && hasPorts && hasAirports && hasRail;
   const infrastructureManifest = hasInfrastructure ? readJson(infrastructureManifestPath) : null;
-  const infrastructureSources = [...portsSources, ...airportsSources];
+  const infrastructureSources = [...portsSources, ...airportsSources, ...railSources];
   const recordsByFamily = Object.fromEntries(coreFamilies.map((family) => [family, datasetRows(ledgerDir, manifest, family)]));
   const sources = datasetRows(ledgerDir, manifest, 'sources', 'sources.ndjson');
   const claims = datasetRows(ledgerDir, manifest, 'claims', 'claims.ndjson');
@@ -84,13 +96,15 @@ for (const code of countryCodes) {
   const politicsRecordCount = (politics.institutions?.length ?? 0) + (politics.political_actors?.length ?? 0);
   const openPoliticsContradictions = evidence.contradiction_sets.filter((set) => set.status === 'open').length;
   const openingPoliticsSourceIds = evidence.sources
-    .filter((source) => !(source.mutability_class === 'live_mutable' && source.bookmark_evidence_status === 'quarantined_no_prebookmark_temporal_proof'))
+    .filter(isOpeningProfileEligible)
     .map((source) => source.source_id);
+  const openingGeographySourceIds = geographySources.filter(isOpeningProfileEligible).map((source) => source.source_id);
+  const openingInfrastructureSourceIds = infrastructureSources.filter(isOpeningProfileEligible).map((source) => source.source_id);
   profile.source_ids = [...new Set([
     'src_imf_weo_2026_04_ngdpd_2025',
     ...openingPoliticsSourceIds,
-    ...geographySources.map((source) => source.source_id),
-    ...infrastructureSources.map((source) => source.source_id),
+    ...openingGeographySourceIds,
+    ...openingInfrastructureSourceIds,
   ])];
   profile.coverage.politics_and_institutions.record_count = politicsRecordCount;
   profile.coverage.politics_and_institutions.source_count = evidence.sources.length;
@@ -169,19 +183,23 @@ for (const code of countryCodes) {
     const portActivityCount = portsArtifact.artifacts?.monthly_activity?.record_count ?? 0;
     const airportNodeCount = airportsArtifact.artifacts?.airport_nodes?.feature_count ?? 0;
     const airportActivityCount = airportsArtifact.artifacts?.monthly_activity?.record_count ?? 0;
-    const infrastructureRecordCount = portNodeCount + portActivityCount + airportNodeCount + airportActivityCount;
+    const railStationNodeCount = railArtifact.artifacts?.station_nodes?.feature_count ?? 0;
+    const railPassengerActivityCount = railArtifact.artifacts?.station_passenger_activity?.record_count ?? 0;
+    const railFreightActivityCount = railArtifact.artifacts?.line_freight_activity?.record_count ?? 0;
+    const infrastructureRecordCount = portNodeCount + portActivityCount + airportNodeCount + airportActivityCount + railStationNodeCount + railPassengerActivityCount + railFreightActivityCount;
     const infrastructureProfileLane = profile.coverage.energy_transport_communications_logistics;
     infrastructureProfileLane.status = infrastructureManifest.status;
     infrastructureProfileLane.record_count = infrastructureRecordCount;
     infrastructureProfileLane.source_count = infrastructureSources.length;
     infrastructureProfileLane.open_question_count = infrastructureManifest.known_gaps?.length ?? 0;
-    infrastructureProfileLane.notes = `${infrastructureManifest.notes} Counts include ${portNodeCount} civilian port nodes, ${airportNodeCount} civilian airport nodes, and ${portActivityCount + airportActivityCount} monthly observations and do not imply independent acceptance.`;
+    infrastructureProfileLane.notes = `${infrastructureManifest.notes} Counts include ${portNodeCount} civilian port nodes, ${airportNodeCount} civilian airport nodes, ${railStationNodeCount} postbookmark rail station reference nodes, ${portActivityCount + airportActivityCount} monthly port and airport observations, and ${railPassengerActivityCount + railFreightActivityCount} historical rail observations. Counts do not imply independent acceptance or opening state eligibility.`;
     profile.dataset_paths.infrastructure = 'infrastructure/manifest.json';
     profile.completeness.infrastructure_layer_status = infrastructureManifest.status;
     profile.unknowns = (profile.unknowns ?? []).filter((entry) => !entry.startsWith('Strategic industry, energy, transport, communications, logistics, alliances, sanctions, and crisis commitments are not yet populated.'));
     profile.unknowns = profile.unknowns.filter((entry) => !entry.startsWith('County and city boundary geometry is collecting; lower level administration, terrain, hydrography, ports, bases, and strategic corridors remain unpopulated.'));
     profile.unknowns = profile.unknowns.filter((entry) => !entry.startsWith('Seven international commercial port nodes and twelve month activity baselines are collecting;'));
-    const refinedInfrastructureUnknown = 'Seven international commercial ports, seventeen civilian access airports, and twelve month activity baselines are collecting; full facility geometry, capacity, hinterland links, energy, communications, repair, substitution, and military access remain unpopulated.';
+    profile.unknowns = profile.unknowns.filter((entry) => !entry.startsWith('Seven international commercial ports, seventeen civilian access airports, and twelve month activity baselines are collecting;'));
+    const refinedInfrastructureUnknown = 'Seven international commercial ports, seventeen civilian access airports, 244 postbookmark rail station reference points, port and airport monthly baselines, and 2021 rail activity observations are collecting; rail topology, full facility geometry, capacity, hinterland links, energy, communications, repair, substitution, and military access remain unpopulated.';
     if (!profile.unknowns.includes(refinedInfrastructureUnknown)) profile.unknowns.push(refinedInfrastructureUnknown);
     const refinedGeographyUnknown = 'County and city boundary geometry is collecting; lower level administration, terrain, hydrography, bases, and strategic corridors remain unpopulated.';
     if (!profile.unknowns.includes(refinedGeographyUnknown)) profile.unknowns.push(refinedGeographyUnknown);
@@ -193,19 +211,20 @@ for (const code of countryCodes) {
     infrastructureMatrixLane.source_count = infrastructureSources.length;
     infrastructureMatrixLane.claim_count = 0;
     infrastructureMatrixLane.contradiction_count = infrastructureManifest.open_contradiction_ids?.length ?? 0;
-    infrastructureMatrixLane.exact_geometry_count = portNodeCount + airportNodeCount;
+    infrastructureMatrixLane.exact_geometry_count = portNodeCount + airportNodeCount + railStationNodeCount;
     infrastructureMatrixLane.approximate_geometry_count = 0;
     infrastructureMatrixLane.unknown_geometry_count = 0;
     infrastructureMatrixLane.oldest_source_date = infrastructureDates.at(0) ?? null;
     infrastructureMatrixLane.newest_source_date = infrastructureDates.at(-1) ?? null;
     infrastructureMatrixLane.reviewed_at = infrastructureManifest.last_reviewed;
     infrastructureMatrixLane.review_after = infrastructureManifest.review_after;
-    infrastructureMatrixLane.coverage_disposition = 'collecting_civilian_access_nodes_pending_independent_review';
+    infrastructureMatrixLane.coverage_disposition = 'collecting_civilian_access_and_quarantined_reference_nodes_pending_independent_review';
     infrastructureMatrixLane.blocking_questions = [...(infrastructureManifest.known_gaps ?? [])];
-    infrastructureMatrixLane.notes = `${infrastructureManifest.notes} The exact source derived points are civilian access nodes and observed activity is not engineering capacity.`;
+    infrastructureMatrixLane.notes = `${infrastructureManifest.notes} Port and airport points are civilian access nodes. Rail station points are postbookmark references quarantined from opening state. Observed activity is not engineering capacity.`;
     researchManifest.files.civilian_access_infrastructure = 'infrastructure/manifest.json';
     researchManifest.files.civilian_international_ports = 'infrastructure/ports/manifest.json';
     researchManifest.files.civilian_access_airports = 'infrastructure/airports/manifest.json';
+    researchManifest.files.civilian_rail_access = 'infrastructure/rail/manifest.json';
   }
   coverage.overall_status = 'collecting';
   coverage.rollup = Object.fromEntries([
@@ -219,7 +238,7 @@ for (const code of countryCodes) {
       if (fs.readFileSync(file, 'utf8') !== output) errors.push(`${code}: ${path.basename(file)} is not reconciled to force_ledger/manifest.json`);
     } else fs.writeFileSync(file, output);
   }
-  reports.push({country:code,politics:{record_count:politicsRecordCount,source_count:evidence.sources.length,claim_count:evidence.claims.length,contradiction_count:openPoliticsContradictions},military:{status:manifest.status,record_count:recordCount,source_count:sources.length,claim_count:claims.length,contradiction_count:contradictions.length,geometry},geography:hasGeography?{status:geographyManifest.status,record_count:geographyArtifact.feature_count,source_count:geographySources.length,exact_geometry_count:geographyArtifact.feature_count}:null,infrastructure:hasInfrastructure?{status:infrastructureManifest.status,record_count:infrastructureManifest.record_counts.total_records,source_count:infrastructureSources.length,exact_geometry_count:infrastructureManifest.record_counts.access_nodes}:null});
+  reports.push({country:code,politics:{record_count:politicsRecordCount,source_count:evidence.sources.length,claim_count:evidence.claims.length,contradiction_count:openPoliticsContradictions},military:{status:manifest.status,record_count:recordCount,source_count:sources.length,claim_count:claims.length,contradiction_count:contradictions.length,geometry},geography:hasGeography?{status:geographyManifest.status,record_count:geographyArtifact.feature_count,source_count:geographySources.length,exact_geometry_count:geographyArtifact.feature_count}:null,infrastructure:hasInfrastructure?{status:infrastructureManifest.status,record_count:infrastructureManifest.record_counts.total_records,source_count:infrastructureSources.length,exact_geometry_count:infrastructureManifest.record_counts.exact_geometry_records}:null});
 }
 
 console.log(JSON.stringify({status:errors.length ? 'FAIL' : 'PASS',mode:checkOnly ? 'check' : 'write',countries:reports,errors}, null, 2));

@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_id": "artifact_twn_civilian_rail_access_2025_09_01",
+  "dataset_id": "dataset_twn_civilian_rail_access_2025_09_01",
+  "generated_at": "2026-08-07T00:00:00Z",
+  "artifacts": {
+    "station_nodes": {
+      "path": "civilian_rail_stations.geojson",
+      "format": "GeoJSON",
+      "crs": "EPSG:4326",
+      "feature_count": 244,
+      "coordinate_precision_m": 25,
+      "bounds": [
+        120.21249,
+        22.26704,
+        121.94507,
+        25.13754
+      ],
+      "artifact_sha256": "aae4bb15c957f18177f36d74054b2aaefd30fa97e907a7eec463107883f4b02c"
+    },
+    "station_passenger_activity": {
+      "path": "rail_station_passenger_activity_2021.ndjson",
+      "format": "NDJSON",
+      "record_count": 239,
+      "period_start": "2021",
+      "period_end": "2021",
+      "artifact_sha256": "f6297c9c26e4bd77270c9cf6f6da1ad493c0ded3f252e1c3769ea9d8f10ea262"
+    },
+    "line_freight_activity": {
+      "path": "rail_line_freight_activity_2021.ndjson",
+      "format": "NDJSON",
+      "record_count": 13,
+      "period_start": "2021",
+      "period_end": "2021",
+      "artifact_sha256": "bd73cc45084d408c2313e9388b4a27f951a4e2244aa8a8b44175adf765d26d4a"
+    }
+  },
+  "raw_source_sha256": {
+    "station_directory": "ff0f463395d6c690fd8f9f1ea42be84dce7fcf0cb2cc5b1bc70ed489cef183ee",
+    "station_and_line_flows_2021": "ed6055b22e02658ff789e9c41c8bd47579844ca0531e665a00b4b61ec3ea7218"
+  },
+  "source_ids": [
+    "src_twn_tra_station_directory_retrieved_2026_08_07",
+    "src_twn_tra_station_and_line_flows_2021"
+  ],
+  "transformations": [
+    "Excluded the one directory row without an official GPS value rather than inventing a coordinate.",
+    "Converted official latitude and longitude text to EPSG:4326 points without interpolation.",
+    "Matched passenger observations to directory points only by exact official local station name.",
+    "Excluded the unmatched zero passenger Hualien Harbor row rather than inventing a station node.",
+    "Kept thirteen official line freight totals separate from station passenger observations.",
+    "Did not allocate line freight totals to stations because the source withholds station freight detail.",
+    "Did not infer 2025 service, utilization, capacity, connectivity, military access, or operability."
+  ],
+  "interpretation_warning": "The station directory is a postbookmark reference layer, not opening state. Historical passenger and line freight observations are not current capacity, executable routes, military access, or target nominations."
+}

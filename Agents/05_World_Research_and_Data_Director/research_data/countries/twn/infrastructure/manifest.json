@@ -1,10 +1,10 @@
 {
   "schema_version": "0.1.0",
   "dataset_id": "dataset_twn_civilian_access_infrastructure_2025_09_01",
-  "title": "Taiwan civilian maritime and aviation access research rollup",
+  "title": "Taiwan civilian maritime, aviation, and rail access research rollup",
   "status": "collecting",
   "coverage": {
-    "description": "Research rollup for official civilian maritime and aviation access points and their observed prebookmark or retrospectively reconstructed activity baselines.",
+    "description": "Research rollup for official civilian maritime and aviation access points, current rail station reference points, and explicitly bounded historical activity observations.",
     "country_codes": [
       "TWN"
     ],
@@ -14,16 +14,24 @@
   },
   "child_manifests": {
     "civilian_international_ports": "ports/manifest.json",
-    "civilian_access_airports": "airports/manifest.json"
+    "civilian_access_airports": "airports/manifest.json",
+    "civilian_rail_access": "rail/manifest.json"
   },
   "record_counts": {
     "port_nodes": 7,
     "airport_nodes": 17,
+    "rail_station_reference_nodes": 244,
     "monthly_port_activity_records": 84,
     "monthly_airport_activity_records": 204,
+    "historical_rail_station_passenger_activity_records": 239,
+    "historical_rail_line_freight_activity_records": 13,
     "access_nodes": 24,
+    "postbookmark_reference_nodes": 244,
+    "mapped_nodes": 268,
     "monthly_activity_records": 288,
-    "total_records": 312
+    "historical_activity_records": 540,
+    "exact_geometry_records": 268,
+    "total_records": 808
   },
   "source_ids": [
     "src_twn_moi_wharf_main_1150409",
@@ -31,19 +39,24 @@
     "src_twn_tipc_vessel_activity_8365",
     "src_twn_caa_eaip_amdt_01_24_airports",
     "src_twn_caa_airport_activity_2024",
-    "src_twn_caa_airport_activity_2025"
+    "src_twn_caa_airport_activity_2025",
+    "src_twn_tra_station_directory_retrieved_2026_08_07",
+    "src_twn_tra_station_and_line_flows_2021"
   ],
   "known_gaps": [
     "Independent infrastructure review has not passed.",
     "Access points do not provide full facility polygons, engineering systems, storage, fuel, repair, defenses, or physical capacity.",
     "Observed activity is utilization and must not be interpreted as maximum throughput, mobilization capacity, readiness, or guaranteed service.",
     "The airport 2025 activity workbook and port geometry snapshot have explicit retrospective evidence limits that must remain visible to consumers.",
+    "The rail station directory snapshot was retrieved after the bookmark and is quarantined from opening state unless independent prebookmark temporal proof is added.",
+    "Rail station passenger and line freight observations cover calendar year 2021 and must not be treated as 2025 utilization or capacity.",
+    "Station level freight is withheld by the official source; line totals cannot be allocated to individual stations.",
     "Military ownership, military tenancy, military access, defenses, target status, and damage susceptibility have not been assessed.",
-    "Road, rail, inland waterway, power, fuel, communications, route, fleet, repair, substitution, and hinterland network links are not populated."
+    "Roads, rail line geometry and topology, inland waterways, power, fuel, communications, route capacity, fleets, repair, substitution, and hinterland network links are not populated."
   ],
   "open_contradiction_ids": [],
   "owner": "agent_05_world_research_and_data_director",
   "last_reviewed": "2026-08-07",
   "review_after": "2026-11-07",
-  "notes": "This rollup is a research index over two independently validated collecting packets. It does not merge port and airport semantics, create military facilities, or authorize executable simulation behavior."
+  "notes": "This rollup is a research index over three independently validated collecting packets. It does not merge domain semantics, promote postbookmark rail references into opening state, create military facilities, or authorize executable simulation behavior."
 }

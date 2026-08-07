@@ -48,10 +48,10 @@
     },
     "energy_transport_communications_logistics": {
       "status": "collecting",
-      "record_count": 312,
-      "source_count": 6,
-      "open_question_count": 6,
-      "notes": "This rollup is a research index over two independently validated collecting packets. It does not merge port and airport semantics, create military facilities, or authorize executable simulation behavior. Counts include 7 civilian port nodes, 17 civilian airport nodes, and 288 monthly observations and do not imply independent acceptance."
+      "record_count": 808,
+      "source_count": 8,
+      "open_question_count": 9,
+      "notes": "This rollup is a research index over three independently validated collecting packets. It does not merge domain semantics, promote postbookmark rail references into opening state, create military facilities, or authorize executable simulation behavior. Counts include 7 civilian port nodes, 17 civilian airport nodes, 244 postbookmark rail station reference nodes, 288 monthly port and airport observations, and 252 historical rail observations. Counts do not imply independent acceptance or opening state eligibility."
     },
     "geography_provinces_terrain": {
       "status": "collecting",
@@ -122,14 +122,15 @@
     "src_twn_tipc_vessel_activity_8365",
     "src_twn_caa_eaip_amdt_01_24_airports",
     "src_twn_caa_airport_activity_2024",
-    "src_twn_caa_airport_activity_2025"
+    "src_twn_caa_airport_activity_2025",
+    "src_twn_tra_station_and_line_flows_2021"
   ],
   "unknowns": [
     "The 20 actor opening roster is populated but still needs independent constitutional and Taiwan politics review.",
     "The precise workflow connecting presidential declaration authority and Legislative Yuan war and peace bills remains an explicit open contradiction set.",
     "Complete armed forces, reserve, coast guard, inventory, readiness, basing, and deployment records are not yet reconciled.",
     "County and city boundary geometry is collecting; lower level administration, terrain, hydrography, bases, and strategic corridors remain unpopulated.",
-    "Seven international commercial ports, seventeen civilian access airports, and twelve month activity baselines are collecting; full facility geometry, capacity, hinterland links, energy, communications, repair, substitution, and military access remain unpopulated."
+    "Seven international commercial ports, seventeen civilian access airports, 244 postbookmark rail station reference points, port and airport monthly baselines, and 2021 rail activity observations are collecting; rail topology, full facility geometry, capacity, hinterland links, energy, communications, repair, substitution, and military access remain unpopulated."
   ],
   "reviewed_at": "2026-08-06",
   "review_after": "2026-09-06",

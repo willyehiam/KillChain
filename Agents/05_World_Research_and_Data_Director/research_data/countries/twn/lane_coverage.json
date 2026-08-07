@@ -113,27 +113,30 @@
       "name": "Energy, transport, communications, and logistics",
       "status": "collecting",
       "owner": "agent_05_world_research_and_data_director",
-      "record_count": 312,
-      "source_count": 6,
+      "record_count": 808,
+      "source_count": 8,
       "claim_count": 0,
       "contradiction_count": 0,
-      "exact_geometry_count": 24,
+      "exact_geometry_count": 268,
       "approximate_geometry_count": 0,
       "unknown_geometry_count": 0,
       "oldest_source_date": "2017-01-24",
       "newest_source_date": "2026-01-26",
       "reviewed_at": "2026-08-07",
       "review_after": "2026-11-07",
-      "coverage_disposition": "collecting_civilian_access_nodes_pending_independent_review",
+      "coverage_disposition": "collecting_civilian_access_and_quarantined_reference_nodes_pending_independent_review",
       "blocking_questions": [
         "Independent infrastructure review has not passed.",
         "Access points do not provide full facility polygons, engineering systems, storage, fuel, repair, defenses, or physical capacity.",
         "Observed activity is utilization and must not be interpreted as maximum throughput, mobilization capacity, readiness, or guaranteed service.",
         "The airport 2025 activity workbook and port geometry snapshot have explicit retrospective evidence limits that must remain visible to consumers.",
+        "The rail station directory snapshot was retrieved after the bookmark and is quarantined from opening state unless independent prebookmark temporal proof is added.",
+        "Rail station passenger and line freight observations cover calendar year 2021 and must not be treated as 2025 utilization or capacity.",
+        "Station level freight is withheld by the official source; line totals cannot be allocated to individual stations.",
         "Military ownership, military tenancy, military access, defenses, target status, and damage susceptibility have not been assessed.",
-        "Road, rail, inland waterway, power, fuel, communications, route, fleet, repair, substitution, and hinterland network links are not populated."
+        "Roads, rail line geometry and topology, inland waterways, power, fuel, communications, route capacity, fleets, repair, substitution, and hinterland network links are not populated."
       ],
-      "notes": "This rollup is a research index over two independently validated collecting packets. It does not merge port and airport semantics, create military facilities, or authorize executable simulation behavior. The exact source derived points are civilian access nodes and observed activity is not engineering capacity."
+      "notes": "This rollup is a research index over three independently validated collecting packets. It does not merge domain semantics, promote postbookmark rail references into opening state, create military facilities, or authorize executable simulation behavior. Port and airport points are civilian access nodes. Rail station points are postbookmark references quarantined from opening state. Observed activity is not engineering capacity."
     },
     "geography_provinces_terrain": {
       "name": "Geography, provinces, terrain, rivers, and maritime access",

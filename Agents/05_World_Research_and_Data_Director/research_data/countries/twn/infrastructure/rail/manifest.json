@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "dataset_twn_civilian_rail_access_2025_09_01",
+  "title": "Taiwan civilian rail station reference and historical flow observations",
+  "status": "collecting",
+  "coverage": {
+    "description": "Official Taiwan Railways directory points plus calendar year 2021 station passenger and line level freight observations.",
+    "country_codes": [
+      "TWN"
+    ],
+    "observation_period_start": "2021-01-01",
+    "observation_period_end": "2021-12-31",
+    "bookmark_as_of": "2025-09-01T00:00:00Z",
+    "station_snapshot_retrieved_at": "2026-08-07"
+  },
+  "record_counts": {
+    "station_nodes": 244,
+    "station_passenger_activity_records": 239,
+    "line_freight_activity_records": 13,
+    "exact_geometry_records": 244,
+    "total_records": 496
+  },
+  "source_ids": [
+    "src_twn_tra_station_directory_retrieved_2026_08_07",
+    "src_twn_tra_station_and_line_flows_2021"
+  ],
+  "temporal_contract": {
+    "station_directory_opening_state_eligible": false,
+    "station_directory_reason": "The official endpoint is mutable and the retained snapshot was retrieved after the bookmark without a proved prebookmark archive.",
+    "flow_observations_opening_knowledge_eligible": true,
+    "flow_observations_reason": "The historical 2021 dataset was cataloged before the bookmark and describes a completed calendar year.",
+    "continuity_from_2021_to_bookmark_may_be_inferred": false
+  },
+  "exclusions": [
+    {
+      "source_record": "1998 / 樹林調車場 / Shulin Yard",
+      "reason": "The official directory record contains no GPS value, so no coordinate was invented."
+    },
+    {
+      "source_record": "花蓮港 / Hualien Harbor",
+      "reason": "The 2021 flow file contains a zero passenger row without a matching station directory record. It is not promoted to a station node."
+    }
+  ],
+  "known_gaps": [
+    "Independent infrastructure review has not passed.",
+    "The postbookmark station directory snapshot cannot initialize the 1 September 2025 opening state.",
+    "Directory points do not prove passenger service, freight service, current operability, engineering capacity, train frequency, rolling stock, crew, power, signaling, repair, storage, or substitution.",
+    "The 2021 activity observations are historical and must not be treated as 2025 utilization or capacity.",
+    "Station level freight is withheld by the source; line totals cannot be allocated to individual stations.",
+    "Rail line geometry, topology, track count, electrification, signaling, bridges, tunnels, gradients, transfer links, and disruption state are not populated.",
+    "Military ownership, tenancy, access, use, defenses, target status, and damage susceptibility have not been assessed."
+  ],
+  "open_contradiction_ids": [],
+  "owner": "agent_05_world_research_and_data_director",
+  "last_reviewed": "2026-08-07",
+  "review_after": "2026-11-07",
+  "notes": "This packet supports map reference, civilian mobility, evacuation, economic access, and later logistics abstraction. It creates no executable route, capacity, mission, or military access by itself."
+}
