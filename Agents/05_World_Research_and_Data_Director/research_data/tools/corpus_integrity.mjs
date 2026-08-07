@@ -88,8 +88,6 @@ const PRIMARY_ID_FIELDS = [
 ];
 const STRONG_PRIMARY_ID_FIELDS = new Set([
   "source_id",
-  "claim_id",
-  "contradiction_set_id",
   "observation_id",
   "derived_id",
   "condition_id",
@@ -118,14 +116,17 @@ function toPosix(relativePath) {
   return relativePath.split(path.sep).join("/");
 }
 
-function listMachineFiles(root, excludedDirectories) {
+function listMachineFiles(root, excludedDirectories, excludedDirectoryNames) {
   const files = [];
   function visit(directory) {
     for (const entry of fs.readdirSync(directory, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
       const fullPath = path.join(directory, entry.name);
       const relativePath = toPosix(path.relative(root, fullPath));
       if (entry.isDirectory()) {
-        if (!excludedDirectories.some((excluded) => relativePath === excluded || relativePath.startsWith(`${excluded}/`))) {
+        if (
+          !excludedDirectoryNames.has(entry.name) &&
+          !excludedDirectories.some((excluded) => relativePath === excluded || relativePath.startsWith(`${excluded}/`))
+        ) {
           visit(fullPath);
         }
       } else if (MACHINE_EXTENSIONS.has(path.extname(entry.name))) {
@@ -190,7 +191,7 @@ function requireTemporalFields(record, context, errors) {
   let requirement = null;
   if (record.source_id && record.title && record.publisher) {
     requirement = ["accessed_at"];
-  } else if (record.claim_id) {
+  } else if (isClaimRecord(record)) {
     requirement = ["observed_at", "valid_from", "as_of", "effective_from"];
   } else if (record.observation_id) {
     requirement = ["observed_at", "observed_from"];
@@ -237,10 +238,32 @@ function isSourceRecord(record) {
   return Boolean(record.source_id && record.title && record.publisher);
 }
 
+function isClaimRecord(record) {
+  return Boolean(
+    record.claim_id &&
+    record.subject_id &&
+    record.predicate &&
+    Object.hasOwn(record, "value") &&
+    record.evidence_state &&
+    record.confidence,
+  );
+}
+
+function isContradictionSetRecord(record) {
+  return Boolean(
+    record.contradiction_set_id &&
+    record.question &&
+    Array.isArray(record.claim_ids) &&
+    record.status,
+  );
+}
+
 function primaryIdentity(record) {
   for (const field of PRIMARY_ID_FIELDS) {
     const value = record[field];
     if (typeof value !== "string") continue;
+    if (field === "claim_id" && isClaimRecord(record)) return { field, value };
+    if (field === "contradiction_set_id" && isContradictionSetRecord(record)) return { field, value };
     if (STRONG_PRIMARY_ID_FIELDS.has(field)) return { field, value };
     if (field === "relationship_id" && record.relationship_type) return { field, value };
     if (field === "equipment_type_id" && record.taxonomy) return { field, value };
@@ -392,10 +415,11 @@ export function validateCorpus(root, options = {}) {
   const cutoff = Date.parse(cutoffText);
   if (Number.isNaN(cutoff)) throw new Error(`Invalid bookmark cutoff: ${cutoffText}`);
   const excludedDirectories = options.excludedDirectories ?? ["schemas", "tools/fixtures"];
+  const excludedDirectoryNames = new Set(options.excludedDirectoryNames ?? ["fixtures"]);
   const errors = [];
   const warnings = [];
   const records = [];
-  const files = listMachineFiles(root, excludedDirectories);
+  const files = listMachineFiles(root, excludedDirectories, excludedDirectoryNames);
 
   for (const file of files) records.push(...parseMachineFile(file, root, errors));
 

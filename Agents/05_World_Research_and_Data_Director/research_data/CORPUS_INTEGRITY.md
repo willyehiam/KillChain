@@ -48,10 +48,13 @@ reference only markers. The preferred marker is:
 
 ## False positive controls
 
-1. Schema documents and validator fixtures are excluded from normal corpus
-   validation because they contain illustrative identifiers and coordinates.
+1. Schema documents and every directory named `fixtures` are excluded from
+   normal corpus validation because they contain illustrative identifiers and
+   deliberately invalid coordinates or records.
 2. Identifiers used as foreign keys are not treated as entity definitions.
-   Only recognized record shapes own an identifier.
+   A claim identifier owns an identity only when the object also has the atomic
+   claim shape. A contradiction identifier owns an identity only when the object
+   has the contradiction set shape.
 3. Dataset identifiers may appear across a manifest, geometry layer, and
    measures file, so they are not globally unique by design.
 4. A collection level coordinate precision applies to all GeoJSON features in

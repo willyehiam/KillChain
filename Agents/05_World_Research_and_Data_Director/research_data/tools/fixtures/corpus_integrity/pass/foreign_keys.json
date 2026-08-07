@@ -1,0 +1,28 @@
+{
+  "claim_contracts": [
+    {
+      "claim_id": "claim_fixture_before_bookmark",
+      "opening_assertion_eligible": true
+    }
+  ],
+  "contradiction_sets": [
+    {
+      "contradiction_set_id": "contradiction_fixture_scope",
+      "question": "Which interpretation applies?",
+      "claim_ids": [
+        "claim_fixture_before_bookmark"
+      ],
+      "status": "open",
+      "last_reviewed": "2026-08-07"
+    }
+  ],
+  "routes": [
+    {
+      "route_id": "route_fixture_contested",
+      "contradiction_set_id": "contradiction_fixture_scope",
+      "source_ids": [
+        "source_fixture_primary"
+      ]
+    }
+  ]
+}
