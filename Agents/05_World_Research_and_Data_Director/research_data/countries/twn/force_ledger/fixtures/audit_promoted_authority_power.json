@@ -1,0 +1,1 @@
+{"fixture_id":"audit_promoted_authority_power","mutation":"promote_authority_power","target_id":"relationship_twn_ministry_of_national_defense_general_staff_headquarters_operational_control","expected_diagnostic":"violates the collecting packet authority contract"}

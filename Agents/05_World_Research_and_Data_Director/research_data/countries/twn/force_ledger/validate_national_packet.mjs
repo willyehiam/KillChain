@@ -26,6 +26,7 @@ const maintenance = rows('maintenance.ndjson');
 const construction = rows('construction.ndjson');
 const conservation = rows('conservation.ndjson');
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+const hasExactKeys = (value, keys) => value && typeof value === 'object' && same(Object.keys(value).sort(), [...keys].sort());
 const mapBy = (values, key) => new Map(values.map((row) => [row[key], row]));
 const orgById = mapBy(organizations, 'organization_id');
 const sourceById = mapBy(sources, 'source_id');
@@ -77,12 +78,23 @@ for (const source of sources) {
   if (source.mutability_class === 'live_mutable') {
     if (source.bookmark_evidence_status !== 'quarantined_no_prebookmark_temporal_proof' || source.available_to_player_at_bookmark !== false) fail(`mutable source ${source.source_id} is not quarantined from opening truth`);
     if (source.observed_from || source.observed_to) fail(`mutable source ${source.source_id} fabricates a live observation interval`);
-    if (!source.snapshot_uri && !source.source_sha256) quarantined.add(source.source_id);
+    quarantined.add(source.source_id);
   } else if (source.bookmark_evidence_status !== 'prebookmark_available' || source.available_to_player_at_bookmark !== true) fail(`immutable source ${source.source_id} lacks prebookmark availability state`);
 }
-for (const record of openingEvidenceRecords) for (const sourceId of record.provenance?.source_ids ?? []) {
-  if (!sourceById.has(sourceId)) fail(`${record.organization_id ?? record.relationship_id} references missing source ${sourceId}`);
-  if (quarantined.has(sourceId)) fail(`${record.organization_id ?? record.relationship_id} uses quarantined mutable source ${sourceId} for opening truth`);
+const sourceIsOpeningAdmissible = (source) => source
+  && source.bookmark_evidence_status === 'prebookmark_available'
+  && source.available_to_player_at_bookmark === true
+  && !quarantined.has(source.source_id)
+  && (!source.published_at || Date.parse(source.published_at) <= Date.parse(bookmark));
+const requireOpeningAdmissibleSources = (recordId, sourceIds, context = 'opening truth') => {
+  for (const sourceId of sourceIds ?? []) {
+    const source = sourceById.get(sourceId);
+    if (!source) fail(`${recordId} references missing source ${sourceId}`);
+    else if (!sourceIsOpeningAdmissible(source)) fail(`${recordId} uses inadmissible source ${sourceId} for ${context}`);
+  }
+};
+for (const record of openingEvidenceRecords) {
+  requireOpeningAdmissibleSources(record.organization_id ?? record.relationship_id, record.provenance?.source_ids, 'opening truth');
 }
 
 const authorityByRelationship = new Map();
@@ -94,7 +106,12 @@ for (const claim of authorityClaims) {
   if (!['administrative_control','operational_control','organize_train_equip','mobilization_authority','other','unknown'].includes(claim.authority_class)) fail(`authority claim ${claim.authority_claim_id} has unsupported authority class`);
   if (!['proved','conditional','unproved_nonexecutable'].includes(claim.release_semantics)) fail(`authority claim ${claim.authority_claim_id} lacks typed release semantics`);
   for (const power of Object.values(claim.powers ?? {})) if (!['proved','conditional','unknown','prohibited'].includes(power)) fail(`authority claim ${claim.authority_claim_id} has an invalid power state`);
-  for (const sourceId of claim.source_ids ?? []) if (!sourceById.has(sourceId) || quarantined.has(sourceId)) fail(`authority claim ${claim.authority_claim_id} uses inadmissible source ${sourceId}`);
+  requireOpeningAdmissibleSources(`authority claim ${claim.authority_claim_id}`, claim.source_ids, 'authority evidence');
+  const powerValues = Object.values(claim.powers ?? {});
+  if (!hasExactKeys(claim, ['authority_claim_id','relationship_id','actor_organization_id','target_organization_id','authority_class','activation_predicate','effective_interval','powers','release_semantics','source_ids','source_locator','evidence_state','notes'])
+    || !hasExactKeys(claim.powers, ['issue_orders','reassign_forces','release_for_mission'])
+    || claim.release_semantics !== 'unproved_nonexecutable'
+    || powerValues.some((power) => !['unknown','prohibited'].includes(power))) fail(`authority claim ${claim.authority_claim_id} violates the collecting packet authority contract`);
 }
 for (const relationship of relationships) {
   if (!orgById.has(relationship.source_organization_id) || !orgById.has(relationship.target_organization_id)) fail(`orphan command relationship ${relationship.relationship_id}`);
@@ -105,19 +122,92 @@ for (const relationship of relationships) {
   if (relationship.relationship_type === 'administrative_control' && (asserted.may_reassign_forces || asserted.may_release_for_mission)) fail(`${relationship.relationship_id} promotes administrative control to operational release`);
   if (relationship.relationship_type === 'mobilization_authority' && relationship.activation_state === 'active' && asserted.may_release_for_mission) fail(`${relationship.relationship_id} asserts unconditional reserve employment`);
   if (authority && (authority.actor_organization_id !== relationship.source_organization_id || authority.target_organization_id !== relationship.target_organization_id || authority.authority_class !== relationship.relationship_type)) fail(`authority claim for ${relationship.relationship_id} does not match the typed relationship`);
+  if (authority) {
+    const authorityPowerToRelationshipScope = {
+      issue_orders: 'may_issue_orders',
+      reassign_forces: 'may_reassign_forces',
+      release_for_mission: 'may_release_for_mission',
+    };
+    for (const [power, scope] of Object.entries(authorityPowerToRelationshipScope)) {
+      const provesPower = authority.powers?.[power] === 'proved';
+      if (Boolean(asserted[scope]) !== provesPower) fail(`authority claim for ${relationship.relationship_id} conflicts with relationship power ${scope}`);
+    }
+  }
 }
 
 const expectedEstimateContracts = new Map([
   ['claim_twn_us_dod_2024_ground_force_personnel_104000',['inventory_twn_ground_force_personnel',104000,'person']],
   ...[['army_corps',3,'formation'],['combined_arms_brigade',7,'formation'],['artillery_brigade',3,'formation'],['army_aviation_brigade',2,'formation'],['marine_brigade',2,'formation'],['tank',800,'equipment_item'],['artillery_piece',1100,'equipment_item'],['amphibious_assault_ship',1,'platform'],['destroyer',4,'platform'],['frigate',22,'platform'],['corvette',0,'platform'],['landing_and_amphibious_ship',51,'platform'],['attack_submarine',4,'platform'],['coastal_patrol_missile_craft',43,'platform'],['coast_guard_ship',170,'platform'],['fighter_excluding_trainers',350,'platform'],['fighter_including_trainers',400,'platform'],['bomber_attack_aircraft',0,'platform'],['transport_aircraft',50,'platform'],['special_mission_aircraft',20,'platform']].map(([slug,value,unit]) => [`claim_twn_us_dod_2024_${slug}_${value}`,[`inventory_twn_${slug}`,value,unit]]),
 ]);
+const expectedEstimatePopulationDefinitions = new Map([
+  ['claim_twn_us_dod_2024_ground_force_personnel_104000','estimated operational total'],
+  ['claim_twn_us_dod_2024_army_corps_3','estimated operational total'],
+  ['claim_twn_us_dod_2024_combined_arms_brigade_7','estimated operational total'],
+  ['claim_twn_us_dod_2024_artillery_brigade_3','estimated operational total'],
+  ['claim_twn_us_dod_2024_army_aviation_brigade_2','estimated operational total'],
+  ['claim_twn_us_dod_2024_marine_brigade_2','estimated operational total'],
+  ['claim_twn_us_dod_2024_tank_800','estimated operational total'],
+  ['claim_twn_us_dod_2024_artillery_piece_1100','estimated operational total'],
+  ['claim_twn_us_dod_2024_amphibious_assault_ship_1','estimated operational total'],
+  ['claim_twn_us_dod_2024_destroyer_4','estimated operational total'],
+  ['claim_twn_us_dod_2024_frigate_22','estimated operational total'],
+  ['claim_twn_us_dod_2024_corvette_0','estimated operational total under the report classification'],
+  ['claim_twn_us_dod_2024_landing_and_amphibious_ship_51','estimated operational total across combined categories'],
+  ['claim_twn_us_dod_2024_attack_submarine_4','estimated operational total'],
+  ['claim_twn_us_dod_2024_coastal_patrol_missile_craft_43','estimated operational total'],
+  ['claim_twn_us_dod_2024_coast_guard_ship_170','estimated total'],
+  ['claim_twn_us_dod_2024_fighter_excluding_trainers_350','estimated total excluding fighter trainers'],
+  ['claim_twn_us_dod_2024_fighter_including_trainers_400','estimated total including fighter trainers'],
+  ['claim_twn_us_dod_2024_bomber_attack_aircraft_0','estimated total'],
+  ['claim_twn_us_dod_2024_transport_aircraft_50','estimated total'],
+  ['claim_twn_us_dod_2024_special_mission_aircraft_20','estimated total'],
+]);
+const expectedNonEstimateContracts = new Map([
+  ['claim_twn_2023_planned_backbone_infantry_brigades_5',{subject_id:'construction_twn_planned_backbone_infantry_brigades',value:5,unit:'formation',measurement_kind:'program_plan',subject_kind:'construction_program',component_scope:'unknown',population_definition:'planned formation program',period_precision:'unknown',as_of_semantics:'source_publication_date',source_ids:['src_force_twn_mnd_national_defense_report_2023']}],
+  ['claim_twn_2025_budget_planned_follow_on_submarines_7',{subject_id:'construction_twn_planned_follow_on_indigenous_submarines',value:7,unit:'platform',measurement_kind:'program_plan',subject_kind:'construction_program',component_scope:'unknown',population_definition:'planned program envelope',period_precision:'official_plan',as_of_semantics:'source_publication_date',source_ids:['src_force_twn_mnd_fy2025_budget_2024']}],
+  ['claim_twn_2024_conscript_intake_6956',{subject_id:'cohort_twn_2024_one_year_conscripts',value:6956,unit:'person',measurement_kind:'cohort_flow',subject_kind:'cohort',component_scope:'unknown',population_definition:'persons entering the 2024 one-year conscript cohort',period_precision:'calendar_year',as_of_semantics:'reporting_date',source_ids:['src_force_twn_mnd_conscript_review_2025']}],
+  ['claim_twn_2025_reported_conscripts_entered_reserve_2047',{subject_id:'cohort_twn_2024_one_year_conscripts',value:2047,unit:'person',measurement_kind:'cohort_flow',subject_kind:'cohort',component_scope:'reserve_transition',population_definition:'reported members of the 2024 cohort discharged into the reserve system by the reporting date',period_precision:'reported_to_date',as_of_semantics:'reporting_date',source_ids:['src_force_twn_mnd_conscript_review_2025']}],
+  ['claim_twn_2025_reported_conscripts_assigned_defense_units_3761',{subject_id:'cohort_twn_2024_one_year_conscripts',value:3761,unit:'person',measurement_kind:'cohort_flow',subject_kind:'cohort',component_scope:'assignment_flow',population_definition:'reported members of the 2024 cohort assigned to named defense units by the reporting date',period_precision:'reported_to_date',as_of_semantics:'reporting_date',source_ids:['src_force_twn_mnd_conscript_review_2025']}],
+]);
+const expectedClaimContracts = new Map([
+  ...[...expectedEstimateContracts].map(([claimId,[subjectId,value,unit]]) => [claimId, {
+    subject_id:subjectId, value, unit, measurement_kind:'stock_estimate', subject_kind:'inventory_pool',
+    component_scope:'all_components', population_definition:expectedEstimatePopulationDefinitions.get(claimId),
+    period_precision:'unknown', as_of_semantics:'source_publication_date_not_observation_date',
+    source_ids:['src_force_twn_us_dod_cmpr_2024'],
+  }]),
+  ...expectedNonEstimateContracts,
+]);
+const claimSemanticMatrix = new Map([
+  ['stock_estimate',{subject_kind:'inventory_pool',component_scopes:new Set(['all_components']),period_precisions:new Set(['unknown']),units:new Set(['person','formation','equipment_item','platform'])}],
+  ['program_plan',{subject_kind:'construction_program',component_scopes:new Set(['unknown']),period_precisions:new Set(['unknown','official_plan']),units:new Set(['formation','platform'])}],
+  ['cohort_flow',{subject_kind:'cohort',component_scopes:new Set(['unknown','reserve_transition','assignment_flow']),period_precisions:new Set(['calendar_year','reported_to_date']),units:new Set(['person'])}],
+]);
 for (const claim of claims) {
-  for (const sourceId of claim.source_ids) if (!sourceById.has(sourceId)) fail(`claim ${claim.claim_id} references missing source ${sourceId}`);
+  requireOpeningAdmissibleSources(`claim ${claim.claim_id}`, claim.source_ids, 'claim provenance');
   if (Date.parse(claim.as_of) > Date.parse(bookmark)) fail(`post-bookmark claim ${claim.claim_id} cannot establish opening truth`);
   if (!claim.measurement_kind || !claim.subject_kind || !claim.population_definition || !claim.observation_period || claim.opening_stock_eligible !== false) fail(`claim ${claim.claim_id} lacks executable measurement semantics`);
-  const contract = expectedEstimateContracts.get(claim.claim_id);
-  if (contract) {
-    const [subjectId, value, unit] = contract;
+  const semanticContract = claimSemanticMatrix.get(claim.measurement_kind);
+  if (!semanticContract
+    || claim.subject_kind !== semanticContract.subject_kind
+    || !semanticContract.component_scopes.has(claim.component_scope)
+    || !semanticContract.period_precisions.has(claim.observation_period?.precision)
+    || !semanticContract.units.has(claim.unit)) fail(`claim ${claim.claim_id} has an unsupported measurement, subject, unit, period, population, component, or opening-stock semantic combination`);
+  const acceptedContract = expectedClaimContracts.get(claim.claim_id);
+  if (!acceptedContract) fail(`claim ${claim.claim_id} has no accepted semantic contract`);
+  else if (claim.subject_id !== acceptedContract.subject_id
+    || claim.value !== acceptedContract.value
+    || claim.unit !== acceptedContract.unit
+    || claim.measurement_kind !== acceptedContract.measurement_kind
+    || claim.subject_kind !== acceptedContract.subject_kind
+    || claim.component_scope !== acceptedContract.component_scope
+    || claim.population_definition !== acceptedContract.population_definition
+    || claim.observation_period?.precision !== acceptedContract.period_precision
+    || claim.as_of_semantics !== acceptedContract.as_of_semantics
+    || !same([...(claim.source_ids ?? [])].sort(), [...acceptedContract.source_ids].sort())) fail(`claim ${claim.claim_id} diverges from its accepted semantic contract`);
+  const estimateContract = expectedEstimateContracts.get(claim.claim_id);
+  if (estimateContract) {
+    const [subjectId, value, unit] = estimateContract;
     if (claim.subject_id !== subjectId || claim.value !== value || claim.unit !== unit) fail(`claim ${claim.claim_id} diverges from its accepted value, unit, or subject contract`);
     const pool = inventoryById.get(claim.subject_id);
     const taxonomy = pool && equipmentById.get(pool.equipment_type_id);
@@ -129,9 +219,22 @@ for (const claim of claims) {
     if (claim.subject_kind !== 'construction_program' || !constructionById.has(claim.subject_id)) fail(`claim ${claim.claim_id} attaches a plan to an unrelated subject`);
   }
 }
+for (const claimId of expectedClaimContracts.keys()) if (!claimById.has(claimId)) fail(`accepted claim contract ${claimId} has no claim record`);
+if (claims.length !== expectedClaimContracts.size) fail(`claim set has ${claims.length} records but ${expectedClaimContracts.size} accepted semantic contracts`);
 for (const contradiction of contradictions) {
   for (const claimId of contradiction.claim_ids) if (!claimById.has(claimId)) fail(`contradiction ${contradiction.contradiction_set_id} references missing claim ${claimId}`);
-  for (const sourceId of contradiction.source_ids) if (!sourceById.has(sourceId)) fail(`contradiction ${contradiction.contradiction_set_id} references missing source ${sourceId}`);
+  requireOpeningAdmissibleSources(`contradiction ${contradiction.contradiction_set_id}`, contradiction.source_ids, 'contradiction provenance');
+}
+for (const cohort of cohorts) requireOpeningAdmissibleSources(`cohort ${cohort.cohort_id}`, cohort.source_ids, 'cohort provenance');
+for (const [name, values] of [
+  ['equipment', equipment], ['inventory', inventory], ['deployment', deployments], ['maintenance', maintenance],
+  ['construction', construction], ['conservation', conservation],
+]) {
+  for (const record of values) {
+    const recordId = record.equipment_type_id ?? record.inventory_record_id ?? record.deployment_id
+      ?? record.maintenance_record_id ?? record.construction_record_id ?? record.conservation_record_id;
+    requireOpeningAdmissibleSources(`${name} ${recordId}`, record.provenance?.source_ids, `${name} provenance`);
+  }
 }
 
 const groupBy = (values, key) => values.reduce((map, row) => {
@@ -147,15 +250,32 @@ for (const pool of inventory) {
   else if (taxonomy.counting_unit !== pool.quantity.unit) fail(`${pool.inventory_record_id} counting unit differs from its taxonomy`);
   if (!orgById.has(pool.organization_id)) fail(`${pool.inventory_record_id} has no controlling organization`);
   if (pool.quantity.kind !== 'unknown' || pool.accounting_state !== 'unknown') fail(`${pool.inventory_record_id} improperly promotes a dated estimate into opening inventory`);
-  if (pool.location_id !== null || pool.readiness.band !== 'unknown' || pool.readiness.ready_quantity.kind !== 'unknown') fail(`${pool.inventory_record_id} asserts location or readiness`);
+  if (!hasExactKeys(pool, ['inventory_record_id','inventory_kind','country_id','owner_id','controller_id','service','component','equipment_type_id','display_name','domain','category','representation_tier','accounting_state','quantity','organization_id','formation_id','location_id','current_deployment_id','readiness','maintenance','counting_scope','individual_platform_ids','construction_record_ids','conservation_record_id','temporal_validity','provenance','notes'])
+    || !hasExactKeys(pool.readiness, ['band','basis','ready_quantity','mobilization_delay_hours','limiting_factors'])
+    || !hasExactKeys(pool.maintenance, ['state','quantity','maintenance_record_ids'])
+    || pool.location_id !== null
+    || pool.readiness.band !== 'unknown'
+    || pool.readiness.basis !== 'unknown'
+    || pool.readiness.ready_quantity.kind !== 'unknown'
+    || pool.readiness.ready_quantity.unit !== pool.quantity.unit
+    || pool.readiness.mobilization_delay_hours !== null
+    || pool.maintenance.state !== 'unknown'
+    || pool.maintenance.quantity.kind !== 'unknown'
+    || pool.maintenance.quantity.unit !== pool.quantity.unit) fail(`${pool.inventory_record_id} asserts location, readiness, or maintenance state`);
   if ((deploymentsByEntity.get(pool.inventory_record_id) ?? []).length !== 1) fail(`${pool.inventory_record_id} must have exactly one national accounting deployment`);
   if ((maintenanceBySubject.get(pool.inventory_record_id) ?? []).length !== 1) fail(`${pool.inventory_record_id} must have exactly one maintenance record`);
   if ((conservationByScope.get(pool.inventory_record_id) ?? []).length !== 1) fail(`${pool.inventory_record_id} must have exactly one conservation scope`);
   const deployment = deploymentById.get(pool.current_deployment_id);
   if (!deployment || deployment.entity_id !== pool.inventory_record_id) fail(`${pool.inventory_record_id} has no designated national accounting deployment`);
   else {
+    if (!hasExactKeys(deployment, ['deployment_id','country_id','controller_id','entity_type','entity_id','quantity','assignment','command_organization_id','availability_state','location','movement','commitment','accounting_allocation','support_dependency_ids','temporal_validity','stale_after','provenance','notes'])) fail(`${deployment.deployment_id} contains undeclared deployment state`);
     if (!same(deployment.quantity, pool.quantity)) fail(`${deployment.deployment_id} quantity differs from national pool`);
-    if (deployment.location.location_status !== 'unknown' || deployment.movement.state !== 'unknown' || deployment.assignment !== 'unknown' || deployment.availability_state !== 'unknown') fail(`${deployment.deployment_id} asserts location, movement, assignment, or availability`);
+    const expectedUnknownLocation = {location_status:'unknown',crs:'EPSG:4326'};
+    const expectedUnknownMovement = {state:'unknown',route_id:null,origin_location_id:null,destination_location_id:null,departed_at:null,estimated_arrival:null};
+    if (!same(deployment.location, expectedUnknownLocation)
+      || !same(deployment.movement, expectedUnknownMovement)
+      || deployment.assignment !== 'unknown'
+      || deployment.availability_state !== 'unknown') fail(`${deployment.deployment_id} asserts location, movement, assignment, or availability`);
     const allocation = deployment.accounting_allocation;
     if (!allocation || allocation.conservation_record_id !== pool.conservation_record_id || allocation.executable_child_allocation_id !== null || allocation.release_gate !== 'blocked_unaccepted_packet') fail(`${deployment.deployment_id} lacks a typed blocked conservation allocation`);
     if (!same(deployment.commitment.release_constraints, ['Research-only national pool; no executable child allocation has been accepted.'])) fail(`${deployment.deployment_id} release constraint was altered; structured allocation remains authoritative`);
@@ -163,7 +283,15 @@ for (const pool of inventory) {
   }
   const maintenanceRecord = maintenanceById.get(pool.maintenance.maintenance_record_ids[0]);
   if (!maintenanceRecord || maintenanceRecord.subject_id !== pool.inventory_record_id || maintenanceRecord.state !== 'unknown' || maintenanceRecord.quantity.kind !== 'unknown') fail(`${pool.inventory_record_id} lacks explicit unknown maintenance accounting`);
-  else if (maintenanceRecord.quantity.unit !== pool.quantity.unit) fail(`${maintenanceRecord.maintenance_record_id} unit differs from its inventory pool`);
+  else {
+    if (!hasExactKeys(maintenanceRecord, ['maintenance_record_id','country_id','subject_type','subject_id','maintenance_kind','state','quantity','started_at','completion_estimate','facility_id','readiness_effect','dependency_ids','resulting_equipment_type_id','temporal_validity','provenance','notes'])) fail(`${maintenanceRecord.maintenance_record_id} contains undeclared maintenance state`);
+    if (maintenanceRecord.quantity.unit !== pool.quantity.unit) fail(`${maintenanceRecord.maintenance_record_id} unit differs from its inventory pool`);
+    if (maintenanceRecord.started_at !== null
+      || !same(maintenanceRecord.completion_estimate, {kind:'unknown'})
+      || maintenanceRecord.facility_id !== null
+      || maintenanceRecord.readiness_effect !== 'unknown'
+      || maintenanceRecord.resulting_equipment_type_id !== null) fail(`${maintenanceRecord.maintenance_record_id} asserts hidden maintenance or readiness state`);
+  }
   const conservationRecord = conservationById.get(pool.conservation_record_id);
   if (!conservationRecord || conservationRecord.scope.scope_id !== pool.inventory_record_id || conservationRecord.result.state !== 'blocked_by_unknowns' || !same(conservationRecord.opening_inventory, pool.quantity) || !same(conservationRecord.closing_states[0]?.quantity, pool.quantity)) fail(`${pool.inventory_record_id} lacks explicitly blocked conservation`);
   else if (conservationRecord.counting_unit !== pool.quantity.unit) fail(`${conservationRecord.conservation_record_id} unit differs from its inventory pool`);
@@ -199,7 +327,13 @@ if (fighter350?.value !== 350 || fighter400?.value !== 400 || !fighterIssue || !
 if (inventoryById.get('inventory_twn_fighter_trainer_subset')?.quantity.kind !== 'unknown') fail('derived fighter trainer difference must not become opening inventory');
 
 for (const record of construction) {
-  if (record.state !== 'planned' || record.quantity_ordered.kind !== 'unknown' || record.quantity_delivered.kind !== 'unknown' || record.quantity_accepted.kind !== 'unknown') fail(`${record.construction_record_id} improperly promotes a plan to ordered, delivered, or accepted`);
+  if (!hasExactKeys(record, ['construction_record_id','country_id','customer_id','equipment_type_id','platform_id','program_or_lot','quantity_ordered','quantity_delivered','quantity_accepted','state','producer_ids','production_site_ids','milestones','temporal_validity','provenance','notes'])
+    || record.state !== 'planned'
+    || record.platform_id !== null
+    || record.production_site_ids.length !== 0
+    || record.quantity_ordered.kind !== 'unknown'
+    || record.quantity_delivered.kind !== 'unknown'
+    || record.quantity_accepted.kind !== 'unknown') fail(`${record.construction_record_id} improperly promotes a plan to ordered, delivered, or accepted; sited and platform state are also forbidden`);
   for (const id of record.producer_ids) if (!orgById.has(id)) fail(`${record.construction_record_id} references unresolved producer ${id}`);
 }
 

@@ -1,0 +1,1 @@
+{"fixture_id":"audit_hidden_mobilization_delay","mutation":"set_mobilization_delay","target_id":"inventory_twn_tank","value":0,"expected_diagnostic":"asserts location, readiness, or maintenance state"}

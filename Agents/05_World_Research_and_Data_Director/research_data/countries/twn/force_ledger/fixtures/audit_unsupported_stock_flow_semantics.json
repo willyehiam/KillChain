@@ -1,0 +1,1 @@
+{"fixture_id":"audit_unsupported_stock_flow_semantics","mutation":"relabel_claim_measurement","target_id":"claim_twn_2024_conscript_intake_6956","measurement_kind":"stock_estimate","expected_diagnostic":"has an unsupported measurement, subject, unit, period, population, component, or opening-stock semantic combination"}
