@@ -13,8 +13,8 @@
   "coverage": {
     "politics_and_institutions": {
       "status": "needs_review",
-      "record_count": 28,
-      "source_count": 28,
+      "record_count": 27,
+      "source_count": 30,
       "open_question_count": 3,
       "notes": "Opening executive control, the certified and recall-adjusted legislative seat ledger, constitutional succession, war authority, United States policy context, institutions, and 20 relevant actors are sourced; independent review remains open."
     },
@@ -26,11 +26,11 @@
       "notes": "The frozen 2025 nominal GDP cohort record is linked; the campaign economy remains unpopulated."
     },
     "military_organization_inventory": {
-      "status": "shell",
-      "record_count": 0,
-      "source_count": 0,
-      "open_question_count": 8,
-      "notes": "The force ledger manifest exists, but no organization or inventory claims are accepted yet."
+      "status": "collecting",
+      "record_count": 241,
+      "source_count": 10,
+      "open_question_count": 6,
+      "notes": "Collecting Taiwan national force packet. Public aggregate estimates are retained as atomic claims while all 1 September 2025 opening pools remain structurally conserved unknowns. No pool is executable pending independent review. Counts are derived from the canonical force ledger and do not imply acceptance."
     },
     "fixed_facilities_basing": {
       "status": "shell",
@@ -85,19 +85,25 @@
     "political_actor_target": 20,
     "political_actor_count": 20,
     "province_layer_status": "absent",
-    "force_ledger_status": "shell"
+    "force_ledger_status": "collecting"
   },
   "source_ids": [
     "src_imf_weo_2026_04_ngdpd_2025",
-    "src_twn_constitution_main_text",
+    "src_twn_president_authority",
+    "src_twn_vice_president_authority",
+    "src_twn_legislative_functions",
     "src_twn_additional_articles",
+    "src_twn_central_government",
     "src_twn_inauguration_2024",
     "src_twn_cec_presidential_result_2024",
+    "src_twn_cec_legislative_result_2024",
     "src_twn_cho_2025",
     "src_twn_cheng_2025",
     "src_twn_resilience_committee",
     "src_twn_inauguration_luncheon_2024",
     "src_twn_dpp_congress_2025",
+    "src_twn_lin_resignation_hsu_appointment_2025",
+    "src_twn_hsu_dpp_secretary_general_2025",
     "src_twn_mnd_koo_2025",
     "src_twn_legislative_leadership_2025",
     "src_twn_kmt_chu_2025",
@@ -105,15 +111,14 @@
     "src_twn_tpp_caucus_2025",
     "src_twn_tpp_huang_chair_2025",
     "src_twn_taichung_lu",
-    "src_twn_new_taipei_hou_dated_2025_08_29",
+    "src_twn_new_taipei_hou",
     "src_twn_taipei_chiang",
-    "src_twn_lin_resignation_hsu_appointment_2025",
-    "src_twn_hsu_dpp_secretary_general_2025",
-    "src_twn_cec_legislative_result_2024",
+    "src_twn_kaohsiung_chen_2025",
     "src_twn_cec_recall_results_2025_07_26",
     "src_twn_cec_recall_results_2025_08_23",
-    "src_twn_kaohsiung_chen_2025",
-    "src_twn_us_taiwan_relations_act"
+    "src_twn_us_taiwan_relations_act",
+    "src_twn_constitution_main_text",
+    "src_twn_new_taipei_hou_dated_2025_08_29"
   ],
   "unknowns": [
     "The 20 actor opening roster is populated but still needs independent constitutional and Taiwan politics review.",

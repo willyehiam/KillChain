@@ -44,7 +44,7 @@
     "politics_lane_authority_contract_reviewed": false,
     "presidential_succession_reviewed": false
   },
-  "accepted_source_count": 25,
+  "accepted_source_count": 29,
   "accepted_claim_count": 35,
   "open_contradiction_count": 1,
   "notes": "Counts describe the country politics evidence registry and exclude the separately linked IMF GDP cohort source. The roster remains needs_review rather than verified."

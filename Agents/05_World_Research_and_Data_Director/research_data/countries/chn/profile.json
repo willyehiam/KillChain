@@ -13,7 +13,7 @@
   "coverage": {
     "politics_and_institutions": {
       "status": "needs_review",
-      "record_count": 32,
+      "record_count": 31,
       "source_count": 18,
       "open_question_count": 3,
       "notes": "Opening party-state authority, CMC command architecture and uncertainty, constitutional succession, war authority, treaty context, seven institutions, and 24 relevant actors are sourced; independent review remains open."
@@ -26,11 +26,11 @@
       "notes": "The frozen 2025 nominal GDP cohort record is linked; the campaign economy remains unpopulated."
     },
     "military_organization_inventory": {
-      "status": "shell",
-      "record_count": 0,
-      "source_count": 0,
-      "open_question_count": 8,
-      "notes": "The force ledger manifest exists, but no organization or inventory claims are accepted yet."
+      "status": "collecting",
+      "record_count": 287,
+      "source_count": 11,
+      "open_question_count": 6,
+      "notes": "China inventory checkpoint: national public aggregate pools across PLA services and arms, Navy class categories, air mission categories, ground and Rocket Force, Coast Guard, militia, reserve, lift, sustainment, construction, and bounded civilian conversion. It excludes exact present positions and actionable movement and remains collecting/non-executable. Counts are derived from the canonical force ledger and do not imply acceptance."
     },
     "fixed_facilities_basing": {
       "status": "shell",
@@ -85,7 +85,7 @@
     "political_actor_target": 20,
     "political_actor_count": 24,
     "province_layer_status": "absent",
-    "force_ledger_status": "shell"
+    "force_ledger_status": "collecting"
   },
   "source_ids": [
     "src_imf_weo_2026_04_ngdpd_2025",

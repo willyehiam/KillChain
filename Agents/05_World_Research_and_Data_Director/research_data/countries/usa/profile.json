@@ -14,7 +14,7 @@
     "politics_and_institutions": {
       "status": "needs_review",
       "record_count": 27,
-      "source_count": 23,
+      "source_count": 29,
       "open_question_count": 3,
       "notes": "Opening government, authority, succession, alliance context, NSC statutory and advisory structure, institutions, and 20 relevant actors are sourced; independent review remains open."
     },
@@ -26,11 +26,11 @@
       "notes": "The frozen 2025 nominal GDP cohort record is linked; the campaign economy remains unpopulated."
     },
     "military_organization_inventory": {
-      "status": "shell",
-      "record_count": 0,
-      "source_count": 0,
-      "open_question_count": 8,
-      "notes": "The force ledger manifest exists, but no organization or inventory claims are accepted yet."
+      "status": "collecting",
+      "record_count": 187,
+      "source_count": 21,
+      "open_question_count": 7,
+      "notes": "Corrected United States national packet: cutoff-safe aggregate opening truth, specific reserve activation routes, mutually exclusive Guard duty status, enacted personnel authorities, unresolved opening equipment pools, non-executable fiscal-year training and acquisition plans, and selected construction research. It deliberately excludes exact present locations, actionable movement, unsupported readiness, and postbookmark player knowledge. Counts are derived from the canonical force ledger and do not imply acceptance."
     },
     "fixed_facilities_basing": {
       "status": "shell",
@@ -85,13 +85,12 @@
     "political_actor_target": 20,
     "political_actor_count": 21,
     "province_layer_status": "absent",
-    "force_ledger_status": "shell"
+    "force_ledger_status": "collecting"
   },
   "source_ids": [
     "src_imf_weo_2026_04_ngdpd_2025",
-    "src_usa_congressional_inauguration_record_2025",
-    "src_usa_congressional_record_bondi_confirmation_2025",
-    "src_usa_congressional_record_noem_confirmation_2025",
+    "src_usa_white_house_administration",
+    "src_usa_white_house_cabinet",
     "src_usa_rubio_swearing_2025",
     "src_usa_hegseth_swearing_2025",
     "src_usa_white_house_national_security_team",
@@ -105,14 +104,20 @@
     "src_usa_senate_republican_leadership",
     "src_usa_senate_democratic_leadership",
     "src_usa_house_republican_leadership",
-    "src_usa_congressional_record_jeffries_2025",
+    "src_usa_house_democratic_leader",
     "src_usa_council_of_governors_2025",
     "src_usa_nato_hague_2025",
     "src_usa_taiwan_relations_act",
     "src_usa_nsc_statute",
     "src_usa_nspm1_nsc_organization_2025",
     "src_usa_rubio_acting_nsa_reuters_2025",
-    "src_usa_nsc_restructuring_reuters_2025"
+    "src_usa_nsc_restructuring_reuters_2025",
+    "src_usa_presidential_succession_statute",
+    "src_usa_senate_president_pro_tempore_2025",
+    "src_usa_congressional_inauguration_record_2025",
+    "src_usa_congressional_record_jeffries_2025",
+    "src_usa_congressional_record_bondi_confirmation_2025",
+    "src_usa_congressional_record_noem_confirmation_2025"
   ],
   "unknowns": [
     "The 20 actor opening roster is populated but still needs an independent political science and legal review.",

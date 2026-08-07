@@ -3,11 +3,18 @@
 ## Status
 
 The United States, China, and Taiwan now have canonical dossier manifests and
-national force ledger shells for the 1 September 2025 bookmark.
+collecting national force ledger packets for the 1 September 2025 bookmark.
 
-These files establish identity, scope, completeness accounting, and data
-contracts. They deliberately do not invent leaders, force counts, readiness, or
-locations to make the folders look complete.
+These files establish identity, scope, completeness accounting, command and
+inventory evidence, and data contracts. Unknown quantities, readiness, and
+locations remain explicit, and no collecting national pool is executable.
+
+The country profiles and lane coverage matrices are mechanically reconciled to
+the canonical force ledgers. Verify them with:
+
+```text
+node Agents/05_World_Research_and_Data_Director/research_data/countries/tools/reconcile_tier_a_lane_metadata.mjs --check
+```
 
 ## Shared acceptance sequence
 
