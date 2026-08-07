@@ -42,7 +42,15 @@
   "military_posture": null,
   "fixed_facilities": [],
   "strategic_industry": [],
-  "infrastructure_networks": [],
+  "infrastructure_networks": [
+    "infrastructure_twn_port_keelung",
+    "infrastructure_twn_port_taipei",
+    "infrastructure_twn_port_suao",
+    "infrastructure_twn_port_taichung",
+    "infrastructure_twn_port_kaohsiung",
+    "infrastructure_twn_port_anping",
+    "infrastructure_twn_port_hualien"
+  ],
   "alliances": [],
   "sanctions": [],
   "active_crises": [],
@@ -66,7 +74,10 @@
     "src_twn_cec_recall_results_2025_07_26",
     "src_twn_cec_recall_results_2025_08_23",
     "src_twn_legislative_leadership_2025",
-    "src_twn_us_taiwan_relations_act"
+    "src_twn_us_taiwan_relations_act",
+    "src_twn_moi_wharf_main_1150409",
+    "src_twn_tipc_container_activity_8368",
+    "src_twn_tipc_vessel_activity_8365"
   ],
   "claim_ids": [
     "claim_twn_president_head_of_state_and_command",
@@ -88,7 +99,7 @@
     "claim_twn_legislative_seats_2025_09_01",
     "claim_twn_tra_security_context"
   ],
-  "notes": "Only the politics and institutions lane has crossed from shell into the opening bookmark. All military, economic, geography, infrastructure, and crisis fields remain intentionally unpopulated.",
+  "notes": "Politics and institutions, national force accounting, first order administrative geography, and seven civilian international commercial port access nodes have entered collecting or review states. Economic, fixed facility, strategic industry, and crisis integration remain incomplete. No collecting packet is executable simulation truth before its acceptance gates pass.",
   "acceptance_state": {
     "politics_lane_status": "needs_review",
     "bookmark_firewall_passed": false,

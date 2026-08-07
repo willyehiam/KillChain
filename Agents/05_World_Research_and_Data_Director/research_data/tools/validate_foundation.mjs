@@ -124,6 +124,14 @@ const tierAGeographySources = TIER_A_COUNTRY_DIRECTORIES.flatMap((countryCode) =
     origin: path.relative(researchRoot, sourcePath),
   }));
 });
+const tierAInfrastructureSources = TIER_A_COUNTRY_DIRECTORIES.flatMap((countryCode) => {
+  const sourcePath = path.join(countriesRoot, countryCode, "infrastructure", "ports", "sources.ndjson");
+  if (!fs.existsSync(sourcePath)) return [];
+  return readNdjson(sourcePath).map((source) => ({
+    source,
+    origin: path.relative(researchRoot, sourcePath),
+  }));
+});
 
 const sourceRecords = [
   ...globalSources.map((source) => ({ source, origin: "sources/sources.ndjson" })),
@@ -133,6 +141,7 @@ const sourceRecords = [
   })),
   ...tierALocalSources,
   ...tierAGeographySources,
+  ...tierAInfrastructureSources,
 ];
 const canonicalSourceById = new Map();
 
@@ -257,6 +266,7 @@ let strategicAdditionProfileCount = 0;
 let tierAProfileCount = 0;
 let forceLedgerCount = 0;
 let provinceLayerCount = 0;
+let infrastructureLayerCount = 0;
 
 for (const country of registry.countries.filter((entry) => entry.profile_path)) {
   const profilePath = path.join(researchRoot, country.profile_path);
@@ -311,6 +321,23 @@ for (const country of registry.countries.filter((entry) => entry.profile_path)) 
     );
   }
 
+  if (profile.dataset_paths.infrastructure) {
+    const infrastructureManifestPath = path.resolve(path.dirname(profilePath), profile.dataset_paths.infrastructure);
+    assert(fs.existsSync(infrastructureManifestPath), `${country.country_code}: infrastructure manifest does not exist`);
+    const infrastructureManifest = readJson(infrastructureManifestPath);
+    if (infrastructureManifest) {
+      infrastructureLayerCount += 1;
+      const infrastructureArtifact = readJson(path.join(path.dirname(infrastructureManifestPath), "artifact_record.json"));
+      assert(infrastructureManifest.country_id === undefined || infrastructureManifest.country_id === country.country_id, `${country.country_code}: infrastructure manifest country mismatch`);
+      assert(infrastructureManifest.coverage?.as_of === bookmark.world_time, `${country.country_code}: infrastructure bookmark mismatch`);
+      assert(infrastructureManifest.record_counts?.port_nodes === infrastructureArtifact?.artifacts?.port_nodes?.feature_count, `${country.country_code}: infrastructure port count differs from artifact metadata`);
+      assert(infrastructureManifest.record_counts?.total_records === profile.coverage.energy_transport_communications_logistics.record_count, `${country.country_code}: infrastructure record count differs from dossier metadata`);
+      assert(profile.completeness?.infrastructure_layer_status !== "absent", `${country.country_code}: populated infrastructure layer cannot be reported as absent`);
+    }
+  } else {
+    assert(profile.completeness?.infrastructure_layer_status === undefined || profile.completeness?.infrastructure_layer_status === "absent", `${country.country_code}: absent infrastructure layer has a populated status`);
+  }
+
   if (!profile.dataset_paths.force_ledger) {
     assert(
       country.depth_tier !== "A",
@@ -362,6 +389,7 @@ assert(
 assert(tierAProfileCount === 3, `Expected three Tier A profiles, found ${tierAProfileCount}`);
 assert(forceLedgerCount === 3, `Expected three Tier A force ledgers, found ${forceLedgerCount}`);
 assert(provinceLayerCount === 1, `Expected one collecting province layer, found ${provinceLayerCount}`);
+assert(infrastructureLayerCount === 1, `Expected one collecting infrastructure layer, found ${infrastructureLayerCount}`);
 
 const report = {
   status: errors.length ? "FAIL" : "PASS",
@@ -377,6 +405,7 @@ const report = {
   tier_a_profiles: tierAProfileCount,
   tier_a_force_ledgers: forceLedgerCount,
   collecting_province_layers: provinceLayerCount,
+  collecting_infrastructure_layers: infrastructureLayerCount,
   schemas_parsed: NEW_SCHEMAS.length,
   errors,
 };

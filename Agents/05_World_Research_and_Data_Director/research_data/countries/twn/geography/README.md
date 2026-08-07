@@ -22,7 +22,7 @@ The source includes outlying islands administratively assigned by Taiwan, includ
 
 ## Status
 
-The layer is `collecting`, not verified. County geometry is populated, but lower level administration, terrain, hydrology, ports, bases, transport, and strategic overlays remain separate future packets.
+The layer is `collecting`, not verified. County geometry is populated, while lower level administration, terrain, hydrology, bases, transport, and strategic overlays remain separate packets. The international commercial port packet now exists under `../infrastructure/ports`, but it is not part of this administrative artifact.
 
 ## Rebuild
 

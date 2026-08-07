@@ -25,6 +25,17 @@ and explicitly nonadjudicative about contested sovereignty. Verify it with:
 npm run validate:twn-geography
 ```
 
+Taiwan now also has the first collecting civilian infrastructure packet: seven
+international commercial port access nodes and twelve complete months of
+prebookmark container and vessel activity. The points are official landmark
+locations, the observations are utilization rather than maximum capacity, and
+the packet explicitly excludes military use and targeting semantics. Verify it
+with:
+
+```text
+npm run validate:twn-ports
+```
+
 ## Shared acceptance sequence
 
 1. Government, constitutional authority, practical authority, and declared war

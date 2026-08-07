@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_id": "artifact_twn_international_commercial_ports_2025_09_01",
+  "dataset_id": "dataset_twn_international_commercial_ports_2025_09_01",
+  "artifacts": {
+    "port_nodes": {
+      "path": "international_commercial_ports.geojson",
+      "format": "GeoJSON",
+      "crs": "EPSG:4326",
+      "feature_count": 7,
+      "coordinate_precision_m": 100,
+      "bounds": [
+        120.166749724,
+        22.616314917,
+        121.862615977,
+        25.153551856
+      ],
+      "artifact_sha256": "d68bf62a26a0773c160e2385a1202b73bab9410d19485d9c7f30f653144feafc"
+    },
+    "monthly_activity": {
+      "path": "port_activity_monthly_2024_09_to_2025_08.ndjson",
+      "format": "NDJSON",
+      "record_count": 84,
+      "period_start": "2024-09",
+      "period_end": "2025-08",
+      "artifact_sha256": "e03911f3a1ae83a807e22a0566b9a78774ab38cc99466f0aacef5afc4d4653d8"
+    }
+  },
+  "raw_source_sha256": {
+    "wharf": "58710be9102a6573485abf119bc89281ff18a515c550a4a049d881aeac549420",
+    "container": "34e3e4bf331314712210ea6470e1a6ecb83d37f06c7622674ca7b7c2cfe255e3",
+    "vessel": "e1bf0564156e7c312511137308d869a5a9bac2750097a5973c29889e1b3bcc65"
+  },
+  "source_ids": [
+    "src_twn_moi_wharf_main_1150409",
+    "src_twn_tipc_container_activity_8368",
+    "src_twn_tipc_vessel_activity_8365"
+  ],
+  "transformations": [
+    "Selected only the seven international commercial ports named by the port authority datasets.",
+    "Rejected any geometry record with a source update month after August 2025.",
+    "Reprojected official point coordinates from EPSG:3826 to EPSG:4326 without inventing or hand placing locations.",
+    "Decoded Big5 activity resources and retained exactly twelve months from September 2024 through August 2025.",
+    "Preserved monthly observations and derived trailing twelve month sums by addition only."
+  ],
+  "interpretation_warning": "Civilian access and observed activity do not establish military use, target status, engineering capacity, or damage susceptibility."
+}

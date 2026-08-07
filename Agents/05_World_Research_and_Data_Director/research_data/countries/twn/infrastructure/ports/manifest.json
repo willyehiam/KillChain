@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_id": "dataset_twn_international_commercial_ports_2025_09_01",
+  "title": "Taiwan international commercial port access nodes and activity baseline",
+  "status": "collecting",
+  "coverage": {
+    "description": "Seven international commercial ports officially identified by Taiwan International Ports Corporation, with Ministry of the Interior source points and twelve complete months of prebookmark activity.",
+    "country_codes": [
+      "TWN"
+    ],
+    "activity_window_start": "2024-09",
+    "activity_window_end": "2025-08",
+    "as_of": "2025-09-01T00:00:00Z"
+  },
+  "record_counts": {
+    "port_nodes": 7,
+    "monthly_activity_records": 84,
+    "total_records": 91
+  },
+  "source_ids": [
+    "src_twn_moi_wharf_main_1150409",
+    "src_twn_tipc_container_activity_8368",
+    "src_twn_tipc_vessel_activity_8365"
+  ],
+  "known_gaps": [
+    "Independent infrastructure review has not passed.",
+    "The source locations are landmark points, not harbor polygons, berth geometry, storage areas, channels, or engineering capacity.",
+    "Observed traffic is a utilization baseline and must not be interpreted as maximum throughput or mobilization capacity.",
+    "The wharf resource is a postbookmark live snapshot; only records carrying source update months no later than August 2025 are admitted.",
+    "Military facilities, military access, defenses, and targeting semantics are intentionally excluded."
+  ],
+  "open_contradiction_ids": [],
+  "owner": "agent_05_world_research_and_data_director",
+  "last_reviewed": "2026-08-07",
+  "review_after": "2026-11-07",
+  "notes": "This packet supports trade, logistics, blockade, evacuation, and access mechanics after a separate simulation contract is accepted. It does not create strike targets or executable capacity by itself."
+}

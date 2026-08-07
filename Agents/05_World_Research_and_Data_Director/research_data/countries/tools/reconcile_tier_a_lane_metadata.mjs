@@ -36,6 +36,10 @@ for (const code of countryCodes) {
   const geographyManifestPath = path.join(geographyDir, 'manifest.json');
   const geographySourcesPath = path.join(geographyDir, 'sources.ndjson');
   const geographyArtifactPath = path.join(geographyDir, 'artifact_record.json');
+  const portsDir = path.join(countryDir, 'infrastructure', 'ports');
+  const portsManifestPath = path.join(portsDir, 'manifest.json');
+  const portsSourcesPath = path.join(portsDir, 'sources.ndjson');
+  const portsArtifactPath = path.join(portsDir, 'artifact_record.json');
   const profile = readJson(profilesPath);
   const coverage = readJson(coveragePath);
   const researchManifest = readJson(researchManifestPath);
@@ -45,6 +49,10 @@ for (const code of countryCodes) {
   const geographyManifest = hasGeography ? readJson(geographyManifestPath) : null;
   const geographySources = hasGeography ? readRows(geographySourcesPath) : [];
   const geographyArtifact = hasGeography ? readJson(geographyArtifactPath) : null;
+  const hasPorts = fs.existsSync(portsManifestPath) && fs.existsSync(portsSourcesPath) && fs.existsSync(portsArtifactPath);
+  const portsManifest = hasPorts ? readJson(portsManifestPath) : null;
+  const portsSources = hasPorts ? readRows(portsSourcesPath) : [];
+  const portsArtifact = hasPorts ? readJson(portsArtifactPath) : null;
   const recordsByFamily = Object.fromEntries(coreFamilies.map((family) => [family, datasetRows(ledgerDir, manifest, family)]));
   const sources = datasetRows(ledgerDir, manifest, 'sources', 'sources.ndjson');
   const claims = datasetRows(ledgerDir, manifest, 'claims', 'claims.ndjson');
@@ -67,6 +75,7 @@ for (const code of countryCodes) {
     'src_imf_weo_2026_04_ngdpd_2025',
     ...politicsSourceIds,
     ...geographySources.map((source) => source.source_id),
+    ...portsSources.map((source) => source.source_id),
   ])];
   profile.coverage.politics_and_institutions.record_count = politicsRecordCount;
   profile.coverage.politics_and_institutions.source_count = evidence.sources.length;
@@ -139,6 +148,45 @@ for (const code of countryCodes) {
     geographyMatrixLane.notes = `${geographyManifest.notes} The published polygons are exact source derived geometry at the declared operational precision.`;
     researchManifest.files.administrative_geography = 'geography/manifest.json';
   }
+  if (hasPorts) {
+    const portDates = portsSources.map((source) => source.published_at).filter(Boolean).sort();
+    const portNodeCount = portsArtifact.artifacts?.port_nodes?.feature_count ?? 0;
+    const portActivityCount = portsArtifact.artifacts?.monthly_activity?.record_count ?? 0;
+    const portRecordCount = portNodeCount + portActivityCount;
+    const infrastructureProfileLane = profile.coverage.energy_transport_communications_logistics;
+    infrastructureProfileLane.status = portsManifest.status;
+    infrastructureProfileLane.record_count = portRecordCount;
+    infrastructureProfileLane.source_count = portsSources.length;
+    infrastructureProfileLane.open_question_count = portsManifest.known_gaps?.length ?? 0;
+    infrastructureProfileLane.notes = `${portsManifest.notes} Counts include ${portNodeCount} exact civilian port nodes and ${portActivityCount} monthly activity observations and do not imply independent acceptance.`;
+    profile.dataset_paths.infrastructure = 'infrastructure/ports/manifest.json';
+    profile.completeness.infrastructure_layer_status = portsManifest.status;
+    profile.unknowns = (profile.unknowns ?? []).filter((entry) => !entry.startsWith('Strategic industry, energy, transport, communications, logistics, alliances, sanctions, and crisis commitments are not yet populated.'));
+    profile.unknowns = profile.unknowns.filter((entry) => !entry.startsWith('County and city boundary geometry is collecting; lower level administration, terrain, hydrography, ports, bases, and strategic corridors remain unpopulated.'));
+    const refinedInfrastructureUnknown = 'Seven international commercial port nodes and twelve month activity baselines are collecting; berth capacity, hinterland links, energy, communications, other transport modes, repair, substitution, and military access remain unpopulated.';
+    if (!profile.unknowns.includes(refinedInfrastructureUnknown)) profile.unknowns.push(refinedInfrastructureUnknown);
+    const refinedGeographyUnknown = 'County and city boundary geometry is collecting; lower level administration, terrain, hydrography, bases, and strategic corridors remain unpopulated.';
+    if (!profile.unknowns.includes(refinedGeographyUnknown)) profile.unknowns.push(refinedGeographyUnknown);
+
+    const infrastructureMatrixLane = coverage.lanes.energy_transport_communications_logistics;
+    infrastructureMatrixLane.status = portsManifest.status;
+    infrastructureMatrixLane.owner = portsManifest.owner;
+    infrastructureMatrixLane.record_count = portRecordCount;
+    infrastructureMatrixLane.source_count = portsSources.length;
+    infrastructureMatrixLane.claim_count = 0;
+    infrastructureMatrixLane.contradiction_count = portsManifest.open_contradiction_ids?.length ?? 0;
+    infrastructureMatrixLane.exact_geometry_count = portNodeCount;
+    infrastructureMatrixLane.approximate_geometry_count = 0;
+    infrastructureMatrixLane.unknown_geometry_count = 0;
+    infrastructureMatrixLane.oldest_source_date = portDates.at(0) ?? null;
+    infrastructureMatrixLane.newest_source_date = portDates.at(-1) ?? null;
+    infrastructureMatrixLane.reviewed_at = portsManifest.last_reviewed;
+    infrastructureMatrixLane.review_after = portsManifest.review_after;
+    infrastructureMatrixLane.coverage_disposition = 'collecting_civilian_access_nodes_pending_independent_review';
+    infrastructureMatrixLane.blocking_questions = [...(portsManifest.known_gaps ?? [])];
+    infrastructureMatrixLane.notes = `${portsManifest.notes} The exact source derived points are civilian access nodes and observed activity is not engineering capacity.`;
+    researchManifest.files.civilian_international_ports = 'infrastructure/ports/manifest.json';
+  }
   coverage.overall_status = 'collecting';
   coverage.rollup = Object.fromEntries([
     ['lanes_total', Object.keys(coverage.lanes).length],
@@ -151,7 +199,7 @@ for (const code of countryCodes) {
       if (fs.readFileSync(file, 'utf8') !== output) errors.push(`${code}: ${path.basename(file)} is not reconciled to force_ledger/manifest.json`);
     } else fs.writeFileSync(file, output);
   }
-  reports.push({country:code,politics:{record_count:politicsRecordCount,source_count:evidence.sources.length,claim_count:evidence.claims.length,contradiction_count:openPoliticsContradictions},military:{status:manifest.status,record_count:recordCount,source_count:sources.length,claim_count:claims.length,contradiction_count:contradictions.length,geometry},geography:hasGeography?{status:geographyManifest.status,record_count:geographyArtifact.feature_count,source_count:geographySources.length,exact_geometry_count:geographyArtifact.feature_count}:null});
+  reports.push({country:code,politics:{record_count:politicsRecordCount,source_count:evidence.sources.length,claim_count:evidence.claims.length,contradiction_count:openPoliticsContradictions},military:{status:manifest.status,record_count:recordCount,source_count:sources.length,claim_count:claims.length,contradiction_count:contradictions.length,geometry},geography:hasGeography?{status:geographyManifest.status,record_count:geographyArtifact.feature_count,source_count:geographySources.length,exact_geometry_count:geographyArtifact.feature_count}:null,infrastructure:hasPorts?{status:portsManifest.status,record_count:(portsArtifact.artifacts?.port_nodes?.feature_count ?? 0)+(portsArtifact.artifacts?.monthly_activity?.record_count ?? 0),source_count:portsSources.length,exact_geometry_count:portsArtifact.artifacts?.port_nodes?.feature_count ?? 0}:null});
 }
 
 console.log(JSON.stringify({status:errors.length ? 'FAIL' : 'PASS',mode:checkOnly ? 'check' : 'write',countries:reports,errors}, null, 2));

@@ -47,11 +47,11 @@
       "notes": "Coverage has not begun."
     },
     "energy_transport_communications_logistics": {
-      "status": "shell",
-      "record_count": 0,
-      "source_count": 0,
-      "open_question_count": 1,
-      "notes": "Coverage has not begun."
+      "status": "collecting",
+      "record_count": 91,
+      "source_count": 3,
+      "open_question_count": 5,
+      "notes": "This packet supports trade, logistics, blockade, evacuation, and access mechanics after a separate simulation contract is accepted. It does not create strike targets or executable capacity by itself. Counts include 7 exact civilian port nodes and 84 monthly activity observations and do not imply independent acceptance."
     },
     "geography_provinces_terrain": {
       "status": "collecting",
@@ -75,7 +75,7 @@
     "economy": "../top_80_2025/top_80_2025_gdp.json",
     "force_ledger": "force_ledger/manifest.json",
     "facilities": null,
-    "infrastructure": null,
+    "infrastructure": "infrastructure/ports/manifest.json",
     "relationships": null,
     "claims": "evidence_registry.json",
     "sources": "evidence_registry.json",
@@ -85,7 +85,8 @@
     "political_actor_target": 20,
     "political_actor_count": 20,
     "province_layer_status": "collecting",
-    "force_ledger_status": "collecting"
+    "force_ledger_status": "collecting",
+    "infrastructure_layer_status": "collecting"
   },
   "source_ids": [
     "src_imf_weo_2026_04_ngdpd_2025",
@@ -120,14 +121,17 @@
     "src_twn_constitution_main_text",
     "src_twn_new_taipei_hou_dated_2025_08_29",
     "src_twn_moi_county_boundaries_1140318",
-    "src_twn_arcgis_county_boundaries_1140318"
+    "src_twn_arcgis_county_boundaries_1140318",
+    "src_twn_moi_wharf_main_1150409",
+    "src_twn_tipc_container_activity_8368",
+    "src_twn_tipc_vessel_activity_8365"
   ],
   "unknowns": [
     "The 20 actor opening roster is populated but still needs independent constitutional and Taiwan politics review.",
     "The precise workflow connecting presidential declaration authority and Legislative Yuan war and peace bills remains an explicit open contradiction set.",
     "Complete armed forces, reserve, coast guard, inventory, readiness, basing, and deployment records are not yet reconciled.",
-    "Strategic industry, energy, transport, communications, logistics, alliances, sanctions, and crisis commitments are not yet populated.",
-    "County and city boundary geometry is collecting; lower level administration, terrain, hydrography, ports, bases, and strategic corridors remain unpopulated."
+    "Seven international commercial port nodes and twelve month activity baselines are collecting; berth capacity, hinterland links, energy, communications, other transport modes, repair, substitution, and military access remain unpopulated.",
+    "County and city boundary geometry is collecting; lower level administration, terrain, hydrography, bases, and strategic corridors remain unpopulated."
   ],
   "reviewed_at": "2026-08-06",
   "review_after": "2026-09-06",
