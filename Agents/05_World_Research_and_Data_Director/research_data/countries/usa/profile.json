@@ -89,8 +89,6 @@
   },
   "source_ids": [
     "src_imf_weo_2026_04_ngdpd_2025",
-    "src_usa_white_house_administration",
-    "src_usa_white_house_cabinet",
     "src_usa_rubio_swearing_2025",
     "src_usa_hegseth_swearing_2025",
     "src_usa_white_house_national_security_team",
@@ -104,7 +102,6 @@
     "src_usa_senate_republican_leadership",
     "src_usa_senate_democratic_leadership",
     "src_usa_house_republican_leadership",
-    "src_usa_house_democratic_leader",
     "src_usa_council_of_governors_2025",
     "src_usa_nato_hague_2025",
     "src_usa_taiwan_relations_act",

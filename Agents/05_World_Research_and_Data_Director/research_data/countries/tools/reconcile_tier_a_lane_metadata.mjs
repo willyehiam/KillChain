@@ -83,10 +83,12 @@ for (const code of countryCodes) {
 
   const politicsRecordCount = (politics.institutions?.length ?? 0) + (politics.political_actors?.length ?? 0);
   const openPoliticsContradictions = evidence.contradiction_sets.filter((set) => set.status === 'open').length;
-  const politicsSourceIds = evidence.sources.map((source) => source.source_id);
+  const openingPoliticsSourceIds = evidence.sources
+    .filter((source) => !(source.mutability_class === 'live_mutable' && source.bookmark_evidence_status === 'quarantined_no_prebookmark_temporal_proof'))
+    .map((source) => source.source_id);
   profile.source_ids = [...new Set([
     'src_imf_weo_2026_04_ngdpd_2025',
-    ...politicsSourceIds,
+    ...openingPoliticsSourceIds,
     ...geographySources.map((source) => source.source_id),
     ...infrastructureSources.map((source) => source.source_id),
   ])];
