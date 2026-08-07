@@ -16,6 +16,15 @@ the canonical force ledgers. Verify them with:
 node Agents/05_World_Research_and_Data_Director/research_data/countries/tools/reconcile_tier_a_lane_metadata.mjs --check
 ```
 
+Taiwan also has the first collecting province layer: all 22 first order county
+and city polygons from the official `1140318` administrative boundary release.
+The geometry is source derived, unsimplified, provenance linked, hash frozen,
+and explicitly nonadjudicative about contested sovereignty. Verify it with:
+
+```text
+npm run validate:twn-geography
+```
+
 ## Shared acceptance sequence
 
 1. Government, constitutional authority, practical authority, and declared war

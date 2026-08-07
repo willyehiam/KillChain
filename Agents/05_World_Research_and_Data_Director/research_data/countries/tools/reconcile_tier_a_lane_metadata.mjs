@@ -32,11 +32,19 @@ for (const code of countryCodes) {
   const researchManifestPath = path.join(countryDir, 'research_manifest.json');
   const evidencePath = path.join(countryDir, 'evidence_registry.json');
   const politicsPath = path.join(countryDir, 'politics_and_institutions.json');
+  const geographyDir = path.join(countryDir, 'geography');
+  const geographyManifestPath = path.join(geographyDir, 'manifest.json');
+  const geographySourcesPath = path.join(geographyDir, 'sources.ndjson');
+  const geographyArtifactPath = path.join(geographyDir, 'artifact_record.json');
   const profile = readJson(profilesPath);
   const coverage = readJson(coveragePath);
   const researchManifest = readJson(researchManifestPath);
   const evidence = readJson(evidencePath);
   const politics = readJson(politicsPath);
+  const hasGeography = fs.existsSync(geographyManifestPath) && fs.existsSync(geographySourcesPath) && fs.existsSync(geographyArtifactPath);
+  const geographyManifest = hasGeography ? readJson(geographyManifestPath) : null;
+  const geographySources = hasGeography ? readRows(geographySourcesPath) : [];
+  const geographyArtifact = hasGeography ? readJson(geographyArtifactPath) : null;
   const recordsByFamily = Object.fromEntries(coreFamilies.map((family) => [family, datasetRows(ledgerDir, manifest, family)]));
   const sources = datasetRows(ledgerDir, manifest, 'sources', 'sources.ndjson');
   const claims = datasetRows(ledgerDir, manifest, 'claims', 'claims.ndjson');
@@ -55,7 +63,11 @@ for (const code of countryCodes) {
   const politicsRecordCount = (politics.institutions?.length ?? 0) + (politics.political_actors?.length ?? 0);
   const openPoliticsContradictions = evidence.contradiction_sets.filter((set) => set.status === 'open').length;
   const politicsSourceIds = evidence.sources.map((source) => source.source_id);
-  profile.source_ids = [...new Set(['src_imf_weo_2026_04_ngdpd_2025', ...politicsSourceIds])];
+  profile.source_ids = [...new Set([
+    'src_imf_weo_2026_04_ngdpd_2025',
+    ...politicsSourceIds,
+    ...geographySources.map((source) => source.source_id),
+  ])];
   profile.coverage.politics_and_institutions.record_count = politicsRecordCount;
   profile.coverage.politics_and_institutions.source_count = evidence.sources.length;
   const politicsLane = coverage.lanes.politics_and_institutions;
@@ -92,6 +104,41 @@ for (const code of countryCodes) {
   matrixLane.coverage_disposition = 'collecting_nonexecutable_pending_reconciliation';
   matrixLane.blocking_questions = [...(manifest.acceptance?.blockers ?? [])];
   matrixLane.notes = `${manifest.notes} The lane is collecting and remains unavailable to executable simulation consumers.`;
+
+  if (hasGeography) {
+    const geographyDates = geographySources.map((source) => source.published_at).filter(Boolean).sort();
+    const geographyProfileLane = profile.coverage.geography_provinces_terrain;
+    geographyProfileLane.status = geographyManifest.status;
+    geographyProfileLane.record_count = geographyArtifact.feature_count;
+    geographyProfileLane.source_count = geographySources.length;
+    geographyProfileLane.open_question_count = geographyManifest.known_gaps?.length ?? 0;
+    geographyProfileLane.notes = `${geographyManifest.notes} Counts are derived from the frozen geography artifact and do not imply independent acceptance.`;
+    profile.dataset_paths.provinces = `geography/${geographyArtifact.path}`;
+    profile.completeness.province_layer_status = geographyManifest.status;
+    profile.unknowns = (profile.unknowns ?? []).filter((entry) => !entry.startsWith('County, city, island, base, port, and critical corridor strategic geography is not yet populated.'));
+    if (!profile.unknowns.includes('County and city boundary geometry is collecting; lower level administration, terrain, hydrography, ports, bases, and strategic corridors remain unpopulated.')) {
+      profile.unknowns.push('County and city boundary geometry is collecting; lower level administration, terrain, hydrography, ports, bases, and strategic corridors remain unpopulated.');
+    }
+
+    const geographyMatrixLane = coverage.lanes.geography_provinces_terrain;
+    geographyMatrixLane.status = geographyManifest.status;
+    geographyMatrixLane.owner = geographyManifest.owner;
+    geographyMatrixLane.record_count = geographyArtifact.feature_count;
+    geographyMatrixLane.source_count = geographySources.length;
+    geographyMatrixLane.claim_count = 0;
+    geographyMatrixLane.contradiction_count = geographyManifest.open_contradiction_ids?.length ?? 0;
+    geographyMatrixLane.exact_geometry_count = geographyArtifact.feature_count;
+    geographyMatrixLane.approximate_geometry_count = 0;
+    geographyMatrixLane.unknown_geometry_count = 0;
+    geographyMatrixLane.oldest_source_date = geographyDates.at(0) ?? null;
+    geographyMatrixLane.newest_source_date = geographyDates.at(-1) ?? null;
+    geographyMatrixLane.reviewed_at = geographyManifest.last_reviewed;
+    geographyMatrixLane.review_after = geographyManifest.review_after;
+    geographyMatrixLane.coverage_disposition = 'collecting_source_derived_pending_independent_review';
+    geographyMatrixLane.blocking_questions = [...(geographyManifest.known_gaps ?? [])];
+    geographyMatrixLane.notes = `${geographyManifest.notes} The published polygons are exact source derived geometry at the declared operational precision.`;
+    researchManifest.files.administrative_geography = 'geography/manifest.json';
+  }
   coverage.overall_status = 'collecting';
   coverage.rollup = Object.fromEntries([
     ['lanes_total', Object.keys(coverage.lanes).length],
@@ -104,7 +151,7 @@ for (const code of countryCodes) {
       if (fs.readFileSync(file, 'utf8') !== output) errors.push(`${code}: ${path.basename(file)} is not reconciled to force_ledger/manifest.json`);
     } else fs.writeFileSync(file, output);
   }
-  reports.push({country:code,politics:{record_count:politicsRecordCount,source_count:evidence.sources.length,claim_count:evidence.claims.length,contradiction_count:openPoliticsContradictions},military:{status:manifest.status,record_count:recordCount,source_count:sources.length,claim_count:claims.length,contradiction_count:contradictions.length,geometry}});
+  reports.push({country:code,politics:{record_count:politicsRecordCount,source_count:evidence.sources.length,claim_count:evidence.claims.length,contradiction_count:openPoliticsContradictions},military:{status:manifest.status,record_count:recordCount,source_count:sources.length,claim_count:claims.length,contradiction_count:contradictions.length,geometry},geography:hasGeography?{status:geographyManifest.status,record_count:geographyArtifact.feature_count,source_count:geographySources.length,exact_geometry_count:geographyArtifact.feature_count}:null});
 }
 
 console.log(JSON.stringify({status:errors.length ? 'FAIL' : 'PASS',mode:checkOnly ? 'check' : 'write',countries:reports,errors}, null, 2));

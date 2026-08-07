@@ -116,6 +116,14 @@ const tierALocalSources = TIER_A_COUNTRY_DIRECTORIES.flatMap((countryCode) => {
     origin: path.relative(researchRoot, registryPath),
   }));
 });
+const tierAGeographySources = TIER_A_COUNTRY_DIRECTORIES.flatMap((countryCode) => {
+  const sourcePath = path.join(countriesRoot, countryCode, "geography", "sources.ndjson");
+  if (!fs.existsSync(sourcePath)) return [];
+  return readNdjson(sourcePath).map((source) => ({
+    source,
+    origin: path.relative(researchRoot, sourcePath),
+  }));
+});
 
 const sourceRecords = [
   ...globalSources.map((source) => ({ source, origin: "sources/sources.ndjson" })),
@@ -124,6 +132,7 @@ const sourceRecords = [
     origin: "bookmarks/2025_09_01/sources.ndjson",
   })),
   ...tierALocalSources,
+  ...tierAGeographySources,
 ];
 const canonicalSourceById = new Map();
 
@@ -247,6 +256,7 @@ let rankedProfileCount = 0;
 let strategicAdditionProfileCount = 0;
 let tierAProfileCount = 0;
 let forceLedgerCount = 0;
+let provinceLayerCount = 0;
 
 for (const country of registry.countries.filter((entry) => entry.profile_path)) {
   const profilePath = path.join(researchRoot, country.profile_path);
@@ -276,6 +286,29 @@ for (const country of registry.countries.filter((entry) => entry.profile_path)) 
 
   for (const sourceId of profile.source_ids ?? []) {
     assert(sourceIds.has(sourceId), `${country.country_code}: unknown profile source ${sourceId}`);
+  }
+
+  if (profile.dataset_paths.provinces) {
+    const provincePath = path.resolve(path.dirname(profilePath), profile.dataset_paths.provinces);
+    assert(fs.existsSync(provincePath), `${country.country_code}: province layer does not exist`);
+    const provinceLayer = readJson(provincePath);
+    if (provinceLayer) {
+      provinceLayerCount += 1;
+      assert(provinceLayer.type === "FeatureCollection", `${country.country_code}: province layer must be GeoJSON`);
+      assert(
+        provinceLayer.features?.length === profile.coverage.geography_provinces_terrain.record_count,
+        `${country.country_code}: province layer count differs from dossier metadata`,
+      );
+      assert(
+        profile.completeness?.province_layer_status !== "absent",
+        `${country.country_code}: populated province layer cannot be reported as absent`,
+      );
+    }
+  } else {
+    assert(
+      profile.completeness?.province_layer_status === "absent",
+      `${country.country_code}: absent province layer has a populated status`,
+    );
   }
 
   if (!profile.dataset_paths.force_ledger) {
@@ -328,6 +361,7 @@ assert(
 );
 assert(tierAProfileCount === 3, `Expected three Tier A profiles, found ${tierAProfileCount}`);
 assert(forceLedgerCount === 3, `Expected three Tier A force ledgers, found ${forceLedgerCount}`);
+assert(provinceLayerCount === 1, `Expected one collecting province layer, found ${provinceLayerCount}`);
 
 const report = {
   status: errors.length ? "FAIL" : "PASS",
@@ -342,6 +376,7 @@ const report = {
   strategic_addition_profiles: strategicAdditionProfileCount,
   tier_a_profiles: tierAProfileCount,
   tier_a_force_ledgers: forceLedgerCount,
+  collecting_province_layers: provinceLayerCount,
   schemas_parsed: NEW_SCHEMAS.length,
   errors,
 };

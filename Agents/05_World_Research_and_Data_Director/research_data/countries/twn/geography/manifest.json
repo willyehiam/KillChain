@@ -1,0 +1,28 @@
+{
+  "dataset_id": "dataset_twn_admin1_boundaries_1140318",
+  "title": "Taiwan first order administrative boundaries 1140318",
+  "version": "1140318",
+  "schema_version": "0.1.0",
+  "status": "collecting",
+  "coverage": {
+    "description": "All 22 direct controlled municipalities, counties, and cities represented by the Taiwan Ministry of the Interior county boundary release identified as 1140318.",
+    "valid_from": "2025-03-18",
+    "country_codes": [
+      "TWN"
+    ]
+  },
+  "source_ids": [
+    "src_twn_moi_county_boundaries_1140318",
+    "src_twn_arcgis_county_boundaries_1140318"
+  ],
+  "known_gaps": [
+    "Independent geographic review has not passed.",
+    "Township, district, village, terrain, river, port, airfield, and transport corridor overlays are not part of this artifact.",
+    "Administrative assignment of outlying islands is preserved as published and must not be interpreted as a neutral sovereignty determination."
+  ],
+  "open_contradiction_ids": [],
+  "owner": "agent_05_world_research_and_data_director",
+  "last_reviewed": "2026-08-07",
+  "review_after": "2026-11-07",
+  "notes": "This is source derived administrative geometry for the opening bookmark. It is suitable for research and map aggregation after validation, but the lane remains collecting until an independent reviewer accepts geographic completeness and contested territory semantics."
+}

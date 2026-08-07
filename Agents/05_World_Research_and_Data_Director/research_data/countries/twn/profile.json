@@ -54,11 +54,11 @@
       "notes": "Coverage has not begun."
     },
     "geography_provinces_terrain": {
-      "status": "shell",
-      "record_count": 0,
-      "source_count": 0,
-      "open_question_count": 1,
-      "notes": "Coverage has not begun."
+      "status": "collecting",
+      "record_count": 22,
+      "source_count": 2,
+      "open_question_count": 3,
+      "notes": "This is source derived administrative geometry for the opening bookmark. It is suitable for research and map aggregation after validation, but the lane remains collecting until an independent reviewer accepts geographic completeness and contested territory semantics. Counts are derived from the frozen geography artifact and do not imply independent acceptance."
     },
     "crises_alliances_sanctions_deployments": {
       "status": "shell",
@@ -71,7 +71,7 @@
   "dataset_paths": {
     "government": "politics_and_institutions.json",
     "political_actors": "politics_and_institutions.json",
-    "provinces": null,
+    "provinces": "geography/admin_level_1_counties_1140318.geojson",
     "economy": "../top_80_2025/top_80_2025_gdp.json",
     "force_ledger": "force_ledger/manifest.json",
     "facilities": null,
@@ -84,7 +84,7 @@
   "completeness": {
     "political_actor_target": 20,
     "political_actor_count": 20,
-    "province_layer_status": "absent",
+    "province_layer_status": "collecting",
     "force_ledger_status": "collecting"
   },
   "source_ids": [
@@ -118,14 +118,16 @@
     "src_twn_cec_recall_results_2025_08_23",
     "src_twn_us_taiwan_relations_act",
     "src_twn_constitution_main_text",
-    "src_twn_new_taipei_hou_dated_2025_08_29"
+    "src_twn_new_taipei_hou_dated_2025_08_29",
+    "src_twn_moi_county_boundaries_1140318",
+    "src_twn_arcgis_county_boundaries_1140318"
   ],
   "unknowns": [
     "The 20 actor opening roster is populated but still needs independent constitutional and Taiwan politics review.",
     "The precise workflow connecting presidential declaration authority and Legislative Yuan war and peace bills remains an explicit open contradiction set.",
-    "County, city, island, base, port, and critical corridor strategic geography is not yet populated.",
     "Complete armed forces, reserve, coast guard, inventory, readiness, basing, and deployment records are not yet reconciled.",
-    "Strategic industry, energy, transport, communications, logistics, alliances, sanctions, and crisis commitments are not yet populated."
+    "Strategic industry, energy, transport, communications, logistics, alliances, sanctions, and crisis commitments are not yet populated.",
+    "County and city boundary geometry is collecting; lower level administration, terrain, hydrography, ports, bases, and strategic corridors remain unpopulated."
   ],
   "reviewed_at": "2026-08-06",
   "review_after": "2026-09-06",
