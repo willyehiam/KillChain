@@ -1,0 +1,273 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://killweb.game/research/schemas/country_profile.schema.json",
+  "title": "KillWeb Country Dossier Profile",
+  "description": "Canonical identity, coverage, linkage, uncertainty, and review contract for one playable or strategically required country at one campaign bookmark.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "country_id",
+    "country_code",
+    "name",
+    "bookmark_id",
+    "as_of",
+    "depth_tier",
+    "coverage_status",
+    "roster_basis",
+    "gdp_rank",
+    "gdp_2025_usd_billions",
+    "coverage",
+    "dataset_paths",
+    "completeness",
+    "source_ids",
+    "unknowns",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "country_id": {
+      "type": "string",
+      "pattern": "^country_[a-z]{3}$"
+    },
+    "country_code": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bookmark_id": {
+      "$ref": "common.schema.json#/$defs/stableId"
+    },
+    "as_of": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "depth_tier": {
+      "type": "string",
+      "enum": ["A", "B", "C"]
+    },
+    "coverage_status": {
+      "$ref": "#/$defs/coverageStatus"
+    },
+    "roster_basis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gdp_rank": {
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
+    "gdp_2025_usd_billions": {
+      "type": ["number", "null"],
+      "minimum": 0
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "politics_and_institutions",
+        "economy_trade_finance_resources",
+        "military_organization_inventory",
+        "fixed_facilities_basing",
+        "strategic_industry_conversion",
+        "energy_transport_communications_logistics",
+        "geography_provinces_terrain",
+        "crises_alliances_sanctions_deployments"
+      ],
+      "properties": {
+        "politics_and_institutions": { "$ref": "#/$defs/coverageLane" },
+        "economy_trade_finance_resources": { "$ref": "#/$defs/coverageLane" },
+        "military_organization_inventory": { "$ref": "#/$defs/coverageLane" },
+        "fixed_facilities_basing": { "$ref": "#/$defs/coverageLane" },
+        "strategic_industry_conversion": { "$ref": "#/$defs/coverageLane" },
+        "energy_transport_communications_logistics": { "$ref": "#/$defs/coverageLane" },
+        "geography_provinces_terrain": { "$ref": "#/$defs/coverageLane" },
+        "crises_alliances_sanctions_deployments": { "$ref": "#/$defs/coverageLane" }
+      },
+      "additionalProperties": false
+    },
+    "dataset_paths": {
+      "type": "object",
+      "required": [
+        "government",
+        "political_actors",
+        "provinces",
+        "economy",
+        "force_ledger",
+        "facilities",
+        "infrastructure",
+        "relationships",
+        "claims",
+        "sources",
+        "contradictions"
+      ],
+      "properties": {
+        "government": { "$ref": "#/$defs/pathOrNull" },
+        "political_actors": { "$ref": "#/$defs/pathOrNull" },
+        "provinces": { "$ref": "#/$defs/pathOrNull" },
+        "economy": { "$ref": "#/$defs/pathOrNull" },
+        "force_ledger": { "$ref": "#/$defs/pathOrNull" },
+        "facilities": { "$ref": "#/$defs/pathOrNull" },
+        "infrastructure": { "$ref": "#/$defs/pathOrNull" },
+        "relationships": { "$ref": "#/$defs/pathOrNull" },
+        "claims": { "$ref": "#/$defs/pathOrNull" },
+        "sources": { "$ref": "#/$defs/pathOrNull" },
+        "contradictions": { "$ref": "#/$defs/pathOrNull" }
+      },
+      "additionalProperties": false
+    },
+    "completeness": {
+      "type": "object",
+      "required": [
+        "political_actor_target",
+        "political_actor_count",
+        "province_layer_status",
+        "force_ledger_status"
+      ],
+      "properties": {
+        "political_actor_target": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "political_actor_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "province_layer_status": {
+          "$ref": "#/$defs/layerStatus"
+        },
+        "force_ledger_status": {
+          "$ref": "#/$defs/layerStatus"
+        },
+        "infrastructure_layer_status": {
+          "$ref": "#/$defs/layerStatus"
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableId"
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "reviewed_at": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "review_after": {
+      "$ref": "common.schema.json#/$defs/isoDateOrTimestamp"
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "coverage_status": { "const": "shell" }
+        },
+        "required": ["coverage_status"]
+      },
+      "then": {
+        "properties": {
+          "completeness": {
+            "properties": {
+              "political_actor_count": { "const": 0 },
+              "province_layer_status": { "const": "absent" },
+              "force_ledger_status": { "const": "absent" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "depth_tier": { "const": "A" }
+        },
+        "required": ["depth_tier"]
+      },
+      "then": {
+        "required": ["reviewed_at", "review_after"]
+      }
+    }
+  ],
+  "$defs": {
+    "coverageStatus": {
+      "type": "string",
+      "enum": [
+        "shell",
+        "collecting",
+        "needs_review",
+        "reconciled",
+        "decision_usable",
+        "stale",
+        "deprecated"
+      ]
+    },
+    "layerStatus": {
+      "type": "string",
+      "enum": [
+        "absent",
+        "shell",
+        "collecting",
+        "needs_review",
+        "reconciled",
+        "decision_usable",
+        "stale",
+        "deprecated"
+      ]
+    },
+    "pathOrNull": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "coverageLane": {
+      "type": "object",
+      "required": [
+        "status",
+        "record_count",
+        "source_count",
+        "open_question_count",
+        "notes"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/coverageStatus"
+        },
+        "record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "open_question_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
