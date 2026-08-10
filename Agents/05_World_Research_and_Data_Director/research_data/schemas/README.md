@@ -13,6 +13,7 @@ These files are research contracts. They do not implement the simulation engine.
 
 | Record | Responsibility | Must not be used for |
 | --- | --- | --- |
+| `country_profile.schema.json` | Country identity, eight research lanes, dataset links, completeness, unknowns, and review state at one bookmark | Claiming that a populated dossier is simulation ready |
 | `force_ledger_manifest.schema.json` | Independent acceptance states, explicit coverage matrix, file paths, reconciliation status, and review state | Claiming that a schema pass means decision usability |
 | `military_organization_record.schema.json` | Organization identity, display containment, personnel, readiness, and mobilization state | Granting command authority from the display tree |
 | `military_organization_relationship.schema.json` | Concurrent, sourced, conditional command, support, mobilization, state, party, and statutory relationships | Display containment or equipment totals |
