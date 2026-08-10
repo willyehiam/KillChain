@@ -10,8 +10,9 @@
 
 ## P0: Corpus foundation
 
-1. Validate all JSON schemas. Status: syntax validated; full JSON Schema
-   evaluation pending.
+1. Validate all JSON schemas. Status: schema syntax validated. Country dossier
+   and force ledger instances now have dedicated cross file contract gates;
+   general purpose JSON Schema evaluation remains queued.
 2. Define source registry storage format. Status: complete.
 3. Define claim and contradiction storage format. Status: complete.
 4. Freeze confidence and precision vocabulary. Status: provisional vocabulary
@@ -24,7 +25,12 @@
    validator complete.
 8. Define dataset acceptance gates. Status: complete.
 9. Expand the validator from the benchmark to every machine readable dataset.
-   Status: queued.
+   Status: initial corpus wide integrity validator complete across 204 files and
+   1,673 parsed records; broader schema instance evaluation remains queued.
+10. Define the canonical country dossier contract. Status: complete; all 80
+   ranked profiles and all three Tier A force ledger links pass the gate.
+11. Prevent collecting force ledgers from becoming executable state. Status:
+   complete for the Tier A manifests and consumer firewall.
 
 ## P1: Country cohort
 
@@ -32,25 +38,37 @@
 2. Produce the top 80 candidate cohort. Status: complete; 80 ranked country records published.
 3. Resolve territories, missing data, and reference year. Status: complete; 2025 NGDPD selected, Hong Kong and Puerto Rico excluded from the country count, Taiwan included.
 4. Freeze cohort version 1 after approval. Status: complete; founder approved 2025 GDP rule and roster version 1 is frozen.
-5. Create a country dossier for every selected state.
-6. Assign strategic and institutional archetypes.
-7. Prioritize bespoke content tiers.
+5. Create a country dossier for every selected state. Status: complete at the
+   structural level for 80 ranked countries plus 11 mandatory strategic
+   additions; substantive collection is active for the United States, China,
+   and Taiwan.
+6. Assign strategic and institutional archetypes. Status: queued after source
+   backed government and alliance collection; no archetype may substitute for
+   evidence.
+7. Prioritize bespoke content tiers. Status: complete for the initial A, B, and C
+   research depth assignments.
 8. Create political actor rosters with twenty plausible national figures where
-   public evidence supports inclusion.
+   public evidence supports inclusion. Status: United States, China, and Taiwan
+   packets populated and awaiting independent review; remaining countries queued.
+9. Open Tier B wave one dossiers for Japan, South Korea, North Korea, Russia,
+   India, Australia, and the Philippines. Status: queued.
+10. Open Tier B wave two dossiers for Iran, Israel, Saudi Arabia, Türkiye,
+    Pakistan, the United Kingdom, France, and Germany. Status: queued.
 
 ## P1: Starting bookmark
 
 1. Freeze the opening date at 1 September 2025. Status: complete.
 2. Define the historical information cutoff. Status: complete.
 3. Separate known history from scenario divergence. Status: complete at the
-   policy level; record enforcement queued.
+   policy level with automated bookmark firewall enforcement active.
 4. Assemble governments, alliances, conflicts, sanctions, economies, and force
    posture at the cutoff. Status: collecting.
 5. Record all unresolved or future dependent assumptions. Status: collecting.
 6. Treat post cutoff events as optional historical pressure paths rather than
    predetermined outcomes. Status: policy complete.
 7. Add automated detection for records that leak post cutoff knowledge into the
-   opening state. Status: queued.
+   opening state. Status: complete in the corpus integrity and opening posture
+   validators, with regression fixtures.
 
 ## P2: Fully modeled theaters
 
