@@ -73,10 +73,27 @@ Canonical opening bookmark: September 1, 2025 at 00:00 UTC.
 The corpus has a strong contract foundation and one good benchmark. It does not
 yet contain a playable global world state.
 
-## Research completion definition
+## Research gate model
 
-The research stage is complete when the corpus can support a coherent playable
-opening world without pretending to know every real object.
+The project no longer waits for the entire content ambition before testing game
+behavior. `33_LEAN_PRODUCTION_CORRECTION.md` defines a minimum gate into Game and
+Simulation Design and a later content completeness gate. Research continues in
+parallel after the minimum gate.
+
+The next milestone is therefore not eighty equally deep dossiers. It is:
+
+1. A compact global pulse contract.
+2. Six opening crisis countries with decision usable authority and participation
+   data.
+3. Conserved force capability pools sufficient for the opening decisions.
+4. One reconciled Indo Pacific theater participation matrix.
+5. One deterministic end to end acceptance story.
+
+## Content completeness definition
+
+The long term research corpus is complete when it can support broad historically
+grounded content without pretending to know every real object. This is a release
+coverage target, not a prerequisite for beginning all simulation design.
 
 Completion requires all of the following.
 

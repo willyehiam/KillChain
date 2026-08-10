@@ -110,6 +110,33 @@ The data must be sufficient to construct a playable world model with confidence,
 date, source, and abstraction labels. It does not need to pretend to know every
 real asset.
 
+Research is no longer a monolithic prerequisite for all later learning. Two gates
+apply.
+
+### Minimum gate to enter Game and Simulation Design
+
+1. A compact global pulse contract exists for every country.
+2. The opening crisis has enough evidence to answer who may act, with what broad
+   capability, from where, under which authority, and with which major support.
+3. The United States, China, Taiwan, Japan, South Korea, and the Philippines have
+   the authority and participation data required by the opening crisis.
+4. National resources and theater allocations use stable identities and conserve
+   quantities at the chosen abstraction.
+5. At least one end to end acceptance story is defined with uncertainty and
+   deterministic replay requirements.
+6. Missing depth is explicit and cannot silently become zero, certainty, or
+   automatic participation.
+
+Passing this gate permits Game and Simulation Design while research continues.
+It does not declare the corpus complete.
+
+### Content completeness gate
+
+The larger country, theater, infrastructure, and event program continues as
+progressive content production. It gates claims of broad historical coverage and
+release readiness, not the first simulation design probes. The canonical lean
+delivery correction is `33_LEAN_PRODUCTION_CORRECTION.md`.
+
 ## Later stage: Game and Simulation Design
 
 ### Purpose

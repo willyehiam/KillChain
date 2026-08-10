@@ -276,6 +276,27 @@ The new simulation engine, final experience design, engineering stack, and
 development swarm remain gated until their later stages are deliberately
 completed.
 
+## 2026 08 10: Lean production correction
+
+### Decision
+
+Replace the monolithic research first waterfall with a walking skeleton and
+progressive content rings. Research remains active, but a minimum opening crisis
+gate may authorize Game and Simulation Design while the larger corpus continues.
+Country packets should move toward one shared compiler and declarative country
+data. Twenty actor rosters and complete platform detail remain depth targets, not
+universal blockers when smaller abstractions support the required decisions.
+
+### Reason
+
+The evidence and validation system was improving faster than playable proof. The
+new model preserves fidelity while forcing research to justify itself through
+player decisions, delegated plans, constraints, consequences, or uncertainty.
+
+### Canonical specification
+
+`33_LEAN_PRODUCTION_CORRECTION.md`
+
 
 ## 2026 08 02: First campaign bookmark
 
