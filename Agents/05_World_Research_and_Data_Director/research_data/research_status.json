@@ -1,0 +1,161 @@
+{
+  "schema_version": "0.1.0",
+  "report_id": "killweb_research_status_2026_08_10",
+  "audit_date": "2026-08-10",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "stage": "research",
+  "corpus_validation": {
+    "status": "PASS",
+    "counts": {
+      "files": 224,
+      "parsed_records": 1693,
+      "objects": 11083,
+      "sources": 207,
+      "primary_ids": 1265,
+      "source_references": 3064,
+      "geometry_records": 249
+    },
+    "error_count": 0,
+    "warning_count": 0
+  },
+  "countries": {
+    "total": 91,
+    "by_depth_tier": {
+      "A": 3,
+      "B": 22,
+      "C": 66
+    },
+    "by_profile_status": {
+      "shell": 87,
+      "collecting": 4,
+      "needs_review": 0,
+      "verified": 0,
+      "stale": 0,
+      "deprecated": 0
+    },
+    "lane_statuses": {
+      "shell": 638,
+      "collecting": 85,
+      "needs_review": 5,
+      "verified": 0,
+      "stale": 0,
+      "deprecated": 0
+    },
+    "actor_roster_complete": 4,
+    "force_ledgers_present": 3,
+    "force_ledgers_simulation_ready": 0,
+    "substantive": [
+      {
+        "country_code": "USA",
+        "name": "United States",
+        "depth_tier": "A",
+        "profile_status": "collecting",
+        "political_actor_count": 21,
+        "force_ledger_status": "collecting",
+        "non_shell_lanes": [
+          "politics_and_institutions",
+          "economy_trade_finance_resources",
+          "military_organization_inventory"
+        ]
+      },
+      {
+        "country_code": "CHN",
+        "name": "China",
+        "depth_tier": "A",
+        "profile_status": "collecting",
+        "political_actor_count": 24,
+        "force_ledger_status": "collecting",
+        "non_shell_lanes": [
+          "politics_and_institutions",
+          "economy_trade_finance_resources",
+          "military_organization_inventory"
+        ]
+      },
+      {
+        "country_code": "JPN",
+        "name": "Japan",
+        "depth_tier": "B",
+        "profile_status": "collecting",
+        "political_actor_count": 20,
+        "force_ledger_status": "absent",
+        "non_shell_lanes": [
+          "politics_and_institutions",
+          "economy_trade_finance_resources",
+          "crises_alliances_sanctions_deployments"
+        ]
+      },
+      {
+        "country_code": "TWN",
+        "name": "Taiwan",
+        "depth_tier": "A",
+        "profile_status": "collecting",
+        "political_actor_count": 20,
+        "force_ledger_status": "collecting",
+        "non_shell_lanes": [
+          "politics_and_institutions",
+          "economy_trade_finance_resources",
+          "military_organization_inventory",
+          "energy_transport_communications_logistics",
+          "geography_provinces_terrain"
+        ]
+      }
+    ]
+  },
+  "conflict_world": {
+    "fully_modeled_total": 9,
+    "fully_modeled_substantive": [
+      "china_taiwan_south_china_sea"
+    ],
+    "fully_modeled_scaffolds": [
+      "eastern_congo",
+      "gaza_levant",
+      "iran_gulf",
+      "myanmar",
+      "sahel",
+      "sudan",
+      "ukraine",
+      "venezuela_caribbean"
+    ],
+    "secondary_total": 9,
+    "secondary_substantive": [],
+    "secondary_scaffolds": [
+      "afghanistan_pakistan",
+      "armenia_azerbaijan",
+      "colombia",
+      "ecuador",
+      "ethiopia_eritrea",
+      "haiti",
+      "india_pakistan",
+      "somalia",
+      "south_sudan"
+    ],
+    "political_event_total": 8,
+    "political_event_substantive": [],
+    "political_event_scaffolds": [
+      "argentina_austerity_crisis",
+      "bolivia_political_realignment",
+      "brazil_bolsonaro_trial",
+      "indonesia_protests",
+      "lebanon_hezbollah_disarmament",
+      "nepal_gen_z_revolution",
+      "peru_legitimacy_crisis",
+      "syria_political_transition"
+    ]
+  },
+  "immediate_blockers": [
+    "No national force ledger is simulation ready.",
+    "Japan is the only Tier B country with accepted substantive evidence.",
+    "Only the China Taiwan South China Sea theater has substantive machine readable records.",
+    "All secondary crises and political event chains remain scaffolds.",
+    "Global infrastructure networks remain unintegrated outside the Taiwan foundation.",
+    "The research gate report, freshness dashboard, and cross domain traceability report remain incomplete."
+  ],
+  "next_dependency_order": [
+    "Promote South Korea and the Philippines through politics, authority, alliance, and access research.",
+    "Complete Japan military organization, national force ledger boundaries, strategic geography, and sustainment foundations.",
+    "Reconcile the Indo Pacific participation and access web without automatic alliance behavior.",
+    "Continue Tier B wave one country packets for North Korea, Russia, India, and Australia.",
+    "Advance complete national force accounting for the United States, China, and Taiwan.",
+    "Populate the remaining fully modeled theaters, secondary crises, event chains, and global networks."
+  ]
+}

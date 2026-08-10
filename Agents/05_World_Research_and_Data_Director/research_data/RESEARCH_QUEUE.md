@@ -25,8 +25,9 @@
    validator complete.
 8. Define dataset acceptance gates. Status: complete.
 9. Expand the validator from the benchmark to every machine readable dataset.
-   Status: initial corpus wide integrity validator complete across 204 files and
-   1,673 parsed records; broader schema instance evaluation remains queued.
+   Status: corpus wide integrity validation passes across 224 machine files and
+   1,693 parsed records; broader general purpose schema instance evaluation
+   remains queued.
 10. Define the canonical country dossier contract. Status: complete; all 80
    ranked profiles and all three Tier A force ledger links pass the gate.
 11. Prevent collecting force ledgers from becoming executable state. Status:
@@ -41,19 +42,20 @@
 5. Create a country dossier for every selected state. Status: complete at the
    structural level for 80 ranked countries plus 11 mandatory strategic
    additions; substantive collection is active for the United States, China,
-   and Taiwan.
+   Taiwan, and Japan.
 6. Assign strategic and institutional archetypes. Status: queued after source
    backed government and alliance collection; no archetype may substitute for
    evidence.
 7. Prioritize bespoke content tiers. Status: complete for the initial A, B, and C
    research depth assignments.
 8. Create political actor rosters with twenty plausible national figures where
-   public evidence supports inclusion. Status: United States, China, and Taiwan
-   packets populated and awaiting independent review; remaining countries queued.
+   public evidence supports inclusion. Status: United States, China, Taiwan, and
+   Japan packets populated and awaiting independent review; remaining countries
+   queued.
 9. Open Tier B wave one dossiers for Japan, South Korea, North Korea, Russia,
    India, Australia, and the Philippines. Status: structural research manifests,
-   eight lane matrices, and country work packages complete; evidence collection
-   remains queued and every lane remains shell.
+   eight lane matrices, and country work packages complete. Japan politics and
+   alliance authority are collecting; the other six countries remain shells.
 10. Open Tier B wave two dossiers for Iran, Israel, Saudi Arabia, Türkiye,
     Pakistan, the United Kingdom, France, and Germany. Status: queued.
 

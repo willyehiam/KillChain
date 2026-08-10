@@ -2,7 +2,7 @@
 
 ## Status audit
 
-Audit date: August 6, 2026.
+Audit date: August 10, 2026.
 
 Current phase: Research.
 
@@ -19,10 +19,13 @@ Canonical opening bookmark: September 1, 2025 at 00:00 UTC.
 5. The September 1, 2025 opening bookmark is frozen.
 6. Common research, source, claim, contradiction, country, organization,
    inventory, deployment, facility, infrastructure, and bookmark schemas exist.
-7. Tier A country shells exist for the United States, China, and Taiwan.
-8. Force ledger shells exist for the United States, China, and Taiwan.
+7. Substantive collecting country packets exist for the United States, China,
+   Taiwan, and Japan.
+8. Nonexecutable collecting force ledgers exist for the United States, China,
+   and Taiwan.
 9. Justice Mission 2025 provides the first validated theater benchmark.
-10. The three original validation suites pass on the audited checkpoint.
+10. The integrated research foundation and application test suites pass on the
+    audited checkpoint.
 11. The Tier A structural validator defines the required country packet
    structure and passes for the United States, China, and Taiwan.
 
@@ -31,36 +34,41 @@ Canonical opening bookmark: September 1, 2025 at 00:00 UTC.
 1. 80 ranked countries.
 2. 11 strategic additions.
 3. 91 registry countries.
-4. 3 Tier A country shells.
-5. 3 Tier A force ledger shells.
-6. 12 foundation sources.
-7. 7 Justice Mission sources.
-8. 20 Justice Mission atomic claims.
-9. 6 preserved Justice Mission contradictions.
-10. 13 Justice Mission force observations.
-11. 4 Justice Mission derived measures.
-12. 5 exact public exercise polygons.
+4. 4 substantively collecting country profiles and 87 structural shells.
+5. 3 collecting national force ledgers and 0 simulation ready ledgers.
+6. 4 countries with political actor rosters of at least twenty people.
+7. 207 source records across the corpus integrity scan.
+8. 1,693 parsed machine records and 11,083 scanned objects.
+9. 20 Justice Mission atomic claims.
+10. 5 exact public exercise polygons.
+11. 1 of 9 fully modeled theaters with substantive machine readable records.
+12. 0 of 9 secondary crises and 0 of 8 political event chains with substantive
+    machine readable records.
 
 ### Critical incompleteness
 
-1. The United States, China, and Taiwan profiles remain almost entirely shells.
-2. Their force ledgers contain no accepted organization, equipment, inventory,
-   deployment, or facility records.
-3. The remaining 88 registry countries do not yet have country dossier shells.
-4. Political actor rosters are empty.
-5. Province and strategic geography layers are absent.
+1. Only four of 91 country profiles contain substantive evidence.
+2. No national force ledger is reconciled, decision usable, or simulation ready.
+3. Eighty seven registry countries remain structural shells.
+4. Only the United States, China, Taiwan, and Japan have political actor rosters
+   of at least twenty people.
+5. Province and strategic geography layers remain absent outside the Taiwan
+   foundation.
 6. Global infrastructure currently has a taxonomy but no integrated network
    corpus.
 7. Eight of nine fully modeled theaters remain scaffolds.
 8. All nine secondary crises remain scaffolds.
 9. All eight political event chains remain scaffolds.
-10. No global source freshness and coverage dashboard exists yet.
+10. A generated coverage dashboard now exists, but source freshness, broken
+    link, and research to simulation traceability reports remain incomplete.
 11. There is no accepted reconciliation report for any complete national force
    inventory.
 12. Research exit criteria are described conceptually but are not yet measured
    through a single gate report.
-13. Tier A packet structure is complete for the United States, China, and
-    Taiwan; evidence population and force reconciliation remain open.
+13. Tier A packet structure and initial evidence population are complete for the
+    United States, China, and Taiwan; force reconciliation remains open. Japan
+    politics and alliance authority are collected and awaiting independent
+    review.
 
 The corpus has a strong contract foundation and one good benchmark. It does not
 yet contain a playable global world state.
