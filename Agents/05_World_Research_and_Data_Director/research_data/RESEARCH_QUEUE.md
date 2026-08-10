@@ -51,7 +51,9 @@
    public evidence supports inclusion. Status: United States, China, and Taiwan
    packets populated and awaiting independent review; remaining countries queued.
 9. Open Tier B wave one dossiers for Japan, South Korea, North Korea, Russia,
-   India, Australia, and the Philippines. Status: queued.
+   India, Australia, and the Philippines. Status: structural research manifests,
+   eight lane matrices, and country work packages complete; evidence collection
+   remains queued and every lane remains shell.
 10. Open Tier B wave two dossiers for Iran, Israel, Saudi Arabia, Türkiye,
     Pakistan, the United Kingdom, France, and Germany. Status: queued.
 

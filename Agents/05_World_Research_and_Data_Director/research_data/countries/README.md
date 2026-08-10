@@ -18,6 +18,12 @@ The Tier A foundations are:
 Each profile links to a force ledger manifest. The acceptance questions and
 collection order are in `TIER_A_FOUNDATION.md`.
 
+The first Tier B work wave is defined in `TIER_B_WAVE_ONE.md` and
+`tier_b_wave_one.json`. Japan, South Korea, North Korea, Russia, India,
+Australia, and the Philippines have deterministic research manifests, eight
+lane question matrices, and work packages. These are planning artifacts only;
+all seven profiles and lanes remain shells until evidence is accepted.
+
 The remaining 77 members of the frozen top 80 cohort have deterministic dossier
 shells containing only roster backed identity, GDP cohort, research tier, and
 opening bookmark metadata. These shells deliberately leave substantive country

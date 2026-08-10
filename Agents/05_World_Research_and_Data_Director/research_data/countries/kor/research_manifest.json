@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1.0",
+  "manifest_id": "research_manifest_kor_2025_09_01",
+  "country_id": "country_kor",
+  "country_code": "KOR",
+  "country_name": "South Korea",
+  "depth_tier": "B",
+  "gdp_rank": 13,
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "shell",
+  "research_wave": "tier_b_wave_one_2025_09_01",
+  "contract_path": "../country_research_contract.json",
+  "files": {
+    "profile": "profile.json",
+    "lane_coverage": "lane_coverage.json",
+    "work_packages": "WORK_PACKAGES.md",
+    "evidence_registry": null,
+    "bookmark_state": null,
+    "force_ledger": null
+  },
+  "lane_ids": [
+    "politics_and_institutions",
+    "economy_trade_finance_resources",
+    "military_organization_inventory",
+    "fixed_facilities_basing",
+    "strategic_industry_conversion",
+    "energy_transport_communications_logistics",
+    "geography_provinces_terrain",
+    "crises_alliances_sanctions_deployments"
+  ],
+  "acceptance": {
+    "all_lanes_assessed": false,
+    "political_actor_roster_reviewed": false,
+    "administrative_geography_reviewed": false,
+    "force_ledger_reconciled": false,
+    "fixed_facility_layer_reviewed": false,
+    "infrastructure_networks_reviewed": false,
+    "alliances_and_crises_reviewed": false,
+    "bookmark_firewall_passed": false,
+    "independent_review_complete": false
+  },
+  "accepted_source_count": 0,
+  "accepted_claim_count": 0,
+  "open_contradiction_count": 0,
+  "unknowns": [
+    "No country specific source or atomic claim has been accepted into this wave artifact.",
+    "Government, economy, force inventory, readiness, facilities, infrastructure, geography, alliances, crises, and deployments remain unknown until sourced.",
+    "A zero count describes accepted corpus records and never asserts real world absence."
+  ],
+  "notes": "This manifest opens bounded research work only. It is nonfactual, nonexecutable, and cannot initialize simulation state."
+}

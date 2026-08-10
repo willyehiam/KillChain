@@ -89,29 +89,34 @@ function validateReviewWindow(record, label) {
   assert(reviewAfter >= reviewed, `${label}: review_after precedes reviewed_at`);
 }
 
-const registryByCode = new Map((registry.countries ?? []).map((country) => [country.country_code, country]));
+const rosterByCode = new Map((roster.countries ?? []).map((country) => [country.country_code, country]));
 
-for (const rosterCountry of roster.countries ?? []) {
-  const code = rosterCountry.country_code;
+for (const registryCountry of registry.countries ?? []) {
+  const code = registryCountry.country_code;
+  const rosterCountry = rosterByCode.get(code);
   const label = `${code} profile`;
   const countryDirectory = path.join(countriesRoot, code.toLowerCase());
   const profilePath = path.join(countryDirectory, "profile.json");
-  const registryCountry = registryByCode.get(code);
-
-  assert(Boolean(registryCountry), `${label}: missing country registry entry`);
   assert(fs.existsSync(profilePath), `${label}: missing profile.json`);
-  if (!registryCountry || !fs.existsSync(profilePath)) continue;
+  if (!fs.existsSync(profilePath)) continue;
 
   const profile = readJson(profilePath);
   validatedProfiles += 1;
   hasRequiredKeys(profile, profileSchema, label);
   assert(profile.country_id === `country_${code.toLowerCase()}`, `${label}: country_id mismatch`);
   assert(profile.country_code === code, `${label}: country_code mismatch`);
-  assert(profile.name === rosterCountry.name, `${label}: name differs from frozen roster`);
+  assert(profile.name === registryCountry.name, `${label}: name differs from registry`);
   assert(profile.bookmark_id === BOOKMARK_ID, `${label}: bookmark_id mismatch`);
   assert(profile.as_of === BOOKMARK_TIME, `${label}: as_of mismatch`);
-  assert(profile.gdp_rank === rosterCountry.rank, `${label}: GDP rank mismatch`);
-  assert(profile.gdp_2025_usd_billions === rosterCountry.gdp_2025_usd_billions, `${label}: GDP value mismatch`);
+  if (rosterCountry) {
+    assert(profile.roster_basis === "top_80_2025_nominal_gdp", `${label}: ranked country roster basis mismatch`);
+    assert(profile.gdp_rank === rosterCountry.rank, `${label}: GDP rank mismatch`);
+    assert(profile.gdp_2025_usd_billions === rosterCountry.gdp_2025_usd_billions, `${label}: GDP value mismatch`);
+  } else {
+    assert(profile.roster_basis === "mandatory_strategic_addition", `${label}: strategic addition roster basis mismatch`);
+    assert(profile.gdp_rank === null, `${label}: strategic addition must not invent a GDP rank`);
+    assert(profile.gdp_2025_usd_billions === null, `${label}: strategic addition must not invent a GDP value`);
+  }
   assert(profile.depth_tier === registryCountry.depth_tier, `${label}: depth tier differs from registry`);
   assert(isObject(profile.coverage), `${label}: coverage must be an object`);
   assert(sameMembers(Object.keys(profile.coverage ?? {}), REQUIRED_LANES), `${label}: coverage lanes differ from contract`);
@@ -177,12 +182,14 @@ for (const rosterCountry of roster.countries ?? []) {
   }
 }
 
-assert(validatedProfiles === 80, `Expected 80 validated country profiles, found ${validatedProfiles}`);
+assert(validatedProfiles === 91, `Expected 91 validated country profiles, found ${validatedProfiles}`);
 assert(validatedLedgers === 3, `Expected 3 validated Tier A force ledgers, found ${validatedLedgers}`);
 
 const report = {
   status: errors.length ? "FAIL" : "PASS",
   validated_profiles: validatedProfiles,
+  ranked_profiles: roster.countries?.length ?? 0,
+  strategic_addition_profiles: (registry.countries?.length ?? 0) - (roster.countries?.length ?? 0),
   validated_tier_a_force_ledgers: validatedLedgers,
   bookmark_id: BOOKMARK_ID,
   bookmark_time: BOOKMARK_TIME,

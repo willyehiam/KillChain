@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1.0",
+  "wave_id": "tier_b_wave_one_2025_09_01",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "planned",
+  "countries": [
+    {
+      "country_code": "JPN",
+      "priority": 1,
+      "theater_roles": ["taiwan_strait", "korean_peninsula", "global_maritime"],
+      "focus_questions": [
+        "What political and legal pathways govern force employment and alliance support?",
+        "Which national forces, commands, reserves, bases, and sustainment systems exist at the bookmark?",
+        "How do southwest island geography, maritime approaches, air access, and civilian resilience constrain intervention?",
+        "Which shipbuilding, aerospace, semiconductor, energy import, and logistics dependencies create strategic choices?"
+      ]
+    },
+    {
+      "country_code": "KOR",
+      "priority": 2,
+      "theater_roles": ["korean_peninsula", "taiwan_strait", "global_industry"],
+      "focus_questions": [
+        "How do national, combined, and alliance command relationships change across crisis states?",
+        "Which active, reserve, mobilization, missile defense, maritime, air, and ground forces exist at the bookmark?",
+        "How do peninsula deterrence requirements limit support to another theater?",
+        "Which shipbuilding, semiconductor, energy, port, airfield, and logistics systems determine endurance?"
+      ]
+    },
+    {
+      "country_code": "PRK",
+      "priority": 3,
+      "theater_roles": ["korean_peninsula", "taiwan_strait", "strategic_deterrence"],
+      "focus_questions": [
+        "What can public evidence establish about party, state, military, and strategic force authority without inventing certainty?",
+        "Which force categories, reserves, strategic systems, and support organizations can be represented with explicit uncertainty?",
+        "How do sanctions, external support, trade dependence, mobilization, and domestic control shape available strategies?",
+        "Which geography, transport, energy, industry, and hardened infrastructure matters at the chosen gameplay resolution?"
+      ]
+    },
+    {
+      "country_code": "RUS",
+      "priority": 4,
+      "theater_roles": ["ukraine", "arctic", "pacific", "strategic_deterrence"],
+      "focus_questions": [
+        "Which forces are committed, regenerating, training, stored, or available outside existing wars at the bookmark?",
+        "How do national command, military districts, fleets, strategic forces, reserves, and security organizations relate?",
+        "What redeployment choices connect European, Arctic, Central Asian, and Pacific theaters?",
+        "How do sanctions, energy exports, industrial mobilization, transport depth, and external partnerships shape endurance?"
+      ]
+    },
+    {
+      "country_code": "IND",
+      "priority": 5,
+      "theater_roles": ["indian_ocean", "india_pakistan", "china_border", "global_industry"],
+      "focus_questions": [
+        "How do civilian authority, service commands, integrated commands, and nuclear authority constrain action?",
+        "Which forces must balance Pakistan, China, internal security, and Indian Ocean requirements?",
+        "Which ports, island positions, airfields, tankers, sealift, roads, rail, and mountain corridors determine reach?",
+        "How do energy imports, defense production, technology, trade, and strategic partnerships shape mobilization?"
+      ]
+    },
+    {
+      "country_code": "AUS",
+      "priority": 6,
+      "theater_roles": ["taiwan_strait", "south_china_sea", "indian_ocean", "global_alliance"],
+      "focus_questions": [
+        "Which political, alliance, and basing decisions govern participation in an Indo Pacific crisis?",
+        "Which national forces, reserves, access arrangements, lift, tankers, sustainment, and maintenance capacity exist?",
+        "How do northern geography, long distances, ports, airfields, fuel, communications, and undersea links constrain operations?",
+        "How do shipbuilding, critical minerals, energy exports, industry, and external supply chains affect resilience?"
+      ]
+    },
+    {
+      "country_code": "PHL",
+      "priority": 7,
+      "theater_roles": ["south_china_sea", "taiwan_strait", "archipelagic_defense"],
+      "focus_questions": [
+        "How do civilian authority, alliance consultation, access agreements, and domestic support govern intervention?",
+        "Which armed forces, Coast Guard, reserves, local security organizations, bases, and support systems exist?",
+        "How do archipelagic geography, ports, airfields, ferries, roads, communications, and disaster response shape endurance?",
+        "Which South China Sea incidents, foreign deployments, trade routes, energy dependencies, and political relationships affect choices?"
+      ]
+    }
+  ],
+  "rules": [
+    "Planning questions are not factual claims.",
+    "Generated artifacts remain shell status until sources and atomic claims are accepted.",
+    "No force ledger is created until national scope, counting units, and conservation boundaries are defined.",
+    "No scenario may execute from a shell or collecting research artifact.",
+    "Country research must preserve the 1 September 2025 knowledge cutoff."
+  ]
+}
