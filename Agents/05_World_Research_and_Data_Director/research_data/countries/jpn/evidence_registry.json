@@ -1,0 +1,729 @@
+{
+  "schema_version": "0.2.0",
+  "registry_id": "evidence_registry_jpn_2025_09_01",
+  "country_id": "country_jpn",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "needs_review",
+  "staging_rules": {
+    "post_bookmark_opening_claims_forbidden": true,
+    "live_mutable_sources_require_prebookmark_temporal_proof": true,
+    "office_does_not_prove_practical_influence": true,
+    "treaty_does_not_bypass_domestic_authority": true,
+    "missing_force_or_facility_evidence_is_unknown_not_zero": true
+  },
+  "sources": [
+    {
+      "source_id": "src_jpn_constitution",
+      "title": "The Constitution of Japan",
+      "publisher": "Japanese Law Translation",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/174/en",
+      "relevant_locator": "Articles 9, 65, 66, 67, 70, 71, 72, and 73",
+      "source_family_id": "family_japanese_law_translation",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1947-05-03",
+        "rule": "The historically valid legal instrument controls. Retrieval date does not move the instrument across the bookmark firewall."
+      }
+    },
+    {
+      "source_id": "src_jpn_armed_attack_response_act",
+      "title": "Act on the Peace and Independence of Japan and Maintenance of the Security of the Nation and the People in Armed Attack Situations, etc., and Survival-Threatening Situations",
+      "publisher": "Japanese Law Translation",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4925/en",
+      "relevant_locator": "Article 9, paragraphs 4 through 7",
+      "source_family_id": "family_japanese_law_translation",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "2004-09-17",
+        "rule": "The historically valid legal instrument controls. Retrieval date does not move the instrument across the bookmark firewall."
+      }
+    },
+    {
+      "source_id": "src_jpn_us_forces_support_act",
+      "title": "Act Concerning Measures Implemented by Japan in Connection with Actions of the United States Armed Forces and Others in Armed Attack Situations, etc., and Survival-Threatening Situations",
+      "publisher": "Japanese Law Translation",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/5069/en",
+      "relevant_locator": "Articles 1 and 10",
+      "source_family_id": "family_japanese_law_translation",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "2004-09-17",
+        "rule": "The historically valid legal instrument controls. Retrieval date does not move the instrument across the bookmark firewall."
+      }
+    },
+    {
+      "source_id": "src_jpn_us_security_treaty",
+      "title": "Treaty of Mutual Cooperation and Security between Japan and the United States of America",
+      "publisher": "Ministry of Foreign Affairs of Japan",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://www.mofa.go.jp/na/st/page1we_000093.html",
+      "relevant_locator": "Articles 3 through 6",
+      "source_family_id": "family_ministry_of_foreign_affairs_of_japan",
+      "mutability_class": "legal_instrument",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1960-06-23",
+        "rule": "The historically valid legal instrument controls. Retrieval date does not move the instrument across the bookmark firewall."
+      }
+    },
+    {
+      "source_id": "src_jpn_cabinet_2025_09_01",
+      "title": "List of Ministers, Second Ishiba Cabinet",
+      "publisher": "Prime Minister's Office of Japan",
+      "published_at": "2025-09-01",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://japan.kantei.go.jp/103/meibo/daijin/index_e.html",
+      "relevant_locator": "Inaugurated November 11, 2024; list explicitly marked as of September 1, 2025",
+      "source_family_id": "family_prime_ministers_office_of_japan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-09-01"
+      },
+      "reliability_notes": "The dated cabinet page is the controlling bookmark roster. Later cabinet archive pages are reference only and are not used to import later office changes."
+    },
+    {
+      "source_id": "src_jpn_pm_action_2025_09_01",
+      "title": "Comprehensive Disaster Prevention Drills for FY2025",
+      "publisher": "Prime Minister's Office of Japan",
+      "published_at": "2025-09-01",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://japan.kantei.go.jp/103/actions/202509/01bousai.html",
+      "relevant_locator": "Prime Minister Ishiba and Cabinet activity on the bookmark date",
+      "source_family_id": "family_prime_ministers_office_of_japan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-09-01"
+      }
+    },
+    {
+      "source_id": "src_jpn_hayashi_press_2025_09_01",
+      "title": "Press Conference by Chief Cabinet Secretary Hayashi, September 1 Afternoon",
+      "publisher": "Prime Minister's Office of Japan",
+      "published_at": "2025-09-01",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://japan.kantei.go.jp/tyoukanpress/202509/1_p.html",
+      "relevant_locator": "Dated title and office on the bookmark date",
+      "source_family_id": "family_prime_ministers_office_of_japan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-09-01"
+      }
+    },
+    {
+      "source_id": "src_jpn_mod_jjoc_2025_03_11",
+      "title": "Press Conference by Defense Minister Nakatani on March 11, 2025",
+      "publisher": "Ministry of Defense of Japan",
+      "published_at": "2025-03-11",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.mod.go.jp/en/article/2025/03/4a61f7ad0126463257ef3078dc8a8153cd4a1493.html",
+      "relevant_locator": "JJOC implementation date and appointment of General Nagumo",
+      "source_family_id": "family_ministry_of_defense_of_japan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-03-11"
+      }
+    },
+    {
+      "source_id": "src_jpn_joint_staff_uchikura_2025_08_01",
+      "title": "Greeting from the Chief of Staff, Joint Staff",
+      "publisher": "Joint Staff, Ministry of Defense of Japan",
+      "published_at": "2025-08-01",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.mod.go.jp/js/about/message/2025/0801.html",
+      "relevant_locator": "Appointment of General Uchikura as eighth Chief of Staff, Joint Staff",
+      "source_family_id": "family_joint_staff_ministry_of_defense_of_japan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-08-01"
+      }
+    },
+    {
+      "source_id": "src_jpn_party_leaders_2025_07_25",
+      "title": "Interparty Leaders Meeting on July 25, 2025",
+      "publisher": "Japan Innovation Party",
+      "published_at": "2025-07-25",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://o-ishin.jp/news/2025/07/25/17297.html",
+      "relevant_locator": "Dated attendee list naming seven government and opposition party leaders",
+      "source_family_id": "family_japan_innovation_party",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-07-25"
+      }
+    },
+    {
+      "source_id": "src_jpn_defense_white_paper_2025_jjoc",
+      "title": "Defense of Japan 2025, Special Feature on Joint Operations Command",
+      "publisher": "Ministry of Defense of Japan",
+      "published_at": "2025-07-15",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.mod.go.jp/j/press/wp/wp2025/html/nt110000.html",
+      "relevant_locator": "JJOC command relationship and cross domain operational role",
+      "source_family_id": "family_ministry_of_defense_of_japan",
+      "mutability_class": "dated_publication",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-07-15"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim_jpn_constitution_article_9",
+      "subject_id": "country_jpn",
+      "predicate": "constitutional_force_constraint",
+      "value": "Article 9 renounces war as a sovereign right and the threat or use of force as means of settling international disputes.",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_constitution"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_cabinet_executive_power",
+      "subject_id": "institution_jpn_cabinet",
+      "predicate": "holds_executive_power",
+      "value": true,
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_constitution"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_prime_minister_diet_designation",
+      "subject_id": "institution_jpn_prime_minister",
+      "predicate": "designated_by",
+      "value": "National Diet resolution from among Diet members",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_constitution"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_prime_minister_administrative_supervision",
+      "subject_id": "institution_jpn_prime_minister",
+      "predicate": "authority",
+      "value": "Control and supervision over administrative branches while representing the Cabinet",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_constitution"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_cabinet_foreign_affairs_treaties",
+      "subject_id": "institution_jpn_cabinet",
+      "predicate": "foreign_affairs_authority",
+      "value": "Manages foreign affairs and concludes treaties subject to prior or, depending on circumstances, subsequent Diet approval",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_constitution"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_prime_minister_vacancy",
+      "subject_id": "institution_jpn_cabinet",
+      "predicate": "prime_minister_vacancy_effect",
+      "value": "Cabinet resigns en masse and continues functions until a new Prime Minister is appointed",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_constitution"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_defense_operations_basic_plan",
+      "subject_id": "institution_jpn_cabinet",
+      "predicate": "defense_operations_precondition",
+      "value": "Prime Minister prepares a draft Basic Response Plan and seeks a Cabinet decision",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_armed_attack_response_act"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_defense_operations_diet_approval",
+      "subject_id": "institution_jpn_diet",
+      "predicate": "defense_operations_gate",
+      "value": "Prime Minister requests Diet approval before a defense operations order",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_armed_attack_response_act"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_defense_operations_urgent_exception",
+      "subject_id": "institution_jpn_prime_minister",
+      "predicate": "urgent_defense_operations_rule",
+      "value": "A defense operations order may precede Diet approval only when particularly urgent and there is no time for prior approval",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_armed_attack_response_act"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_allied_support_services",
+      "subject_id": "institution_jpn_ministry_of_defense",
+      "predicate": "allied_action_support_scope",
+      "value": [
+        "supply_excluding_weapons",
+        "transportation",
+        "repair_and_maintenance",
+        "medical_care",
+        "communications",
+        "airport_and_port_operations",
+        "base_operations",
+        "accommodation",
+        "storage",
+        "facility_use",
+        "training"
+      ],
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_us_forces_support_act"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_treaty_consultation",
+      "subject_id": "alliance_jpn_usa_security_treaty",
+      "predicate": "consultation_trigger",
+      "value": "At either party's request when Japan's security or international peace and security in the Far East is threatened",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_us_security_treaty"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_treaty_article_v_scope",
+      "subject_id": "alliance_jpn_usa_security_treaty",
+      "predicate": "article_v_geographic_scope",
+      "value": "Armed attack against either party in territories under the administration of Japan",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_us_security_treaty"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_treaty_article_v_process",
+      "subject_id": "alliance_jpn_usa_security_treaty",
+      "predicate": "article_v_response_rule",
+      "value": "Each party acts to meet the common danger in accordance with its constitutional provisions and processes",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_us_security_treaty"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_treaty_article_vi_facilities",
+      "subject_id": "alliance_jpn_usa_security_treaty",
+      "predicate": "article_vi_facility_access",
+      "value": "United States land, air, and naval forces are granted use of facilities and areas in Japan under separate arrangements",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_us_security_treaty"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_jjoc_established",
+      "subject_id": "institution_jpn_jjoc",
+      "predicate": "established_at",
+      "value": "2025-03-24",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_mod_jjoc_2025_03_11",
+        "src_jpn_defense_white_paper_2025_jjoc"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_jjoc_command_role",
+      "subject_id": "institution_jpn_jjoc",
+      "predicate": "operational_role",
+      "value": "Commander receives Minister of Defense orders and centrally commands major Ground, Maritime, Air, space, and cyber forces for operations",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_defense_white_paper_2025_jjoc"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_ishiba_role",
+      "subject_id": "actor_jpn_ishiba_shigeru",
+      "predicate": "office",
+      "value": "Prime Minister",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01",
+        "src_jpn_pm_action_2025_09_01"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_hayashi_role",
+      "subject_id": "actor_jpn_hayashi_yoshimasa",
+      "predicate": "office",
+      "value": "Chief Cabinet Secretary",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01",
+        "src_jpn_hayashi_press_2025_09_01"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_iwaya_role",
+      "subject_id": "actor_jpn_iwaya_takeshi",
+      "predicate": "office",
+      "value": "Minister for Foreign Affairs",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_nakatani_role",
+      "subject_id": "actor_jpn_nakatani_gen",
+      "predicate": "office",
+      "value": "Minister of Defense",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01",
+        "src_jpn_mod_jjoc_2025_03_11"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_kato_role",
+      "subject_id": "actor_jpn_kato_katsunobu",
+      "predicate": "office",
+      "value": "Minister of Finance",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_muto_role",
+      "subject_id": "actor_jpn_muto_yohji",
+      "predicate": "office",
+      "value": "Minister of Economy, Trade and Industry",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_koizumi_role",
+      "subject_id": "actor_jpn_koizumi_shinjiro",
+      "predicate": "office",
+      "value": "Minister of Agriculture, Forestry and Fisheries",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_akazawa_role",
+      "subject_id": "actor_jpn_akazawa_ryosei",
+      "predicate": "office",
+      "value": "Minister in charge of Economic Revitalization",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_kiuchi_role",
+      "subject_id": "actor_jpn_kiuchi_minoru",
+      "predicate": "office",
+      "value": "Minister in charge of Economic Security",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_murakami_role",
+      "subject_id": "actor_jpn_murakami_seiichiro",
+      "predicate": "office",
+      "value": "Minister for Internal Affairs and Communications",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_abe_role",
+      "subject_id": "actor_jpn_abe_toshiko",
+      "predicate": "office",
+      "value": "Minister of Education, Culture, Sports, Science and Technology",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_noda_role",
+      "subject_id": "actor_jpn_noda_yoshihiko",
+      "predicate": "office",
+      "value": "Constitutional Democratic Party president",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_saito_role",
+      "subject_id": "actor_jpn_saito_tetsuo",
+      "predicate": "office",
+      "value": "Komeito representative",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_tamaki_role",
+      "subject_id": "actor_jpn_tamaki_yuichiro",
+      "predicate": "office",
+      "value": "Democratic Party for the People representative",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_maehara_role",
+      "subject_id": "actor_jpn_maehara_seiji",
+      "predicate": "office",
+      "value": "Japan Innovation Party co-representative",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_tamura_role",
+      "subject_id": "actor_jpn_tamura_tomoko",
+      "predicate": "office",
+      "value": "Japanese Communist Party chair",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_oishi_role",
+      "subject_id": "actor_jpn_oishi_akiko",
+      "predicate": "office",
+      "value": "Reiwa Shinsengumi co-representative",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_kamiya_role",
+      "subject_id": "actor_jpn_kamiya_sohei",
+      "predicate": "office",
+      "value": "Sanseito representative",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_uchikura_role",
+      "subject_id": "actor_jpn_uchikura_hiroaki",
+      "predicate": "office",
+      "value": "Chief of Staff, Joint Staff",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_joint_staff_uchikura_2025_08_01"
+      ]
+    },
+    {
+      "claim_id": "claim_jpn_actor_nagumo_role",
+      "subject_id": "actor_jpn_nagumo_kenichiro",
+      "predicate": "office",
+      "value": "Commander, Joint Operations Command",
+      "as_of": "2025-09-01T00:00:00Z",
+      "evidence_state": "accepted",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_mod_jjoc_2025_03_11"
+      ]
+    }
+  ],
+  "contradiction_sets": [
+    {
+      "contradiction_set_id": "contradiction_jpn_taiwan_automatic_intervention",
+      "question": "Does an armed attack on Taiwan automatically activate Article V or Japanese defense operations authority?",
+      "claim_ids": [
+        "claim_jpn_treaty_article_v_scope",
+        "claim_jpn_treaty_article_v_process",
+        "claim_jpn_constitution_article_9"
+      ],
+      "source_ids": [
+        "src_jpn_us_security_treaty",
+        "src_jpn_constitution"
+      ],
+      "status": "resolved_for_initialization",
+      "simulation_rule": "No. Do not auto activate Article V or Japanese force employment from an attack outside territories administered by Japan. Create a separate political, factual, and legal decision chain.",
+      "last_reviewed": "2026-08-10",
+      "review_after": "2027-02-10",
+      "notes": "This is a scope guard, not a prediction that Japan remains neutral."
+    },
+    {
+      "contradiction_set_id": "contradiction_jpn_diet_approval_timing",
+      "question": "Must Diet approval always precede a defense operations order?",
+      "claim_ids": [
+        "claim_jpn_defense_operations_diet_approval",
+        "claim_jpn_defense_operations_urgent_exception"
+      ],
+      "source_ids": [
+        "src_jpn_armed_attack_response_act"
+      ],
+      "status": "resolved_with_conditional_branch",
+      "simulation_rule": "Prior approval is the normal gate. The urgent branch is available only after an independently represented urgency fact and creates an immediate subsequent approval obligation.",
+      "last_reviewed": "2026-08-10",
+      "review_after": "2027-02-10",
+      "notes": "Urgency cannot be manufactured by the player as a free bypass."
+    },
+    {
+      "contradiction_set_id": "contradiction_jpn_formal_and_practical_influence",
+      "question": "Do formal offices establish each actor's practical influence over a particular crisis decision?",
+      "claim_ids": [
+        "claim_jpn_actor_ishiba_role",
+        "claim_jpn_actor_hayashi_role",
+        "claim_jpn_actor_iwaya_role",
+        "claim_jpn_actor_nakatani_role",
+        "claim_jpn_actor_kato_role",
+        "claim_jpn_actor_muto_role",
+        "claim_jpn_actor_koizumi_role",
+        "claim_jpn_actor_akazawa_role",
+        "claim_jpn_actor_kiuchi_role",
+        "claim_jpn_actor_murakami_role",
+        "claim_jpn_actor_abe_role",
+        "claim_jpn_actor_noda_role",
+        "claim_jpn_actor_saito_role",
+        "claim_jpn_actor_tamaki_role",
+        "claim_jpn_actor_maehara_role",
+        "claim_jpn_actor_tamura_role",
+        "claim_jpn_actor_oishi_role",
+        "claim_jpn_actor_kamiya_role",
+        "claim_jpn_actor_uchikura_role",
+        "claim_jpn_actor_nagumo_role"
+      ],
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01",
+        "src_jpn_party_leaders_2025_07_25",
+        "src_jpn_joint_staff_uchikura_2025_08_01",
+        "src_jpn_mod_jjoc_2025_03_11"
+      ],
+      "status": "open",
+      "simulation_rule": "Office supports roster inclusion only. Keep practical influence unaccepted until multiple independent source families support it.",
+      "last_reviewed": "2026-08-10",
+      "review_after": "2026-11-10",
+      "notes": "The roster is not an election, coup, succession, or coalition forecast."
+    }
+  ],
+  "notes": "First substantive Japan packet. It accepts political, constitutional, alliance scope, and joint command facts only. It does not accept force quantities, readiness, locations, facilities, or crisis deployments."
+}

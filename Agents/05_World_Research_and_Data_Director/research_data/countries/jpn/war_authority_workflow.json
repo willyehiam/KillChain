@@ -1,0 +1,230 @@
+{
+  "schema_version": "0.1.0",
+  "workflow_id": "war_authority_jpn_2025_09_01",
+  "country_id": "country_jpn",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "needs_independent_legal_review",
+  "purpose": "Research contract for lawful Japanese defense operations, alliance consultation, allied support, and operational command. It rejects a generic declare war button and automatic Taiwan intervention.",
+  "routes": [
+    {
+      "route_id": "route_jpn_alliance_consultation",
+      "classification": "diplomatic_security_consultation",
+      "automatic_force_authority": false,
+      "trigger": "Request by either treaty party when Japan's security or peace and security in the Far East is threatened",
+      "gate_ids": [
+        "gate_jpn_treaty_party_request_or_agreement"
+      ],
+      "source_ids": [
+        "src_jpn_us_security_treaty"
+      ]
+    },
+    {
+      "route_id": "route_jpn_defense_operations_normal",
+      "classification": "domestic_defense_authority",
+      "transition": {
+        "from_state": "ordinary_security_posture",
+        "to_state": "defense_operations_authorized"
+      },
+      "gate_ids": [
+        "gate_jpn_qualifying_situation",
+        "gate_jpn_basic_response_plan",
+        "gate_jpn_cabinet_decision",
+        "gate_jpn_prior_diet_approval",
+        "gate_jpn_prime_minister_order"
+      ],
+      "source_ids": [
+        "src_jpn_armed_attack_response_act"
+      ]
+    },
+    {
+      "route_id": "route_jpn_defense_operations_urgent",
+      "classification": "conditional_urgent_domestic_defense_authority",
+      "transition": {
+        "from_state": "ordinary_security_posture",
+        "to_state": "provisionally_authorized_pending_diet_approval"
+      },
+      "gate_ids": [
+        "gate_jpn_qualifying_situation",
+        "gate_jpn_independent_urgent_necessity",
+        "gate_jpn_basic_response_plan",
+        "gate_jpn_cabinet_decision",
+        "gate_jpn_prime_minister_order"
+      ],
+      "post_activation_gate_ids": [
+        "gate_jpn_subsequent_diet_approval"
+      ],
+      "repeated_activation_policy": "reject_without_new_independent_trigger_event",
+      "source_ids": [
+        "src_jpn_armed_attack_response_act"
+      ]
+    },
+    {
+      "route_id": "route_jpn_allied_action_support",
+      "classification": "bounded_logistics_and_services_support",
+      "automatic_kinetic_authority": false,
+      "gate_ids": [
+        "gate_jpn_qualifying_situation",
+        "gate_jpn_basic_response_plan",
+        "gate_jpn_defense_minister_support_order",
+        "gate_jpn_prime_minister_support_approval_when_required"
+      ],
+      "allowed_service_claim_id": "claim_jpn_allied_support_services",
+      "source_ids": [
+        "src_jpn_us_forces_support_act",
+        "src_jpn_armed_attack_response_act"
+      ]
+    },
+    {
+      "route_id": "route_jpn_joint_operational_execution",
+      "classification": "civilian_authority_to_military_execution",
+      "authority_prerequisite": "A separate lawful operations route has reached an authorized state",
+      "gate_ids": [
+        "gate_jpn_defense_minister_operational_order",
+        "gate_jpn_jjoc_tasking"
+      ],
+      "source_ids": [
+        "src_jpn_mod_jjoc_2025_03_11",
+        "src_jpn_defense_white_paper_2025_jjoc"
+      ]
+    }
+  ],
+  "decision_gates": [
+    {
+      "gate_id": "gate_jpn_treaty_party_request_or_agreement",
+      "gate_type": "diplomatic_event",
+      "required_institution_ids": [],
+      "completion_evidence": "Recorded request or agreement to consult under Article IV"
+    },
+    {
+      "gate_id": "gate_jpn_qualifying_situation",
+      "gate_type": "independent_world_state_fact",
+      "required_institution_ids": [],
+      "completion_evidence": "Independently represented armed attack, anticipated armed attack, or survival threatening situation matching the selected statutory route"
+    },
+    {
+      "gate_id": "gate_jpn_independent_urgent_necessity",
+      "gate_type": "independent_world_state_fact",
+      "required_institution_ids": [],
+      "completion_evidence": "Particularly urgent necessity with no time for prior Diet approval; cannot be created solely by player assertion"
+    },
+    {
+      "gate_id": "gate_jpn_basic_response_plan",
+      "gate_type": "executive_plan",
+      "required_institution_ids": [
+        "institution_jpn_prime_minister"
+      ],
+      "completion_evidence": "Draft Basic Response Plan records situation, objectives, measures, and authority requested"
+    },
+    {
+      "gate_id": "gate_jpn_cabinet_decision",
+      "gate_type": "cabinet_decision",
+      "required_institution_ids": [
+        "institution_jpn_cabinet"
+      ],
+      "completion_evidence": "Cabinet decision accepts the Basic Response Plan"
+    },
+    {
+      "gate_id": "gate_jpn_prior_diet_approval",
+      "gate_type": "legislative_approval",
+      "required_institution_ids": [
+        "institution_jpn_diet"
+      ],
+      "completion_evidence": "Diet approval before the defense operations order"
+    },
+    {
+      "gate_id": "gate_jpn_prime_minister_order",
+      "gate_type": "prime_minister_order",
+      "required_institution_ids": [
+        "institution_jpn_prime_minister"
+      ],
+      "completion_evidence": "Prime Minister issues the defense operations order"
+    },
+    {
+      "gate_id": "gate_jpn_subsequent_diet_approval",
+      "gate_type": "post_activation_legislative_approval",
+      "required_institution_ids": [
+        "institution_jpn_diet"
+      ],
+      "completion_evidence": "Diet approval sought immediately after urgent activation; failure effects require independent legal review"
+    },
+    {
+      "gate_id": "gate_jpn_defense_minister_support_order",
+      "gate_type": "ministerial_order",
+      "required_institution_ids": [
+        "institution_jpn_ministry_of_defense"
+      ],
+      "completion_evidence": "Defense Minister orders the bounded support measure"
+    },
+    {
+      "gate_id": "gate_jpn_prime_minister_support_approval_when_required",
+      "gate_type": "conditional_prime_minister_approval",
+      "required_institution_ids": [
+        "institution_jpn_prime_minister"
+      ],
+      "completion_evidence": "Prime Minister approval when Article 10 paragraph 3 applies"
+    },
+    {
+      "gate_id": "gate_jpn_defense_minister_operational_order",
+      "gate_type": "civilian_operational_order",
+      "required_institution_ids": [
+        "institution_jpn_ministry_of_defense"
+      ],
+      "completion_evidence": "Defense Minister issues an operational order within already activated authority"
+    },
+    {
+      "gate_id": "gate_jpn_jjoc_tasking",
+      "gate_type": "joint_command_tasking",
+      "required_institution_ids": [
+        "institution_jpn_jjoc"
+      ],
+      "completion_evidence": "JJOC assigns and commands forces without creating political authority or inventory"
+    }
+  ],
+  "taiwan_contingency_guard": {
+    "attack_on_taiwan_auto_activates_japanese_authority": false,
+    "attack_on_taiwan_auto_activates_treaty_article_v": false,
+    "required_next_step": "Create an Article IV consultation event and separately evaluate Japanese statutory facts, Cabinet choice, Diet support, alliance access, and domestic support."
+  },
+  "acceptance_rules": {
+    "generic_declare_war_button_allowed": false,
+    "treaty_equals_automatic_intervention": false,
+    "consultation_equals_force_authority": false,
+    "allied_support_equals_kinetic_participation": false,
+    "jjoc_tasking_creates_political_authority": false,
+    "urgent_branch_requires_independent_fact": true,
+    "force_execution_requires_conserved_inventory": true
+  },
+  "unresolved_interpretations": [
+    {
+      "question_id": "unknown_jpn_urgent_diet_failure_effect",
+      "question": "What exact termination or remediation follows if subsequent Diet approval is denied?",
+      "status": "not_established_by_packet_sources",
+      "source_ids": [
+        "src_jpn_armed_attack_response_act"
+      ]
+    },
+    {
+      "question_id": "unknown_jpn_taiwan_survival_threat_threshold",
+      "question": "Which Taiwan contingency facts would satisfy the statutory survival threatening situation threshold?",
+      "status": "scenario_dependent_not_predetermined",
+      "source_ids": [
+        "src_jpn_armed_attack_response_act"
+      ]
+    },
+    {
+      "question_id": "unknown_jpn_public_support_thresholds",
+      "question": "What political support and coalition thresholds should modify but not replace formal legal gates?",
+      "status": "game_design_and_evidence_work_required",
+      "source_ids": []
+    }
+  ],
+  "source_ids": [
+    "src_jpn_constitution",
+    "src_jpn_armed_attack_response_act",
+    "src_jpn_us_forces_support_act",
+    "src_jpn_us_security_treaty",
+    "src_jpn_mod_jjoc_2025_03_11",
+    "src_jpn_defense_white_paper_2025_jjoc"
+  ]
+}

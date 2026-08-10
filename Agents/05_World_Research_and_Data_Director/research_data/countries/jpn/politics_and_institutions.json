@@ -1,0 +1,679 @@
+{
+  "schema_version": "0.1.0",
+  "country_id": "country_jpn",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "needs_review",
+  "government": {
+    "system_summary": "Parliamentary constitutional monarchy. Executive power is vested in the Cabinet, whose Prime Minister is designated by the National Diet.",
+    "head_of_state_actor_id": null,
+    "head_of_government_actor_id": "actor_jpn_ishiba_shigeru",
+    "head_of_state_note": "The Emperor is the constitutional symbol of the State and is intentionally not treated as a policy commanding political actor in this packet.",
+    "governing_institution_ids": [
+      "institution_jpn_cabinet",
+      "institution_jpn_prime_minister",
+      "institution_jpn_diet",
+      "institution_jpn_ldp",
+      "institution_jpn_komeito"
+    ],
+    "major_opposition_institution_ids": [
+      "institution_jpn_cdp",
+      "institution_jpn_dpfp",
+      "institution_jpn_jip"
+    ],
+    "formal_decision_authority": [
+      {
+        "domain": "executive_government",
+        "rule": "Executive power is vested in the Cabinet. The Prime Minister is designated by the Diet and supervises administrative branches while representing the Cabinet.",
+        "claim_ids": [
+          "claim_jpn_cabinet_executive_power",
+          "claim_jpn_prime_minister_diet_designation",
+          "claim_jpn_prime_minister_administrative_supervision"
+        ],
+        "source_ids": [
+          "src_jpn_constitution"
+        ]
+      },
+      {
+        "domain": "defense_operations",
+        "rule": "A Basic Response Plan, Cabinet decision, and Diet approval are separate gates. Only a particularly urgent necessity permits an order before prior Diet approval, and it creates a later approval obligation.",
+        "claim_ids": [
+          "claim_jpn_defense_operations_basic_plan",
+          "claim_jpn_defense_operations_diet_approval",
+          "claim_jpn_defense_operations_urgent_exception"
+        ],
+        "source_ids": [
+          "src_jpn_armed_attack_response_act"
+        ]
+      },
+      {
+        "domain": "operational_command",
+        "rule": "After lawful civilian authorization, the Minister of Defense issues operational orders and the Joint Operations Command centrally commands assigned major forces.",
+        "claim_ids": [
+          "claim_jpn_jjoc_established",
+          "claim_jpn_jjoc_command_role"
+        ],
+        "source_ids": [
+          "src_jpn_mod_jjoc_2025_03_11",
+          "src_jpn_defense_white_paper_2025_jjoc"
+        ]
+      }
+    ],
+    "succession": {
+      "first_successor_actor_id": null,
+      "status": "designation_order_not_yet_sourced",
+      "constitutional_continuity": "The Cabinet resigns en masse upon a Prime Minister vacancy but continues functions until a new Prime Minister is appointed.",
+      "claim_ids": [
+        "claim_jpn_prime_minister_vacancy"
+      ],
+      "source_ids": [
+        "src_jpn_constitution"
+      ],
+      "unknowns": [
+        "The controlling 2025 Cabinet designation order for temporary performance of Prime Minister duties has not been accepted and must not be inferred from later succession events."
+      ]
+    },
+    "alliance_commitment_context": [
+      {
+        "commitment": "Japan United States security treaty",
+        "opening_rule": "Consultation and Article V response are distinct. Article V applies to an armed attack against either party in territories under Japan's administration and requires each party to use its own constitutional processes.",
+        "automatic_taiwan_intervention": false,
+        "claim_ids": [
+          "claim_jpn_treaty_consultation",
+          "claim_jpn_treaty_article_v_scope",
+          "claim_jpn_treaty_article_v_process",
+          "claim_jpn_treaty_article_vi_facilities"
+        ],
+        "source_ids": [
+          "src_jpn_us_security_treaty"
+        ]
+      }
+    ]
+  },
+  "institutions": [
+    {
+      "institution_id": "institution_jpn_cabinet",
+      "name": "Cabinet of Japan",
+      "category": "executive",
+      "opening_status": "second_ishiba_cabinet",
+      "source_ids": [
+        "src_jpn_constitution",
+        "src_jpn_cabinet_2025_09_01"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_prime_minister",
+      "name": "Prime Minister of Japan",
+      "category": "executive_office",
+      "opening_status": "ishiba_incumbent",
+      "source_ids": [
+        "src_jpn_constitution",
+        "src_jpn_cabinet_2025_09_01"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_diet",
+      "name": "National Diet",
+      "category": "legislature",
+      "opening_status": "constitutional_legislature",
+      "source_ids": [
+        "src_jpn_constitution",
+        "src_jpn_cabinet_2025_09_01"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_ldp",
+      "name": "Liberal Democratic Party",
+      "category": "political_party",
+      "opening_status": "governing_party",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_komeito",
+      "name": "Komeito",
+      "category": "political_party",
+      "opening_status": "governing_coalition_partner",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_cdp",
+      "name": "Constitutional Democratic Party",
+      "category": "political_party",
+      "opening_status": "major_opposition",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_dpfp",
+      "name": "Democratic Party for the People",
+      "category": "political_party",
+      "opening_status": "opposition",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_jip",
+      "name": "Japan Innovation Party",
+      "category": "political_party",
+      "opening_status": "opposition",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_jcp",
+      "name": "Japanese Communist Party",
+      "category": "political_party",
+      "opening_status": "opposition",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_reiwa",
+      "name": "Reiwa Shinsengumi",
+      "category": "political_party",
+      "opening_status": "opposition",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_sanseito",
+      "name": "Sanseito",
+      "category": "political_party",
+      "opening_status": "opposition",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_ministry_of_defense",
+      "name": "Ministry of Defense",
+      "category": "executive_ministry",
+      "opening_status": "nakatani_incumbent",
+      "source_ids": [
+        "src_jpn_mod_jjoc_2025_03_11",
+        "src_jpn_joint_staff_uchikura_2025_08_01"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_joint_staff",
+      "name": "Joint Staff",
+      "category": "military_staff",
+      "opening_status": "uchikura_incumbent",
+      "source_ids": [
+        "src_jpn_mod_jjoc_2025_03_11",
+        "src_jpn_joint_staff_uchikura_2025_08_01"
+      ]
+    },
+    {
+      "institution_id": "institution_jpn_jjoc",
+      "name": "Joint Operations Command",
+      "category": "operational_command",
+      "opening_status": "established_and_operating",
+      "source_ids": [
+        "src_jpn_mod_jjoc_2025_03_11",
+        "src_jpn_joint_staff_uchikura_2025_08_01"
+      ]
+    }
+  ],
+  "political_actors": [
+    {
+      "actor_id": "actor_jpn_ishiba_shigeru",
+      "name": "ISHIBA Shigeru",
+      "office": "Prime Minister",
+      "institution_ids": [
+        "institution_jpn_prime_minister",
+        "institution_jpn_cabinet",
+        "institution_jpn_ldp"
+      ],
+      "relevance": "head_of_government_and_defense_authority",
+      "succession_eligibility": "incumbent",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01",
+        "src_jpn_pm_action_2025_09_01"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_hayashi_yoshimasa",
+      "name": "HAYASHI Yoshimasa",
+      "office": "Chief Cabinet Secretary",
+      "institution_ids": [
+        "institution_jpn_cabinet",
+        "institution_jpn_ldp"
+      ],
+      "relevance": "cabinet_coordination_and_public_information",
+      "succession_eligibility": "cabinet_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01",
+        "src_jpn_hayashi_press_2025_09_01"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_iwaya_takeshi",
+      "name": "IWAYA Takeshi",
+      "office": "Minister for Foreign Affairs",
+      "institution_ids": [
+        "institution_jpn_cabinet",
+        "institution_jpn_ldp"
+      ],
+      "relevance": "foreign_policy_principal",
+      "succession_eligibility": "cabinet_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_nakatani_gen",
+      "name": "NAKATANI Gen",
+      "office": "Minister of Defense",
+      "institution_ids": [
+        "institution_jpn_cabinet",
+        "institution_jpn_ministry_of_defense",
+        "institution_jpn_ldp"
+      ],
+      "relevance": "defense_policy_and_operational_order_principal",
+      "succession_eligibility": "cabinet_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01",
+        "src_jpn_mod_jjoc_2025_03_11"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_kato_katsunobu",
+      "name": "KATO Katsunobu",
+      "office": "Minister of Finance",
+      "institution_ids": [
+        "institution_jpn_cabinet",
+        "institution_jpn_ldp"
+      ],
+      "relevance": "fiscal_principal",
+      "succession_eligibility": "cabinet_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_muto_yoji",
+      "name": "MUTO Yoji",
+      "office": "Minister of Economy, Trade and Industry",
+      "institution_ids": [
+        "institution_jpn_cabinet",
+        "institution_jpn_ldp"
+      ],
+      "relevance": "industry_energy_and_trade_principal",
+      "succession_eligibility": "cabinet_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_koizumi_shinjiro",
+      "name": "KOIZUMI Shinjiro",
+      "office": "Minister of Agriculture, Forestry and Fisheries",
+      "institution_ids": [
+        "institution_jpn_cabinet",
+        "institution_jpn_ldp"
+      ],
+      "relevance": "food_security_principal",
+      "succession_eligibility": "cabinet_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_akazawa_ryosei",
+      "name": "AKAZAWA Ryosei",
+      "office": "Minister in charge of Economic Revitalization",
+      "institution_ids": [
+        "institution_jpn_cabinet",
+        "institution_jpn_ldp"
+      ],
+      "relevance": "economic_policy_principal",
+      "succession_eligibility": "cabinet_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_kiuchi_minoru",
+      "name": "KIUCHI Minoru",
+      "office": "Minister in charge of Economic Security",
+      "institution_ids": [
+        "institution_jpn_cabinet",
+        "institution_jpn_ldp"
+      ],
+      "relevance": "economic_security_principal",
+      "succession_eligibility": "cabinet_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_murakami_seiichiro",
+      "name": "MURAKAMI Seiichiro",
+      "office": "Minister for Internal Affairs and Communications",
+      "institution_ids": [
+        "institution_jpn_cabinet",
+        "institution_jpn_ldp"
+      ],
+      "relevance": "domestic_administration_and_communications_principal",
+      "succession_eligibility": "cabinet_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_abe_toshiko",
+      "name": "ABE Toshiko",
+      "office": "Minister of Education, Culture, Sports, Science and Technology",
+      "institution_ids": [
+        "institution_jpn_cabinet",
+        "institution_jpn_ldp"
+      ],
+      "relevance": "science_and_technology_policy_principal",
+      "succession_eligibility": "cabinet_member",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_cabinet_2025_09_01"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_noda_yoshihiko",
+      "name": "NODA Yoshihiko",
+      "office": "Constitutional Democratic Party president",
+      "institution_ids": [
+        "institution_jpn_cdp"
+      ],
+      "relevance": "major_opposition_leader",
+      "succession_eligibility": "not_cabinet_successor",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_saito_tetsuo",
+      "name": "SAITO Tetsuo",
+      "office": "Komeito representative",
+      "institution_ids": [
+        "institution_jpn_komeito"
+      ],
+      "relevance": "governing_coalition_party_leader",
+      "succession_eligibility": "not_cabinet_successor",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_tamaki_yuichiro",
+      "name": "TAMAKI Yuichiro",
+      "office": "Democratic Party for the People representative",
+      "institution_ids": [
+        "institution_jpn_dpfp"
+      ],
+      "relevance": "opposition_party_leader",
+      "succession_eligibility": "not_cabinet_successor",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_maehara_seiji",
+      "name": "MAEHARA Seiji",
+      "office": "Japan Innovation Party co-representative",
+      "institution_ids": [
+        "institution_jpn_jip"
+      ],
+      "relevance": "opposition_diet_leader",
+      "succession_eligibility": "not_cabinet_successor",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_tamura_tomoko",
+      "name": "TAMURA Tomoko",
+      "office": "Japanese Communist Party chair",
+      "institution_ids": [
+        "institution_jpn_jcp"
+      ],
+      "relevance": "opposition_party_leader",
+      "succession_eligibility": "not_cabinet_successor",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_oishi_akiko",
+      "name": "OISHI Akiko",
+      "office": "Reiwa Shinsengumi co-representative",
+      "institution_ids": [
+        "institution_jpn_reiwa"
+      ],
+      "relevance": "opposition_party_leader",
+      "succession_eligibility": "not_cabinet_successor",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_kamiya_sohei",
+      "name": "KAMIYA Sohei",
+      "office": "Sanseito representative",
+      "institution_ids": [
+        "institution_jpn_sanseito"
+      ],
+      "relevance": "opposition_party_leader",
+      "succession_eligibility": "not_cabinet_successor",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_party_leaders_2025_07_25"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_uchikura_hiroaki",
+      "name": "UCHIKURA Hiroaki",
+      "office": "Chief of Staff, Joint Staff",
+      "institution_ids": [
+        "institution_jpn_joint_staff",
+        "institution_jpn_ministry_of_defense"
+      ],
+      "relevance": "senior_military_adviser",
+      "succession_eligibility": "not_political_successor",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_joint_staff_uchikura_2025_08_01"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    },
+    {
+      "actor_id": "actor_jpn_nagumo_kenichiro",
+      "name": "NAGUMO Ken-ichiro",
+      "office": "Commander, Joint Operations Command",
+      "institution_ids": [
+        "institution_jpn_jjoc",
+        "institution_jpn_ministry_of_defense"
+      ],
+      "relevance": "joint_operational_commander",
+      "succession_eligibility": "not_political_successor",
+      "confidence": "high",
+      "source_ids": [
+        "src_jpn_mod_jjoc_2025_03_11"
+      ],
+      "selection_basis_status": "institutional_relevance_only",
+      "practical_influence": {
+        "status": "unaccepted",
+        "source_ids": [],
+        "source_family_ids": [],
+        "minimum_independent_source_families": 2
+      }
+    }
+  ],
+  "actor_selection_policy": {
+    "target_count": 20,
+    "inclusion_rule": "Opening officeholders, coalition and opposition party leaders, and the senior joint command principals needed to resolve national decisions.",
+    "practical_influence_requires_multiple_families": true,
+    "inclusion_is_forecast": false
+  },
+  "unknowns": [
+    "Practical influence, factional bargaining power, public support elasticity, and coalition behavior are not established by formal office evidence.",
+    "The temporary Prime Minister duty designation order is not accepted, so no first successor actor is initialized.",
+    "No military quantity, readiness, disposition, facility, or deployment is established by this politics packet.",
+    "Japan's decision in a Taiwan contingency is not predetermined by the alliance treaty or this roster."
+  ]
+}

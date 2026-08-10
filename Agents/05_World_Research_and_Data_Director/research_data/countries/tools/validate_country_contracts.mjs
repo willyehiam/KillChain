@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 const BOOKMARK_ID = "bookmark_global_fracture_2025_09_01";
 const BOOKMARK_TIME = "2025-09-01T00:00:00Z";
 const TIER_A_CODES = new Set(["USA", "CHN", "TWN"]);
+const PROMOTED_TIER_B_CODES = new Set(["JPN"]);
 const REQUIRED_LANES = [
   "politics_and_institutions",
   "economy_trade_finance_resources",
@@ -137,9 +138,15 @@ for (const registryCountry of registry.countries ?? []) {
   validatePathReferences(profile.dataset_paths, countryDirectory, label);
 
   if (!TIER_A_CODES.has(code)) {
-    assert(profile.coverage_status === "shell", `${label}: non Tier A generated dossier must remain a shell`);
-    assert(profile.dataset_paths?.force_ledger === null, `${label}: shell must not link an invented force ledger`);
-    assert(profile.completeness?.force_ledger_status === "absent", `${label}: shell force ledger status must be absent`);
+    const promoted = PROMOTED_TIER_B_CODES.has(code);
+    assert(profile.coverage_status === (promoted ? "collecting" : "shell"), `${label}: non Tier A dossier status differs from its promotion state`);
+    assert(profile.dataset_paths?.force_ledger === null, `${label}: non Tier A dossier must not link an invented force ledger`);
+    assert(profile.completeness?.force_ledger_status === "absent", `${label}: non Tier A force ledger status must remain absent`);
+    if (promoted) {
+      assert(profile.dataset_paths?.government === "politics_and_institutions.json", `${label}: promoted politics packet is not linked`);
+      assert(profile.dataset_paths?.bookmark_state === "bookmark_state.json", `${label}: promoted bookmark state is not linked`);
+      assert(profile.completeness?.political_actor_count === 20, `${label}: promoted actor roster is incomplete`);
+    }
     continue;
   }
 

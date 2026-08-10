@@ -8,16 +8,18 @@
   "gdp_rank": 4,
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
   "as_of": "2025-09-01T00:00:00Z",
-  "status": "shell",
+  "status": "collecting",
   "research_wave": "tier_b_wave_one_2025_09_01",
   "contract_path": "../country_research_contract.json",
   "files": {
     "profile": "profile.json",
     "lane_coverage": "lane_coverage.json",
     "work_packages": "WORK_PACKAGES.md",
-    "evidence_registry": null,
-    "bookmark_state": null,
-    "force_ledger": null
+    "evidence_registry": "evidence_registry.json",
+    "bookmark_state": "bookmark_state.json",
+    "force_ledger": null,
+    "politics_and_institutions": "politics_and_institutions.json",
+    "war_authority_workflow": "war_authority_workflow.json"
   },
   "lane_ids": [
     "politics_and_institutions",
@@ -40,13 +42,13 @@
     "bookmark_firewall_passed": false,
     "independent_review_complete": false
   },
-  "accepted_source_count": 0,
-  "accepted_claim_count": 0,
-  "open_contradiction_count": 0,
+  "accepted_source_count": 11,
+  "accepted_claim_count": 36,
+  "open_contradiction_count": 1,
   "unknowns": [
-    "No country specific source or atomic claim has been accepted into this wave artifact.",
-    "Government, economy, force inventory, readiness, facilities, infrastructure, geography, alliances, crises, and deployments remain unknown until sourced.",
+    "Politics, constitutional authority, alliance scope, and joint command institutions are collecting and still require independent review.",
+    "Economy beyond the frozen GDP roster, force inventory, readiness, facilities, infrastructure, geography, crisis deployments, and practical actor influence remain unknown.",
     "A zero count describes accepted corpus records and never asserts real world absence."
   ],
-  "notes": "This manifest opens bounded research work only. It is nonfactual, nonexecutable, and cannot initialize simulation state."
+  "notes": "Japan has entered substantive collection for politics and alliance authority only. No force, facility, readiness, location, or deployment state is executable."
 }

@@ -3,7 +3,7 @@
   "wave_id": "tier_b_wave_one_2025_09_01",
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
   "as_of": "2025-09-01T00:00:00Z",
-  "status": "planned",
+  "status": "collecting",
   "countries": [
     {
       "country_code": "JPN",
@@ -85,7 +85,7 @@
   ],
   "rules": [
     "Planning questions are not factual claims.",
-    "Generated artifacts remain shell status until sources and atomic claims are accepted.",
+    "Generated artifacts remain shell status until sources and atomic claims are accepted; individual countries may then advance lane by lane while the wave remains collecting.",
     "No force ledger is created until national scope, counting units, and conservation boundaries are defined.",
     "No scenario may execute from a shell or collecting research artifact.",
     "Country research must preserve the 1 September 2025 knowledge cutoff."

@@ -6,17 +6,17 @@
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
   "as_of": "2025-09-01T00:00:00Z",
   "depth_tier": "B",
-  "coverage_status": "shell",
+  "coverage_status": "collecting",
   "roster_basis": "top_80_2025_nominal_gdp",
   "gdp_rank": 4,
   "gdp_2025_usd_billions": 4435.163,
   "coverage": {
     "politics_and_institutions": {
-      "status": "shell",
-      "record_count": 0,
-      "source_count": 0,
-      "open_question_count": 1,
-      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+      "status": "needs_review",
+      "record_count": 35,
+      "source_count": 10,
+      "open_question_count": 3,
+      "notes": "Opening Cabinet, twenty actor roster, constitutional authority, and joint command institutions are sourced. Practical influence, coalition behavior, and the temporary Prime Minister succession order remain unknown."
     },
     "economy_trade_finance_resources": {
       "status": "collecting",
@@ -30,7 +30,7 @@
       "record_count": 0,
       "source_count": 0,
       "open_question_count": 1,
-      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+      "notes": "No force organization or inventory record is accepted. Joint command authority in the politics packet does not establish any force quantity, readiness, or disposition."
     },
     "fixed_facilities_basing": {
       "status": "shell",
@@ -61,41 +61,54 @@
       "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
     },
     "crises_alliances_sanctions_deployments": {
-      "status": "shell",
-      "record_count": 0,
-      "source_count": 0,
-      "open_question_count": 1,
-      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+      "status": "needs_review",
+      "record_count": 6,
+      "source_count": 3,
+      "open_question_count": 3,
+      "notes": "Japan United States treaty scope, consultation, facilities access, defense authority, and allied support routes are sourced. Active crisis deployments and sanctions remain unknown."
     }
   },
   "dataset_paths": {
-    "government": null,
-    "political_actors": null,
+    "government": "politics_and_institutions.json",
+    "political_actors": "politics_and_institutions.json",
     "provinces": null,
     "economy": "../top_80_2025/top_80_2025_gdp.json",
     "force_ledger": null,
     "facilities": null,
     "infrastructure": null,
     "relationships": null,
-    "claims": null,
-    "sources": "../../sources/sources.ndjson",
-    "contradictions": null
+    "claims": "evidence_registry.json",
+    "sources": "evidence_registry.json",
+    "contradictions": "evidence_registry.json",
+    "bookmark_state": "bookmark_state.json",
+    "war_authority_workflow": "war_authority_workflow.json"
   },
   "completeness": {
     "political_actor_target": 20,
-    "political_actor_count": 0,
+    "political_actor_count": 20,
     "province_layer_status": "absent",
     "force_ledger_status": "absent"
   },
   "source_ids": [
-    "src_imf_weo_2026_04_ngdpd_2025"
+    "src_imf_weo_2026_04_ngdpd_2025",
+    "src_jpn_constitution",
+    "src_jpn_armed_attack_response_act",
+    "src_jpn_us_forces_support_act",
+    "src_jpn_us_security_treaty",
+    "src_jpn_cabinet_2025_09_01",
+    "src_jpn_pm_action_2025_09_01",
+    "src_jpn_hayashi_press_2025_09_01",
+    "src_jpn_mod_jjoc_2025_03_11",
+    "src_jpn_joint_staff_uchikura_2025_08_01",
+    "src_jpn_party_leaders_2025_07_25",
+    "src_jpn_defense_white_paper_2025_jjoc"
   ],
   "unknowns": [
-    "Government, leadership, institutions, and political actors at the bookmark are unknown in this shell.",
+    "Practical actor influence, coalition behavior, public support elasticity, and the temporary Prime Minister succession order remain unknown.",
     "Military organization, inventory, readiness, basing, maintenance, and deployments are unknown in this shell.",
     "Province, terrain, infrastructure, industry, energy, logistics, and communications state are unknown in this shell.",
-    "Alliances, dependencies, sanctions, crisis commitments, and active plans are unknown in this shell.",
+    "Treaty scope and authority routes are collecting; sanctions, crisis commitments, active plans, and deployments remain unknown.",
     "A zero record count means no accepted corpus records and never asserts zero real world entities or capacity."
   ],
-  "notes": "Generated from the frozen roster only. Numeric coverage zeros count accepted corpus records and never assert real world absence. All substantive country facts remain unknown until sourced."
+  "notes": "Japan politics and alliance authority have entered substantive collection. Numeric coverage zeros count accepted corpus records and never assert real world absence. No force, facility, readiness, location, or deployment is created by this packet."
 }

@@ -56,7 +56,7 @@ function laneQuestions(country, laneId) {
 }
 
 function buildManifest(country, registryCountry) {
-  return {
+  const manifest = {
     schema_version: "0.1.0",
     manifest_id: `research_manifest_${country.country_code.toLowerCase()}_2025_09_01`,
     country_id: registryCountry.country_id,
@@ -99,6 +99,23 @@ function buildManifest(country, registryCountry) {
     ],
     notes: "This manifest opens bounded research work only. It is nonfactual, nonexecutable, and cannot initialize simulation state.",
   };
+  if (country.country_code === "JPN") {
+    manifest.status = "collecting";
+    manifest.files.evidence_registry = "evidence_registry.json";
+    manifest.files.bookmark_state = "bookmark_state.json";
+    manifest.files.politics_and_institutions = "politics_and_institutions.json";
+    manifest.files.war_authority_workflow = "war_authority_workflow.json";
+    manifest.accepted_source_count = 11;
+    manifest.accepted_claim_count = 36;
+    manifest.open_contradiction_count = 1;
+    manifest.unknowns = [
+      "Politics, constitutional authority, alliance scope, and joint command institutions are collecting and still require independent review.",
+      "Economy beyond the frozen GDP roster, force inventory, readiness, facilities, infrastructure, geography, crisis deployments, and practical actor influence remain unknown.",
+      "A zero count describes accepted corpus records and never asserts real world absence.",
+    ];
+    manifest.notes = "Japan has entered substantive collection for politics and alliance authority only. No force, facility, readiness, location, or deployment state is executable.";
+  }
+  return manifest;
 }
 
 function buildLaneMatrix(country, registryCountry) {
@@ -124,20 +141,53 @@ function buildLaneMatrix(country, registryCountry) {
       notes: "Planning questions exist, but no country specific evidence has been accepted. Zero counts describe corpus state only.",
     };
   }
+  if (country.country_code === "JPN") {
+    Object.assign(matrix.politics_and_institutions, {
+      status: "needs_review",
+      owner: "agent_05_world_research_and_data_director",
+      record_count: 35,
+      source_count: 10,
+      claim_count: 31,
+      contradiction_count: 2,
+      oldest_source_date: "1947-05-03",
+      newest_source_date: "2025-09-01",
+      reviewed_at: "2026-08-10",
+      review_after: "2026-11-10",
+      coverage_disposition: "opening_authority_and_actor_roster_collected_needs_independent_review",
+      notes: "Twenty actors, fourteen institutions, the opening Cabinet, constitutional gates, and joint command roles are sourced. Practical influence and temporary Prime Minister succession order remain unknown.",
+    });
+    Object.assign(matrix.crises_alliances_sanctions_deployments, {
+      status: "needs_review",
+      owner: "agent_05_world_research_and_data_director",
+      record_count: 6,
+      source_count: 3,
+      claim_count: 8,
+      contradiction_count: 2,
+      oldest_source_date: "1960-06-23",
+      newest_source_date: "2025-09-01",
+      reviewed_at: "2026-08-10",
+      review_after: "2026-11-10",
+      coverage_disposition: "alliance_scope_and_authority_routes_collected_needs_independent_review",
+      notes: "Treaty consultation, Article V scope, facilities access, defense authority, and allied support are separated. Crisis deployments and sanctions remain unknown.",
+    });
+  }
+  const shellCount = Object.values(matrix).filter((lane) => lane.status === "shell").length;
+  const collectingCount = Object.values(matrix).filter((lane) => lane.status === "collecting").length;
+  const needsReviewCount = Object.values(matrix).filter((lane) => lane.status === "needs_review").length;
   return {
     schema_version: "0.1.0",
     matrix_id: `lane_coverage_${country.country_code.toLowerCase()}_2025_09_01`,
     country_id: registryCountry.country_id,
     bookmark_id: wave.bookmark_id,
     as_of: wave.as_of,
-    overall_status: "shell",
+    overall_status: country.country_code === "JPN" ? "collecting" : "shell",
     research_wave: wave.wave_id,
     lanes: matrix,
     rollup: {
       lanes_total: lanes.length,
-      shell: lanes.length,
-      collecting: 0,
-      needs_review: 0,
+      shell: shellCount,
+      collecting: collectingCount,
+      needs_review: needsReviewCount,
       verified: 0,
       stale: 0,
       deprecated: 0,
