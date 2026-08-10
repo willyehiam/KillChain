@@ -218,6 +218,41 @@ Record counts remain diagnostics. The primary measures become:
 7. Continue country and theater research only when it feeds the global pulse or
    the walking skeleton.
 
+## First tranche result
+
+Completed on August 10, 2026:
+
+1. One shared authority packet compiler now generates country bookmark,
+   politics, evidence, authority, profile, manifest, and coverage projections.
+2. South Korea and the Philippines use the shared compiler rather than bespoke
+   country generators.
+3. The six opening crisis countries now have explicit participation states,
+   refusal states, authority routes, and access relationships.
+4. A deterministic Taiwan crisis acceptance fixture proves that collection,
+   limited allied access, deception, uncertainty, decision attention, and
+   resource conservation can interact without automatic war entry.
+5. Five adversarial mutations prove that the fixture rejects automatic country
+   entry, access promoted to combat authority, future truth leakage, resource
+   overspending, and missing authority routes.
+6. Corpus discovery now accepts compiler authored packets without counting their
+   generated projections twice, and local country evidence is discovered without
+   hardcoded country allowlists.
+7. The complete research foundation, application type check, 43 deterministic
+   simulation tests, production build, and hosting artifact verification pass.
+
+Measured result:
+
+1. Six substantive opening countries, up from five.
+2. Two countries generated through the shared authority contract.
+3. One playable acceptance story covering six countries and 26 authority routes.
+4. One stable replay hash and one distinct alternate seed hash.
+5. Zero corpus integrity errors and zero corpus warnings.
+
+The next tranche should add conserved capability pools and support dependencies
+for Japan, South Korea, and the Philippines. It should extend the same acceptance
+story into coercive response choices. It should not create a second theater or a
+production engine until those abstractions prove useful.
+
 ## Nonnegotiable quality
 
 Lean does not mean casual. The correction removes duplicated process and detail

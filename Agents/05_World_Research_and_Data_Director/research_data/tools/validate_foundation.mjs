@@ -98,7 +98,11 @@ const schemaRoot = path.join(researchRoot, "schemas");
 const countriesRoot = path.join(researchRoot, "countries");
 const bookmarkRoot = path.join(researchRoot, "bookmarks", "2025_09_01");
 const TIER_A_COUNTRY_DIRECTORIES = ["usa", "chn", "twn"];
-const LOCAL_EVIDENCE_COUNTRY_DIRECTORIES = [...TIER_A_COUNTRY_DIRECTORIES, "jpn"];
+const LOCAL_EVIDENCE_COUNTRY_DIRECTORIES = fs
+  .readdirSync(countriesRoot, { withFileTypes: true })
+  .filter((entry) => entry.isDirectory() && fs.existsSync(path.join(countriesRoot, entry.name, "evidence_registry.json")))
+  .map((entry) => entry.name)
+  .sort();
 
 for (const schema of NEW_SCHEMAS) {
   readJson(path.join(schemaRoot, schema));

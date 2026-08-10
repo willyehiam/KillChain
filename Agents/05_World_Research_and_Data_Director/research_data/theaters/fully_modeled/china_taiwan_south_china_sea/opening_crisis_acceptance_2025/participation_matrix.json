@@ -1,0 +1,117 @@
+{
+  "schema_version": "0.1.0",
+  "matrix_id": "indo_pacific_participation_matrix_2025_09_01",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "needs_independent_review",
+  "design_rule": "A relationship creates consultation and options. It never silently creates domestic authority, mission permission, force availability, or kinetic participation.",
+  "countries": [
+    {
+      "country_id": "country_chn",
+      "role_classes": ["crisis_initiator", "coercive_actor", "negotiating_party"],
+      "opening_posture": "exercise_and_coercion_options_available_no_future_branch_selected",
+      "authority_path": "../../../../countries/chn/politics_and_institutions.json",
+      "authority_route_ids": ["formal_decision_authority.war_and_peace", "formal_decision_authority.military_command_architecture"],
+      "participation_states": ["routine_posture", "exercise", "extended_exercise", "quarantine_claim", "blockade_attempt", "kinetic_campaign", "de_escalation"],
+      "automatic_entry": false,
+      "decision_surfaces": ["exercise_scope", "legal_narrative", "coercive_intensity", "inspection_policy", "force_allocation", "negotiation_terms", "off_ramps"],
+      "critical_constraints": ["national_force_conservation", "economic_disruption", "international_response", "escalation_risk", "faction_belief_uncertainty"],
+      "unresolved": ["The precise party and military decision workflow below the sourced formal architecture requires later research."]
+    },
+    {
+      "country_id": "country_twn",
+      "role_classes": ["coercion_target", "defender", "negotiating_party"],
+      "opening_posture": "defense_and_crisis_response_options_available_no_future_attack_known",
+      "authority_path": "../../../../countries/twn/war_authority_workflow.json",
+      "authority_route_ids": ["route_twn_immediate_defensive_command", "route_twn_formal_declaration_of_war", "route_twn_emergency_decree", "route_twn_martial_law"],
+      "participation_states": ["monitoring", "law_enforcement_response", "selective_mobilization", "national_defense", "negotiation", "continuity_of_government"],
+      "automatic_entry": false,
+      "decision_surfaces": ["classification_of_coercion", "mobilization", "civil_shipping_policy", "allied_requests", "continuity", "information_release", "rules_of_engagement"],
+      "critical_constraints": ["war_authority", "readiness", "civilian_resilience", "port_throughput", "energy_security", "track_quality"],
+      "unresolved": ["The boundary among policing, defense, and formal war remains scenario dependent."]
+    },
+    {
+      "country_id": "country_usa",
+      "role_classes": ["external_balancer", "security_partner", "potential_belligerent"],
+      "opening_posture": "strategic_ambiguity_and_response_options_no_automatic_defense_entry",
+      "authority_path": "../../../../countries/usa/war_authority_workflow.json",
+      "authority_route_ids": ["route_usa_declaration_of_war", "route_usa_specific_statutory_authorization", "route_usa_attack_emergency", "route_usa_contested_limited_presidential_force", "route_usa_continue_after_wpr_clock"],
+      "participation_states": ["monitoring", "diplomatic_pressure", "economic_measures", "intelligence_support", "logistics_support", "limited_force", "authorized_campaign", "de_escalation"],
+      "automatic_entry": false,
+      "decision_surfaces": ["public_commitment", "domestic_authority", "coalition_building", "sanctions", "access_requests", "force_allocation", "mission_authorization"],
+      "critical_constraints": ["domestic_war_authority", "public_support", "host_nation_access", "force_reach", "support_platforms", "global_commitments"],
+      "unresolved": ["The political and legal classification of each proposed response remains decision specific."]
+    },
+    {
+      "country_id": "country_jpn",
+      "role_classes": ["host_nation", "alliance_partner", "potential_supporter", "potential_belligerent"],
+      "opening_posture": "existing_alliance_presence_without_blanket_taiwan_mission_permission",
+      "authority_path": "../../../../countries/jpn/war_authority_workflow.json",
+      "authority_route_ids": ["route_jpn_alliance_consultation", "route_jpn_allied_action_support", "route_jpn_defense_operations_normal", "route_jpn_defense_operations_urgent", "route_jpn_joint_operational_execution"],
+      "participation_states": ["consultation", "access_limited", "nonkinetic_support", "survival_threat_assessment", "defense_operations", "de_escalation", "refusal"],
+      "automatic_entry": false,
+      "decision_surfaces": ["consultation", "mission_specific_access", "allied_support", "statutory_facts", "Diet_approval", "force_protection"],
+      "critical_constraints": ["constitutional_and_statutory_authority", "Diet_support", "mission_scope", "local_capacity", "domestic_support"],
+      "unresolved": ["A Taiwan event does not predetermine the survival threatening situation assessment."]
+    },
+    {
+      "country_id": "country_kor",
+      "role_classes": ["alliance_partner", "peninsula_defender", "potential_supporter", "strategic_refuser"],
+      "opening_posture": "peninsula_defense_priority_with_independent_taiwan_policy_choice",
+      "authority_path": "../../../../countries/kor/war_authority_workflow.json",
+      "authority_route_ids": ["route_kor_alliance_consultation", "route_kor_taiwan_support", "route_kor_external_force_dispatch", "route_kor_defensive_force_action", "route_kor_cfc_peninsula_defense"],
+      "participation_states": ["monitoring", "consultation", "peninsula_reinforcement", "nonkinetic_support", "external_dispatch_considered", "external_dispatch_authorized", "refusal"],
+      "automatic_entry": false,
+      "decision_surfaces": ["peninsula_readiness", "alliance_consultation", "Assembly_consent", "support_posture", "force_diversion", "North_Korean_risk"],
+      "critical_constraints": ["peninsula_deterrence", "National_Assembly_consent", "domestic_support", "force_availability", "North_Korean_adaptation"],
+      "unresolved": ["The support threshold and North Korean response must emerge from scenario state, not a fixed probability."]
+    },
+    {
+      "country_id": "country_phl",
+      "role_classes": ["host_nation", "treaty_ally", "frontline_maritime_state", "potential_supporter"],
+      "opening_posture": "treaty_and_EDCA_frameworks_without_automatic_combat_permission",
+      "authority_path": "../../../../countries/phl/war_authority_workflow.json",
+      "authority_route_ids": ["route_phl_mdt_consultation", "route_phl_edca_access", "route_phl_taiwan_nonkinetic_support", "route_phl_taiwan_kinetic_participation", "route_phl_state_of_war"],
+      "participation_states": ["monitoring", "consultation", "access_limited", "nonkinetic_support", "kinetic_participation_considered", "kinetic_participation_authorized", "refusal"],
+      "automatic_entry": false,
+      "decision_surfaces": ["treaty_scope", "specific_EDCA_activity", "domestic_authority", "coalition_support", "northern_Luzon_exposure", "mission_limits"],
+      "critical_constraints": ["constitutional_process", "host_nation_approval", "domestic_support", "local_exposure", "capacity", "West_Philippine_Sea_risk"],
+      "unresolved": ["Treaty scope and permission for each proposed activity remain scenario specific."]
+    }
+  ],
+  "relationship_edges": [
+    {
+      "relationship_id": "twrs_access_us_japan",
+      "from_country_id": "country_usa",
+      "to_country_id": "country_jpn",
+      "relationship_path": "../taiwan_regional_systems_2025/access_relationships.json",
+      "opening_permission": "not_requested",
+      "kinetic_permission": "not_granted"
+    },
+    {
+      "relationship_id": "twrs_access_us_philippines",
+      "from_country_id": "country_usa",
+      "to_country_id": "country_phl",
+      "relationship_path": "../taiwan_regional_systems_2025/access_relationships.json",
+      "opening_permission": "not_requested",
+      "kinetic_permission": "not_granted"
+    },
+    {
+      "relationship_id": "twrs_access_us_taiwan",
+      "from_country_id": "country_usa",
+      "to_country_id": "country_twn",
+      "relationship_path": "../taiwan_regional_systems_2025/access_relationships.json",
+      "opening_permission": "not_requested",
+      "kinetic_permission": "not_granted"
+    }
+  ],
+  "acceptance_rules": {
+    "relationship_implies_participation": false,
+    "access_implies_combat_authority": false,
+    "consultation_implies_host_approval": false,
+    "country_AI_may_skip_authority_gates": false,
+    "theater_allocation_may_create_national_inventory": false,
+    "refusal_is_a_valid_outcome": true,
+    "conditional_and_limited_support_are_first_class_outcomes": true
+  }
+}

@@ -13,7 +13,8 @@ Stage: research. Simulation engine implementation, final visual design, and prod
 3. 3 national force ledgers exist, and 0 are simulation ready.
 4. 1 of 9 fully modeled theater directories contain substantive machine readable work.
 5. 0 of 9 secondary crises and 0 of 8 political event chains contain substantive work.
-6. The corpus validator passes 229 files, 1698 parsed records, and 11327 objects with 13 errors and 0 warnings.
+6. 1 deterministic acceptance story covers 6 deep opening countries and 26 authority routes.
+7. The corpus validator passes 233 files, 1702 parsed records, and 11337 objects with 0 errors and 0 warnings.
 
 ## Country status
 
@@ -22,16 +23,17 @@ Stage: research. Simulation engine implementation, final visual design, and prod
 | USA | United States | A | collecting | 21 | collecting | 3 |
 | CHN | China | A | collecting | 24 | collecting | 3 |
 | JPN | Japan | B | collecting | 20 | absent | 3 |
-| KOR | South Korea | B | collecting | 0 | absent | 3 |
+| KOR | South Korea | B | collecting | 17 | absent | 3 |
 | TWN | Taiwan | A | collecting | 20 | collecting | 5 |
+| PHL | Philippines | B | collecting | 12 | absent | 3 |
 
 All other country profiles remain structural shells. A shell count is corpus completeness, never a claim of real world absence.
 
 ## Lane coverage
 
-1. Shell lanes: 636.
+1. Shell lanes: 634.
 2. Collecting lanes: 85.
-3. Lanes needing review: 7.
+3. Lanes needing review: 9.
 4. Verified lanes: 0.
 5. Stale lanes: 0.
 6. Deprecated lanes: 0.
@@ -39,7 +41,7 @@ All other country profiles remain structural shells. A shell count is corpus com
 ## Immediate blockers
 
 1. No national force ledger is simulation ready.
-2. Japan is the only Tier B country with accepted substantive evidence.
+2. Japan, South Korea, and the Philippines have substantive politics and authority evidence, but no Tier B national force ledger exists.
 3. Only the China Taiwan South China Sea theater has substantive machine readable records.
 4. All secondary crises and political event chains remain scaffolds.
 5. Global infrastructure networks remain unintegrated outside the Taiwan foundation.
@@ -47,9 +49,9 @@ All other country profiles remain structural shells. A shell count is corpus com
 
 ## Next dependency order
 
-1. Promote South Korea and the Philippines through politics, authority, alliance, and access research.
+1. Define conserved capability pools and support dependencies for Japan, South Korea, and the Philippines.
 2. Complete Japan military organization, national force ledger boundaries, strategic geography, and sustainment foundations.
-3. Reconcile the Indo Pacific participation and access web without automatic alliance behavior.
+3. Extend the Indo Pacific acceptance fixture from collection and access into coercive response choices without building the production engine.
 4. Continue Tier B wave one country packets for North Korea, Russia, India, and Australia.
 5. Advance complete national force accounting for the United States, China, and Taiwan.
 6. Populate the remaining fully modeled theaters, secondary crises, event chains, and global networks.

@@ -1,0 +1,275 @@
+{
+  "schema_version": "0.1.0",
+  "packet_id": "authority_packet_phl_2025_09_01",
+  "country": {"id":"country_phl","code":"PHL","name":"Philippines"},
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "review": {"reviewed_at":"2026-08-10","review_after":"2026-11-10"},
+  "evidence": {
+    "staging_rules": {
+      "post_bookmark_opening_claims_forbidden": true,
+      "live_mutable_sources_require_prebookmark_temporal_proof": true,
+      "office_does_not_prove_practical_influence": true,
+      "treaty_does_not_bypass_domestic_authority": true,
+      "access_agreement_does_not_equal_automatic_combat_use": true,
+      "missing_force_or_facility_evidence_is_unknown_not_zero": true
+    },
+    "sources": [
+      {
+        "source_id":"src_phl_constitution",
+        "title":"1987 Philippine Constitution",
+        "publisher":"Department of Budget and Management, Republic of the Philippines",
+        "accessed_at":"2026-08-10",
+        "source_tier":"A",
+        "source_type":"law_or_treaty",
+        "url":"https://www.dbm.gov.ph/index.php?catid=270&id=2359&view=article",
+        "relevant_locator":"Article VI Section 23; Article VII Sections 8, 18, and 21",
+        "source_family_id":"family_philippines_dbm",
+        "bookmark_temporal_proof":{"status":"historically_valid_instrument_at_bookmark","effective_from":"1987-02-02"}
+      },
+      {
+        "source_id":"src_phl_us_mutual_defense_treaty",
+        "title":"Mutual Defense Treaty between the Republic of the Philippines and the United States of America",
+        "publisher":"Department of Foreign Affairs, Republic of the Philippines",
+        "accessed_at":"2026-08-10",
+        "source_tier":"A",
+        "source_type":"law_or_treaty",
+        "url":"https://dfa.gov.ph/dfa-news/statements-and-advisoriesupdate/30521-mutual-defense-treaty-between-the-republic-of-the-philippines-and-the-united-states-of-america",
+        "relevant_locator":"Articles III, IV, and V",
+        "source_family_id":"family_philippines_dfa",
+        "bookmark_temporal_proof":{"status":"historically_valid_instrument_at_bookmark","effective_from":"1952-08-27"}
+      },
+      {
+        "source_id":"src_phl_edca",
+        "title":"Enhanced Defense Cooperation Agreement",
+        "publisher":"Department of Foreign Affairs, Republic of the Philippines",
+        "accessed_at":"2026-08-10",
+        "source_tier":"A",
+        "source_type":"law_or_treaty",
+        "url":"https://dfa.gov.ph/images/2015/edca.pdf",
+        "relevant_locator":"Agreed locations, access, activities, and Philippine ownership",
+        "source_family_id":"family_philippines_dfa",
+        "bookmark_temporal_proof":{"status":"historically_valid_instrument_at_bookmark","effective_from":"2014-04-28"}
+      },
+      {
+        "source_id":"src_phl_lazaro_appointment_2025_07_01",
+        "title":"President Marcos swears in Ma. Theresa Lazaro as Foreign Affairs Secretary",
+        "publisher":"Presidential Communications Office, Republic of the Philippines",
+        "published_at":"2025-07-01",
+        "accessed_at":"2026-08-10",
+        "source_tier":"A",
+        "source_type":"official_release",
+        "url":"https://pco.gov.ph/news_releases/president-marcos-confers-order-of-sikatuna-swears-in-lazaro-as-new-dfa-chief/",
+        "relevant_locator":"President and Foreign Affairs Secretary",
+        "source_family_id":"family_philippines_pco",
+        "bookmark_temporal_proof":{"status":"dated_prebookmark_publication","published_at":"2025-07-01"}
+      },
+      {
+        "source_id":"src_phl_house_speaker_2025_07_28",
+        "title":"Romualdez reelected unopposed as Speaker for second straight term",
+        "publisher":"House of Representatives, Republic of the Philippines",
+        "published_at":"2025-07-28",
+        "accessed_at":"2026-08-10",
+        "source_tier":"A",
+        "source_type":"official_legislative_record",
+        "url":"https://www.congress.gov.ph/index.php/media/press-releases/9414",
+        "relevant_locator":"Speaker election and vote",
+        "source_family_id":"family_philippines_house",
+        "bookmark_temporal_proof":{"status":"dated_prebookmark_publication","published_at":"2025-07-28"}
+      },
+      {
+        "source_id":"src_phl_senate_escudero_2025_03_17",
+        "title":"Senate President Escudero discusses the Vice Presidential impeachment trial",
+        "publisher":"Senate of the Philippines",
+        "published_at":"2025-03-17",
+        "accessed_at":"2026-08-10",
+        "source_tier":"A",
+        "source_type":"official_legislative_record",
+        "url":"https://web.senate.gov.ph/photo_release/2025/0317_01.asp",
+        "relevant_locator":"Francis Escudero as Senate President and Sara Duterte as Vice President",
+        "source_family_id":"family_philippines_senate",
+        "bookmark_temporal_proof":{"status":"dated_prebookmark_publication","published_at":"2025-03-17"}
+      },
+      {
+        "source_id":"src_phl_senate_transition_2025_09_08",
+        "title":"New Senate leadership elected",
+        "publisher":"Senate of the Philippines",
+        "published_at":"2025-09-08",
+        "accessed_at":"2026-08-10",
+        "source_tier":"A",
+        "source_type":"retrospective_official_record",
+        "url":"https://web.senate.gov.ph/photo_release/2025/0908_07.asp",
+        "relevant_locator":"Explicitly identifies Escudero as the replaced Senate President on September 8",
+        "source_family_id":"family_philippines_senate",
+        "bookmark_temporal_proof":{"status":"historically_valid_instrument_at_bookmark","effective_from":"2025-07-28"}
+      },
+      {
+        "source_id":"src_phl_afp_2025_08_20",
+        "title":"AFP Chief welcomes outgoing and incoming German defense attaches",
+        "publisher":"Armed Forces of the Philippines",
+        "published_at":"2025-08-21",
+        "accessed_at":"2026-08-10",
+        "source_tier":"A",
+        "source_type":"official_release",
+        "url":"https://www.afp.mil.ph/news/afp-chief-welcomes-outgoing-and-incoming-german-defense-attaches",
+        "relevant_locator":"General Romeo Brawner as AFP Chief of Staff on August 20",
+        "source_family_id":"family_philippines_afp",
+        "bookmark_temporal_proof":{"status":"dated_prebookmark_publication","published_at":"2025-08-21"}
+      },
+      {
+        "source_id":"src_phl_defense_2025_08_02",
+        "title":"AFP and United States conduct joint humanitarian airlift exercise",
+        "publisher":"Armed Forces of the Philippines",
+        "published_at":"2025-08-02",
+        "accessed_at":"2026-08-10",
+        "source_tier":"A",
+        "source_type":"official_release",
+        "url":"https://www.afp.mil.ph/news/afp-u-s-conducted-joint-humanitarian-airlift-in-clark-exercise",
+        "relevant_locator":"Gilberto Teodoro as Defense Secretary and alliance interoperability activity",
+        "source_family_id":"family_philippines_afp",
+        "bookmark_temporal_proof":{"status":"dated_prebookmark_publication","published_at":"2025-08-02"}
+      },
+      {
+        "source_id":"src_phl_sara_impeachment_2025_03_17",
+        "title":"Impeachment trial to proceed amid ICC trial",
+        "publisher":"Senate of the Philippines",
+        "published_at":"2025-03-17",
+        "accessed_at":"2026-08-10",
+        "source_tier":"A",
+        "source_type":"official_legislative_record",
+        "url":"https://web.senate.gov.ph/photo_release/2025/0317_01.asp",
+        "relevant_locator":"Vice President Sara Duterte and open impeachment politics",
+        "source_family_id":"family_philippines_senate",
+        "bookmark_temporal_proof":{"status":"dated_prebookmark_publication","published_at":"2025-03-17"}
+      }
+    ],
+    "claims": [
+      {"claim_id":"claim_phl_congress_state_of_war","subject_id":"institution_phl_congress","predicate":"sole_power_to_declare_existence_of_state_of_war","value":"two thirds of both Houses in joint session voting separately","as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_constitution"]},
+      {"claim_id":"claim_phl_president_commander_in_chief","subject_id":"institution_phl_president","predicate":"commander_in_chief","value":true,"as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_constitution"]},
+      {"claim_id":"claim_phl_martial_law_limit","subject_id":"institution_phl_president","predicate":"martial_law_initial_limit_days","value":60,"as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_constitution"]},
+      {"claim_id":"claim_phl_congress_martial_law_review","subject_id":"institution_phl_congress","predicate":"may_revoke_or_extend_martial_law","value":true,"as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_constitution"]},
+      {"claim_id":"claim_phl_treaty_senate_concurrence","subject_id":"institution_phl_senate","predicate":"two_thirds_concurrence_required_for_treaty_effectivity","value":true,"as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_constitution"]},
+      {"claim_id":"claim_phl_vp_successor","subject_id":"institution_phl_vice_president","predicate":"succeeds_president_on_death_disability_removal_or_resignation","value":true,"as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_constitution"]},
+      {"claim_id":"claim_phl_mdt_constitutional_process","subject_id":"alliance_phl_usa_mutual_defense_treaty","predicate":"response_occurs_through_constitutional_processes","value":true,"as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_us_mutual_defense_treaty"]},
+      {"claim_id":"claim_phl_mdt_pacific_scope","subject_id":"alliance_phl_usa_mutual_defense_treaty","predicate":"armed_attack_scope","value":"Pacific area attacks on metropolitan territory, island territories under jurisdiction, armed forces, public vessels, or aircraft","as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_us_mutual_defense_treaty"]},
+      {"claim_id":"claim_phl_edca_access","subject_id":"agreement_phl_usa_edca","predicate":"creates_agreed_location_access_framework","value":true,"as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_edca"]},
+      {"claim_id":"claim_phl_marcos_president","subject_id":"actor_phl_ferdinand_marcos_jr","predicate":"holds_role","value":"President","as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_lazaro_appointment_2025_07_01"]},
+      {"claim_id":"claim_phl_sara_vice_president","subject_id":"actor_phl_sara_duterte","predicate":"holds_role","value":"Vice President","as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_sara_impeachment_2025_03_17"]},
+      {"claim_id":"claim_phl_lazaro_dfa","subject_id":"actor_phl_theresa_lazaro","predicate":"holds_role","value":"Secretary of Foreign Affairs","as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_lazaro_appointment_2025_07_01"]},
+      {"claim_id":"claim_phl_romualdez_speaker","subject_id":"actor_phl_martin_romualdez","predicate":"holds_role","value":"Speaker of the House","as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_house_speaker_2025_07_28"]},
+      {"claim_id":"claim_phl_escudero_senate_president","subject_id":"actor_phl_francis_escudero","predicate":"holds_role","value":"Senate President","as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_senate_escudero_2025_03_17","src_phl_senate_transition_2025_09_08"]},
+      {"claim_id":"claim_phl_brawner_afp_chief","subject_id":"actor_phl_romeo_brawner","predicate":"holds_role","value":"Chief of Staff, Armed Forces of the Philippines","as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_afp_2025_08_20"]},
+      {"claim_id":"claim_phl_teodoro_defense","subject_id":"actor_phl_gilberto_teodoro","predicate":"holds_role","value":"Secretary of National Defense","as_of":"2025-09-01T00:00:00Z","confidence":"high","source_ids":["src_phl_defense_2025_08_02"]}
+    ],
+    "contradictions": [
+      {"contradiction_id":"contradiction_phl_taiwan_mdt_scope","topic":"Whether a Taiwan contingency activates the mutual defense treaty","status":"scenario_dependent","resolution_rule":"Evaluate the actual location, attacked Philippine forces or public vessels, consultation, and constitutional processes. Do not auto activate."},
+      {"contradiction_id":"contradiction_phl_edca_use","topic":"Whether EDCA access equals permission for a specific combat mission","status":"scenario_dependent","resolution_rule":"Treat location access, activity approval, force allocation, and combat authority as separate decisions."},
+      {"contradiction_id":"contradiction_phl_formal_office_vs_influence","topic":"Formal office versus practical influence amid coalition and impeachment politics","status":"unresolved","resolution_rule":"Office proves formal authority only. Do not initialize loyalty, coalition control, or removal probability from title."}
+    ]
+  },
+  "politics": {
+    "roster_rule":"Cover the formal command chain, constitutional successor, both chambers, alliance and access decision makers, major coalition actors, and the live impeachment fault line. Formal office does not establish practical influence.",
+    "government":{"system":"unitary_presidential_constitutional_republic","executive_authority_institution_id":"institution_phl_president","legislature_institution_id":"institution_phl_congress","cabinet_institution_id":"institution_phl_cabinet"},
+    "institutions": [
+      {"institution_id":"institution_phl_president","name":"President","institution_type":"executive","source_ids":["src_phl_constitution"]},
+      {"institution_id":"institution_phl_vice_president","name":"Vice President","institution_type":"executive_successor","source_ids":["src_phl_constitution"]},
+      {"institution_id":"institution_phl_cabinet","name":"Cabinet","institution_type":"executive_administration","source_ids":["src_phl_lazaro_appointment_2025_07_01"]},
+      {"institution_id":"institution_phl_congress","name":"Congress","institution_type":"bicameral_legislature","source_ids":["src_phl_constitution"]},
+      {"institution_id":"institution_phl_senate","name":"Senate","institution_type":"legislative_chamber","source_ids":["src_phl_constitution","src_phl_senate_escudero_2025_03_17"]},
+      {"institution_id":"institution_phl_house","name":"House of Representatives","institution_type":"legislative_chamber","source_ids":["src_phl_constitution","src_phl_house_speaker_2025_07_28"]},
+      {"institution_id":"institution_phl_executive_secretary","name":"Office of the Executive Secretary","institution_type":"executive_staff","source_ids":["src_phl_lazaro_appointment_2025_07_01"]},
+      {"institution_id":"institution_phl_defense_department","name":"Department of National Defense","institution_type":"department","source_ids":["src_phl_defense_2025_08_02"]},
+      {"institution_id":"institution_phl_foreign_affairs_department","name":"Department of Foreign Affairs","institution_type":"department","source_ids":["src_phl_lazaro_appointment_2025_07_01"]},
+      {"institution_id":"institution_phl_afp","name":"Armed Forces of the Philippines","institution_type":"military_command","source_ids":["src_phl_afp_2025_08_20"]},
+      {"institution_id":"institution_phl_national_security_council","name":"National Security Council","institution_type":"executive_security_forum","source_ids":["src_phl_constitution"]},
+      {"institution_id":"institution_phl_house_majority","name":"House majority coalition","institution_type":"political_coalition","source_ids":["src_phl_house_speaker_2025_07_28"]},
+      {"institution_id":"institution_phl_senate_blocs","name":"Senate majority and minority blocs","institution_type":"political_coalitions","source_ids":["src_phl_senate_escudero_2025_03_17"]}
+    ],
+    "actors": [
+      {"actor_id":"actor_phl_ferdinand_marcos_jr","name":"Ferdinand Marcos Jr.","role":"President","institution_ids":["institution_phl_president","institution_phl_national_security_council"],"source_ids":["src_phl_lazaro_appointment_2025_07_01"],"practical_influence":"unknown"},
+      {"actor_id":"actor_phl_sara_duterte","name":"Sara Duterte","role":"Vice President","institution_ids":["institution_phl_vice_president"],"source_ids":["src_phl_sara_impeachment_2025_03_17"],"practical_influence":"unknown"},
+      {"actor_id":"actor_phl_lucas_bersamin","name":"Lucas Bersamin","role":"Executive Secretary","institution_ids":["institution_phl_executive_secretary","institution_phl_cabinet"],"source_ids":["src_phl_lazaro_appointment_2025_07_01"],"practical_influence":"unknown"},
+      {"actor_id":"actor_phl_gilberto_teodoro","name":"Gilberto Teodoro Jr.","role":"Secretary of National Defense","institution_ids":["institution_phl_defense_department","institution_phl_cabinet","institution_phl_national_security_council"],"source_ids":["src_phl_defense_2025_08_02"],"practical_influence":"unknown"},
+      {"actor_id":"actor_phl_theresa_lazaro","name":"Ma. Theresa Lazaro","role":"Secretary of Foreign Affairs","institution_ids":["institution_phl_foreign_affairs_department","institution_phl_cabinet"],"source_ids":["src_phl_lazaro_appointment_2025_07_01"],"practical_influence":"unknown"},
+      {"actor_id":"actor_phl_romeo_brawner","name":"Romeo Brawner Jr.","role":"Chief of Staff, Armed Forces of the Philippines","institution_ids":["institution_phl_afp"],"source_ids":["src_phl_afp_2025_08_20"],"practical_influence":"unknown"},
+      {"actor_id":"actor_phl_francis_escudero","name":"Francis Escudero","role":"Senate President","institution_ids":["institution_phl_senate","institution_phl_senate_blocs"],"source_ids":["src_phl_senate_escudero_2025_03_17","src_phl_senate_transition_2025_09_08"],"practical_influence":"unknown"},
+      {"actor_id":"actor_phl_martin_romualdez","name":"Martin Romualdez","role":"Speaker of the House","institution_ids":["institution_phl_house","institution_phl_house_majority"],"source_ids":["src_phl_house_speaker_2025_07_28"],"practical_influence":"unknown"},
+      {"actor_id":"actor_phl_risa_hontiveros","name":"Risa Hontiveros","role":"Senator and opposition actor","institution_ids":["institution_phl_senate","institution_phl_senate_blocs"],"source_ids":["src_phl_senate_escudero_2025_03_17"],"practical_influence":"unknown"},
+      {"actor_id":"actor_phl_imee_marcos","name":"Imee Marcos","role":"Senator and nationally visible coalition actor","institution_ids":["institution_phl_senate","institution_phl_senate_blocs"],"source_ids":["src_phl_senate_escudero_2025_03_17"],"practical_influence":"unknown"},
+      {"actor_id":"actor_phl_vicente_sotto","name":"Vicente Sotto III","role":"Senator and plausible chamber leader","institution_ids":["institution_phl_senate","institution_phl_senate_blocs"],"source_ids":["src_phl_senate_transition_2025_09_08"],"practical_influence":"unknown"},
+      {"actor_id":"actor_phl_panfilo_lacson","name":"Panfilo Lacson","role":"Senator and security policy actor","institution_ids":["institution_phl_senate","institution_phl_senate_blocs"],"source_ids":["src_phl_senate_transition_2025_09_08"],"practical_influence":"unknown"}
+    ],
+    "succession":{"trigger":"presidential_death_disability_removal_or_resignation","first_successor_actor_id":"actor_phl_sara_duterte","remaining_order":"Senate President, then Speaker of the House, subject to constitutional conditions","source_ids":["src_phl_constitution"]},
+    "unresolved_questions":[
+      "Practical influence, coalition loyalty, and removal probabilities are not established by formal office.",
+      "The Vice Presidential impeachment trajectory is unresolved at the bookmark and must not be predetermined.",
+      "The roster requires later expansion for direct play but already covers the opening authority network."
+    ],
+    "source_ids":["src_phl_constitution","src_phl_lazaro_appointment_2025_07_01","src_phl_house_speaker_2025_07_28","src_phl_senate_escudero_2025_03_17","src_phl_senate_transition_2025_09_08","src_phl_afp_2025_08_20","src_phl_defense_2025_08_02","src_phl_sara_impeachment_2025_03_17"]
+  },
+  "workflow": {
+    "routes":[
+      {"route_id":"route_phl_defensive_force_action","name":"Defensive force action","required_gate_ids":["gate_phl_defense_factual_trigger","gate_phl_presidential_command","gate_phl_afp_tasking"],"result":"bounded_defensive_force_authority"},
+      {"route_id":"route_phl_state_of_war","name":"Declaration of the existence of a state of war","required_gate_ids":["gate_phl_house_two_thirds","gate_phl_senate_two_thirds","gate_phl_joint_session_separate_vote","gate_phl_presidential_execution"],"result":"formal_state_of_war"},
+      {"route_id":"route_phl_martial_law","name":"Martial law or suspension of the writ","required_gate_ids":["gate_phl_invasion_or_rebellion_fact","gate_phl_public_safety_requirement","gate_phl_presidential_proclamation","gate_phl_congress_report","gate_phl_congress_review"],"result":"temporary_emergency_authority_subject_to_review"},
+      {"route_id":"route_phl_mdt_consultation","name":"Mutual Defense Treaty consultation","required_gate_ids":["gate_phl_mdt_scope_assessment","gate_phl_alliance_consultation"],"result":"consultation_state_only"},
+      {"route_id":"route_phl_edca_access","name":"EDCA location access for a proposed activity","required_gate_ids":["gate_phl_edca_location_scope","gate_phl_activity_approval","gate_phl_national_authority_exists"],"result":"bounded_access_not_combat_authority"},
+      {"route_id":"route_phl_taiwan_nonkinetic_support","name":"Nonkinetic support to a Taiwan contingency","required_gate_ids":["gate_phl_taiwan_policy_choice","gate_phl_mdt_scope_assessment","gate_phl_activity_approval"],"result":"bounded_nonkinetic_support_option"},
+      {"route_id":"route_phl_taiwan_kinetic_participation","name":"Kinetic participation in a Taiwan contingency","required_gate_ids":["gate_phl_taiwan_policy_choice","gate_phl_domestic_force_authority","gate_phl_public_support_constraint","gate_phl_afp_tasking"],"result":"bounded_kinetic_authority_if_all_gates_pass"}
+    ],
+    "gates":[
+      {"gate_id":"gate_phl_defense_factual_trigger","gate_type":"scenario_fact","required_institution_ids":["institution_phl_president","institution_phl_defense_department"],"completion_evidence":"Actual invasion, rebellion, lawless violence, or other lawful defense basis is established."},
+      {"gate_id":"gate_phl_presidential_command","gate_type":"executive_command","required_institution_ids":["institution_phl_president"],"completion_evidence":"The President directs force employment within constitutional authority."},
+      {"gate_id":"gate_phl_afp_tasking","gate_type":"operational_tasking","required_institution_ids":["institution_phl_afp"],"completion_evidence":"The AFP tasks conserved forces within existing political authority."},
+      {"gate_id":"gate_phl_house_two_thirds","gate_type":"legislative_supermajority","required_institution_ids":["institution_phl_house"],"completion_evidence":"Two thirds of the House support the declaration."},
+      {"gate_id":"gate_phl_senate_two_thirds","gate_type":"legislative_supermajority","required_institution_ids":["institution_phl_senate"],"completion_evidence":"Two thirds of the Senate support the declaration."},
+      {"gate_id":"gate_phl_joint_session_separate_vote","gate_type":"legislative_procedure","required_institution_ids":["institution_phl_congress"],"completion_evidence":"Both Houses meet in joint session and vote separately."},
+      {"gate_id":"gate_phl_presidential_execution","gate_type":"executive_execution","required_institution_ids":["institution_phl_president"],"completion_evidence":"The executive acts within the declared state and applicable law."},
+      {"gate_id":"gate_phl_invasion_or_rebellion_fact","gate_type":"scenario_fact","required_institution_ids":["institution_phl_president"],"completion_evidence":"Invasion or rebellion exists."},
+      {"gate_id":"gate_phl_public_safety_requirement","gate_type":"scenario_fact","required_institution_ids":["institution_phl_president"],"completion_evidence":"Public safety requires the emergency measure."},
+      {"gate_id":"gate_phl_presidential_proclamation","gate_type":"executive_proclamation","required_institution_ids":["institution_phl_president"],"completion_evidence":"The President proclaims the bounded emergency measure for no more than sixty days initially."},
+      {"gate_id":"gate_phl_congress_report","gate_type":"legislative_notification","required_institution_ids":["institution_phl_congress"],"completion_evidence":"The President reports to Congress within forty eight hours."},
+      {"gate_id":"gate_phl_congress_review","gate_type":"legislative_review_and_reversal","required_institution_ids":["institution_phl_congress"],"completion_evidence":"Congress may revoke or extend under the Constitution."},
+      {"gate_id":"gate_phl_mdt_scope_assessment","gate_type":"treaty_scope_assessment","required_institution_ids":["institution_phl_foreign_affairs_department","institution_phl_defense_department"],"completion_evidence":"The actual attack and geography are evaluated against treaty scope without predetermining the result."},
+      {"gate_id":"gate_phl_alliance_consultation","gate_type":"alliance_consultation","required_institution_ids":["institution_phl_president","institution_phl_foreign_affairs_department","institution_phl_defense_department"],"completion_evidence":"The governments consult; consultation creates no force authority."},
+      {"gate_id":"gate_phl_edca_location_scope","gate_type":"access_scope","required_institution_ids":["institution_phl_defense_department"],"completion_evidence":"The proposed location and activity fall within the agreement and implementing arrangements."},
+      {"gate_id":"gate_phl_activity_approval","gate_type":"national_access_approval","required_institution_ids":["institution_phl_president","institution_phl_defense_department","institution_phl_foreign_affairs_department"],"completion_evidence":"Philippine authorities approve the specific activity and conditions."},
+      {"gate_id":"gate_phl_national_authority_exists","gate_type":"authority_reference","required_institution_ids":["institution_phl_president"],"completion_evidence":"A separate domestic route has already created the necessary authority."},
+      {"gate_id":"gate_phl_taiwan_policy_choice","gate_type":"independent_policy_choice","required_institution_ids":["institution_phl_president","institution_phl_national_security_council"],"completion_evidence":"Philippine leadership chooses a support posture rather than inheriting one from the alliance."},
+      {"gate_id":"gate_phl_domestic_force_authority","gate_type":"domestic_authority","required_institution_ids":["institution_phl_president","institution_phl_congress"],"completion_evidence":"The chosen kinetic action follows the applicable constitutional route."},
+      {"gate_id":"gate_phl_public_support_constraint","gate_type":"political_constraint","required_institution_ids":["institution_phl_president","institution_phl_congress"],"completion_evidence":"War support and coalition stability are evaluated as consequences, not replaced by a generic permission token."}
+    ],
+    "taiwan_contingency_guard":{"attack_on_taiwan_auto_activates_authority":false,"alliance_auto_activates_kinetic_participation":false,"required_next_step":"Assess treaty scope, consult, choose a Philippine posture, obtain domestic authority, approve each access activity, allocate reachable forces, and model domestic support separately."},
+    "acceptance_rules":{"generic_declare_war_button_allowed":false,"treaty_equals_automatic_intervention":false,"consultation_equals_force_authority":false,"access_equals_automatic_combat_use":false,"operational_tasking_creates_political_authority":false,"allied_support_equals_kinetic_participation":false,"force_execution_requires_conserved_inventory":true},
+    "unresolved_interpretations":[
+      {"question_id":"unknown_phl_taiwan_mdt_threshold","question":"Which Taiwan contingency facts fall within the treaty attack scope?","status":"scenario_dependent_not_predetermined","source_ids":["src_phl_us_mutual_defense_treaty"]},
+      {"question_id":"unknown_phl_edca_activity_approval","question":"Which authority path governs each proposed activity at an agreed location?","status":"implementing_arrangement_research_required","source_ids":["src_phl_edca"]},
+      {"question_id":"unknown_phl_war_support","question":"How do coalition, impeachment, public opinion, and local exposure change support for each posture?","status":"political_research_and_game_design_required","source_ids":[]}
+    ],
+    "source_ids":["src_phl_constitution","src_phl_us_mutual_defense_treaty","src_phl_edca"]
+  },
+  "bookmark": {
+    "government":{"dataset_path":"politics_and_institutions.json","head_of_state_actor_id":"actor_phl_ferdinand_marcos_jr","head_of_government_actor_id":"actor_phl_ferdinand_marcos_jr","first_constitutional_successor_actor_id":"actor_phl_sara_duterte","opening_summary":"President Ferdinand Marcos Jr. leads a presidential constitutional system while Vice President Sara Duterte is the first constitutional successor and a separate political center. Congress, the defense and foreign affairs departments, and the AFP hold distinct roles.","authority_model":"Use war_authority_workflow.json. Treaty scope, consultation, EDCA access, domestic authority, force allocation, and operational tasking are separate decisions.","status":"needs_review"},
+    "alliances":["alliance_phl_usa_mutual_defense_treaty","agreement_phl_usa_edca"],
+    "sanctions":[],
+    "active_crises":["crisis_west_philippine_sea","crisis_vice_presidential_impeachment"],
+    "unresolved_assumptions":[
+      "An attack on Taiwan does not automatically activate Philippine force employment or the mutual defense treaty.",
+      "EDCA access does not automatically authorize a specific United States mission or Philippine participation.",
+      "The Vice Presidential impeachment trajectory is unresolved and may diverge.",
+      "Formal office supports roster inclusion but does not establish practical influence, loyalty, coalition behavior, or successor probability.",
+      "Force inventory, readiness, location, basing, logistics, and deployment remain unknown and nonexecutable."
+    ]
+  },
+  "profile_unknowns":[
+    "Economy beyond the frozen GDP roster remains unknown in this packet.",
+    "Military organization, inventory, readiness, basing, maintenance, and deployments remain unknown and nonexecutable.",
+    "Province, terrain, infrastructure, industry, energy, logistics, and communications state remain unknown.",
+    "Practical political influence and crisis participation probabilities are not inferred from office, treaty, or access agreements.",
+    "A zero record count means no accepted corpus records and never asserts zero real world entities or capacity."
+  ],
+  "lane_updates": {
+    "politics_and_institutions":{"record_count":25,"source_ids":["src_phl_constitution","src_phl_lazaro_appointment_2025_07_01","src_phl_house_speaker_2025_07_28","src_phl_senate_escudero_2025_03_17","src_phl_senate_transition_2025_09_08","src_phl_afp_2025_08_20","src_phl_defense_2025_08_02","src_phl_sara_impeachment_2025_03_17"],"claim_ids":["claim_phl_congress_state_of_war","claim_phl_president_commander_in_chief","claim_phl_martial_law_limit","claim_phl_congress_martial_law_review","claim_phl_treaty_senate_concurrence","claim_phl_vp_successor","claim_phl_marcos_president","claim_phl_sara_vice_president","claim_phl_lazaro_dfa","claim_phl_romualdez_speaker","claim_phl_escudero_senate_president","claim_phl_brawner_afp_chief","claim_phl_teodoro_defense"],"contradiction_ids":["contradiction_phl_formal_office_vs_influence"],"coverage_disposition":"opening_authority_succession_coalition_and_impeachment_fault_line_collected_needs_independent_review","notes":"Twelve actors, thirteen institutions, constitutional succession, congressional war authority, and emergency review are collected. Practical influence remains unknown."},
+    "crises_alliances_sanctions_deployments":{"record_count":11,"source_ids":["src_phl_constitution","src_phl_us_mutual_defense_treaty","src_phl_edca","src_phl_defense_2025_08_02"],"claim_ids":["claim_phl_mdt_constitutional_process","claim_phl_mdt_pacific_scope","claim_phl_edca_access"],"contradiction_ids":["contradiction_phl_taiwan_mdt_scope","contradiction_phl_edca_use"],"coverage_disposition":"treaty_scope_access_and_taiwan_refusal_rules_collected_needs_independent_review","notes":"Treaty scope, consultation, EDCA access, national activity approval, and kinetic participation are separate. No force disposition is implied."}
+  }
+}

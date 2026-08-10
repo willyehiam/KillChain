@@ -5,17 +5,17 @@
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
   "stage": "research",
   "corpus_validation": {
-    "status": "FAIL",
+    "status": "PASS",
     "counts": {
-      "files": 229,
-      "parsed_records": 1698,
-      "objects": 11327,
-      "sources": 220,
-      "primary_ids": 1280,
-      "source_references": 3242,
+      "files": 233,
+      "parsed_records": 1702,
+      "objects": 11337,
+      "sources": 230,
+      "primary_ids": 1293,
+      "source_references": 3238,
       "geometry_records": 249
     },
-    "error_count": 13,
+    "error_count": 0,
     "warning_count": 0
   },
   "countries": {
@@ -26,17 +26,17 @@
       "C": 66
     },
     "by_profile_status": {
-      "shell": 86,
-      "collecting": 5,
+      "shell": 85,
+      "collecting": 6,
       "needs_review": 0,
       "verified": 0,
       "stale": 0,
       "deprecated": 0
     },
     "lane_statuses": {
-      "shell": 636,
+      "shell": 634,
       "collecting": 85,
-      "needs_review": 7,
+      "needs_review": 9,
       "verified": 0,
       "stale": 0,
       "deprecated": 0
@@ -89,7 +89,7 @@
         "name": "South Korea",
         "depth_tier": "B",
         "profile_status": "collecting",
-        "political_actor_count": 0,
+        "political_actor_count": 17,
         "force_ledger_status": "absent",
         "non_shell_lanes": [
           "politics_and_institutions",
@@ -110,6 +110,19 @@
           "military_organization_inventory",
           "energy_transport_communications_logistics",
           "geography_provinces_terrain"
+        ]
+      },
+      {
+        "country_code": "PHL",
+        "name": "Philippines",
+        "depth_tier": "B",
+        "profile_status": "collecting",
+        "political_actor_count": 12,
+        "force_ledger_status": "absent",
+        "non_shell_lanes": [
+          "politics_and_institutions",
+          "economy_trade_finance_resources",
+          "crises_alliances_sanctions_deployments"
         ]
       }
     ]
@@ -155,18 +168,24 @@
       "syria_political_transition"
     ]
   },
+  "playable_proofs": {
+    "acceptance_stories_supported": 1,
+    "deterministic_fixture_id": "taiwan_coercive_blockade_walking_skeleton_v1",
+    "deep_opening_countries": 6,
+    "authority_routes_checked": 26
+  },
   "immediate_blockers": [
     "No national force ledger is simulation ready.",
-    "Japan is the only Tier B country with accepted substantive evidence.",
+    "Japan, South Korea, and the Philippines have substantive politics and authority evidence, but no Tier B national force ledger exists.",
     "Only the China Taiwan South China Sea theater has substantive machine readable records.",
     "All secondary crises and political event chains remain scaffolds.",
     "Global infrastructure networks remain unintegrated outside the Taiwan foundation.",
     "The research gate report, freshness dashboard, and cross domain traceability report remain incomplete."
   ],
   "next_dependency_order": [
-    "Promote South Korea and the Philippines through politics, authority, alliance, and access research.",
+    "Define conserved capability pools and support dependencies for Japan, South Korea, and the Philippines.",
     "Complete Japan military organization, national force ledger boundaries, strategic geography, and sustainment foundations.",
-    "Reconcile the Indo Pacific participation and access web without automatic alliance behavior.",
+    "Extend the Indo Pacific acceptance fixture from collection and access into coercive response choices without building the production engine.",
     "Continue Tier B wave one country packets for North Korea, Russia, India, and Australia.",
     "Advance complete national force accounting for the United States, China, and Taiwan.",
     "Populate the remaining fully modeled theaters, secondary crises, event chains, and global networks."

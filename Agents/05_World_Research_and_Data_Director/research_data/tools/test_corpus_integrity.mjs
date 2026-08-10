@@ -10,6 +10,7 @@ const fixtures = path.join(scriptDirectory, "fixtures", "corpus_integrity");
 
 const passing = validateCorpus(path.join(fixtures, "pass"), { excludedDirectories: [] });
 assert.equal(passing.status, "PASS", JSON.stringify(passing.errors, null, 2));
+assert.equal(passing.counts.sources, 1, "compiler authoring sources must not duplicate generated corpus records");
 
 const failing = validateCorpus(path.join(fixtures, "fail"), { excludedDirectories: [] });
 assert.equal(failing.status, "FAIL");

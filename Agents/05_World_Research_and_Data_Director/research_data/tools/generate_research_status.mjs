@@ -67,7 +67,7 @@ for (const country of registry.countries) {
     name: country.name,
     depth_tier: country.depth_tier,
     profile_status: profile.coverage_status,
-    political_actor_count: politics?.political_actors?.length ?? 0,
+    political_actor_count: politics?.political_actors?.length ?? politics?.actors?.length ?? 0,
     force_ledger_status: forceManifest?.status ?? "absent",
     non_shell_lanes: laneIds.filter((laneId) => profile.coverage[laneId].status !== "shell"),
   });
@@ -88,6 +88,19 @@ const fullyModeled = directoryNames(fullyModeledRoot);
 const secondary = directoryNames(secondaryRoot);
 const politicalEvents = directoryNames(eventRoot);
 const corpus = validateCorpus(researchRoot);
+const openingAcceptanceRoot = path.join(
+  fullyModeledRoot,
+  "china_taiwan_south_china_sea",
+  "opening_crisis_acceptance_2025",
+);
+const openingAcceptanceFixturePath = path.join(openingAcceptanceRoot, "acceptance_fixture.json");
+const openingParticipationPath = path.join(openingAcceptanceRoot, "participation_matrix.json");
+const openingAcceptance = fs.existsSync(openingAcceptanceFixturePath)
+  ? readJson(openingAcceptanceFixturePath)
+  : null;
+const openingParticipation = fs.existsSync(openingParticipationPath)
+  ? readJson(openingParticipationPath)
+  : null;
 
 const status = {
   schema_version: "0.1.0",
@@ -122,18 +135,25 @@ const status = {
     political_event_substantive: politicalEvents.filter((name) => substantiveDirectory(eventRoot, name)),
     political_event_scaffolds: politicalEvents.filter((name) => !substantiveDirectory(eventRoot, name)),
   },
+  playable_proofs: {
+    acceptance_stories_supported: openingAcceptance ? 1 : 0,
+    deterministic_fixture_id: openingAcceptance?.fixture_id ?? null,
+    deep_opening_countries: openingParticipation?.countries?.length ?? 0,
+    authority_routes_checked: openingParticipation?.countries
+      ?.flatMap((country) => country.authority_route_ids ?? []).length ?? 0,
+  },
   immediate_blockers: [
     "No national force ledger is simulation ready.",
-    "Japan is the only Tier B country with accepted substantive evidence.",
+    "Japan, South Korea, and the Philippines have substantive politics and authority evidence, but no Tier B national force ledger exists.",
     "Only the China Taiwan South China Sea theater has substantive machine readable records.",
     "All secondary crises and political event chains remain scaffolds.",
     "Global infrastructure networks remain unintegrated outside the Taiwan foundation.",
     "The research gate report, freshness dashboard, and cross domain traceability report remain incomplete.",
   ],
   next_dependency_order: [
-    "Promote South Korea and the Philippines through politics, authority, alliance, and access research.",
+    "Define conserved capability pools and support dependencies for Japan, South Korea, and the Philippines.",
     "Complete Japan military organization, national force ledger boundaries, strategic geography, and sustainment foundations.",
-    "Reconcile the Indo Pacific participation and access web without automatic alliance behavior.",
+    "Extend the Indo Pacific acceptance fixture from collection and access into coercive response choices without building the production engine.",
     "Continue Tier B wave one country packets for North Korea, Russia, India, and Australia.",
     "Advance complete national force accounting for the United States, China, and Taiwan.",
     "Populate the remaining fully modeled theaters, secondary crises, event chains, and global networks.",
@@ -145,9 +165,14 @@ const substantiveRows = status.countries.substantive
   .join("\n");
 const markdown = `# KillWeb Research Status\n\nAudit date: ${auditDate}.\n\nOpening bookmark: 1 September 2025 at 00:00 UTC.\n\nStage: research. Simulation engine implementation, final visual design, and production development remain gated.\n\n## Executive state\n\n1. ${status.countries.total} country profiles exist: ${status.countries.by_depth_tier.A} Tier A, ${status.countries.by_depth_tier.B} Tier B, and ${status.countries.by_depth_tier.C} Tier C.\n2. ${status.countries.actor_roster_complete} countries have twenty actor political rosters.\n3. ${status.countries.force_ledgers_present} national force ledgers exist, and ${status.countries.force_ledgers_simulation_ready} are simulation ready.\n4. ${status.conflict_world.fully_modeled_substantive.length} of ${status.conflict_world.fully_modeled_total} fully modeled theater directories contain substantive machine readable work.\n5. ${status.conflict_world.secondary_substantive.length} of ${status.conflict_world.secondary_total} secondary crises and ${status.conflict_world.political_event_substantive.length} of ${status.conflict_world.political_event_total} political event chains contain substantive work.\n6. The corpus validator passes ${status.corpus_validation.counts.files} files, ${status.corpus_validation.counts.parsed_records} parsed records, and ${status.corpus_validation.counts.objects} objects with ${status.corpus_validation.error_count} errors and ${status.corpus_validation.warning_count} warnings.\n\n## Country status\n\n| Code | Country | Tier | Profile | Political actors | Force ledger | Non shell lanes |\n| --- | --- | --- | --- | ---: | --- | ---: |\n${substantiveRows}\n\nAll other country profiles remain structural shells. A shell count is corpus completeness, never a claim of real world absence.\n\n## Lane coverage\n\n1. Shell lanes: ${status.countries.lane_statuses.shell}.\n2. Collecting lanes: ${status.countries.lane_statuses.collecting}.\n3. Lanes needing review: ${status.countries.lane_statuses.needs_review}.\n4. Verified lanes: ${status.countries.lane_statuses.verified}.\n5. Stale lanes: ${status.countries.lane_statuses.stale}.\n6. Deprecated lanes: ${status.countries.lane_statuses.deprecated}.\n\n## Immediate blockers\n\n${status.immediate_blockers.map((item, index) => `${index + 1}. ${item}`).join("\n")}\n\n## Next dependency order\n\n${status.next_dependency_order.map((item, index) => `${index + 1}. ${item}`).join("\n")}\n\n## Machine authority\n\nThe companion file \`research_status.json\` is generated from country profiles, force ledger manifests, theater directories, political event directories, and the corpus integrity validator. This document must not be updated manually.\n`;
 
+const markdownWithProofs = markdown.replace(
+  "6. The corpus validator passes",
+  `6. ${status.playable_proofs.acceptance_stories_supported} deterministic acceptance story covers ${status.playable_proofs.deep_opening_countries} deep opening countries and ${status.playable_proofs.authority_routes_checked} authority routes.\n7. The corpus validator passes`,
+);
+
 const outputs = [
   [outputJson, `${JSON.stringify(status, null, 2)}\n`],
-  [outputMarkdown, markdown],
+  [outputMarkdown, markdownWithProofs],
 ];
 const differences = [];
 for (const [file, content] of outputs) {

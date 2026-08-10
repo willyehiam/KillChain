@@ -1,0 +1,298 @@
+{
+  "schema_version": "0.3.0",
+  "workflow_id": "war_authority_phl_2025_09_01",
+  "country_id": "country_phl",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "needs_review",
+  "design_rule": "Political authority, alliance consultation, access, force allocation, and operational tasking are separate state transitions.",
+  "routes": [
+    {
+      "route_id": "route_phl_defensive_force_action",
+      "name": "Defensive force action",
+      "required_gate_ids": [
+        "gate_phl_defense_factual_trigger",
+        "gate_phl_presidential_command",
+        "gate_phl_afp_tasking"
+      ],
+      "result": "bounded_defensive_force_authority"
+    },
+    {
+      "route_id": "route_phl_state_of_war",
+      "name": "Declaration of the existence of a state of war",
+      "required_gate_ids": [
+        "gate_phl_house_two_thirds",
+        "gate_phl_senate_two_thirds",
+        "gate_phl_joint_session_separate_vote",
+        "gate_phl_presidential_execution"
+      ],
+      "result": "formal_state_of_war"
+    },
+    {
+      "route_id": "route_phl_martial_law",
+      "name": "Martial law or suspension of the writ",
+      "required_gate_ids": [
+        "gate_phl_invasion_or_rebellion_fact",
+        "gate_phl_public_safety_requirement",
+        "gate_phl_presidential_proclamation",
+        "gate_phl_congress_report",
+        "gate_phl_congress_review"
+      ],
+      "result": "temporary_emergency_authority_subject_to_review"
+    },
+    {
+      "route_id": "route_phl_mdt_consultation",
+      "name": "Mutual Defense Treaty consultation",
+      "required_gate_ids": [
+        "gate_phl_mdt_scope_assessment",
+        "gate_phl_alliance_consultation"
+      ],
+      "result": "consultation_state_only"
+    },
+    {
+      "route_id": "route_phl_edca_access",
+      "name": "EDCA location access for a proposed activity",
+      "required_gate_ids": [
+        "gate_phl_edca_location_scope",
+        "gate_phl_activity_approval",
+        "gate_phl_national_authority_exists"
+      ],
+      "result": "bounded_access_not_combat_authority"
+    },
+    {
+      "route_id": "route_phl_taiwan_nonkinetic_support",
+      "name": "Nonkinetic support to a Taiwan contingency",
+      "required_gate_ids": [
+        "gate_phl_taiwan_policy_choice",
+        "gate_phl_mdt_scope_assessment",
+        "gate_phl_activity_approval"
+      ],
+      "result": "bounded_nonkinetic_support_option"
+    },
+    {
+      "route_id": "route_phl_taiwan_kinetic_participation",
+      "name": "Kinetic participation in a Taiwan contingency",
+      "required_gate_ids": [
+        "gate_phl_taiwan_policy_choice",
+        "gate_phl_domestic_force_authority",
+        "gate_phl_public_support_constraint",
+        "gate_phl_afp_tasking"
+      ],
+      "result": "bounded_kinetic_authority_if_all_gates_pass"
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "gate_phl_defense_factual_trigger",
+      "gate_type": "scenario_fact",
+      "required_institution_ids": [
+        "institution_phl_president",
+        "institution_phl_defense_department"
+      ],
+      "completion_evidence": "Actual invasion, rebellion, lawless violence, or other lawful defense basis is established."
+    },
+    {
+      "gate_id": "gate_phl_presidential_command",
+      "gate_type": "executive_command",
+      "required_institution_ids": [
+        "institution_phl_president"
+      ],
+      "completion_evidence": "The President directs force employment within constitutional authority."
+    },
+    {
+      "gate_id": "gate_phl_afp_tasking",
+      "gate_type": "operational_tasking",
+      "required_institution_ids": [
+        "institution_phl_afp"
+      ],
+      "completion_evidence": "The AFP tasks conserved forces within existing political authority."
+    },
+    {
+      "gate_id": "gate_phl_house_two_thirds",
+      "gate_type": "legislative_supermajority",
+      "required_institution_ids": [
+        "institution_phl_house"
+      ],
+      "completion_evidence": "Two thirds of the House support the declaration."
+    },
+    {
+      "gate_id": "gate_phl_senate_two_thirds",
+      "gate_type": "legislative_supermajority",
+      "required_institution_ids": [
+        "institution_phl_senate"
+      ],
+      "completion_evidence": "Two thirds of the Senate support the declaration."
+    },
+    {
+      "gate_id": "gate_phl_joint_session_separate_vote",
+      "gate_type": "legislative_procedure",
+      "required_institution_ids": [
+        "institution_phl_congress"
+      ],
+      "completion_evidence": "Both Houses meet in joint session and vote separately."
+    },
+    {
+      "gate_id": "gate_phl_presidential_execution",
+      "gate_type": "executive_execution",
+      "required_institution_ids": [
+        "institution_phl_president"
+      ],
+      "completion_evidence": "The executive acts within the declared state and applicable law."
+    },
+    {
+      "gate_id": "gate_phl_invasion_or_rebellion_fact",
+      "gate_type": "scenario_fact",
+      "required_institution_ids": [
+        "institution_phl_president"
+      ],
+      "completion_evidence": "Invasion or rebellion exists."
+    },
+    {
+      "gate_id": "gate_phl_public_safety_requirement",
+      "gate_type": "scenario_fact",
+      "required_institution_ids": [
+        "institution_phl_president"
+      ],
+      "completion_evidence": "Public safety requires the emergency measure."
+    },
+    {
+      "gate_id": "gate_phl_presidential_proclamation",
+      "gate_type": "executive_proclamation",
+      "required_institution_ids": [
+        "institution_phl_president"
+      ],
+      "completion_evidence": "The President proclaims the bounded emergency measure for no more than sixty days initially."
+    },
+    {
+      "gate_id": "gate_phl_congress_report",
+      "gate_type": "legislative_notification",
+      "required_institution_ids": [
+        "institution_phl_congress"
+      ],
+      "completion_evidence": "The President reports to Congress within forty eight hours."
+    },
+    {
+      "gate_id": "gate_phl_congress_review",
+      "gate_type": "legislative_review_and_reversal",
+      "required_institution_ids": [
+        "institution_phl_congress"
+      ],
+      "completion_evidence": "Congress may revoke or extend under the Constitution."
+    },
+    {
+      "gate_id": "gate_phl_mdt_scope_assessment",
+      "gate_type": "treaty_scope_assessment",
+      "required_institution_ids": [
+        "institution_phl_foreign_affairs_department",
+        "institution_phl_defense_department"
+      ],
+      "completion_evidence": "The actual attack and geography are evaluated against treaty scope without predetermining the result."
+    },
+    {
+      "gate_id": "gate_phl_alliance_consultation",
+      "gate_type": "alliance_consultation",
+      "required_institution_ids": [
+        "institution_phl_president",
+        "institution_phl_foreign_affairs_department",
+        "institution_phl_defense_department"
+      ],
+      "completion_evidence": "The governments consult; consultation creates no force authority."
+    },
+    {
+      "gate_id": "gate_phl_edca_location_scope",
+      "gate_type": "access_scope",
+      "required_institution_ids": [
+        "institution_phl_defense_department"
+      ],
+      "completion_evidence": "The proposed location and activity fall within the agreement and implementing arrangements."
+    },
+    {
+      "gate_id": "gate_phl_activity_approval",
+      "gate_type": "national_access_approval",
+      "required_institution_ids": [
+        "institution_phl_president",
+        "institution_phl_defense_department",
+        "institution_phl_foreign_affairs_department"
+      ],
+      "completion_evidence": "Philippine authorities approve the specific activity and conditions."
+    },
+    {
+      "gate_id": "gate_phl_national_authority_exists",
+      "gate_type": "authority_reference",
+      "required_institution_ids": [
+        "institution_phl_president"
+      ],
+      "completion_evidence": "A separate domestic route has already created the necessary authority."
+    },
+    {
+      "gate_id": "gate_phl_taiwan_policy_choice",
+      "gate_type": "independent_policy_choice",
+      "required_institution_ids": [
+        "institution_phl_president",
+        "institution_phl_national_security_council"
+      ],
+      "completion_evidence": "Philippine leadership chooses a support posture rather than inheriting one from the alliance."
+    },
+    {
+      "gate_id": "gate_phl_domestic_force_authority",
+      "gate_type": "domestic_authority",
+      "required_institution_ids": [
+        "institution_phl_president",
+        "institution_phl_congress"
+      ],
+      "completion_evidence": "The chosen kinetic action follows the applicable constitutional route."
+    },
+    {
+      "gate_id": "gate_phl_public_support_constraint",
+      "gate_type": "political_constraint",
+      "required_institution_ids": [
+        "institution_phl_president",
+        "institution_phl_congress"
+      ],
+      "completion_evidence": "War support and coalition stability are evaluated as consequences, not replaced by a generic permission token."
+    }
+  ],
+  "taiwan_contingency_guard": {
+    "attack_on_taiwan_auto_activates_authority": false,
+    "alliance_auto_activates_kinetic_participation": false,
+    "required_next_step": "Assess treaty scope, consult, choose a Philippine posture, obtain domestic authority, approve each access activity, allocate reachable forces, and model domestic support separately."
+  },
+  "acceptance_rules": {
+    "generic_declare_war_button_allowed": false,
+    "treaty_equals_automatic_intervention": false,
+    "consultation_equals_force_authority": false,
+    "access_equals_automatic_combat_use": false,
+    "operational_tasking_creates_political_authority": false,
+    "allied_support_equals_kinetic_participation": false,
+    "force_execution_requires_conserved_inventory": true
+  },
+  "unresolved_interpretations": [
+    {
+      "question_id": "unknown_phl_taiwan_mdt_threshold",
+      "question": "Which Taiwan contingency facts fall within the treaty attack scope?",
+      "status": "scenario_dependent_not_predetermined",
+      "source_ids": [
+        "src_phl_us_mutual_defense_treaty"
+      ]
+    },
+    {
+      "question_id": "unknown_phl_edca_activity_approval",
+      "question": "Which authority path governs each proposed activity at an agreed location?",
+      "status": "implementing_arrangement_research_required",
+      "source_ids": [
+        "src_phl_edca"
+      ]
+    },
+    {
+      "question_id": "unknown_phl_war_support",
+      "question": "How do coalition, impeachment, public opinion, and local exposure change support for each posture?",
+      "status": "political_research_and_game_design_required",
+      "source_ids": []
+    }
+  ],
+  "source_ids": [
+    "src_phl_constitution",
+    "src_phl_us_mutual_defense_treaty",
+    "src_phl_edca"
+  ]
+}

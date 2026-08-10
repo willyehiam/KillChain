@@ -1,0 +1,304 @@
+{
+  "schema_version": "0.3.0",
+  "dataset_id": "politics_and_institutions_phl_2025_09_01",
+  "country_id": "country_phl",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "needs_review",
+  "roster_rule": "Cover the formal command chain, constitutional successor, both chambers, alliance and access decision makers, major coalition actors, and the live impeachment fault line. Formal office does not establish practical influence.",
+  "government": {
+    "system": "unitary_presidential_constitutional_republic",
+    "executive_authority_institution_id": "institution_phl_president",
+    "legislature_institution_id": "institution_phl_congress",
+    "cabinet_institution_id": "institution_phl_cabinet"
+  },
+  "institutions": [
+    {
+      "institution_id": "institution_phl_president",
+      "name": "President",
+      "institution_type": "executive",
+      "source_ids": [
+        "src_phl_constitution"
+      ]
+    },
+    {
+      "institution_id": "institution_phl_vice_president",
+      "name": "Vice President",
+      "institution_type": "executive_successor",
+      "source_ids": [
+        "src_phl_constitution"
+      ]
+    },
+    {
+      "institution_id": "institution_phl_cabinet",
+      "name": "Cabinet",
+      "institution_type": "executive_administration",
+      "source_ids": [
+        "src_phl_lazaro_appointment_2025_07_01"
+      ]
+    },
+    {
+      "institution_id": "institution_phl_congress",
+      "name": "Congress",
+      "institution_type": "bicameral_legislature",
+      "source_ids": [
+        "src_phl_constitution"
+      ]
+    },
+    {
+      "institution_id": "institution_phl_senate",
+      "name": "Senate",
+      "institution_type": "legislative_chamber",
+      "source_ids": [
+        "src_phl_constitution",
+        "src_phl_senate_escudero_2025_03_17"
+      ]
+    },
+    {
+      "institution_id": "institution_phl_house",
+      "name": "House of Representatives",
+      "institution_type": "legislative_chamber",
+      "source_ids": [
+        "src_phl_constitution",
+        "src_phl_house_speaker_2025_07_28"
+      ]
+    },
+    {
+      "institution_id": "institution_phl_executive_secretary",
+      "name": "Office of the Executive Secretary",
+      "institution_type": "executive_staff",
+      "source_ids": [
+        "src_phl_lazaro_appointment_2025_07_01"
+      ]
+    },
+    {
+      "institution_id": "institution_phl_defense_department",
+      "name": "Department of National Defense",
+      "institution_type": "department",
+      "source_ids": [
+        "src_phl_defense_2025_08_02"
+      ]
+    },
+    {
+      "institution_id": "institution_phl_foreign_affairs_department",
+      "name": "Department of Foreign Affairs",
+      "institution_type": "department",
+      "source_ids": [
+        "src_phl_lazaro_appointment_2025_07_01"
+      ]
+    },
+    {
+      "institution_id": "institution_phl_afp",
+      "name": "Armed Forces of the Philippines",
+      "institution_type": "military_command",
+      "source_ids": [
+        "src_phl_afp_2025_08_20"
+      ]
+    },
+    {
+      "institution_id": "institution_phl_national_security_council",
+      "name": "National Security Council",
+      "institution_type": "executive_security_forum",
+      "source_ids": [
+        "src_phl_constitution"
+      ]
+    },
+    {
+      "institution_id": "institution_phl_house_majority",
+      "name": "House majority coalition",
+      "institution_type": "political_coalition",
+      "source_ids": [
+        "src_phl_house_speaker_2025_07_28"
+      ]
+    },
+    {
+      "institution_id": "institution_phl_senate_blocs",
+      "name": "Senate majority and minority blocs",
+      "institution_type": "political_coalitions",
+      "source_ids": [
+        "src_phl_senate_escudero_2025_03_17"
+      ]
+    }
+  ],
+  "actors": [
+    {
+      "actor_id": "actor_phl_ferdinand_marcos_jr",
+      "name": "Ferdinand Marcos Jr.",
+      "role": "President",
+      "institution_ids": [
+        "institution_phl_president",
+        "institution_phl_national_security_council"
+      ],
+      "source_ids": [
+        "src_phl_lazaro_appointment_2025_07_01"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_phl_sara_duterte",
+      "name": "Sara Duterte",
+      "role": "Vice President",
+      "institution_ids": [
+        "institution_phl_vice_president"
+      ],
+      "source_ids": [
+        "src_phl_sara_impeachment_2025_03_17"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_phl_lucas_bersamin",
+      "name": "Lucas Bersamin",
+      "role": "Executive Secretary",
+      "institution_ids": [
+        "institution_phl_executive_secretary",
+        "institution_phl_cabinet"
+      ],
+      "source_ids": [
+        "src_phl_lazaro_appointment_2025_07_01"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_phl_gilberto_teodoro",
+      "name": "Gilberto Teodoro Jr.",
+      "role": "Secretary of National Defense",
+      "institution_ids": [
+        "institution_phl_defense_department",
+        "institution_phl_cabinet",
+        "institution_phl_national_security_council"
+      ],
+      "source_ids": [
+        "src_phl_defense_2025_08_02"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_phl_theresa_lazaro",
+      "name": "Ma. Theresa Lazaro",
+      "role": "Secretary of Foreign Affairs",
+      "institution_ids": [
+        "institution_phl_foreign_affairs_department",
+        "institution_phl_cabinet"
+      ],
+      "source_ids": [
+        "src_phl_lazaro_appointment_2025_07_01"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_phl_romeo_brawner",
+      "name": "Romeo Brawner Jr.",
+      "role": "Chief of Staff, Armed Forces of the Philippines",
+      "institution_ids": [
+        "institution_phl_afp"
+      ],
+      "source_ids": [
+        "src_phl_afp_2025_08_20"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_phl_francis_escudero",
+      "name": "Francis Escudero",
+      "role": "Senate President",
+      "institution_ids": [
+        "institution_phl_senate",
+        "institution_phl_senate_blocs"
+      ],
+      "source_ids": [
+        "src_phl_senate_escudero_2025_03_17",
+        "src_phl_senate_transition_2025_09_08"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_phl_martin_romualdez",
+      "name": "Martin Romualdez",
+      "role": "Speaker of the House",
+      "institution_ids": [
+        "institution_phl_house",
+        "institution_phl_house_majority"
+      ],
+      "source_ids": [
+        "src_phl_house_speaker_2025_07_28"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_phl_risa_hontiveros",
+      "name": "Risa Hontiveros",
+      "role": "Senator and opposition actor",
+      "institution_ids": [
+        "institution_phl_senate",
+        "institution_phl_senate_blocs"
+      ],
+      "source_ids": [
+        "src_phl_senate_escudero_2025_03_17"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_phl_imee_marcos",
+      "name": "Imee Marcos",
+      "role": "Senator and nationally visible coalition actor",
+      "institution_ids": [
+        "institution_phl_senate",
+        "institution_phl_senate_blocs"
+      ],
+      "source_ids": [
+        "src_phl_senate_escudero_2025_03_17"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_phl_vicente_sotto",
+      "name": "Vicente Sotto III",
+      "role": "Senator and plausible chamber leader",
+      "institution_ids": [
+        "institution_phl_senate",
+        "institution_phl_senate_blocs"
+      ],
+      "source_ids": [
+        "src_phl_senate_transition_2025_09_08"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_phl_panfilo_lacson",
+      "name": "Panfilo Lacson",
+      "role": "Senator and security policy actor",
+      "institution_ids": [
+        "institution_phl_senate",
+        "institution_phl_senate_blocs"
+      ],
+      "source_ids": [
+        "src_phl_senate_transition_2025_09_08"
+      ],
+      "practical_influence": "unknown"
+    }
+  ],
+  "succession": {
+    "trigger": "presidential_death_disability_removal_or_resignation",
+    "first_successor_actor_id": "actor_phl_sara_duterte",
+    "remaining_order": "Senate President, then Speaker of the House, subject to constitutional conditions",
+    "source_ids": [
+      "src_phl_constitution"
+    ]
+  },
+  "unresolved_questions": [
+    "Practical influence, coalition loyalty, and removal probabilities are not established by formal office.",
+    "The Vice Presidential impeachment trajectory is unresolved at the bookmark and must not be predetermined.",
+    "The roster requires later expansion for direct play but already covers the opening authority network."
+  ],
+  "source_ids": [
+    "src_phl_constitution",
+    "src_phl_lazaro_appointment_2025_07_01",
+    "src_phl_house_speaker_2025_07_28",
+    "src_phl_senate_escudero_2025_03_17",
+    "src_phl_senate_transition_2025_09_08",
+    "src_phl_afp_2025_08_20",
+    "src_phl_defense_2025_08_02",
+    "src_phl_sara_impeachment_2025_03_17"
+  ]
+}

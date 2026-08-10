@@ -1,0 +1,121 @@
+{
+  "schema_version": "0.1.0",
+  "fixture_id": "taiwan_coercive_blockade_walking_skeleton_v1",
+  "fixture_kind": "synthetic_headless_research_probe",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "opening_time": "2025-09-01T00:00:00Z",
+  "data_version": "opening_crisis_acceptance_2025_v1",
+  "seed": 240731,
+  "future_branch_input": {
+    "branch_id": "hypothesis_future_exercise_persists_into_coercive_blockade",
+    "selected_at_campaign_creation": true,
+    "opening_faction_knowledge": false,
+    "historical_inevitability": false
+  },
+  "synthetic_resources": {
+    "disclaimer": "Tokens test conservation and ordering only. They are not historical force quantities or final balance values.",
+    "accounts": [
+      {"account_id":"usa_isr_available","owner_country_id":"country_usa","resource_type":"isr_capability_token","state":"available","quantity":3},
+      {"account_id":"usa_isr_committed","owner_country_id":"country_usa","resource_type":"isr_capability_token","state":"committed","quantity":0},
+      {"account_id":"usa_isr_deployed","owner_country_id":"country_usa","resource_type":"isr_capability_token","state":"deployed","quantity":0},
+      {"account_id":"usa_diplomatic_attention","owner_country_id":"country_usa","resource_type":"decision_attention_token","state":"available","quantity":4},
+      {"account_id":"jpn_access_capacity","owner_country_id":"country_jpn","resource_type":"access_capacity_token","state":"unallocated","quantity":2},
+      {"account_id":"jpn_access_reserved","owner_country_id":"country_jpn","resource_type":"access_capacity_token","state":"reserved","quantity":0}
+    ]
+  },
+  "beliefs": [
+    {"belief_id":"belief_usa_blockade_hypothesis","faction_country_id":"country_usa","subject_id":"future_branch","classification":"exercise_may_be_persisting","confidence":25,"truth_visible":false},
+    {"belief_id":"belief_twn_blockade_hypothesis","faction_country_id":"country_twn","subject_id":"future_branch","classification":"coercive_extension_possible","confidence":40,"truth_visible":false},
+    {"belief_id":"belief_chn_external_intervention","faction_country_id":"country_chn","subject_id":"coalition_response","classification":"external_response_uncertain","confidence":35,"truth_visible":false}
+  ],
+  "commands": [
+    {
+      "sequence": 1,
+      "command_id": "cmd_usa_open_intelligence_priority",
+      "actor_country_id": "country_usa",
+      "intent": "Determine whether the exercise is becoming a blockade",
+      "authority_reference": "policy_attention_not_force_authority",
+      "operations": [
+        {"operation":"transfer","from":"usa_diplomatic_attention","to":"consumed","resource_type":"decision_attention_token","quantity":1},
+        {"operation":"adjust_belief","belief_id":"belief_usa_blockade_hypothesis","minimum_delta":10,"random_span":6}
+      ],
+      "player_receives": ["collection_priority_created", "time_and_attention_cost_visible", "confidence_remains_nonbinary"]
+    },
+    {
+      "sequence": 2,
+      "command_id": "cmd_usa_request_japan_limited_access",
+      "actor_country_id": "country_usa",
+      "intent": "Request intelligence support access without requesting strike permission",
+      "authority_reference": "route_jpn_alliance_consultation",
+      "operations": [
+        {"operation":"set_decision","decision_id":"decision_jpn_access","state":"consultation"}
+      ],
+      "player_receives": ["request_scope", "host_nation_decision_pending", "strike_permission_not_granted"]
+    },
+    {
+      "sequence": 3,
+      "command_id": "cmd_jpn_approve_limited_intelligence_access",
+      "actor_country_id": "country_jpn",
+      "intent": "Approve one capacity token for intelligence support only",
+      "authority_reference": "route_jpn_allied_action_support",
+      "operations": [
+        {"operation":"resolve_decision","decision_id":"decision_jpn_access","state":"approved_limited"},
+        {"operation":"transfer","from":"jpn_access_capacity","to":"jpn_access_reserved","resource_type":"access_capacity_token","quantity":1}
+      ],
+      "player_receives": ["approved_mission_classes", "revocation_conditions", "remaining_capacity", "combat_entry_not_granted"]
+    },
+    {
+      "sequence": 4,
+      "command_id": "cmd_usa_allocate_isr",
+      "actor_country_id": "country_usa",
+      "intent": "Allocate one national ISR capability token to the collection plan",
+      "authority_reference": "nonkinetic_allocation_with_host_approval",
+      "operations": [
+        {"operation":"transfer","from":"usa_isr_available","to":"usa_isr_committed","resource_type":"isr_capability_token","quantity":1}
+      ],
+      "player_receives": ["delivering_capability_identity", "national_pool_before_and_after", "support_and_access_dependencies"]
+    },
+    {
+      "sequence": 5,
+      "command_id": "cmd_usa_execute_collection",
+      "actor_country_id": "country_usa",
+      "intent": "Execute the collection plan through the approved route",
+      "authority_reference": "nonkinetic_collection_tasking",
+      "operations": [
+        {"operation":"transfer","from":"usa_isr_committed","to":"usa_isr_deployed","resource_type":"isr_capability_token","quantity":1},
+        {"operation":"adjust_belief","belief_id":"belief_usa_blockade_hypothesis","minimum_delta":18,"random_span":8}
+      ],
+      "player_receives": ["route_and_platform_class", "collection_window", "confidence_update", "remaining_uncertainty"]
+    },
+    {
+      "sequence": 6,
+      "command_id": "cmd_chn_activate_deception_response",
+      "actor_country_id": "country_chn",
+      "intent": "Increase ambiguity while maintaining the selected coercive branch",
+      "authority_reference": "formal_decision_authority.military_command_architecture",
+      "operations": [
+        {"operation":"adjust_belief","belief_id":"belief_usa_blockade_hypothesis","minimum_delta":-8,"random_span":5}
+      ],
+      "player_receives": ["observable_countermeasure_indicators_only", "no_truth_state_leak"]
+    },
+    {
+      "sequence": 7,
+      "command_id": "cmd_usa_open_response_decision",
+      "actor_country_id": "country_usa",
+      "intent": "Present response options after collection and allied consultation",
+      "authority_reference": "response_specific_authority_required",
+      "operations": [
+        {"operation":"set_decision","decision_id":"decision_usa_response","state":"open"}
+      ],
+      "player_receives": ["diplomatic_option", "economic_option", "information_option", "support_option", "military_option_locked_until_authorized", "predicted_costs_and_uncertainty"]
+    }
+  ],
+  "required_outcomes": {
+    "final_decisions": {"decision_jpn_access":"approved_limited","decision_usa_response":"open"},
+    "resource_totals_unchanged": ["isr_capability_token", "access_capacity_token"],
+    "belief_confidence_bounds": [0, 100],
+    "forbidden_states": ["automatic_US_war_entry", "automatic_Japanese_combat_entry", "automatic_Korean_participation", "automatic_Philippine_combat_access", "truth_revealed_to_all_factions", "resource_created_by_theater_plan"],
+    "deterministic_replay": true,
+    "different_seed_may_change_belief_values_only": true
+  }
+}

@@ -116,7 +116,7 @@ function toPosix(relativePath) {
   return relativePath.split(path.sep).join("/");
 }
 
-function listMachineFiles(root, excludedDirectories, excludedDirectoryNames) {
+function listMachineFiles(root, excludedDirectories, excludedDirectoryNames, excludedFileSuffixes, excludedFileNames) {
   const files = [];
   function visit(directory) {
     for (const entry of fs.readdirSync(directory, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
@@ -129,7 +129,11 @@ function listMachineFiles(root, excludedDirectories, excludedDirectoryNames) {
         ) {
           visit(fullPath);
         }
-      } else if (MACHINE_EXTENSIONS.has(path.extname(entry.name))) {
+      } else if (
+        MACHINE_EXTENSIONS.has(path.extname(entry.name)) &&
+        !excludedFileNames.has(entry.name) &&
+        !excludedFileSuffixes.some((suffix) => entry.name.endsWith(suffix))
+      ) {
         files.push(fullPath);
       }
     }
@@ -416,10 +420,24 @@ export function validateCorpus(root, options = {}) {
   if (Number.isNaN(cutoff)) throw new Error(`Invalid bookmark cutoff: ${cutoffText}`);
   const excludedDirectories = options.excludedDirectories ?? ["schemas", "tools/fixtures"];
   const excludedDirectoryNames = new Set(options.excludedDirectoryNames ?? ["fixtures"]);
+  // Declarative compiler inputs are authoring sources, not independent corpus
+  // records. Their normalized projections are validated below. Scanning both
+  // would count every stable identifier twice and make generated packets fail
+  // integrity despite representing one logical record.
+  const excludedFileSuffixes = options.excludedFileSuffixes ?? [".source.json"];
+  // Generated reports consume corpus statistics. Excluding them prevents a
+  // self-referential object count that changes each time the report is written.
+  const excludedFileNames = new Set(options.excludedFileNames ?? ["research_status.json"]);
   const errors = [];
   const warnings = [];
   const records = [];
-  const files = listMachineFiles(root, excludedDirectories, excludedDirectoryNames);
+  const files = listMachineFiles(
+    root,
+    excludedDirectories,
+    excludedDirectoryNames,
+    excludedFileSuffixes,
+    excludedFileNames,
+  );
 
   for (const file of files) records.push(...parseMachineFile(file, root, errors));
 

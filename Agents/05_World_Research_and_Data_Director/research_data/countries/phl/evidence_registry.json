@@ -1,0 +1,374 @@
+{
+  "schema_version": "0.3.0",
+  "registry_id": "evidence_registry_phl_2025_09_01",
+  "country_id": "country_phl",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "needs_review",
+  "staging_rules": {
+    "post_bookmark_opening_claims_forbidden": true,
+    "live_mutable_sources_require_prebookmark_temporal_proof": true,
+    "office_does_not_prove_practical_influence": true,
+    "treaty_does_not_bypass_domestic_authority": true,
+    "access_agreement_does_not_equal_automatic_combat_use": true,
+    "missing_force_or_facility_evidence_is_unknown_not_zero": true
+  },
+  "sources": [
+    {
+      "source_id": "src_phl_constitution",
+      "title": "1987 Philippine Constitution",
+      "publisher": "Department of Budget and Management, Republic of the Philippines",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://www.dbm.gov.ph/index.php?catid=270&id=2359&view=article",
+      "relevant_locator": "Article VI Section 23; Article VII Sections 8, 18, and 21",
+      "source_family_id": "family_philippines_dbm",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1987-02-02"
+      }
+    },
+    {
+      "source_id": "src_phl_us_mutual_defense_treaty",
+      "title": "Mutual Defense Treaty between the Republic of the Philippines and the United States of America",
+      "publisher": "Department of Foreign Affairs, Republic of the Philippines",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://dfa.gov.ph/dfa-news/statements-and-advisoriesupdate/30521-mutual-defense-treaty-between-the-republic-of-the-philippines-and-the-united-states-of-america",
+      "relevant_locator": "Articles III, IV, and V",
+      "source_family_id": "family_philippines_dfa",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "1952-08-27"
+      }
+    },
+    {
+      "source_id": "src_phl_edca",
+      "title": "Enhanced Defense Cooperation Agreement",
+      "publisher": "Department of Foreign Affairs, Republic of the Philippines",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "law_or_treaty",
+      "url": "https://dfa.gov.ph/images/2015/edca.pdf",
+      "relevant_locator": "Agreed locations, access, activities, and Philippine ownership",
+      "source_family_id": "family_philippines_dfa",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "2014-04-28"
+      }
+    },
+    {
+      "source_id": "src_phl_lazaro_appointment_2025_07_01",
+      "title": "President Marcos swears in Ma. Theresa Lazaro as Foreign Affairs Secretary",
+      "publisher": "Presidential Communications Office, Republic of the Philippines",
+      "published_at": "2025-07-01",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://pco.gov.ph/news_releases/president-marcos-confers-order-of-sikatuna-swears-in-lazaro-as-new-dfa-chief/",
+      "relevant_locator": "President and Foreign Affairs Secretary",
+      "source_family_id": "family_philippines_pco",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-07-01"
+      }
+    },
+    {
+      "source_id": "src_phl_house_speaker_2025_07_28",
+      "title": "Romualdez reelected unopposed as Speaker for second straight term",
+      "publisher": "House of Representatives, Republic of the Philippines",
+      "published_at": "2025-07-28",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_legislative_record",
+      "url": "https://www.congress.gov.ph/index.php/media/press-releases/9414",
+      "relevant_locator": "Speaker election and vote",
+      "source_family_id": "family_philippines_house",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-07-28"
+      }
+    },
+    {
+      "source_id": "src_phl_senate_escudero_2025_03_17",
+      "title": "Senate President Escudero discusses the Vice Presidential impeachment trial",
+      "publisher": "Senate of the Philippines",
+      "published_at": "2025-03-17",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_legislative_record",
+      "url": "https://web.senate.gov.ph/photo_release/2025/0317_01.asp",
+      "relevant_locator": "Francis Escudero as Senate President and Sara Duterte as Vice President",
+      "source_family_id": "family_philippines_senate",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-03-17"
+      }
+    },
+    {
+      "source_id": "src_phl_senate_transition_2025_09_08",
+      "title": "New Senate leadership elected",
+      "publisher": "Senate of the Philippines",
+      "published_at": "2025-09-08",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "retrospective_official_record",
+      "url": "https://web.senate.gov.ph/photo_release/2025/0908_07.asp",
+      "relevant_locator": "Explicitly identifies Escudero as the replaced Senate President on September 8",
+      "source_family_id": "family_philippines_senate",
+      "bookmark_temporal_proof": {
+        "status": "historically_valid_instrument_at_bookmark",
+        "effective_from": "2025-07-28"
+      }
+    },
+    {
+      "source_id": "src_phl_afp_2025_08_20",
+      "title": "AFP Chief welcomes outgoing and incoming German defense attaches",
+      "publisher": "Armed Forces of the Philippines",
+      "published_at": "2025-08-21",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.afp.mil.ph/news/afp-chief-welcomes-outgoing-and-incoming-german-defense-attaches",
+      "relevant_locator": "General Romeo Brawner as AFP Chief of Staff on August 20",
+      "source_family_id": "family_philippines_afp",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-08-21"
+      }
+    },
+    {
+      "source_id": "src_phl_defense_2025_08_02",
+      "title": "AFP and United States conduct joint humanitarian airlift exercise",
+      "publisher": "Armed Forces of the Philippines",
+      "published_at": "2025-08-02",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_release",
+      "url": "https://www.afp.mil.ph/news/afp-u-s-conducted-joint-humanitarian-airlift-in-clark-exercise",
+      "relevant_locator": "Gilberto Teodoro as Defense Secretary and alliance interoperability activity",
+      "source_family_id": "family_philippines_afp",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-08-02"
+      }
+    },
+    {
+      "source_id": "src_phl_sara_impeachment_2025_03_17",
+      "title": "Impeachment trial to proceed amid ICC trial",
+      "publisher": "Senate of the Philippines",
+      "published_at": "2025-03-17",
+      "accessed_at": "2026-08-10",
+      "source_tier": "A",
+      "source_type": "official_legislative_record",
+      "url": "https://web.senate.gov.ph/photo_release/2025/0317_01.asp",
+      "relevant_locator": "Vice President Sara Duterte and open impeachment politics",
+      "source_family_id": "family_philippines_senate",
+      "bookmark_temporal_proof": {
+        "status": "dated_prebookmark_publication",
+        "published_at": "2025-03-17"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim_phl_congress_state_of_war",
+      "subject_id": "institution_phl_congress",
+      "predicate": "sole_power_to_declare_existence_of_state_of_war",
+      "value": "two thirds of both Houses in joint session voting separately",
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_constitution"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_president_commander_in_chief",
+      "subject_id": "institution_phl_president",
+      "predicate": "commander_in_chief",
+      "value": true,
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_constitution"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_martial_law_limit",
+      "subject_id": "institution_phl_president",
+      "predicate": "martial_law_initial_limit_days",
+      "value": 60,
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_constitution"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_congress_martial_law_review",
+      "subject_id": "institution_phl_congress",
+      "predicate": "may_revoke_or_extend_martial_law",
+      "value": true,
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_constitution"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_treaty_senate_concurrence",
+      "subject_id": "institution_phl_senate",
+      "predicate": "two_thirds_concurrence_required_for_treaty_effectivity",
+      "value": true,
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_constitution"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_vp_successor",
+      "subject_id": "institution_phl_vice_president",
+      "predicate": "succeeds_president_on_death_disability_removal_or_resignation",
+      "value": true,
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_constitution"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_mdt_constitutional_process",
+      "subject_id": "alliance_phl_usa_mutual_defense_treaty",
+      "predicate": "response_occurs_through_constitutional_processes",
+      "value": true,
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_us_mutual_defense_treaty"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_mdt_pacific_scope",
+      "subject_id": "alliance_phl_usa_mutual_defense_treaty",
+      "predicate": "armed_attack_scope",
+      "value": "Pacific area attacks on metropolitan territory, island territories under jurisdiction, armed forces, public vessels, or aircraft",
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_us_mutual_defense_treaty"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_edca_access",
+      "subject_id": "agreement_phl_usa_edca",
+      "predicate": "creates_agreed_location_access_framework",
+      "value": true,
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_edca"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_marcos_president",
+      "subject_id": "actor_phl_ferdinand_marcos_jr",
+      "predicate": "holds_role",
+      "value": "President",
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_lazaro_appointment_2025_07_01"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_sara_vice_president",
+      "subject_id": "actor_phl_sara_duterte",
+      "predicate": "holds_role",
+      "value": "Vice President",
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_sara_impeachment_2025_03_17"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_lazaro_dfa",
+      "subject_id": "actor_phl_theresa_lazaro",
+      "predicate": "holds_role",
+      "value": "Secretary of Foreign Affairs",
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_lazaro_appointment_2025_07_01"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_romualdez_speaker",
+      "subject_id": "actor_phl_martin_romualdez",
+      "predicate": "holds_role",
+      "value": "Speaker of the House",
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_house_speaker_2025_07_28"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_escudero_senate_president",
+      "subject_id": "actor_phl_francis_escudero",
+      "predicate": "holds_role",
+      "value": "Senate President",
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_senate_escudero_2025_03_17",
+        "src_phl_senate_transition_2025_09_08"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_brawner_afp_chief",
+      "subject_id": "actor_phl_romeo_brawner",
+      "predicate": "holds_role",
+      "value": "Chief of Staff, Armed Forces of the Philippines",
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_afp_2025_08_20"
+      ]
+    },
+    {
+      "claim_id": "claim_phl_teodoro_defense",
+      "subject_id": "actor_phl_gilberto_teodoro",
+      "predicate": "holds_role",
+      "value": "Secretary of National Defense",
+      "as_of": "2025-09-01T00:00:00Z",
+      "confidence": "high",
+      "source_ids": [
+        "src_phl_defense_2025_08_02"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "contradiction_id": "contradiction_phl_taiwan_mdt_scope",
+      "topic": "Whether a Taiwan contingency activates the mutual defense treaty",
+      "status": "scenario_dependent",
+      "resolution_rule": "Evaluate the actual location, attacked Philippine forces or public vessels, consultation, and constitutional processes. Do not auto activate."
+    },
+    {
+      "contradiction_id": "contradiction_phl_edca_use",
+      "topic": "Whether EDCA access equals permission for a specific combat mission",
+      "status": "scenario_dependent",
+      "resolution_rule": "Treat location access, activity approval, force allocation, and combat authority as separate decisions."
+    },
+    {
+      "contradiction_id": "contradiction_phl_formal_office_vs_influence",
+      "topic": "Formal office versus practical influence amid coalition and impeachment politics",
+      "status": "unresolved",
+      "resolution_rule": "Office proves formal authority only. Do not initialize loyalty, coalition control, or removal probability from title."
+    }
+  ]
+}

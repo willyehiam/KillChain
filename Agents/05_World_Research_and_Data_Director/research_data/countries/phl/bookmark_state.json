@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.3.0",
+  "bookmark_state_id": "bookmark_state_phl_2025_09_01",
+  "country_id": "country_phl",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "collecting",
+  "knowledge_firewall_status": "needs_independent_review",
+  "government": {
+    "dataset_path": "politics_and_institutions.json",
+    "head_of_state_actor_id": "actor_phl_ferdinand_marcos_jr",
+    "head_of_government_actor_id": "actor_phl_ferdinand_marcos_jr",
+    "first_constitutional_successor_actor_id": "actor_phl_sara_duterte",
+    "opening_summary": "President Ferdinand Marcos Jr. leads a presidential constitutional system while Vice President Sara Duterte is the first constitutional successor and a separate political center. Congress, the defense and foreign affairs departments, and the AFP hold distinct roles.",
+    "authority_model": "Use war_authority_workflow.json. Treaty scope, consultation, EDCA access, domestic authority, force allocation, and operational tasking are separate decisions.",
+    "status": "needs_review"
+  },
+  "political_actors": [
+    "actor_phl_ferdinand_marcos_jr",
+    "actor_phl_sara_duterte",
+    "actor_phl_lucas_bersamin",
+    "actor_phl_gilberto_teodoro",
+    "actor_phl_theresa_lazaro",
+    "actor_phl_romeo_brawner",
+    "actor_phl_francis_escudero",
+    "actor_phl_martin_romualdez",
+    "actor_phl_risa_hontiveros",
+    "actor_phl_imee_marcos",
+    "actor_phl_vicente_sotto",
+    "actor_phl_panfilo_lacson"
+  ],
+  "administrative_geography": [],
+  "economic_state": "../top_80_2025/top_80_2025_gdp.json",
+  "military_posture": null,
+  "fixed_facilities": [],
+  "strategic_industry": [],
+  "infrastructure_networks": [],
+  "alliances": [
+    "alliance_phl_usa_mutual_defense_treaty",
+    "agreement_phl_usa_edca"
+  ],
+  "sanctions": [],
+  "active_crises": [
+    "crisis_west_philippine_sea",
+    "crisis_vice_presidential_impeachment"
+  ],
+  "foreign_deployments": [],
+  "unresolved_assumptions": [
+    "An attack on Taiwan does not automatically activate Philippine force employment or the mutual defense treaty.",
+    "EDCA access does not automatically authorize a specific United States mission or Philippine participation.",
+    "The Vice Presidential impeachment trajectory is unresolved and may diverge.",
+    "Formal office supports roster inclusion but does not establish practical influence, loyalty, coalition behavior, or successor probability.",
+    "Force inventory, readiness, location, basing, logistics, and deployment remain unknown and nonexecutable."
+  ],
+  "source_ids": [
+    "src_phl_constitution",
+    "src_phl_us_mutual_defense_treaty",
+    "src_phl_edca",
+    "src_phl_lazaro_appointment_2025_07_01",
+    "src_phl_house_speaker_2025_07_28",
+    "src_phl_senate_escudero_2025_03_17",
+    "src_phl_senate_transition_2025_09_08",
+    "src_phl_afp_2025_08_20",
+    "src_phl_defense_2025_08_02",
+    "src_phl_sara_impeachment_2025_03_17"
+  ],
+  "claim_ids": [
+    "claim_phl_congress_state_of_war",
+    "claim_phl_president_commander_in_chief",
+    "claim_phl_martial_law_limit",
+    "claim_phl_congress_martial_law_review",
+    "claim_phl_treaty_senate_concurrence",
+    "claim_phl_vp_successor",
+    "claim_phl_mdt_constitutional_process",
+    "claim_phl_mdt_pacific_scope",
+    "claim_phl_edca_access",
+    "claim_phl_marcos_president",
+    "claim_phl_sara_vice_president",
+    "claim_phl_lazaro_dfa",
+    "claim_phl_romualdez_speaker",
+    "claim_phl_escudero_senate_president",
+    "claim_phl_brawner_afp_chief",
+    "claim_phl_teodoro_defense"
+  ],
+  "notes": "Only politics, authority, and alliance scope are collecting. Forces and infrastructure remain absent or shell unless separately linked.",
+  "acceptance_state": {
+    "politics_lane_status": "needs_review",
+    "alliance_lane_status": "needs_review",
+    "bookmark_firewall_passed": false,
+    "independent_review_complete": false,
+    "authority_contract_reviewed": false
+  }
+}

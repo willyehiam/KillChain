@@ -1,0 +1,13 @@
+{
+  "evidence": {
+    "sources": [
+      {
+        "source_id": "source_fixture_primary",
+        "title": "Compiler authoring copy",
+        "publisher": "Fixture publisher",
+        "published_at": "2025-08-20",
+        "accessed_at": "2026-08-06"
+      }
+    ]
+  }
+}
