@@ -208,8 +208,11 @@ for (const country of wave.countries) {
   const registryCountry = registryByCode.get(country.country_code);
   if (!registryCountry) throw new Error(`Missing registry country ${country.country_code}`);
   const countryDirectory = path.join(countriesRoot, country.country_code.toLowerCase());
-  writeGenerated(path.join(countryDirectory, "research_manifest.json"), JSON.stringify(buildManifest(country, registryCountry), null, 2));
-  writeGenerated(path.join(countryDirectory, "lane_coverage.json"), JSON.stringify(buildLaneMatrix(country, registryCountry), null, 2));
+  const sharedAuthorityPacket = fs.existsSync(path.join(countryDirectory, "authority_packet.source.json"));
+  if (!sharedAuthorityPacket) {
+    writeGenerated(path.join(countryDirectory, "research_manifest.json"), JSON.stringify(buildManifest(country, registryCountry), null, 2));
+    writeGenerated(path.join(countryDirectory, "lane_coverage.json"), JSON.stringify(buildLaneMatrix(country, registryCountry), null, 2));
+  }
   writeGenerated(path.join(countryDirectory, "WORK_PACKAGES.md"), buildWorkPackages(country, registryCountry));
 }
 
@@ -218,7 +221,10 @@ const report = {
   mode: checkOnly ? "check" : "write",
   wave_id: wave.wave_id,
   countries: wave.countries.length,
-  generated_files: wave.countries.length * 3,
+  generated_files: wave.countries.reduce((count, country) => {
+    const sharedAuthorityPacket = fs.existsSync(path.join(countriesRoot, country.country_code.toLowerCase(), "authority_packet.source.json"));
+    return count + (sharedAuthorityPacket ? 1 : 3);
+  }, 0),
   differences,
 };
 

@@ -1,0 +1,101 @@
+{
+  "schema_version": "0.3.0",
+  "bookmark_state_id": "bookmark_state_kor_2025_09_01",
+  "country_id": "country_kor",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "collecting",
+  "knowledge_firewall_status": "needs_independent_review",
+  "government": {
+    "dataset_path": "politics_and_institutions.json",
+    "head_of_state_actor_id": "actor_kor_lee_jae_myung",
+    "head_of_government_actor_id": "actor_kor_lee_jae_myung",
+    "first_constitutional_successor_actor_id": "actor_kor_kim_min_seok",
+    "opening_summary": "President Lee Jae Myung leads a presidential constitutional system. The President, State Council, National Assembly, defense institutions, and alliance commands are represented as distinct decision and execution institutions.",
+    "authority_model": "Use war_authority_workflow.json. Domestic authority, legislative consent, alliance consultation, combined command tasking, and peninsula readiness are separate.",
+    "status": "needs_review"
+  },
+  "political_actors": [
+    "actor_kor_lee_jae_myung",
+    "actor_kor_kim_min_seok",
+    "actor_kor_kang_hoon_sik",
+    "actor_kor_wi_sung_lac",
+    "actor_kor_cho_hyun",
+    "actor_kor_ahn_gyu_back",
+    "actor_kor_koo_yun_cheol",
+    "actor_kor_kim_jung_kwan",
+    "actor_kor_chung_dong_young",
+    "actor_kor_woo_won_shik",
+    "actor_kor_kim_myung_soo",
+    "actor_kor_jeong_cheong_rae",
+    "actor_kor_kim_byung_kee",
+    "actor_kor_jang_dong_hyeok",
+    "actor_kor_kim_moon_soo",
+    "actor_kor_lee_jun_seok",
+    "actor_kor_kwon_young_guk"
+  ],
+  "administrative_geography": [],
+  "economic_state": "../top_80_2025/top_80_2025_gdp.json",
+  "military_posture": null,
+  "fixed_facilities": [],
+  "strategic_industry": [],
+  "infrastructure_networks": [],
+  "alliances": [
+    "alliance_kor_usa_mutual_defense_treaty"
+  ],
+  "sanctions": [],
+  "active_crises": [
+    "crisis_korean_peninsula_armistice"
+  ],
+  "foreign_deployments": [],
+  "unresolved_assumptions": [
+    "An attack on Taiwan does not automatically activate Korean force employment or the ROK US alliance.",
+    "Combined Forces Command tasking cannot create Korean political authority or inventory.",
+    "Nuclear Consultative Group participation is consultation, not autonomous nuclear authority.",
+    "Formal office supports roster inclusion but does not establish practical influence, loyalty, coalition behavior, or successor probability.",
+    "Force inventory, readiness, location, basing, logistics, and deployment remain unknown and nonexecutable."
+  ],
+  "source_ids": [
+    "src_kor_constitution",
+    "src_kor_mutual_defense_treaty_overview",
+    "src_kor_cfc_overview",
+    "src_kor_opcon_transition",
+    "src_kor_ncg_fact_sheet",
+    "src_kor_presidential_briefing_2025_06_12",
+    "src_kor_presidential_briefing_2025_07_25",
+    "src_kor_nec_candidates_2025",
+    "src_kor_pm_appointment_2025_07_03",
+    "src_kor_minister_nominations_2025_06_23",
+    "src_kor_party_schedule_2025_08_03",
+    "src_kor_ppp_leader_2025_08_26",
+    "src_kor_jcs_2025_07_29"
+  ],
+  "claim_ids": [
+    "claim_kor_assembly_war_consent",
+    "claim_kor_president_declares_war",
+    "claim_kor_president_commander_in_chief",
+    "claim_kor_state_council_war_deliberation",
+    "claim_kor_prime_minister_successor",
+    "claim_kor_assembly_martial_law_reversal",
+    "claim_kor_alliance_joint_response",
+    "claim_kor_cfc_peninsula_defense_mission",
+    "claim_kor_opcon_transition_conditions_based",
+    "claim_kor_ncg_consultative",
+    "claim_kor_lee_president",
+    "claim_kor_woo_speaker",
+    "claim_kor_kim_pm",
+    "claim_kor_wi_security_adviser",
+    "claim_kor_ahn_defense_minister",
+    "claim_kor_jeong_party_leader",
+    "claim_kor_jang_party_leader",
+    "claim_kor_jcs_chairman"
+  ],
+  "notes": "Only politics, authority, and alliance scope are collecting. Forces and infrastructure remain absent or shell unless separately linked.",
+  "acceptance_state": {
+    "politics_lane_status": "needs_review",
+    "alliance_lane_status": "needs_review",
+    "bookmark_firewall_passed": false,
+    "independent_review_complete": false,
+    "authority_contract_reviewed": false
+  }
+}

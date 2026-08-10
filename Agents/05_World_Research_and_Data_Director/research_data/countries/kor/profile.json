@@ -6,17 +6,17 @@
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
   "as_of": "2025-09-01T00:00:00Z",
   "depth_tier": "B",
-  "coverage_status": "shell",
+  "coverage_status": "collecting",
   "roster_basis": "top_80_2025_nominal_gdp",
   "gdp_rank": 13,
   "gdp_2025_usd_billions": 1872.375,
   "coverage": {
     "politics_and_institutions": {
-      "status": "shell",
-      "record_count": 0,
-      "source_count": 0,
-      "open_question_count": 1,
-      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+      "status": "needs_review",
+      "record_count": 33,
+      "source_count": 9,
+      "open_question_count": 3,
+      "notes": "Opening actors, institutions, succession, and authority routes are collected but require independent review. Formal office does not prove practical influence."
     },
     "economy_trade_finance_resources": {
       "status": "collecting",
@@ -61,41 +61,55 @@
       "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
     },
     "crises_alliances_sanctions_deployments": {
-      "status": "shell",
-      "record_count": 0,
-      "source_count": 0,
-      "open_question_count": 1,
-      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+      "status": "needs_review",
+      "record_count": 9,
+      "source_count": 5,
+      "open_question_count": 3,
+      "notes": "Alliance consultation, domestic authority, access, and operational tasking are separated. Force disposition remains unknown."
     }
   },
   "dataset_paths": {
-    "government": null,
-    "political_actors": null,
+    "government": "politics_and_institutions.json",
+    "political_actors": "politics_and_institutions.json",
     "provinces": null,
     "economy": "../top_80_2025/top_80_2025_gdp.json",
     "force_ledger": null,
     "facilities": null,
     "infrastructure": null,
-    "relationships": null,
+    "relationships": "war_authority_workflow.json",
     "claims": null,
     "sources": "../../sources/sources.ndjson",
-    "contradictions": null
+    "contradictions": null,
+    "bookmark_state": "bookmark_state.json"
   },
   "completeness": {
     "political_actor_target": 20,
-    "political_actor_count": 0,
+    "political_actor_count": 17,
     "province_layer_status": "absent",
     "force_ledger_status": "absent"
   },
   "source_ids": [
-    "src_imf_weo_2026_04_ngdpd_2025"
+    "src_imf_weo_2026_04_ngdpd_2025",
+    "src_kor_constitution",
+    "src_kor_mutual_defense_treaty_overview",
+    "src_kor_cfc_overview",
+    "src_kor_opcon_transition",
+    "src_kor_ncg_fact_sheet",
+    "src_kor_presidential_briefing_2025_06_12",
+    "src_kor_presidential_briefing_2025_07_25",
+    "src_kor_nec_candidates_2025",
+    "src_kor_pm_appointment_2025_07_03",
+    "src_kor_minister_nominations_2025_06_23",
+    "src_kor_party_schedule_2025_08_03",
+    "src_kor_ppp_leader_2025_08_26",
+    "src_kor_jcs_2025_07_29"
   ],
   "unknowns": [
-    "Government, leadership, institutions, and political actors at the bookmark are unknown in this shell.",
-    "Military organization, inventory, readiness, basing, maintenance, and deployments are unknown in this shell.",
-    "Province, terrain, infrastructure, industry, energy, logistics, and communications state are unknown in this shell.",
-    "Alliances, dependencies, sanctions, crisis commitments, and active plans are unknown in this shell.",
+    "Economy beyond the frozen GDP roster remains unknown in this packet.",
+    "Military organization, inventory, readiness, basing, maintenance, and deployments remain unknown and nonexecutable.",
+    "Province, terrain, infrastructure, industry, energy, logistics, and communications state remain unknown.",
+    "Practical political influence and crisis participation probabilities are not inferred from office or alliance membership.",
     "A zero record count means no accepted corpus records and never asserts zero real world entities or capacity."
   ],
-  "notes": "Generated from the frozen roster only. Numeric coverage zeros count accepted corpus records and never assert real world absence. All substantive country facts remain unknown until sourced."
+  "notes": "Generated from a declarative authority packet. Politics and alliance authority are collecting; forces, facilities, readiness, and deployment remain nonexecutable unless separately sourced."
 }

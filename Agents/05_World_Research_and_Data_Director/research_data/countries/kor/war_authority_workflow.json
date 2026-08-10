@@ -1,0 +1,287 @@
+{
+  "schema_version": "0.3.0",
+  "workflow_id": "war_authority_kor_2025_09_01",
+  "country_id": "country_kor",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "needs_review",
+  "design_rule": "Political authority, alliance consultation, access, force allocation, and operational tasking are separate state transitions.",
+  "routes": [
+    {
+      "route_id": "route_kor_defensive_force_action",
+      "name": "Defensive force action",
+      "required_gate_ids": [
+        "gate_kor_defense_legal_trigger",
+        "gate_kor_presidential_command",
+        "gate_kor_state_council_major_military_deliberation",
+        "gate_kor_jcs_tasking"
+      ],
+      "result": "bounded_defensive_force_authority"
+    },
+    {
+      "route_id": "route_kor_declaration_of_war",
+      "name": "Declaration of war",
+      "required_gate_ids": [
+        "gate_kor_state_council_war_deliberation",
+        "gate_kor_national_assembly_war_consent",
+        "gate_kor_presidential_war_declaration"
+      ],
+      "result": "formal_war_authority"
+    },
+    {
+      "route_id": "route_kor_external_force_dispatch",
+      "name": "Dispatch armed forces abroad",
+      "required_gate_ids": [
+        "gate_kor_state_council_major_military_deliberation",
+        "gate_kor_national_assembly_external_dispatch_consent",
+        "gate_kor_presidential_command",
+        "gate_kor_jcs_tasking"
+      ],
+      "result": "bounded_external_dispatch_authority"
+    },
+    {
+      "route_id": "route_kor_alliance_consultation",
+      "name": "Alliance consultation",
+      "required_gate_ids": [
+        "gate_kor_alliance_consultation"
+      ],
+      "result": "consultation_state_only"
+    },
+    {
+      "route_id": "route_kor_cfc_peninsula_defense",
+      "name": "Combined command peninsula defense tasking",
+      "required_gate_ids": [
+        "gate_kor_national_authority_exists",
+        "gate_kor_cfc_tasking"
+      ],
+      "result": "operational_tasking_within_existing_authority"
+    },
+    {
+      "route_id": "route_kor_ncg_consultation",
+      "name": "Nuclear consultation",
+      "required_gate_ids": [
+        "gate_kor_ncg_consultation"
+      ],
+      "result": "consultation_state_only"
+    },
+    {
+      "route_id": "route_kor_martial_law",
+      "name": "Martial law",
+      "required_gate_ids": [
+        "gate_kor_martial_law_factual_trigger",
+        "gate_kor_state_council_martial_law_deliberation",
+        "gate_kor_presidential_martial_law_proclamation",
+        "gate_kor_assembly_notification"
+      ],
+      "result": "martial_law_subject_to_assembly_reversal"
+    },
+    {
+      "route_id": "route_kor_taiwan_support",
+      "name": "Support to a Taiwan contingency",
+      "required_gate_ids": [
+        "gate_kor_alliance_consultation",
+        "gate_kor_taiwan_policy_choice",
+        "gate_kor_peninsula_readiness_constraint",
+        "gate_kor_national_authority_exists"
+      ],
+      "result": "support_option_may_be_considered_not_automatic"
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "gate_kor_defense_legal_trigger",
+      "gate_type": "scenario_fact",
+      "required_institution_ids": [
+        "institution_kor_president",
+        "institution_kor_defense_ministry"
+      ],
+      "completion_evidence": "A constitutional and statutory defense basis is established for the actual facts."
+    },
+    {
+      "gate_id": "gate_kor_presidential_command",
+      "gate_type": "executive_command",
+      "required_institution_ids": [
+        "institution_kor_president"
+      ],
+      "completion_evidence": "The President directs force employment within existing law."
+    },
+    {
+      "gate_id": "gate_kor_state_council_major_military_deliberation",
+      "gate_type": "cabinet_deliberation",
+      "required_institution_ids": [
+        "institution_kor_state_council"
+      ],
+      "completion_evidence": "The State Council deliberates the major military matter."
+    },
+    {
+      "gate_id": "gate_kor_jcs_tasking",
+      "gate_type": "operational_tasking",
+      "required_institution_ids": [
+        "institution_kor_joint_chiefs"
+      ],
+      "completion_evidence": "The Joint Chiefs task conserved forces within existing authority."
+    },
+    {
+      "gate_id": "gate_kor_state_council_war_deliberation",
+      "gate_type": "cabinet_deliberation",
+      "required_institution_ids": [
+        "institution_kor_state_council"
+      ],
+      "completion_evidence": "The State Council deliberates declaration of war."
+    },
+    {
+      "gate_id": "gate_kor_national_assembly_war_consent",
+      "gate_type": "legislative_consent",
+      "required_institution_ids": [
+        "institution_kor_national_assembly"
+      ],
+      "completion_evidence": "The National Assembly consents to declaration of war."
+    },
+    {
+      "gate_id": "gate_kor_presidential_war_declaration",
+      "gate_type": "executive_declaration",
+      "required_institution_ids": [
+        "institution_kor_president"
+      ],
+      "completion_evidence": "The President declares war after required deliberation and consent."
+    },
+    {
+      "gate_id": "gate_kor_national_assembly_external_dispatch_consent",
+      "gate_type": "legislative_consent",
+      "required_institution_ids": [
+        "institution_kor_national_assembly"
+      ],
+      "completion_evidence": "The National Assembly consents to dispatch armed forces abroad."
+    },
+    {
+      "gate_id": "gate_kor_alliance_consultation",
+      "gate_type": "alliance_consultation",
+      "required_institution_ids": [
+        "institution_kor_president",
+        "institution_kor_foreign_ministry",
+        "institution_kor_defense_ministry"
+      ],
+      "completion_evidence": "The governments consult; consultation creates no force authority."
+    },
+    {
+      "gate_id": "gate_kor_national_authority_exists",
+      "gate_type": "authority_reference",
+      "required_institution_ids": [
+        "institution_kor_president",
+        "institution_kor_defense_ministry"
+      ],
+      "completion_evidence": "A separate domestic route has already created bounded authority."
+    },
+    {
+      "gate_id": "gate_kor_cfc_tasking",
+      "gate_type": "combined_command_tasking",
+      "required_institution_ids": [
+        "institution_kor_us_combined_forces_command"
+      ],
+      "completion_evidence": "CFC tasks forces within its mission and existing national authority."
+    },
+    {
+      "gate_id": "gate_kor_ncg_consultation",
+      "gate_type": "nuclear_consultation",
+      "required_institution_ids": [
+        "institution_kor_usa_nuclear_consultative_group"
+      ],
+      "completion_evidence": "The NCG consults; the forum does not autonomously authorize nuclear use."
+    },
+    {
+      "gate_id": "gate_kor_martial_law_factual_trigger",
+      "gate_type": "scenario_fact",
+      "required_institution_ids": [
+        "institution_kor_president"
+      ],
+      "completion_evidence": "War, armed conflict, or comparable national emergency facts meet the constitutional threshold."
+    },
+    {
+      "gate_id": "gate_kor_state_council_martial_law_deliberation",
+      "gate_type": "cabinet_deliberation",
+      "required_institution_ids": [
+        "institution_kor_state_council"
+      ],
+      "completion_evidence": "The State Council deliberates martial law."
+    },
+    {
+      "gate_id": "gate_kor_presidential_martial_law_proclamation",
+      "gate_type": "executive_proclamation",
+      "required_institution_ids": [
+        "institution_kor_president"
+      ],
+      "completion_evidence": "The President proclaims martial law and states the reason, type, scope, and commander."
+    },
+    {
+      "gate_id": "gate_kor_assembly_notification",
+      "gate_type": "legislative_notification_and_reversal",
+      "required_institution_ids": [
+        "institution_kor_national_assembly"
+      ],
+      "completion_evidence": "The Assembly is notified and retains its constitutional power to require lifting."
+    },
+    {
+      "gate_id": "gate_kor_taiwan_policy_choice",
+      "gate_type": "independent_policy_choice",
+      "required_institution_ids": [
+        "institution_kor_president",
+        "institution_kor_state_council"
+      ],
+      "completion_evidence": "Korean leadership chooses a specific support posture rather than inheriting one automatically."
+    },
+    {
+      "gate_id": "gate_kor_peninsula_readiness_constraint",
+      "gate_type": "resource_and_risk_constraint",
+      "required_institution_ids": [
+        "institution_kor_defense_ministry",
+        "institution_kor_joint_chiefs"
+      ],
+      "completion_evidence": "The plan evaluates deterrence and readiness consequences on the Korean Peninsula before diversion."
+    }
+  ],
+  "taiwan_contingency_guard": {
+    "attack_on_taiwan_auto_activates_authority": false,
+    "alliance_auto_activates_kinetic_participation": false,
+    "required_next_step": "Open alliance consultation, evaluate Korean domestic authority, peninsula readiness, National Assembly consent where required, access, domestic support, and the chosen support posture separately."
+  },
+  "acceptance_rules": {
+    "generic_declare_war_button_allowed": false,
+    "treaty_equals_automatic_intervention": false,
+    "consultation_equals_force_authority": false,
+    "combined_command_tasking_equals_policy_choice": false,
+    "operational_tasking_creates_political_authority": false,
+    "allied_support_equals_kinetic_participation": false,
+    "force_execution_requires_conserved_inventory": true
+  },
+  "unresolved_interpretations": [
+    {
+      "question_id": "unknown_kor_defensive_action_statutory_path",
+      "question": "Which statutory route applies to each defensive action below a formal declaration of war?",
+      "status": "additional_legal_research_required",
+      "source_ids": [
+        "src_kor_constitution"
+      ]
+    },
+    {
+      "question_id": "unknown_kor_taiwan_support_threshold",
+      "question": "Which contingency facts and political choices would justify each support level?",
+      "status": "scenario_dependent_not_predetermined",
+      "source_ids": [
+        "src_kor_mutual_defense_treaty_overview"
+      ]
+    },
+    {
+      "question_id": "unknown_kor_peninsula_diversion_cost",
+      "question": "How should North Korean risk constrain force diversion without hard coding paralysis?",
+      "status": "game_design_and_force_research_required",
+      "source_ids": []
+    }
+  ],
+  "source_ids": [
+    "src_kor_constitution",
+    "src_kor_mutual_defense_treaty_overview",
+    "src_kor_cfc_overview",
+    "src_kor_opcon_transition",
+    "src_kor_ncg_fact_sheet"
+  ]
+}

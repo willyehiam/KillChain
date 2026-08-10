@@ -1,0 +1,564 @@
+{
+  "schema_version": "0.1.0",
+  "packet_id": "authority_packet_kor_2025_09_01",
+  "country": {
+    "id": "country_kor",
+    "code": "KOR",
+    "name": "South Korea"
+  },
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "review": {
+    "reviewed_at": "2026-08-10",
+    "review_after": "2026-11-10"
+  },
+  "evidence": {
+    "staging_rules": {
+      "post_bookmark_opening_claims_forbidden": true,
+      "live_mutable_sources_require_prebookmark_temporal_proof": true,
+      "office_does_not_prove_practical_influence": true,
+      "treaty_does_not_bypass_domestic_authority": true,
+      "combined_command_does_not_create_political_authority": true,
+      "missing_force_or_facility_evidence_is_unknown_not_zero": true
+    },
+    "sources": [
+      {
+        "source_id": "src_kor_constitution",
+        "title": "Constitution of the Republic of Korea",
+        "publisher": "Korea Legislation Research Institute",
+        "accessed_at": "2026-08-10",
+        "source_tier": "A",
+        "source_type": "law_or_treaty",
+        "url": "https://elaw.klri.re.kr/eng_service/lawViewTitle.do?hseq=1",
+        "relevant_locator": "Articles 60, 71, 73, 74, 76, 77, 86, 88, and 89",
+        "source_family_id": "family_korea_legislation_research_institute",
+        "bookmark_temporal_proof": {
+          "status": "historically_valid_instrument_at_bookmark",
+          "effective_from": "1988-02-25"
+        }
+      },
+      {
+        "source_id": "src_kor_mutual_defense_treaty_overview",
+        "title": "ROK US Alliance and Mutual Defense Treaty",
+        "publisher": "Republic of Korea Ministry of National Defense",
+        "accessed_at": "2026-08-10",
+        "source_tier": "A",
+        "source_type": "official_institutional_overview",
+        "url": "https://www.mnd.go.kr/mnd/224/subview.do",
+        "relevant_locator": "Treaty basis, joint response, and stationing of United States forces",
+        "source_family_id": "family_rok_ministry_national_defense",
+        "bookmark_temporal_proof": {
+          "status": "historically_valid_instrument_at_bookmark",
+          "effective_from": "1954-11-18"
+        }
+      },
+      {
+        "source_id": "src_kor_cfc_overview",
+        "title": "ROK US Combined Forces Command",
+        "publisher": "United States Forces Korea",
+        "accessed_at": "2026-08-10",
+        "source_tier": "A",
+        "source_type": "official_institutional_overview",
+        "url": "https://www.usfk.mil/About/CFC/",
+        "relevant_locator": "Mission, binational command structure, and operational control",
+        "source_family_id": "family_us_forces_korea",
+        "bookmark_temporal_proof": {
+          "status": "historically_valid_instrument_at_bookmark",
+          "effective_from": "1978-11-07"
+        }
+      },
+      {
+        "source_id": "src_kor_opcon_transition",
+        "title": "Conditions based Wartime Operational Control Transition",
+        "publisher": "Republic of Korea Ministry of National Defense",
+        "accessed_at": "2026-08-10",
+        "source_tier": "A",
+        "source_type": "official_institutional_overview",
+        "url": "https://www.mnd.go.kr/mnd/235/subview.do",
+        "relevant_locator": "Conditions based transition framework",
+        "source_family_id": "family_rok_ministry_national_defense",
+        "bookmark_temporal_proof": {
+          "status": "historically_valid_instrument_at_bookmark",
+          "effective_from": "2014-10-23"
+        }
+      },
+      {
+        "source_id": "src_kor_ncg_fact_sheet",
+        "title": "Nuclear Consultative Group Fact Sheet",
+        "publisher": "Republic of Korea Ministry of National Defense",
+        "accessed_at": "2026-08-10",
+        "source_tier": "A",
+        "source_type": "official_institutional_overview",
+        "url": "https://www.mnd.go.kr/mnd/239/subview.do",
+        "relevant_locator": "Consultation purpose and Korean Peninsula tailoring",
+        "source_family_id": "family_rok_ministry_national_defense",
+        "bookmark_temporal_proof": {
+          "status": "historically_valid_instrument_at_bookmark",
+          "effective_from": "2023-07-18"
+        }
+      },
+      {
+        "source_id": "src_kor_presidential_briefing_2025_06_12",
+        "title": "President Lee Jae Myung meeting with National Assembly Speaker Woo Won shik",
+        "publisher": "Office of the President, Republic of Korea",
+        "published_at": "2025-06-12",
+        "accessed_at": "2026-08-10",
+        "source_tier": "A",
+        "source_type": "official_release",
+        "url": "https://www.president.go.kr/newsroom/briefing/zbKnGfbF",
+        "relevant_locator": "Dated identification of the President and Assembly Speaker",
+        "source_family_id": "family_rok_presidential_office",
+        "bookmark_temporal_proof": {
+          "status": "dated_prebookmark_publication",
+          "published_at": "2025-06-12"
+        }
+      },
+      {
+        "source_id": "src_kor_presidential_briefing_2025_07_25",
+        "title": "Presidential Office briefing naming senior administration officials",
+        "publisher": "Office of the President, Republic of Korea",
+        "published_at": "2025-07-25",
+        "accessed_at": "2026-08-10",
+        "source_tier": "A",
+        "source_type": "official_release",
+        "url": "https://children.president.go.kr/newsroom/briefing/YxrJR3RJ",
+        "relevant_locator": "Kang Hoon sik, Wi Sung lac, Koo Yun cheol, and Kim Jung kwan",
+        "source_family_id": "family_rok_presidential_office",
+        "bookmark_temporal_proof": {
+          "status": "dated_prebookmark_publication",
+          "published_at": "2025-07-25"
+        }
+      },
+      {
+        "source_id": "src_kor_nec_candidates_2025",
+        "title": "Twenty first Presidential Election party and candidate information",
+        "publisher": "National Election Commission, Republic of Korea",
+        "published_at": "2025-05-12",
+        "accessed_at": "2026-08-10",
+        "source_tier": "A",
+        "source_type": "official_election_record",
+        "url": "https://www.nec.go.kr/html/partyinfo_2025.html",
+        "relevant_locator": "Registered presidential candidates and party affiliations",
+        "source_family_id": "family_rok_national_election_commission",
+        "bookmark_temporal_proof": {
+          "status": "dated_prebookmark_publication",
+          "published_at": "2025-05-12"
+        }
+      },
+      {
+        "source_id": "src_kor_pm_appointment_2025_07_03",
+        "title": "National Assembly approves Kim Min seok as prime minister",
+        "publisher": "Yonhap News Agency",
+        "published_at": "2025-07-03",
+        "accessed_at": "2026-08-10",
+        "source_tier": "B",
+        "source_type": "dated_reporting",
+        "url": "https://en.yna.co.kr/view/AEN20250703000953315",
+        "relevant_locator": "Dated appointment and Assembly approval",
+        "source_family_id": "family_yonhap",
+        "bookmark_temporal_proof": {
+          "status": "dated_prebookmark_publication",
+          "published_at": "2025-07-03"
+        }
+      },
+      {
+        "source_id": "src_kor_minister_nominations_2025_06_23",
+        "title": "President nominates foreign, defense, and unification ministers",
+        "publisher": "Yonhap News Agency",
+        "published_at": "2025-06-23",
+        "accessed_at": "2026-08-10",
+        "source_tier": "B",
+        "source_type": "dated_reporting",
+        "url": "https://en.yna.co.kr/view/AEN20250623005700315",
+        "relevant_locator": "Cho Hyun, Ahn Gyu back, and Chung Dong young",
+        "source_family_id": "family_yonhap",
+        "bookmark_temporal_proof": {
+          "status": "dated_prebookmark_publication",
+          "published_at": "2025-06-23"
+        }
+      },
+      {
+        "source_id": "src_kor_party_schedule_2025_08_03",
+        "title": "Democratic Party leadership schedule",
+        "publisher": "Democratic Party of Korea",
+        "published_at": "2025-08-03",
+        "accessed_at": "2026-08-10",
+        "source_tier": "A",
+        "source_type": "official_party_record",
+        "url": "https://theminjoo.kr/main/sub/news/schedule.php?day=01&month=08&year=2025",
+        "relevant_locator": "Jeong Cheong rae and Kim Byung kee leadership roles",
+        "source_family_id": "family_democratic_party_korea",
+        "bookmark_temporal_proof": {
+          "status": "dated_prebookmark_publication",
+          "published_at": "2025-08-03"
+        }
+      },
+      {
+        "source_id": "src_kor_ppp_leader_2025_08_26",
+        "title": "People Power Party elects Jang Dong hyeok as leader",
+        "publisher": "People Power Party",
+        "published_at": "2025-08-26",
+        "accessed_at": "2026-08-10",
+        "source_tier": "A",
+        "source_type": "official_party_record",
+        "url": "https://www.peoplepowerparty.kr/news/issue_photo_view/108754",
+        "relevant_locator": "Leadership election result",
+        "source_family_id": "family_people_power_party",
+        "bookmark_temporal_proof": {
+          "status": "dated_prebookmark_publication",
+          "published_at": "2025-08-26"
+        }
+      },
+      {
+        "source_id": "src_kor_jcs_2025_07_29",
+        "title": "Joint Chiefs of Staff activity record",
+        "publisher": "Republic of Korea Joint Chiefs of Staff",
+        "published_at": "2025-07-29",
+        "accessed_at": "2026-08-10",
+        "source_tier": "A",
+        "source_type": "official_release",
+        "url": "https://jcs.mil.kr/user/boardList.action?boardId=O_121947&id=jcs2_040201000000&page=5",
+        "relevant_locator": "General Kim Myung soo identified as Chairman",
+        "source_family_id": "family_rok_joint_chiefs",
+        "bookmark_temporal_proof": {
+          "status": "dated_prebookmark_publication",
+          "published_at": "2025-07-29"
+        }
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "claim_kor_assembly_war_consent",
+        "subject_id": "institution_kor_national_assembly",
+        "predicate": "consent_required_for_declaration_of_war_and_external_dispatch",
+        "value": true,
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_constitution"]
+      },
+      {
+        "claim_id": "claim_kor_president_declares_war",
+        "subject_id": "institution_kor_president",
+        "predicate": "declares_war_and_concludes_peace_subject_to_constitution",
+        "value": true,
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_constitution"]
+      },
+      {
+        "claim_id": "claim_kor_president_commander_in_chief",
+        "subject_id": "institution_kor_president",
+        "predicate": "commander_in_chief",
+        "value": true,
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_constitution"]
+      },
+      {
+        "claim_id": "claim_kor_state_council_war_deliberation",
+        "subject_id": "institution_kor_state_council",
+        "predicate": "deliberates_declarations_of_war_and_major_military_matters",
+        "value": true,
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_constitution"]
+      },
+      {
+        "claim_id": "claim_kor_prime_minister_successor",
+        "subject_id": "institution_kor_prime_minister",
+        "predicate": "first_constitutional_acting_president_class",
+        "value": true,
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_constitution"]
+      },
+      {
+        "claim_id": "claim_kor_assembly_martial_law_reversal",
+        "subject_id": "institution_kor_national_assembly",
+        "predicate": "may_require_lifting_martial_law_by_majority",
+        "value": true,
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_constitution"]
+      },
+      {
+        "claim_id": "claim_kor_alliance_joint_response",
+        "subject_id": "alliance_kor_usa_mutual_defense_treaty",
+        "predicate": "supports_joint_response_to_external_aggression",
+        "value": true,
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_mutual_defense_treaty_overview"]
+      },
+      {
+        "claim_id": "claim_kor_cfc_peninsula_defense_mission",
+        "subject_id": "institution_kor_us_combined_forces_command",
+        "predicate": "mission_scope",
+        "value": "Deter hostile acts and defend the Republic of Korea if deterrence fails.",
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_cfc_overview"]
+      },
+      {
+        "claim_id": "claim_kor_opcon_transition_conditions_based",
+        "subject_id": "institution_kor_us_combined_forces_command",
+        "predicate": "wartime_operational_control_transition_model",
+        "value": "conditions_based",
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_opcon_transition"]
+      },
+      {
+        "claim_id": "claim_kor_ncg_consultative",
+        "subject_id": "institution_kor_usa_nuclear_consultative_group",
+        "predicate": "role",
+        "value": "bilateral consultation and planning forum tailored to the Korean Peninsula",
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_ncg_fact_sheet"]
+      },
+      {
+        "claim_id": "claim_kor_lee_president",
+        "subject_id": "actor_kor_lee_jae_myung",
+        "predicate": "holds_role",
+        "value": "President",
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_presidential_briefing_2025_06_12"]
+      },
+      {
+        "claim_id": "claim_kor_woo_speaker",
+        "subject_id": "actor_kor_woo_won_shik",
+        "predicate": "holds_role",
+        "value": "National Assembly Speaker",
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_presidential_briefing_2025_06_12"]
+      },
+      {
+        "claim_id": "claim_kor_kim_pm",
+        "subject_id": "actor_kor_kim_min_seok",
+        "predicate": "holds_role",
+        "value": "Prime Minister",
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_pm_appointment_2025_07_03"]
+      },
+      {
+        "claim_id": "claim_kor_wi_security_adviser",
+        "subject_id": "actor_kor_wi_sung_lac",
+        "predicate": "holds_role",
+        "value": "National Security Adviser",
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_presidential_briefing_2025_07_25"]
+      },
+      {
+        "claim_id": "claim_kor_ahn_defense_minister",
+        "subject_id": "actor_kor_ahn_gyu_back",
+        "predicate": "holds_role",
+        "value": "Minister of National Defense",
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "medium",
+        "source_ids": ["src_kor_minister_nominations_2025_06_23"]
+      },
+      {
+        "claim_id": "claim_kor_jeong_party_leader",
+        "subject_id": "actor_kor_jeong_cheong_rae",
+        "predicate": "holds_role",
+        "value": "Democratic Party leader",
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_party_schedule_2025_08_03"]
+      },
+      {
+        "claim_id": "claim_kor_jang_party_leader",
+        "subject_id": "actor_kor_jang_dong_hyeok",
+        "predicate": "holds_role",
+        "value": "People Power Party leader",
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_ppp_leader_2025_08_26"]
+      },
+      {
+        "claim_id": "claim_kor_jcs_chairman",
+        "subject_id": "actor_kor_kim_myung_soo",
+        "predicate": "holds_role",
+        "value": "Chairman, Joint Chiefs of Staff",
+        "as_of": "2025-09-01T00:00:00Z",
+        "confidence": "high",
+        "source_ids": ["src_kor_jcs_2025_07_29"]
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "contradiction_kor_taiwan_alliance_scope",
+        "topic": "Whether a Taiwan contingency creates a Korean obligation to use force",
+        "status": "open_scenario_interpretation",
+        "resolution_rule": "Treat the alliance and combined command as consultation and capability structures. Require independent Korean authority and a scenario specific decision before participation."
+      },
+      {
+        "contradiction_id": "contradiction_kor_formal_office_vs_influence",
+        "topic": "Formal office versus practical influence",
+        "status": "unresolved",
+        "resolution_rule": "Office proves authority position only. Do not initialize loyalty, coalition control, or successor probability from title."
+      }
+    ]
+  },
+  "politics": {
+    "roster_rule": "Include the formal authority chain, constitutional successor, major governing and opposition leaders, alliance command interfaces, and plausible nationally visible electoral alternatives. Do not infer practical influence from office.",
+    "government": {
+      "system": "unitary_presidential_constitutional_republic",
+      "executive_authority_institution_id": "institution_kor_president",
+      "legislature_institution_id": "institution_kor_national_assembly",
+      "cabinet_institution_id": "institution_kor_state_council"
+    },
+    "institutions": [
+      {"institution_id":"institution_kor_president","name":"President","institution_type":"executive","source_ids":["src_kor_constitution"]},
+      {"institution_id":"institution_kor_prime_minister","name":"Prime Minister","institution_type":"executive_successor","source_ids":["src_kor_constitution"]},
+      {"institution_id":"institution_kor_state_council","name":"State Council","institution_type":"cabinet","source_ids":["src_kor_constitution"]},
+      {"institution_id":"institution_kor_national_assembly","name":"National Assembly","institution_type":"legislature","source_ids":["src_kor_constitution"]},
+      {"institution_id":"institution_kor_national_security_office","name":"National Security Office","institution_type":"executive_staff","source_ids":["src_kor_presidential_briefing_2025_07_25"]},
+      {"institution_id":"institution_kor_foreign_ministry","name":"Ministry of Foreign Affairs","institution_type":"ministry","source_ids":["src_kor_minister_nominations_2025_06_23"]},
+      {"institution_id":"institution_kor_defense_ministry","name":"Ministry of National Defense","institution_type":"ministry","source_ids":["src_kor_minister_nominations_2025_06_23"]},
+      {"institution_id":"institution_kor_joint_chiefs","name":"Joint Chiefs of Staff","institution_type":"military_command","source_ids":["src_kor_jcs_2025_07_29"]},
+      {"institution_id":"institution_kor_finance_ministry","name":"Ministry of Economy and Finance","institution_type":"ministry","source_ids":["src_kor_presidential_briefing_2025_07_25"]},
+      {"institution_id":"institution_kor_industry_ministry","name":"Ministry of Trade, Industry and Energy","institution_type":"ministry","source_ids":["src_kor_presidential_briefing_2025_07_25"]},
+      {"institution_id":"institution_kor_unification_ministry","name":"Ministry of Unification","institution_type":"ministry","source_ids":["src_kor_minister_nominations_2025_06_23"]},
+      {"institution_id":"institution_kor_democratic_party","name":"Democratic Party of Korea","institution_type":"political_party","source_ids":["src_kor_party_schedule_2025_08_03"]},
+      {"institution_id":"institution_kor_people_power_party","name":"People Power Party","institution_type":"political_party","source_ids":["src_kor_ppp_leader_2025_08_26"]},
+      {"institution_id":"institution_kor_reform_party","name":"Reform Party","institution_type":"political_party","source_ids":["src_kor_nec_candidates_2025"]},
+      {"institution_id":"institution_kor_us_combined_forces_command","name":"ROK US Combined Forces Command","institution_type":"binational_operational_command","source_ids":["src_kor_cfc_overview","src_kor_opcon_transition"]},
+      {"institution_id":"institution_kor_usa_nuclear_consultative_group","name":"ROK US Nuclear Consultative Group","institution_type":"bilateral_consultation_forum","source_ids":["src_kor_ncg_fact_sheet"]}
+    ],
+    "actors": [
+      {"actor_id":"actor_kor_lee_jae_myung","name":"Lee Jae Myung","role":"President","institution_ids":["institution_kor_president"],"source_ids":["src_kor_presidential_briefing_2025_06_12"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_kim_min_seok","name":"Kim Min seok","role":"Prime Minister","institution_ids":["institution_kor_prime_minister","institution_kor_state_council"],"source_ids":["src_kor_pm_appointment_2025_07_03"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_kang_hoon_sik","name":"Kang Hoon sik","role":"Presidential Chief of Staff","institution_ids":["institution_kor_national_security_office"],"source_ids":["src_kor_presidential_briefing_2025_07_25"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_wi_sung_lac","name":"Wi Sung lac","role":"National Security Adviser","institution_ids":["institution_kor_national_security_office"],"source_ids":["src_kor_presidential_briefing_2025_07_25"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_cho_hyun","name":"Cho Hyun","role":"Minister of Foreign Affairs","institution_ids":["institution_kor_foreign_ministry","institution_kor_state_council"],"source_ids":["src_kor_minister_nominations_2025_06_23"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_ahn_gyu_back","name":"Ahn Gyu back","role":"Minister of National Defense","institution_ids":["institution_kor_defense_ministry","institution_kor_state_council"],"source_ids":["src_kor_minister_nominations_2025_06_23"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_koo_yun_cheol","name":"Koo Yun cheol","role":"Minister of Economy and Finance","institution_ids":["institution_kor_finance_ministry","institution_kor_state_council"],"source_ids":["src_kor_presidential_briefing_2025_07_25"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_kim_jung_kwan","name":"Kim Jung kwan","role":"Minister of Trade, Industry and Energy","institution_ids":["institution_kor_industry_ministry","institution_kor_state_council"],"source_ids":["src_kor_presidential_briefing_2025_07_25"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_chung_dong_young","name":"Chung Dong young","role":"Minister of Unification","institution_ids":["institution_kor_unification_ministry","institution_kor_state_council"],"source_ids":["src_kor_minister_nominations_2025_06_23"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_woo_won_shik","name":"Woo Won shik","role":"National Assembly Speaker","institution_ids":["institution_kor_national_assembly"],"source_ids":["src_kor_presidential_briefing_2025_06_12"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_kim_myung_soo","name":"Kim Myung soo","role":"Chairman, Joint Chiefs of Staff","institution_ids":["institution_kor_joint_chiefs"],"source_ids":["src_kor_jcs_2025_07_29"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_jeong_cheong_rae","name":"Jeong Cheong rae","role":"Democratic Party leader","institution_ids":["institution_kor_democratic_party"],"source_ids":["src_kor_party_schedule_2025_08_03"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_kim_byung_kee","name":"Kim Byung kee","role":"Democratic Party floor leader","institution_ids":["institution_kor_democratic_party","institution_kor_national_assembly"],"source_ids":["src_kor_party_schedule_2025_08_03"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_jang_dong_hyeok","name":"Jang Dong hyeok","role":"People Power Party leader","institution_ids":["institution_kor_people_power_party"],"source_ids":["src_kor_ppp_leader_2025_08_26"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_kim_moon_soo","name":"Kim Moon soo","role":"2025 presidential runner up","institution_ids":["institution_kor_people_power_party"],"source_ids":["src_kor_nec_candidates_2025"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_lee_jun_seok","name":"Lee Jun seok","role":"Reform Party leader and 2025 presidential candidate","institution_ids":["institution_kor_reform_party"],"source_ids":["src_kor_nec_candidates_2025"],"practical_influence":"unknown"},
+      {"actor_id":"actor_kor_kwon_young_guk","name":"Kwon Young guk","role":"2025 presidential candidate","institution_ids":[],"source_ids":["src_kor_nec_candidates_2025"],"practical_influence":"unknown"}
+    ],
+    "succession": {
+      "trigger": "presidential_vacancy_or_inability",
+      "first_successor_actor_id": "actor_kor_kim_min_seok",
+      "remaining_order": "Members of the State Council in the order prescribed by Act",
+      "source_ids": ["src_kor_constitution"]
+    },
+    "unresolved_questions": [
+      "Practical influence, faction loyalty, coalition cohesion, and successor probability are not established by formal office.",
+      "The complete statutory order after the Prime Minister is not initialized by this packet.",
+      "The political cost of participation in a Taiwan contingency requires polling and game design research."
+    ],
+    "source_ids": ["src_kor_constitution","src_kor_presidential_briefing_2025_06_12","src_kor_presidential_briefing_2025_07_25","src_kor_nec_candidates_2025","src_kor_pm_appointment_2025_07_03","src_kor_minister_nominations_2025_06_23","src_kor_party_schedule_2025_08_03","src_kor_ppp_leader_2025_08_26","src_kor_jcs_2025_07_29"]
+  },
+  "workflow": {
+    "routes": [
+      {"route_id":"route_kor_defensive_force_action","name":"Defensive force action","required_gate_ids":["gate_kor_defense_legal_trigger","gate_kor_presidential_command","gate_kor_state_council_major_military_deliberation","gate_kor_jcs_tasking"],"result":"bounded_defensive_force_authority"},
+      {"route_id":"route_kor_declaration_of_war","name":"Declaration of war","required_gate_ids":["gate_kor_state_council_war_deliberation","gate_kor_national_assembly_war_consent","gate_kor_presidential_war_declaration"],"result":"formal_war_authority"},
+      {"route_id":"route_kor_external_force_dispatch","name":"Dispatch armed forces abroad","required_gate_ids":["gate_kor_state_council_major_military_deliberation","gate_kor_national_assembly_external_dispatch_consent","gate_kor_presidential_command","gate_kor_jcs_tasking"],"result":"bounded_external_dispatch_authority"},
+      {"route_id":"route_kor_alliance_consultation","name":"Alliance consultation","required_gate_ids":["gate_kor_alliance_consultation"],"result":"consultation_state_only"},
+      {"route_id":"route_kor_cfc_peninsula_defense","name":"Combined command peninsula defense tasking","required_gate_ids":["gate_kor_national_authority_exists","gate_kor_cfc_tasking"],"result":"operational_tasking_within_existing_authority"},
+      {"route_id":"route_kor_ncg_consultation","name":"Nuclear consultation","required_gate_ids":["gate_kor_ncg_consultation"],"result":"consultation_state_only"},
+      {"route_id":"route_kor_martial_law","name":"Martial law","required_gate_ids":["gate_kor_martial_law_factual_trigger","gate_kor_state_council_martial_law_deliberation","gate_kor_presidential_martial_law_proclamation","gate_kor_assembly_notification"],"result":"martial_law_subject_to_assembly_reversal"},
+      {"route_id":"route_kor_taiwan_support","name":"Support to a Taiwan contingency","required_gate_ids":["gate_kor_alliance_consultation","gate_kor_taiwan_policy_choice","gate_kor_peninsula_readiness_constraint","gate_kor_national_authority_exists"],"result":"support_option_may_be_considered_not_automatic"}
+    ],
+    "gates": [
+      {"gate_id":"gate_kor_defense_legal_trigger","gate_type":"scenario_fact","required_institution_ids":["institution_kor_president","institution_kor_defense_ministry"],"completion_evidence":"A constitutional and statutory defense basis is established for the actual facts."},
+      {"gate_id":"gate_kor_presidential_command","gate_type":"executive_command","required_institution_ids":["institution_kor_president"],"completion_evidence":"The President directs force employment within existing law."},
+      {"gate_id":"gate_kor_state_council_major_military_deliberation","gate_type":"cabinet_deliberation","required_institution_ids":["institution_kor_state_council"],"completion_evidence":"The State Council deliberates the major military matter."},
+      {"gate_id":"gate_kor_jcs_tasking","gate_type":"operational_tasking","required_institution_ids":["institution_kor_joint_chiefs"],"completion_evidence":"The Joint Chiefs task conserved forces within existing authority."},
+      {"gate_id":"gate_kor_state_council_war_deliberation","gate_type":"cabinet_deliberation","required_institution_ids":["institution_kor_state_council"],"completion_evidence":"The State Council deliberates declaration of war."},
+      {"gate_id":"gate_kor_national_assembly_war_consent","gate_type":"legislative_consent","required_institution_ids":["institution_kor_national_assembly"],"completion_evidence":"The National Assembly consents to declaration of war."},
+      {"gate_id":"gate_kor_presidential_war_declaration","gate_type":"executive_declaration","required_institution_ids":["institution_kor_president"],"completion_evidence":"The President declares war after required deliberation and consent."},
+      {"gate_id":"gate_kor_national_assembly_external_dispatch_consent","gate_type":"legislative_consent","required_institution_ids":["institution_kor_national_assembly"],"completion_evidence":"The National Assembly consents to dispatch armed forces abroad."},
+      {"gate_id":"gate_kor_alliance_consultation","gate_type":"alliance_consultation","required_institution_ids":["institution_kor_president","institution_kor_foreign_ministry","institution_kor_defense_ministry"],"completion_evidence":"The governments consult; consultation creates no force authority."},
+      {"gate_id":"gate_kor_national_authority_exists","gate_type":"authority_reference","required_institution_ids":["institution_kor_president","institution_kor_defense_ministry"],"completion_evidence":"A separate domestic route has already created bounded authority."},
+      {"gate_id":"gate_kor_cfc_tasking","gate_type":"combined_command_tasking","required_institution_ids":["institution_kor_us_combined_forces_command"],"completion_evidence":"CFC tasks forces within its mission and existing national authority."},
+      {"gate_id":"gate_kor_ncg_consultation","gate_type":"nuclear_consultation","required_institution_ids":["institution_kor_usa_nuclear_consultative_group"],"completion_evidence":"The NCG consults; the forum does not autonomously authorize nuclear use."},
+      {"gate_id":"gate_kor_martial_law_factual_trigger","gate_type":"scenario_fact","required_institution_ids":["institution_kor_president"],"completion_evidence":"War, armed conflict, or comparable national emergency facts meet the constitutional threshold."},
+      {"gate_id":"gate_kor_state_council_martial_law_deliberation","gate_type":"cabinet_deliberation","required_institution_ids":["institution_kor_state_council"],"completion_evidence":"The State Council deliberates martial law."},
+      {"gate_id":"gate_kor_presidential_martial_law_proclamation","gate_type":"executive_proclamation","required_institution_ids":["institution_kor_president"],"completion_evidence":"The President proclaims martial law and states the reason, type, scope, and commander."},
+      {"gate_id":"gate_kor_assembly_notification","gate_type":"legislative_notification_and_reversal","required_institution_ids":["institution_kor_national_assembly"],"completion_evidence":"The Assembly is notified and retains its constitutional power to require lifting."},
+      {"gate_id":"gate_kor_taiwan_policy_choice","gate_type":"independent_policy_choice","required_institution_ids":["institution_kor_president","institution_kor_state_council"],"completion_evidence":"Korean leadership chooses a specific support posture rather than inheriting one automatically."},
+      {"gate_id":"gate_kor_peninsula_readiness_constraint","gate_type":"resource_and_risk_constraint","required_institution_ids":["institution_kor_defense_ministry","institution_kor_joint_chiefs"],"completion_evidence":"The plan evaluates deterrence and readiness consequences on the Korean Peninsula before diversion."}
+    ],
+    "taiwan_contingency_guard": {
+      "attack_on_taiwan_auto_activates_authority": false,
+      "alliance_auto_activates_kinetic_participation": false,
+      "required_next_step": "Open alliance consultation, evaluate Korean domestic authority, peninsula readiness, National Assembly consent where required, access, domestic support, and the chosen support posture separately."
+    },
+    "acceptance_rules": {
+      "generic_declare_war_button_allowed": false,
+      "treaty_equals_automatic_intervention": false,
+      "consultation_equals_force_authority": false,
+      "combined_command_tasking_equals_policy_choice": false,
+      "operational_tasking_creates_political_authority": false,
+      "allied_support_equals_kinetic_participation": false,
+      "force_execution_requires_conserved_inventory": true
+    },
+    "unresolved_interpretations": [
+      {"question_id":"unknown_kor_defensive_action_statutory_path","question":"Which statutory route applies to each defensive action below a formal declaration of war?","status":"additional_legal_research_required","source_ids":["src_kor_constitution"]},
+      {"question_id":"unknown_kor_taiwan_support_threshold","question":"Which contingency facts and political choices would justify each support level?","status":"scenario_dependent_not_predetermined","source_ids":["src_kor_mutual_defense_treaty_overview"]},
+      {"question_id":"unknown_kor_peninsula_diversion_cost","question":"How should North Korean risk constrain force diversion without hard coding paralysis?","status":"game_design_and_force_research_required","source_ids":[]}
+    ],
+    "source_ids": ["src_kor_constitution","src_kor_mutual_defense_treaty_overview","src_kor_cfc_overview","src_kor_opcon_transition","src_kor_ncg_fact_sheet"]
+  },
+  "bookmark": {
+    "government": {
+      "dataset_path": "politics_and_institutions.json",
+      "head_of_state_actor_id": "actor_kor_lee_jae_myung",
+      "head_of_government_actor_id": "actor_kor_lee_jae_myung",
+      "first_constitutional_successor_actor_id": "actor_kor_kim_min_seok",
+      "opening_summary": "President Lee Jae Myung leads a presidential constitutional system. The President, State Council, National Assembly, defense institutions, and alliance commands are represented as distinct decision and execution institutions.",
+      "authority_model": "Use war_authority_workflow.json. Domestic authority, legislative consent, alliance consultation, combined command tasking, and peninsula readiness are separate.",
+      "status": "needs_review"
+    },
+    "alliances": ["alliance_kor_usa_mutual_defense_treaty"],
+    "sanctions": [],
+    "active_crises": ["crisis_korean_peninsula_armistice"],
+    "unresolved_assumptions": [
+      "An attack on Taiwan does not automatically activate Korean force employment or the ROK US alliance.",
+      "Combined Forces Command tasking cannot create Korean political authority or inventory.",
+      "Nuclear Consultative Group participation is consultation, not autonomous nuclear authority.",
+      "Formal office supports roster inclusion but does not establish practical influence, loyalty, coalition behavior, or successor probability.",
+      "Force inventory, readiness, location, basing, logistics, and deployment remain unknown and nonexecutable."
+    ]
+  },
+  "profile_unknowns": [
+    "Economy beyond the frozen GDP roster remains unknown in this packet.",
+    "Military organization, inventory, readiness, basing, maintenance, and deployments remain unknown and nonexecutable.",
+    "Province, terrain, infrastructure, industry, energy, logistics, and communications state remain unknown.",
+    "Practical political influence and crisis participation probabilities are not inferred from office or alliance membership.",
+    "A zero record count means no accepted corpus records and never asserts zero real world entities or capacity."
+  ],
+  "lane_updates": {
+    "politics_and_institutions": {
+      "record_count": 33,
+      "source_ids": ["src_kor_constitution","src_kor_presidential_briefing_2025_06_12","src_kor_presidential_briefing_2025_07_25","src_kor_nec_candidates_2025","src_kor_pm_appointment_2025_07_03","src_kor_minister_nominations_2025_06_23","src_kor_party_schedule_2025_08_03","src_kor_ppp_leader_2025_08_26","src_kor_jcs_2025_07_29"],
+      "claim_ids": ["claim_kor_assembly_war_consent","claim_kor_president_declares_war","claim_kor_president_commander_in_chief","claim_kor_state_council_war_deliberation","claim_kor_prime_minister_successor","claim_kor_assembly_martial_law_reversal","claim_kor_lee_president","claim_kor_woo_speaker","claim_kor_kim_pm","claim_kor_wi_security_adviser","claim_kor_ahn_defense_minister","claim_kor_jeong_party_leader","claim_kor_jang_party_leader","claim_kor_jcs_chairman"],
+      "contradiction_ids": ["contradiction_kor_formal_office_vs_influence"],
+      "coverage_disposition": "opening_authority_succession_and_actor_roster_collected_needs_independent_review",
+      "notes": "Seventeen actors, sixteen institutions, constitutional succession, war authority, and legislative reversal powers are collected. Practical influence remains unknown."
+    },
+    "crises_alliances_sanctions_deployments": {
+      "record_count": 12,
+      "source_ids": ["src_kor_constitution","src_kor_mutual_defense_treaty_overview","src_kor_cfc_overview","src_kor_opcon_transition","src_kor_ncg_fact_sheet"],
+      "claim_ids": ["claim_kor_alliance_joint_response","claim_kor_cfc_peninsula_defense_mission","claim_kor_opcon_transition_conditions_based","claim_kor_ncg_consultative"],
+      "contradiction_ids": ["contradiction_kor_taiwan_alliance_scope"],
+      "coverage_disposition": "alliance_combined_command_and_taiwan_refusal_rules_collected_needs_independent_review",
+      "notes": "Alliance consultation, combined command tasking, nuclear consultation, external dispatch, and Taiwan participation are separated. No force disposition is implied."
+    }
+  }
+}

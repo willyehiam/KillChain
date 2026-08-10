@@ -42,12 +42,17 @@ for (const country of wave.countries) {
   const manifest = readJson(path.join(countryDirectory, "research_manifest.json"));
   const matrix = readJson(path.join(countryDirectory, "lane_coverage.json"));
   const workPackages = fs.readFileSync(path.join(countryDirectory, "WORK_PACKAGES.md"), "utf8");
+  const authorityPacketPath = path.join(countryDirectory, "authority_packet.source.json");
+  const sharedAuthorityPacket = fs.existsSync(authorityPacketPath) ? readJson(authorityPacketPath) : null;
   validatedCountries += 1;
 
   assert(Boolean(registryCountry), `${label}: missing registry entry`);
   assert(registryCountry?.depth_tier === "B", `${label}: registry depth tier must be B`);
-  const promotedJapan = code === "JPN";
-  assert(profile.coverage_status === (promotedJapan ? "collecting" : "shell"), `${label}: profile coverage status mismatch`);
+  const promotedCountry = code === "JPN" || Boolean(sharedAuthorityPacket);
+  const promotedLaneIds = sharedAuthorityPacket
+    ? Object.keys(sharedAuthorityPacket.lane_updates)
+    : (code === "JPN" ? ["politics_and_institutions", "crises_alliances_sanctions_deployments"] : []);
+  assert(profile.coverage_status === (promotedCountry ? "collecting" : "shell"), `${label}: profile coverage status mismatch`);
   assert(profile.dataset_paths?.force_ledger === null, `${label}: profile must not link a force ledger`);
   assert(profile.completeness?.force_ledger_status === "absent", `${label}: force ledger status must remain absent`);
 
@@ -55,30 +60,30 @@ for (const country of wave.countries) {
   assert(manifest.country_code === code, `${label}: manifest country code mismatch`);
   assert(manifest.bookmark_id === wave.bookmark_id, `${label}: manifest bookmark mismatch`);
   assert(manifest.as_of === wave.as_of, `${label}: manifest time mismatch`);
-  assert(manifest.status === (promotedJapan ? "collecting" : "shell"), `${label}: manifest status mismatch`);
+  assert(manifest.status === (promotedCountry ? "collecting" : "shell"), `${label}: manifest status mismatch`);
   assert(manifest.research_wave === wave.wave_id, `${label}: manifest wave mismatch`);
   assert(sameMembers(manifest.lane_ids ?? [], requiredLaneIds), `${label}: manifest lane set mismatch`);
-  assert(manifest.accepted_source_count === (promotedJapan ? 11 : 0), `${label}: accepted source count mismatch`);
-  assert(manifest.accepted_claim_count === (promotedJapan ? 36 : 0), `${label}: accepted claim count mismatch`);
-  assert(manifest.open_contradiction_count === (promotedJapan ? 1 : 0), `${label}: contradiction count mismatch`);
-  assert(manifest.files?.evidence_registry === (promotedJapan ? "evidence_registry.json" : null), `${label}: evidence registry link mismatch`);
-  assert(manifest.files?.bookmark_state === (promotedJapan ? "bookmark_state.json" : null), `${label}: bookmark state link mismatch`);
+  assert(promotedCountry ? manifest.accepted_source_count > 0 : manifest.accepted_source_count === 0, `${label}: accepted source count mismatch`);
+  assert(promotedCountry ? manifest.accepted_claim_count > 0 : manifest.accepted_claim_count === 0, `${label}: accepted claim count mismatch`);
+  assert(promotedCountry ? manifest.open_contradiction_count >= 1 : manifest.open_contradiction_count === 0, `${label}: contradiction count mismatch`);
+  assert(manifest.files?.evidence_registry === (promotedCountry ? "evidence_registry.json" : null), `${label}: evidence registry link mismatch`);
+  assert(manifest.files?.bookmark_state === (promotedCountry ? "bookmark_state.json" : null), `${label}: bookmark state link mismatch`);
   assert(manifest.files?.force_ledger === null, `${label}: empty force ledger must not be implied`);
   assert(Object.values(manifest.acceptance ?? {}).every((value) => value === false), `${label}: no acceptance gate may pass before collection`);
   assert(manifest.unknowns?.some((entry) => entry.includes("never asserts real world absence")), `${label}: zero semantics are not explicit`);
 
   assert(matrix.country_id === registryCountry?.country_id, `${label}: lane matrix country identity mismatch`);
-  assert(matrix.overall_status === (promotedJapan ? "collecting" : "shell"), `${label}: lane matrix status mismatch`);
+  assert(matrix.overall_status === (promotedCountry ? "collecting" : "shell"), `${label}: lane matrix status mismatch`);
   assert(matrix.research_wave === wave.wave_id, `${label}: lane matrix wave mismatch`);
   assert(sameMembers(Object.keys(matrix.lanes ?? {}), requiredLaneIds), `${label}: lane matrix set mismatch`);
   assert(matrix.rollup?.lanes_total === 8, `${label}: lane rollup total mismatch`);
-  assert(matrix.rollup?.shell === (promotedJapan ? 6 : 8), `${label}: shell lane rollup mismatch`);
-  assert(matrix.rollup?.needs_review === (promotedJapan ? 2 : 0), `${label}: review lane rollup mismatch`);
+  assert(matrix.rollup?.shell === 8 - promotedLaneIds.length, `${label}: shell lane rollup mismatch`);
+  assert(matrix.rollup?.needs_review === promotedLaneIds.length, `${label}: review lane rollup mismatch`);
   assert(["collecting", "verified", "stale", "deprecated"].every((key) => matrix.rollup?.[key] === 0), `${label}: unexpected lane rollup count`);
 
   for (const laneId of requiredLaneIds) {
     const lane = matrix.lanes[laneId];
-    const promotedLane = promotedJapan && ["politics_and_institutions", "crises_alliances_sanctions_deployments"].includes(laneId);
+    const promotedLane = promotedLaneIds.includes(laneId);
     assert(lane.status === (promotedLane ? "needs_review" : "shell"), `${label}: ${laneId} status mismatch`);
     for (const countName of ["record_count", "source_count", "claim_count", "contradiction_count", "exact_geometry_count", "approximate_geometry_count", "unknown_geometry_count"]) {
       if (!promotedLane || countName.includes("geometry")) assert(lane[countName] === 0, `${label}: ${laneId}.${countName} must be zero corpus records`);

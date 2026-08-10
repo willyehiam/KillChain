@@ -1,0 +1,381 @@
+{
+  "schema_version": "0.3.0",
+  "dataset_id": "politics_and_institutions_kor_2025_09_01",
+  "country_id": "country_kor",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "needs_review",
+  "roster_rule": "Include the formal authority chain, constitutional successor, major governing and opposition leaders, alliance command interfaces, and plausible nationally visible electoral alternatives. Do not infer practical influence from office.",
+  "government": {
+    "system": "unitary_presidential_constitutional_republic",
+    "executive_authority_institution_id": "institution_kor_president",
+    "legislature_institution_id": "institution_kor_national_assembly",
+    "cabinet_institution_id": "institution_kor_state_council"
+  },
+  "institutions": [
+    {
+      "institution_id": "institution_kor_president",
+      "name": "President",
+      "institution_type": "executive",
+      "source_ids": [
+        "src_kor_constitution"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_prime_minister",
+      "name": "Prime Minister",
+      "institution_type": "executive_successor",
+      "source_ids": [
+        "src_kor_constitution"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_state_council",
+      "name": "State Council",
+      "institution_type": "cabinet",
+      "source_ids": [
+        "src_kor_constitution"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_national_assembly",
+      "name": "National Assembly",
+      "institution_type": "legislature",
+      "source_ids": [
+        "src_kor_constitution"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_national_security_office",
+      "name": "National Security Office",
+      "institution_type": "executive_staff",
+      "source_ids": [
+        "src_kor_presidential_briefing_2025_07_25"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_foreign_ministry",
+      "name": "Ministry of Foreign Affairs",
+      "institution_type": "ministry",
+      "source_ids": [
+        "src_kor_minister_nominations_2025_06_23"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_defense_ministry",
+      "name": "Ministry of National Defense",
+      "institution_type": "ministry",
+      "source_ids": [
+        "src_kor_minister_nominations_2025_06_23"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_joint_chiefs",
+      "name": "Joint Chiefs of Staff",
+      "institution_type": "military_command",
+      "source_ids": [
+        "src_kor_jcs_2025_07_29"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_finance_ministry",
+      "name": "Ministry of Economy and Finance",
+      "institution_type": "ministry",
+      "source_ids": [
+        "src_kor_presidential_briefing_2025_07_25"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_industry_ministry",
+      "name": "Ministry of Trade, Industry and Energy",
+      "institution_type": "ministry",
+      "source_ids": [
+        "src_kor_presidential_briefing_2025_07_25"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_unification_ministry",
+      "name": "Ministry of Unification",
+      "institution_type": "ministry",
+      "source_ids": [
+        "src_kor_minister_nominations_2025_06_23"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_democratic_party",
+      "name": "Democratic Party of Korea",
+      "institution_type": "political_party",
+      "source_ids": [
+        "src_kor_party_schedule_2025_08_03"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_people_power_party",
+      "name": "People Power Party",
+      "institution_type": "political_party",
+      "source_ids": [
+        "src_kor_ppp_leader_2025_08_26"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_reform_party",
+      "name": "Reform Party",
+      "institution_type": "political_party",
+      "source_ids": [
+        "src_kor_nec_candidates_2025"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_us_combined_forces_command",
+      "name": "ROK US Combined Forces Command",
+      "institution_type": "binational_operational_command",
+      "source_ids": [
+        "src_kor_cfc_overview",
+        "src_kor_opcon_transition"
+      ]
+    },
+    {
+      "institution_id": "institution_kor_usa_nuclear_consultative_group",
+      "name": "ROK US Nuclear Consultative Group",
+      "institution_type": "bilateral_consultation_forum",
+      "source_ids": [
+        "src_kor_ncg_fact_sheet"
+      ]
+    }
+  ],
+  "actors": [
+    {
+      "actor_id": "actor_kor_lee_jae_myung",
+      "name": "Lee Jae Myung",
+      "role": "President",
+      "institution_ids": [
+        "institution_kor_president"
+      ],
+      "source_ids": [
+        "src_kor_presidential_briefing_2025_06_12"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_kim_min_seok",
+      "name": "Kim Min seok",
+      "role": "Prime Minister",
+      "institution_ids": [
+        "institution_kor_prime_minister",
+        "institution_kor_state_council"
+      ],
+      "source_ids": [
+        "src_kor_pm_appointment_2025_07_03"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_kang_hoon_sik",
+      "name": "Kang Hoon sik",
+      "role": "Presidential Chief of Staff",
+      "institution_ids": [
+        "institution_kor_national_security_office"
+      ],
+      "source_ids": [
+        "src_kor_presidential_briefing_2025_07_25"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_wi_sung_lac",
+      "name": "Wi Sung lac",
+      "role": "National Security Adviser",
+      "institution_ids": [
+        "institution_kor_national_security_office"
+      ],
+      "source_ids": [
+        "src_kor_presidential_briefing_2025_07_25"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_cho_hyun",
+      "name": "Cho Hyun",
+      "role": "Minister of Foreign Affairs",
+      "institution_ids": [
+        "institution_kor_foreign_ministry",
+        "institution_kor_state_council"
+      ],
+      "source_ids": [
+        "src_kor_minister_nominations_2025_06_23"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_ahn_gyu_back",
+      "name": "Ahn Gyu back",
+      "role": "Minister of National Defense",
+      "institution_ids": [
+        "institution_kor_defense_ministry",
+        "institution_kor_state_council"
+      ],
+      "source_ids": [
+        "src_kor_minister_nominations_2025_06_23"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_koo_yun_cheol",
+      "name": "Koo Yun cheol",
+      "role": "Minister of Economy and Finance",
+      "institution_ids": [
+        "institution_kor_finance_ministry",
+        "institution_kor_state_council"
+      ],
+      "source_ids": [
+        "src_kor_presidential_briefing_2025_07_25"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_kim_jung_kwan",
+      "name": "Kim Jung kwan",
+      "role": "Minister of Trade, Industry and Energy",
+      "institution_ids": [
+        "institution_kor_industry_ministry",
+        "institution_kor_state_council"
+      ],
+      "source_ids": [
+        "src_kor_presidential_briefing_2025_07_25"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_chung_dong_young",
+      "name": "Chung Dong young",
+      "role": "Minister of Unification",
+      "institution_ids": [
+        "institution_kor_unification_ministry",
+        "institution_kor_state_council"
+      ],
+      "source_ids": [
+        "src_kor_minister_nominations_2025_06_23"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_woo_won_shik",
+      "name": "Woo Won shik",
+      "role": "National Assembly Speaker",
+      "institution_ids": [
+        "institution_kor_national_assembly"
+      ],
+      "source_ids": [
+        "src_kor_presidential_briefing_2025_06_12"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_kim_myung_soo",
+      "name": "Kim Myung soo",
+      "role": "Chairman, Joint Chiefs of Staff",
+      "institution_ids": [
+        "institution_kor_joint_chiefs"
+      ],
+      "source_ids": [
+        "src_kor_jcs_2025_07_29"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_jeong_cheong_rae",
+      "name": "Jeong Cheong rae",
+      "role": "Democratic Party leader",
+      "institution_ids": [
+        "institution_kor_democratic_party"
+      ],
+      "source_ids": [
+        "src_kor_party_schedule_2025_08_03"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_kim_byung_kee",
+      "name": "Kim Byung kee",
+      "role": "Democratic Party floor leader",
+      "institution_ids": [
+        "institution_kor_democratic_party",
+        "institution_kor_national_assembly"
+      ],
+      "source_ids": [
+        "src_kor_party_schedule_2025_08_03"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_jang_dong_hyeok",
+      "name": "Jang Dong hyeok",
+      "role": "People Power Party leader",
+      "institution_ids": [
+        "institution_kor_people_power_party"
+      ],
+      "source_ids": [
+        "src_kor_ppp_leader_2025_08_26"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_kim_moon_soo",
+      "name": "Kim Moon soo",
+      "role": "2025 presidential runner up",
+      "institution_ids": [
+        "institution_kor_people_power_party"
+      ],
+      "source_ids": [
+        "src_kor_nec_candidates_2025"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_lee_jun_seok",
+      "name": "Lee Jun seok",
+      "role": "Reform Party leader and 2025 presidential candidate",
+      "institution_ids": [
+        "institution_kor_reform_party"
+      ],
+      "source_ids": [
+        "src_kor_nec_candidates_2025"
+      ],
+      "practical_influence": "unknown"
+    },
+    {
+      "actor_id": "actor_kor_kwon_young_guk",
+      "name": "Kwon Young guk",
+      "role": "2025 presidential candidate",
+      "institution_ids": [],
+      "source_ids": [
+        "src_kor_nec_candidates_2025"
+      ],
+      "practical_influence": "unknown"
+    }
+  ],
+  "succession": {
+    "trigger": "presidential_vacancy_or_inability",
+    "first_successor_actor_id": "actor_kor_kim_min_seok",
+    "remaining_order": "Members of the State Council in the order prescribed by Act",
+    "source_ids": [
+      "src_kor_constitution"
+    ]
+  },
+  "unresolved_questions": [
+    "Practical influence, faction loyalty, coalition cohesion, and successor probability are not established by formal office.",
+    "The complete statutory order after the Prime Minister is not initialized by this packet.",
+    "The political cost of participation in a Taiwan contingency requires polling and game design research."
+  ],
+  "source_ids": [
+    "src_kor_constitution",
+    "src_kor_presidential_briefing_2025_06_12",
+    "src_kor_presidential_briefing_2025_07_25",
+    "src_kor_nec_candidates_2025",
+    "src_kor_pm_appointment_2025_07_03",
+    "src_kor_minister_nominations_2025_06_23",
+    "src_kor_party_schedule_2025_08_03",
+    "src_kor_ppp_leader_2025_08_26",
+    "src_kor_jcs_2025_07_29"
+  ]
+}

@@ -13,7 +13,7 @@ Stage: research. Simulation engine implementation, final visual design, and prod
 3. 3 national force ledgers exist, and 0 are simulation ready.
 4. 1 of 9 fully modeled theater directories contain substantive machine readable work.
 5. 0 of 9 secondary crises and 0 of 8 political event chains contain substantive work.
-6. The corpus validator passes 224 files, 1693 parsed records, and 11083 objects with 0 errors and 0 warnings.
+6. The corpus validator passes 229 files, 1698 parsed records, and 11327 objects with 13 errors and 0 warnings.
 
 ## Country status
 
@@ -22,15 +22,16 @@ Stage: research. Simulation engine implementation, final visual design, and prod
 | USA | United States | A | collecting | 21 | collecting | 3 |
 | CHN | China | A | collecting | 24 | collecting | 3 |
 | JPN | Japan | B | collecting | 20 | absent | 3 |
+| KOR | South Korea | B | collecting | 0 | absent | 3 |
 | TWN | Taiwan | A | collecting | 20 | collecting | 5 |
 
 All other country profiles remain structural shells. A shell count is corpus completeness, never a claim of real world absence.
 
 ## Lane coverage
 
-1. Shell lanes: 638.
+1. Shell lanes: 636.
 2. Collecting lanes: 85.
-3. Lanes needing review: 5.
+3. Lanes needing review: 7.
 4. Verified lanes: 0.
 5. Stale lanes: 0.
 6. Deprecated lanes: 0.

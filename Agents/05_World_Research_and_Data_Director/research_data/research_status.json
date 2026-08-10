@@ -5,17 +5,17 @@
   "bookmark_id": "bookmark_global_fracture_2025_09_01",
   "stage": "research",
   "corpus_validation": {
-    "status": "PASS",
+    "status": "FAIL",
     "counts": {
-      "files": 224,
-      "parsed_records": 1693,
-      "objects": 11083,
-      "sources": 207,
-      "primary_ids": 1265,
-      "source_references": 3064,
+      "files": 229,
+      "parsed_records": 1698,
+      "objects": 11327,
+      "sources": 220,
+      "primary_ids": 1280,
+      "source_references": 3242,
       "geometry_records": 249
     },
-    "error_count": 0,
+    "error_count": 13,
     "warning_count": 0
   },
   "countries": {
@@ -26,17 +26,17 @@
       "C": 66
     },
     "by_profile_status": {
-      "shell": 87,
-      "collecting": 4,
+      "shell": 86,
+      "collecting": 5,
       "needs_review": 0,
       "verified": 0,
       "stale": 0,
       "deprecated": 0
     },
     "lane_statuses": {
-      "shell": 638,
+      "shell": 636,
       "collecting": 85,
-      "needs_review": 5,
+      "needs_review": 7,
       "verified": 0,
       "stale": 0,
       "deprecated": 0
@@ -77,6 +77,19 @@
         "depth_tier": "B",
         "profile_status": "collecting",
         "political_actor_count": 20,
+        "force_ledger_status": "absent",
+        "non_shell_lanes": [
+          "politics_and_institutions",
+          "economy_trade_finance_resources",
+          "crises_alliances_sanctions_deployments"
+        ]
+      },
+      {
+        "country_code": "KOR",
+        "name": "South Korea",
+        "depth_tier": "B",
+        "profile_status": "collecting",
+        "political_actor_count": 0,
         "force_ledger_status": "absent",
         "non_shell_lanes": [
           "politics_and_institutions",
