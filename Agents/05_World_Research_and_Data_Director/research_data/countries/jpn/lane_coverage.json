@@ -55,26 +55,27 @@
     },
     "military_organization_inventory": {
       "name": "Military organization and inventory",
-      "status": "shell",
-      "owner": null,
-      "record_count": 0,
-      "source_count": 0,
-      "claim_count": 0,
+      "status": "collecting",
+      "owner": "agent_05_world_research_and_data_director",
+      "record_count": 54,
+      "source_count": 1,
+      "claim_count": 54,
       "contradiction_count": 0,
       "exact_geometry_count": 0,
       "approximate_geometry_count": 0,
-      "unknown_geometry_count": 0,
-      "oldest_source_date": null,
-      "newest_source_date": null,
-      "reviewed_at": null,
-      "review_after": null,
-      "coverage_disposition": "research_questions_defined_no_evidence_accepted",
+      "unknown_geometry_count": 54,
+      "oldest_source_date": "2025-03-31",
+      "newest_source_date": "2025-03-31",
+      "reviewed_at": "2026-08-21",
+      "review_after": "2026-11-21",
+      "coverage_disposition": "official_dated_inventory_claims_collected_opening_reconciliation_blocked",
       "blocking_questions": [
-        "Which national forces, commands, reserves, bases, and sustainment systems exist at the bookmark?",
-        "How can the complete national force be partitioned into conserved, mutually exclusive readiness and disposition states?",
-        "Which public sources can establish the opening state without converting missing evidence into zero?"
+        "Which receipts, retirements, losses, conversions, and transfers occurred between 31 March and 1 September 2025?",
+        "How are national totals partitioned into mutually exclusive readiness, maintenance, training, reserve, storage, and deployment states?",
+        "Which command, basing, crew, fuel, munitions, spares, and network dependencies make each capability executable?",
+        "Which individual hulls and formations must be represented because identity changes command, mission, loss, or player choice?"
       ],
-      "notes": "Planning questions exist, but no country specific evidence has been accepted. Zero counts describe corpus state only."
+      "notes": "The official 2025 defense reference contributes 54 national claims. They pass arithmetic and provenance validation but remain nonexecutable dated observations rather than opening force pools."
     },
     "fixed_facilities_basing": {
       "name": "Public fixed facilities and basing",
@@ -194,8 +195,8 @@
   },
   "rollup": {
     "lanes_total": 8,
-    "shell": 6,
-    "collecting": 0,
+    "shell": 5,
+    "collecting": 1,
     "needs_review": 2,
     "verified": 0,
     "stale": 0,
