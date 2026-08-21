@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1.0",
+  "plan_id": "capability_pool_plan_kor_2025_09_01",
+  "country_id": "country_kor",
+  "country_code": "KOR",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "status": "shell",
+  "contract_id": "country_capability_pool_contract_2025_09_01",
+  "capability_families": [
+    {"family_id":"kor_ground_maneuver","domain":"ground","decision_role":"Peninsula defense, counterattack, and mobilization","counting_boundary":"Active and reserve formations with subordinate equipment reconciled separately"},
+    {"family_id":"kor_ground_fires","domain":"ground","decision_role":"Counterfire, deep fires, and coastal defense","counting_boundary":"Firing units and launchers without duplicating munitions"},
+    {"family_id":"kor_air_combat","domain":"air","decision_role":"Air defense, counterair, strike, and escort","counting_boundary":"Airframes by operational type and mutually exclusive readiness state"},
+    {"family_id":"kor_airborne_sensing_lift_and_refueling","domain":"air","decision_role":"Warning, command, range, movement, and sustainment","counting_boundary":"Support aircraft by type and state"},
+    {"family_id":"kor_surface_combat","domain":"maritime","decision_role":"Sea control, escort, missile defense, and strike support","counting_boundary":"Commissioned combatants by hull or homogeneous class cohort"},
+    {"family_id":"kor_subsurface_combat","domain":"maritime","decision_role":"Sea denial and strategic surveillance","counting_boundary":"Commissioned submarines by hull or class cohort"},
+    {"family_id":"kor_missile_and_integrated_air_defense","domain":"joint","decision_role":"Deterrence, conventional strike, and layered defense","counting_boundary":"Firing units, sensors, and interceptor inventories separated"},
+    {"family_id":"kor_reserve_mobilization_and_industry","domain":"national_support","decision_role":"Regeneration, reinforcement, repair, and wartime endurance","counting_boundary":"Personnel cohorts and production or repair capacity as separate measures"}
+  ],
+  "blocking_dependencies": [
+    "North Korean deterrence and readiness floor before any force diversion",
+    "Republic of Korea and United States combined command relationships",
+    "Airfield, port, fuel, magazine, maintenance, and dispersal capacity",
+    "Compatible munitions, interceptors, and reload stocks",
+    "Reserve mobilization time and equipment assignment",
+    "Independent political authority for support outside peninsula defense"
+  ],
+  "acceptance": {"sources_registered":false,"counting_boundaries_reviewed":false,"pools_reconciled":false,"support_graph_reviewed":false,"independent_review_complete":false},
+  "notes": "This plan defines collection boundaries only. It contains no force quantities, locations, readiness claims, or executable assets."
+}
