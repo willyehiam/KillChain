@@ -147,10 +147,10 @@
   ],
   "reviewed_at": "2026-08-21",
   "review_after": "2026-11-21",
-  "notes": "First Japan force accounting tranche. It preserves official 31 March observations as claims while preventing them from becoming executable opening assets.",
+  "notes": "First Japan force accounting tranche. The local validation gate passes source, identifier, arithmetic, precision, temporal, and nonexecution checks. It preserves official 31 March observations as claims while preventing them from becoming executable opening assets.",
   "acceptance": {
-    "schema_valid": false,
-    "internally_consistent": false,
+    "schema_valid": true,
+    "internally_consistent": true,
     "research_complete": false,
     "decision_usable": false,
     "simulation_ready": false,
