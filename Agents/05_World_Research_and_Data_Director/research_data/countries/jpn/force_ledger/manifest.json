@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.1.0",
+  "force_ledger_id": "force_ledger_jpn_2025_09_01",
+  "country_id": "country_jpn",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "collecting",
+  "tranche_id": "jpn_official_2025_reference_claims",
+  "accounting_states": [
+    "active",
+    "committed",
+    "in_transit",
+    "training",
+    "maintenance",
+    "reserve",
+    "stored",
+    "under_construction",
+    "damaged",
+    "destroyed",
+    "exported",
+    "retired",
+    "captured",
+    "unknown"
+  ],
+  "scope": {
+    "services": [
+      "joint",
+      "army",
+      "navy",
+      "air_force"
+    ],
+    "components": [
+      "active",
+      "reserve",
+      "all_components"
+    ],
+    "government_forces": [
+      "Japan Self Defense Forces"
+    ],
+    "individualization_rule": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision",
+    "exclusion_notes": [
+      "This tranche contains no exact locations, current mobile positions, covert organizations, vulnerable component locations, readiness rates, or speculative capabilities."
+    ],
+    "coverage_matrix": [
+      {
+        "coverage_id": "coverage_jpn_ground_claims",
+        "service": "army",
+        "domain": "ground",
+        "organization_depth": "not_started",
+        "equipment_taxonomy": "claim_partial",
+        "inventory": "dated_claims_only",
+        "dispositions": "not_started",
+        "maintenance": "not_started",
+        "construction": "not_started",
+        "conservation": "blocked",
+        "notes": "Seven official national observations exist. Five are explicitly approximate. No 1 September opening pool is asserted."
+      },
+      {
+        "coverage_id": "coverage_jpn_air_claims",
+        "service": "joint",
+        "domain": "air",
+        "organization_depth": "not_started",
+        "equipment_taxonomy": "claim_partial",
+        "inventory": "dated_claims_only",
+        "dispositions": "not_started",
+        "maintenance": "not_started",
+        "construction": "not_started",
+        "conservation": "blocked",
+        "notes": "Thirty one major aircraft categories are observed in the national property ledger on 31 March 2025. Readiness and intervening flows are unknown."
+      },
+      {
+        "coverage_id": "coverage_jpn_maritime_claims",
+        "service": "navy",
+        "domain": "maritime",
+        "organization_depth": "not_started",
+        "equipment_taxonomy": "claim_partial",
+        "inventory": "dated_claims_only",
+        "dispositions": "not_started",
+        "maintenance": "not_started",
+        "construction": "not_started",
+        "conservation": "blocked",
+        "notes": "Six commissioned ship categories are observed on 31 March 2025. Individual hull identity and opening disposition remain unresolved."
+      },
+      {
+        "coverage_id": "coverage_jpn_personnel_claims",
+        "service": "joint",
+        "domain": "personnel",
+        "organization_depth": "not_started",
+        "equipment_taxonomy": "not_applicable",
+        "inventory": "dated_claims_only",
+        "dispositions": "not_started",
+        "maintenance": "not_applicable",
+        "construction": "not_applicable",
+        "conservation": "blocked",
+        "notes": "Authorized and actual personnel are observed by service. National totals are nested with component rows and cannot be summed together."
+      }
+    ]
+  },
+  "dataset_paths": {
+    "organizations": null,
+    "platforms": null,
+    "equipment_types": null,
+    "inventory": null,
+    "deployments": null,
+    "maintenance": null,
+    "construction": null,
+    "conservation": null,
+    "facilities": null,
+    "sources": "sources.ndjson",
+    "contradictions": null,
+    "relationships": null,
+    "claims": "claims.ndjson"
+  },
+  "reconciliation": {
+    "state": "blocked_by_unknowns",
+    "source_records": 1,
+    "claim_records": 54,
+    "exact_precision_claims": 49,
+    "approximate_precision_claims": 5,
+    "opening_stock_eligible_claims": 0,
+    "inventory_records": 0,
+    "conservation_records": 0,
+    "open_conservation_exceptions": 54
+  },
+  "conservation_policy": {
+    "equation": "opening_plus_inflows_equals_closing_states_plus_outflows",
+    "counting_units_are_not_interchangeable": true,
+    "individuals_are_excluded_from_pools": true,
+    "parent_totals_are_not_summed_with_children": true,
+    "dated_claims_do_not_create_opening_inventory": true
+  },
+  "aggregation_policy": {
+    "global_resolution": "service and national capability aggregates",
+    "theater_resolution": "formations and operational pools after reconciliation",
+    "mission_resolution": "individual executing and supporting platforms after reconciliation",
+    "aggregation_preserves_quantity": true
+  },
+  "source_ids": [
+    "src_force_jpn_mod_defense_of_japan_2025_reference"
+  ],
+  "unknowns": [
+    "Every 1 September 2025 opening quantity remains unresolved pending intervening flow reconciliation.",
+    "Readiness, availability, maintenance, training, reserve, and storage allocations remain unknown.",
+    "Individual hull identities, aircraft identities, base assignments, and deployments remain unknown.",
+    "Munitions, fuel, spares, crews, command networks, and support capacity remain unresolved.",
+    "The official major equipment tables are not a complete inventory of every Japanese military and supporting capability."
+  ],
+  "reviewed_at": "2026-08-21",
+  "review_after": "2026-11-21",
+  "notes": "First Japan force accounting tranche. It preserves official 31 March observations as claims while preventing them from becoming executable opening assets.",
+  "acceptance": {
+    "schema_valid": false,
+    "internally_consistent": false,
+    "research_complete": false,
+    "decision_usable": false,
+    "simulation_ready": false,
+    "independent_review_required": true
+  }
+}
