@@ -58,6 +58,10 @@
    alliance authority are collecting; the other six countries remain shells.
 10. Open Tier B wave two dossiers for Iran, Israel, Saudi Arabia, Türkiye,
     Pakistan, the United Kingdom, France, and Germany. Status: queued.
+11. Define conserved capability pool collection boundaries for Japan, South Korea,
+    and the Philippines. Status: complete at contract and collection plan level;
+    all three plans remain nonexecutable shells until evidence, support graphs,
+    national reconciliation, and independent review pass.
 
 ## P1: Starting bookmark
 
