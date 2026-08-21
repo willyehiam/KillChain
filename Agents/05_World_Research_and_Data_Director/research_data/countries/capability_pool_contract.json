@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "country_capability_pool_contract_2025_09_01",
+  "status": "research_contract",
+  "purpose": "Define the evidence and conservation boundary required before a national capability can become executable simulation state.",
+  "counting_rule": "Each physical item or explicitly aggregated cohort belongs to exactly one mutually exclusive state bucket at a time.",
+  "required_pool_fields": [
+    "pool_id",
+    "country_id",
+    "service_or_controller_id",
+    "capability_family",
+    "counting_unit",
+    "opening_quantity",
+    "state_buckets",
+    "support_dependencies",
+    "source_ids",
+    "reconciliation_status"
+  ],
+  "state_buckets": [
+    "assigned_ready",
+    "assigned_degraded",
+    "training",
+    "maintenance",
+    "stored_or_reserve",
+    "conversion_or_modification",
+    "under_construction",
+    "lost_or_retired",
+    "disputed_or_unknown"
+  ],
+  "support_dependency_types": [
+    "crew_and_personnel",
+    "command_and_control",
+    "sensors_and_targeting",
+    "munitions",
+    "fuel_and_energy",
+    "maintenance_and_spares",
+    "base_or_port_access",
+    "lift_and_refueling",
+    "communications",
+    "legal_and_political_authority"
+  ],
+  "precision_modes": [
+    "exact_public_count",
+    "bounded_estimate",
+    "order_of_magnitude",
+    "existence_only",
+    "unknown"
+  ],
+  "reconciliation_statuses": [
+    "shell",
+    "collecting",
+    "internally_reconciled",
+    "independently_reviewed",
+    "simulation_ready"
+  ],
+  "simulation_ready_gates": [
+    "The accounting boundary and counting unit are explicit.",
+    "Opening quantity equals the sum of mutually exclusive opening state buckets, or the unresolved difference is represented as disputed or unknown.",
+    "Every quantity and readiness assertion traces to accepted atomic claims.",
+    "No crisis roster duplicates an item already present in the national pool.",
+    "Required support dependencies are represented and finite.",
+    "Allocation consumes availability and creates an auditable release path.",
+    "Political authority, operational tasking, and physical availability are separate gates.",
+    "Location precision never exceeds the supporting public evidence.",
+    "Independent review is complete."
+  ],
+  "forbidden_shortcuts": [
+    "A theater order may not create national inventory.",
+    "A named weapon may not imply an available delivery platform.",
+    "A delivery platform may not imply compatible munitions, crews, sensors, access, or authority.",
+    "Alliance membership may not imply participation or access.",
+    "Missing evidence may not be converted to zero.",
+    "A post action assessment may not destroy, restore, or move ground truth by itself.",
+    "A confidence score may not substitute for a physical state transition."
+  ]
+}
