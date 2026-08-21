@@ -26,11 +26,11 @@
       "notes": "Only the frozen 2025 nominal GDP roster record is accepted; no broader economic state is populated."
     },
     "military_organization_inventory": {
-      "status": "shell",
-      "record_count": 0,
-      "source_count": 0,
-      "open_question_count": 1,
-      "notes": "No force organization or inventory record is accepted. Joint command authority in the politics packet does not establish any force quantity, readiness, or disposition."
+      "status": "collecting",
+      "record_count": 54,
+      "source_count": 1,
+      "open_question_count": 6,
+      "notes": "One official pre bookmark source contributes 54 dated national claims for major ground equipment, aircraft, commissioned ships, and personnel as of 31 March 2025. No claim is promoted to 1 September opening inventory, readiness, disposition, or location."
     },
     "fixed_facilities_basing": {
       "status": "shell",
@@ -73,7 +73,7 @@
     "political_actors": "politics_and_institutions.json",
     "provinces": null,
     "economy": "../top_80_2025/top_80_2025_gdp.json",
-    "force_ledger": null,
+    "force_ledger": "force_ledger/manifest.json",
     "facilities": null,
     "infrastructure": null,
     "relationships": null,
@@ -87,7 +87,7 @@
     "political_actor_target": 20,
     "political_actor_count": 20,
     "province_layer_status": "absent",
-    "force_ledger_status": "absent"
+    "force_ledger_status": "claim_tranche_validated_nonexecutable"
   },
   "source_ids": [
     "src_imf_weo_2026_04_ngdpd_2025",
@@ -101,14 +101,15 @@
     "src_jpn_mod_jjoc_2025_03_11",
     "src_jpn_joint_staff_uchikura_2025_08_01",
     "src_jpn_party_leaders_2025_07_25",
-    "src_jpn_defense_white_paper_2025_jjoc"
+    "src_jpn_defense_white_paper_2025_jjoc",
+    "src_force_jpn_mod_defense_of_japan_2025_reference"
   ],
   "unknowns": [
     "Practical actor influence, coalition behavior, public support elasticity, and the temporary Prime Minister succession order remain unknown.",
-    "Military organization, inventory, readiness, basing, maintenance, and deployments are unknown in this shell.",
+    "All 1 September 2025 force quantities, intervening inventory flows, readiness, basing, maintenance, deployments, and support dependencies remain unknown. The 31 March official observations are dated claims only.",
     "Province, terrain, infrastructure, industry, energy, logistics, and communications state are unknown in this shell.",
     "Treaty scope and authority routes are collecting; sanctions, crisis commitments, active plans, and deployments remain unknown.",
     "A zero record count means no accepted corpus records and never asserts zero real world entities or capacity."
   ],
-  "notes": "Japan politics and alliance authority have entered substantive collection. Numeric coverage zeros count accepted corpus records and never assert real world absence. No force, facility, readiness, location, or deployment is created by this packet."
+  "notes": "Japan politics, alliance authority, and a first official force inventory claim tranche have entered substantive collection. Numeric coverage values count corpus records and never assert opening availability. No force, facility, readiness, location, or deployment is created by the dated claims."
 }
