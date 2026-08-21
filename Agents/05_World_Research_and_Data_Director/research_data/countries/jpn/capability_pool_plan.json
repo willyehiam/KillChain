@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1.0",
+  "plan_id": "capability_pool_plan_jpn_2025_09_01",
+  "country_id": "country_jpn",
+  "country_code": "JPN",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "status": "shell",
+  "contract_id": "country_capability_pool_contract_2025_09_01",
+  "capability_families": [
+    {"family_id":"jpn_air_combat","domain":"air","decision_role":"Air defense, counterair, escort, and limited long range support","counting_boundary":"Airframes by operational type and mutually exclusive readiness state"},
+    {"family_id":"jpn_airborne_sensing","domain":"air","decision_role":"Air picture, warning, tracking, and command support","counting_boundary":"Manned and unmanned airborne sensor platforms by type and state"},
+    {"family_id":"jpn_air_refueling_and_lift","domain":"air","decision_role":"Range extension, dispersal, sustainment, and evacuation","counting_boundary":"Tankers and strategic or tactical lift by type and state"},
+    {"family_id":"jpn_surface_combat","domain":"maritime","decision_role":"Sea control, escort, air defense, and strike support","counting_boundary":"Commissioned combatants by hull or homogeneous class cohort"},
+    {"family_id":"jpn_subsurface_combat","domain":"maritime","decision_role":"Sea denial, surveillance, and covert tracking","counting_boundary":"Commissioned submarines by hull or class cohort"},
+    {"family_id":"jpn_amphibious_and_sealift","domain":"joint_logistics","decision_role":"Southwest island reinforcement and distributed sustainment","counting_boundary":"Lift vessels, landing craft, and deployable transport cohorts"},
+    {"family_id":"jpn_ground_air_and_coastal_defense","domain":"ground","decision_role":"Base defense, island denial, missile defense, and coastal control","counting_boundary":"Firing units and launchers without duplicating carried munitions"},
+    {"family_id":"jpn_space_cyber_and_c2","domain":"information","decision_role":"Command continuity, sensing, communications, and defensive operations","counting_boundary":"Organizations and service capacity, not invented platform counts"}
+  ],
+  "blocking_dependencies": [
+    "Southwest island and main island basing access",
+    "Runway, port, fuel, magazine, maintenance, and dispersal capacity",
+    "Compatible munitions and reload stocks",
+    "Crew, training, maintenance, and depot states",
+    "United States access and support without automatic Japanese combat entry",
+    "Political authority for homeland defense, allied support, and external force employment"
+  ],
+  "acceptance": {"sources_registered":false,"counting_boundaries_reviewed":false,"pools_reconciled":false,"support_graph_reviewed":false,"independent_review_complete":false},
+  "notes": "This plan defines collection boundaries only. It contains no force quantities, locations, readiness claims, or executable assets."
+}
