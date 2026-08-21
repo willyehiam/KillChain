@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1.0",
+  "plan_id": "capability_pool_plan_phl_2025_09_01",
+  "country_id": "country_phl",
+  "country_code": "PHL",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "status": "shell",
+  "contract_id": "country_capability_pool_contract_2025_09_01",
+  "capability_families": [
+    {"family_id":"phl_maritime_security","domain":"maritime","decision_role":"Maritime awareness, patrol, escort, and law enforcement presence","counting_boundary":"Navy and Coast Guard hulls remain separate pools with distinct authorities"},
+    {"family_id":"phl_littoral_and_coastal_defense","domain":"joint","decision_role":"Archipelagic denial, port defense, and coastal control","counting_boundary":"Firing units, sensors, and munitions separated"},
+    {"family_id":"phl_air_combat_and_patrol","domain":"air","decision_role":"Air policing, maritime patrol, interception, and limited strike","counting_boundary":"Airframes by type and mutually exclusive readiness state"},
+    {"family_id":"phl_air_and_sea_lift","domain":"joint_logistics","decision_role":"Interisland reinforcement, disaster response, and sustainment","counting_boundary":"Military lift and contracted civilian capacity remain distinct"},
+    {"family_id":"phl_ground_maneuver_and_reserve","domain":"ground","decision_role":"Territorial defense, base security, and mobilization","counting_boundary":"Active and reserve formations with assigned equipment reconciled separately"},
+    {"family_id":"phl_sensing_communications_and_c2","domain":"information","decision_role":"Archipelagic awareness, command continuity, and allied information exchange","counting_boundary":"Organizations, sensor sites, and service capacity represented at evidence supported precision"},
+    {"family_id":"phl_base_access_and_host_nation_support","domain":"alliance_support","decision_role":"Enable or deny allied dispersal, logistics, sensing, and operations","counting_boundary":"Each access decision is a finite capacity allocation, not a combat unit"}
+  ],
+  "blocking_dependencies": [
+    "Domestic authorization distinct from treaty consultation",
+    "Enhanced Defense Cooperation Agreement access distinct from combat permission",
+    "Port, airfield, ferry, road, fuel, communications, and disaster response capacity",
+    "Maintenance, spares, trained crews, and compatible munitions",
+    "Coast Guard and armed forces authorities kept separate",
+    "Civilian continuity and archipelagic logistics under disruption"
+  ],
+  "acceptance": {"sources_registered":false,"counting_boundaries_reviewed":false,"pools_reconciled":false,"support_graph_reviewed":false,"independent_review_complete":false},
+  "notes": "This plan defines collection boundaries only. It contains no force quantities, locations, readiness claims, or executable assets."
+}
