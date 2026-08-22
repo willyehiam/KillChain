@@ -17,7 +17,7 @@
     "work_packages": "WORK_PACKAGES.md",
     "evidence_registry": "evidence_registry.json",
     "bookmark_state": "bookmark_state.json",
-    "force_ledger": null,
+    "force_ledger": "force_ledger/manifest.json",
     "politics_and_institutions": "politics_and_institutions.json",
     "war_authority_workflow": "war_authority_workflow.json"
   },
@@ -42,13 +42,13 @@
     "bookmark_firewall_passed": false,
     "independent_review_complete": false
   },
-  "accepted_source_count": 13,
-  "accepted_claim_count": 18,
+  "accepted_source_count": 15,
+  "accepted_claim_count": 28,
   "open_contradiction_count": 2,
   "unknowns": [
     "Politics, constitutional authority, alliance scope, and command institutions are collecting and require independent review.",
-    "Economy beyond the frozen GDP roster, force inventory, readiness, facilities, infrastructure, geography, and deployments remain unknown unless separately linked.",
+    "Economy beyond the frozen GDP roster, complete force inventory, readiness, facilities, infrastructure, geography, and deployments remain unknown unless separately linked.",
     "A zero count describes accepted corpus records and never asserts real world absence."
   ],
-  "notes": "This country has substantive politics and alliance authority data only. No force, facility, readiness, location, or deployment state is implied."
+  "notes": "Substantive politics, alliance authority, and a bounded military command structure tranche are collecting. The force ledger remains nonexecutable and contains no opening inventory, readiness, location, or mission availability."
 }
