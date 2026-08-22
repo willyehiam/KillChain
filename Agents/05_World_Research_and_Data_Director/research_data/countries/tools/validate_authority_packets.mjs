@@ -111,9 +111,21 @@ for (const directoryName of directories) {
   const laneCoverage = readJson(path.join(directory, "lane_coverage.json"));
   const bookmark = readJson(path.join(directory, "bookmark_state.json"));
   assert(profile.coverage_status === "collecting", `${source.country.code}: profile not promoted`);
-  assert(profile.dataset_paths.force_ledger === null, `${source.country.code}: authority packet implied a force ledger`);
   assert(manifest.status === "collecting", `${source.country.code}: manifest not promoted`);
-  assert(manifest.files.force_ledger === null, `${source.country.code}: manifest implied a force ledger`);
+  assert(profile.dataset_paths.force_ledger === manifest.files.force_ledger, `${source.country.code}: force ledger links diverge`);
+  if (typeof profile.dataset_paths.force_ledger === "string") {
+    const forceLedgerPath = path.resolve(directory, profile.dataset_paths.force_ledger);
+    assert(fs.existsSync(forceLedgerPath), `${source.country.code}: linked force ledger is missing`);
+    if (fs.existsSync(forceLedgerPath)) {
+      const forceLedger = readJson(forceLedgerPath);
+      assert(forceLedger.country_id === source.country.id, `${source.country.code}: force ledger country mismatch`);
+      assert(forceLedger.bookmark_id === source.bookmark_id, `${source.country.code}: force ledger bookmark mismatch`);
+      assert(forceLedger.status === "collecting", `${source.country.code}: force ledger promoted`);
+      assert(forceLedger.acceptance?.simulation_ready === false, `${source.country.code}: authority integration accepted executable forces`);
+    }
+  } else {
+    assert(profile.dataset_paths.force_ledger === null, `${source.country.code}: invalid force ledger link`);
+  }
   assert(laneCoverage.rollup.needs_review === Object.keys(source.lane_updates).length, `${source.country.code}: lane rollup mismatch`);
   assert(bookmark.military_posture === null, `${source.country.code}: bookmark implied military posture`);
 
