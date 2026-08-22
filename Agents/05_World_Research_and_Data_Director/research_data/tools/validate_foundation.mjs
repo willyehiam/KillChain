@@ -143,6 +143,17 @@ const tierAInfrastructureSources = TIER_A_COUNTRY_DIRECTORIES.flatMap((countryCo
       }));
     });
 });
+const forceLedgerSources = fs
+  .readdirSync(countriesRoot, { withFileTypes: true })
+  .filter((entry) => entry.isDirectory())
+  .flatMap((entry) => {
+    const sourcePath = path.join(countriesRoot, entry.name, "force_ledger", "sources.ndjson");
+    if (!fs.existsSync(sourcePath)) return [];
+    return readNdjson(sourcePath).map((source) => ({
+      source,
+      origin: path.relative(researchRoot, sourcePath),
+    }));
+  });
 
 const sourceRecords = [
   ...globalSources.map((source) => ({ source, origin: "sources/sources.ndjson" })),
@@ -153,6 +164,7 @@ const sourceRecords = [
   ...countryLocalSources,
   ...tierAGeographySources,
   ...tierAInfrastructureSources,
+  ...forceLedgerSources,
 ];
 const canonicalSourceById = new Map();
 
@@ -276,6 +288,7 @@ let rankedProfileCount = 0;
 let strategicAdditionProfileCount = 0;
 let tierAProfileCount = 0;
 let forceLedgerCount = 0;
+let tierAForceLedgerCount = 0;
 let provinceLayerCount = 0;
 let infrastructureLayerCount = 0;
 
@@ -374,6 +387,7 @@ for (const country of registry.countries.filter((entry) => entry.profile_path)) 
   const ledger = readJson(forcePath);
   if (!ledger) continue;
   forceLedgerCount += 1;
+  if (country.depth_tier === "A") tierAForceLedgerCount += 1;
 
   assert(ledger.country_id === country.country_id, `${country.country_code}: force ledger id mismatch`);
   assert(ledger.bookmark_id === bookmark.bookmark_id, `${country.country_code}: force ledger bookmark mismatch`);
@@ -407,7 +421,7 @@ assert(
   `Expected 11 strategic addition profiles, found ${strategicAdditionProfileCount}`,
 );
 assert(tierAProfileCount === 3, `Expected three Tier A profiles, found ${tierAProfileCount}`);
-assert(forceLedgerCount === 3, `Expected three Tier A force ledgers, found ${forceLedgerCount}`);
+assert(tierAForceLedgerCount === 3, `Expected three Tier A force ledgers, found ${tierAForceLedgerCount}`);
 assert(provinceLayerCount === 1, `Expected one collecting province layer, found ${provinceLayerCount}`);
 assert(infrastructureLayerCount === 1, `Expected one collecting infrastructure layer, found ${infrastructureLayerCount}`);
 
@@ -423,7 +437,8 @@ const report = {
   ranked_country_profiles: rankedProfileCount,
   strategic_addition_profiles: strategicAdditionProfileCount,
   tier_a_profiles: tierAProfileCount,
-  tier_a_force_ledgers: forceLedgerCount,
+  force_ledgers: forceLedgerCount,
+  tier_a_force_ledgers: tierAForceLedgerCount,
   collecting_province_layers: provinceLayerCount,
   collecting_infrastructure_layers: infrastructureLayerCount,
   schemas_parsed: NEW_SCHEMAS.length,

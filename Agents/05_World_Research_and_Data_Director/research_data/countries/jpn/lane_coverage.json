@@ -68,14 +68,14 @@
       "newest_source_date": "2025-03-31",
       "reviewed_at": "2026-08-21",
       "review_after": "2026-11-21",
-      "coverage_disposition": "official_dated_inventory_claims_collected_opening_reconciliation_blocked",
+      "coverage_disposition": "linked_force_claims_collected_opening_reconciliation_blocked",
       "blocking_questions": [
-        "Which receipts, retirements, losses, conversions, and transfers occurred between 31 March and 1 September 2025?",
+        "Which intervening receipts, retirements, losses, conversions, and transfers change dated observations before the opening bookmark?",
         "How are national totals partitioned into mutually exclusive readiness, maintenance, training, reserve, storage, and deployment states?",
-        "Which command, basing, crew, fuel, munitions, spares, and network dependencies make each capability executable?",
-        "Which individual hulls and formations must be represented because identity changes command, mission, loss, or player choice?"
+        "Which command, basing, crew, fuel, munitions, spares, sensing, and network dependencies make each capability executable?",
+        "Which individual platforms and formations must be represented because identity changes command, mission, loss, or player choice?"
       ],
-      "notes": "The official 2025 defense reference contributes 54 national claims. They pass arithmetic and provenance validation but remain nonexecutable dated observations rather than opening force pools."
+      "notes": "The linked force ledger contributes sourced research claims only. It remains nonexecutable until opening stock, conservation, readiness, assignment, and support are reconciled."
     },
     "fixed_facilities_basing": {
       "name": "Public fixed facilities and basing",

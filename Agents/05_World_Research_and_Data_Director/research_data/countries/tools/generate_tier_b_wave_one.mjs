@@ -27,6 +27,10 @@ function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
 }
 
+function readNdjson(file) {
+  return fs.readFileSync(file, "utf8").trim().split("\n").filter(Boolean).map((line) => JSON.parse(line));
+}
+
 function writeGenerated(file, content) {
   const normalized = content.endsWith("\n") ? content : `${content}\n`;
   if (checkOnly) {
@@ -55,7 +59,7 @@ function laneQuestions(country, laneId) {
   return [...questions[laneId], shared];
 }
 
-function buildManifest(country, registryCountry) {
+function buildManifest(country, registryCountry, countryDirectory) {
   const manifest = {
     schema_version: "0.1.0",
     manifest_id: `research_manifest_${country.country_code.toLowerCase()}_2025_09_01`,
@@ -115,10 +119,24 @@ function buildManifest(country, registryCountry) {
     ];
     manifest.notes = "Japan has entered substantive collection for politics and alliance authority only. No force, facility, readiness, location, or deployment state is executable.";
   }
+  const forceLedgerPath = path.join(countryDirectory, "force_ledger", "manifest.json");
+  if (fs.existsSync(forceLedgerPath)) {
+    const forceLedger = readJson(forceLedgerPath);
+    manifest.status = "collecting";
+    manifest.files.force_ledger = "force_ledger/manifest.json";
+    manifest.accepted_source_count += forceLedger.reconciliation?.source_records ?? forceLedger.source_ids?.length ?? 0;
+    manifest.accepted_claim_count += forceLedger.reconciliation?.claim_records ?? 0;
+    manifest.unknowns = [
+      manifest.unknowns[0],
+      "A separately linked force ledger is collecting, but complete opening inventory, readiness, facilities, infrastructure, geography, support, assignments, and deployments remain unknown unless explicitly resolved.",
+      "A zero count describes accepted corpus records and never asserts real world absence.",
+    ];
+    manifest.notes = "Political and alliance research is integrated with a separately sourced, nonexecutable force ledger.";
+  }
   return manifest;
 }
 
-function buildLaneMatrix(country, registryCountry) {
+function buildLaneMatrix(country, registryCountry, countryDirectory) {
   const matrix = {};
   for (const [laneId, name] of lanes) {
     matrix[laneId] = {
@@ -171,6 +189,39 @@ function buildLaneMatrix(country, registryCountry) {
       notes: "Treaty consultation, Article V scope, facilities access, defense authority, and allied support are separated. Crisis deployments and sanctions remain unknown.",
     });
   }
+  const forceLedgerPath = path.join(countryDirectory, "force_ledger", "manifest.json");
+  if (fs.existsSync(forceLedgerPath)) {
+    const forceLedger = readJson(forceLedgerPath);
+    const claimsPath = forceLedger.dataset_paths?.claims
+      ? path.resolve(path.dirname(forceLedgerPath), forceLedger.dataset_paths.claims)
+      : null;
+    const claims = claimsPath && fs.existsSync(claimsPath) ? readNdjson(claimsPath) : [];
+    const dates = claims
+      .flatMap((claim) => [claim.observation_period?.start, claim.observation_period?.end, claim.as_of])
+      .filter(Boolean)
+      .sort();
+    Object.assign(matrix.military_organization_inventory, {
+      status: "collecting",
+      owner: "agent_05_world_research_and_data_director",
+      record_count: forceLedger.reconciliation?.claim_records ?? claims.length,
+      source_count: forceLedger.reconciliation?.source_records ?? forceLedger.source_ids?.length ?? 0,
+      claim_count: forceLedger.reconciliation?.claim_records ?? claims.length,
+      contradiction_count: 0,
+      unknown_geometry_count: forceLedger.reconciliation?.claim_records ?? claims.length,
+      oldest_source_date: dates[0] ?? null,
+      newest_source_date: dates.at(-1) ?? null,
+      reviewed_at: forceLedger.reviewed_at ?? null,
+      review_after: forceLedger.review_after ?? null,
+      coverage_disposition: "linked_force_claims_collected_opening_reconciliation_blocked",
+      blocking_questions: [
+        "Which intervening receipts, retirements, losses, conversions, and transfers change dated observations before the opening bookmark?",
+        "How are national totals partitioned into mutually exclusive readiness, maintenance, training, reserve, storage, and deployment states?",
+        "Which command, basing, crew, fuel, munitions, spares, sensing, and network dependencies make each capability executable?",
+        "Which individual platforms and formations must be represented because identity changes command, mission, loss, or player choice?",
+      ],
+      notes: "The linked force ledger contributes sourced research claims only. It remains nonexecutable until opening stock, conservation, readiness, assignment, and support are reconciled.",
+    });
+  }
   const shellCount = Object.values(matrix).filter((lane) => lane.status === "shell").length;
   const collectingCount = Object.values(matrix).filter((lane) => lane.status === "collecting").length;
   const needsReviewCount = Object.values(matrix).filter((lane) => lane.status === "needs_review").length;
@@ -210,8 +261,8 @@ for (const country of wave.countries) {
   const countryDirectory = path.join(countriesRoot, country.country_code.toLowerCase());
   const sharedAuthorityPacket = fs.existsSync(path.join(countryDirectory, "authority_packet.source.json"));
   if (!sharedAuthorityPacket) {
-    writeGenerated(path.join(countryDirectory, "research_manifest.json"), JSON.stringify(buildManifest(country, registryCountry), null, 2));
-    writeGenerated(path.join(countryDirectory, "lane_coverage.json"), JSON.stringify(buildLaneMatrix(country, registryCountry), null, 2));
+    writeGenerated(path.join(countryDirectory, "research_manifest.json"), JSON.stringify(buildManifest(country, registryCountry, countryDirectory), null, 2));
+    writeGenerated(path.join(countryDirectory, "lane_coverage.json"), JSON.stringify(buildLaneMatrix(country, registryCountry, countryDirectory), null, 2));
   }
   writeGenerated(path.join(countryDirectory, "WORK_PACKAGES.md"), buildWorkPackages(country, registryCountry));
 }

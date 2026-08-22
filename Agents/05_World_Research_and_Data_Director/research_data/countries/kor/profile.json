@@ -108,10 +108,10 @@
   ],
   "unknowns": [
     "Economy beyond the frozen GDP roster remains unknown in this packet.",
-    "The national command skeleton is sourced, but complete military inventory, operational units, readiness, basing, maintenance, assignments, support, and deployments remain unknown and nonexecutable.",
     "Province, terrain, infrastructure, industry, energy, logistics, and communications state remain unknown.",
     "Practical political influence and crisis participation probabilities are not inferred from office or alliance membership.",
-    "A zero record count means no accepted corpus records and never asserts zero real world entities or capacity."
+    "A zero record count means no accepted corpus records and never asserts zero real world entities or capacity.",
+    "A linked force ledger may establish bounded organization or dated claims, but complete inventory, readiness, basing, maintenance, assignment, support, and deployment remain unknown unless that ledger explicitly resolves them."
   ],
-  "notes": "Politics, alliance authority, and the first military command structure tranche are collecting. No organization creates an executable force without conserved inventory, support, assignment, readiness, and political release."
+  "notes": "Generated authority data is integrated with a separately sourced, nonexecutable force ledger. Political authority, force custody, support, readiness, and mission release remain separate gates."
 }

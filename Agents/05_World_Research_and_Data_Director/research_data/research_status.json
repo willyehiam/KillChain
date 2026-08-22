@@ -7,12 +7,12 @@
   "corpus_validation": {
     "status": "PASS",
     "counts": {
-      "files": 233,
-      "parsed_records": 1702,
-      "objects": 11337,
-      "sources": 230,
-      "primary_ids": 1293,
-      "source_references": 3238,
+      "files": 245,
+      "parsed_records": 1790,
+      "objects": 11613,
+      "sources": 233,
+      "primary_ids": 1377,
+      "source_references": 3323,
       "geometry_records": 249
     },
     "error_count": 0,
@@ -34,15 +34,15 @@
       "deprecated": 0
     },
     "lane_statuses": {
-      "shell": 634,
-      "collecting": 85,
+      "shell": 632,
+      "collecting": 87,
       "needs_review": 9,
       "verified": 0,
       "stale": 0,
       "deprecated": 0
     },
     "actor_roster_complete": 4,
-    "force_ledgers_present": 3,
+    "force_ledgers_present": 5,
     "force_ledgers_simulation_ready": 0,
     "substantive": [
       {
@@ -77,10 +77,11 @@
         "depth_tier": "B",
         "profile_status": "collecting",
         "political_actor_count": 20,
-        "force_ledger_status": "absent",
+        "force_ledger_status": "collecting",
         "non_shell_lanes": [
           "politics_and_institutions",
           "economy_trade_finance_resources",
+          "military_organization_inventory",
           "crises_alliances_sanctions_deployments"
         ]
       },
@@ -90,10 +91,11 @@
         "depth_tier": "B",
         "profile_status": "collecting",
         "political_actor_count": 17,
-        "force_ledger_status": "absent",
+        "force_ledger_status": "collecting",
         "non_shell_lanes": [
           "politics_and_institutions",
           "economy_trade_finance_resources",
+          "military_organization_inventory",
           "crises_alliances_sanctions_deployments"
         ]
       },

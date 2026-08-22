@@ -140,8 +140,25 @@ for (const registryCountry of registry.countries ?? []) {
     const usesSharedAuthorityPacket = fs.existsSync(path.join(countryDirectory, "authority_packet.source.json"));
     const promoted = code === "JPN" || usesSharedAuthorityPacket;
     assert(profile.coverage_status === (promoted ? "collecting" : "shell"), `${label}: non Tier A dossier status differs from its promotion state`);
-    assert(profile.dataset_paths?.force_ledger === null, `${label}: non Tier A dossier must not link an invented force ledger`);
-    assert(profile.completeness?.force_ledger_status === "absent", `${label}: non Tier A force ledger status must remain absent`);
+    if (profile.dataset_paths?.force_ledger === null) {
+      assert(profile.completeness?.force_ledger_status === "absent", `${label}: absent force ledger has a promoted status`);
+    } else {
+      const ledgerPath = path.resolve(countryDirectory, profile.dataset_paths.force_ledger);
+      assert(fs.existsSync(ledgerPath), `${label}: linked non Tier A force ledger is missing`);
+      if (fs.existsSync(ledgerPath)) {
+        const ledger = readJson(ledgerPath);
+        assert(ledger.country_id === profile.country_id, `${label}: linked force ledger country differs`);
+        assert(ledger.bookmark_id === profile.bookmark_id, `${label}: linked force ledger bookmark differs`);
+        assert(ledger.as_of === profile.as_of, `${label}: linked force ledger time differs`);
+        assert(ledger.status === "collecting", `${label}: linked non Tier A force ledger was promoted`);
+        assert(ledger.acceptance?.simulation_ready === false, `${label}: linked non Tier A force ledger is executable`);
+        assert(
+          typeof profile.completeness?.force_ledger_status === "string" &&
+            profile.completeness.force_ledger_status.includes("nonexecutable"),
+          `${label}: linked non Tier A force ledger is not marked nonexecutable`,
+        );
+      }
+    }
     if (promoted) {
       assert(profile.dataset_paths?.government === "politics_and_institutions.json", `${label}: promoted politics packet is not linked`);
       assert(profile.dataset_paths?.bookmark_state === "bookmark_state.json", `${label}: promoted bookmark state is not linked`);

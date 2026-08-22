@@ -14,6 +14,7 @@ const packet = {
   profile: read("profile.json"),
   manifest: read("research_manifest.json"),
   matrix: read("lane_coverage.json"),
+  forceLedger: read("force_ledger/manifest.json"),
 };
 const bookmark = new Date("2025-09-01T23:59:59Z");
 
@@ -75,10 +76,13 @@ function validate(candidate) {
   assert(candidate.bookmark.political_actors.length === 20 && candidate.bookmark.political_actors.every((actorId) => actorIds.has(actorId)), "Bookmark actor roster mismatch");
   assert(candidate.bookmark.military_posture === null, "Politics packet must not create military posture");
   assert(candidate.profile.completeness.political_actor_count === 20, "Profile actor count mismatch");
-  assert(candidate.profile.completeness.force_ledger_status === "absent", "Politics packet must not create force ledger");
+  assert(candidate.profile.completeness.force_ledger_status.includes("nonexecutable"), "Linked force ledger must remain nonexecutable");
   assert(candidate.manifest.files.evidence_registry === "evidence_registry.json", "Manifest does not link evidence registry");
   assert(candidate.manifest.files.bookmark_state === "bookmark_state.json", "Manifest does not link bookmark state");
-  assert(candidate.manifest.files.force_ledger === null, "Manifest silently links force ledger");
+  assert(candidate.manifest.files.force_ledger === "force_ledger/manifest.json", "Manifest force ledger link mismatch");
+  assert(candidate.forceLedger.country_id === "country_jpn", "Force ledger country mismatch");
+  assert(candidate.forceLedger.status === "collecting", "Force ledger must remain collecting");
+  assert(candidate.forceLedger.acceptance.simulation_ready === false, "Force ledger silently became executable");
   assert(candidate.matrix.lanes.politics_and_institutions.status === "needs_review", "Politics lane status mismatch");
   assert(candidate.matrix.lanes.crises_alliances_sanctions_deployments.status === "needs_review", "Alliance lane status mismatch");
   return errors;

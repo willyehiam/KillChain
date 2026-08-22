@@ -10,11 +10,11 @@ Stage: research. Simulation engine implementation, final visual design, and prod
 
 1. 91 country profiles exist: 3 Tier A, 22 Tier B, and 66 Tier C.
 2. 4 countries have twenty actor political rosters.
-3. 3 national force ledgers exist, and 0 are simulation ready.
+3. 5 national force ledgers exist, and 0 are simulation ready.
 4. 1 of 9 fully modeled theater directories contain substantive machine readable work.
 5. 0 of 9 secondary crises and 0 of 8 political event chains contain substantive work.
 6. 1 deterministic acceptance story covers 6 deep opening countries and 26 authority routes.
-7. The corpus validator passes 233 files, 1702 parsed records, and 11337 objects with 0 errors and 0 warnings.
+7. The corpus validator passes 245 files, 1790 parsed records, and 11613 objects with 0 errors and 0 warnings.
 
 ## Country status
 
@@ -22,8 +22,8 @@ Stage: research. Simulation engine implementation, final visual design, and prod
 | --- | --- | --- | --- | ---: | --- | ---: |
 | USA | United States | A | collecting | 21 | collecting | 3 |
 | CHN | China | A | collecting | 24 | collecting | 3 |
-| JPN | Japan | B | collecting | 20 | absent | 3 |
-| KOR | South Korea | B | collecting | 17 | absent | 3 |
+| JPN | Japan | B | collecting | 20 | collecting | 4 |
+| KOR | South Korea | B | collecting | 17 | collecting | 4 |
 | TWN | Taiwan | A | collecting | 20 | collecting | 5 |
 | PHL | Philippines | B | collecting | 12 | absent | 3 |
 
@@ -31,8 +31,8 @@ All other country profiles remain structural shells. A shell count is corpus com
 
 ## Lane coverage
 
-1. Shell lanes: 634.
-2. Collecting lanes: 85.
+1. Shell lanes: 632.
+2. Collecting lanes: 87.
 3. Lanes needing review: 9.
 4. Verified lanes: 0.
 5. Stale lanes: 0.
