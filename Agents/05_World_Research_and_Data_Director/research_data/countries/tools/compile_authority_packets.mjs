@@ -67,13 +67,27 @@ function mergeProfile(profile, source) {
   result.dataset_paths.relationships = "war_authority_workflow.json";
   result.completeness.political_actor_count = actorCount;
   result.source_ids = [...new Set([...(result.source_ids ?? []), ...source.evidence.sources.map((item) => item.source_id)])];
-  result.unknowns = source.profile_unknowns;
-  result.notes = "Generated from a declarative authority packet. Politics and alliance authority are collecting; forces, facilities, readiness, and deployment remain nonexecutable unless separately sourced.";
+  if (typeof result.dataset_paths.force_ledger === "string") {
+    result.unknowns = [
+      ...source.profile_unknowns.filter((item) => !item.startsWith("Military organization")),
+      "A linked force ledger may establish bounded organization or dated claims, but complete inventory, readiness, basing, maintenance, assignment, support, and deployment remain unknown unless that ledger explicitly resolves them.",
+    ];
+    result.notes = "Generated authority data is integrated with a separately sourced, nonexecutable force ledger. Political authority, force custody, support, readiness, and mission release remain separate gates.";
+  } else {
+    result.unknowns = source.profile_unknowns;
+    result.notes = "Generated from a declarative authority packet. Politics and alliance authority are collecting; forces, facilities, readiness, and deployment remain nonexecutable unless separately sourced.";
+  }
   return result;
 }
 
-function mergeManifest(manifest, source) {
+function mergeManifest(manifest, source, directory) {
   const result = structuredClone(manifest);
+  const forceLedgerPath = typeof result.files.force_ledger === "string"
+    ? path.resolve(directory, result.files.force_ledger)
+    : null;
+  const forceLedger = forceLedgerPath && fs.existsSync(forceLedgerPath)
+    ? readJson(forceLedgerPath)
+    : null;
   result.status = "collecting";
   Object.assign(result.files, {
     evidence_registry: "evidence_registry.json",
@@ -81,15 +95,22 @@ function mergeManifest(manifest, source) {
     politics_and_institutions: "politics_and_institutions.json",
     war_authority_workflow: "war_authority_workflow.json",
   });
-  result.accepted_source_count = source.evidence.sources.length;
-  result.accepted_claim_count = source.evidence.claims.length;
+  result.accepted_source_count = new Set([
+    ...source.evidence.sources.map((item) => item.source_id),
+    ...(forceLedger?.source_ids ?? []),
+  ]).size;
+  result.accepted_claim_count = source.evidence.claims.length + (forceLedger?.reconciliation?.claim_records ?? 0);
   result.open_contradiction_count = source.evidence.contradictions.filter((item) => item.status !== "resolved").length;
   result.unknowns = [
     "Politics, constitutional authority, alliance scope, and command institutions are collecting and require independent review.",
-    "Economy beyond the frozen GDP roster, force inventory, readiness, facilities, infrastructure, geography, and deployments remain unknown unless separately linked.",
+    forceLedger
+      ? "A separately linked force ledger is collecting, but complete inventory, readiness, facilities, infrastructure, geography, support, assignments, and deployments remain unknown unless explicitly resolved."
+      : "Economy beyond the frozen GDP roster, force inventory, readiness, facilities, infrastructure, geography, and deployments remain unknown unless separately linked.",
     "A zero count describes accepted corpus records and never asserts real world absence.",
   ];
-  result.notes = "This country has substantive politics and alliance authority data only. No force, facility, readiness, location, or deployment state is implied.";
+  result.notes = forceLedger
+    ? "Substantive politics and alliance authority are integrated with a separately sourced, nonexecutable force ledger."
+    : "This country has substantive politics and alliance authority data only. No force, facility, readiness, location, or deployment state is implied.";
   return result;
 }
 
@@ -238,7 +259,7 @@ for (const directoryName of packetDirectories) {
   writeGenerated(path.join(directory, "war_authority_workflow.json"), buildWorkflow(source));
   writeGenerated(path.join(directory, "bookmark_state.json"), buildBookmark(source));
   writeGenerated(path.join(directory, "profile.json"), mergeProfile(profile, source));
-  writeGenerated(path.join(directory, "research_manifest.json"), mergeManifest(manifest, source));
+  writeGenerated(path.join(directory, "research_manifest.json"), mergeManifest(manifest, source, directory));
   writeGenerated(path.join(directory, "lane_coverage.json"), mergeLaneCoverage(laneCoverage, source));
 }
 
