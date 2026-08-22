@@ -26,11 +26,11 @@
       "notes": "Only the frozen 2025 nominal GDP roster record is accepted; no broader economic state is populated."
     },
     "military_organization_inventory": {
-      "status": "shell",
-      "record_count": 0,
-      "source_count": 0,
-      "open_question_count": 1,
-      "notes": "No sourced records are accepted yet; zero is corpus completeness, not real world quantity."
+      "status": "collecting",
+      "record_count": 27,
+      "source_count": 2,
+      "open_question_count": 5,
+      "notes": "Nine national and combined command organizations, six bounded relationships, and ten organization claims are collected. All force quantities, readiness, assignment, location, and mission availability remain unknown and nonexecutable."
     },
     "fixed_facilities_basing": {
       "status": "shell",
@@ -73,7 +73,7 @@
     "political_actors": "politics_and_institutions.json",
     "provinces": null,
     "economy": "../top_80_2025/top_80_2025_gdp.json",
-    "force_ledger": null,
+    "force_ledger": "force_ledger/manifest.json",
     "facilities": null,
     "infrastructure": null,
     "relationships": "war_authority_workflow.json",
@@ -86,7 +86,7 @@
     "political_actor_target": 20,
     "political_actor_count": 17,
     "province_layer_status": "absent",
-    "force_ledger_status": "absent"
+    "force_ledger_status": "collecting_nonexecutable"
   },
   "source_ids": [
     "src_imf_weo_2026_04_ngdpd_2025",
@@ -102,14 +102,16 @@
     "src_kor_minister_nominations_2025_06_23",
     "src_kor_party_schedule_2025_08_03",
     "src_kor_ppp_leader_2025_08_26",
-    "src_kor_jcs_2025_07_29"
+    "src_kor_jcs_2025_07_29",
+    "src_force_kor_armed_forces_organization_act",
+    "src_force_kor_usfk_lacamera_2022"
   ],
   "unknowns": [
     "Economy beyond the frozen GDP roster remains unknown in this packet.",
-    "Military organization, inventory, readiness, basing, maintenance, and deployments remain unknown and nonexecutable.",
+    "The national command skeleton is sourced, but complete military inventory, operational units, readiness, basing, maintenance, assignments, support, and deployments remain unknown and nonexecutable.",
     "Province, terrain, infrastructure, industry, energy, logistics, and communications state remain unknown.",
     "Practical political influence and crisis participation probabilities are not inferred from office or alliance membership.",
     "A zero record count means no accepted corpus records and never asserts zero real world entities or capacity."
   ],
-  "notes": "Generated from a declarative authority packet. Politics and alliance authority are collecting; forces, facilities, readiness, and deployment remain nonexecutable unless separately sourced."
+  "notes": "Politics, alliance authority, and the first military command structure tranche are collecting. No organization creates an executable force without conserved inventory, support, assignment, readiness, and political release."
 }
