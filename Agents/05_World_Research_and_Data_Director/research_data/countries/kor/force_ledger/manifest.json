@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.1.0",
+  "force_ledger_id": "force_ledger_kor_2025_09_01",
+  "country_id": "country_kor",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "as_of": "2025-09-01T00:00:00Z",
+  "status": "collecting",
+  "tranche_id": "kor_command_structure_2026_08_22",
+  "accounting_states": [
+    "active",
+    "committed",
+    "in_transit",
+    "training",
+    "maintenance",
+    "reserve",
+    "stored",
+    "under_construction",
+    "damaged",
+    "destroyed",
+    "exported",
+    "retired",
+    "captured",
+    "unknown"
+  ],
+  "scope": {
+    "services": [
+      "joint",
+      "army",
+      "navy",
+      "marine",
+      "air_force"
+    ],
+    "components": [
+      "active",
+      "reserve",
+      "combined",
+      "civilian_agency",
+      "all_components"
+    ],
+    "government_forces": [
+      "Republic of Korea Armed Forces"
+    ],
+    "individualization_rule": "individualize_only_when_identity_changes_command_mission_loss_or_player_decision",
+    "exclusion_notes": [
+      "This tranche contains no unit quantities, inventory, readiness, exact locations, current movements, maintenance allocation, or off peninsula force release."
+    ],
+    "coverage_matrix": [
+      {
+        "coverage_id": "coverage_kor_command_structure",
+        "service": "joint",
+        "domain": "joint",
+        "organization_depth": "national_service_and_combined_command",
+        "equipment_taxonomy": "not_started",
+        "inventory": "not_started",
+        "dispositions": "not_started",
+        "maintenance": "not_started",
+        "construction": "not_started",
+        "conservation": "blocked",
+        "notes": "National services and bounded command relationships are sourced. Operational units and force assignments remain unresolved."
+      },
+      {
+        "coverage_id": "coverage_kor_combined_authority",
+        "service": "joint",
+        "domain": "joint",
+        "organization_depth": "combined_command_identified",
+        "equipment_taxonomy": "not_applicable",
+        "inventory": "not_started",
+        "dispositions": "not_started",
+        "maintenance": "not_applicable",
+        "construction": "not_applicable",
+        "conservation": "blocked",
+        "notes": "CFC policy direction and consensus rule are accepted. No alliance membership or command identity creates automatic Taiwan participation."
+      }
+    ]
+  },
+  "dataset_paths": {
+    "organizations": "organizations.ndjson",
+    "platforms": null,
+    "equipment_types": null,
+    "inventory": null,
+    "deployments": null,
+    "maintenance": null,
+    "construction": null,
+    "conservation": null,
+    "facilities": null,
+    "sources": "sources.ndjson",
+    "contradictions": null,
+    "relationships": "relationships.ndjson",
+    "claims": "claims.ndjson"
+  },
+  "reconciliation": {
+    "state": "blocked_by_unknowns",
+    "source_records": 2,
+    "claim_records": 10,
+    "organization_records": 9,
+    "relationship_records": 6,
+    "inventory_records": 0,
+    "conservation_records": 0,
+    "opening_stock_eligible_claims": 0,
+    "open_conservation_exceptions": 8
+  },
+  "conservation_policy": {
+    "equation": "opening_plus_inflows_equals_closing_states_plus_outflows",
+    "counting_units_are_not_interchangeable": true,
+    "individuals_are_excluded_from_pools": true,
+    "parent_totals_are_not_summed_with_children": true,
+    "organization_identity_does_not_create_inventory": true
+  },
+  "aggregation_policy": {
+    "global_resolution": "national service and command structure",
+    "theater_resolution": "formations and operational pools after reconciliation",
+    "mission_resolution": "individual executing and supporting platforms after reconciliation",
+    "aggregation_preserves_quantity": true
+  },
+  "source_ids": [
+    "src_force_kor_armed_forces_organization_act",
+    "src_force_kor_usfk_lacamera_2022"
+  ],
+  "unknowns": [
+    "The complete active and reserve order of battle remains unknown.",
+    "Every equipment, munitions, personnel, readiness, maintenance, training, and availability quantity remains unknown.",
+    "No force is assigned to CFC or released for a Taiwan contingency by this tranche.",
+    "Operational unit scope below the service level remains unresolved.",
+    "Basing, deployments, support networks, fuel, spares, and command connectivity remain unresolved."
+  ],
+  "reviewed_at": "2026-08-22",
+  "review_after": "2026-11-22",
+  "notes": "First South Korea force organization tranche. It establishes national service structure and bounded combined command authority while preventing those institutions from becoming magical executable assets.",
+  "acceptance": {
+    "schema_valid": true,
+    "internally_consistent": true,
+    "research_complete": false,
+    "decision_usable": false,
+    "simulation_ready": false,
+    "independent_review_required": true
+  }
+}
