@@ -54,8 +54,9 @@
    queued.
 9. Open Tier B wave one dossiers for Japan, South Korea, North Korea, Russia,
    India, Australia, and the Philippines. Status: structural research manifests,
-   eight lane matrices, and country work packages complete. Japan politics and
-   alliance authority are collecting; the other six countries remain shells.
+   eight lane matrices, and country work packages complete. Japan politics, alliance authority, and force accounting are collecting;
+   South Korea politics, alliance authority, and military command structure are
+   collecting; the other five countries remain shells.
 10. Open Tier B wave two dossiers for Iran, Israel, Saudi Arabia, Türkiye,
     Pakistan, the United Kingdom, France, and Germany. Status: queued.
 11. Define conserved capability pool collection boundaries for Japan, South Korea,
