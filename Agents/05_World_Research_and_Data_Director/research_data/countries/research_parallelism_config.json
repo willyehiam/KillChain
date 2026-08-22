@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1.0",
+  "config_id": "global_country_research_parallelism_v1",
+  "bookmark_id": "bookmark_global_fracture_2025_09_01",
+  "execution_model": "all_country_all_lane_concurrent_collection",
+  "country_scope": "entire_registry",
+  "worker_pools": {
+    "politics": ["politics_and_institutions"],
+    "economy": ["economy_trade_finance_resources"],
+    "forces": ["military_organization_inventory"],
+    "facilities": ["fixed_facilities_basing"],
+    "industry": ["strategic_industry_conversion"],
+    "networks": ["energy_transport_communications_logistics"],
+    "geography": ["geography_provinces_terrain"],
+    "crises": ["crises_alliances_sanctions_deployments"],
+    "provenance": [],
+    "integration": []
+  },
+  "regions": {
+    "north_america_caribbean": ["USA", "CAN", "MEX", "DOM", "GTM", "CRI", "PAN", "HTI"],
+    "south_america": ["BRA", "ARG", "COL", "CHL", "PER", "ECU", "VEN"],
+    "europe_west_north": ["DEU", "GBR", "FRA", "ITA", "ESP", "NLD", "CHE", "BEL", "IRL", "SWE", "AUT", "NOR", "DNK", "PRT", "FIN", "LUX"],
+    "europe_central_east": ["POL", "ROU", "CZE", "HUN", "SVK", "BGR", "HRV", "SRB", "LTU", "BLR", "UKR", "GRC"],
+    "eurasia_caucasus": ["RUS", "TUR", "KAZ", "UZB", "ARM", "AZE"],
+    "east_asia": ["CHN", "JPN", "KOR", "TWN", "PRK"],
+    "south_southeast_asia": ["IND", "IDN", "SGP", "THA", "VNM", "PHL", "MYS", "BGD", "PAK", "MMR", "AFG"],
+    "middle_east": ["SAU", "ISR", "ARE", "IRN", "IRQ", "QAT", "KWT", "OMN", "SYR", "LBN"],
+    "africa_north_west": ["EGY", "MAR", "DZA", "NGA", "GHA", "CIV"],
+    "africa_east_central_south": ["ZAF", "AGO", "KEN", "ETH", "COD", "SDN", "SOM", "SSD"],
+    "oceania": ["AUS", "NZL"]
+  },
+  "collection_rules": {
+    "start_all_work_units_immediately": true,
+    "country_completion_never_blocks_another_country": true,
+    "promotion_dependencies_do_not_block_collection": true,
+    "country_specific_escalation_only_for_contradictions_or_strategic_depth": true,
+    "maximum_active_work_units": 96,
+    "source_family_concurrency_limit": 4
+  },
+  "promotion_dependencies": {
+    "politics_and_institutions": [],
+    "economy_trade_finance_resources": [],
+    "military_organization_inventory": ["politics_and_institutions"],
+    "fixed_facilities_basing": ["geography_provinces_terrain"],
+    "strategic_industry_conversion": ["economy_trade_finance_resources", "geography_provinces_terrain"],
+    "energy_transport_communications_logistics": ["economy_trade_finance_resources", "geography_provinces_terrain"],
+    "geography_provinces_terrain": [],
+    "crises_alliances_sanctions_deployments": ["politics_and_institutions", "military_organization_inventory"]
+  },
+  "merge_rules": {
+    "unit_of_merge": "atomic_sourced_claim",
+    "stable_sort": ["country_code", "lane_id", "claim_id"],
+    "duplicate_policy": "same_identifier_requires_canonical_equality",
+    "contradiction_policy": "preserve_and_route_to_review",
+    "unknown_policy": "missing_evidence_never_becomes_zero",
+    "bookmark_policy": "post_bookmark_material_is_quarantined",
+    "simulation_policy": "research_outputs_remain_nonexecutable_until_acceptance"
+  },
+  "safety_boundary": {
+    "purpose": "historical_and_strategic_world_model",
+    "exclude_nonpublic_sensitive_targeting_detail": true,
+    "exclude_live_mobile_force_tracking": true,
+    "exact_geometry_requires_public_source_and_gameplay_need": true
+  }
+}

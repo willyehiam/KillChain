@@ -113,20 +113,26 @@ if (new Set(additions.map((country) => country.country_code)).size !== 11) {
 }
 
 const expectedProfiles = [];
+let preservedSubstantiveProfiles = 0;
 for (const registryCountry of additions) {
   const directoryName = registryCountry.country_code.toLowerCase();
   const relativeProfilePath = `countries/${directoryName}/profile.json`;
   const profilePath = path.join(countriesRoot, directoryName, "profile.json");
+  const existingProfile = fs.existsSync(profilePath) ? readJson(profilePath) : null;
+  const substantive = existingProfile && existingProfile.coverage_status !== "shell";
+  if (substantive) preservedSubstantiveProfiles += 1;
   expectedProfiles.push({
     profilePath,
     relativeProfilePath,
     content: stableJson(buildShell(registryCountry)),
+    substantive,
   });
   registryCountry.profile_path = relativeProfilePath;
 }
 
 const mismatches = [];
 for (const profile of expectedProfiles) {
+  if (profile.substantive) continue;
   if (checkOnly) {
     if (!fs.existsSync(profile.profilePath)) {
       mismatches.push(`${profile.relativeProfilePath}: missing`);
@@ -136,8 +142,10 @@ for (const profile of expectedProfiles) {
     continue;
   }
 
-  fs.mkdirSync(path.dirname(profile.profilePath), { recursive: true });
-  fs.writeFileSync(profile.profilePath, profile.content);
+  if (!fs.existsSync(profile.profilePath)) {
+    fs.mkdirSync(path.dirname(profile.profilePath), { recursive: true });
+    fs.writeFileSync(profile.profilePath, profile.content);
+  }
 }
 
 const expectedRegistry = stableJson(registry);
@@ -154,7 +162,8 @@ const report = {
   mode: checkOnly ? "check" : "write",
   registry_countries: registryCountries.length,
   ranked_cohort_countries: registryCountries.length - additions.length,
-  generated_strategic_addition_shells: expectedProfiles.length,
+  preserved_substantive_profiles: preservedSubstantiveProfiles,
+  generated_or_validated_strategic_addition_shells: expectedProfiles.length - preservedSubstantiveProfiles,
   mismatches,
 };
 

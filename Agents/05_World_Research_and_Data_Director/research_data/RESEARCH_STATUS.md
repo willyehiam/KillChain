@@ -14,7 +14,7 @@ Stage: research. Simulation engine implementation, final visual design, and prod
 4. 1 of 9 fully modeled theater directories contain substantive machine readable work.
 5. 0 of 9 secondary crises and 0 of 8 political event chains contain substantive work.
 6. 1 deterministic acceptance story covers 6 deep opening countries and 26 authority routes.
-7. The corpus validator passes 245 files, 1790 parsed records, and 11613 objects with 0 errors and 0 warnings.
+7. The corpus validator passes 247 files, 1792 parsed records, and 12353 objects with 0 errors and 0 warnings.
 
 ## Country status
 

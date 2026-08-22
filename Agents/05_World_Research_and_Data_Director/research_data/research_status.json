@@ -7,9 +7,9 @@
   "corpus_validation": {
     "status": "PASS",
     "counts": {
-      "files": 245,
-      "parsed_records": 1790,
-      "objects": 11613,
+      "files": 247,
+      "parsed_records": 1792,
+      "objects": 12353,
       "sources": 233,
       "primary_ids": 1377,
       "source_references": 3323,

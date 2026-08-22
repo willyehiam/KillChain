@@ -117,6 +117,7 @@ const registryByCode = new Map(
   (registry.countries ?? []).map((country) => [country.country_code, country]),
 );
 const expectedProfiles = [];
+let preservedSubstantiveProfiles = 0;
 
 for (const rosterCountry of rosterCountries) {
   const registryCountry = registryByCode.get(rosterCountry.country_code);
@@ -132,7 +133,10 @@ for (const rosterCountry of rosterCountries) {
   const relativeProfilePath = `countries/${directoryName}/profile.json`;
   const profilePath = path.join(countriesRoot, directoryName, "profile.json");
   const content = stableJson(buildShell(rosterCountry, registryCountry));
-  expectedProfiles.push({ profilePath, relativeProfilePath, content });
+  const existingProfile = fs.existsSync(profilePath) ? readJson(profilePath) : null;
+  const substantive = existingProfile && existingProfile.coverage_status !== "shell";
+  if (substantive) preservedSubstantiveProfiles += 1;
+  expectedProfiles.push({ profilePath, relativeProfilePath, content, substantive });
   registryCountry.profile_path = relativeProfilePath;
 }
 
@@ -142,6 +146,7 @@ if (expectedProfiles.length !== 77) {
 
 const mismatches = [];
 for (const profile of expectedProfiles) {
+  if (profile.substantive) continue;
   if (checkOnly) {
     if (!fs.existsSync(profile.profilePath)) {
       mismatches.push(`${profile.relativeProfilePath}: missing`);
@@ -151,8 +156,10 @@ for (const profile of expectedProfiles) {
     continue;
   }
 
-  fs.mkdirSync(path.dirname(profile.profilePath), { recursive: true });
-  fs.writeFileSync(profile.profilePath, profile.content);
+  if (!fs.existsSync(profile.profilePath)) {
+    fs.mkdirSync(path.dirname(profile.profilePath), { recursive: true });
+    fs.writeFileSync(profile.profilePath, profile.content);
+  }
 }
 
 const expectedRegistry = stableJson(registry);
@@ -169,7 +176,8 @@ const report = {
   mode: checkOnly ? "check" : "write",
   frozen_roster_countries: rosterCountries.length,
   preserved_tier_a_profiles: TIER_A_CODES.size,
-  generated_shell_profiles: expectedProfiles.length,
+  preserved_substantive_profiles: preservedSubstantiveProfiles,
+  generated_or_validated_shell_profiles: expectedProfiles.length - preservedSubstantiveProfiles,
   mismatches,
 };
 
